@@ -5,7 +5,7 @@
   const NW = 178, NH = 56, GAP = 64, RG = 16, PAD = 20;
   const $ = (id) => document.getElementById(id);
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-  let mapId = D.maps[0].id, selected = null, pendingConfidence = null;
+  let mapId = D.maps[0].id, selected = null, pendingConfidence = null, lastResult = null;
 
   function wrap(label, max) {
     const words = label.split(" "), lines = [];
@@ -198,10 +198,11 @@
         <label for="attempt" style="margin:0">Your attempt</label>
         <textarea id="attempt" rows="3" placeholder="Write your answer before revealing."></textarea>
         <div><div class="k">Confidence</div><div class="conf" id="conf">${[20, 40, 60, 80, 100].map((c) => `<button type="button" aria-pressed="false" data-c="${c}">${c}%</button>`).join("")}</div></div>
-        <div class="row"><button class="btn small" id="reveal" type="button" disabled>Reveal answer</button></div>
+        <div class="row"><button class="btn small" id="reveal" type="button" disabled>${n.grade ? "Check my answer" : "Reveal answer"}</button></div>
         <div id="ans" hidden>
+          <div id="verdict"></div>
           <div class="answer">${esc(n.answer)}</div>
-          <div class="row" style="margin-top:10px"><button class="btn small" id="right" type="button">I was right</button><button class="btn small ghost" id="wrong" type="button">I was wrong</button></div>
+          <div class="row" style="margin-top:10px" id="ansActions">${n.grade ? "" : `<button class="btn small" id="right" type="button">I was right</button><button class="btn small ghost" id="wrong" type="button">I was wrong</button>`}</div>
         </div>
       </div>
       ${lab}
@@ -215,15 +216,40 @@
       $("conf").querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", x === b));
       gate();
     });
-    $("reveal").onclick = () => { $("ans").hidden = false; $("reveal").disabled = true; $("attempt").readOnly = true; };
-    $("right").onclick = () => { DULTA.record(key, n.kind, true, pendingConfidence); };
-    $("wrong").onclick = () => { DULTA.record(key, n.kind, false, pendingConfidence); };
+    $("reveal").onclick = () => {
+      const attempt = $("attempt").value;
+      if (!n.grade) { $("ans").hidden = false; $("reveal").disabled = true; $("attempt").readOnly = true; return; }
+      const g = DULTA.grade(n.grade, attempt, n.check);
+      lastResult = { key, attempt, confidence: pendingConfidence, ...g, snap: null, overridden: false };
+      lastResult.snap = DULTA.record(key, n.kind, g.correct, pendingConfidence, { auto: true });  // re-renders via dulta:state
+    };
+    if ($("right")) $("right").onclick = () => DULTA.record(key, n.kind, true, pendingConfidence);
+    if ($("wrong")) $("wrong").onclick = () => DULTA.record(key, n.kind, false, pendingConfidence);
+    if (lastResult && lastResult.key === key) showResult(n);
     if ($("forget")) $("forget").onclick = () => DULTA.unmaster(key);
     $("detail").querySelectorAll("[data-go]").forEach((b) => b.onclick = () => go(b.dataset.go));
     history.replaceState(null, "", `#${key}`);
   }
 
-  function go(key) { detail(key); draw(); }
+  // After an auto-graded attempt: the attempt stays visible, with the verdict, the key and a dispute link.
+  function showResult(n) {
+    const r = lastResult;
+    $("attempt").value = r.attempt; $("attempt").readOnly = true;
+    $("conf").querySelectorAll("button").forEach((b) => { b.setAttribute("aria-pressed", +b.dataset.c === r.confidence); b.disabled = true; });
+    $("reveal").hidden = true;
+    $("ans").hidden = false;
+    $("verdict").innerHTML = `<div class="verdict-box ${r.correct ? "ok" : "no"}" role="status">
+      <b>${r.correct ? "✓ Correct" : "✗ Not yet"}</b> <span>${r.correct ? "Recorded as mastered" : esc(r.reason) + ". Recorded for review"}${r.overridden ? " (your override)" : ""} · you said ${r.confidence}% sure</span></div>`;
+    $("ansActions").innerHTML = `<button class="btn small" id="again" type="button">Try another node</button>
+      <button class="btn small ghost" id="dispute" type="button">${r.overridden ? "Undo my override" : r.correct ? "I was actually wrong" : "The grader got this wrong"}</button>`;
+    $("again").onclick = () => { lastResult = null; const fr = DULTA.frontier(D, mapId).find((k) => k !== n.key); go(fr || n.key); };
+    $("dispute").onclick = () => {
+      r.correct = !r.correct; r.overridden = !r.overridden;
+      r.snap = DULTA.amend(r.snap, r.correct);
+    };
+  }
+
+  function go(key) { if (!lastResult || lastResult.key !== key) lastResult = null; detail(key); draw(); }
 
   $("tabs").innerHTML = D.maps.map((m) => `<button role="tab" type="button" data-id="${m.id}" style="--accent:var(--${m.id})">${esc(m.title)}</button>`).join("");
   $("tabs").addEventListener("click", (e) => {

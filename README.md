@@ -49,6 +49,7 @@ python scripts/dulta.py render                         # maps -> references/maps
 python scripts/dulta.py frontier --state examples/learner.json --map physics --today 2026-10-28
 python scripts/dulta.py quiz --map embedded --nodes gpio,timing --key key.md  # checks only; key apart
 python scripts/dulta.py leak NOTES.md                  # did answers leak into an agent's notes?
+python scripts/dulta.py grade physics/energy "9.9 m/s" # auto-grade an answer (same rules as the site)
 python scripts/dulta.py gain --pre 42 --post 71        # Hake normalized gain
 python scripts/dulta.py align examples/course.json     # constructive-alignment audit
 python scripts/dulta.py panel panel/R1 vygotsky bjork  # which panel seats filed a verdict
@@ -66,7 +67,8 @@ python -m http.server 8765 --directory site
 ```
 
 - **Maps** draws each domain map as a layered graph. Open a node, write your attempt at its check, rate your
-  confidence, and only then reveal the answer. A correct answer marks the node mastered and lights up the next
+  confidence, and the site **grades it automatically** (numbers with tolerance, key ideas, code patterns); a
+  disputed grade can be overridden and is logged as such. A correct answer marks the node mastered and lights up the next
   frontier. Progress stays in your browser and exports as a `learner.json` the CLI reads.
 - **Labs**: a simulated microcontroller (blink without blocking, debounce a bouncing button, software PWM,
   on an oscilloscope, against real DDRB/PORTB/PINB registers), an RC circuit, projectile (with and without drag), pendulum (where the small-angle formula breaks down), Fourier

@@ -145,6 +145,7 @@ or "none available"; never claim a tool you did not call.
 | Catalogue pre/post test (labs, probes, Bloom levels, gradable checks, tracks) | `python scripts/dulta.py audit` | Count by hand from `maps/*.json` |
 | Quiz without answers, separate key | `python scripts/dulta.py quiz --map <m> --nodes <ids> --key key.md` | Copy checks by hand, keep answers in a separate file |
 | Agent-notes contamination | `python scripts/dulta.py leak NOTES.md` | Search the notes for each answer by hand |
+| Objective grading of an answer (also the grader subagent's tool) | `python scripts/dulta.py grade <map>/<node> "<answer>"` | Compare with the key by hand |
 | Gain | `python scripts/dulta.py gain --pre X --post Y` | Hake's formula by hand |
 | Panel | Subagent tool, one agent per reference, at most three at a time, each filing to `panel/R<n>/<seat>.md`; collect with `dulta.py panel` | Sequential written reports, each finished before reading the next |
 | Labs and render-check | A browser on `site/` (labs, map explorer) | Describe the exercise in text; write "unrendered" |

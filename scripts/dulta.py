@@ -7,6 +7,7 @@ verdicts.
     python scripts/dulta.py frontier --state learner.json [--map physics] [--today 2026-10-28]
     python scripts/dulta.py quiz --map embedded --nodes gpio,timing [--key key.md]
     python scripts/dulta.py leak NOTES.md [--map embedded]
+    python scripts/dulta.py grade physics/energy "about 9.9 m/s"
     python scripts/dulta.py gain --pre 42 --post 71 [--max 100]
     python scripts/dulta.py align course.json
     python scripts/dulta.py panel <panel_dir> <seat> [<seat> ...]
@@ -18,6 +19,7 @@ import argparse
 import datetime as dt
 import json
 import pathlib
+import re
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -125,6 +127,14 @@ def cmd_validate(_args):
                 errors.append(f"{e['map']}: edge {e['from']} -> {e['to']}: unknown {end}")
         if e["type"] == "counter" and nodes.get(e["from"], {}).get("kind") != "misconception":
             errors.append(f"{e['from']}: counter edges must start at a misconception")
+    ungraded = [k for k, n in nodes.items() if not n.get("grade")]
+    for k, n in nodes.items():
+        if n.get("grade"):
+            ok, why = grade(n["grade"], n["answer"], n["check"])
+            if not ok:
+                errors.append(f"{k}: the model answer fails its own grade spec ({why})")
+    if ungraded:
+        print(f"ungraded nodes: {len(ungraded)}")
     for k, n in nodes.items():
         if n["kind"] == "misconception" and not any(e["from"] == k for e in edges):
             errors.append(f"{k}: misconception is not attached to any concept")
@@ -350,6 +360,79 @@ def cmd_audit(args):
     return 0
 
 
+# ---- Auto-grading. site/assets/site.js implements the same rules; keep the two in step. ----
+# A node's "grade" spec may hold any of these keys; every key present must pass:
+#   numbers: [[v, alt, ...], ...]  each group needs one number in the answer within tol (relative) of a value
+#   tol:     relative tolerance for numbers (default 0.02)
+#   all:     [[phrase, ...], ...]  each group needs one phrase as whole words; "stem*" matches a word prefix
+#   none:    [phrase, ...]         any of these phrases present means wrong
+#   code:    [snippet, ...]        one snippet must appear in the answer with all whitespace removed
+SYMBOLS = {"√": " sqrt ", "π": " pi ", "Ω": " ohm ", "µ": " u ", "μ": " u ", "°": " deg ", "τ": " tau ",
+           "ω": " omega ", "Δ": " delta ", "ρ": " rho ", "−": "-", "–": "-", "×": " x "}
+SUPERSCRIPTS = str.maketrans("⁰¹²³⁴⁵⁶⁷⁸⁹", "0123456789")
+
+
+def _prep(text):
+    s = text.lower()
+    for k, v in SYMBOLS.items():
+        s = s.replace(k.lower(), v)
+    return re.sub(r"[⁰¹²³⁴⁵⁶⁷⁸⁹]+", lambda m: " " + m.group(0).translate(SUPERSCRIPTS), s)
+
+
+def _words(text):
+    return " " + re.sub(r"[^a-z0-9]+", " ", _prep(text)).strip() + " "
+
+
+def _has(words, phrase):
+    stem = phrase.endswith("*")
+    p = re.sub(r"[^a-z0-9]+", " ", _prep(phrase.rstrip("*"))).strip()
+    return (" " + p) in words if stem else (" " + p + " ") in words
+
+
+def _numbers(text):
+    s = re.sub(r"(\d),(?=\d{3}\b)", r"\1", _prep(text))
+    out = [float(x) for x in re.findall(r"(?<![\w.])-?\d+(?:\.\d+)?(?:e-?\d+)?", s)]
+    out += [float(a) / float(b) for a, b in re.findall(r"(\d+(?:\.\d+)?)\s*/\s*(\d+(?:\.\d+)?)", s) if float(b)]
+    return out
+
+
+def grade(spec, answer, question=None):
+    """Return (correct, reason). Mirrors DULTA.grade in site.js."""
+    words, nums = _words(answer), _numbers(answer)
+    if question:  # an answer made almost entirely of the question's own words is the question pasted back
+        aw, qw = words.split(), set(_words(question).split())
+        covered = len(qw & set(aw)) / max(len(qw), 1)
+        if len(aw) >= 6 and sum(w in qw for w in aw) / len(aw) >= 0.8 and covered >= 0.6:
+            return False, "that repeats the question"
+    tol = spec.get("tol", 0.02)
+    for group in spec.get("numbers", []):
+        if not any(abs(x - v) <= (tol * abs(v) if v else 1e-9) for v in group for x in nums):
+            return False, f"expected a value near {group[0]}"
+    for group in spec.get("all", []):
+        if not any(_has(words, p) for p in group):
+            return False, f"missing an idea like '{group[0].rstrip('*')}'"
+    for p in spec.get("none", []):
+        if _has(words, p):
+            return False, f"contains '{p}', which points the wrong way"
+    if spec.get("code"):
+        flat = re.sub(r"\s+", "", answer.lower())
+        if not any(c.replace(" ", "") in flat for c in spec["code"]):
+            return False, "the expression does not match"
+    return True, "matches the key"
+
+
+def cmd_grade(args):
+    maps = load_maps()
+    nodes, _ = global_graph(maps)
+    n = nodes.get(args.node)
+    if not n or not n.get("grade"):
+        print(f"no gradable node {args.node}", file=sys.stderr)
+        return 2
+    ok, why = grade(n["grade"], args.answer, n["check"])
+    print(("CORRECT" if ok else "INCORRECT") + f" ({why})")
+    return 0 if ok else 1
+
+
 def cmd_quiz(args):
     """Answer-key hygiene: print checks WITHOUT answers (for a human learner or a
     learner agent's context) and write the key to a separate file for the grader."""
@@ -462,6 +545,9 @@ def main(argv=None):
     f.add_argument("--state", required=True)
     f.add_argument("--map")
     f.add_argument("--today")
+    gr = sub.add_parser("grade")
+    gr.add_argument("node", help="qualified node key, e.g. physics/energy")
+    gr.add_argument("answer")
     au = sub.add_parser("audit")
     au.add_argument("--verbose", action="store_true")
     q = sub.add_parser("quiz")
@@ -482,7 +568,7 @@ def main(argv=None):
     pn.add_argument("seats", nargs="+")
     args = p.parse_args(argv)
     return {"validate": cmd_validate, "render": cmd_render, "frontier": cmd_frontier,
-            "audit": cmd_audit, "quiz": cmd_quiz, "leak": cmd_leak, "gain": cmd_gain, "align": cmd_align, "panel": cmd_panel}[args.cmd](args)
+            "grade": cmd_grade, "audit": cmd_audit, "quiz": cmd_quiz, "leak": cmd_leak, "gain": cmd_gain, "align": cmd_align, "panel": cmd_panel}[args.cmd](args)
 
 
 if __name__ == "__main__":

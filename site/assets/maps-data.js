@@ -153,6 +153,16 @@ window.DULTA_MAPS = {
    "outcome": "Report a measured quantity with unit and propagated uncertainty.",
    "check": "You time 10 swings of a pendulum as 14.2 s ± 0.2 s. What is the period and its uncertainty?",
    "answer": "1.42 s ± 0.02 s: dividing by an exact count divides the uncertainty too.",
+   "grade": {
+    "numbers": [
+     [
+      1.42
+     ],
+     [
+      0.02
+     ]
+    ]
+   },
    "map": "physics",
    "key": "physics/measurement",
    "depth": 0
@@ -165,6 +175,21 @@ window.DULTA_MAPS = {
    "outcome": "Derive the form of a law (up to a constant) from dimensions alone.",
    "check": "Using dimensions only, how must a pendulum's period depend on its length L and g?",
    "answer": "T ∝ √(L/g): it is the only combination of L [m] and g [m/s²] with units of seconds.",
+   "grade": {
+    "all": [
+     [
+      "sqrt",
+      "root",
+      "square root"
+     ],
+     [
+      "l g",
+      "l over g",
+      "length over g",
+      "l divided by g"
+     ]
+    ]
+   },
    "map": "physics",
    "key": "physics/dimensions",
    "depth": 1
@@ -177,6 +202,13 @@ window.DULTA_MAPS = {
    "outcome": "Resolve a vector into components and add vectors by components.",
    "check": "A 10 N force points 30° above horizontal. What is its horizontal component?",
    "answer": "10 cos 30° ≈ 8.7 N.",
+   "grade": {
+    "numbers": [
+     [
+      8.66
+     ]
+    ]
+   },
    "map": "physics",
    "key": "physics/vectors",
    "depth": 0
@@ -190,6 +222,25 @@ window.DULTA_MAPS = {
    "check": "A ball is thrown horizontally off a table while another is dropped from the same height. Which lands first?",
    "answer": "They land together: vertical motion is independent of horizontal velocity.",
    "lab": "projectile",
+   "grade": {
+    "all": [
+     [
+      "same time",
+      "together",
+      "simultaneous*",
+      "at once",
+      "same moment",
+      "neither",
+      "both",
+      "same"
+     ]
+    ],
+    "none": [
+     "thrown one first",
+     "dropped one first",
+     "horizontal one first"
+    ]
+   },
    "map": "physics",
    "key": "physics/kinematics",
    "depth": 2
@@ -202,6 +253,18 @@ window.DULTA_MAPS = {
    "outcome": "State and refute the impetus model with a frictionless counterexample.",
    "check": "A puck slides across frictionless ice at constant velocity. What net force acts on it?",
    "answer": "Zero. Constant velocity means zero net force; force changes motion, it does not sustain it.",
+   "grade": {
+    "all": [
+     [
+      "zero",
+      "0",
+      "none",
+      "no net",
+      "nothing",
+      "no force"
+     ]
+    ]
+   },
    "map": "physics",
    "key": "physics/misc-impetus",
    "depth": 3
@@ -215,6 +278,22 @@ window.DULTA_MAPS = {
    "check": "A book rests on a table. Name the Newton's-third-law partner of the gravitational force of Earth on the book.",
    "answer": "The gravitational force of the book on Earth, not the normal force from the table.",
    "lab": "projectile",
+   "grade": {
+    "all": [
+     [
+      "book on earth",
+      "book on the earth",
+      "book pulls earth",
+      "book pulls the earth",
+      "earth by the book",
+      "on earth by the book",
+      "on the earth by the book",
+      "book attracts",
+      "book s gravit*",
+      "of the book on"
+     ]
+    ]
+   },
    "map": "physics",
    "key": "physics/newton",
    "depth": 3
@@ -227,6 +306,20 @@ window.DULTA_MAPS = {
    "outcome": "Explain why mass cancels in free fall.",
    "check": "In a vacuum, a hammer and a feather are dropped together. Which lands first?",
    "answer": "Together: F = mg and a = F/m = g, so mass cancels (shown on the Moon by Apollo 15).",
+   "grade": {
+    "all": [
+     [
+      "same time",
+      "together",
+      "simultaneous*",
+      "at once",
+      "same moment",
+      "neither",
+      "both",
+      "same"
+     ]
+    ]
+   },
    "map": "physics",
    "key": "physics/misc-heavier",
    "depth": 3
@@ -239,6 +332,14 @@ window.DULTA_MAPS = {
    "outcome": "Model a multi-force system and solve for an unknown force.",
    "check": "A 2 kg block hangs from a rope at rest. What is the tension?",
    "answer": "About 19.6 N (T = mg).",
+   "grade": {
+    "numbers": [
+     [
+      19.6,
+      20
+     ]
+    ]
+   },
    "map": "physics",
    "key": "physics/forces",
    "depth": 4
@@ -251,6 +352,13 @@ window.DULTA_MAPS = {
    "outcome": "Identify the centripetal force in a circular-motion scenario.",
    "check": "A car rounds a flat curve at constant speed. Which force keeps it on the curve?",
    "answer": "Static friction between tyres and road, pointing toward the centre.",
+   "grade": {
+    "all": [
+     [
+      "friction"
+     ]
+    ]
+   },
    "map": "physics",
    "key": "physics/misc-centrifugal",
    "depth": 5
@@ -263,6 +371,17 @@ window.DULTA_MAPS = {
    "outcome": "Compute the centripetal force needed for a given speed and radius.",
    "check": "If you double the speed on the same curve, by what factor does the needed force change?",
    "answer": "Four times (F ∝ v²).",
+   "grade": {
+    "all": [
+     [
+      "4",
+      "four",
+      "quadruple*",
+      "4x",
+      "4 times"
+     ]
+    ]
+   },
    "map": "physics",
    "key": "physics/circular",
    "depth": 5
@@ -276,6 +395,14 @@ window.DULTA_MAPS = {
    "check": "A ball is released from rest 5 m up a frictionless ramp. What is its speed at the bottom?",
    "answer": "√(2gh) ≈ 9.9 m/s, regardless of the ramp's shape.",
    "lab": "pendulum",
+   "grade": {
+    "numbers": [
+     [
+      9.9,
+      10
+     ]
+    ]
+   },
    "map": "physics",
    "key": "physics/energy",
    "depth": 6
@@ -288,6 +415,17 @@ window.DULTA_MAPS = {
    "outcome": "Compute work done by a variable force as an area under F(x).",
    "check": "You carry a box horizontally at constant velocity. How much work does gravity do on it?",
    "answer": "Zero: gravity is perpendicular to the displacement.",
+   "grade": {
+    "all": [
+     [
+      "zero",
+      "0",
+      "none",
+      "no work",
+      "nothing"
+     ]
+    ]
+   },
    "map": "physics",
    "key": "physics/work",
    "depth": 5
@@ -300,6 +438,13 @@ window.DULTA_MAPS = {
    "outcome": "Predict final velocities in a 1D collision.",
    "check": "A 1 kg cart at 2 m/s sticks to an identical cart at rest. Final speed?",
    "answer": "1 m/s (momentum 2 kg·m/s shared by 2 kg).",
+   "grade": {
+    "numbers": [
+     [
+      1
+     ]
+    ]
+   },
    "map": "physics",
    "key": "physics/momentum",
    "depth": 4
@@ -312,6 +457,25 @@ window.DULTA_MAPS = {
    "outcome": "Use τ = Iα and conservation of angular momentum.",
    "check": "A skater pulls in their arms. What happens to the spin rate, and why?",
    "answer": "It increases: I decreases and L = Iω is conserved.",
+   "grade": {
+    "all": [
+     [
+      "increase*",
+      "faster",
+      "speeds up",
+      "goes up",
+      "rises",
+      "higher"
+     ],
+     [
+      "angular momentum",
+      "inertia",
+      "conserv*",
+      "l iw",
+      "moment"
+     ]
+    ]
+   },
    "map": "physics",
    "key": "physics/rotation",
    "depth": 6
@@ -324,6 +488,17 @@ window.DULTA_MAPS = {
    "outcome": "Derive orbital speed from F = GMm/r².",
    "check": "Why do astronauts on the ISS float, if gravity there is ~90% of surface gravity?",
    "answer": "They are in free fall together with the station; floating is falling around the Earth.",
+   "grade": {
+    "all": [
+     [
+      "free fall",
+      "freefall",
+      "falling",
+      "fall",
+      "orbit*"
+     ]
+    ]
+   },
    "map": "physics",
    "key": "physics/gravitation",
    "depth": 7
@@ -337,6 +512,23 @@ window.DULTA_MAPS = {
    "check": "Does a pendulum's period change if you double its mass?",
    "answer": "No: T = 2π√(L/g), independent of mass (for small angles).",
    "lab": "pendulum",
+   "grade": {
+    "all": [
+     [
+      "no",
+      "not",
+      "doesn t",
+      "does not",
+      "isn t",
+      "is not",
+      "never",
+      "false",
+      "unchanged",
+      "same",
+      "independent"
+     ]
+    ]
+   },
    "map": "physics",
    "key": "physics/shm",
    "depth": 5
@@ -350,6 +542,20 @@ window.DULTA_MAPS = {
    "check": "Two speakers emit the same tone. You stand where the path difference is half a wavelength. What do you hear?",
    "answer": "Near-silence: destructive interference.",
    "lab": "fourier",
+   "grade": {
+    "all": [
+     [
+      "silence",
+      "silent",
+      "quiet",
+      "nothing",
+      "cancel*",
+      "destructive",
+      "no sound",
+      "very little"
+     ]
+    ]
+   },
    "map": "physics",
    "key": "physics/waves",
    "depth": 6
@@ -362,6 +568,29 @@ window.DULTA_MAPS = {
    "outcome": "Apply the first law of thermodynamics to a gas process.",
    "check": "Metal and wood in the same room feel different temperatures. Are they?",
    "answer": "No, same temperature; metal conducts heat away from your hand faster.",
+   "grade": {
+    "all": [
+     [
+      "no",
+      "not",
+      "doesn t",
+      "does not",
+      "isn t",
+      "is not",
+      "never",
+      "false",
+      "same",
+      "equal"
+     ],
+     [
+      "conduct*",
+      "heat away",
+      "transfer*",
+      "draws heat",
+      "takes heat"
+     ]
+    ]
+   },
    "map": "physics",
    "key": "physics/thermo",
    "depth": 7
@@ -374,6 +603,20 @@ window.DULTA_MAPS = {
    "outcome": "Distinguish heat from temperature with a phase-change example.",
    "check": "Ice melts in a glass at 0 °C while absorbing heat. What happens to its temperature?",
    "answer": "It stays at 0 °C: the heat breaks bonds rather than raising temperature.",
+   "grade": {
+    "all": [
+     [
+      "0",
+      "zero",
+      "stays",
+      "constant",
+      "same",
+      "unchanged",
+      "doesn t change",
+      "does not change"
+     ]
+    ]
+   },
    "map": "physics",
    "key": "physics/misc-heat",
    "depth": 7
@@ -386,6 +629,19 @@ window.DULTA_MAPS = {
    "outcome": "Explain irreversibility in terms of counting microstates.",
    "check": "Why does a dropped egg never unscramble, though no law of mechanics forbids it?",
    "answer": "The unscrambled macrostate has overwhelmingly fewer microstates; it is possible but absurdly improbable.",
+   "grade": {
+    "all": [
+     [
+      "microstate*",
+      "probab*",
+      "improbable",
+      "unlikely",
+      "entropy",
+      "ways",
+      "arrangements"
+     ]
+    ]
+   },
    "map": "physics",
    "key": "physics/entropy",
    "depth": 8
@@ -398,6 +654,20 @@ window.DULTA_MAPS = {
    "outcome": "Use the Boltzmann factor to compare occupation of two energy levels.",
    "check": "As temperature rises, what happens to the ratio of high- to low-energy particles?",
    "answer": "It increases toward 1: e^(−ΔE/kT) grows as T grows.",
+   "grade": {
+    "all": [
+     [
+      "increase*",
+      "rises",
+      "grows",
+      "goes up",
+      "larger",
+      "higher",
+      "more",
+      "approach*"
+     ]
+    ]
+   },
    "map": "physics",
    "key": "physics/statmech",
    "depth": 9
@@ -410,6 +680,17 @@ window.DULTA_MAPS = {
    "outcome": "Compute the field of a point charge and a charged plane.",
    "check": "What is the electric field inside a charged, conducting hollow sphere?",
    "answer": "Zero (Gauss's law; charge sits on the surface).",
+   "grade": {
+    "all": [
+     [
+      "zero",
+      "0",
+      "none",
+      "no field",
+      "no electric field"
+     ]
+    ]
+   },
    "map": "physics",
    "key": "physics/electrostatics",
    "depth": 5
@@ -422,6 +703,25 @@ window.DULTA_MAPS = {
    "outcome": "Explain series circuits with charge conservation.",
    "check": "Two bulbs in series: is the current after the second bulb less than before the first?",
    "answer": "No, it is the same everywhere in a series loop; energy, not charge, is used.",
+   "grade": {
+    "all": [
+     [
+      "no",
+      "not",
+      "doesn t",
+      "does not",
+      "isn t",
+      "is not",
+      "never",
+      "false",
+      "same",
+      "equal"
+     ]
+    ],
+    "none": [
+     "yes"
+    ]
+   },
    "map": "physics",
    "key": "physics/misc-current",
    "depth": 6
@@ -434,6 +734,19 @@ window.DULTA_MAPS = {
    "outcome": "Analyse a two-loop circuit with Kirchhoff's rules.",
    "check": "Adding a second identical bulb in parallel: does the battery's current rise or fall?",
    "answer": "It doubles: total resistance halves.",
+   "grade": {
+    "all": [
+     [
+      "double*",
+      "2x",
+      "twice",
+      "rises",
+      "increase*",
+      "goes up",
+      "more"
+     ]
+    ]
+   },
    "map": "physics",
    "key": "physics/circuits",
    "depth": 6
@@ -446,6 +759,17 @@ window.DULTA_MAPS = {
    "outcome": "Predict induced current direction with Lenz's law.",
    "check": "A magnet falls through a copper tube. Why does it fall slowly?",
    "answer": "Induced eddy currents create a field opposing its motion (Lenz's law).",
+   "grade": {
+    "all": [
+     [
+      "eddy",
+      "induced",
+      "induction",
+      "lenz",
+      "oppos*"
+     ]
+    ]
+   },
    "map": "physics",
    "key": "physics/magnetism",
    "depth": 7
@@ -458,6 +782,17 @@ window.DULTA_MAPS = {
    "outcome": "Show that Maxwell's equations predict waves travelling at c = 1/√(μ₀ε₀).",
    "check": "What does Maxwell's displacement current fix in Ampère's law?",
    "answer": "It makes the law consistent for changing fields (e.g. a charging capacitor) and permits EM waves.",
+   "grade": {
+    "all": [
+     [
+      "changing",
+      "capacitor",
+      "consistent",
+      "wave*",
+      "time varying"
+     ]
+    ]
+   },
    "map": "physics",
    "key": "physics/maxwell",
    "depth": 8
@@ -470,6 +805,16 @@ window.DULTA_MAPS = {
    "outcome": "Locate an image with the thin-lens equation.",
    "check": "Why does a straw look bent in a glass of water?",
    "answer": "Refraction: light changes direction crossing the water–air boundary.",
+   "grade": {
+    "all": [
+     [
+      "refract*",
+      "bend*",
+      "slower",
+      "speed of light"
+     ]
+    ]
+   },
    "map": "physics",
    "key": "physics/optics",
    "depth": 9
@@ -482,6 +827,16 @@ window.DULTA_MAPS = {
    "outcome": "Compute time dilation for a moving clock.",
    "check": "A muon lives 2.2 µs at rest but reaches the ground from 15 km up. How?",
    "answer": "In Earth's frame its clock runs slow (time dilation); in its frame the atmosphere is length-contracted.",
+   "grade": {
+    "all": [
+     [
+      "dilat*",
+      "slow*",
+      "length contraction",
+      "contract*"
+     ]
+    ]
+   },
    "map": "physics",
    "key": "physics/relativity",
    "depth": 9
@@ -494,6 +849,18 @@ window.DULTA_MAPS = {
    "outcome": "Derive equations of motion from a Lagrangian.",
    "check": "What is the advantage of generalized coordinates for a bead on a rotating hoop?",
    "answer": "Constraint forces drop out; one coordinate (the angle) describes the motion.",
+   "grade": {
+    "all": [
+     [
+      "constraint*",
+      "one coordinate",
+      "angle",
+      "fewer",
+      "single",
+      "drop out"
+     ]
+    ]
+   },
    "map": "physics",
    "key": "physics/lagrangian",
    "depth": 7
@@ -506,6 +873,23 @@ window.DULTA_MAPS = {
    "outcome": "Contrast an orbital with an orbit.",
    "check": "Where is the electron in a hydrogen 1s state?",
    "answer": "It has no definite position; the 1s orbital gives the probability density of finding it.",
+   "grade": {
+    "all": [
+     [
+      "probab*",
+      "orbital",
+      "no definite",
+      "cloud",
+      "density",
+      "uncertain*",
+      "anywhere",
+      "not defined",
+      "undefined",
+      "no position",
+      "no fixed"
+     ]
+    ]
+   },
    "map": "physics",
    "key": "physics/misc-orbits",
    "depth": 10
@@ -518,6 +902,14 @@ window.DULTA_MAPS = {
    "outcome": "Compute measurement probabilities from a state vector.",
    "check": "A qubit is (|0⟩ + |1⟩)/√2. What is the probability of measuring 1?",
    "answer": "1/2 (the squared magnitude of the amplitude).",
+   "grade": {
+    "numbers": [
+     [
+      0.5,
+      50
+     ]
+    ]
+   },
    "map": "physics",
    "key": "physics/quantum",
    "depth": 10
@@ -530,6 +922,28 @@ window.DULTA_MAPS = {
    "outcome": "Negate a statement with nested quantifiers.",
    "check": "Negate: 'every student passed some exam'.",
    "answer": "Some student passed no exam.",
+   "grade": {
+    "all": [
+     [
+      "some",
+      "there is",
+      "there exists",
+      "exists",
+      "at least one"
+     ],
+     [
+      "no exam",
+      "no exams",
+      "none",
+      "failed every",
+      "failed all",
+      "did not pass any",
+      "didn t pass any",
+      "passed no",
+      "zero exams"
+     ]
+    ]
+   },
    "map": "mathematics",
    "key": "mathematics/logic",
    "depth": 0
@@ -542,6 +956,23 @@ window.DULTA_MAPS = {
    "outcome": "Write a proof by induction.",
    "check": "Why do 1,000 checked cases not prove that n² + n + 41 is always prime?",
    "answer": "Only a general argument covers all n; and indeed n = 40 gives 1681 = 41².",
+   "grade": {
+    "all": [
+     [
+      "general",
+      "all n",
+      "every n",
+      "counterexample",
+      "counter example",
+      "40",
+      "41",
+      "1681",
+      "argument",
+      "proof",
+      "infinitely"
+     ]
+    ]
+   },
    "map": "mathematics",
    "key": "mathematics/proof",
    "depth": 1
@@ -554,6 +985,29 @@ window.DULTA_MAPS = {
    "outcome": "Find the inverse of a function and state its domain.",
    "check": "Is x ↦ x² from ℝ to ℝ invertible?",
    "answer": "No: it is not one-to-one (2 and −2 map to 4). Restrict to x ≥ 0.",
+   "grade": {
+    "all": [
+     [
+      "no",
+      "not",
+      "doesn t",
+      "does not",
+      "isn t",
+      "is not",
+      "never",
+      "false"
+     ],
+     [
+      "one to one",
+      "injective",
+      "2",
+      "two",
+      "both",
+      "negative",
+      "restrict*"
+     ]
+    ]
+   },
    "map": "mathematics",
    "key": "mathematics/functions",
    "depth": 1
@@ -566,6 +1020,19 @@ window.DULTA_MAPS = {
    "outcome": "Prove 0.999… = 1 two different ways.",
    "check": "What number lies strictly between 0.999… and 1?",
    "answer": "None, so they are equal; 0.999… is the limit of 0.9, 0.99, … which is 1.",
+   "grade": {
+    "all": [
+     [
+      "none",
+      "no number",
+      "nothing",
+      "equal",
+      "same",
+      "no such",
+      "there is no"
+     ]
+    ]
+   },
    "map": "mathematics",
    "key": "mathematics/misc-point9",
    "depth": 2
@@ -578,6 +1045,14 @@ window.DULTA_MAPS = {
    "outcome": "Evaluate a limit and justify it with ε–δ for a linear function.",
    "check": "What is lim(x→0) sin(x)/x?",
    "answer": "1, although the function is undefined at 0.",
+   "grade": {
+    "all": [
+     [
+      "1",
+      "one"
+     ]
+    ]
+   },
    "map": "mathematics",
    "key": "mathematics/limits",
    "depth": 2
@@ -590,6 +1065,13 @@ window.DULTA_MAPS = {
    "outcome": "Differentiate with the chain rule and interpret the result as a rate.",
    "check": "Position is x(t) = 3t². What is the velocity at t = 2?",
    "answer": "x′(t) = 6t, so 12 (units per time).",
+   "grade": {
+    "numbers": [
+     [
+      12
+     ]
+    ]
+   },
    "map": "mathematics",
    "key": "mathematics/derivatives",
    "depth": 3
@@ -602,6 +1084,13 @@ window.DULTA_MAPS = {
    "outcome": "Compute a definite integral and interpret it as accumulated change.",
    "check": "Velocity is constant at 5 m/s for 4 s. What does ∫v dt give?",
    "answer": "20 m of displacement.",
+   "grade": {
+    "numbers": [
+     [
+      20
+     ]
+    ]
+   },
    "map": "mathematics",
    "key": "mathematics/integrals",
    "depth": 3
@@ -614,6 +1103,15 @@ window.DULTA_MAPS = {
    "outcome": "Use the FTC to differentiate an integral with a variable upper limit.",
    "check": "What is d/dx ∫₀ˣ cos(t) dt?",
    "answer": "cos(x).",
+   "grade": {
+    "all": [
+     [
+      "cos x",
+      "cos",
+      "cosine"
+     ]
+    ]
+   },
    "map": "mathematics",
    "key": "mathematics/ftc",
    "depth": 4
@@ -626,6 +1124,27 @@ window.DULTA_MAPS = {
    "outcome": "Test a series for convergence; write a Taylor polynomial.",
    "check": "Does 1 + 1/2 + 1/3 + 1/4 + … converge?",
    "answer": "No, the harmonic series diverges, though its terms go to 0.",
+   "grade": {
+    "all": [
+     [
+      "no",
+      "not",
+      "doesn t",
+      "does not",
+      "isn t",
+      "is not",
+      "never",
+      "false",
+      "diverge*",
+      "infinite",
+      "infinity",
+      "grows without bound"
+     ]
+    ],
+    "none": [
+     "converges to"
+    ]
+   },
    "map": "mathematics",
    "key": "mathematics/series",
    "depth": 5
@@ -638,6 +1157,18 @@ window.DULTA_MAPS = {
    "outcome": "Solve a linear system and interpret it as a matrix equation.",
    "check": "Is the set of solutions to Ax = 0 always a vector space?",
    "answer": "Yes: it is the null space, closed under addition and scaling.",
+   "grade": {
+    "all": [
+     [
+      "yes",
+      "null space",
+      "nullspace",
+      "kernel",
+      "always",
+      "it is"
+     ]
+    ]
+   },
    "map": "mathematics",
    "key": "mathematics/linalg",
    "depth": 2
@@ -650,6 +1181,22 @@ window.DULTA_MAPS = {
    "outcome": "Give a 2×2 counterexample to AB = BA.",
    "check": "Rotate then reflect versus reflect then rotate: same result?",
    "answer": "Generally not; composition of linear maps is order-dependent.",
+   "grade": {
+    "all": [
+     [
+      "no",
+      "not",
+      "doesn t",
+      "does not",
+      "isn t",
+      "is not",
+      "never",
+      "false",
+      "different",
+      "order"
+     ]
+    ]
+   },
    "map": "mathematics",
    "key": "mathematics/misc-commute",
    "depth": 2
@@ -662,6 +1209,18 @@ window.DULTA_MAPS = {
    "outcome": "Diagonalize a 2×2 matrix.",
    "check": "What are the eigenvalues of [[2,0],[0,3]]?",
    "answer": "2 and 3.",
+   "grade": {
+    "all": [
+     [
+      "2",
+      "two"
+     ],
+     [
+      "3",
+      "three"
+     ]
+    ]
+   },
    "map": "mathematics",
    "key": "mathematics/eigen",
    "depth": 3
@@ -674,6 +1233,15 @@ window.DULTA_MAPS = {
    "outcome": "Multiply complex numbers in polar form.",
    "check": "What does multiplying by i do geometrically?",
    "answer": "It rotates by 90° counter-clockwise.",
+   "grade": {
+    "all": [
+     [
+      "90",
+      "rotat*",
+      "quarter"
+     ]
+    ]
+   },
    "map": "mathematics",
    "key": "mathematics/complex",
    "depth": 2
@@ -686,6 +1254,17 @@ window.DULTA_MAPS = {
    "outcome": "Solve x″ = −ω²x and interpret the solution.",
    "check": "What functions satisfy y′ = y?",
    "answer": "y = Ce^x.",
+   "grade": {
+    "all": [
+     [
+      "e x",
+      "exp",
+      "ce",
+      "exponential",
+      "e to the x"
+     ]
+    ]
+   },
    "map": "mathematics",
    "key": "mathematics/diffeq",
    "depth": 5
@@ -698,6 +1277,19 @@ window.DULTA_MAPS = {
    "outcome": "Find the direction of steepest ascent with the gradient.",
    "check": "What does ∇f point toward?",
    "answer": "The direction of fastest increase of f.",
+   "grade": {
+    "all": [
+     [
+      "fastest",
+      "steepest",
+      "greatest",
+      "maximum",
+      "most",
+      "increase*",
+      "ascent"
+     ]
+    ]
+   },
    "map": "mathematics",
    "key": "mathematics/multivar",
    "depth": 4
@@ -710,6 +1302,18 @@ window.DULTA_MAPS = {
    "outcome": "Apply the divergence theorem to a flux integral.",
    "check": "What does a nonzero divergence at a point mean physically?",
    "answer": "A source or sink of the field there.",
+   "grade": {
+    "all": [
+     [
+      "source*",
+      "sink*",
+      "flowing out",
+      "outward",
+      "net flow",
+      "flux"
+     ]
+    ]
+   },
    "map": "mathematics",
    "key": "mathematics/vectorcalc",
    "depth": 5
@@ -723,6 +1327,13 @@ window.DULTA_MAPS = {
    "check": "Which harmonics make up a square wave?",
    "answer": "Odd harmonics only, with amplitudes falling as 1/n.",
    "lab": "fourier",
+   "grade": {
+    "all": [
+     [
+      "odd"
+     ]
+    ]
+   },
    "map": "mathematics",
    "key": "mathematics/fourier",
    "depth": 6
@@ -735,6 +1346,15 @@ window.DULTA_MAPS = {
    "outcome": "Apply Bayes' theorem to a diagnostic-test problem.",
    "check": "A test is 99% accurate for a disease with 1% prevalence. You test positive. Roughly how likely is it you have it?",
    "answer": "About 50%: false positives from the 99% healthy equal the true positives.",
+   "grade": {
+    "numbers": [
+     [
+      50,
+      0.5
+     ]
+    ],
+    "tol": 0.1
+   },
    "map": "mathematics",
    "key": "mathematics/probability",
    "depth": 1
@@ -747,6 +1367,14 @@ window.DULTA_MAPS = {
    "outcome": "Explain independence with a coin-flip sequence.",
    "check": "A fair coin lands heads 6 times running. Probability of heads next?",
    "answer": "Still 1/2; the coin has no memory.",
+   "grade": {
+    "numbers": [
+     [
+      0.5,
+      50
+     ]
+    ]
+   },
    "map": "mathematics",
    "key": "mathematics/misc-gambler",
    "depth": 1
@@ -759,6 +1387,23 @@ window.DULTA_MAPS = {
    "outcome": "Interpret a confidence interval correctly.",
    "check": "Does a p-value of 0.03 mean a 3% chance the null hypothesis is true?",
    "answer": "No: it is the probability of data at least this extreme assuming the null is true.",
+   "grade": {
+    "all": [
+     [
+      "no",
+      "not",
+      "doesn t",
+      "does not",
+      "isn t",
+      "is not",
+      "never",
+      "false"
+     ]
+    ],
+    "none": [
+     "yes"
+    ]
+   },
    "map": "mathematics",
    "key": "mathematics/statistics",
    "depth": 4
@@ -771,6 +1416,21 @@ window.DULTA_MAPS = {
    "outcome": "Name a confounder for a given correlation.",
    "check": "Ice-cream sales correlate with drownings. Why?",
    "answer": "A confounder: hot weather raises both.",
+   "grade": {
+    "all": [
+     [
+      "weather",
+      "heat",
+      "summer",
+      "hot",
+      "temperature",
+      "confound*",
+      "third",
+      "season",
+      "sun*"
+     ]
+    ]
+   },
    "map": "mathematics",
    "key": "mathematics/misc-corr",
    "depth": 4
@@ -783,6 +1443,18 @@ window.DULTA_MAPS = {
    "outcome": "Predict a periodic trend and explain it with effective nuclear charge.",
    "check": "Why does atomic radius decrease across a period?",
    "answer": "Nuclear charge rises while electrons enter the same shell, so they are pulled in more strongly.",
+   "grade": {
+    "all": [
+     [
+      "nuclear charge",
+      "proton*",
+      "charge",
+      "pull*",
+      "attract*",
+      "effective"
+     ]
+    ]
+   },
    "map": "chemistry",
    "key": "chemistry/atoms",
    "depth": 0
@@ -795,6 +1467,14 @@ window.DULTA_MAPS = {
    "outcome": "Write the electron configuration of a transition element.",
    "check": "What is the electron configuration of oxygen?",
    "answer": "1s² 2s² 2p⁴.",
+   "grade": {
+    "all": [
+     [
+      "2p4",
+      "2p 4"
+     ]
+    ]
+   },
    "map": "chemistry",
    "key": "chemistry/orbitals",
    "depth": 1
@@ -807,6 +1487,14 @@ window.DULTA_MAPS = {
    "outcome": "Find the limiting reagent and theoretical yield.",
    "check": "How many moles are in 36 g of water (M = 18 g/mol)?",
    "answer": "2 mol.",
+   "grade": {
+    "all": [
+     [
+      "2",
+      "two"
+     ]
+    ]
+   },
    "map": "chemistry",
    "key": "chemistry/moles",
    "depth": 1
@@ -819,6 +1507,25 @@ window.DULTA_MAPS = {
    "outcome": "Explain bond energy and predict ionic, covalent or metallic bonding.",
    "check": "Does breaking a chemical bond release or absorb energy?",
    "answer": "It absorbs energy; energy is released when bonds form.",
+   "grade": {
+    "all": [
+     [
+      "absorb*",
+      "costs",
+      "cost",
+      "requires",
+      "input",
+      "endothermic",
+      "takes",
+      "needs",
+      "uses"
+     ]
+    ],
+    "none": [
+     "breaking bonds releases",
+     "breaking releases"
+    ]
+   },
    "map": "chemistry",
    "key": "chemistry/bonding",
    "depth": 2
@@ -831,6 +1538,25 @@ window.DULTA_MAPS = {
    "outcome": "Explain where the energy of ATP hydrolysis comes from.",
    "check": "ATP hydrolysis releases energy. Is that because the broken phosphate bond releases energy?",
    "answer": "No: breaking it costs energy; the products form stronger bonds and are better solvated, so the net change releases energy.",
+   "grade": {
+    "all": [
+     [
+      "no",
+      "not",
+      "doesn t",
+      "does not",
+      "isn t",
+      "is not",
+      "never",
+      "false"
+     ],
+     [
+      "form*",
+      "products",
+      "stronger"
+     ]
+    ]
+   },
    "map": "chemistry",
    "key": "chemistry/misc-atp",
    "depth": 2
@@ -843,6 +1569,27 @@ window.DULTA_MAPS = {
    "outcome": "Predict shape and polarity with VSEPR.",
    "check": "CO₂ has polar bonds. Is the molecule polar?",
    "answer": "No: it is linear, so the bond dipoles cancel.",
+   "grade": {
+    "all": [
+     [
+      "no",
+      "not",
+      "doesn t",
+      "does not",
+      "isn t",
+      "is not",
+      "never",
+      "false",
+      "nonpolar",
+      "non polar"
+     ],
+     [
+      "linear",
+      "cancel*",
+      "symmetric*"
+     ]
+    ]
+   },
    "map": "chemistry",
    "key": "chemistry/shape",
    "depth": 3
@@ -855,6 +1602,15 @@ window.DULTA_MAPS = {
    "outcome": "Rank boiling points by intermolecular forces.",
    "check": "Why does water boil at 100 °C while H₂S, a heavier molecule, boils at −60 °C?",
    "answer": "Water forms strong hydrogen bonds between molecules; H₂S does not.",
+   "grade": {
+    "all": [
+     [
+      "hydrogen bond*",
+      "h bond*",
+      "hydrogen bonding"
+     ]
+    ]
+   },
    "map": "chemistry",
    "key": "chemistry/imf",
    "depth": 4
@@ -867,6 +1623,20 @@ window.DULTA_MAPS = {
    "outcome": "Distinguish a physical from a chemical change at the particle level.",
    "check": "What is inside the bubbles in boiling water?",
    "answer": "Water vapour (H₂O molecules), not hydrogen and oxygen.",
+   "grade": {
+    "all": [
+     [
+      "water vapour",
+      "water vapor",
+      "steam",
+      "h2o",
+      "water molecules",
+      "gaseous water",
+      "vapour",
+      "vapor"
+     ]
+    ]
+   },
    "map": "chemistry",
    "key": "chemistry/misc-boil",
    "depth": 4
@@ -879,6 +1649,15 @@ window.DULTA_MAPS = {
    "outcome": "Use the ideal gas law to find an unknown.",
    "check": "A sealed gas is heated from 300 K to 600 K at constant volume. Pressure?",
    "answer": "It doubles.",
+   "grade": {
+    "all": [
+     [
+      "double*",
+      "2x",
+      "twice"
+     ]
+    ]
+   },
    "map": "chemistry",
    "key": "chemistry/gases",
    "depth": 2
@@ -891,6 +1670,18 @@ window.DULTA_MAPS = {
    "outcome": "Compute ΔH with Hess's law.",
    "check": "What does a negative ΔH mean?",
    "answer": "The reaction is exothermic: it releases heat to the surroundings.",
+   "grade": {
+    "all": [
+     [
+      "exothermic",
+      "releases",
+      "released",
+      "gives off",
+      "heat out",
+      "loses"
+     ]
+    ]
+   },
    "map": "chemistry",
    "key": "chemistry/thermochem",
    "depth": 3
@@ -903,6 +1694,18 @@ window.DULTA_MAPS = {
    "outcome": "Predict spontaneity from ΔH, ΔS and T.",
    "check": "Ice melts spontaneously at 25 °C although melting is endothermic. Why?",
    "answer": "ΔS is positive and TΔS outweighs ΔH at that temperature, so ΔG < 0.",
+   "grade": {
+    "all": [
+     [
+      "entropy",
+      "ts",
+      "t s",
+      "delta s",
+      "disorder",
+      "tds"
+     ]
+    ]
+   },
    "map": "chemistry",
    "key": "chemistry/gibbs",
    "depth": 4
@@ -915,6 +1718,15 @@ window.DULTA_MAPS = {
    "outcome": "Compute concentrations at equilibrium from K and predict shifts.",
    "check": "Adding more reactant to a system at equilibrium does what?",
    "answer": "Shifts it toward products until Q = K again (Le Chatelier).",
+   "grade": {
+    "all": [
+     [
+      "product*",
+      "forward",
+      "right"
+     ]
+    ]
+   },
    "map": "chemistry",
    "key": "chemistry/equilibrium",
    "depth": 5
@@ -927,6 +1739,13 @@ window.DULTA_MAPS = {
    "outcome": "Describe equilibrium at the particle level.",
    "check": "Radioactive iodine is added to a saturated solution in equilibrium with solid iodine. Where does it end up?",
    "answer": "In both the solid and the solution: dissolving and crystallising never stop.",
+   "grade": {
+    "all": [
+     [
+      "both"
+     ]
+    ]
+   },
    "map": "chemistry",
    "key": "chemistry/misc-stop",
    "depth": 5
@@ -939,6 +1758,19 @@ window.DULTA_MAPS = {
    "outcome": "Determine a rate law from initial-rate data.",
    "check": "Why does a 10 °C rise often roughly double a reaction rate?",
    "answer": "Far more molecules then exceed the activation energy (Arrhenius).",
+   "grade": {
+    "all": [
+     [
+      "activation",
+      "more molecules",
+      "energy barrier",
+      "enough energy",
+      "arrhenius",
+      "collision*",
+      "faster"
+     ]
+    ]
+   },
    "map": "chemistry",
    "key": "chemistry/kinetics",
    "depth": 2
@@ -951,6 +1783,20 @@ window.DULTA_MAPS = {
    "outcome": "Separate kinetic from thermodynamic effects.",
    "check": "Does adding a catalyst increase the equilibrium yield?",
    "answer": "No, only how fast equilibrium is reached.",
+   "grade": {
+    "all": [
+     [
+      "no",
+      "not",
+      "doesn t",
+      "does not",
+      "isn t",
+      "is not",
+      "never",
+      "false"
+     ]
+    ]
+   },
    "map": "chemistry",
    "key": "chemistry/misc-catalyst",
    "depth": 2
@@ -963,6 +1809,14 @@ window.DULTA_MAPS = {
    "outcome": "Calculate the pH of a buffer with Henderson–Hasselbalch.",
    "check": "What is the pH of 0.01 M HCl?",
    "answer": "2.",
+   "grade": {
+    "all": [
+     [
+      "2",
+      "two"
+     ]
+    ]
+   },
    "map": "chemistry",
    "key": "chemistry/acidbase",
    "depth": 6
@@ -975,6 +1829,13 @@ window.DULTA_MAPS = {
    "outcome": "Compute a cell potential from standard reduction potentials.",
    "check": "In a galvanic cell, where does oxidation happen?",
    "answer": "At the anode.",
+   "grade": {
+    "all": [
+     [
+      "anode"
+     ]
+    ]
+   },
    "map": "chemistry",
    "key": "chemistry/electrochem",
    "depth": 6
@@ -987,6 +1848,14 @@ window.DULTA_MAPS = {
    "outcome": "Name a molecule and identify its functional groups.",
    "check": "Which functional group defines an alcohol?",
    "answer": "A hydroxyl group (–OH) on an sp³ carbon.",
+   "grade": {
+    "all": [
+     [
+      "hydroxyl",
+      "oh"
+     ]
+    ]
+   },
    "map": "chemistry",
    "key": "chemistry/organic",
    "depth": 4
@@ -999,6 +1868,17 @@ window.DULTA_MAPS = {
    "outcome": "Draw an SN2 mechanism with correct arrows.",
    "check": "In a curly-arrow mechanism, what does the arrow represent?",
    "answer": "The movement of an electron pair, from source (nucleophile or bond) to sink.",
+   "grade": {
+    "all": [
+     [
+      "electron pair*",
+      "pair of electrons",
+      "electrons",
+      "two electrons",
+      "2 electrons"
+     ]
+    ]
+   },
    "map": "chemistry",
    "key": "chemistry/mechanisms",
    "depth": 5
@@ -1011,6 +1891,19 @@ window.DULTA_MAPS = {
    "outcome": "Identify a compound from IR and ¹H NMR data.",
    "check": "A strong IR band near 1700 cm⁻¹ suggests what group?",
    "answer": "A carbonyl (C=O).",
+   "grade": {
+    "all": [
+     [
+      "carbonyl",
+      "c o",
+      "ketone",
+      "aldehyde",
+      "carboxylic",
+      "ester",
+      "amide"
+     ]
+    ]
+   },
    "map": "chemistry",
    "key": "chemistry/spectroscopy",
    "depth": 5
@@ -1023,6 +1916,15 @@ window.DULTA_MAPS = {
    "outcome": "Relate an organelle's structure to its function.",
    "check": "What do mitochondria and chloroplasts have that hints at their bacterial origin?",
    "answer": "Their own circular DNA and ribosomes, and double membranes (endosymbiosis).",
+   "grade": {
+    "all": [
+     [
+      "dna",
+      "ribosome*",
+      "membrane*"
+     ]
+    ]
+   },
    "map": "biology",
    "key": "biology/cell",
    "depth": 1
@@ -1035,6 +1937,13 @@ window.DULTA_MAPS = {
    "outcome": "Identify monomers and bonds for each class.",
    "check": "What bond joins amino acids in a protein?",
    "answer": "The peptide bond.",
+   "grade": {
+    "all": [
+     [
+      "peptide"
+     ]
+    ]
+   },
    "map": "biology",
    "key": "biology/macromolecules",
    "depth": 0
@@ -1047,6 +1956,18 @@ window.DULTA_MAPS = {
    "outcome": "Transcribe and translate a short sequence.",
    "check": "The DNA template strand reads 3′-TAC-5′. What is the mRNA codon, and which amino acid does it code for?",
    "answer": "5′-AUG-3′, methionine (the start codon).",
+   "grade": {
+    "all": [
+     [
+      "aug"
+     ],
+     [
+      "methionine",
+      "met",
+      "start"
+     ]
+    ]
+   },
    "map": "biology",
    "key": "biology/dna",
    "depth": 1
@@ -1059,6 +1980,23 @@ window.DULTA_MAPS = {
    "outcome": "Explain how one amino-acid change can disable a protein.",
    "check": "How does a single amino-acid substitution cause sickle-cell disease?",
    "answer": "Glutamate → valine in haemoglobin makes the proteins stick together and deform red cells.",
+   "grade": {
+    "all": [
+     [
+      "valine",
+      "glutamate",
+      "shape",
+      "stick*",
+      "aggregat*",
+      "polymer*",
+      "fibre*",
+      "fiber*",
+      "sickle",
+      "deform*",
+      "hydrophobic"
+     ]
+    ]
+   },
    "map": "biology",
    "key": "biology/proteins",
    "depth": 2
@@ -1071,6 +2009,19 @@ window.DULTA_MAPS = {
    "outcome": "Interpret a Michaelis–Menten plot with and without an inhibitor.",
    "check": "Why does an enzyme's rate level off at high substrate concentration?",
    "answer": "All active sites are occupied (saturation), so rate reaches Vmax.",
+   "grade": {
+    "all": [
+     [
+      "saturat*",
+      "occupied",
+      "active sites",
+      "all enzymes",
+      "vmax",
+      "busy",
+      "full"
+     ]
+    ]
+   },
    "map": "biology",
    "key": "biology/enzymes",
    "depth": 3
@@ -1083,6 +2034,17 @@ window.DULTA_MAPS = {
    "outcome": "Trace where the ATP from one glucose comes from.",
    "check": "Which stage of aerobic respiration makes most of the ATP?",
    "answer": "Oxidative phosphorylation (electron transport chain and ATP synthase).",
+   "grade": {
+    "all": [
+     [
+      "oxidative",
+      "electron transport",
+      "etc",
+      "atp synthase",
+      "chemiosmo*"
+     ]
+    ]
+   },
    "map": "biology",
    "key": "biology/metabolism",
    "depth": 4
@@ -1095,6 +2057,14 @@ window.DULTA_MAPS = {
    "outcome": "Predict a dihybrid cross ratio.",
    "check": "Two heterozygotes (Aa × Aa) mate. What fraction of offspring show the recessive trait?",
    "answer": "1/4.",
+   "grade": {
+    "numbers": [
+     [
+      0.25,
+      25
+     ]
+    ]
+   },
    "map": "biology",
    "key": "biology/genetics",
    "depth": 2
@@ -1107,6 +2077,20 @@ window.DULTA_MAPS = {
    "outcome": "Separate dominance from allele frequency.",
    "check": "Will a dominant allele spread through a population because it is dominant?",
    "answer": "No: frequency changes through selection, drift and migration, not dominance.",
+   "grade": {
+    "all": [
+     [
+      "no",
+      "not",
+      "doesn t",
+      "does not",
+      "isn t",
+      "is not",
+      "never",
+      "false"
+     ]
+    ]
+   },
    "map": "biology",
    "key": "biology/misc-dominant",
    "depth": 2
@@ -1119,6 +2103,21 @@ window.DULTA_MAPS = {
    "outcome": "Explain antibiotic resistance with variation and selection.",
    "check": "How do bacterial populations become antibiotic-resistant?",
    "answer": "Resistant variants already present survive and reproduce more, so their frequency rises; individuals do not 'adapt'.",
+   "grade": {
+    "all": [
+     [
+      "already",
+      "existing",
+      "selection",
+      "selected",
+      "surviv*",
+      "variation",
+      "mutation*",
+      "variant*",
+      "reproduc*"
+     ]
+    ]
+   },
    "map": "biology",
    "key": "biology/evolution",
    "depth": 3
@@ -1131,6 +2130,20 @@ window.DULTA_MAPS = {
    "outcome": "Rewrite a teleological explanation in selection terms.",
    "check": "'Giraffes grew long necks to reach high leaves.' What is wrong, and how should it be rephrased?",
    "answer": "Need does not cause change; giraffes with longer necks left more offspring, so the trait became common.",
+   "grade": {
+    "all": [
+     [
+      "longer necks",
+      "surviv*",
+      "offspring",
+      "reproduc*",
+      "selection",
+      "variation",
+      "need does not",
+      "need doesn t"
+     ]
+    ]
+   },
    "map": "biology",
    "key": "biology/misc-need",
    "depth": 3
@@ -1143,6 +2156,16 @@ window.DULTA_MAPS = {
    "outcome": "Use Hardy–Weinberg to estimate carrier frequency.",
    "check": "A recessive disease affects 1 in 10,000. Roughly what fraction are carriers?",
    "answer": "q = 0.01, so 2pq ≈ 0.02 (about 1 in 50).",
+   "grade": {
+    "numbers": [
+     [
+      0.02,
+      2,
+      50
+     ]
+    ],
+    "tol": 0.1
+   },
    "map": "biology",
    "key": "biology/popgen",
    "depth": 4
@@ -1155,6 +2178,18 @@ window.DULTA_MAPS = {
    "outcome": "Explain the lac operon's response to lactose and glucose.",
    "check": "Every cell in your body has the same DNA. Why are neurons different from liver cells?",
    "answer": "Different genes are expressed, controlled by transcription factors and epigenetic marks.",
+   "grade": {
+    "all": [
+     [
+      "express*",
+      "transcription factor*",
+      "epigenetic*",
+      "switched",
+      "regulat*",
+      "turned on"
+     ]
+    ]
+   },
    "map": "biology",
    "key": "biology/regulation",
    "depth": 2
@@ -1167,6 +2202,15 @@ window.DULTA_MAPS = {
    "outcome": "Trace a signal from receptor to response.",
    "check": "How can a few hormone molecules cause a large cellular response?",
    "answer": "Signal cascades amplify the signal at each enzymatic step.",
+   "grade": {
+    "all": [
+     [
+      "amplif*",
+      "cascade*",
+      "second messenger*"
+     ]
+    ]
+   },
    "map": "biology",
    "key": "biology/signalling",
    "depth": 3
@@ -1179,6 +2223,14 @@ window.DULTA_MAPS = {
    "outcome": "Explain the phases of an action potential with ion movements.",
    "check": "What causes the rising phase of an action potential?",
    "answer": "Voltage-gated Na⁺ channels open and Na⁺ rushes in.",
+   "grade": {
+    "all": [
+     [
+      "sodium",
+      "na"
+     ]
+    ]
+   },
    "map": "biology",
    "key": "biology/neurons",
    "depth": 4
@@ -1191,6 +2243,13 @@ window.DULTA_MAPS = {
    "outcome": "Diagram a negative-feedback loop for blood glucose.",
    "check": "Blood glucose rises after a meal. What hormone responds and what does it do?",
    "answer": "Insulin, which drives cells to take up glucose and the liver to store it, lowering blood glucose.",
+   "grade": {
+    "all": [
+     [
+      "insulin"
+     ]
+    ]
+   },
    "map": "biology",
    "key": "biology/homeostasis",
    "depth": 4
@@ -1203,6 +2262,13 @@ window.DULTA_MAPS = {
    "outcome": "Explain how a vaccine creates memory.",
    "check": "Why is the second exposure to a pathogen usually milder?",
    "answer": "Memory B and T cells respond faster and more strongly.",
+   "grade": {
+    "all": [
+     [
+      "memory"
+     ]
+    ]
+   },
    "map": "biology",
    "key": "biology/immune",
    "depth": 4
@@ -1215,6 +2281,14 @@ window.DULTA_MAPS = {
    "outcome": "Compute energy available at a higher trophic level.",
    "check": "Roughly what fraction of energy passes from one trophic level to the next?",
    "answer": "About 10%.",
+   "grade": {
+    "numbers": [
+     [
+      10
+     ]
+    ],
+    "tol": 0.05
+   },
    "map": "biology",
    "key": "biology/ecology",
    "depth": 5
@@ -1227,6 +2301,22 @@ window.DULTA_MAPS = {
    "outcome": "Distinguish matter cycling from energy flow.",
    "check": "When a decomposer breaks down a dead tree, is the tree's energy returned to plants?",
    "answer": "No: the nutrients cycle, but the energy is lost as heat.",
+   "grade": {
+    "all": [
+     [
+      "no",
+      "not",
+      "doesn t",
+      "does not",
+      "isn t",
+      "is not",
+      "never",
+      "false",
+      "heat",
+      "lost"
+     ]
+    ]
+   },
    "map": "biology",
    "key": "biology/misc-energycycle",
    "depth": 5
@@ -1239,6 +2329,17 @@ window.DULTA_MAPS = {
    "outcome": "Explain the steps of PCR and how Cas9 finds its target.",
    "check": "After 30 PCR cycles, roughly how many copies come from one template?",
    "answer": "About 2³⁰, around a billion.",
+   "grade": {
+    "all": [
+     [
+      "billion",
+      "2 30",
+      "1073741824",
+      "10 9",
+      "1e9"
+     ]
+    ]
+   },
    "map": "biology",
    "key": "biology/biotech",
    "depth": 3
@@ -1252,6 +2353,17 @@ window.DULTA_MAPS = {
    "check": "An LED needs 20 mA with 2 V across it from a 5 V supply. What series resistor, and what power does it dissipate?",
    "answer": "R = (5 − 2) / 0.02 = 150 Ω; P = 3 V × 0.02 A = 60 mW.",
    "lab": "rc",
+   "grade": {
+    "numbers": [
+     [
+      150
+     ],
+     [
+      60,
+      0.06
+     ]
+    ]
+   },
    "map": "electrical",
    "key": "electrical/ohm",
    "depth": 0
@@ -1264,6 +2376,21 @@ window.DULTA_MAPS = {
    "outcome": "State what is 'across' and what is 'through' for each element.",
    "check": "Is it correct to say '5 volts flows through the resistor'?",
    "answer": "No: 5 V is across the resistor; a current flows through it.",
+   "grade": {
+    "all": [
+     [
+      "no",
+      "not",
+      "doesn t",
+      "does not",
+      "isn t",
+      "is not",
+      "never",
+      "false",
+      "across"
+     ]
+    ]
+   },
    "map": "electrical",
    "key": "electrical/misc-voltflow",
    "depth": 1
@@ -1276,6 +2403,22 @@ window.DULTA_MAPS = {
    "outcome": "Solve a two-node circuit with nodal analysis.",
    "check": "Three wires meet at a node: 2 A in, 0.5 A in, and one unknown. What is the unknown current, and which way?",
    "answer": "2.5 A out of the node (KCL).",
+   "grade": {
+    "numbers": [
+     [
+      2.5
+     ]
+    ],
+    "all": [
+     [
+      "out",
+      "leaving",
+      "leaves",
+      "away",
+      "outward"
+     ]
+    ]
+   },
    "map": "electrical",
    "key": "electrical/kirchhoff",
    "depth": 1
@@ -1288,6 +2431,13 @@ window.DULTA_MAPS = {
    "outcome": "Compute a divider output with and without a load.",
    "check": "Two 10 kΩ resistors divide 10 V. A 10 kΩ load is connected across the bottom one. What is the output?",
    "answer": "3.33 V: the bottom becomes 5 kΩ, so 10 × 5 / 15.",
+   "grade": {
+    "numbers": [
+     [
+      3.33
+     ]
+    ]
+   },
    "map": "electrical",
    "key": "electrical/divider",
    "depth": 2
@@ -1300,6 +2450,16 @@ window.DULTA_MAPS = {
    "outcome": "Reduce a network to its Thévenin equivalent and predict the current into a load.",
    "check": "How do you measure a black box's Thévenin resistance with a meter?",
    "answer": "Measure open-circuit voltage and short-circuit current; R_th = V_oc / I_sc.",
+   "grade": {
+    "all": [
+     [
+      "open*"
+     ],
+     [
+      "short*"
+     ]
+    ]
+   },
    "map": "electrical",
    "key": "electrical/thevenin",
    "depth": 3
@@ -1313,6 +2473,19 @@ window.DULTA_MAPS = {
    "check": "A capacitor charges through a resistor with τ = 1 ms. What fraction of the final voltage has it reached at 1 ms, and when is it 'done'?",
    "answer": "About 63%; after about 5τ = 5 ms it is above 99%.",
    "lab": "rc",
+   "grade": {
+    "numbers": [
+     [
+      63
+     ]
+    ],
+    "all": [
+     [
+      "5",
+      "five"
+     ]
+    ]
+   },
    "map": "electrical",
    "key": "electrical/rc",
    "depth": 2
@@ -1325,6 +2498,20 @@ window.DULTA_MAPS = {
    "outcome": "Compute the impedance of a series RC at a given frequency.",
    "check": "What happens to a capacitor's impedance as frequency rises?",
    "answer": "It falls (|Z| = 1/ωC): capacitors pass high frequencies and block DC.",
+   "grade": {
+    "all": [
+     [
+      "fall*",
+      "decreas*",
+      "drops",
+      "lower",
+      "less",
+      "goes down",
+      "smaller",
+      "reduc*"
+     ]
+    ]
+   },
    "map": "electrical",
    "key": "electrical/phasors",
    "depth": 3
@@ -1338,6 +2525,13 @@ window.DULTA_MAPS = {
    "check": "What is the cutoff frequency of an RC low-pass with R = 1 kΩ, C = 1 µF?",
    "answer": "f = 1 / (2πRC) ≈ 159 Hz.",
    "lab": "fourier",
+   "grade": {
+    "numbers": [
+     [
+      159
+     ]
+    ]
+   },
    "map": "electrical",
    "key": "electrical/filters",
    "depth": 4
@@ -1350,6 +2544,20 @@ window.DULTA_MAPS = {
    "outcome": "Analyse a half-wave rectifier with a smoothing capacitor.",
    "check": "Why is a diode placed across a relay coil driven by a transistor?",
    "answer": "To give the coil's stored energy a path when switched off, clamping the voltage spike that would destroy the transistor.",
+   "grade": {
+    "all": [
+     [
+      "spike*",
+      "flyback",
+      "back emf",
+      "inductive",
+      "kick*",
+      "clamp*",
+      "freewheel*",
+      "energy"
+     ]
+    ]
+   },
    "map": "electrical",
    "key": "electrical/diodes",
    "depth": 2
@@ -1362,6 +2570,19 @@ window.DULTA_MAPS = {
    "outcome": "Use a MOSFET to switch a load from a microcontroller pin.",
    "check": "Why use a transistor rather than driving a 1 A motor straight from a microcontroller pin?",
    "answer": "A pin can source only ~20–40 mA; the transistor lets the pin's tiny signal switch the large current.",
+   "grade": {
+    "all": [
+     [
+      "current",
+      "ma",
+      "milliamp*",
+      "too much",
+      "can t supply",
+      "cannot",
+      "limit*"
+     ]
+    ]
+   },
    "map": "electrical",
    "key": "electrical/transistors",
    "depth": 3
@@ -1374,6 +2595,14 @@ window.DULTA_MAPS = {
    "outcome": "Design an inverting amplifier with a given gain.",
    "check": "An inverting amplifier has R_in = 1 kΩ and R_f = 10 kΩ. What is its gain?",
    "answer": "−10 (gain = −R_f / R_in).",
+   "grade": {
+    "numbers": [
+     [
+      -10,
+      10
+     ]
+    ]
+   },
    "map": "electrical",
    "key": "electrical/opamps",
    "depth": 4
@@ -1386,6 +2615,17 @@ window.DULTA_MAPS = {
    "outcome": "Build a half-adder from gates.",
    "check": "Which two gates make a half-adder, and for which outputs?",
    "answer": "XOR gives the sum bit; AND gives the carry.",
+   "grade": {
+    "all": [
+     [
+      "xor",
+      "exclusive"
+     ],
+     [
+      "and"
+     ]
+    ]
+   },
    "map": "electrical",
    "key": "electrical/boolean",
    "depth": 4
@@ -1398,6 +2638,19 @@ window.DULTA_MAPS = {
    "outcome": "Design a 2-bit counter from D flip-flops.",
    "check": "What does a D flip-flop do on a rising clock edge?",
    "answer": "It copies D to Q and holds that value until the next rising edge.",
+   "grade": {
+    "all": [
+     [
+      "cop*",
+      "d to q",
+      "stores",
+      "latch*",
+      "captur*",
+      "sampl*",
+      "holds"
+     ]
+    ]
+   },
    "map": "electrical",
    "key": "electrical/sequential",
    "depth": 5
@@ -1410,6 +2663,13 @@ window.DULTA_MAPS = {
    "outcome": "Predict the alias frequency of an undersampled sine.",
    "check": "A 900 Hz tone is sampled at 1000 Hz. What frequency appears?",
    "answer": "100 Hz: it aliases to |1000 − 900|.",
+   "grade": {
+    "numbers": [
+     [
+      100
+     ]
+    ]
+   },
    "map": "electrical",
    "key": "electrical/misc-faster",
    "depth": 5
@@ -1422,6 +2682,13 @@ window.DULTA_MAPS = {
    "outcome": "Choose sample rate and resolution for a sensor.",
    "check": "A 10-bit ADC with a 3.3 V reference reads 512. What voltage is that?",
    "answer": "About 1.65 V (512 / 1024 × 3.3).",
+   "grade": {
+    "numbers": [
+     [
+      1.65
+     ]
+    ]
+   },
    "map": "electrical",
    "key": "electrical/sampling",
    "depth": 5
@@ -1434,6 +2701,17 @@ window.DULTA_MAPS = {
    "outcome": "Derive the transfer function of an RC circuit.",
    "check": "What property lets you predict an LTI system's response to any input from its impulse response?",
    "answer": "Superposition plus time invariance: the output is the convolution of input and impulse response.",
+   "grade": {
+    "all": [
+     [
+      "superposition",
+      "linear*",
+      "time invarian*",
+      "convolution",
+      "convolv*"
+     ]
+    ]
+   },
    "map": "electrical",
    "key": "electrical/signals",
    "depth": 5
@@ -1446,6 +2724,15 @@ window.DULTA_MAPS = {
    "outcome": "Tune a PID loop and explain the effect of each term.",
    "check": "A P-only controller leaves a steady error. Which term removes it?",
    "answer": "The integral term, which keeps growing while any error remains.",
+   "grade": {
+    "all": [
+     [
+      "integral",
+      "i term",
+      "ki"
+     ]
+    ]
+   },
    "map": "electrical",
    "key": "electrical/control",
    "depth": 6
@@ -1458,6 +2745,18 @@ window.DULTA_MAPS = {
    "outcome": "Trace the complete return path of a current.",
    "check": "Current flows from a battery through a lamp to 'ground'. Where does it go next?",
    "answer": "Back to the battery's negative terminal: ground is part of the loop, not a sink.",
+   "grade": {
+    "all": [
+     [
+      "battery",
+      "negative",
+      "back",
+      "source",
+      "return*",
+      "loop"
+     ]
+    ]
+   },
    "map": "electrical",
    "key": "electrical/misc-ground",
    "depth": 1
@@ -1471,6 +2770,19 @@ window.DULTA_MAPS = {
    "check": "Write the expression that clears bit 3 of x and leaves every other bit alone.",
    "answer": "x &= ~(1 << 3).",
    "lab": "mcu",
+   "grade": {
+    "code": [
+     "&=~(1<<3)",
+     "&~(1<<3)",
+     "&=~8",
+     "&~8",
+     "&=0xf7",
+     "&0xf7",
+     "&=~0x08",
+     "&=~0x8",
+     "&=~(0x08)"
+    ]
+   },
    "map": "embedded",
    "key": "embedded/binary",
    "depth": 0
@@ -1484,6 +2796,20 @@ window.DULTA_MAPS = {
    "check": "x = 0b00100000. What is x & (1 << 5), and is (x & (1 << 5)) == 1 true?",
    "answer": "32 (0b00100000); the comparison is false. Test with != 0 instead.",
    "lab": "mcu",
+   "grade": {
+    "numbers": [
+     [
+      32
+     ]
+    ],
+    "all": [
+     [
+      "false",
+      "no",
+      "not"
+     ]
+    ]
+   },
    "map": "embedded",
    "key": "embedded/misc-bittest",
    "depth": 0
@@ -1496,6 +2822,19 @@ window.DULTA_MAPS = {
    "outcome": "Read a block diagram and say where code, variables and peripherals live.",
    "check": "Where does a global variable live, and where does the program's code live?",
    "answer": "The variable is in RAM (SRAM); the code is in flash.",
+   "grade": {
+    "all": [
+     [
+      "ram",
+      "sram"
+     ],
+     [
+      "flash",
+      "rom",
+      "program memory"
+     ]
+    ]
+   },
    "map": "embedded",
    "key": "embedded/arch",
    "depth": 0
@@ -1509,6 +2848,16 @@ window.DULTA_MAPS = {
    "check": "On an AVR, which register makes PB5 an output, and which drives it high?",
    "answer": "Set bit 5 of DDRB to make it an output; set bit 5 of PORTB to drive it high.",
    "lab": "mcu",
+   "grade": {
+    "all": [
+     [
+      "ddrb"
+     ],
+     [
+      "portb"
+     ]
+    ]
+   },
    "map": "embedded",
    "key": "embedded/registers",
    "depth": 1
@@ -1522,6 +2871,20 @@ window.DULTA_MAPS = {
    "check": "A button connects the pin to ground, with a pull-up enabled. What does the pin read when pressed, and when released?",
    "answer": "0 when pressed, 1 when released (active-low).",
    "lab": "mcu",
+   "grade": {
+    "all": [
+     [
+      "0",
+      "zero",
+      "low"
+     ],
+     [
+      "1",
+      "one",
+      "high"
+     ]
+    ]
+   },
    "map": "embedded",
    "key": "embedded/gpio",
    "depth": 2
@@ -1534,6 +2897,19 @@ window.DULTA_MAPS = {
    "outcome": "Explain and fix a floating input.",
    "check": "A button pin with no pull resistor reads random values when released. Why?",
    "answer": "It floats: nothing drives it, so stray charge and noise decide the level. Add a pull-up or pull-down.",
+   "grade": {
+    "all": [
+     [
+      "float*",
+      "nothing drives",
+      "noise",
+      "undriven",
+      "not connected",
+      "undefined",
+      "antenna"
+     ]
+    ]
+   },
    "map": "embedded",
    "key": "embedded/misc-float",
    "depth": 2
@@ -1547,6 +2923,19 @@ window.DULTA_MAPS = {
    "check": "Why is `if (millis() - last >= 500)` preferred to `delay(500)`?",
    "answer": "It never stops the loop, so other tasks (buttons, sensors) keep running; delay() blocks everything.",
    "lab": "mcu",
+   "grade": {
+    "all": [
+     [
+      "block*",
+      "freez*",
+      "stops",
+      "halts",
+      "nothing else",
+      "other tasks",
+      "responsive"
+     ]
+    ]
+   },
    "map": "embedded",
    "key": "embedded/timing",
    "depth": 3
@@ -1559,6 +2948,22 @@ window.DULTA_MAPS = {
    "outcome": "Find the missed-input bug caused by delay().",
    "check": "A loop calls delay(1000) and then reads a button. A 200 ms press happens during the delay. Is it seen?",
    "answer": "No: the button is only read between delays, so short presses are missed.",
+   "grade": {
+    "all": [
+     [
+      "no",
+      "not",
+      "doesn t",
+      "does not",
+      "isn t",
+      "is not",
+      "never",
+      "false",
+      "missed",
+      "miss*"
+     ]
+    ]
+   },
    "map": "embedded",
    "key": "embedded/misc-delay",
    "depth": 3
@@ -1572,6 +2977,20 @@ window.DULTA_MAPS = {
    "check": "A button bounces for 5 ms. A naive edge counter registers 7 presses for one push. What is the simplest fix?",
    "answer": "Accept a new state only after it has been stable for longer than the bounce (e.g. 20 ms).",
    "lab": "mcu",
+   "grade": {
+    "all": [
+     [
+      "stable",
+      "settle*",
+      "wait*",
+      "delay",
+      "ignore*",
+      "time*",
+      "filter*",
+      "debounc*"
+     ]
+    ]
+   },
    "map": "embedded",
    "key": "embedded/debounce",
    "depth": 4
@@ -1584,6 +3003,13 @@ window.DULTA_MAPS = {
    "outcome": "Compute a prescaler and compare value for a target period.",
    "check": "A 16 MHz clock with prescaler 64 drives a timer. How many ticks make 1 ms?",
    "answer": "250 (16,000,000 / 64 = 250,000 ticks per second).",
+   "grade": {
+    "numbers": [
+     [
+      250
+     ]
+    ]
+   },
    "map": "embedded",
    "key": "embedded/timers",
    "depth": 2
@@ -1597,6 +3023,23 @@ window.DULTA_MAPS = {
    "check": "A 5 V PWM signal at 25% duty drives an LED. What average voltage does it see, and why must the frequency be high?",
    "answer": "1.25 V on average; above roughly 100 Hz the eye averages it instead of seeing flicker.",
    "lab": "mcu",
+   "grade": {
+    "numbers": [
+     [
+      1.25
+     ]
+    ],
+    "all": [
+     [
+      "flicker*",
+      "eye",
+      "persistence",
+      "see*",
+      "average*",
+      "blink*"
+     ]
+    ]
+   },
    "map": "embedded",
    "key": "embedded/pwm",
    "depth": 4
@@ -1609,6 +3052,21 @@ window.DULTA_MAPS = {
    "outcome": "Write a short ISR that sets a flag for the main loop.",
    "check": "Why should an interrupt service routine be short?",
    "answer": "While it runs, other interrupts and the main loop wait; long ISRs cause missed events and jitter.",
+   "grade": {
+    "all": [
+     [
+      "block*",
+      "wait*",
+      "miss*",
+      "latency",
+      "jitter",
+      "delay*",
+      "other interrupts",
+      "main loop",
+      "holds up"
+     ]
+    ]
+   },
    "map": "embedded",
    "key": "embedded/interrupts",
    "depth": 3
@@ -1621,6 +3079,13 @@ window.DULTA_MAPS = {
    "outcome": "Share a counter between an ISR and main safely.",
    "check": "A main loop waits on a flag set by an ISR, but never sees it change. Likely cause?",
    "answer": "The flag is not volatile, so the compiler hoisted the read out of the loop.",
+   "grade": {
+    "all": [
+     [
+      "volatile"
+     ]
+    ]
+   },
    "map": "embedded",
    "key": "embedded/misc-volatile",
    "depth": 3
@@ -1633,6 +3098,15 @@ window.DULTA_MAPS = {
    "outcome": "Convert a raw ADC reading to temperature for a linear sensor.",
    "check": "A sensor outputs 10 mV/°C, read by a 10-bit ADC with a 5 V reference. The reading is 61. Temperature?",
    "answer": "61 × 5 / 1024 ≈ 0.298 V, so about 30 °C.",
+   "grade": {
+    "numbers": [
+     [
+      30,
+      29.8
+     ]
+    ],
+    "tol": 0.03
+   },
    "map": "embedded",
    "key": "embedded/adc",
    "depth": 2
@@ -1645,6 +3119,13 @@ window.DULTA_MAPS = {
    "outcome": "Configure a UART and print debugging output.",
    "check": "At 9600 baud with 8N1 framing, roughly how many bytes per second can be sent?",
    "answer": "960 (10 bits per byte including start and stop).",
+   "grade": {
+    "numbers": [
+     [
+      960
+     ]
+    ]
+   },
    "map": "embedded",
    "key": "embedded/uart",
    "depth": 2
@@ -1657,6 +3138,19 @@ window.DULTA_MAPS = {
    "outcome": "Read a register from an I²C sensor.",
    "check": "Why do I²C lines need pull-up resistors?",
    "answer": "Devices only pull the lines low (open-drain); the resistors return them high.",
+   "grade": {
+    "all": [
+     [
+      "open drain",
+      "open collector",
+      "pull low",
+      "only pull",
+      "pull down",
+      "drive low",
+      "only drive"
+     ]
+    ]
+   },
    "map": "embedded",
    "key": "embedded/buses",
    "depth": 3
@@ -1669,6 +3163,19 @@ window.DULTA_MAPS = {
    "outcome": "Model a traffic light or debouncer as a state machine.",
    "check": "What two things fully define a finite state machine's behaviour?",
    "answer": "Its set of states and its transition rules (current state + input → next state and output).",
+   "grade": {
+    "all": [
+     [
+      "state*"
+     ],
+     [
+      "transition*",
+      "rules",
+      "input*",
+      "next state"
+     ]
+    ]
+   },
    "map": "embedded",
    "key": "embedded/fsm",
    "depth": 5
@@ -1681,6 +3188,20 @@ window.DULTA_MAPS = {
    "outcome": "Split firmware into prioritised tasks and protect shared data with a mutex.",
    "check": "What is priority inversion?",
    "answer": "A high-priority task waits on a resource held by a low-priority task, which is itself preempted by a medium-priority one.",
+   "grade": {
+    "all": [
+     [
+      "low priority",
+      "lower priority",
+      "low"
+     ],
+     [
+      "high priority",
+      "higher priority",
+      "high"
+     ]
+    ]
+   },
    "map": "embedded",
    "key": "embedded/rtos",
    "depth": 6
@@ -1693,6 +3214,15 @@ window.DULTA_MAPS = {
    "outcome": "Estimate battery life from active and sleep currents.",
    "check": "A device draws 10 mA for 1 s every minute and 10 µA otherwise. Average current?",
    "answer": "About 0.177 mA (10 × 1/60 + 0.01 × 59/60).",
+   "grade": {
+    "numbers": [
+     [
+      0.177,
+      177
+     ]
+    ],
+    "tol": 0.03
+   },
    "map": "embedded",
    "key": "embedded/lowpower",
    "depth": 4
@@ -1705,6 +3235,21 @@ window.DULTA_MAPS = {
    "outcome": "Use a logic analyser to decode a failing bus transaction.",
    "check": "Your I²C sensor never answers. What is the first thing to measure?",
    "answer": "That SDA and SCL idle high (pull-ups present) and that the device address is acknowledged, using a scope or logic analyser.",
+   "grade": {
+    "all": [
+     [
+      "pull up*",
+      "pullup*",
+      "idle high",
+      "high",
+      "scope",
+      "logic analy*",
+      "ack*",
+      "address",
+      "oscilloscope"
+     ]
+    ]
+   },
    "map": "embedded",
    "key": "embedded/hwdebug",
    "depth": 4
@@ -1717,6 +3262,13 @@ window.DULTA_MAPS = {
    "outcome": "Find support reactions of a loaded beam.",
    "check": "A 4 m beam on supports at each end carries 1000 N at its middle. What is each reaction?",
    "answer": "500 N each, by symmetry (ΣF = 0, ΣM = 0).",
+   "grade": {
+    "numbers": [
+     [
+      500
+     ]
+    ]
+   },
    "map": "mechanical",
    "key": "mechanical/statics",
    "depth": 0
@@ -1729,6 +3281,18 @@ window.DULTA_MAPS = {
    "outcome": "Find member forces by the method of joints.",
    "check": "Why do truss members carry only axial force?",
    "answer": "They are two-force members: pinned at both ends and loaded only at joints, so the force must lie along the member.",
+   "grade": {
+    "all": [
+     [
+      "two force",
+      "2 force",
+      "pinned",
+      "pin*",
+      "joints",
+      "axial"
+     ]
+    ]
+   },
    "map": "mechanical",
    "key": "mechanical/trusses",
    "depth": 1
@@ -1741,6 +3305,14 @@ window.DULTA_MAPS = {
    "outcome": "Compute the elongation of a loaded rod.",
    "check": "A steel rod (E = 200 GPa) carries 100 MPa of stress. What is its strain?",
    "answer": "0.0005 (100 MPa / 200 GPa).",
+   "grade": {
+    "numbers": [
+     [
+      0.0005,
+      500
+     ]
+    ]
+   },
    "map": "mechanical",
    "key": "mechanical/stress",
    "depth": 1
@@ -1753,6 +3325,23 @@ window.DULTA_MAPS = {
    "outcome": "Distinguish stiffness, strength and toughness with examples.",
    "check": "Which is stiffer, aluminium or a typical steel, and is the stiffer one always stronger?",
    "answer": "Steel (~200 vs ~70 GPa); but a high-strength aluminium alloy can out-strengthen a mild steel. Stiffness is not strength.",
+   "grade": {
+    "all": [
+     [
+      "steel"
+     ],
+     [
+      "no",
+      "not",
+      "doesn t",
+      "does not",
+      "isn t",
+      "is not",
+      "never",
+      "false"
+     ]
+    ]
+   },
    "map": "mechanical",
    "key": "mechanical/misc-stiff",
    "depth": 2
@@ -1765,6 +3354,22 @@ window.DULTA_MAPS = {
    "outcome": "Choose a material for a light, stiff beam using a performance index.",
    "check": "For a light, stiff beam in bending, which index is maximised?",
    "answer": "E^(1/2) / ρ (Ashby's index for a beam of given stiffness and minimum mass).",
+   "grade": {
+    "all": [
+     [
+      "e 1 2",
+      "sqrt e",
+      "e 0 5",
+      "e1 2",
+      "root e",
+      "square root"
+     ],
+     [
+      "rho",
+      "density"
+     ]
+    ]
+   },
    "map": "mechanical",
    "key": "mechanical/materials",
    "depth": 2
@@ -1777,6 +3382,19 @@ window.DULTA_MAPS = {
    "outcome": "Compute maximum bending stress with σ = My/I.",
    "check": "Why is a plank much stiffer on edge than flat?",
    "answer": "I = bh³/12 grows with the cube of the depth, so turning the plank on edge multiplies I.",
+   "grade": {
+    "all": [
+     [
+      "cube*",
+      "h3",
+      "h 3",
+      "depth",
+      "moment of inertia",
+      "second moment",
+      "height"
+     ]
+    ]
+   },
    "map": "mechanical",
    "key": "mechanical/beams",
    "depth": 2
@@ -1789,6 +3407,21 @@ window.DULTA_MAPS = {
    "outcome": "Explain the shape of an I-beam from the stress distribution.",
    "check": "Where in a beam's cross-section is bending stress largest?",
    "answer": "At the top and bottom surfaces, farthest from the neutral axis.",
+   "grade": {
+    "all": [
+     [
+      "outer",
+      "surface*",
+      "top",
+      "bottom",
+      "extreme*",
+      "farthest",
+      "furthest",
+      "edge*",
+      "outside"
+     ]
+    ]
+   },
    "map": "mechanical",
    "key": "mechanical/misc-middle",
    "depth": 2
@@ -1801,6 +3434,20 @@ window.DULTA_MAPS = {
    "outcome": "Size a shaft to transmit a given power.",
    "check": "Why are drive shafts often hollow?",
    "answer": "Shear stress is greatest at the outside and the core carries little, so removing it saves much mass and little strength.",
+   "grade": {
+    "all": [
+     [
+      "outer",
+      "outside",
+      "core",
+      "center",
+      "centre",
+      "middle",
+      "little",
+      "radius"
+     ]
+    ]
+   },
    "map": "mechanical",
    "key": "mechanical/torsion",
    "depth": 2
@@ -1813,6 +3460,15 @@ window.DULTA_MAPS = {
    "outcome": "Compute the Euler buckling load of a column.",
    "check": "If you double a column's length, what happens to its Euler buckling load?",
    "answer": "It drops to a quarter (P ∝ 1/L²).",
+   "grade": {
+    "all": [
+     [
+      "quarter",
+      "4",
+      "four"
+     ]
+    ]
+   },
    "map": "mechanical",
    "key": "mechanical/buckling",
    "depth": 3
@@ -1825,6 +3481,17 @@ window.DULTA_MAPS = {
    "outcome": "Estimate fatigue life from an S–N curve and a stress concentration factor.",
    "check": "Why do aircraft windows have rounded corners?",
    "answer": "Sharp corners concentrate stress, starting fatigue cracks (the de Havilland Comet failures).",
+   "grade": {
+    "all": [
+     [
+      "stress concentrat*",
+      "concentrat*",
+      "crack*",
+      "fatigue",
+      "comet"
+     ]
+    ]
+   },
    "map": "mechanical",
    "key": "mechanical/fatigue",
    "depth": 3
@@ -1837,6 +3504,17 @@ window.DULTA_MAPS = {
    "outcome": "Explain why a static test does not prove fatigue life.",
    "check": "A paperclip doesn't break when bent once. Why does it break after bending back and forth?",
    "answer": "Each cycle grows tiny cracks (fatigue) until the remaining section fails.",
+   "grade": {
+    "all": [
+     [
+      "fatigue",
+      "crack*",
+      "cycle*",
+      "repeated",
+      "work harden*"
+     ]
+    ]
+   },
    "map": "mechanical",
    "key": "mechanical/misc-once",
    "depth": 3
@@ -1849,6 +3527,23 @@ window.DULTA_MAPS = {
    "outcome": "Compute a natural frequency and choose a design that avoids resonance.",
    "check": "A mass on a spring has a natural frequency of 10 Hz. A motor vibrates it at 10 Hz. What happens, and what are two fixes?",
    "answer": "Resonance (large amplitude). Change stiffness or mass to move the natural frequency, or add damping or isolation.",
+   "grade": {
+    "all": [
+     [
+      "resonan*",
+      "resonat*",
+      "large amplitude"
+     ],
+     [
+      "damp*",
+      "stiffness",
+      "mass",
+      "isolat*",
+      "detun*",
+      "frequency"
+     ]
+    ]
+   },
    "map": "mechanical",
    "key": "mechanical/vibration",
    "depth": 3
@@ -1861,6 +3556,22 @@ window.DULTA_MAPS = {
    "outcome": "Compute a gear train ratio and a linkage's degrees of freedom.",
    "check": "A 20-tooth gear drives a 60-tooth gear. Output speed and torque compared with input?",
    "answer": "One third the speed and three times the torque (ignoring losses).",
+   "grade": {
+    "all": [
+     [
+      "third",
+      "1 3",
+      "slower"
+     ],
+     [
+      "3x",
+      "three times",
+      "triple*",
+      "3 times",
+      "torque"
+     ]
+    ]
+   },
    "map": "mechanical",
    "key": "mechanical/mechanisms",
    "depth": 1
@@ -1873,6 +3584,14 @@ window.DULTA_MAPS = {
    "outcome": "Compute the Carnot efficiency between two temperatures.",
    "check": "What is the maximum efficiency of an engine running between 600 K and 300 K?",
    "answer": "50% (1 − 300/600).",
+   "grade": {
+    "numbers": [
+     [
+      50,
+      0.5
+     ]
+    ]
+   },
    "map": "mechanical",
    "key": "mechanical/thermocycles",
    "depth": 0
@@ -1885,6 +3604,14 @@ window.DULTA_MAPS = {
    "outcome": "Predict laminar or turbulent flow from the Reynolds number.",
    "check": "What does a high Reynolds number indicate?",
    "answer": "Inertia dominates viscosity, so the flow tends to be turbulent.",
+   "grade": {
+    "all": [
+     [
+      "turbulen*",
+      "inertia"
+     ]
+    ]
+   },
    "map": "mechanical",
    "key": "mechanical/fluids",
    "depth": 0
@@ -1897,6 +3624,19 @@ window.DULTA_MAPS = {
    "outcome": "Compute heat loss through a composite wall.",
    "check": "Why does a double-glazed window lose less heat than a single pane?",
    "answer": "The trapped gas layer adds a large thermal resistance in series.",
+   "grade": {
+    "all": [
+     [
+      "gas",
+      "air",
+      "argon",
+      "resistance",
+      "insulat*",
+      "layer",
+      "gap"
+     ]
+    ]
+   },
    "map": "mechanical",
    "key": "mechanical/heat",
    "depth": 1
@@ -1909,6 +3649,19 @@ window.DULTA_MAPS = {
    "outcome": "Choose a fit for a bearing on a shaft and stack up tolerances.",
    "check": "Why specify a tolerance at all instead of the exact size?",
    "answer": "Manufacturing always varies; the tolerance states what variation still works, and tighter costs more.",
+   "grade": {
+    "all": [
+     [
+      "var*",
+      "never exact",
+      "can t",
+      "cannot",
+      "imperfect",
+      "cost*",
+      "manufactur*"
+     ]
+    ]
+   },
    "map": "mechanical",
    "key": "mechanical/tolerances",
    "depth": 3
@@ -1921,6 +3674,19 @@ window.DULTA_MAPS = {
    "outcome": "Revise a part for injection moulding or 3D printing.",
    "check": "Why do injection-moulded parts have draft angles?",
    "answer": "So the part can be ejected from the mould without dragging and damage.",
+   "grade": {
+    "all": [
+     [
+      "eject*",
+      "remov*",
+      "releas*",
+      "out of the mould",
+      "out of the mold",
+      "demould*",
+      "demold*"
+     ]
+    ]
+   },
    "map": "mechanical",
    "key": "mechanical/dfm",
    "depth": 4
@@ -1933,6 +3699,16 @@ window.DULTA_MAPS = {
    "outcome": "Run an FEA, check mesh convergence and compare with a hand calculation.",
    "check": "Your FEA shows a stress 'hot spot' at a sharp re-entrant corner that grows with every mesh refinement. What is happening?",
    "answer": "A stress singularity: the ideal sharp corner has theoretically infinite stress. Add a real fillet radius or judge with a different criterion.",
+   "grade": {
+    "all": [
+     [
+      "singular*",
+      "fillet",
+      "radius",
+      "infinite"
+     ]
+    ]
+   },
    "map": "mechanical",
    "key": "mechanical/fea",
    "depth": 3
@@ -1945,6 +3721,20 @@ window.DULTA_MAPS = {
    "outcome": "Validate an FEA with an independent hand estimate.",
    "check": "Name two independent checks before trusting an FEA result.",
    "answer": "A hand calculation (e.g. beam theory) of the same case, and a mesh-convergence study; also check reactions balance the applied loads.",
+   "grade": {
+    "all": [
+     [
+      "hand",
+      "analytical",
+      "beam theory",
+      "convergence",
+      "mesh",
+      "reaction*",
+      "experiment*",
+      "test*"
+     ]
+    ]
+   },
    "map": "mechanical",
    "key": "mechanical/misc-fea",
    "depth": 3
@@ -1957,6 +3747,15 @@ window.DULTA_MAPS = {
    "outcome": "Chain three commands with pipes to answer a question about a file.",
    "check": "What does `grep -c error log.txt` print?",
    "answer": "The number of lines in log.txt containing 'error'.",
+   "grade": {
+    "all": [
+     [
+      "count",
+      "number",
+      "how many"
+     ]
+    ]
+   },
    "map": "developer",
    "key": "developer/shell",
    "depth": 0
@@ -1970,6 +3769,14 @@ window.DULTA_MAPS = {
    "check": "After `x = 1; for i in 1..3: x = x * 2`, what is x?",
    "answer": "8.",
    "lab": "code",
+   "grade": {
+    "all": [
+     [
+      "8",
+      "eight"
+     ]
+    ]
+   },
    "map": "developer",
    "key": "developer/basics",
    "depth": 0
@@ -1982,6 +3789,14 @@ window.DULTA_MAPS = {
    "outcome": "Trace a sequence of assignments in a memory table.",
    "check": "`a = 1; b = a; a = 2`. What is b?",
    "answer": "1: assignment copies the current value, it does not link the names.",
+   "grade": {
+    "all": [
+     [
+      "1",
+      "one"
+     ]
+    ]
+   },
    "map": "developer",
    "key": "developer/misc-assign",
    "depth": 1
@@ -1994,6 +3809,16 @@ window.DULTA_MAPS = {
    "outcome": "Draw stack and heap for a short program with a function call and a list.",
    "check": "`xs = [1]; ys = xs; ys.append(2)`. What is xs?",
    "answer": "[1, 2]: xs and ys refer to the same list object.",
+   "grade": {
+    "all": [
+     [
+      "1 2",
+      "both",
+      "same list",
+      "same object"
+     ]
+    ]
+   },
    "map": "developer",
    "key": "developer/notional",
    "depth": 1
@@ -2006,6 +3831,14 @@ window.DULTA_MAPS = {
    "outcome": "Find the gap between a stated intent and the code's literal behaviour.",
    "check": "A loop meant to run 10 times is written `for i in range(1, 10)`. How many times does it run?",
    "answer": "9.",
+   "grade": {
+    "all": [
+     [
+      "9",
+      "nine"
+     ]
+    ]
+   },
    "map": "developer",
    "key": "developer/misc-intent",
    "depth": 1
@@ -2019,6 +3852,26 @@ window.DULTA_MAPS = {
    "check": "What is the difference between a parameter and an argument?",
    "answer": "The parameter is the name in the definition; the argument is the value passed at the call.",
    "lab": "code",
+   "grade": {
+    "all": [
+     [
+      "definition",
+      "defined",
+      "declaration",
+      "signature",
+      "name in",
+      "function header"
+     ],
+     [
+      "call*",
+      "value passed",
+      "passed",
+      "actual",
+      "invok*",
+      "value given"
+     ]
+    ]
+   },
    "map": "developer",
    "key": "developer/functions",
    "depth": 2
@@ -2031,6 +3884,18 @@ window.DULTA_MAPS = {
    "outcome": "Branch, commit, and merge a change; recover a lost commit with reflog.",
    "check": "What does a git branch actually store?",
    "answer": "A pointer to a single commit.",
+   "grade": {
+    "all": [
+     [
+      "pointer",
+      "reference",
+      "ref",
+      "commit",
+      "label",
+      "points"
+     ]
+    ]
+   },
    "map": "developer",
    "key": "developer/git",
    "depth": 1
@@ -2043,6 +3908,17 @@ window.DULTA_MAPS = {
    "outcome": "Choose a data structure for a workload and justify its costs.",
    "check": "Why is looking up a key in a hash map usually O(1)?",
    "answer": "The key's hash computes the bucket index directly; no scan is needed.",
+   "grade": {
+    "all": [
+     [
+      "hash*",
+      "bucket",
+      "index",
+      "directly",
+      "comput*"
+     ]
+    ]
+   },
    "map": "developer",
    "key": "developer/datastructs",
    "depth": 3
@@ -2056,6 +3932,23 @@ window.DULTA_MAPS = {
    "check": "What two parts does every terminating recursive function need?",
    "answer": "A base case that returns without recursing, and a recursive case that moves toward it.",
    "lab": "code",
+   "grade": {
+    "all": [
+     [
+      "base case",
+      "base"
+     ],
+     [
+      "recursive",
+      "smaller",
+      "toward*",
+      "progress",
+      "reduc*",
+      "calls itself",
+      "recurs*"
+     ]
+    ]
+   },
    "map": "developer",
    "key": "developer/recursion",
    "depth": 3
@@ -2068,6 +3961,14 @@ window.DULTA_MAPS = {
    "outcome": "Trace fact(3) showing each stack frame.",
    "check": "In fact(3), how many frames are on the stack at the deepest point (with base case n = 0)?",
    "answer": "Four: fact(3), fact(2), fact(1), fact(0).",
+   "grade": {
+    "all": [
+     [
+      "4",
+      "four"
+     ]
+    ]
+   },
    "map": "developer",
    "key": "developer/misc-recursion",
    "depth": 3
@@ -2081,6 +3982,14 @@ window.DULTA_MAPS = {
    "check": "Binary search on 1,000,000 sorted items takes at most about how many comparisons?",
    "answer": "About 20 (log₂ 10⁶ ≈ 20).",
    "lab": "complexity",
+   "grade": {
+    "numbers": [
+     [
+      20
+     ]
+    ],
+    "tol": 0.1
+   },
    "map": "developer",
    "key": "developer/complexity",
    "depth": 4
@@ -2094,6 +4003,20 @@ window.DULTA_MAPS = {
    "check": "In TDD, why must the new test fail before you write the code?",
    "answer": "A test that never failed may not test anything; seeing red proves it can detect the missing behaviour.",
    "lab": "code",
+   "grade": {
+    "all": [
+     [
+      "detect*",
+      "prove*",
+      "can fail",
+      "catch*",
+      "actually test*",
+      "tests something",
+      "red",
+      "fail*"
+     ]
+    ]
+   },
    "map": "developer",
    "key": "developer/testing",
    "depth": 3
@@ -2106,6 +4029,17 @@ window.DULTA_MAPS = {
    "outcome": "Write code that passes a weak test suite yet is wrong.",
    "check": "All 5 tests pass. What can you conclude?",
    "answer": "Only that those 5 cases behave as specified.",
+   "grade": {
+    "all": [
+     [
+      "only",
+      "those",
+      "five",
+      "5",
+      "the cases"
+     ]
+    ]
+   },
    "map": "developer",
    "key": "developer/misc-tests",
    "depth": 3
@@ -2118,6 +4052,18 @@ window.DULTA_MAPS = {
    "outcome": "Bisect a failure to the smallest reproducing case.",
    "check": "What does `git bisect` search for?",
    "answer": "The first commit where a test starts failing, by binary search over history.",
+   "grade": {
+    "all": [
+     [
+      "first",
+      "commit",
+      "introduc*",
+      "broke",
+      "regression",
+      "bad commit"
+     ]
+    ]
+   },
    "map": "developer",
    "key": "developer/debugging",
    "depth": 4
@@ -2130,6 +4076,18 @@ window.DULTA_MAPS = {
    "outcome": "Model a domain so illegal states are unrepresentable.",
    "check": "What does a type checker guarantee about a well-typed program?",
    "answer": "That certain classes of error (e.g. calling a number as a function) cannot occur at run time.",
+   "grade": {
+    "all": [
+     [
+      "error*",
+      "class*",
+      "cannot occur",
+      "can t happen",
+      "certain",
+      "never"
+     ]
+    ]
+   },
    "map": "developer",
    "key": "developer/types",
    "depth": 3
@@ -2142,6 +4100,15 @@ window.DULTA_MAPS = {
    "outcome": "Split a program into modules by the decisions each hides.",
    "check": "By Parnas's criterion, what should a module hide?",
    "answer": "A design decision likely to change.",
+   "grade": {
+    "all": [
+     [
+      "decision*",
+      "likely to change",
+      "change*"
+     ]
+    ]
+   },
    "map": "developer",
    "key": "developer/modules",
    "depth": 4
@@ -2154,6 +4121,18 @@ window.DULTA_MAPS = {
    "outcome": "Rewrite a loop with map, filter and reduce.",
    "check": "What makes a function pure?",
    "answer": "Same output for the same input, with no side effects.",
+   "grade": {
+    "all": [
+     [
+      "same output",
+      "same result",
+      "same input",
+      "deterministic",
+      "no side effect*",
+      "side effect*"
+     ]
+    ]
+   },
    "map": "developer",
    "key": "developer/functional",
    "depth": 4
@@ -2166,6 +4145,20 @@ window.DULTA_MAPS = {
    "outcome": "Identify and fix a race condition.",
    "check": "Two threads each run `count += 1` 1000 times. Why can count end below 2000?",
    "answer": "The read-modify-write is not atomic; interleaved updates overwrite each other.",
+   "grade": {
+    "all": [
+     [
+      "atomic",
+      "race",
+      "interleav*",
+      "overwrit*",
+      "lost update*",
+      "read modify write",
+      "simultaneous*",
+      "at the same time"
+     ]
+    ]
+   },
    "map": "developer",
    "key": "developer/concurrency",
    "depth": 5
@@ -2178,6 +4171,17 @@ window.DULTA_MAPS = {
    "outcome": "Apply Amdahl's law to a partly serial program.",
    "check": "If 50% of a program is serial, what is the best speed-up with infinite cores?",
    "answer": "2× (Amdahl's law).",
+   "grade": {
+    "all": [
+     [
+      "2",
+      "two",
+      "2x",
+      "twice",
+      "double"
+     ]
+    ]
+   },
    "map": "developer",
    "key": "developer/misc-threads",
    "depth": 5
@@ -2190,6 +4194,17 @@ window.DULTA_MAPS = {
    "outcome": "Read an HTTP exchange and explain each part.",
    "check": "What does status 404 mean, and 500?",
    "answer": "404: resource not found (client side). 500: server error.",
+   "grade": {
+    "all": [
+     [
+      "not found"
+     ],
+     [
+      "server",
+      "internal"
+     ]
+    ]
+   },
    "map": "developer",
    "key": "developer/http",
    "depth": 1
@@ -2202,6 +4217,16 @@ window.DULTA_MAPS = {
    "outcome": "Write a join and explain its result set.",
    "check": "What does a transaction's atomicity guarantee?",
    "answer": "All of its changes happen, or none do.",
+   "grade": {
+    "all": [
+     [
+      "all",
+      "none",
+      "nothing",
+      "all or nothing"
+     ]
+    ]
+   },
    "map": "developer",
    "key": "developer/databases",
    "depth": 4
@@ -2214,6 +4239,21 @@ window.DULTA_MAPS = {
    "outcome": "Find and fix an injection vulnerability.",
    "check": "How do parameterized queries prevent SQL injection?",
    "answer": "Input is sent as data, never parsed as SQL.",
+   "grade": {
+    "all": [
+     [
+      "data",
+      "parameter*",
+      "not parsed",
+      "not executed",
+      "separate*",
+      "placeholder*",
+      "escap*",
+      "never parsed",
+      "literal"
+     ]
+    ]
+   },
    "map": "developer",
    "key": "developer/security",
    "depth": 5
@@ -2226,6 +4266,18 @@ window.DULTA_MAPS = {
    "outcome": "Write an ADR with options, decision and consequences.",
    "check": "What does an ADR record that a commit message does not?",
    "answer": "The context, the alternatives considered, and the consequences of the decision.",
+   "grade": {
+    "all": [
+     [
+      "context",
+      "alternative*",
+      "options",
+      "consequence*",
+      "why",
+      "rationale"
+     ]
+    ]
+   },
    "map": "developer",
    "key": "developer/architecture",
    "depth": 6
@@ -2238,6 +4290,17 @@ window.DULTA_MAPS = {
    "outcome": "Apply a named refactoring under test.",
    "check": "What must stay the same during a refactoring?",
    "answer": "Observable behaviour.",
+   "grade": {
+    "all": [
+     [
+      "behavior",
+      "behaviour",
+      "functionality",
+      "output",
+      "what it does"
+     ]
+    ]
+   },
    "map": "developer",
    "key": "developer/review",
    "depth": 4
@@ -2250,6 +4313,18 @@ window.DULTA_MAPS = {
    "outcome": "Write a spec and acceptance test, delegate it, and verify the result independently.",
    "check": "An agent says 'all tests pass'. What do you do before merging?",
    "answer": "Run the tests yourself, read the diff, and check the tests actually exercise the change.",
+   "grade": {
+    "all": [
+     [
+      "run*",
+      "read*",
+      "review*",
+      "verif*",
+      "check*",
+      "diff"
+     ]
+    ]
+   },
    "map": "developer",
    "key": "developer/agents",
    "depth": 5
@@ -2262,6 +4337,21 @@ window.DULTA_MAPS = {
    "outcome": "Construct an acceptance test that catches a plausible but wrong agent answer.",
    "check": "Why can a confident explanation from an agent still be wrong?",
    "answer": "Fluency is not evidence; only execution and checks against the spec are.",
+   "grade": {
+    "all": [
+     [
+      "fluen*",
+      "plausible",
+      "confident",
+      "not evidence",
+      "hallucinat*",
+      "verif*",
+      "can be wrong",
+      "no guarantee",
+      "predict*"
+     ]
+    ]
+   },
    "map": "developer",
    "key": "developer/misc-agent",
    "depth": 5
@@ -2274,6 +4364,18 @@ window.DULTA_MAPS = {
    "outcome": "Find and stop a runaway process and read its service logs.",
    "check": "A service won't start. Which two commands show its status and recent logs under systemd?",
    "answer": "`systemctl status <service>` and `journalctl -u <service>`.",
+   "grade": {
+    "all": [
+     [
+      "systemctl"
+     ],
+     [
+      "journalctl",
+      "logs",
+      "log"
+     ]
+    ]
+   },
    "map": "devops",
    "key": "devops/linux",
    "depth": 0
@@ -2286,6 +4388,16 @@ window.DULTA_MAPS = {
    "outcome": "Trace a failing request from DNS to the service port.",
    "check": "`curl https://api.example.com` fails but `curl https://10.0.0.5` works. What is the likely fault?",
    "answer": "DNS: the name does not resolve to that address.",
+   "grade": {
+    "all": [
+     [
+      "dns",
+      "resolv*",
+      "name resolution",
+      "hosts"
+     ]
+    ]
+   },
    "map": "devops",
    "key": "devops/networking",
    "depth": 1
@@ -2298,6 +4410,17 @@ window.DULTA_MAPS = {
    "outcome": "Write a Dockerfile and explain each layer's cache behaviour.",
    "check": "Why copy dependency manifests and install them before copying the source code in a Dockerfile?",
    "answer": "Layers are cached: dependencies change rarely, so code edits don't force a reinstall.",
+   "grade": {
+    "all": [
+     [
+      "cache*",
+      "caching",
+      "layer*",
+      "reinstall*",
+      "rebuild*"
+     ]
+    ]
+   },
    "map": "devops",
    "key": "devops/containers",
    "depth": 1
@@ -2310,6 +4433,21 @@ window.DULTA_MAPS = {
    "outcome": "Explain what a container shares with its host.",
    "check": "Can a Linux container run a Windows kernel driver on a Linux host?",
    "answer": "No: containers share the host's kernel; there is no separate guest kernel.",
+   "grade": {
+    "all": [
+     [
+      "no",
+      "not",
+      "doesn t",
+      "does not",
+      "isn t",
+      "is not",
+      "never",
+      "false",
+      "kernel"
+     ]
+    ]
+   },
    "map": "devops",
    "key": "devops/misc-vm",
    "depth": 1
@@ -2322,6 +4460,27 @@ window.DULTA_MAPS = {
    "outcome": "Write a CI pipeline that builds, tests and fails fast.",
    "check": "What does 'integrate continuously' actually require of developers?",
    "answer": "Merging small changes to the main line at least daily, each verified by the automated build and tests.",
+   "grade": {
+    "all": [
+     [
+      "merg*",
+      "integrat*",
+      "small",
+      "daily",
+      "often",
+      "frequent*",
+      "main",
+      "trunk"
+     ],
+     [
+      "test*",
+      "build*",
+      "automat*",
+      "pipeline",
+      "verified"
+     ]
+    ]
+   },
    "map": "devops",
    "key": "devops/ci",
    "depth": 0
@@ -2334,6 +4493,25 @@ window.DULTA_MAPS = {
    "outcome": "Choose a deployment strategy for a risky change and plan its rollback.",
    "check": "What does a canary release do?",
    "answer": "Sends a small share of traffic to the new version first, and widens it only if metrics stay healthy.",
+   "grade": {
+    "all": [
+     [
+      "small",
+      "fraction",
+      "percent*",
+      "subset",
+      "some",
+      "few",
+      "portion",
+      "slice"
+     ],
+     [
+      "traffic",
+      "users",
+      "requests"
+     ]
+    ]
+   },
    "map": "devops",
    "key": "devops/cd",
    "depth": 2
@@ -2346,6 +4524,20 @@ window.DULTA_MAPS = {
    "outcome": "Declare an environment in code and reproduce it from scratch.",
    "check": "Someone hot-fixes a server by hand. Why is that a problem under infrastructure as code?",
    "answer": "The server drifts from its declared state: the next apply may undo the fix, and nobody can reproduce it.",
+   "grade": {
+    "all": [
+     [
+      "drift*",
+      "undo*",
+      "overwrit*",
+      "reproduc*",
+      "lost",
+      "inconsistent",
+      "not in code",
+      "diverge*"
+     ]
+    ]
+   },
    "map": "devops",
    "key": "devops/iac",
    "depth": 3
@@ -2358,6 +4550,20 @@ window.DULTA_MAPS = {
    "outcome": "Replace, rather than repair, a broken instance from its definition.",
    "check": "A server's disk is corrupted. Under 'cattle, not pets', what do you do?",
    "answer": "Destroy it and recreate it from code and images, then investigate from logs and metrics.",
+   "grade": {
+    "all": [
+     [
+      "replac*",
+      "recreat*",
+      "destroy*",
+      "rebuild*",
+      "terminat*",
+      "new instance",
+      "redeploy*",
+      "reprovision*"
+     ]
+    ]
+   },
    "map": "devops",
    "key": "devops/misc-pets",
    "depth": 3
@@ -2370,6 +4576,28 @@ window.DULTA_MAPS = {
    "outcome": "Move a hard-coded secret to a secret store and rotate it.",
    "check": "An API key was committed to git and then deleted in the next commit. Is it safe?",
    "answer": "No: it is still in history. Rotate the key immediately.",
+   "grade": {
+    "all": [
+     [
+      "no",
+      "not",
+      "doesn t",
+      "does not",
+      "isn t",
+      "is not",
+      "never",
+      "false",
+      "history"
+     ],
+     [
+      "rotat*",
+      "revok*",
+      "regenerat*",
+      "new key",
+      "change"
+     ]
+    ]
+   },
    "map": "devops",
    "key": "devops/config",
    "depth": 4
@@ -2382,6 +4610,23 @@ window.DULTA_MAPS = {
    "outcome": "Deploy a service with readiness and liveness probes.",
    "check": "What is the difference between a readiness probe and a liveness probe?",
    "answer": "Readiness decides whether to send traffic; liveness decides whether to restart the container.",
+   "grade": {
+    "all": [
+     [
+      "traffic",
+      "ready",
+      "requests",
+      "serve*"
+     ],
+     [
+      "restart*",
+      "kill*",
+      "alive",
+      "dead",
+      "hung"
+     ]
+    ]
+   },
    "map": "devops",
    "key": "devops/orchestration",
    "depth": 4
@@ -2394,6 +4639,21 @@ window.DULTA_MAPS = {
    "outcome": "Instrument a service with RED metrics and find a slow dependency with a trace.",
    "check": "What do the RED metrics stand for?",
    "answer": "Rate, Errors and Duration of requests.",
+   "grade": {
+    "all": [
+     [
+      "rate"
+     ],
+     [
+      "error*"
+     ],
+     [
+      "duration",
+      "latency",
+      "time"
+     ]
+    ]
+   },
    "map": "devops",
    "key": "devops/observability",
    "depth": 5
@@ -2406,6 +4666,20 @@ window.DULTA_MAPS = {
    "outcome": "Read latency percentiles and explain tail amplification.",
    "check": "Mean latency is 50 ms but p99 is 2 s. What does that mean for users?",
    "answer": "1 in 100 requests takes 2 s or more; for pages making many calls, most users hit at least one slow one.",
+   "grade": {
+    "all": [
+     [
+      "tail",
+      "slow*",
+      "1 in 100",
+      "one in 100",
+      "percent",
+      "p99",
+      "some requests",
+      "outlier*"
+     ]
+    ]
+   },
    "map": "devops",
    "key": "devops/misc-average",
    "depth": 5
@@ -2418,6 +4692,15 @@ window.DULTA_MAPS = {
    "outcome": "Set an SLO, compute its error budget and use it to decide on a release freeze.",
    "check": "A 99.9% monthly availability SLO allows how much downtime in a 30-day month?",
    "answer": "About 43 minutes (0.1% of 43,200 minutes).",
+   "grade": {
+    "numbers": [
+     [
+      43.2,
+      43
+     ]
+    ],
+    "tol": 0.03
+   },
    "map": "devops",
    "key": "devops/slo",
    "depth": 6
@@ -2430,6 +4713,21 @@ window.DULTA_MAPS = {
    "outcome": "Argue for an SLO below 100% with the cost of each extra nine.",
    "check": "Why do SRE teams avoid a 100% availability target?",
    "answer": "It is impossible, each extra nine costs far more, and it leaves no budget for releases or experiments.",
+   "grade": {
+    "all": [
+     [
+      "impossible",
+      "unreachable",
+      "cost*",
+      "expensive",
+      "budget",
+      "release*",
+      "change",
+      "nine*",
+      "freez*"
+     ]
+    ]
+   },
    "map": "devops",
    "key": "devops/misc-100",
    "depth": 6
@@ -2442,6 +4740,19 @@ window.DULTA_MAPS = {
    "outcome": "Run an incident: mitigate, communicate, then write a blameless postmortem with actions.",
    "check": "During an outage, what comes first: finding the root cause or mitigating?",
    "answer": "Mitigating (roll back, fail over, shed load); root cause comes after users are safe.",
+   "grade": {
+    "all": [
+     [
+      "mitigat*",
+      "rollback",
+      "roll back",
+      "restor*",
+      "fail over",
+      "failover",
+      "stop the bleeding"
+     ]
+    ]
+   },
    "map": "devops",
    "key": "devops/incidents",
    "depth": 7
@@ -2454,6 +4765,21 @@ window.DULTA_MAPS = {
    "outcome": "Add dependency scanning and artifact signing to a pipeline.",
    "check": "Why should a CI pipeline's credentials have the least privilege possible?",
    "answer": "The pipeline runs untrusted code (dependencies, PRs); a compromised job inherits whatever the credentials allow.",
+   "grade": {
+    "all": [
+     [
+      "untrusted",
+      "compromis*",
+      "attack*",
+      "inherit*",
+      "blast radius",
+      "damage",
+      "limit*",
+      "malicious",
+      "steal*"
+     ]
+    ]
+   },
    "map": "devops",
    "key": "devops/supplychain",
    "depth": 5
@@ -2466,6 +4792,16 @@ window.DULTA_MAPS = {
    "outcome": "Measure the four DORA metrics for a team and pick one to improve.",
    "check": "Accelerate found that speed and stability trade off against each other. True or false?",
    "answer": "False: high performers are better at both.",
+   "grade": {
+    "all": [
+     [
+      "false",
+      "no",
+      "not",
+      "both"
+     ]
+    ]
+   },
    "map": "devops",
    "key": "devops/dora",
    "depth": 8
@@ -2478,6 +4814,22 @@ window.DULTA_MAPS = {
    "outcome": "Rewrite a vague goal as a testable outcome.",
    "check": "Rewrite 'understand recursion' as a testable outcome.",
    "answer": "E.g. 'write a recursive function that sums a nested list, with a correct base case, unaided'.",
+   "grade": {
+    "all": [
+     [
+      "given",
+      "unaided",
+      "write",
+      "implement",
+      "solve",
+      "sum",
+      "function",
+      "pass*",
+      "test*",
+      "correct*"
+     ]
+    ]
+   },
    "map": "learning",
    "key": "learning/goals",
    "depth": 0
@@ -2491,6 +4843,18 @@ window.DULTA_MAPS = {
    "check": "Which produces better retention a week later: re-reading a chapter twice, or reading once and self-testing?",
    "answer": "Reading once and self-testing (Roediger & Karpicke, 2006).",
    "lab": "retrieval",
+   "grade": {
+    "all": [
+     [
+      "self test*",
+      "testing",
+      "test",
+      "quiz*",
+      "retriev*",
+      "once and"
+     ]
+    ]
+   },
    "map": "learning",
    "key": "learning/retrieval",
    "depth": 1
@@ -2503,6 +4867,18 @@ window.DULTA_MAPS = {
    "outcome": "Explain why familiarity is not recall.",
    "check": "Why does re-reading feel effective?",
    "answer": "Processing fluency rises, which we mistake for learning (an illusion of competence).",
+   "grade": {
+    "all": [
+     [
+      "fluen*",
+      "familiar*",
+      "illusion",
+      "feels",
+      "recogni*",
+      "easy"
+     ]
+    ]
+   },
    "map": "learning",
    "key": "learning/misc-reread",
    "depth": 1
@@ -2516,6 +4892,19 @@ window.DULTA_MAPS = {
    "check": "Three hours of study: one block the night before, or three one-hour blocks across a week?",
    "answer": "Three spaced blocks.",
    "lab": "retrieval",
+   "grade": {
+    "all": [
+     [
+      "spaced",
+      "three",
+      "3",
+      "spread",
+      "week",
+      "separate",
+      "distributed"
+     ]
+    ]
+   },
    "map": "learning",
    "key": "learning/spacing",
    "depth": 2
@@ -2528,6 +4917,19 @@ window.DULTA_MAPS = {
    "outcome": "Design a mixed practice set across three topics.",
    "check": "Why does interleaved practice feel worse but test better?",
    "answer": "It is harder (a desirable difficulty) because you must discriminate which method applies.",
+   "grade": {
+    "all": [
+     [
+      "harder",
+      "discriminat*",
+      "choose",
+      "which method",
+      "select*",
+      "difficult*",
+      "desirable"
+     ]
+    ]
+   },
    "map": "learning",
    "key": "learning/interleaving",
    "depth": 2
@@ -2540,6 +4942,15 @@ window.DULTA_MAPS = {
    "outcome": "Build a faded sequence: full example, partial example, solo problem.",
    "check": "For a complete novice, is it better to start with a worked example or an unaided problem?",
    "answer": "Usually a worked example (worked-example effect), unless deliberately designing productive failure.",
+   "grade": {
+    "all": [
+     [
+      "worked example",
+      "worked",
+      "example"
+     ]
+    ]
+   },
    "map": "learning",
    "key": "learning/worked",
    "depth": 1
@@ -2552,6 +4963,13 @@ window.DULTA_MAPS = {
    "outcome": "Annotate a worked example with the reason for each step.",
    "check": "What question do you ask at each step of a worked example?",
    "answer": "'Why does this step follow from the last?'",
+   "grade": {
+    "all": [
+     [
+      "why"
+     ]
+    ]
+   },
    "map": "learning",
    "key": "learning/selfexplain",
    "depth": 2
@@ -2564,6 +4982,13 @@ window.DULTA_MAPS = {
    "outcome": "Classify a study activity by ICAP mode and upgrade it one level.",
    "check": "Highlighting a textbook is which ICAP mode?",
    "answer": "Active (manipulating material without generating anything new).",
+   "grade": {
+    "all": [
+     [
+      "active"
+     ]
+    ]
+   },
    "map": "learning",
    "key": "learning/icap",
    "depth": 3
@@ -2576,6 +5001,24 @@ window.DULTA_MAPS = {
    "outcome": "Commit a written attempt and a confidence rating before asking an agent.",
    "check": "Before asking an agent to solve a problem, what should you write down?",
    "answer": "Your own attempt (or prediction) and how confident you are in it.",
+   "grade": {
+    "all": [
+     [
+      "attempt*",
+      "answer*",
+      "prediction*",
+      "predict",
+      "guess*",
+      "try",
+      "own"
+     ],
+     [
+      "confiden*",
+      "sure",
+      "certain*"
+     ]
+    ]
+   },
    "map": "learning",
    "key": "learning/generation",
    "depth": 4
@@ -2588,6 +5031,21 @@ window.DULTA_MAPS = {
    "outcome": "Set up an agent in hint-only mode for a practice session.",
    "check": "What did unguarded AI help do to unaided exam scores in Bastani et al.?",
    "answer": "It lowered them, even though practice scores rose.",
+   "grade": {
+    "all": [
+     [
+      "lower*",
+      "worse",
+      "decreas*",
+      "dropped",
+      "fell",
+      "hurt",
+      "harmed",
+      "reduc*",
+      "down"
+     ]
+    ]
+   },
    "map": "learning",
    "key": "learning/misc-answer",
    "depth": 4
@@ -2600,6 +5058,20 @@ window.DULTA_MAPS = {
    "outcome": "Design a struggle phase followed by consolidation.",
    "check": "What must follow the failure phase for it to be productive?",
    "answer": "Consolidation: comparing attempts with the canonical solution.",
+   "grade": {
+    "all": [
+     [
+      "consolidat*",
+      "compar*",
+      "canonical",
+      "instruction",
+      "explain*",
+      "solution",
+      "debrief*",
+      "review*"
+     ]
+    ]
+   },
    "map": "learning",
    "key": "learning/productive",
    "depth": 5
@@ -2612,6 +5084,15 @@ window.DULTA_MAPS = {
    "outcome": "Write a four-rung hint ladder for one problem.",
    "check": "What is the first rung of a good hint ladder?",
    "answer": "A question that redirects attention, e.g. 'What is the unknown?'",
+   "grade": {
+    "all": [
+     [
+      "question",
+      "unknown",
+      "ask*"
+     ]
+    ]
+   },
    "map": "learning",
    "key": "learning/hints",
    "depth": 5
@@ -2624,6 +5105,19 @@ window.DULTA_MAPS = {
    "outcome": "Explain a concept in under 150 plain words and mark the gaps.",
    "check": "What signals a gap during explain-back?",
    "answer": "Reaching for jargon or skipping a step you cannot justify.",
+   "grade": {
+    "all": [
+     [
+      "jargon",
+      "skip*",
+      "can t explain",
+      "cannot",
+      "gap*",
+      "stuck",
+      "technical term*"
+     ]
+    ]
+   },
    "map": "learning",
    "key": "learning/feynman",
    "depth": 3
@@ -2636,6 +5130,15 @@ window.DULTA_MAPS = {
    "outcome": "Track confidence versus correctness over a set and compute calibration.",
    "check": "You were 90% confident on 10 answers and got 6 right. What does that say?",
    "answer": "You are overconfident: 60% accuracy at 90% confidence.",
+   "grade": {
+    "all": [
+     [
+      "overconfiden*",
+      "over confiden*",
+      "too confident"
+     ]
+    ]
+   },
    "map": "learning",
    "key": "learning/metacog",
    "depth": 4
@@ -2648,6 +5151,20 @@ window.DULTA_MAPS = {
    "outcome": "Choose a representation by what the content is.",
    "check": "Should a map of a city be taught as text to an 'auditory learner'?",
    "answer": "No: the content is spatial, so a map serves everyone.",
+   "grade": {
+    "all": [
+     [
+      "no",
+      "not",
+      "doesn t",
+      "does not",
+      "isn t",
+      "is not",
+      "never",
+      "false"
+     ]
+    ]
+   },
    "map": "learning",
    "key": "learning/misc-styles",
    "depth": 4
@@ -2660,6 +5177,22 @@ window.DULTA_MAPS = {
    "outcome": "Design a practice block targeting one weak sub-skill with feedback.",
    "check": "What separates deliberate practice from repetition?",
    "answer": "A specific target just beyond current ability, focused effort, and immediate feedback.",
+   "grade": {
+    "all": [
+     [
+      "feedback"
+     ],
+     [
+      "target*",
+      "specific",
+      "edge",
+      "just beyond",
+      "weak*",
+      "focus*",
+      "effort*"
+     ]
+    ]
+   },
    "map": "learning",
    "key": "learning/deliberate",
    "depth": 5
@@ -2672,6 +5205,20 @@ window.DULTA_MAPS = {
    "outcome": "Verify an agent's derivation by an independent route.",
    "check": "An agent gives a formula. Name two independent checks.",
    "answer": "Dimensional analysis and a limiting or special case (or a numeric test).",
+   "grade": {
+    "all": [
+     [
+      "dimension*",
+      "units",
+      "limit*",
+      "special case*",
+      "numeric*",
+      "number*",
+      "plug*",
+      "test*"
+     ]
+    ]
+   },
    "map": "learning",
    "key": "learning/verify",
    "depth": 6
@@ -2684,6 +5231,20 @@ window.DULTA_MAPS = {
    "outcome": "Solve a problem from a different domain with a learned principle.",
    "check": "Why are textbook end-of-chapter problems a weak test of transfer?",
    "answer": "The chapter heading tells you which method to use.",
+   "grade": {
+    "all": [
+     [
+      "heading",
+      "chapter",
+      "tells",
+      "which method",
+      "cue*",
+      "context",
+      "same section",
+      "title"
+     ]
+    ]
+   },
    "map": "learning",
    "key": "learning/transfer",
    "depth": 6
@@ -2696,6 +5257,18 @@ window.DULTA_MAPS = {
    "outcome": "List exactly what an agent can know at a given step.",
    "check": "You correct an agent's mistake mid-session. What has changed in the model?",
    "answer": "Nothing in its weights; the correction exists only in this session's context.",
+   "grade": {
+    "all": [
+     [
+      "nothing",
+      "no change",
+      "not",
+      "unchanged",
+      "context",
+      "none"
+     ]
+    ]
+   },
    "map": "agents",
    "key": "agents/context",
    "depth": 0
@@ -2708,6 +5281,21 @@ window.DULTA_MAPS = {
    "outcome": "Persist a correction so a new session obeys it.",
    "check": "An agent apologises and promises not to repeat a mistake. What makes that promise true?",
    "answer": "Only writing the rule to persistent memory, a skill or instructions that load next time.",
+   "grade": {
+    "all": [
+     [
+      "memory",
+      "written",
+      "write",
+      "writing",
+      "skill*",
+      "instruction*",
+      "file",
+      "persist*",
+      "save*"
+     ]
+    ]
+   },
    "map": "agents",
    "key": "agents/misc-remember",
    "depth": 0
@@ -2720,6 +5308,20 @@ window.DULTA_MAPS = {
    "outcome": "Rewrite a vague instruction as outcomes with checks.",
    "check": "Rewrite 'be good at our codebase' as a testable outcome.",
    "answer": "E.g. 'given a bug report, locate the responsible module and write a failing test, unaided, on 4 of 5 held-out reports'.",
+   "grade": {
+    "all": [
+     [
+      "given",
+      "unaided",
+      "held out",
+      "pass*",
+      "test*",
+      "measur*",
+      "accuracy",
+      "score"
+     ]
+    ]
+   },
    "map": "agents",
    "key": "agents/outcomes",
    "depth": 1
@@ -2732,6 +5334,20 @@ window.DULTA_MAPS = {
    "outcome": "Compress a procedure by replacing explanations with anchors, then verify behaviour is unchanged.",
    "check": "Why can 'use the Socratic Method' replace a paragraph of instructions?",
    "answer": "The model already knows the method from pre-training; the anchor activates it, so long as the term is precise and widely documented.",
+   "grade": {
+    "all": [
+     [
+      "pre training",
+      "pretraining",
+      "pre trained",
+      "already knows",
+      "train*",
+      "knows",
+      "well known",
+      "widely"
+     ]
+    ]
+   },
    "map": "agents",
    "key": "agents/anchors",
    "depth": 1
@@ -2744,6 +5360,19 @@ window.DULTA_MAPS = {
    "outcome": "Design a few-shot set that covers edge cases without being copied verbatim.",
    "check": "All three of your examples are short. What is the risk?",
    "answer": "The agent may infer that answers should be short; examples teach every regularity they share, intended or not.",
+   "grade": {
+    "all": [
+     [
+      "short*",
+      "length",
+      "brief",
+      "pattern",
+      "regularit*",
+      "copy",
+      "infer*"
+     ]
+    ]
+   },
    "map": "agents",
    "key": "agents/examples",
    "depth": 1
@@ -2756,6 +5385,20 @@ window.DULTA_MAPS = {
    "outcome": "Distil a successful session into a skill with a contract, workflow and checks.",
    "check": "What separates a good skill from a long prompt?",
    "answer": "A contract (what must exist when done), a stepwise workflow, and verifiable checks, loaded only when relevant.",
+   "grade": {
+    "all": [
+     [
+      "contract",
+      "workflow",
+      "steps",
+      "checks",
+      "verif*",
+      "loaded",
+      "when relevant",
+      "procedure"
+     ]
+    ]
+   },
    "map": "agents",
    "key": "agents/skills",
    "depth": 2
@@ -2768,6 +5411,13 @@ window.DULTA_MAPS = {
    "outcome": "Trim a context and measure whether accuracy improves.",
    "check": "Where in a long context is a key fact least reliably used?",
    "answer": "In the middle (Lost in the Middle); start and end positions fare better.",
+   "grade": {
+    "all": [
+     [
+      "middle"
+     ]
+    ]
+   },
    "map": "agents",
    "key": "agents/misc-more",
    "depth": 1
@@ -2780,6 +5430,20 @@ window.DULTA_MAPS = {
    "outcome": "Build a held-out eval set and report accuracy before and after teaching.",
    "check": "Why must eval questions never appear in the teaching material?",
    "answer": "Then the eval measures recall of the answer key, not learning (contamination).",
+   "grade": {
+    "all": [
+     [
+      "contaminat*",
+      "memor*",
+      "recall",
+      "answer key",
+      "leak*",
+      "seen",
+      "not learning",
+      "cheat*"
+     ]
+    ]
+   },
    "map": "agents",
    "key": "agents/evals",
    "depth": 2
@@ -2792,6 +5456,19 @@ window.DULTA_MAPS = {
    "outcome": "Run a cold-start test and revise the notes from its failures.",
    "check": "A tutor agent answers every check perfectly. Why is that not evidence the skill file works?",
    "answer": "The tutor has the whole session in context; only a fresh agent with just the skill shows whether the file carries the knowledge.",
+   "grade": {
+    "all": [
+     [
+      "context",
+      "fresh",
+      "session",
+      "whole",
+      "already",
+      "history",
+      "transcript"
+     ]
+    ]
+   },
    "map": "agents",
    "key": "agents/coldstart",
    "depth": 3
@@ -2804,6 +5481,17 @@ window.DULTA_MAPS = {
    "outcome": "Generate quiz prompts without answers and grade in a separate context.",
    "check": "How does `dulta.py quiz` support answer-key hygiene?",
    "answer": "It prints checks without answers for the learner, and writes the key separately for the grader.",
+   "grade": {
+    "all": [
+     [
+      "without answers",
+      "no answers",
+      "separate*",
+      "key",
+      "answer key"
+     ]
+    ]
+   },
    "map": "agents",
    "key": "agents/contamination",
    "depth": 3
@@ -2816,6 +5504,21 @@ window.DULTA_MAPS = {
    "outcome": "Set up an independent grader and control for position bias.",
    "check": "Name two biases of LLM-as-judge.",
    "answer": "Self-enhancement (favouring its own outputs) and position bias (favouring the first option); also verbosity bias.",
+   "grade": {
+    "all": [
+     [
+      "self*",
+      "own"
+     ],
+     [
+      "position*",
+      "order",
+      "verbos*",
+      "length",
+      "first"
+     ]
+    ]
+   },
    "map": "agents",
    "key": "agents/misc-selfgrade",
    "depth": 3
@@ -2828,6 +5531,20 @@ window.DULTA_MAPS = {
    "outcome": "Convene a panel with seats that disagree, each citing evidence.",
    "check": "Why should panel seats not see each other's verdicts in the same round?",
    "answer": "Independence: otherwise they anchor on the first verdict and errors correlate (wisdom of crowds needs independent judgements).",
+   "grade": {
+    "all": [
+     [
+      "anchor*",
+      "independen*",
+      "correlat*",
+      "bias*",
+      "influence*",
+      "herd*",
+      "groupthink",
+      "crowd*"
+     ]
+    ]
+   },
    "map": "agents",
    "key": "agents/panels",
    "depth": 4
@@ -2840,6 +5557,18 @@ window.DULTA_MAPS = {
    "outcome": "Write tool guidance with a when-to-use rule and a verification step.",
    "check": "An agent has a calculator tool but still does arithmetic in its head. What is missing from its teaching?",
    "answer": "A rule for when the tool must be used (e.g. any arithmetic beyond one step), with an example.",
+   "grade": {
+    "all": [
+     [
+      "rule",
+      "when",
+      "must",
+      "always",
+      "trigger*",
+      "instruction*"
+     ]
+    ]
+   },
    "map": "agents",
    "key": "agents/tools",
    "depth": 3
@@ -2852,6 +5581,18 @@ window.DULTA_MAPS = {
    "outcome": "Write a carry-forward entry with its evidence and verify it is loaded next session.",
    "check": "What should a carry-forward entry contain besides the fact?",
    "answer": "The evidence that established it and how it changes future behaviour.",
+   "grade": {
+    "all": [
+     [
+      "evidence",
+      "proof",
+      "source",
+      "how",
+      "why",
+      "behavio*"
+     ]
+    ]
+   },
    "map": "agents",
    "key": "agents/memory",
    "depth": 4
@@ -2864,6 +5605,19 @@ window.DULTA_MAPS = {
    "outcome": "Add caps and a goal re-check to an iterative agent workflow.",
    "check": "A critic loop keeps raising the same objection. What should a bounded workflow do?",
    "answer": "Stop at the cap, log the objection as an open item, and ship the strongest version.",
+   "grade": {
+    "all": [
+     [
+      "stop*",
+      "cap",
+      "log*",
+      "open item",
+      "ship*",
+      "bound*",
+      "limit*"
+     ]
+    ]
+   },
    "map": "agents",
    "key": "agents/drift",
    "depth": 5
@@ -2876,6 +5630,20 @@ window.DULTA_MAPS = {
    "outcome": "Design a transfer task and score an agent's attempt.",
    "check": "Why is an agent passing tasks that resemble its few-shot examples weak evidence?",
    "answer": "It may be pattern-matching the examples; only dissimilar tasks show the principle was learned.",
+   "grade": {
+    "all": [
+     [
+      "pattern*",
+      "memor*",
+      "copy*",
+      "similar*",
+      "resembl*",
+      "match*",
+      "examples",
+      "template*"
+     ]
+    ]
+   },
    "map": "agents",
    "key": "agents/agenttransfer",
    "depth": 4
