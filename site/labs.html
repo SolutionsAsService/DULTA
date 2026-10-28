@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DULTA Labs</title>
-<meta name="description" content="Predict-Observe-Explain labs: projectile, pendulum, Fourier synthesis, test-first code, complexity, a microcontroller simulator, an RC circuit, overfitting, A* pathfinding, QAM, qubit gates, selective breeding, titration, genetic drift, beam bending, CI bisect, an agent cold-start simulator, and retrieval with calibration.">
+<meta name="description" content="Predict-Observe-Explain labs: projectile, pendulum, Fourier synthesis, test-first code, complexity, a microcontroller simulator, an RC circuit, overfitting, A* pathfinding, QAM, qubit gates, selective breeding, titration, genetic drift, beam bending, CI bisect, an agent cold-start simulator, a truss bridge, a catchment water-flow model, a glider flight simulator, an orbit-transfer optimiser, a river water-quality monitor, a climate model, earthquake location, and retrieval with calibration.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -394,6 +394,141 @@
       </div>
     </article>
 
+    <article class="card lab" id="truss" data-field="Engineering" style="--accent:var(--civil)">
+      <div class="lab-head"><h3>Truss bridge</h3><a class="mono" href="maps.html#civil/analysis">civil / analysis · mechanical / trusses</a></div>
+      <div class="lab-body">
+        <div style="display:grid;gap:10px;align-content:start">
+          <div class="stage"><canvas id="trCanvas" width="760" height="380" aria-label="Truss bridge with member forces"></canvas></div>
+        </div>
+        <div class="poe">
+          <div class="controls"><div><label for="trType">Truss type</label><select id="trType"><option value="pratt">Pratt</option><option value="howe">Howe</option></select></div><div><label for="trPos">Load at</label><select id="trPos"><option value="1">2 m</option><option value="2" selected>midspan (4 m)</option><option value="3">6 m</option></select></div><div><label for="trLoad">Load <span id="trLoadv" class="mono"></span></label><input type="range" id="trLoad" min="5" max="50" value="10"></div></div>
+          <div class="poe-step active" data-step="predict"><h4>1 · Predict</h4>
+            <label for="trGuess">How big is the force in the top chord member beside midspan (kN)?</label><input type="number" id="trGuess" step="any" inputmode="decimal">
+            <button class="btn small" data-commit type="button">Commit prediction</button></div>
+          <div class="poe-step" data-step="observe"><h4>2 · Observe</h4>
+            <button class="btn small" data-run type="button" disabled>Solve the truss</button>
+            <div class="readout" data-out hidden></div></div>
+          <div class="poe-step" data-step="explain"><h4>3 · Explain</h4><p class="verdict" data-explain hidden></p></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="card lab" id="runoff" data-field="Earth & Environment" style="--accent:var(--civil)">
+      <div class="lab-head"><h3>Catchment water-flow model</h3><a class="mono" href="maps.html#civil/hydrology">civil / hydrology · environmental / watershed</a></div>
+      <div class="lab-body">
+        <div style="display:grid;gap:10px;align-content:start">
+          <div class="stage"><canvas id="roCanvas" width="760" height="360" aria-label="Runoff hydrograph at the catchment outlet"></canvas></div>
+        </div>
+        <div class="poe">
+          <div class="controls"><div><label for="roImp">Paved (impervious) area <span id="roImpv" class="mono"></span></label><input type="range" id="roImp" min="0" max="90" value="60"></div><div><label><input type="checkbox" id="roPond"> Detention pond at the outlet</label></div></div>
+          <div class="poe-step active" data-step="predict"><h4>1 · Predict</h4>
+            <label for="roGuess" id="roQ">…</label><input type="number" id="roGuess" step="any" inputmode="decimal">
+            <button class="btn small" data-commit type="button">Commit prediction</button></div>
+          <div class="poe-step" data-step="observe"><h4>2 · Observe</h4>
+            <button class="btn small" data-run type="button" disabled>Run the storm</button>
+            <div class="readout" data-out hidden></div></div>
+          <div class="poe-step" data-step="explain"><h4>3 · Explain</h4><p class="verdict" data-explain hidden></p></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="card lab" id="glider" data-field="Engineering" style="--accent:var(--aerospace)">
+      <div class="lab-head"><h3>Flight simulator: glider</h3><a class="mono" href="maps.html#aerospace/lift">aerospace / lift · drag · stall</a></div>
+      <div class="lab-body">
+        <div style="display:grid;gap:10px;align-content:start">
+          <div class="stage"><canvas id="glCanvas" width="760" height="360" aria-label="Glider flight path from 1,000 m"></canvas></div>
+          <button class="btn small ghost" id="glSweep" type="button" hidden>Sweep every angle of attack</button>
+        </div>
+        <div class="poe">
+          <div class="controls"><div><label for="glAlpha">Angle of attack <span id="glAlphav" class="mono"></span></label><input type="range" id="glAlpha" min="1" max="20" value="4"></div></div>
+          <div class="poe-step active" data-step="predict"><h4>1 · Predict</h4>
+            <label for="glGuess">The glider is released at 1,000 m and trimmed at this angle of attack. How far will it fly before landing (km)?</label><input type="number" id="glGuess" step="any" inputmode="decimal">
+            <button class="btn small" data-commit type="button">Commit prediction</button></div>
+          <div class="poe-step" data-step="observe"><h4>2 · Observe</h4>
+            <button class="btn small" data-run type="button" disabled>Fly</button>
+            <div class="readout" data-out hidden></div></div>
+          <div class="poe-step" data-step="explain"><h4>3 · Explain</h4><p class="verdict" data-explain hidden></p></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="card lab" id="orbit" data-field="Engineering" style="--accent:var(--aerospace)">
+      <div class="lab-head"><h3>Trajectory optimiser</h3><a class="mono" href="maps.html#aerospace/hohmann">aerospace / hohmann · orbits · rocket</a></div>
+      <div class="lab-body">
+        <div style="display:grid;gap:10px;align-content:start">
+          <div class="stage"><canvas id="obCanvas" width="760" height="380" aria-label="Orbits and transfer ellipses around Earth"></canvas></div>
+        </div>
+        <div class="poe">
+          <div class="controls"><div><label for="obTarget">Target orbit</label><select id="obTarget"><option value="42164">Geostationary (35,786 km)</option><option value="26560">GPS (20,200 km)</option><option value="12371">MEO 6,000 km</option></select></div><div><label for="obDv">Your first burn Δv <span id="obDvv" class="mono"></span></label><input type="range" id="obDv" min="0" max="4" step="0.01" value="1.5"></div></div>
+          <div class="readout" id="obManual"></div>
+          <div class="poe-step active" data-step="predict"><h4>1 · Predict</h4>
+            <label for="obGuess">From a 400 km orbit, what is the least total Δv (km/s) for two burns that put you in the target circular orbit?</label><input type="number" id="obGuess" step="any" inputmode="decimal">
+            <button class="btn small" data-commit type="button">Commit prediction</button></div>
+          <div class="poe-step" data-step="observe"><h4>2 · Observe</h4>
+            <button class="btn small" data-run type="button" disabled>Run the optimiser</button>
+            <div class="readout" data-out hidden></div></div>
+          <div class="poe-step" data-step="explain"><h4>3 · Explain</h4><p class="verdict" data-explain hidden></p></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="card lab" id="dosag" data-field="Earth & Environment" style="--accent:var(--environmental)">
+      <div class="lab-head"><h3>River water-quality monitor</h3><a class="mono" href="maps.html#environmental/waterquality">environmental / waterquality · monitoring · misc-dilution</a></div>
+      <div class="lab-body">
+        <div style="display:grid;gap:10px;align-content:start">
+          <div class="stage"><canvas id="dsCanvas" width="760" height="360" aria-label="Dissolved oxygen downstream of an outfall with monitoring stations"></canvas></div>
+        </div>
+        <div class="poe">
+          <div class="controls"><div><label for="dsBod">BOD after mixing <span id="dsBodv" class="mono"></span></label><input type="range" id="dsBod" min="2" max="40" value="15"></div><div><label for="dsTemp">Water temperature <span id="dsTempv" class="mono"></span></label><input type="range" id="dsTemp" min="5" max="30" value="20"></div><div><label for="dsVel">River speed <span id="dsVelv" class="mono"></span></label><input type="range" id="dsVel" min="1" max="10" value="3"></div></div>
+          <div class="poe-step active" data-step="predict"><h4>1 · Predict</h4>
+            <label for="dsGuess">Sewage enters the river at km 0. What will the lowest dissolved oxygen downstream be (mg/L)? The green dots are your monitoring samples.</label><input type="number" id="dsGuess" step="any" inputmode="decimal">
+            <button class="btn small" data-commit type="button">Commit prediction</button></div>
+          <div class="poe-step" data-step="observe"><h4>2 · Observe</h4>
+            <button class="btn small" data-run type="button" disabled>Model the river</button>
+            <div class="readout" data-out hidden></div></div>
+          <div class="poe-step" data-step="explain"><h4>3 · Explain</h4><p class="verdict" data-explain hidden></p></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="card lab" id="climate" data-field="Earth & Environment" style="--accent:var(--environmental)">
+      <div class="lab-head"><h3>Climate model</h3><a class="mono" href="maps.html#environmental/feedbacks">environmental / greenhouse · feedbacks · geoscience / paleoclimate</a></div>
+      <div class="lab-body">
+        <div style="display:grid;gap:10px;align-content:start">
+          <div class="stage"><canvas id="clCanvas" width="760" height="360" aria-label="Global warming over 300 years"></canvas></div>
+        </div>
+        <div class="poe">
+          <div class="controls"><div><label for="clLam">Feedback parameter λ <span id="clLamv" class="mono"></span></label><input type="range" id="clLam" min="70" max="200" value="120"></div><div><label for="clScen">Scenario</label><select id="clScen"><option value="abrupt">CO₂ doubles overnight</option><option value="ramp">CO₂ doubles over 70 years</option><option value="peak">Emissions rise, then fall to net zero</option></select></div></div>
+          <div class="poe-step active" data-step="predict"><h4>1 · Predict</h4>
+            <label for="clGuess" id="clQ">…</label><input type="number" id="clGuess" step="any" inputmode="decimal">
+            <button class="btn small" data-commit type="button">Commit prediction</button></div>
+          <div class="poe-step" data-step="observe"><h4>2 · Observe</h4>
+            <button class="btn small" data-run type="button" disabled>Run the climate model</button>
+            <div class="readout" data-out hidden></div></div>
+          <div class="poe-step" data-step="explain"><h4>3 · Explain</h4><p class="verdict" data-explain hidden></p></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="card lab" id="quake" data-field="Earth & Environment" style="--accent:var(--geoscience)">
+      <div class="lab-head"><h3>Earthquake location</h3><a class="mono" href="maps.html#geoscience/quakes">geoscience / quakes · interior · misc-magnitude</a></div>
+      <div class="lab-body">
+        <div style="display:grid;gap:10px;align-content:start">
+          <div class="stage"><canvas id="qkCanvas" width="760" height="360" aria-label="Map of stations and their seismograms"></canvas></div>
+          <button class="btn small ghost" id="qkNew" type="button">New earthquake</button>
+        </div>
+        <div class="poe">
+          <div class="poe-step active" data-step="predict"><h4>1 · Predict</h4>
+            <label for="qkGuess" id="qkQ">…</label><input type="number" id="qkGuess" min="0" step="any" inputmode="decimal">
+            <button class="btn small" data-commit type="button">Commit prediction</button></div>
+          <div class="poe-step" data-step="observe"><h4>2 · Observe</h4>
+            <button class="btn small" data-run type="button" disabled>Draw the distance circles</button>
+            <div class="readout" data-out hidden></div></div>
+          <div class="poe-step" data-step="explain"><h4>3 · Explain</h4><p class="verdict" data-explain hidden></p></div>
+        </div>
+      </div>
+    </article>
+
     <article class="card lab" id="retrieval" data-field="Learning & Agents" style="--accent:var(--learning)">
       <div class="lab-head"><h3>Retrieval &amp; calibration</h3><a class="mono" href="maps.html#learning/retrieval">learning / retrieval · spacing · metacog</a></div>
       <div class="lab-body">
@@ -420,11 +555,13 @@
 <script src="assets/lab-mcu.js"></script>
 <script src="assets/lab-fields.js"></script>
 <script src="assets/lab-more.js"></script>
+<script src="assets/lab-earth.js"></script>
 <script>
 // Group and filter labs by field, and build the index from the articles themselves.
 (function () {
   const labs = [...document.querySelectorAll("article.lab")];
-  const fields = ["All", ...new Set(labs.map((l) => l.dataset.field))];
+  const ORDER = ["Science", "Engineering", "Earth & Environment", "Computing & AI", "Learning & Agents"];
+  const fields = ["All", ...[...new Set(labs.map((l) => l.dataset.field))].sort((a, b) => (ORDER.indexOf(a) + 99) % 99 - (ORDER.indexOf(b) + 99) % 99)];
   let current = "All";
   const f = document.getElementById("labFilters"), idx = document.getElementById("labIndex");
   function render() {

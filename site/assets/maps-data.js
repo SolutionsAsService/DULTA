@@ -126,6 +126,34 @@ window.DULTA_MAPS = {
    "field": "Engineering"
   },
   {
+   "id": "civil",
+   "title": "Civil & Structural Engineering",
+   "accent": "#364fc7",
+   "summary": "Structures, ground, water and roads. Two thresholds: effective stress (water pressure, not just load, decides whether soil holds) and limit-state design (a structure is safe when its probability of failure is acceptably small, not when the numbers are exact).",
+   "sources": [
+    "Hibbeler: Structural Analysis",
+    "Craig: Soil Mechanics",
+    "Chow, Maidment, Mays: Applied Hydrology",
+    "Mays: Water Resources Engineering",
+    "Mannering & Washburn: Principles of Highway Engineering and Traffic Analysis"
+   ],
+   "field": "Engineering"
+  },
+  {
+   "id": "aerospace",
+   "title": "Aerospace Engineering",
+   "accent": "#0c8599",
+   "summary": "Flight in air and in orbit. Lift is the first threshold (a wing turns airflow downward; the popular 'equal transit' story is false); the rocket equation is the second (every kilometre per second of Δv costs exponentially more propellant), and orbits run on intuitions that are often backwards.",
+   "sources": [
+    "Anderson: Introduction to Flight",
+    "Anderson: Fundamentals of Aerodynamics",
+    "Curtis: Orbital Mechanics for Engineering Students",
+    "Sutton & Biblarz: Rocket Propulsion Elements",
+    "Raymer: Aircraft Design: A Conceptual Approach"
+   ],
+   "field": "Engineering"
+  },
+  {
    "id": "robotics",
    "title": "Robotics & Agricultural Robotics",
    "accent": "#f08c00",
@@ -152,6 +180,34 @@ window.DULTA_MAPS = {
     "Kurose & Ross: Computer Networking"
    ],
    "field": "Engineering"
+  },
+  {
+   "id": "environmental",
+   "title": "Environmental Science & Engineering",
+   "accent": "#2b8a3e",
+   "summary": "Climate, water and pollution, measured and managed. Radiative forcing is the climate threshold (a small, persistent energy imbalance drives large, slow warming); for water, the threshold is load and oxygen demand rather than concentration alone.",
+   "sources": [
+    "IPCC AR6 Working Group I: The Physical Science Basis (2021)",
+    "Hartmann: Global Physical Climatology",
+    "Davis & Masten: Principles of Environmental Engineering and Science",
+    "Chapra: Surface Water-Quality Modeling",
+    "Fetter: Applied Hydrogeology"
+   ],
+   "field": "Earth & Environment"
+  },
+  {
+   "id": "geoscience",
+   "title": "Geoscience",
+   "accent": "#b5651d",
+   "summary": "Reading the Earth's record and its moving parts. Deep time and plate tectonics are the thresholds: once a learner can think in millions of years and in slowly flowing solid rock, mountains, earthquakes, ores and climate history all fit one story.",
+   "sources": [
+    "Grotzinger & Jordan: Understanding Earth",
+    "Stein & Wysession: An Introduction to Seismology, Earthquakes, and Earth Structure",
+    "Fowler: The Solid Earth",
+    "Ruddiman: Earth's Climate: Past and Future",
+    "Dickin: Radiogenic Isotope Geology"
+   ],
+   "field": "Earth & Environment"
   },
   {
    "id": "developer",
@@ -242,6 +298,7 @@ window.DULTA_MAPS = {
  "fields": [
   "Science",
   "Engineering",
+  "Earth & Environment",
   "Computing & AI",
   "Learning & Agents"
  ],
@@ -4557,6 +4614,761 @@ window.DULTA_MAPS = {
    "depth": 3
   },
   {
+   "id": "loads",
+   "label": "Loads & Load Paths",
+   "kind": "concept",
+   "summary": "Dead, live, wind, snow and seismic loads, traced through the structure to the ground.",
+   "outcome": "Trace the load path of a roof load to the foundations.",
+   "check": "A snow load on a roof must ultimately go where?",
+   "answer": "Down through the structure (roof, beams, columns, walls) into the foundations and the soil.",
+   "grade": {
+    "all": [
+     [
+      "foundation*",
+      "ground",
+      "soil"
+     ]
+    ]
+   },
+   "map": "civil",
+   "key": "civil/loads",
+   "depth": 0
+  },
+  {
+   "id": "analysis",
+   "label": "Structural Analysis",
+   "kind": "concept",
+   "summary": "Trusses, frames and determinacy; equilibrium for determinate structures, stiffness methods for the rest.",
+   "outcome": "Find member forces in a truss and say which are in tension.",
+   "check": "What is the main advantage of a statically determinate structure?",
+   "answer": "Its member forces follow from equilibrium alone, so settlement or temperature changes don't induce extra stresses.",
+   "grade": {
+    "all": [
+     [
+      "equilibrium",
+      "statics alone",
+      "settlement",
+      "temperature"
+     ]
+    ]
+   },
+   "lab": "truss",
+   "map": "civil",
+   "key": "civil/analysis",
+   "depth": 1
+  },
+  {
+   "id": "misc-concrete",
+   "label": "\"Concrete is strong in tension\"",
+   "kind": "misconception",
+   "summary": "Concrete resists compression well but cracks in tension at about a tenth of that stress, which is why it is reinforced with steel.",
+   "outcome": "Place reinforcement where bending puts concrete in tension.",
+   "check": "Where is steel reinforcement placed in a simply supported concrete beam, and why?",
+   "answer": "Near the bottom, where bending puts the concrete in tension, which concrete resists poorly.",
+   "grade": {
+    "all": [
+     [
+      "bottom",
+      "lower",
+      "tension side",
+      "underside"
+     ],
+     [
+      "tension"
+     ]
+    ]
+   },
+   "map": "civil",
+   "key": "civil/misc-concrete",
+   "depth": 2
+  },
+  {
+   "id": "concrete",
+   "label": "Reinforced & Prestressed Concrete",
+   "kind": "concept",
+   "summary": "Steel carries tension, concrete carries compression; prestressing pre-compresses the section.",
+   "outcome": "Size reinforcement for a beam and explain prestressing.",
+   "check": "Why prestress a concrete beam?",
+   "answer": "Pre-compressing it cancels the tension that loads would cause, so it doesn't crack and can span further.",
+   "grade": {
+    "all": [
+     [
+      "compress*",
+      "precompress*",
+      "cancel*",
+      "offset*"
+     ],
+     [
+      "tension",
+      "crack*"
+     ]
+    ]
+   },
+   "map": "civil",
+   "key": "civil/concrete",
+   "depth": 2
+  },
+  {
+   "id": "steel",
+   "label": "Steel Design & Connections",
+   "kind": "concept",
+   "summary": "Yield, buckling and connection design: bolts, welds and the load path through them.",
+   "outcome": "Check a steel column for yielding and buckling.",
+   "check": "Why do engineers check both yielding and buckling for a steel column?",
+   "answer": "A slender column can fail by buckling at a stress well below yield.",
+   "grade": {
+    "all": [
+     [
+      "buckl*",
+      "slender*"
+     ]
+    ]
+   },
+   "map": "civil",
+   "key": "civil/steel",
+   "depth": 2
+  },
+  {
+   "id": "limitstate",
+   "label": "Limit-State Design & Safety Factors",
+   "kind": "threshold",
+   "summary": "Factor loads up and strengths down so the probability of failure is acceptably small. Troublesome because 'safe' becomes a statement about uncertainty, not an exact number.",
+   "outcome": "Apply load and resistance factors to a design check.",
+   "check": "Why multiply design loads by factors greater than 1?",
+   "answer": "To cover uncertainty in loads, materials and models, so the probability of failure is acceptably small.",
+   "grade": {
+    "all": [
+     [
+      "uncertain*",
+      "variab*",
+      "margin",
+      "probabilit*",
+      "safety",
+      "unknown*"
+     ]
+    ]
+   },
+   "map": "civil",
+   "key": "civil/limitstate",
+   "depth": 3
+  },
+  {
+   "id": "soil",
+   "label": "Soil Mechanics & Effective Stress",
+   "kind": "threshold",
+   "summary": "Soil strength depends on effective stress, σ' = σ − u: total stress minus pore-water pressure. Water can weaken ground without any added load.",
+   "outcome": "Compute effective stress below the water table.",
+   "check": "Why can a saturated slope fail after heavy rain with no extra load on it?",
+   "answer": "Rising pore-water pressure reduces effective stress, and with it the soil's frictional strength.",
+   "grade": {
+    "all": [
+     [
+      "pore*",
+      "water pressure"
+     ],
+     [
+      "effective stress",
+      "friction*",
+      "strength"
+     ]
+    ]
+   },
+   "map": "civil",
+   "key": "civil/soil",
+   "depth": 0
+  },
+  {
+   "id": "misc-soil",
+   "label": "\"A soil's strength is fixed by its type\"",
+   "kind": "misconception",
+   "summary": "The same sand can be firm or flow like liquid (liquefaction), depending on pore-water pressure.",
+   "outcome": "Explain liquefaction with effective stress.",
+   "check": "Is a soil's shear strength fixed by its type alone?",
+   "answer": "No: it depends on effective stress, so changes in water pressure change it.",
+   "grade": {
+    "all": [
+     [
+      "no",
+      "not"
+     ],
+     [
+      "effective",
+      "water",
+      "pore"
+     ]
+    ]
+   },
+   "map": "civil",
+   "key": "civil/misc-soil",
+   "depth": 0
+  },
+  {
+   "id": "foundations",
+   "label": "Foundations",
+   "kind": "concept",
+   "summary": "Shallow footings and deep piles: bearing capacity and settlement.",
+   "outcome": "Choose between a footing and piles for a site.",
+   "check": "Why are pile foundations used under tall buildings on soft clay?",
+   "answer": "They carry the load through weak soil to stronger layers (or by skin friction), limiting settlement.",
+   "grade": {
+    "all": [
+     [
+      "strong*",
+      "rock",
+      "deeper",
+      "bedrock",
+      "friction",
+      "firm*",
+      "settle*"
+     ]
+    ]
+   },
+   "map": "civil",
+   "key": "civil/foundations",
+   "depth": 1
+  },
+  {
+   "id": "slopes",
+   "label": "Slope Stability",
+   "kind": "concept",
+   "summary": "Factor of safety as resisting over driving forces along a slip surface.",
+   "outcome": "Compute a factor of safety for an infinite slope.",
+   "check": "What does a factor of safety of 1.0 mean for a slope?",
+   "answer": "Resisting and driving forces are equal: the slope is on the verge of failure.",
+   "grade": {
+    "all": [
+     [
+      "equal",
+      "verge",
+      "limit",
+      "about to",
+      "edge",
+      "balance*",
+      "just"
+     ]
+    ]
+   },
+   "map": "civil",
+   "key": "civil/slopes",
+   "depth": 1
+  },
+  {
+   "id": "hydrology",
+   "label": "Hydrology & Runoff",
+   "kind": "concept",
+   "summary": "Rainfall becomes runoff: infiltration, catchment response and the design storm.",
+   "outcome": "Estimate a peak flow and explain how urbanisation changes it.",
+   "check": "Paving over a field: what happens to peak runoff, and why?",
+   "answer": "It rises and arrives sooner: less water infiltrates, and smooth surfaces route it faster.",
+   "grade": {
+    "all": [
+     [
+      "rise*",
+      "increase*",
+      "higher",
+      "more",
+      "bigger",
+      "larger"
+     ]
+    ]
+   },
+   "lab": "runoff",
+   "map": "civil",
+   "key": "civil/hydrology",
+   "depth": 0
+  },
+  {
+   "id": "hydraulics",
+   "label": "Open-Channel Hydraulics",
+   "kind": "concept",
+   "summary": "Manning's equation, critical flow and culvert design.",
+   "outcome": "Size a channel with Manning's equation.",
+   "check": "By Manning's equation, what happens to flow velocity if channel roughness n doubles, all else equal?",
+   "answer": "It halves.",
+   "grade": {
+    "all": [
+     [
+      "halve*",
+      "half",
+      "1 2",
+      "50"
+     ]
+    ]
+   },
+   "lab": "runoff",
+   "map": "civil",
+   "key": "civil/hydraulics",
+   "depth": 1
+  },
+  {
+   "id": "water",
+   "label": "Water Supply & Treatment",
+   "kind": "concept",
+   "summary": "Sources, treatment trains and distribution networks.",
+   "outcome": "Lay out a treatment train from river intake to tap.",
+   "check": "Why is a chlorine residual maintained in drinking-water pipes?",
+   "answer": "To keep killing microbes that enter or regrow in the distribution system.",
+   "grade": {
+    "all": [
+     [
+      "microb*",
+      "bacteria",
+      "pathogen*",
+      "disinfect*",
+      "regrow*",
+      "contamina*"
+     ]
+    ]
+   },
+   "map": "civil",
+   "key": "civil/water",
+   "depth": 2
+  },
+  {
+   "id": "traffic",
+   "label": "Traffic Flow",
+   "kind": "concept",
+   "summary": "Flow equals density times speed; the fundamental diagram and capacity.",
+   "outcome": "Read a fundamental diagram and find capacity.",
+   "check": "On a freeway, flow q = density k × speed v. At jam density, what is the flow?",
+   "answer": "Zero: vehicles are stopped.",
+   "grade": {
+    "all": [
+     [
+      "zero",
+      "0",
+      "none",
+      "nothing",
+      "stopped"
+     ]
+    ]
+   },
+   "map": "civil",
+   "key": "civil/traffic",
+   "depth": 0
+  },
+  {
+   "id": "misc-lanes",
+   "label": "\"Adding lanes cures congestion\"",
+   "kind": "misconception",
+   "summary": "Faster roads attract more trips (induced demand), so congestion often returns.",
+   "outcome": "Explain induced demand with an example.",
+   "check": "Why do widened roads often fill up again within a few years?",
+   "answer": "Induced demand: shorter travel times attract more trips and longer commutes.",
+   "grade": {
+    "all": [
+     [
+      "induced",
+      "demand",
+      "more trips",
+      "more drivers",
+      "attract*",
+      "more traffic"
+     ]
+    ]
+   },
+   "map": "civil",
+   "key": "civil/misc-lanes",
+   "depth": 0
+  },
+  {
+   "id": "seismic",
+   "label": "Earthquake Engineering",
+   "kind": "concept",
+   "summary": "Response spectra, ductility and base isolation.",
+   "outcome": "Explain why building height changes earthquake response.",
+   "check": "Why might a 10-storey building sway more in an earthquake than a 2-storey one beside it?",
+   "answer": "Its natural period may match the dominant period of the ground shaking (resonance).",
+   "grade": {
+    "all": [
+     [
+      "resonan*",
+      "natural period",
+      "natural frequency",
+      "period",
+      "frequency"
+     ]
+    ]
+   },
+   "map": "civil",
+   "key": "civil/seismic",
+   "depth": 4
+  },
+  {
+   "id": "atmosphere",
+   "label": "The Standard Atmosphere",
+   "kind": "concept",
+   "summary": "Pressure, density and temperature fall with altitude; density sets lift, drag and engine thrust.",
+   "outcome": "Read density at altitude from the standard atmosphere.",
+   "check": "Roughly how does air density at 11 km compare with sea level?",
+   "answer": "About a third of the sea-level value (≈0.36 vs 1.225 kg/m³).",
+   "grade": {
+    "all": [
+     [
+      "third",
+      "quarter",
+      "fall*",
+      "drop*",
+      "decreas*",
+      "less",
+      "lower",
+      "0 36"
+     ]
+    ]
+   },
+   "map": "aerospace",
+   "key": "aerospace/atmosphere",
+   "depth": 0
+  },
+  {
+   "id": "lift",
+   "label": "Lift",
+   "kind": "threshold",
+   "summary": "L = ½ρv²SC_L. A wing turns the flow downward and the pressure difference that results lifts it; Newton and Bernoulli describe the same flow.",
+   "outcome": "Compute lift and explain it with both pressure and momentum.",
+   "check": "If an aircraft doubles its airspeed at the same angle of attack, how does lift change?",
+   "answer": "It quadruples, since lift is proportional to v².",
+   "grade": {
+    "all": [
+     [
+      "4",
+      "four",
+      "quadruple*"
+     ]
+    ]
+   },
+   "lab": "glider",
+   "map": "aerospace",
+   "key": "aerospace/lift",
+   "depth": 1
+  },
+  {
+   "id": "misc-transit",
+   "label": "\"Air over the top must meet the air underneath\"",
+   "kind": "misconception",
+   "summary": "The equal-transit-time explanation is false: air over the top arrives well before the air underneath.",
+   "outcome": "Refute equal transit time with flow observations.",
+   "check": "Do air parcels split at a wing's leading edge meet again at the trailing edge?",
+   "answer": "No: the air over the top arrives well before the air underneath; the equal-transit explanation is false.",
+   "grade": {
+    "all": [
+     [
+      "no",
+      "not",
+      "doesn t",
+      "don t",
+      "false",
+      "never"
+     ]
+    ]
+   },
+   "map": "aerospace",
+   "key": "aerospace/misc-transit",
+   "depth": 1
+  },
+  {
+   "id": "drag",
+   "label": "Drag & Lift-to-Drag Ratio",
+   "kind": "concept",
+   "summary": "Parasite drag grows with speed, induced drag falls with it; best L/D is where they are equal.",
+   "outcome": "Find the speed for best glide from a drag polar.",
+   "check": "A glider has L/D = 30. How far can it glide from 1 km up in still air?",
+   "answer": "About 30 km.",
+   "grade": {
+    "numbers": [
+     [
+      30
+     ]
+    ]
+   },
+   "lab": "glider",
+   "map": "aerospace",
+   "key": "aerospace/drag",
+   "depth": 2
+  },
+  {
+   "id": "stall",
+   "label": "Stall",
+   "kind": "concept",
+   "summary": "Past the critical angle of attack the flow separates and lift collapses.",
+   "outcome": "Explain stall and recover from it.",
+   "check": "What causes a wing to stall?",
+   "answer": "Exceeding the critical angle of attack, so the flow separates from the upper surface and lift collapses.",
+   "grade": {
+    "all": [
+     [
+      "angle of attack",
+      "critical angle",
+      "separat*",
+      "aoa"
+     ]
+    ]
+   },
+   "lab": "glider",
+   "map": "aerospace",
+   "key": "aerospace/stall",
+   "depth": 2
+  },
+  {
+   "id": "misc-stallspeed",
+   "label": "\"A stall happens below a certain speed\"",
+   "kind": "misconception",
+   "summary": "Stall is set by angle of attack, not speed; a hard pull-up can stall a wing at any speed.",
+   "outcome": "Explain an accelerated stall.",
+   "check": "Can a wing stall at high speed?",
+   "answer": "Yes: stall depends on angle of attack, which a hard pull-up can exceed at any speed.",
+   "grade": {
+    "all": [
+     [
+      "yes",
+      "can"
+     ],
+     [
+      "angle"
+     ]
+    ]
+   },
+   "map": "aerospace",
+   "key": "aerospace/misc-stallspeed",
+   "depth": 2
+  },
+  {
+   "id": "stability",
+   "label": "Stability & Control",
+   "kind": "concept",
+   "summary": "With the centre of gravity ahead of the neutral point, a pitch disturbance produces a restoring moment.",
+   "outcome": "Check static stability from CG and neutral-point positions.",
+   "check": "Why must an aircraft's centre of gravity be ahead of its neutral point?",
+   "answer": "So a pitch disturbance produces a restoring moment: static stability.",
+   "grade": {
+    "all": [
+     [
+      "restor*",
+      "stab*",
+      "return*",
+      "nose down",
+      "correct*"
+     ]
+    ]
+   },
+   "map": "aerospace",
+   "key": "aerospace/stability",
+   "depth": 3
+  },
+  {
+   "id": "performance",
+   "label": "Aircraft Performance & Range",
+   "kind": "concept",
+   "summary": "Climb, endurance and the Breguet range equation.",
+   "outcome": "Estimate range with the Breguet equation.",
+   "check": "By the Breguet range equation, what increases an aircraft's range?",
+   "answer": "Higher lift-to-drag ratio, better engine efficiency (lower fuel consumption), and a larger fuel fraction.",
+   "grade": {
+    "all": [
+     [
+      "l d",
+      "lift to drag",
+      "drag"
+     ],
+     [
+      "fuel",
+      "efficien*",
+      "sfc",
+      "consumption"
+     ]
+    ]
+   },
+   "map": "aerospace",
+   "key": "aerospace/performance",
+   "depth": 3
+  },
+  {
+   "id": "propulsion",
+   "label": "Jet & Propeller Propulsion",
+   "kind": "concept",
+   "summary": "Thrust from accelerating air; propulsive efficiency favours moving lots of air slowly.",
+   "outcome": "Compare turbojet, turbofan and propeller efficiency.",
+   "check": "Why are high-bypass turbofans more fuel-efficient than turbojets?",
+   "answer": "They accelerate a large mass of air by a little rather than a small mass by a lot, wasting less kinetic energy.",
+   "grade": {
+    "all": [
+     [
+      "large mass",
+      "more air",
+      "mass flow",
+      "slower",
+      "less kinetic",
+      "a little",
+      "lots of air"
+     ]
+    ]
+   },
+   "map": "aerospace",
+   "key": "aerospace/propulsion",
+   "depth": 0
+  },
+  {
+   "id": "rocket",
+   "label": "The Rocket Equation",
+   "kind": "threshold",
+   "summary": "Δv = vₑ ln(m₀/m_f): velocity change grows only with the logarithm of the mass ratio, which is why rockets are mostly propellant and use stages.",
+   "outcome": "Compute Δv and explain why staging helps.",
+   "check": "A rocket with exhaust velocity 3 km/s and a mass ratio of e (≈2.72) can gain how much Δv?",
+   "answer": "3 km/s (Δv = vₑ ln(m₀/m_f) = 3 × ln e).",
+   "grade": {
+    "numbers": [
+     [
+      3,
+      3000
+     ]
+    ]
+   },
+   "lab": "orbit",
+   "map": "aerospace",
+   "key": "aerospace/rocket",
+   "depth": 0
+  },
+  {
+   "id": "orbits",
+   "label": "Orbits as Free Fall",
+   "kind": "concept",
+   "summary": "An orbit is falling around the planet fast enough to keep missing it: v = √(GM/r) for a circle.",
+   "outcome": "Compute circular orbital speed and period.",
+   "check": "What speed keeps a satellite in a circular orbit 400 km up (r ≈ 6,771 km)?",
+   "answer": "About 7.7 km/s (v = √(GM/r)).",
+   "grade": {
+    "numbers": [
+     [
+      7.7,
+      7700,
+      7.67
+     ]
+    ]
+   },
+   "lab": "orbit",
+   "map": "aerospace",
+   "key": "aerospace/orbits",
+   "depth": 0
+  },
+  {
+   "id": "misc-nograv",
+   "label": "\"In orbit there is no gravity\"",
+   "kind": "misconception",
+   "summary": "Gravity at ISS altitude is about 90% of surface gravity; astronauts float because they are in free fall.",
+   "outcome": "Explain weightlessness as free fall.",
+   "check": "Gravity at the ISS's altitude is roughly what percentage of surface gravity?",
+   "answer": "About 90%; astronauts float because they and the station are falling together.",
+   "grade": {
+    "numbers": [
+     [
+      90,
+      0.9
+     ]
+    ],
+    "tol": 0.05
+   },
+   "map": "aerospace",
+   "key": "aerospace/misc-nograv",
+   "depth": 0
+  },
+  {
+   "id": "hohmann",
+   "label": "Orbital Transfers",
+   "kind": "concept",
+   "summary": "The Hohmann transfer: two burns along an ellipse tangent to both orbits; the cheapest two-impulse transfer between nearby circles.",
+   "outcome": "Compute Δv for a Hohmann transfer.",
+   "check": "To move to a higher circular orbit with a Hohmann transfer, how many engine burns are needed?",
+   "answer": "Two: one to enter the transfer ellipse and one to circularise at apoapsis.",
+   "grade": {
+    "all": [
+     [
+      "2",
+      "two"
+     ]
+    ]
+   },
+   "lab": "orbit",
+   "map": "aerospace",
+   "key": "aerospace/hohmann",
+   "depth": 1
+  },
+  {
+   "id": "misc-catchup",
+   "label": "\"To catch a craft ahead, speed up\"",
+   "kind": "misconception",
+   "summary": "A prograde burn raises the orbit and lengthens the period, so you fall further behind; you drop lower to go round faster.",
+   "outcome": "Plan a phasing manoeuvre to catch up with a target.",
+   "check": "You are behind another spacecraft in the same orbit. Why doesn't a prograde burn help you catch it?",
+   "answer": "It raises your orbit and lengthens your period, so you fall further behind; you must drop lower to go round faster.",
+   "grade": {
+    "all": [
+     [
+      "higher",
+      "raise*",
+      "longer period",
+      "slower",
+      "longer orbit"
+     ]
+    ]
+   },
+   "lab": "orbit",
+   "map": "aerospace",
+   "key": "aerospace/misc-catchup",
+   "depth": 1
+  },
+  {
+   "id": "reentry",
+   "label": "Re-entry & Thermal Protection",
+   "kind": "concept",
+   "summary": "Orbital energy becomes heat; blunt bodies and ablators keep it off the vehicle.",
+   "outcome": "Explain why blunt shapes survive re-entry.",
+   "check": "Why do capsules re-enter blunt end first?",
+   "answer": "A blunt shape makes a strong detached shock that keeps most of the heat in the air, away from the vehicle.",
+   "grade": {
+    "all": [
+     [
+      "shock",
+      "heat away",
+      "stand off",
+      "detached",
+      "drag",
+      "slow*"
+     ]
+    ]
+   },
+   "map": "aerospace",
+   "key": "aerospace/reentry",
+   "depth": 1
+  },
+  {
+   "id": "flightcontrol",
+   "label": "Flight Control Systems",
+   "kind": "concept",
+   "summary": "Autopilots, fly-by-wire and stability augmentation.",
+   "outcome": "Explain how fly-by-wire enables relaxed stability.",
+   "check": "Why do fly-by-wire fighters use deliberately unstable airframes?",
+   "answer": "Relaxed stability makes them more manoeuvrable; flight computers make constant corrections to keep them flyable.",
+   "grade": {
+    "all": [
+     [
+      "manoeuvr*",
+      "maneuver*",
+      "agil*",
+      "responsive"
+     ],
+     [
+      "computer*",
+      "fly by wire",
+      "control*",
+      "feedback"
+     ]
+    ]
+   },
+   "map": "aerospace",
+   "key": "aerospace/flightcontrol",
+   "depth": 4
+  },
+  {
    "id": "kinematics",
    "label": "Robot Kinematics",
    "kind": "concept",
@@ -5267,6 +6079,720 @@ window.DULTA_MAPS = {
    "map": "telecom",
    "key": "telecom/sdr",
    "depth": 2
+  },
+  {
+   "id": "energybalance",
+   "label": "Earth's Energy Balance",
+   "kind": "concept",
+   "summary": "Sunlight in, infrared out; albedo and the greenhouse effect set the surface temperature.",
+   "outcome": "Compute Earth's effective temperature from the energy balance.",
+   "check": "Without an atmosphere Earth would average about −18 °C. Why is it about +15 °C instead?",
+   "answer": "Greenhouse gases absorb and re-emit outgoing infrared radiation, warming the surface.",
+   "grade": {
+    "all": [
+     [
+      "greenhouse",
+      "infrared",
+      "absorb*",
+      "co2",
+      "water vapour",
+      "water vapor",
+      "re emit*"
+     ]
+    ]
+   },
+   "lab": "climate",
+   "map": "environmental",
+   "key": "environmental/energybalance",
+   "depth": 0
+  },
+  {
+   "id": "greenhouse",
+   "label": "Radiative Forcing",
+   "kind": "threshold",
+   "summary": "Adding CO₂ creates an energy imbalance (forcing ≈ 5.35 ln(C/C₀) W/m²) that the planet removes by warming. Small forcings drive large, slow changes.",
+   "outcome": "Compute the forcing from a CO₂ change.",
+   "check": "Forcing from CO₂ is about 5.35 ln(C/C₀) W/m². What is the forcing for a doubling?",
+   "answer": "About 3.7 W/m² (5.35 × ln 2).",
+   "grade": {
+    "numbers": [
+     [
+      3.7
+     ]
+    ],
+    "tol": 0.03
+   },
+   "lab": "climate",
+   "map": "environmental",
+   "key": "environmental/greenhouse",
+   "depth": 1
+  },
+  {
+   "id": "misc-ozone",
+   "label": "\"The ozone hole causes global warming\"",
+   "kind": "misconception",
+   "summary": "Ozone depletion (more UV) and greenhouse warming are separate problems with different causes.",
+   "outcome": "Distinguish ozone depletion from greenhouse warming.",
+   "check": "Is the ozone hole the main cause of global warming?",
+   "answer": "No: the ozone hole is a separate (UV) problem; warming is driven mainly by greenhouse gases such as CO₂.",
+   "grade": {
+    "all": [
+     [
+      "no",
+      "not"
+     ],
+     [
+      "greenhouse",
+      "co2",
+      "carbon"
+     ]
+    ]
+   },
+   "map": "environmental",
+   "key": "environmental/misc-ozone",
+   "depth": 1
+  },
+  {
+   "id": "feedbacks",
+   "label": "Climate Feedbacks & Sensitivity",
+   "kind": "concept",
+   "summary": "Water vapour, ice–albedo, clouds and lapse rate amplify or damp warming; sensitivity is warming per doubling of CO₂.",
+   "outcome": "Compute equilibrium warming from forcing and the feedback parameter.",
+   "check": "Why does melting sea ice amplify warming?",
+   "answer": "Ice reflects sunlight while open ocean absorbs it, so less ice means more absorption and more warming (ice–albedo feedback).",
+   "grade": {
+    "all": [
+     [
+      "albedo",
+      "reflect*",
+      "absorb*",
+      "darker"
+     ]
+    ]
+   },
+   "lab": "climate",
+   "map": "environmental",
+   "key": "environmental/feedbacks",
+   "depth": 2
+  },
+  {
+   "id": "misc-weather",
+   "label": "\"A cold week disproves climate change\"",
+   "kind": "misconception",
+   "summary": "Weather is short-term and local; climate is the long-term average.",
+   "outcome": "Separate a weather event from a climate trend.",
+   "check": "Does a record cold week disprove global warming?",
+   "answer": "No: weather is short-term and local; climate is the long-term average over decades.",
+   "grade": {
+    "all": [
+     [
+      "no",
+      "not"
+     ],
+     [
+      "weather",
+      "long term",
+      "average",
+      "decades",
+      "local",
+      "trend"
+     ]
+    ]
+   },
+   "map": "environmental",
+   "key": "environmental/misc-weather",
+   "depth": 2
+  },
+  {
+   "id": "carbon",
+   "label": "The Carbon Cycle",
+   "kind": "concept",
+   "summary": "Fluxes between atmosphere, ocean, land and rock; the fraction of emissions that stays airborne.",
+   "outcome": "Trace emitted carbon through its sinks.",
+   "check": "Roughly what fraction of emitted CO₂ stays in the atmosphere, with oceans and land taking the rest?",
+   "answer": "About half (≈45%).",
+   "grade": {
+    "all": [
+     [
+      "half",
+      "45",
+      "50",
+      "40"
+     ]
+    ]
+   },
+   "map": "environmental",
+   "key": "environmental/carbon",
+   "depth": 2
+  },
+  {
+   "id": "watershed",
+   "label": "Watersheds & the Water Cycle",
+   "kind": "concept",
+   "summary": "Precipitation, infiltration, runoff and evapotranspiration within a drainage basin.",
+   "outcome": "Delineate a watershed and write its water balance.",
+   "check": "What is a watershed (catchment)?",
+   "answer": "The land area that drains to a common outlet, such as a point on a river or a lake.",
+   "grade": {
+    "all": [
+     [
+      "drain*",
+      "outlet",
+      "flows to",
+      "runs off"
+     ]
+    ]
+   },
+   "lab": "runoff",
+   "map": "environmental",
+   "key": "environmental/watershed",
+   "depth": 0
+  },
+  {
+   "id": "waterquality",
+   "label": "Water Quality: Oxygen, BOD & Nutrients",
+   "kind": "concept",
+   "summary": "Dissolved oxygen, biochemical oxygen demand, nutrients and the oxygen sag below an outfall.",
+   "outcome": "Predict the oxygen sag downstream of a sewage outfall.",
+   "check": "Why can untreated sewage kill fish even if it isn't toxic?",
+   "answer": "Bacteria decomposing it consume dissolved oxygen (BOD), and oxygen falls below what fish need.",
+   "grade": {
+    "all": [
+     [
+      "oxygen",
+      "bod",
+      "do"
+     ]
+    ]
+   },
+   "lab": "dosag",
+   "map": "environmental",
+   "key": "environmental/waterquality",
+   "depth": 1
+  },
+  {
+   "id": "misc-dilution",
+   "label": "\"Dilution is the solution to pollution\"",
+   "kind": "misconception",
+   "summary": "Persistent pollutants accumulate and biomagnify, and oxygen demand still depletes rivers downstream: total load matters.",
+   "outcome": "Explain why load, not concentration alone, governs impact.",
+   "check": "Why isn't discharging into a big river a safe answer to pollution?",
+   "answer": "Persistent pollutants accumulate and biomagnify, and oxygen demand still depletes DO downstream; the total load matters, not just concentration.",
+   "grade": {
+    "all": [
+     [
+      "accumulat*",
+      "biomagnif*",
+      "bioaccumulat*",
+      "persist*",
+      "load",
+      "downstream",
+      "oxygen",
+      "total"
+     ]
+    ]
+   },
+   "map": "environmental",
+   "key": "environmental/misc-dilution",
+   "depth": 1
+  },
+  {
+   "id": "treatment",
+   "label": "Wastewater Treatment",
+   "kind": "concept",
+   "summary": "Primary settling, biological secondary treatment and nutrient removal.",
+   "outcome": "Describe each stage of a treatment plant and what it removes.",
+   "check": "What do microbes do in the secondary (activated sludge) stage?",
+   "answer": "They consume dissolved organic matter, removing BOD.",
+   "grade": {
+    "all": [
+     [
+      "consum*",
+      "eat*",
+      "digest*",
+      "break* down",
+      "degrad*",
+      "decompos*",
+      "remov*"
+     ],
+     [
+      "organic",
+      "bod",
+      "matter"
+     ]
+    ]
+   },
+   "map": "environmental",
+   "key": "environmental/treatment",
+   "depth": 2
+  },
+  {
+   "id": "groundwater",
+   "label": "Groundwater & Darcy's Law",
+   "kind": "concept",
+   "summary": "Flow through porous rock, proportional to conductivity and hydraulic gradient.",
+   "outcome": "Compute groundwater flow with Darcy's law.",
+   "check": "Darcy's law: flow is proportional to hydraulic conductivity times what?",
+   "answer": "The hydraulic gradient (head difference over distance).",
+   "grade": {
+    "all": [
+     [
+      "gradient",
+      "head"
+     ]
+    ]
+   },
+   "map": "environmental",
+   "key": "environmental/groundwater",
+   "depth": 1
+  },
+  {
+   "id": "remediation",
+   "label": "Contaminant Transport & Remediation",
+   "kind": "concept",
+   "summary": "Advection, dispersion and sorption; pump-and-treat, bioremediation and containment.",
+   "outcome": "Choose a remediation strategy for a contaminated aquifer.",
+   "check": "Why is pump-and-treat often slow to clean up a contaminated aquifer?",
+   "answer": "Contaminants sorb to soil and sit in low-permeability zones, slowly diffusing back out (tailing and rebound).",
+   "grade": {
+    "all": [
+     [
+      "sorb*",
+      "adsorb*",
+      "diffus*",
+      "low permeability",
+      "clay",
+      "rebound",
+      "tail*",
+      "trapped"
+     ]
+    ]
+   },
+   "map": "environmental",
+   "key": "environmental/remediation",
+   "depth": 2
+  },
+  {
+   "id": "air",
+   "label": "Air Pollution",
+   "kind": "concept",
+   "summary": "Particulates, NOx, ozone and dispersion from sources.",
+   "outcome": "Explain how ground-level ozone forms.",
+   "check": "Why is ground-level ozone worst on hot, sunny afternoons?",
+   "answer": "It forms from NOx and VOCs in reactions driven by sunlight.",
+   "grade": {
+    "all": [
+     [
+      "sunlight",
+      "sun",
+      "photochem*",
+      "uv",
+      "light"
+     ]
+    ]
+   },
+   "map": "environmental",
+   "key": "environmental/air",
+   "depth": 0
+  },
+  {
+   "id": "monitoring",
+   "label": "Environmental Monitoring & Sampling",
+   "kind": "concept",
+   "summary": "Sampling design, detection limits and separating trends from noise.",
+   "outcome": "Design a sampling plan that can detect a trend.",
+   "check": "Why sample a river at fixed times and places over months instead of once?",
+   "answer": "Concentrations vary with time, flow and season; repeated sampling separates real trends from noise.",
+   "grade": {
+    "all": [
+     [
+      "vary",
+      "varies",
+      "variation",
+      "season*",
+      "trend*",
+      "noise",
+      "time"
+     ]
+    ]
+   },
+   "lab": "dosag",
+   "map": "environmental",
+   "key": "environmental/monitoring",
+   "depth": 2
+  },
+  {
+   "id": "lca",
+   "label": "Life-Cycle Assessment",
+   "kind": "concept",
+   "summary": "Impacts from raw materials to disposal, so burdens aren't just shifted elsewhere.",
+   "outcome": "Compare two products over their life cycles.",
+   "check": "Why can an electric car have higher emissions than a petrol car in its first year of use?",
+   "answer": "Battery manufacturing carries a large up-front carbon cost that is paid back during use.",
+   "grade": {
+    "all": [
+     [
+      "battery",
+      "manufactur*",
+      "production",
+      "embodied",
+      "up front"
+     ]
+    ]
+   },
+   "map": "environmental",
+   "key": "environmental/lca",
+   "depth": 3
+  },
+  {
+   "id": "rocks",
+   "label": "Minerals, Rocks & the Rock Cycle",
+   "kind": "concept",
+   "summary": "Igneous, sedimentary and metamorphic rocks and the processes that turn one into another.",
+   "outcome": "Explain each path through the rock cycle.",
+   "check": "How does a sedimentary rock become a metamorphic one?",
+   "answer": "Burial under heat and pressure recrystallises it without melting.",
+   "grade": {
+    "all": [
+     [
+      "heat*",
+      "temperature"
+     ],
+     [
+      "pressure"
+     ]
+    ]
+   },
+   "map": "geoscience",
+   "key": "geoscience/rocks",
+   "depth": 0
+  },
+  {
+   "id": "stratigraphy",
+   "label": "Stratigraphy & Relative Dating",
+   "kind": "concept",
+   "summary": "Superposition, cross-cutting relations and fossils order events without numbers.",
+   "outcome": "Order the events in a geological cross-section.",
+   "check": "In undisturbed sedimentary layers, which layer is oldest?",
+   "answer": "The bottom one (law of superposition).",
+   "grade": {
+    "all": [
+     [
+      "bottom",
+      "lowest",
+      "deepest"
+     ]
+    ]
+   },
+   "map": "geoscience",
+   "key": "geoscience/stratigraphy",
+   "depth": 1
+  },
+  {
+   "id": "dating",
+   "label": "Deep Time & Radiometric Dating",
+   "kind": "threshold",
+   "summary": "Radioactive decay is a clock: half-lives give absolute ages and reveal an Earth 4.5 billion years old. Troublesome because human intuition stops at thousands of years.",
+   "outcome": "Compute an age from the fraction of parent isotope remaining.",
+   "check": "A rock retains 25% of its original parent isotope. How many half-lives have passed?",
+   "answer": "Two.",
+   "grade": {
+    "all": [
+     [
+      "2",
+      "two"
+     ]
+    ]
+   },
+   "map": "geoscience",
+   "key": "geoscience/dating",
+   "depth": 2
+  },
+  {
+   "id": "misc-c14",
+   "label": "\"Carbon-14 dates dinosaur bones\"",
+   "kind": "misconception",
+   "summary": "C-14's half-life is about 5,730 years, so it is useless beyond roughly 50,000 years; old rocks are dated with long-lived isotopes such as U–Pb.",
+   "outcome": "Choose a dating method suited to an age range.",
+   "check": "Why can't carbon-14 date a 66-million-year-old dinosaur bone?",
+   "answer": "C-14's half-life is about 5,730 years; after roughly 50,000 years too little remains to measure.",
+   "grade": {
+    "all": [
+     [
+      "half life",
+      "5730",
+      "too little",
+      "none left",
+      "50000",
+      "decayed",
+      "nothing left"
+     ]
+    ]
+   },
+   "map": "geoscience",
+   "key": "geoscience/misc-c14",
+   "depth": 2
+  },
+  {
+   "id": "interior",
+   "label": "Earth's Interior",
+   "kind": "concept",
+   "summary": "Crust, mantle, outer and inner core, mapped by seismic waves.",
+   "outcome": "Use seismic shadow zones to infer the core's structure.",
+   "check": "How do we know Earth's outer core is liquid?",
+   "answer": "S-waves cannot travel through liquid, so they vanish in a shadow zone behind the core.",
+   "grade": {
+    "all": [
+     [
+      "s wave*",
+      "shear wave*",
+      "shadow"
+     ]
+    ]
+   },
+   "map": "geoscience",
+   "key": "geoscience/interior",
+   "depth": 0
+  },
+  {
+   "id": "tectonics",
+   "label": "Plate Tectonics",
+   "kind": "threshold",
+   "summary": "Rigid plates move over a slowly flowing mantle; their boundaries make mountains, ocean basins, earthquakes and volcanoes.",
+   "outcome": "Explain features at divergent, convergent and transform boundaries.",
+   "check": "What mainly drives tectonic plates?",
+   "answer": "Mantle convection, with slab pull from sinking plates (and ridge push) doing most of the work.",
+   "grade": {
+    "all": [
+     [
+      "convection",
+      "slab pull",
+      "ridge push",
+      "mantle"
+     ]
+    ]
+   },
+   "map": "geoscience",
+   "key": "geoscience/tectonics",
+   "depth": 3
+  },
+  {
+   "id": "misc-magma",
+   "label": "\"Plates float on a sea of molten magma\"",
+   "kind": "misconception",
+   "summary": "The mantle is solid rock that flows extremely slowly; melt forms only locally.",
+   "outcome": "Describe the mantle's state correctly.",
+   "check": "Is the mantle beneath the plates mostly liquid magma?",
+   "answer": "No: it is solid rock that flows very slowly over geological time; melt is only local.",
+   "grade": {
+    "all": [
+     [
+      "no",
+      "not"
+     ],
+     [
+      "solid"
+     ]
+    ]
+   },
+   "map": "geoscience",
+   "key": "geoscience/misc-magma",
+   "depth": 3
+  },
+  {
+   "id": "quakes",
+   "label": "Earthquakes & Seismic Waves",
+   "kind": "concept",
+   "summary": "Faults slip, P and S waves travel at different speeds, and the S–P gap gives distance.",
+   "outcome": "Locate an epicentre from three seismograms.",
+   "check": "A station records P and S arrivals 20 s apart. With vp = 6 km/s and vs = 3.5 km/s, how far away is the earthquake?",
+   "answer": "About 168 km (d = Δt·vp·vs / (vp − vs)).",
+   "grade": {
+    "numbers": [
+     [
+      168
+     ]
+    ],
+    "tol": 0.03
+   },
+   "lab": "quake",
+   "map": "geoscience",
+   "key": "geoscience/quakes",
+   "depth": 4
+  },
+  {
+   "id": "misc-magnitude",
+   "label": "\"Magnitude 6 is twice magnitude 3\"",
+   "kind": "misconception",
+   "summary": "Magnitude is logarithmic: each step is about 32 times more energy.",
+   "outcome": "Compare earthquake energies across magnitudes.",
+   "check": "How much more energy does a magnitude 7 earthquake release than a magnitude 6?",
+   "answer": "About 32 times.",
+   "grade": {
+    "numbers": [
+     [
+      32,
+      31.6
+     ]
+    ],
+    "tol": 0.05
+   },
+   "lab": "quake",
+   "map": "geoscience",
+   "key": "geoscience/misc-magnitude",
+   "depth": 4
+  },
+  {
+   "id": "volcanoes",
+   "label": "Volcanoes & Magma",
+   "kind": "concept",
+   "summary": "Magma composition sets viscosity and gas content, and so eruption style.",
+   "outcome": "Predict eruption style from magma composition.",
+   "check": "Why do silica-rich magmas erupt explosively?",
+   "answer": "High silica makes them viscous, so gas can't escape until pressure builds and shatters the magma.",
+   "grade": {
+    "all": [
+     [
+      "viscous",
+      "viscosity",
+      "sticky",
+      "thick"
+     ],
+     [
+      "gas"
+     ]
+    ]
+   },
+   "map": "geoscience",
+   "key": "geoscience/volcanoes",
+   "depth": 4
+  },
+  {
+   "id": "landscapes",
+   "label": "Erosion & Landscapes",
+   "kind": "concept",
+   "summary": "Rivers, glaciers, wind and mass wasting shape the surface.",
+   "outcome": "Identify landforms by their processes.",
+   "check": "Why are V-shaped valleys usually cut by rivers and U-shaped valleys by glaciers?",
+   "answer": "Rivers cut down narrowly at the bed; glaciers erode the whole floor and sides of the valley.",
+   "grade": {
+    "all": [
+     [
+      "river*"
+     ],
+     [
+      "glacier*",
+      "ice"
+     ]
+    ]
+   },
+   "map": "geoscience",
+   "key": "geoscience/landscapes",
+   "depth": 1
+  },
+  {
+   "id": "resources",
+   "label": "Earth Resources",
+   "kind": "concept",
+   "summary": "Ores, groundwater, hydrocarbons and the geology that concentrates them.",
+   "outcome": "Explain how a petroleum trap forms.",
+   "check": "Why do oil and gas accumulate in traps?",
+   "answer": "They are buoyant and migrate upward until an impermeable cap rock stops them.",
+   "grade": {
+    "all": [
+     [
+      "buoyan*",
+      "rise*",
+      "migrat*",
+      "less dense",
+      "light*"
+     ],
+     [
+      "cap rock",
+      "caprock",
+      "impermeable",
+      "seal",
+      "trap*"
+     ]
+    ]
+   },
+   "map": "geoscience",
+   "key": "geoscience/resources",
+   "depth": 4
+  },
+  {
+   "id": "hazards",
+   "label": "Geohazards & Risk",
+   "kind": "concept",
+   "summary": "Earthquakes, landslides, volcanoes and tsunamis; risk as hazard × exposure × vulnerability.",
+   "outcome": "Assess risk for a town near an active fault.",
+   "check": "Why is risk not the same as hazard?",
+   "answer": "Risk combines the hazard with exposure and vulnerability: a big quake in an empty desert is low risk.",
+   "grade": {
+    "all": [
+     [
+      "exposure",
+      "vulnerab*",
+      "people",
+      "consequence*",
+      "impact",
+      "assets"
+     ]
+    ]
+   },
+   "map": "geoscience",
+   "key": "geoscience/hazards",
+   "depth": 5
+  },
+  {
+   "id": "paleoclimate",
+   "label": "Paleoclimate",
+   "kind": "concept",
+   "summary": "Ice cores, sediments and isotopes record past climates and CO₂.",
+   "outcome": "Read temperature and CO₂ from an ice-core record.",
+   "check": "How do ice cores record past temperature and CO₂?",
+   "answer": "Trapped air bubbles preserve old atmosphere (CO₂), and oxygen or hydrogen isotope ratios in the ice track temperature.",
+   "grade": {
+    "all": [
+     [
+      "bubble*",
+      "trapped air",
+      "air"
+     ],
+     [
+      "isotope*",
+      "oxygen 18",
+      "deuterium",
+      "o18"
+     ]
+    ]
+   },
+   "lab": "climate",
+   "map": "geoscience",
+   "key": "geoscience/paleoclimate",
+   "depth": 3
+  },
+  {
+   "id": "geophysics",
+   "label": "Geophysical Surveying",
+   "kind": "concept",
+   "summary": "Gravity, magnetic, seismic and electrical methods image the subsurface.",
+   "outcome": "Choose a survey method for a buried target.",
+   "check": "How can a gravity survey find a buried ore body?",
+   "answer": "Dense ore produces a small positive gravity anomaly above it.",
+   "grade": {
+    "all": [
+     [
+      "dens*",
+      "anomal*",
+      "heavier",
+      "mass"
+     ]
+    ]
+   },
+   "map": "geoscience",
+   "key": "geoscience/geophysics",
+   "depth": 5
   },
   {
    "id": "shell",
@@ -9462,6 +10988,300 @@ window.DULTA_MAPS = {
    "map": "mechanical"
   },
   {
+   "from": "mechanical/statics",
+   "to": "civil/loads",
+   "type": "prereq",
+   "map": "civil"
+  },
+  {
+   "from": "civil/loads",
+   "to": "civil/analysis",
+   "type": "prereq",
+   "map": "civil"
+  },
+  {
+   "from": "mechanical/trusses",
+   "to": "civil/analysis",
+   "type": "prereq",
+   "map": "civil"
+  },
+  {
+   "from": "civil/analysis",
+   "to": "civil/concrete",
+   "type": "prereq",
+   "map": "civil"
+  },
+  {
+   "from": "mechanical/beams",
+   "to": "civil/concrete",
+   "type": "prereq",
+   "map": "civil"
+  },
+  {
+   "from": "civil/misc-concrete",
+   "to": "civil/concrete",
+   "type": "counter",
+   "map": "civil"
+  },
+  {
+   "from": "civil/analysis",
+   "to": "civil/steel",
+   "type": "prereq",
+   "map": "civil"
+  },
+  {
+   "from": "mechanical/buckling",
+   "to": "civil/steel",
+   "type": "prereq",
+   "map": "civil"
+  },
+  {
+   "from": "civil/concrete",
+   "to": "civil/limitstate",
+   "type": "prereq",
+   "map": "civil"
+  },
+  {
+   "from": "civil/steel",
+   "to": "civil/limitstate",
+   "type": "prereq",
+   "map": "civil"
+  },
+  {
+   "from": "mathematics/probability",
+   "to": "civil/limitstate",
+   "type": "prereq",
+   "map": "civil"
+  },
+  {
+   "from": "mechanical/stress",
+   "to": "civil/soil",
+   "type": "prereq",
+   "map": "civil"
+  },
+  {
+   "from": "civil/misc-soil",
+   "to": "civil/soil",
+   "type": "counter",
+   "map": "civil"
+  },
+  {
+   "from": "civil/soil",
+   "to": "civil/foundations",
+   "type": "prereq",
+   "map": "civil"
+  },
+  {
+   "from": "civil/loads",
+   "to": "civil/foundations",
+   "type": "prereq",
+   "map": "civil"
+  },
+  {
+   "from": "civil/soil",
+   "to": "civil/slopes",
+   "type": "prereq",
+   "map": "civil"
+  },
+  {
+   "from": "mathematics/statistics",
+   "to": "civil/hydrology",
+   "type": "prereq",
+   "map": "civil"
+  },
+  {
+   "from": "environmental/watershed",
+   "to": "civil/hydrology",
+   "type": "prereq",
+   "map": "civil"
+  },
+  {
+   "from": "civil/hydrology",
+   "to": "civil/hydraulics",
+   "type": "prereq",
+   "map": "civil"
+  },
+  {
+   "from": "mechanical/fluids",
+   "to": "civil/hydraulics",
+   "type": "prereq",
+   "map": "civil"
+  },
+  {
+   "from": "civil/hydraulics",
+   "to": "civil/water",
+   "type": "prereq",
+   "map": "civil"
+  },
+  {
+   "from": "chemistry/acidbase",
+   "to": "civil/water",
+   "type": "prereq",
+   "map": "civil"
+  },
+  {
+   "from": "mathematics/functions",
+   "to": "civil/traffic",
+   "type": "prereq",
+   "map": "civil"
+  },
+  {
+   "from": "civil/misc-lanes",
+   "to": "civil/traffic",
+   "type": "counter",
+   "map": "civil"
+  },
+  {
+   "from": "civil/limitstate",
+   "to": "civil/seismic",
+   "type": "prereq",
+   "map": "civil"
+  },
+  {
+   "from": "mechanical/vibration",
+   "to": "civil/seismic",
+   "type": "prereq",
+   "map": "civil"
+  },
+  {
+   "from": "physics/thermo",
+   "to": "aerospace/atmosphere",
+   "type": "prereq",
+   "map": "aerospace"
+  },
+  {
+   "from": "aerospace/atmosphere",
+   "to": "aerospace/lift",
+   "type": "prereq",
+   "map": "aerospace"
+  },
+  {
+   "from": "mechanical/fluids",
+   "to": "aerospace/lift",
+   "type": "prereq",
+   "map": "aerospace"
+  },
+  {
+   "from": "aerospace/misc-transit",
+   "to": "aerospace/lift",
+   "type": "counter",
+   "map": "aerospace"
+  },
+  {
+   "from": "aerospace/lift",
+   "to": "aerospace/drag",
+   "type": "prereq",
+   "map": "aerospace"
+  },
+  {
+   "from": "aerospace/lift",
+   "to": "aerospace/stall",
+   "type": "prereq",
+   "map": "aerospace"
+  },
+  {
+   "from": "aerospace/misc-stallspeed",
+   "to": "aerospace/stall",
+   "type": "counter",
+   "map": "aerospace"
+  },
+  {
+   "from": "aerospace/drag",
+   "to": "aerospace/stability",
+   "type": "prereq",
+   "map": "aerospace"
+  },
+  {
+   "from": "physics/rotation",
+   "to": "aerospace/stability",
+   "type": "prereq",
+   "map": "aerospace"
+  },
+  {
+   "from": "aerospace/drag",
+   "to": "aerospace/performance",
+   "type": "prereq",
+   "map": "aerospace"
+  },
+  {
+   "from": "aerospace/propulsion",
+   "to": "aerospace/performance",
+   "type": "prereq",
+   "map": "aerospace"
+  },
+  {
+   "from": "physics/momentum",
+   "to": "aerospace/propulsion",
+   "type": "prereq",
+   "map": "aerospace"
+  },
+  {
+   "from": "physics/momentum",
+   "to": "aerospace/rocket",
+   "type": "prereq",
+   "map": "aerospace"
+  },
+  {
+   "from": "mathematics/integrals",
+   "to": "aerospace/rocket",
+   "type": "prereq",
+   "map": "aerospace"
+  },
+  {
+   "from": "physics/gravitation",
+   "to": "aerospace/orbits",
+   "type": "prereq",
+   "map": "aerospace"
+  },
+  {
+   "from": "aerospace/misc-nograv",
+   "to": "aerospace/orbits",
+   "type": "counter",
+   "map": "aerospace"
+  },
+  {
+   "from": "aerospace/orbits",
+   "to": "aerospace/hohmann",
+   "type": "prereq",
+   "map": "aerospace"
+  },
+  {
+   "from": "aerospace/rocket",
+   "to": "aerospace/hohmann",
+   "type": "prereq",
+   "map": "aerospace"
+  },
+  {
+   "from": "aerospace/misc-catchup",
+   "to": "aerospace/hohmann",
+   "type": "counter",
+   "map": "aerospace"
+  },
+  {
+   "from": "aerospace/orbits",
+   "to": "aerospace/reentry",
+   "type": "prereq",
+   "map": "aerospace"
+  },
+  {
+   "from": "physics/energy",
+   "to": "aerospace/reentry",
+   "type": "prereq",
+   "map": "aerospace"
+  },
+  {
+   "from": "aerospace/stability",
+   "to": "aerospace/flightcontrol",
+   "type": "prereq",
+   "map": "aerospace"
+  },
+  {
+   "from": "electrical/control",
+   "to": "aerospace/flightcontrol",
+   "type": "prereq",
+   "map": "aerospace"
+  },
+  {
    "from": "mechanical/mechanisms",
    "to": "robotics/kinematics",
    "type": "prereq",
@@ -9772,6 +11592,276 @@ window.DULTA_MAPS = {
    "to": "telecom/sdr",
    "type": "prereq",
    "map": "telecom"
+  },
+  {
+   "from": "physics/thermo",
+   "to": "environmental/energybalance",
+   "type": "prereq",
+   "map": "environmental"
+  },
+  {
+   "from": "environmental/energybalance",
+   "to": "environmental/greenhouse",
+   "type": "prereq",
+   "map": "environmental"
+  },
+  {
+   "from": "mathematics/functions",
+   "to": "environmental/greenhouse",
+   "type": "prereq",
+   "map": "environmental"
+  },
+  {
+   "from": "environmental/misc-ozone",
+   "to": "environmental/greenhouse",
+   "type": "counter",
+   "map": "environmental"
+  },
+  {
+   "from": "environmental/greenhouse",
+   "to": "environmental/feedbacks",
+   "type": "prereq",
+   "map": "environmental"
+  },
+  {
+   "from": "mathematics/diffeq",
+   "to": "environmental/feedbacks",
+   "type": "prereq",
+   "map": "environmental"
+  },
+  {
+   "from": "environmental/misc-weather",
+   "to": "environmental/feedbacks",
+   "type": "counter",
+   "map": "environmental"
+  },
+  {
+   "from": "environmental/greenhouse",
+   "to": "environmental/carbon",
+   "type": "prereq",
+   "map": "environmental"
+  },
+  {
+   "from": "chemistry/equilibrium",
+   "to": "environmental/carbon",
+   "type": "prereq",
+   "map": "environmental"
+  },
+  {
+   "from": "biology/ecology",
+   "to": "environmental/carbon",
+   "type": "prereq",
+   "map": "environmental"
+  },
+  {
+   "from": "mathematics/statistics",
+   "to": "environmental/watershed",
+   "type": "prereq",
+   "map": "environmental"
+  },
+  {
+   "from": "environmental/watershed",
+   "to": "environmental/waterquality",
+   "type": "prereq",
+   "map": "environmental"
+  },
+  {
+   "from": "chemistry/kinetics",
+   "to": "environmental/waterquality",
+   "type": "prereq",
+   "map": "environmental"
+  },
+  {
+   "from": "environmental/misc-dilution",
+   "to": "environmental/waterquality",
+   "type": "counter",
+   "map": "environmental"
+  },
+  {
+   "from": "environmental/waterquality",
+   "to": "environmental/treatment",
+   "type": "prereq",
+   "map": "environmental"
+  },
+  {
+   "from": "biology/metabolism",
+   "to": "environmental/treatment",
+   "type": "prereq",
+   "map": "environmental"
+  },
+  {
+   "from": "environmental/watershed",
+   "to": "environmental/groundwater",
+   "type": "prereq",
+   "map": "environmental"
+  },
+  {
+   "from": "environmental/groundwater",
+   "to": "environmental/remediation",
+   "type": "prereq",
+   "map": "environmental"
+  },
+  {
+   "from": "chemistry/equilibrium",
+   "to": "environmental/remediation",
+   "type": "prereq",
+   "map": "environmental"
+  },
+  {
+   "from": "chemistry/kinetics",
+   "to": "environmental/air",
+   "type": "prereq",
+   "map": "environmental"
+  },
+  {
+   "from": "environmental/waterquality",
+   "to": "environmental/monitoring",
+   "type": "prereq",
+   "map": "environmental"
+  },
+  {
+   "from": "mathematics/statistics",
+   "to": "environmental/monitoring",
+   "type": "prereq",
+   "map": "environmental"
+  },
+  {
+   "from": "environmental/carbon",
+   "to": "environmental/lca",
+   "type": "prereq",
+   "map": "environmental"
+  },
+  {
+   "from": "chemistry/bonding",
+   "to": "geoscience/rocks",
+   "type": "prereq",
+   "map": "geoscience"
+  },
+  {
+   "from": "geoscience/rocks",
+   "to": "geoscience/stratigraphy",
+   "type": "prereq",
+   "map": "geoscience"
+  },
+  {
+   "from": "geoscience/stratigraphy",
+   "to": "geoscience/dating",
+   "type": "prereq",
+   "map": "geoscience"
+  },
+  {
+   "from": "mathematics/functions",
+   "to": "geoscience/dating",
+   "type": "prereq",
+   "map": "geoscience"
+  },
+  {
+   "from": "geoscience/misc-c14",
+   "to": "geoscience/dating",
+   "type": "counter",
+   "map": "geoscience"
+  },
+  {
+   "from": "physics/waves",
+   "to": "geoscience/interior",
+   "type": "prereq",
+   "map": "geoscience"
+  },
+  {
+   "from": "geoscience/interior",
+   "to": "geoscience/tectonics",
+   "type": "prereq",
+   "map": "geoscience"
+  },
+  {
+   "from": "geoscience/dating",
+   "to": "geoscience/tectonics",
+   "type": "prereq",
+   "map": "geoscience"
+  },
+  {
+   "from": "geoscience/misc-magma",
+   "to": "geoscience/tectonics",
+   "type": "counter",
+   "map": "geoscience"
+  },
+  {
+   "from": "geoscience/interior",
+   "to": "geoscience/quakes",
+   "type": "prereq",
+   "map": "geoscience"
+  },
+  {
+   "from": "geoscience/tectonics",
+   "to": "geoscience/quakes",
+   "type": "prereq",
+   "map": "geoscience"
+  },
+  {
+   "from": "geoscience/misc-magnitude",
+   "to": "geoscience/quakes",
+   "type": "counter",
+   "map": "geoscience"
+  },
+  {
+   "from": "geoscience/tectonics",
+   "to": "geoscience/volcanoes",
+   "type": "prereq",
+   "map": "geoscience"
+  },
+  {
+   "from": "geoscience/rocks",
+   "to": "geoscience/landscapes",
+   "type": "prereq",
+   "map": "geoscience"
+  },
+  {
+   "from": "geoscience/rocks",
+   "to": "geoscience/resources",
+   "type": "prereq",
+   "map": "geoscience"
+  },
+  {
+   "from": "geoscience/tectonics",
+   "to": "geoscience/resources",
+   "type": "prereq",
+   "map": "geoscience"
+  },
+  {
+   "from": "geoscience/quakes",
+   "to": "geoscience/hazards",
+   "type": "prereq",
+   "map": "geoscience"
+  },
+  {
+   "from": "geoscience/volcanoes",
+   "to": "geoscience/hazards",
+   "type": "prereq",
+   "map": "geoscience"
+  },
+  {
+   "from": "geoscience/dating",
+   "to": "geoscience/paleoclimate",
+   "type": "prereq",
+   "map": "geoscience"
+  },
+  {
+   "from": "environmental/feedbacks",
+   "to": "geoscience/paleoclimate",
+   "type": "prereq",
+   "map": "geoscience"
+  },
+  {
+   "from": "physics/gravitation",
+   "to": "geoscience/geophysics",
+   "type": "prereq",
+   "map": "geoscience"
+  },
+  {
+   "from": "geoscience/quakes",
+   "to": "geoscience/geophysics",
+   "type": "prereq",
+   "map": "geoscience"
   },
   {
    "from": "developer/shell",
@@ -11371,5 +13461,185 @@ window.DULTA_TRACKS = [
    "fourier"
   ],
   "capstone": "Implement and analyse a small algorithm (Deutsch–Jozsa or 2-qubit Grover) on a simulator and on noisy hardware, explain the interference that makes it work, and quantify how decoherence degrades the result."
+ },
+ {
+  "id": "civil-structural-engineer",
+  "title": "Civil & Structural Engineer",
+  "accent": "civil",
+  "field": "Engineering",
+  "summary": "Structures that stand, ground that holds, water that drains and roads that move.",
+  "nodes": [
+   "physics/vectors",
+   "physics/forces",
+   "mathematics/integrals",
+   "mathematics/linalg",
+   "mathematics/probability",
+   "mechanical/statics",
+   "mechanical/trusses",
+   "mechanical/stress",
+   "mechanical/materials",
+   "mechanical/beams",
+   "mechanical/buckling",
+   "mechanical/vibration",
+   "mechanical/fluids",
+   "civil/loads",
+   "civil/analysis",
+   "civil/concrete",
+   "civil/steel",
+   "civil/limitstate",
+   "civil/soil",
+   "civil/foundations",
+   "civil/slopes",
+   "environmental/watershed",
+   "civil/hydrology",
+   "civil/hydraulics",
+   "civil/water",
+   "civil/traffic",
+   "civil/seismic"
+  ],
+  "labs": [
+   "truss",
+   "runoff",
+   "beam"
+  ],
+  "capstone": "Design a short-span footbridge over a stream: load paths and limit-state checks, a truss sized from member forces, foundations chosen from the soil's effective stress, and a culvert and channel sized for the 100-year storm runoff."
+ },
+ {
+  "id": "aerospace-engineer",
+  "title": "Aerospace Engineer",
+  "accent": "aerospace",
+  "field": "Engineering",
+  "summary": "Aircraft and spacecraft: aerodynamics, propulsion, flight dynamics and orbital mechanics.",
+  "nodes": [
+   "physics/newton",
+   "physics/momentum",
+   "physics/energy",
+   "physics/rotation",
+   "physics/gravitation",
+   "physics/thermo",
+   "mathematics/integrals",
+   "mathematics/diffeq",
+   "mechanical/fluids",
+   "mechanical/materials",
+   "mechanical/fatigue",
+   "electrical/control",
+   "aerospace/atmosphere",
+   "aerospace/lift",
+   "aerospace/drag",
+   "aerospace/stall",
+   "aerospace/stability",
+   "aerospace/performance",
+   "aerospace/propulsion",
+   "aerospace/rocket",
+   "aerospace/orbits",
+   "aerospace/hohmann",
+   "aerospace/reentry",
+   "aerospace/flightcontrol"
+  ],
+  "labs": [
+   "glider",
+   "orbit",
+   "projectile"
+  ],
+  "capstone": "Size a small UAV or a cubesat mission: a drag polar and best-L/D speed with Breguet range (or a launch, Hohmann transfer and Δv budget through the rocket equation), a stability check from CG and neutral point, and a fatigue or thermal margin."
+ },
+ {
+  "id": "environmental-engineer",
+  "title": "Environmental Scientist / Engineer",
+  "accent": "environmental",
+  "field": "Earth & Environment",
+  "summary": "Measure and protect water, air and climate: monitoring, modelling and remediation.",
+  "nodes": [
+   "physics/thermo",
+   "chemistry/equilibrium",
+   "chemistry/kinetics",
+   "chemistry/acidbase",
+   "biology/metabolism",
+   "biology/ecology",
+   "mathematics/statistics",
+   "mathematics/diffeq",
+   "environmental/energybalance",
+   "environmental/greenhouse",
+   "environmental/feedbacks",
+   "environmental/carbon",
+   "environmental/watershed",
+   "environmental/waterquality",
+   "environmental/treatment",
+   "environmental/groundwater",
+   "environmental/remediation",
+   "environmental/air",
+   "environmental/monitoring",
+   "environmental/lca",
+   "civil/hydrology",
+   "civil/water"
+  ],
+  "labs": [
+   "dosag",
+   "runoff",
+   "climate"
+  ],
+  "capstone": "Assess a river below a town: design a monitoring plan, fit an oxygen-sag model to the samples, size the treatment upgrade that keeps oxygen above 5 mg/L in summer, model the catchment's flood response, and report the life-cycle trade-offs."
+ },
+ {
+  "id": "climate-scientist",
+  "title": "Climate Scientist",
+  "accent": "environmental",
+  "field": "Earth & Environment",
+  "summary": "Energy balance, feedbacks and the long record of Earth's climate.",
+  "nodes": [
+   "physics/thermo",
+   "physics/entropy",
+   "physics/statmech",
+   "mathematics/diffeq",
+   "mathematics/statistics",
+   "mathematics/misc-corr",
+   "environmental/energybalance",
+   "environmental/greenhouse",
+   "environmental/feedbacks",
+   "environmental/carbon",
+   "environmental/monitoring",
+   "geoscience/stratigraphy",
+   "geoscience/dating",
+   "geoscience/paleoclimate",
+   "ml/regression",
+   "ml/overfitting"
+  ],
+  "labs": [
+   "climate",
+   "polyfit"
+  ],
+  "capstone": "Estimate climate sensitivity two ways, from an energy-balance model fitted to the instrumental record and from a paleoclimate interval, then reconcile them, with uncertainties and the feedbacks that dominate them."
+ },
+ {
+  "id": "geoscientist",
+  "title": "Geoscientist",
+  "accent": "geoscience",
+  "field": "Earth & Environment",
+  "summary": "Read rocks, quakes and deep time to find resources and manage hazards.",
+  "nodes": [
+   "chemistry/bonding",
+   "physics/waves",
+   "physics/gravitation",
+   "mathematics/functions",
+   "mathematics/statistics",
+   "geoscience/rocks",
+   "geoscience/stratigraphy",
+   "geoscience/dating",
+   "geoscience/interior",
+   "geoscience/tectonics",
+   "geoscience/quakes",
+   "geoscience/volcanoes",
+   "geoscience/landscapes",
+   "geoscience/resources",
+   "geoscience/hazards",
+   "geoscience/paleoclimate",
+   "geoscience/geophysics",
+   "environmental/groundwater"
+  ],
+  "labs": [
+   "quake",
+   "climate"
+  ],
+  "capstone": "Produce a hazard and resource assessment for a region: a geological map and history with radiometric ages, earthquakes located from station records, a gravity survey interpreted for a buried body, and a risk map combining hazard, exposure and vulnerability."
  }
 ];

@@ -15,10 +15,10 @@ that will build it.
 - **[maps/](maps/)**: domain maps as JSON, the single source of truth. Physics, Mathematics,
   Electrical Engineering, Embedded Systems (microcontrollers), Mechanical Engineering, Chemistry, Biology,
   Developer, DevOps & SRE, Machine Learning & AI, Game Development, Plant Science & Genetics, Robotics & Agricultural
-  Robotics, Telecommunications, Quantum Computing, Learning with Agents and Teaching Agents: 17 maps in four fields,
-  317 nodes, every check auto-graded.
-- **[tracks/careers.json](tracks/careers.json)**: 18 STEM career tracks in five fields, among them AI/ML engineer, data
-  scientist, game developer, DevOps/SRE, robotics, telecoms, embedded, quantum researcher, plant geneticist and
+  Robotics, Telecommunications, Quantum Computing, Civil & Structural, Aerospace, Environmental Science & Engineering,
+  Geoscience, Learning with Agents and Teaching Agents: 21 maps in five fields, 379 nodes, every check auto-graded.
+- **[tracks/careers.json](tracks/careers.json)**: 23 STEM career tracks in six fields, among them civil and structural,
+  aerospace, environmental, climate scientist, geoscientist, AI/ML engineer, data scientist, game developer, DevOps/SRE, robotics, telecoms, embedded, quantum researcher, plant geneticist and
   agricultural robotics engineer; each an ordered path across maps with labs and a capstone. Each node carries an outcome, a retrieval check and an answer.
   Misconceptions hang off the concepts they block as dotted edges, and threshold concepts are flagged.
 - **[scripts/dulta.py](scripts/dulta.py)**: standard-library CLI used by the skill.
@@ -73,7 +73,9 @@ python -m http.server 8765 --directory site
   confidence, and the site **grades it automatically** (numbers with tolerance, key ideas, code patterns); a
   disputed grade can be overridden and is logged as such. A correct answer marks the node mastered and lights up the next
   frontier. Progress stays in your browser and exports as a `learner.json` the CLI reads.
-- **Labs** (18, filterable by field; every map and every career track has one): titration (chemistry), genetic drift
+- **Labs** (25, filterable by field; every map and every career track has one): a truss bridge, a catchment
+  water-flow model, a glider flight simulator, an orbit-transfer optimiser, a river water-quality monitor, a two-box
+  climate model, earthquake location, titration (chemistry), genetic drift
   (biology), beam bending (mechanical), CI pipeline and git bisect (DevOps), an agent cold-start simulator, overfitting (ML), A* pathfinding (games and robotics), QAM and noise (telecoms),
   qubit gates (quantum), selective breeding with the breeder's equation (plant genetics), a simulated microcontroller (blink without blocking, debounce a bouncing button, software PWM,
   on an oscilloscope, against real DDRB/PORTB/PINB registers), an RC circuit, projectile (with and without drag), pendulum (where the small-angle formula breaks down), Fourier

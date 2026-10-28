@@ -33,7 +33,8 @@ MIN_WORDS = 20  # a verdict names an anchor and points at the work
 # Fields group the maps on the site, in this order; maps not listed fall into "Other", alphabetically.
 FIELDS = {
     "Science": ("physics", "mathematics", "chemistry", "biology", "plant", "quantum"),
-    "Engineering": ("electrical", "embedded", "mechanical", "robotics", "telecom"),
+    "Engineering": ("electrical", "embedded", "mechanical", "civil", "aerospace", "robotics", "telecom"),
+    "Earth & Environment": ("environmental", "geoscience"),
     "Computing & AI": ("developer", "devops", "ml", "gamedev"),
     "Learning & Agents": ("learning", "agents"),
 }

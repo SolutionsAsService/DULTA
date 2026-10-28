@@ -194,7 +194,7 @@
     [D.nodes.filter((n) => n.kind === "misconception").length, "misconceptions probed"],
     [seats, "critic seats"],
   ];
-  const words = ["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen", "Twenty"];
+  const words = ["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen", "Twenty", "Twenty-one", "Twenty-two", "Twenty-three", "Twenty-four", "Twenty-five", "Twenty-six", "Twenty-seven", "Twenty-eight", "Twenty-nine", "Thirty"];
   document.getElementById("mapCount").textContent = words[D.maps.length] || D.maps.length;
   document.getElementById("heroMeta").innerHTML = figures.map(([v, l]) => `<div><b>${v}</b><span>${l}</span></div>`).join("");
 
@@ -240,6 +240,13 @@
     ["beam", "Beam bending", "mechanical", "Same steel, four shapes. Predict the sag and see why I-beams look the way they do."],
     ["pipeline", "CI pipeline & bisect", "devops", "A red build and hundreds of suspect commits: predict how few builds git bisect needs."],
     ["coldstart", "Agent cold-start", "agents", "Write notes for a fresh agent. Paste the answers and they're voided; ramble and ideas get lost."],
+    ["truss", "Truss bridge", "civil", "Solve a bridge truss with the stiffness method and see which members squeeze and which stretch."],
+    ["runoff", "Catchment water-flow model", "civil", "Pave a catchment and predict the flood peak, then add a detention pond."],
+    ["glider", "Flight simulator", "aerospace", "Trim a glider's angle of attack, predict the glide from 1,000 m, and find the stall."],
+    ["orbit", "Trajectory optimiser", "aerospace", "Plan the cheapest climb to geostationary orbit and see why overshooting costs more."],
+    ["dosag", "River water-quality monitor", "environmental", "Sewage, temperature and flow: predict the oxygen sag that decides whether fish survive."],
+    ["climate", "Climate model", "environmental", "Double CO₂ and watch the oceans delay the warming for centuries."],
+    ["quake", "Earthquake location", "geoscience", "Read S−P times on three seismograms and draw the circles that find the epicentre."],
     ["retrieval", "Retrieval & calibration", "learning", "Flashcards from every map, scored on how well your confidence matches your results."],
   ];
   document.getElementById("labCards").innerHTML = labs.map(([id, t, m, d]) =>
