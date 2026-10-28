@@ -1828,6 +1828,7 @@ window.DULTA_MAPS = {
      ]
     ]
    },
+   "lab": "titration",
    "map": "chemistry",
    "key": "chemistry/equilibrium",
    "depth": 5
@@ -1918,6 +1919,7 @@ window.DULTA_MAPS = {
      ]
     ]
    },
+   "lab": "titration",
    "map": "chemistry",
    "key": "chemistry/acidbase",
    "depth": 6
@@ -2219,6 +2221,7 @@ window.DULTA_MAPS = {
      ]
     ]
    },
+   "lab": "drift",
    "map": "biology",
    "key": "biology/evolution",
    "depth": 3
@@ -2245,6 +2248,7 @@ window.DULTA_MAPS = {
      ]
     ]
    },
+   "lab": "drift",
    "map": "biology",
    "key": "biology/misc-need",
    "depth": 3
@@ -2267,6 +2271,7 @@ window.DULTA_MAPS = {
     ],
     "tol": 0.1
    },
+   "lab": "drift",
    "map": "biology",
    "key": "biology/popgen",
    "depth": 4
@@ -4150,6 +4155,7 @@ window.DULTA_MAPS = {
      ]
     ]
    },
+   "lab": "beam",
    "map": "mechanical",
    "key": "mechanical/misc-stiff",
    "depth": 2
@@ -4178,6 +4184,7 @@ window.DULTA_MAPS = {
      ]
     ]
    },
+   "lab": "beam",
    "map": "mechanical",
    "key": "mechanical/materials",
    "depth": 2
@@ -4203,6 +4210,7 @@ window.DULTA_MAPS = {
      ]
     ]
    },
+   "lab": "beam",
    "map": "mechanical",
    "key": "mechanical/beams",
    "depth": 2
@@ -4230,6 +4238,7 @@ window.DULTA_MAPS = {
      ]
     ]
    },
+   "lab": "beam",
    "map": "mechanical",
    "key": "mechanical/misc-middle",
    "depth": 2
@@ -5584,6 +5593,7 @@ window.DULTA_MAPS = {
      ]
     ]
    },
+   "lab": "pipeline",
    "map": "developer",
    "key": "developer/debugging",
    "depth": 4
@@ -6001,6 +6011,7 @@ window.DULTA_MAPS = {
      ]
     ]
    },
+   "lab": "pipeline",
    "map": "devops",
    "key": "devops/ci",
    "depth": 0
@@ -6032,6 +6043,7 @@ window.DULTA_MAPS = {
      ]
     ]
    },
+   "lab": "pipeline",
    "map": "devops",
    "key": "devops/cd",
    "depth": 2
@@ -7731,6 +7743,7 @@ window.DULTA_MAPS = {
      ]
     ]
    },
+   "lab": "coldstart",
    "map": "agents",
    "key": "agents/misc-more",
    "depth": 1
@@ -7757,6 +7770,7 @@ window.DULTA_MAPS = {
      ]
     ]
    },
+   "lab": "coldstart",
    "map": "agents",
    "key": "agents/evals",
    "depth": 2
@@ -7782,6 +7796,7 @@ window.DULTA_MAPS = {
      ]
     ]
    },
+   "lab": "coldstart",
    "map": "agents",
    "key": "agents/coldstart",
    "depth": 3
@@ -7805,6 +7820,7 @@ window.DULTA_MAPS = {
      ]
     ]
    },
+   "lab": "coldstart",
    "map": "agents",
    "key": "agents/contamination",
    "depth": 3
@@ -10740,6 +10756,7 @@ window.DULTA_TRACKS = [
    "devops/dora"
   ],
   "labs": [
+   "pipeline",
    "code",
    "complexity"
   ],
@@ -10775,6 +10792,7 @@ window.DULTA_TRACKS = [
    "developer/agents"
   ],
   "labs": [
+   "pipeline",
    "code",
    "complexity"
   ],
@@ -10887,6 +10905,7 @@ window.DULTA_TRACKS = [
    "mechanical/fea"
   ],
   "labs": [
+   "beam",
    "projectile",
    "pendulum"
   ],
@@ -10955,7 +10974,9 @@ window.DULTA_TRACKS = [
    "mechanical/thermocycles",
    "mechanical/heat"
   ],
-  "labs": [],
+  "labs": [
+   "titration"
+  ],
   "capstone": "Plan a synthesis or process step: balance it, predict yield from equilibrium and kinetics, size the heat removal, and confirm the product with spectroscopy data.",
   "field": "Science"
  },
@@ -10987,6 +11008,7 @@ window.DULTA_TRACKS = [
    "biology/biotech"
   ],
   "labs": [
+   "drift",
    "retrieval"
   ],
   "capstone": "Design an experiment (e.g. an enzyme-inhibitor assay or a CRISPR knockout), state the hypothesis, the controls and the statistical test before collecting data, and interpret the result without confusing correlation and cause.",
@@ -11023,6 +11045,7 @@ window.DULTA_TRACKS = [
    "agents/agenttransfer"
   ],
   "labs": [
+   "coldstart",
    "code",
    "retrieval"
   ],
@@ -11053,6 +11076,7 @@ window.DULTA_TRACKS = [
    "agents/panels"
   ],
   "labs": [
+   "coldstart",
    "retrieval"
   ],
   "capstone": "Design one week of a course with DULTA's Directed Teaching mode: aligned outcomes, activities and assessments (`dulta.py align` clean), a pre/post test with normalized gain, and a panel round on the materials.",
@@ -11122,6 +11146,7 @@ window.DULTA_TRACKS = [
    "plant/trials"
   ],
   "labs": [
+   "drift",
    "polyfit",
    "retrieval"
   ],
@@ -11194,6 +11219,7 @@ window.DULTA_TRACKS = [
    "plant/seedsystems"
   ],
   "labs": [
+   "drift",
    "breeding",
    "retrieval"
   ],
@@ -11270,6 +11296,7 @@ window.DULTA_TRACKS = [
    "robotics/safety"
   ],
   "labs": [
+   "beam",
    "astar",
    "mcu",
    "pendulum"

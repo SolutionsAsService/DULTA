@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DULTA Labs</title>
-<meta name="description" content="Predict-Observe-Explain labs: projectile, pendulum, Fourier synthesis, test-first code, complexity, a microcontroller simulator, an RC circuit, overfitting, A* pathfinding, QAM, qubit gates, selective breeding, and retrieval with calibration.">
+<meta name="description" content="Predict-Observe-Explain labs: projectile, pendulum, Fourier synthesis, test-first code, complexity, a microcontroller simulator, an RC circuit, overfitting, A* pathfinding, QAM, qubit gates, selective breeding, titration, genetic drift, beam bending, CI bisect, an agent cold-start simulator, and retrieval with calibration.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -303,6 +303,97 @@
       </div>
     </article>
 
+    <article class="card lab" id="titration" data-field="Science" style="--accent:var(--chemistry)">
+      <div class="lab-head"><h3>Titration</h3><a class="mono" href="maps.html#chemistry/acidbase">chemistry / acidbase · equilibrium</a></div>
+      <div class="lab-body">
+        <div class="stage"><canvas id="tiCanvas" width="760" height="380" aria-label="Titration curve"></canvas></div>
+        <div class="poe">
+          <div class="controls"><div><label for="tiAcid">25 mL of 0.1 M acid, titrated with 0.1 M NaOH</label><select id="tiAcid"><option value="strong">Hydrochloric acid (strong)</option><option value="weak">Acetic acid (weak, pKa 4.74)</option></select></div></div>
+          <div class="poe-step active" data-step="predict"><h4>1 · Predict</h4>
+            <label for="tiGuess">What will the pH be at the equivalence point (25 mL of base added)?</label><input type="number" id="tiGuess" step="any" inputmode="decimal">
+            <button class="btn small" data-commit type="button">Commit prediction</button></div>
+          <div class="poe-step" data-step="observe"><h4>2 · Observe</h4>
+            <button class="btn small" data-run type="button" disabled>Titrate</button>
+            <div class="readout" data-out hidden></div></div>
+          <div class="poe-step" data-step="explain"><h4>3 · Explain</h4><p class="verdict" data-explain hidden></p></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="card lab" id="drift" data-field="Science" style="--accent:var(--biology)">
+      <div class="lab-head"><h3>Genetic drift</h3><a class="mono" href="maps.html#biology/popgen">biology / popgen · evolution · plant / heritability</a></div>
+      <div class="lab-body">
+        <div class="stage"><canvas id="drCanvas" width="760" height="380" aria-label="Allele frequency trajectories"></canvas></div>
+        <div class="poe">
+          <div class="controls"><div><label for="drN">Population size <span id="drNv" class="mono"></span></label><input type="range" id="drN" min="0" max="100" value="25"></div><div><label for="drS">Selection advantage s <span id="drSv" class="mono"></span></label><input type="range" id="drS" min="0" max="100" value="0"></div></div>
+          <div class="poe-step active" data-step="predict"><h4>1 · Predict</h4>
+            <label for="drGuess" id="drQ">…</label><input type="number" id="drGuess" min="0" max="20" step="1" inputmode="numeric">
+            <button class="btn small" data-commit type="button">Commit prediction</button></div>
+          <div class="poe-step" data-step="observe"><h4>2 · Observe</h4>
+            <button class="btn small" data-run type="button" disabled>Run 100 generations</button>
+            <div class="readout" data-out hidden></div></div>
+          <div class="poe-step" data-step="explain"><h4>3 · Explain</h4><p class="verdict" data-explain hidden></p></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="card lab" id="beam" data-field="Engineering" style="--accent:var(--mechanical)">
+      <div class="lab-head"><h3>Beam bending</h3><a class="mono" href="maps.html#mechanical/beams">mechanical / beams · misc-middle · materials</a></div>
+      <div class="lab-body">
+        <div class="stage"><canvas id="bmCanvas" width="760" height="300" aria-label="Loaded beam and its cross-section"></canvas></div>
+        <div class="poe">
+          <div class="controls"><div><label for="bmShape">Cross-section (all 2000 mm² of steel)</label><select id="bmShape"><option value="flat">Flat plank 100 × 20</option><option value="edge">Plank on edge 20 × 100</option><option value="tube">Square tube</option><option value="ibeam">I-beam</option></select></div></div>
+          <div class="poe-step active" data-step="predict"><h4>1 · Predict</h4>
+            <label for="bmGuess">A 1 kN load sits at the middle of a 2 m span. How far will the middle sag, in mm?</label><input type="number" id="bmGuess" step="any" inputmode="decimal">
+            <button class="btn small" data-commit type="button">Commit prediction</button></div>
+          <div class="poe-step" data-step="observe"><h4>2 · Observe</h4>
+            <button class="btn small" data-run type="button" disabled>Load the beam</button>
+            <div class="readout" data-out hidden></div></div>
+          <div class="poe-step" data-step="explain"><h4>3 · Explain</h4><p class="verdict" data-explain hidden></p></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="card lab" id="pipeline" data-field="Computing & AI" style="--accent:var(--devops)">
+      <div class="lab-head"><h3>CI pipeline &amp; bisect</h3><a class="mono" href="maps.html#devops/ci">devops / ci · cd · developer / debugging</a></div>
+      <div class="lab-body">
+        <div style="display:grid;gap:8px;align-content:start"><div class="stage"><canvas id="piCanvas" width="760" height="330" aria-label="Commit history and pipeline stages; click a commit to build it" style="cursor:pointer"></canvas></div><span class="empty" id="piBuilds"></span></div>
+        <div class="poe">
+          <div class="controls"><div><label for="piN">Commits since the last green build <span id="piNv" class="mono"></span></label><input type="range" id="piN" min="3" max="10" value="5"></div></div>
+          <div class="poe-step active" data-step="predict"><h4>1 · Predict</h4>
+            <label for="piGuess" id="piQ">…</label><input type="number" id="piGuess" min="0" step="1" inputmode="numeric">
+            <button class="btn small" data-commit type="button">Commit prediction</button></div>
+          <div class="poe-step" data-step="observe"><h4>2 · Observe</h4>
+            <button class="btn small" data-run type="button" disabled>Run git bisect</button>
+            <div class="readout" data-out hidden></div></div>
+          <div class="poe-step" data-step="explain"><h4>3 · Explain</h4><p class="verdict" data-explain hidden></p></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="card lab" id="coldstart" data-field="Learning & Agents" style="--accent:var(--agents)">
+      <div class="lab-head"><h3>Agent cold-start</h3><a class="mono" href="maps.html#agents/coldstart">agents / coldstart · contamination · misc-more</a></div>
+      <div class="lab-body">
+        <div style="display:grid;gap:10px;align-content:start">
+          <p style="margin:0">Teach a fresh agent the embedded-systems ideas below by writing its notes. It will see <b>only your notes</b>, never these answers, and then answer the eight checks.</p>
+          <ol id="csItems" style="margin:0;padding-left:20px;font-size:14px;color:var(--ink-2);display:grid;gap:4px;list-style:none"></ol>
+          <label for="csNotes" style="margin:0">Notes for the agent (NOTES.md)</label>
+          <textarea id="csNotes" rows="10" spellcheck="true" placeholder="Explain the principles: pull-ups and what a pressed button reads, why floating inputs are random, non-blocking timing vs delay(), debouncing, short ISRs, volatile, open-drain buses..."></textarea>
+          <span class="empty" id="csCount"></span>
+          <div class="tests" id="csOut"></div>
+        </div>
+        <div class="poe">
+          <div class="poe-step active" data-step="predict"><h4>1 · Predict</h4>
+            <label for="csGuess">A fresh agent with no notes scores 0 of 8. With your notes, how many will it get right?</label><input type="number" id="csGuess" min="0" max="8" step="1" inputmode="numeric">
+            <button class="btn small" data-commit type="button">Commit prediction</button></div>
+          <div class="poe-step" data-step="observe"><h4>2 · Observe</h4>
+            <button class="btn small" data-run type="button" disabled>Run the cold-start test</button>
+            <div class="readout" data-out hidden></div></div>
+          <div class="poe-step" data-step="explain"><h4>3 · Explain</h4><p class="verdict" data-explain hidden></p></div>
+        </div>
+      </div>
+    </article>
+
     <article class="card lab" id="retrieval" data-field="Learning & Agents" style="--accent:var(--learning)">
       <div class="lab-head"><h3>Retrieval &amp; calibration</h3><a class="mono" href="maps.html#learning/retrieval">learning / retrieval · spacing · metacog</a></div>
       <div class="lab-body">
@@ -328,6 +419,7 @@
 <script src="assets/labs.js"></script>
 <script src="assets/lab-mcu.js"></script>
 <script src="assets/lab-fields.js"></script>
+<script src="assets/lab-more.js"></script>
 <script>
 // Group and filter labs by field, and build the index from the articles themselves.
 (function () {

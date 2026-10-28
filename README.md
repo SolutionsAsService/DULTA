@@ -73,7 +73,8 @@ python -m http.server 8765 --directory site
   confidence, and the site **grades it automatically** (numbers with tolerance, key ideas, code patterns); a
   disputed grade can be overridden and is logged as such. A correct answer marks the node mastered and lights up the next
   frontier. Progress stays in your browser and exports as a `learner.json` the CLI reads.
-- **Labs** (13, filterable by field): overfitting (ML), A* pathfinding (games and robotics), QAM and noise (telecoms),
+- **Labs** (18, filterable by field; every map and every career track has one): titration (chemistry), genetic drift
+  (biology), beam bending (mechanical), CI pipeline and git bisect (DevOps), an agent cold-start simulator, overfitting (ML), A* pathfinding (games and robotics), QAM and noise (telecoms),
   qubit gates (quantum), selective breeding with the breeder's equation (plant genetics), a simulated microcontroller (blink without blocking, debounce a bouncing button, software PWM,
   on an oscilloscope, against real DDRB/PORTB/PINB registers), an RC circuit, projectile (with and without drag), pendulum (where the small-angle formula breaks down), Fourier
   synthesis (the Gibbs overshoot), test-first code (each kata has a hidden test that the visible tests miss),

@@ -49,7 +49,7 @@
 (function () {
   const D = window.DULTA_MAPS, T = window.DULTA_TRACKS;
   const byKey = Object.fromEntries(D.nodes.map((n) => [n.key, n]));
-  const labNames = { projectile: "Projectile", pendulum: "Pendulum", fourier: "Fourier", code: "Test-first code", complexity: "Complexity", mcu: "Microcontroller", rc: "RC circuit", retrieval: "Retrieval", polyfit: "Overfitting", astar: "A* pathfinding", qam: "QAM & noise", qubit: "Qubit gates", breeding: "Selective breeding" };
+  const labNames = { projectile: "Projectile", pendulum: "Pendulum", fourier: "Fourier", code: "Test-first code", complexity: "Complexity", mcu: "Microcontroller", rc: "RC circuit", retrieval: "Retrieval", polyfit: "Overfitting", astar: "A* pathfinding", qam: "QAM & noise", qubit: "Qubit gates", breeding: "Selective breeding", titration: "Titration", drift: "Genetic drift", beam: "Beam bending", pipeline: "CI pipeline & bisect", coldstart: "Agent cold-start" };
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   // Fields come from the tracks themselves, in first-seen order of a preferred list.
   const PREF = ["Computing & AI", "Engineering", "Science", "Agriculture & Food", "Learning & Teaching"];
