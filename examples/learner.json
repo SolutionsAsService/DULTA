@@ -1,0 +1,12 @@
+{
+  "mastered": {
+    "physics/measurement": {"date": "2026-10-20", "box": 1},
+    "physics/dimensions": {"date": "2026-10-26", "box": 0},
+    "physics/vectors": {"date": "2026-10-27", "box": 2},
+    "mathematics/logic": {"date": "2026-10-10", "box": 2},
+    "mathematics/functions": {"date": "2026-10-12", "box": 1},
+    "mathematics/limits": {"date": "2026-10-15", "box": 1},
+    "mathematics/derivatives": {"date": "2026-10-25", "box": 0}
+  },
+  "probed": []
+}

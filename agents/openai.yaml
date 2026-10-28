@@ -1,0 +1,4 @@
+interface:
+  display_name: "DULTA: Directed University Learning and Teaching Agent"
+  short_description: "Tutoring and course design on domain maps, with a learning-science critic panel"
+  default_prompt: "Use $dulta to tutor me through (or design a course on) a domain map in Directed Learning or Directed Teaching mode, and document the traversal plan, frontier, decision records, panel reports, anchor and map ledger, and compliance check in LEARNING-LOG.md."

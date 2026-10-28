@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DULTA Labs</title>
+<meta name="description" content="Predict-Observe-Explain labs: projectile, pendulum, Fourier synthesis, test-first code, complexity, and retrieval with calibration.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M7 24 16 8l9 16' fill='none' stroke='%231c1a16' stroke-width='2.4'/%3E%3Ccircle cx='7' cy='24' r='4' fill='%231c1a16'/%3E%3Ccircle cx='25' cy='24' r='4' fill='%231c1a16'/%3E%3Ccircle cx='16' cy='8' r='5' fill='%23e8a10c'/%3E%3C/svg%3E">
+<script src="assets/site.js"></script>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="DULTA home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 24 16 8l9 16" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="7" cy="24" r="3.6" fill="currentColor"/><circle cx="25" cy="24" r="3.6" fill="currentColor"/><circle cx="16" cy="8" r="4.6" fill="var(--threshold)"/></svg>
+      <span><b>Dult</b><i>A</i></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="maps.html">Maps</a>
+      <a href="labs.html" aria-current="page">Labs</a>
+      <a href="method.html">Method</a>
+    </nav>
+    <button class="theme-btn" type="button" aria-label="Toggle dark mode"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+  </div>
+</header>
+
+<main>
+  <div class="wrap explorer-head">
+    <span class="eyebrow">Labs · Predict, Observe, Explain</span>
+    <h2>Commit a prediction. Then the lab unlocks.</h2>
+    <p class="lede">Each lab is locked until you write down what you expect. Then you run it, see the measured result next to your guess, and only after that get the explanation. Being surprised is the point: it shows you exactly which idea needs work.</p>
+    <nav class="lab-index" aria-label="Labs">
+      <a href="#projectile">Projectile</a><a href="#pendulum">Pendulum</a><a href="#fourier">Fourier</a>
+      <a href="#code">Test-first code</a><a href="#complexity">Complexity</a><a href="#retrieval">Retrieval</a>
+    </nav>
+  </div>
+
+  <div class="wrap grid" style="gap:28px;padding-bottom:80px">
+
+    <article class="card lab" id="projectile" style="--accent:var(--physics)">
+      <div class="lab-head"><h3>Projectile</h3><a class="mono" href="maps.html#physics/kinematics">physics / kinematics · newton</a></div>
+      <div class="lab-body">
+        <div class="stage"><canvas id="projCanvas" width="760" height="380" aria-label="Projectile trajectory"></canvas></div>
+        <div class="poe">
+          <div class="controls">
+            <div><label for="projV">Launch speed <span id="projVv" class="mono"></span></label><input type="range" id="projV" min="10" max="40" value="25"></div>
+            <div><label for="projA">Angle <span id="projAv" class="mono"></span></label><input type="range" id="projA" min="5" max="85" value="45"></div>
+            <div><label><input type="checkbox" id="projDrag"> Air drag (a baseball)</label></div>
+          </div>
+          <div class="poe-step active" data-step="predict"><h4>1 · Predict</h4>
+            <label for="projGuess">How far will it land (m)?</label><input type="number" id="projGuess" step="0.1" inputmode="decimal">
+            <button class="btn small" data-commit type="button">Commit prediction</button></div>
+          <div class="poe-step" data-step="observe"><h4>2 · Observe</h4>
+            <button class="btn small" data-run type="button" disabled>Launch</button>
+            <div class="readout" data-out hidden></div></div>
+          <div class="poe-step" data-step="explain"><h4>3 · Explain</h4>
+            <p class="verdict" data-explain hidden></p>
+            <button class="btn small ghost" id="projSweep" type="button" hidden>Sweep all angles</button></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="card lab" id="pendulum" style="--accent:var(--physics)">
+      <div class="lab-head"><h3>Pendulum</h3><a class="mono" href="maps.html#physics/shm">physics / shm · energy</a></div>
+      <div class="lab-body">
+        <div class="stage"><canvas id="pendCanvas" width="760" height="380" aria-label="Pendulum"></canvas></div>
+        <div class="poe">
+          <div class="controls">
+            <div><label for="pendL">Length <span id="pendLv" class="mono"></span></label><input type="range" id="pendL" min="20" max="300" value="100"></div>
+            <div><label for="pendA">Release angle <span id="pendAv" class="mono"></span></label><input type="range" id="pendA" min="5" max="170" value="10"></div>
+            <div><label for="pendM">Mass <span id="pendMv" class="mono"></span></label><input type="range" id="pendM" min="1" max="20" value="2"></div>
+          </div>
+          <div class="poe-step active" data-step="predict"><h4>1 · Predict</h4>
+            <label for="pendGuess">Period of one full swing (s)?</label><input type="number" id="pendGuess" step="0.01" inputmode="decimal">
+            <button class="btn small" data-commit type="button">Commit prediction</button></div>
+          <div class="poe-step" data-step="observe"><h4>2 · Observe</h4>
+            <button class="btn small" data-run type="button" disabled>Release</button>
+            <div class="readout" data-out hidden></div></div>
+          <div class="poe-step" data-step="explain"><h4>3 · Explain</h4><p class="verdict" data-explain hidden></p></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="card lab" id="fourier" style="--accent:var(--mathematics)">
+      <div class="lab-head"><h3>Fourier synthesis</h3><a class="mono" href="maps.html#mathematics/fourier">mathematics / fourier · physics / waves</a></div>
+      <div class="lab-body">
+        <div class="stage"><canvas id="fourCanvas" width="760" height="380" aria-label="Fourier partial sum"></canvas></div>
+        <div class="poe">
+          <div class="controls">
+            <div><label for="fourWave">Target</label><select id="fourWave"><option value="square">Square</option><option value="saw">Sawtooth</option><option value="tri">Triangle</option></select></div>
+            <div><label for="fourN">Harmonics <span id="fourNv" class="mono"></span></label><input type="range" id="fourN" min="1" max="60" value="3"></div>
+          </div>
+          <div class="poe-step active" data-step="predict"><h4>1 · Predict</h4>
+            <label for="fourGuess">With 60 harmonics of the square wave, how far past the jump does the sum overshoot (% of the jump)?</label><input type="number" id="fourGuess" step="0.1" inputmode="decimal">
+            <button class="btn small" data-commit type="button">Commit prediction</button></div>
+          <div class="poe-step" data-step="observe"><h4>2 · Observe</h4>
+            <button class="btn small" data-run type="button" disabled>Synthesize 60 harmonics</button>
+            <div class="readout" data-out hidden></div></div>
+          <div class="poe-step" data-step="explain"><h4>3 · Explain</h4><p class="verdict" data-explain hidden></p></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="card lab" id="code" style="--accent:var(--developer)">
+      <div class="lab-head"><h3>Test-first code</h3><a class="mono" href="maps.html#developer/testing">developer / testing · recursion · complexity</a></div>
+      <div class="lab-body">
+        <div class="poe" style="gap:12px">
+          <div><label for="kata">Kata</label><select id="kata"></select></div>
+          <p id="kataSpec" style="margin:0"></p>
+          <label for="editor" style="margin:0">Your code (JavaScript)</label>
+          <textarea id="editor" rows="12" spellcheck="false"></textarea>
+          <div class="row" style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn small" id="runTests" type="button" disabled>Run tests</button><button class="btn small ghost" id="resetCode" type="button">Reset code</button></div>
+        </div>
+        <div class="poe">
+          <div class="poe-step active" data-step="predict"><h4>1 · Predict</h4>
+            <label for="codeGuess">How many visible tests does the starter code pass?</label><input type="number" id="codeGuess" min="0" step="1" inputmode="numeric">
+            <button class="btn small" data-commit type="button">Commit prediction</button></div>
+          <div class="poe-step" data-step="observe"><h4>2 · Observe</h4>
+            <div class="tests" id="testOut"><div>Tests appear here.</div></div></div>
+          <div class="poe-step" data-step="explain"><h4>3 · Explain</h4><p class="verdict" data-explain hidden></p></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="card lab" id="complexity" style="--accent:var(--developer)">
+      <div class="lab-head"><h3>Complexity</h3><a class="mono" href="maps.html#developer/complexity">developer / complexity</a></div>
+      <div class="lab-body">
+        <div class="stage"><canvas id="cxCanvas" width="760" height="380" aria-label="Operation counts against n"></canvas></div>
+        <div class="poe">
+          <div><label for="cxAlgo">Algorithm</label><select id="cxAlgo">
+            <option value="linear">Linear search (worst case)</option><option value="binary">Binary search</option>
+            <option value="bubble">Bubble sort (reversed input)</option><option value="merge">Merge sort</option></select></div>
+          <div class="readout" id="cxBase"></div>
+          <div class="poe-step active" data-step="predict"><h4>1 · Predict</h4>
+            <label for="cxGuess">Comparisons at n = 1024?</label><input type="number" id="cxGuess" min="0" step="1" inputmode="numeric">
+            <button class="btn small" data-commit type="button">Commit prediction</button></div>
+          <div class="poe-step" data-step="observe"><h4>2 · Observe</h4>
+            <button class="btn small" data-run type="button" disabled>Count at n = 1024</button>
+            <div class="readout" data-out hidden></div></div>
+          <div class="poe-step" data-step="explain"><h4>3 · Explain</h4><p class="verdict" data-explain hidden></p></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="card lab" id="retrieval" style="--accent:var(--learning)">
+      <div class="lab-head"><h3>Retrieval &amp; calibration</h3><a class="mono" href="maps.html#learning/retrieval">learning / retrieval · spacing · metacog</a></div>
+      <div class="lab-body">
+        <div class="flash card" id="flash" style="box-shadow:none"></div>
+        <div class="poe">
+          <div><label for="deck">Deck</label><select id="deck"><option value="">All maps</option></select></div>
+          <div class="readout" id="calibText"></div>
+          <div><div class="eyebrow" style="margin-bottom:10px">Accuracy at each confidence level</div>
+            <div class="calib" id="calib" aria-label="Calibration chart"></div></div>
+          <p class="empty" style="margin-top:18px">Well calibrated means your bars reach the dashed line: when you say 80%, you are right about 80% of the time. Each answer here also updates your map progress.</p>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap"><span>The labs run entirely in your browser. Code runs in a Web Worker with a time limit.</span></div>
+</footer>
+
+<script src="assets/maps-data.js"></script>
+<script src="assets/labs.js"></script>
+</body>
+</html>

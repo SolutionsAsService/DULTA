@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DULTA Method</title>
+<meta name="description" content="How DULTA works: DADA's traversal rebuilt for learning and teaching, with a critic panel of learning scientists and stop conditions instead of quotas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M7 24 16 8l9 16' fill='none' stroke='%231c1a16' stroke-width='2.4'/%3E%3Ccircle cx='7' cy='24' r='4' fill='%231c1a16'/%3E%3Ccircle cx='25' cy='24' r='4' fill='%231c1a16'/%3E%3Ccircle cx='16' cy='8' r='5' fill='%23e8a10c'/%3E%3C/svg%3E">
+<script src="assets/site.js"></script>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="DULTA home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 24 16 8l9 16" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="7" cy="24" r="3.6" fill="currentColor"/><circle cx="25" cy="24" r="3.6" fill="currentColor"/><circle cx="16" cy="8" r="4.6" fill="var(--threshold)"/></svg>
+      <span><b>Dult</b><i>A</i></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="maps.html">Maps</a>
+      <a href="labs.html">Labs</a>
+      <a href="method.html" aria-current="page">Method</a>
+    </nav>
+    <button class="theme-btn" type="button" aria-label="Toggle dark mode"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+  </div>
+</header>
+
+<main>
+  <div class="wrap explorer-head">
+    <span class="eyebrow">Method</span>
+    <h2>DADA's principles, rebuilt for the classroom.</h2>
+    <p class="lede">DultA was written from scratch, not forked. It keeps every principle of DADA and its variants (P-DADA, 3DADA, PMDAA) and changes what is being worked on: a learner's understanding, or the teaching that will build it.</p>
+  </div>
+
+  <section style="padding-top:20px">
+    <div class="wrap">
+      <div class="card table-wrap">
+        <table>
+          <thead><tr><th>DADA principle</th><th>In DultA</th></tr></thead>
+          <tbody>
+            <tr><td>A living frontier over an anchor graph</td><td>Two graphs: the pedagogy anchor graph below, and a domain map. The learner frontier is Knowledge Space Theory's outer fringe: every node not yet mastered whose prerequisites are.</td></tr>
+            <tr><td>KEEP-THE-RULE versus BREAK</td><td><b>Consolidate</b> (worked example, retrieval, spacing) versus <b>Cross</b> (a threshold concept, a productive failure, a cognitive conflict).</td></tr>
+            <tr><td>Dotted counterpoints</td><td>Misconceptions in the domain map, and rival theories in the anchor graph. Every misconception attached to a node in use is probed or declined.</td></tr>
+            <tr><td>Measure the move, never assume it</td><td>Mastery means an unaided answer with a confidence rating, never "I get it". Courses are measured by normalized gain and an alignment audit.</td></tr>
+            <tr><td>One subagent per literary reference</td><td>32 seats, each argued from a single learning scientist's own work: Vygotsky, Sweller, Bjork, Kapur, Biggs, Hake, hooks, Bastani and more.</td></tr>
+            <tr><td>A verdict is a file</td><td>Each seat writes to <span class="mono">panel/R&lt;n&gt;/&lt;seat&gt;.md</span>, and <span class="mono">dulta.py panel</span> lists who reported.</td></tr>
+            <tr><td>Re-measure what the artifact prints</td><td>Every score, gain or count shown to a learner is recomputed at the final state. The numbers on this site are computed from the same map data the command line reads.</td></tr>
+            <tr><td>SSOT</td><td><span class="mono">maps/*.json</span> is the only record of the content. Every diagram, and this website, is generated from it.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap grid two" style="align-items:start">
+      <div class="sec-head" style="margin:0">
+        <span class="eyebrow">Five artifacts</span>
+        <h2>A run only counts once it is written down.</h2>
+        <p class="lede">Every session appends to <span class="mono">LEARNING-LOG.md</span>. A commit message is not a decision record, and "considered Kapur" is not a panel.</p>
+      </div>
+      <ol class="conduct">
+        <li><div><b>Traversal Plan and Frontier</b><span>Mode, domain map, diagnosis, seed anchors, and the live frontier table.</span></div></li>
+        <li><div><b>Decision Records</b><span>Written before each move: anchors, Toulmin argument, rejected options, load count, the fence being crossed, and the learner evidence or exit test.</span></div></li>
+        <li><div><b>Panel Reports</b><span>The Critical Response Process. Every seat quotes the evidence it judged. Any seat may pull the Andon.</span></div></li>
+        <li><div><b>Anchor and Map Ledger</b><span>KEEP, ADAPT or SCRAP for each anchor. MASTERED, REOPENED or PROBING for each node, with the check and its date.</span></div></li>
+        <li><div><b>Compliance Check</b><span>Each line points to where it was satisfied, and anything skipped is named.</span></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Stop conditions</span>
+        <h2>Bounded, but never stalled.</h2>
+        <p class="lede">There is no lesson quota. The run ends when S1 to S5 hold. Hard caps stop it from looping forever: 3 ADAPT rounds per move, 6 WHOLE rounds per session, 3 retries per seat. When the critics start repeating themselves, it ships the strongest version and logs what is still open.</p>
+      </div>
+      <div class="grid four">
+        <div class="card" style="padding:22px"><span class="eyebrow">S1</span><h3 style="margin-top:8px">Frontier closed</h3><p class="empty" style="margin-top:8px">No OPEN items in scope. Each one is TAKEN or DEFERRED with a reason.</p></div>
+        <div class="card" style="padding:22px"><span class="eyebrow">S2</span><h3 style="margin-top:8px">Panel passes</h3><p class="empty" style="margin-top:8px">A WHOLE round where every required seat passes and no Andon is pulled.</p></div>
+        <div class="card" style="padding:22px"><span class="eyebrow">S3</span><h3 style="margin-top:8px">Saturation</h3><p class="empty" style="margin-top:8px">Two WHOLE rounds in a row that change nothing.</p></div>
+        <div class="card" style="padding:22px"><span class="eyebrow">S4</span><h3 style="margin-top:8px">Ambition push</h3><p class="empty" style="margin-top:8px">A far-transfer problem, or the hardest outcome raised one level, with the result measured.</p></div>
+        <div class="card" style="padding:22px"><span class="eyebrow">S5</span><h3 style="margin-top:8px">Misconceptions</h3><p class="empty" style="margin-top:8px">Every dotted edge on a node in use is probed or declined.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">The panel's live disagreements</span>
+        <h2>Critics chosen because they disagree.</h2>
+        <p class="lede">Each dotted pair is a real, unsettled argument in the learning sciences. Every round seats at least one of these pairs.</p>
+      </div>
+      <div class="pairs">
+        <div class="card"><span>Guidance (Kirschner)</span><em>full guidance ⇢ against ⇠ struggle first</em><span>Difficulty (Kapur)</span></div>
+        <div class="card"><span>Load (Sweller)</span><em>load limit ⇢ against ⇠ desirable difficulty</em><span>Difficulty (Bjork)</span></div>
+        <div class="card"><span>Liberation (Freire)</span><em>problem-posing ⇢ against ⇠ pre-set outcomes</em><span>Alignment (Biggs)</span></div>
+        <div class="card"><span>Agent Risk (Bastani)</span><em>over-reliance ⇢ against ⇠ tutoring works</em><span>Agent Risk (VanLehn)</span></div>
+        <div class="card"><span>Making (Resnick)</span><em>play ⇢ against ⇠ practice testing</em><span>Retrieval (Roediger)</span></div>
+        <div class="card"><span>Emancipation (Rancière)</span><em>equality of intelligence ⇢ against ⇠ scaffolding</em><span>Proximal (Bruner)</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Anchor graph</span>
+        <h2>The pedagogy graph, in full.</h2>
+        <p class="lede">Rendered live from <span class="mono">references/anchor-graph.md</span>. Scroll inside the frame to explore it. Solid edges ground or extend; dotted edges are counterpoints.</p>
+      </div>
+      <div class="card mermaid-box"><div id="anchor" class="empty">Rendering the graph…</div></div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap grid two" style="align-items:start">
+      <div class="sec-head" style="margin:0">
+        <span class="eyebrow">Command line</span>
+        <h2>The tooling the skill calls.</h2>
+        <p class="lede">Standard-library Python with no dependencies. Validate the maps, render diagrams and site data from them, compute a learner's frontier, compute normalized gain, audit course alignment, and collect panel verdicts.</p>
+      </div>
+      <pre>python scripts/dulta.py validate
+python scripts/dulta.py render
+python scripts/dulta.py frontier --state learner.json --map physics
+python scripts/dulta.py gain --pre 42 --post 71
+python scripts/dulta.py align examples/course.json
+python scripts/dulta.py panel panel/R1 vygotsky bjork kapur</pre>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap"><span>DultA, a SolutionsAsService project.</span><a href="https://github.com/SolutionsAsService/DULTA">github.com/SolutionsAsService/DULTA</a></div>
+</footer>
+
+<script src="assets/maps-data.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+<script>
+(function () {
+  const box = document.getElementById("anchor");
+  async function render() {
+    if (!window.mermaid) { box.textContent = "The graph renderer could not load. The source is in references/anchor-graph.md."; return; }
+    const dark = (document.documentElement.getAttribute("data-theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")) === "dark";
+    mermaid.initialize({ startOnLoad: false, theme: dark ? "dark" : "neutral", securityLevel: "strict", maxTextSize: 200000, maxEdges: 2000, flowchart: { useMaxWidth: false } });
+    try {
+      const { svg } = await mermaid.render("anchorSvg" + Date.now(), window.DULTA_ANCHOR_GRAPH);
+      box.innerHTML = svg;
+      box.classList.remove("empty");
+    } catch (e) { box.textContent = "Graph failed to parse: " + e.message; }
+  }
+  render();
+  document.addEventListener("dulta:theme", render);
+})();
+</script>
+</body>
+</html>

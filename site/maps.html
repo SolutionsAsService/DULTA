@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DULTA Maps</title>
+<meta name="description" content="Interactive domain maps for physics, mathematics, software development and learning with agents, with your learner frontier.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M7 24 16 8l9 16' fill='none' stroke='%231c1a16' stroke-width='2.4'/%3E%3Ccircle cx='7' cy='24' r='4' fill='%231c1a16'/%3E%3Ccircle cx='25' cy='24' r='4' fill='%231c1a16'/%3E%3Ccircle cx='16' cy='8' r='5' fill='%23e8a10c'/%3E%3C/svg%3E">
+<script src="assets/site.js"></script>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="DULTA home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 24 16 8l9 16" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="7" cy="24" r="3.6" fill="currentColor"/><circle cx="25" cy="24" r="3.6" fill="currentColor"/><circle cx="16" cy="8" r="4.6" fill="var(--threshold)"/></svg>
+      <span><b>Dult</b><i>A</i></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="maps.html" aria-current="page">Maps</a>
+      <a href="labs.html">Labs</a>
+      <a href="method.html">Method</a>
+    </nav>
+    <button class="theme-btn" type="button" aria-label="Toggle dark mode"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="explorer-head">
+    <span class="eyebrow">Domain maps</span>
+    <h2 id="mapTitle">Maps</h2>
+    <p class="lede" id="mapSummary"></p>
+    <div class="tabs" role="tablist" aria-label="Choose a map" id="tabs"></div>
+    <div class="statbar" id="stats" aria-live="polite"></div>
+    <div class="legend" aria-label="Legend">
+      <span><i></i>concept</span><span><i class="th"></i>threshold concept</span><span><i class="mc"></i>misconception</span>
+      <span><i class="fr"></i>your frontier</span><span><i class="ms"></i>mastered</span><span><i class="ex"></i>from another map</span>
+    </div>
+  </div>
+  <div class="explorer">
+    <div class="card graph-box" id="graphBox" aria-label="Map graph. Use Tab to move between nodes and Enter to open one."></div>
+    <aside class="card detail" id="detail" aria-live="polite">
+      <span class="eyebrow">How to use the map</span>
+      <h3>Start at a glowing node.</h3>
+      <p class="empty">Glowing nodes are your frontier: everything they need, you have already proven. Open one, write an attempt at its check, rate your confidence, then reveal the answer. A correct answer marks the node mastered, and new nodes start to glow.</p>
+      <p class="empty">Red dashed nodes are misconceptions. Try those first: a wrong answer there tells the agent to teach for conceptual change, not just add more facts.</p>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <span>Your progress stays in this browser. Export it as <span class="mono">learner.json</span> and run <span class="mono">python scripts/dulta.py frontier --state learner.json</span>.</span>
+  </div>
+</footer>
+
+<script src="assets/maps-data.js"></script>
+<script src="assets/graph.js"></script>
+</body>
+</html>

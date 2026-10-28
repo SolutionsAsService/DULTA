@@ -1,0 +1,19 @@
+{
+  "title": "PHYS 101: Mechanics, week 3 (Newton's laws)",
+  "outcomes": [
+    {"id": "O1", "text": "Draw a correct free-body diagram for a multi-force system", "activities": ["A1", "A2"], "assessments": ["T1"]},
+    {"id": "O2", "text": "Refute the impetus model with a frictionless counterexample", "activities": ["A3"], "assessments": ["T2"]},
+    {"id": "O3", "text": "Predict projectile motion before observing it", "activities": ["A4"], "assessments": ["T3"]}
+  ],
+  "activities": [
+    {"id": "A1", "text": "Worked example, faded over three problems", "serves": ["O1"]},
+    {"id": "A2", "text": "Peer Instruction ConcepTest on normal forces", "serves": ["O1"]},
+    {"id": "A3", "text": "Predict-Observe-Explain with an air-hockey puck", "serves": ["O2"]},
+    {"id": "A4", "text": "Projectile lab: commit a prediction, then run it", "serves": ["O3"]}
+  ],
+  "assessments": [
+    {"id": "T1", "text": "FBD quiz, unaided", "serves": ["O1"]},
+    {"id": "T2", "text": "FCI items 6, 7, 8 pre and post", "serves": ["O2"]},
+    {"id": "T3", "text": "Lab prediction-error score", "serves": ["O3"]}
+  ]
+}

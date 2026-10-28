@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DULTA</title>
+<meta name="description" content="DULTA, the Directed University Learning and Teaching Agent: tutoring and course design on domain maps, with a critic panel of learning scientists.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M7 24 16 8l9 16' fill='none' stroke='%231c1a16' stroke-width='2.4'/%3E%3Ccircle cx='7' cy='24' r='4' fill='%231c1a16'/%3E%3Ccircle cx='25' cy='24' r='4' fill='%231c1a16'/%3E%3Ccircle cx='16' cy='8' r='5' fill='%23e8a10c'/%3E%3C/svg%3E">
+<script src="assets/site.js"></script>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="DULTA home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 24 16 8l9 16" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="7" cy="24" r="3.6" fill="currentColor"/><circle cx="25" cy="24" r="3.6" fill="currentColor"/><circle cx="16" cy="8" r="4.6" fill="var(--threshold)"/></svg>
+      <span><b>Dult</b><i>A</i></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="maps.html">Maps</a>
+      <a href="labs.html">Labs</a>
+      <a href="method.html">Method</a>
+    </nav>
+    <button class="theme-btn" type="button" aria-label="Toggle dark mode"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <canvas id="sky" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <div class="acronym"><span><b>D</b>irected</span><span><b>U</b>niversity</span><span><b>L</b>earning</span><span><b>T</b>eaching</span><span><b>A</b>gent</span></div>
+      <h1>Learn at the <em>edge</em> of what you know.</h1>
+      <p class="lede">DultA is an agent skill for tutoring and course design. It keeps a map of the subject, finds the frontier just beyond what you have proven you know, and refuses to call anything learned until you answer it unaided. Every move it makes is argued in writing and judged by a panel of learning scientists.</p>
+      <div class="cta">
+        <a class="btn" href="maps.html">Open the maps <span aria-hidden="true">→</span></a>
+        <a class="btn ghost" href="labs.html">Try a lab</a>
+      </div>
+      <div class="hero-meta" id="heroMeta" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <section class="reveal" aria-labelledby="mapsTitle">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Domain maps</span>
+        <h2 id="mapsTitle">Four subjects, drawn as graphs you can walk.</h2>
+        <p class="lede">Each node has an outcome, a retrieval check and an answer. Solid edges are prerequisites. Dotted red edges are the misconceptions that block a concept. Amber nodes are threshold concepts: once crossed, the subject looks different.</p>
+      </div>
+      <div class="grid four" id="mapCards"></div>
+    </div>
+  </section>
+
+  <section class="reveal" aria-labelledby="loopTitle" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">The loop</span>
+        <h2 id="loopTitle">No quota. It stops when the evidence says stop.</h2>
+        <p class="lede">The traversal is DADA's: a living frontier instead of a syllabus, a decision record before every move, an independent panel after it, and stop conditions instead of a lesson count.</p>
+      </div>
+      <ol class="loop">
+        <li><b>Diagnose</b><span>Retrieval checks and a misconception probe before any teaching.</span></li>
+        <li><b>Frontier</b><span>The outer fringe of the map: nodes whose prerequisites you have proven.</span></li>
+        <li><b>Decide</b><span>A written record: anchors, argument, rejected options, load count.</span></li>
+        <li><b>Move</b><span>Consolidate (examples, retrieval) or Cross (a threshold, a productive failure).</span></li>
+        <li><b>Measure</b><span>Your unaided answer and confidence. Nothing else counts as mastery.</span></li>
+        <li><b>Panel</b><span>One subagent per learning scientist, each citing your actual answers.</span></li>
+        <li><b>Reopen</b><span>Failed checks and spaced reviews return to the frontier.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="reveal" aria-labelledby="modesTitle" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Two modes</span>
+        <h2 id="modesTitle">For the learner, and for the teacher.</h2>
+      </div>
+      <div class="grid two">
+        <article class="card mode" style="--accent: var(--physics)">
+          <span class="eyebrow">Mode 1</span>
+          <h3>Directed Learning</h3>
+          <p class="crit">Just beyond reach, proven by retrieval.</p>
+          <p>The agent tutors a learner across a domain map. Every move targets the frontier, and a node is mastered only on an unaided answer with a confidence rating.</p>
+          <ul>
+            <li>Required seats: Vygotsky, Bjork, Kapur, Sweller, Bastani</li>
+            <li>Extra field: learner evidence (check, answer, confidence)</li>
+            <li>Ambition push: a far-transfer problem from another map</li>
+          </ul>
+        </article>
+        <article class="card mode" style="--accent: var(--mathematics)">
+          <span class="eyebrow">Mode 2</span>
+          <h3>Directed Teaching</h3>
+          <p class="crit">Aligned and measured.</p>
+          <p>The agent designs a course, lecture, lab or assessment. Every outcome has an activity and an assessment that measures it, and the course states how gain is measured.</p>
+          <ul>
+            <li>Required seats: Biggs, Wiggins, Hake, Wieman, hooks, Rose</li>
+            <li>Extra field: exit test (the item and its threshold)</li>
+            <li>Ambition push: raise the hardest outcome one level</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal" aria-labelledby="conductTitle" style="padding-top:0">
+    <div class="wrap grid two" style="align-items:start">
+      <div class="sec-head" style="position:sticky;top:90px">
+        <span class="eyebrow">Learning best with agents</span>
+        <h2 id="conductTitle">An agent that will not do your thinking for you.</h2>
+        <p class="lede">In a field experiment, students given unguarded chatbot help scored higher in practice and lower on the exam. A hint-only tutor removed the harm. DultA is built on that result.</p>
+      </div>
+      <ol class="conduct">
+        <li><div><b>Generation before help</b><span>You commit an attempt and a confidence rating before the agent says anything substantive.</span><cite>Slamecka &amp; Graf, The Generation Effect</cite></div></li>
+        <li><div><b>Climb the hint ladder</b><span>A question, then a pointer, then a sub-goal, then one step. The full answer comes last, followed by a fresh problem.</span><cite>Pólya; Cognitive Tutors; Bastani et al.</cite></div></li>
+        <li><div><b>Four new things at most</b><span>Each explanation counts its new terms and symbols. The cap is four.</span><cite>Cowan, The Magical Number 4</cite></div></li>
+        <li><div><b>Probe before teaching over</b><span>A concept with a known misconception starts with the probe. A wrong answer turns the move into a Cross.</span><cite>Posner et al., Conceptual Change</cite></div></li>
+        <li><div><b>Explain-back closes a node</b><span>You explain it in plain words. Wherever you reach for jargon, there is a gap.</span><cite>Feynman Technique</cite></div></li>
+        <li><div><b>Spaced reopening</b><span>Mastered nodes return after 1, 3, 7, 16 and 35 days, or right away if a later check fails.</span><cite>Ebbinghaus; Leitner</cite></div></li>
+        <li><div><b>Fluency is not evidence</b><span>An explanation that sounds clear is only a guess about the learner. Their answer is the test.</span><cite>Bjork, Desirable Difficulties</cite></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="reveal" aria-labelledby="labsTitle" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Labs</span>
+        <h2 id="labsTitle">Predict first. Then run it.</h2>
+        <p class="lede">Each lab follows Predict–Observe–Explain. The simulation stays locked until you commit a prediction, and the explanation stays locked until you have seen how far off you were.</p>
+      </div>
+      <div class="grid three" id="labCards"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <span>DultA, a SolutionsAsService project. Built from scratch on the principles of DADA.</span>
+    <span class="mono">python scripts/dulta.py frontier --state learner.json</span>
+  </div>
+</footer>
+
+<script src="assets/maps-data.js"></script>
+<script>
+(function () {
+  const D = window.DULTA_MAPS;
+  const accentVar = (id) => `var(--${id})`;
+
+  // Hero figures, computed from the same data the CLI reads.
+  const nodes = D.nodes.filter((n) => n.kind !== "misconception");
+  const seats = (window.DULTA_ANCHOR_GRAPH.match(/:::critic/g) || []).length;
+  const figures = [
+    [D.maps.length, "domain maps"],
+    [nodes.length, "concepts with checks"],
+    [D.nodes.filter((n) => n.kind === "threshold").length, "threshold concepts"],
+    [D.nodes.filter((n) => n.kind === "misconception").length, "misconceptions probed"],
+    [seats, "critic seats"],
+  ];
+  document.getElementById("heroMeta").innerHTML = figures.map(([v, l]) => `<div><b>${v}</b><span>${l}</span></div>`).join("");
+
+  // Map cards with a sparkline of the map's depth profile.
+  document.getElementById("mapCards").innerHTML = D.maps.map((m) => {
+    const ns = D.nodes.filter((n) => n.map === m.id && n.kind !== "misconception");
+    const maxD = Math.max(...ns.map((n) => n.depth));
+    const cols = Array.from({ length: maxD + 1 }, (_, d) => ns.filter((n) => n.depth === d));
+    const w = 240, h = 70, cw = w / cols.length;
+    const dots = cols.map((col, d) => col.map((n, i) => {
+      const x = cw * d + cw / 2, y = h / 2 + (i - (col.length - 1) / 2) * 12;
+      const r = n.kind === "threshold" ? 5 : 3;
+      const fill = n.kind === "threshold" ? "var(--threshold)" : accentVar(m.id);
+      return `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r}" fill="${fill}"/>`;
+    }).join("")).join("");
+    const th = ns.filter((n) => n.kind === "threshold").length;
+    return `<a class="card map-card" style="--accent:${accentVar(m.id)}" href="maps.html#${m.id}">
+      <span class="count">${ns.length} nodes · ${th} thresholds</span>
+      <h3>${m.title}</h3>
+      <svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" aria-hidden="true">${dots}</svg>
+      <p>${m.summary.split(". ")[0]}.</p></a>`;
+  }).join("");
+
+  const labs = [
+    ["projectile", "Projectile", "physics", "Which launch angle goes farthest? Turn on air drag and the answer changes."],
+    ["pendulum", "Pendulum", "physics", "Predict the period, then swing it wide and watch the small-angle formula fail."],
+    ["fourier", "Fourier synthesis", "mathematics", "Build a square wave from sines and meet the overshoot that never goes away."],
+    ["code", "Test-first code", "developer", "The tests are red. Make them green, and learn what tests cannot prove."],
+    ["complexity", "Complexity", "developer", "Count real operations as n grows, then predict n = 1000."],
+    ["retrieval", "Retrieval & calibration", "learning", "Flashcards from every map, scored on how well your confidence matches your results."],
+  ];
+  document.getElementById("labCards").innerHTML = labs.map(([id, t, m, d]) =>
+    `<a class="card map-card" style="--accent:${accentVar(m)}" href="labs.html#${id}"><span class="count">${m}</span><h3>${t}</h3><p>${d}</p></a>`).join("");
+
+  // The sky: every concept as a star, clustered by map, edges as faint threads.
+  const cv = document.getElementById("sky"), ctx = cv.getContext("2d");
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let W, H, stars = [], links = [];
+  const index = {};
+  function css(name) { return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
+  function layout() {
+    const dpr = Math.min(devicePixelRatio || 1, 2);
+    W = cv.clientWidth; H = cv.clientHeight;
+    cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const centres = { physics: [0.78, 0.30], mathematics: [0.92, 0.66], developer: [0.62, 0.78], learning: [0.86, 0.06] };
+    const narrow = W < 720;
+    if (narrow) { Object.keys(centres).forEach((k, i) => centres[k] = [0.15 + 0.24 * i, 0.97]); }
+    stars = D.nodes.map((n, i) => {
+      const c = centres[n.map] || [0.5, 0.5];
+      const ang = i * 2.399, rad = (narrow ? 12 : 30) + (i % 9) * (narrow ? 6 : 14) + n.depth * (narrow ? 4 : 9);
+      const s = { n, bx: c[0] * W + Math.cos(ang) * rad, by: c[1] * H + Math.sin(ang) * rad * 0.8, ph: i };
+      index[n.key] = s; return s;
+    });
+    links = D.edges.filter((e) => index[e.from] && index[e.to]).map((e) => [index[e.from], index[e.to], e.type]);
+  }
+  function draw(t) {
+    ctx.clearRect(0, 0, W, H);
+    const ink = css("--ink"), th = css("--threshold"), mc = css("--misconception");
+    stars.forEach((s) => { s.x = s.bx + (reduce ? 0 : Math.sin(t / 2400 + s.ph) * 4); s.y = s.by + (reduce ? 0 : Math.cos(t / 3100 + s.ph) * 4); });
+    ctx.lineWidth = 0.7;
+    links.forEach(([a, b, type]) => {
+      ctx.strokeStyle = type === "counter" ? mc : ink;
+      ctx.globalAlpha = type === "counter" ? 0.18 : 0.10;
+      ctx.setLineDash(type === "counter" ? [3, 3] : []);
+      ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+    });
+    ctx.setLineDash([]);
+    stars.forEach((s) => {
+      const k = s.n.kind;
+      ctx.globalAlpha = k === "threshold" ? 0.95 : 0.35;
+      ctx.fillStyle = k === "threshold" ? th : k === "misconception" ? mc : css(`--${s.n.map}`);
+      const r = k === "threshold" ? 4.5 + (reduce ? 0 : Math.sin(t / 700 + s.ph)) : 2.4;
+      ctx.beginPath(); ctx.arc(s.x, s.y, r, 0, 7); ctx.fill();
+    });
+    ctx.globalAlpha = 1;
+    if (!reduce) requestAnimationFrame(draw);
+  }
+  layout(); requestAnimationFrame(draw);
+  addEventListener("resize", () => { layout(); if (reduce) draw(0); });
+  document.addEventListener("dulta:theme", () => { if (reduce) draw(0); });
+})();
+</script>
+</body>
+</html>
