@@ -91,6 +91,11 @@ flowchart LR
     hintladder["Hint Ladder (Pólya, Cognitive Tutors)"]:::agents
     mollick["Co-Intelligence (Ethan Mollick)"]:::agents
     calibration["Calibration of Confidence (Koriat, Dunlosky)"]:::agents
+    fewshot["Language Models are Few-Shot Learners (Brown et al.)"]:::agents
+    lostmiddle["Lost in the Middle (Liu et al.)"]:::agents
+    llmjudge["Judging LLM-as-a-Judge (Zheng et al.)"]:::agents
+    semanchors["Semantic Anchors (LLM Coding catalog)"]:::agents
+    coldstart["Cold-Start Test (DULTA)"]:::agents
   end
   subgraph REASON["Reason: Rationale for Every Move"]
     schon["The Reflective Practitioner (Donald Schön)"]:::reason
@@ -157,6 +162,8 @@ flowchart LR
     crit_agent_vanlehn["Critic: Agent Risk (VanLehn)"]:::critic
     crit_meta_whitehead["Critic: Inert Ideas (Whitehead)"]:::critic
     crit_meta_ranciere["Critic: Emancipation (Rancière)"]:::critic
+    crit_judge_zheng["Critic: Judge Bias (Zheng)"]:::critic
+    crit_ctx_liu["Critic: Context Limits (Liu)"]:::critic
   end
   subgraph LENSES["Lenses: Each Critic's Own Literature"]
     vygotskyMS["Mind in Society (Lev Vygotsky)"]:::lens
@@ -260,6 +267,18 @@ flowchart LR
   bastani -.->|warns| mollick
   mollick -->|agent as partner for| tutoring
   calibration -->|confidence vs correctness for| blackbox
+  fewshot -->|in-context examples, like| worked
+  semanchors -->|named methods compress instruction, per| clt
+  lostmiddle -.->|long notes dilute; caps context like| cowan
+  llmjudge -.->|the learner must not grade itself; grader independent, like| surowiecki
+  coldstart -->|retrieval by a fresh agent from notes alone, per| testing
+  coldstart -->|outer fringe measured cold, for| kst
+  generation -->|agent answers before reading sources, in| coldstart
+  crit_judge_zheng -->|checks grader independence with| llmjudge
+  crit_ctx_liu -->|checks note length and placement with| lostmiddle
+  crit_ctx_liu -.->|shorter notes against| crit_clar_feynman
+  crit_judge_zheng -.->|independent grading against| crit_agent_vanlehn
+  c_goodhart -.->|do not teach the agent to the| coldstart
   schon -->|reflection-in-action for| c_spike
   schon -->|reflection-on-action for| c_adr
   brookfield -->|four lenses for| brookfieldL
@@ -359,6 +378,7 @@ flowchart LR
 ```
 
 One seat per authority. A critic named for two thinkers is two seats: "Critic: Difficulty (Bjork, Kapur)" is
-`crit_diff_bjork` and `crit_diff_kapur`, each its own subagent arguing from its own text alone. 32 seats, 32 authorities.
+`crit_diff_bjork` and `crit_diff_kapur`, each its own subagent arguing from its own text alone. 34 seats, 34 authorities.
+Judge Bias (Zheng) and Context Limits (Liu) are required whenever the learner is an agent.
 Every critic pair joined by a dotted edge is a live disagreement in the learning sciences (guidance versus struggle,
 load versus difficulty, alignment versus problem-posing); seat at least one such pair in every round.

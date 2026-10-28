@@ -62,6 +62,7 @@
     if (runBtn) runBtn.addEventListener("click", doRun);
     return { reset, state, doRun };
   }
+  window.DULTA_LAB_KIT = { stage, poe, css, esc, fmt, errPct };
 
   // ---------- Projectile ----------
   (function projectile() {
@@ -129,7 +130,7 @@
         guess = g; sweep = null;
         last = sim(+v.value, +a.value, drag.checked);
         return new Promise((resolve) => {
-          const t0 = performance.now(), dur = matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 1400;
+          const t0 = performance.now(), dur = matchMedia("(prefers-reduced-motion: reduce)").matches || document.hidden ? 0 : 1400;
           (function frame(t) {
             const p = dur ? Math.min(1, (t - t0) / dur) : 1;
             draw(p);

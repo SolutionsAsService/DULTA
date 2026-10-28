@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DULTA Labs</title>
-<meta name="description" content="Predict-Observe-Explain labs: projectile, pendulum, Fourier synthesis, test-first code, complexity, and retrieval with calibration.">
+<meta name="description" content="Predict-Observe-Explain labs: projectile, pendulum, Fourier synthesis, test-first code, complexity, a microcontroller simulator, an RC circuit, and retrieval with calibration.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -36,7 +36,8 @@
     <p class="lede">Each lab is locked until you write down what you expect. Then you run it, see the measured result next to your guess, and only after that get the explanation. Being surprised is the point: it shows you exactly which idea needs work.</p>
     <nav class="lab-index" aria-label="Labs">
       <a href="#projectile">Projectile</a><a href="#pendulum">Pendulum</a><a href="#fourier">Fourier</a>
-      <a href="#code">Test-first code</a><a href="#complexity">Complexity</a><a href="#retrieval">Retrieval</a>
+      <a href="#code">Test-first code</a><a href="#complexity">Complexity</a><a href="#mcu">Microcontroller</a>
+      <a href="#rc">RC circuit</a><a href="#retrieval">Retrieval</a>
     </nav>
   </div>
 
@@ -147,6 +148,53 @@
       </div>
     </article>
 
+    <article class="card lab" id="mcu" style="--accent:var(--embedded)">
+      <div class="lab-head"><h3>Microcontroller</h3><a class="mono" href="maps.html#embedded/registers">embedded / registers · gpio · timing · debounce · pwm</a></div>
+      <p style="margin:0;color:var(--ink-2)">A simulated 8-bit microcontroller. The LED is on <b>PB5</b>; a button on <b>PB0</b> connects to ground. Write firmware against the registers <span class="mono">io.DDRB</span> (1 = output), <span class="mono">io.PORTB</span> (output level, or pull-up for an input) and <span class="mono">io.PINB</span> (read pins), plus <span class="mono">millis()</span>, <span class="mono">micros()</span> and <span class="mono">delay(ms)</span>. Each pass of <span class="mono">loop()</span> takes 10 µs, and the chip runs for 5 simulated seconds.</p>
+      <div class="lab-body">
+        <div style="display:grid;gap:12px;align-content:start">
+          <div class="stage"><canvas id="mcuCanvas" width="760" height="300" aria-label="Board and oscilloscope"></canvas></div>
+          <div class="controls">
+            <div><label for="mcuZoom">Scope window</label><select id="mcuZoom"><option value="full">0 – 5 s</option><option value="first">first 2 ms</option><option value="press">first press, 495 – 515 ms</option><option value="pwm">1.000 – 1.025 s</option></select></div>
+            <div class="readout" id="mcuRegs"><span>Registers appear after a run.</span></div>
+          </div>
+          <div><label for="mcuTask">Task</label><select id="mcuTask"></select></div>
+          <p id="mcuSpec" style="margin:0"></p>
+          <label for="mcuEditor" style="margin:0">Firmware (JavaScript)</label>
+          <textarea id="mcuEditor" rows="13" spellcheck="false"></textarea>
+          <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn small" id="mcuRun" type="button" disabled>Flash &amp; run</button><button class="btn small ghost" id="mcuReset" type="button">Reset code</button></div>
+        </div>
+        <div class="poe">
+          <div class="poe-step active" data-step="predict"><h4>1 · Predict</h4>
+            <label for="mcuGuess" id="mcuQ">…</label><input type="number" id="mcuGuess" step="any" inputmode="decimal">
+            <button class="btn small" data-commit type="button">Commit prediction</button></div>
+          <div class="poe-step" data-step="observe"><h4>2 · Observe</h4>
+            <div class="tests" id="mcuOut"><div>Flash the starter to see its behaviour.</div></div></div>
+          <div class="poe-step" data-step="explain"><h4>3 · Explain</h4><p class="verdict" data-explain hidden></p></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="card lab" id="rc" style="--accent:var(--electrical)">
+      <div class="lab-head"><h3>RC circuit</h3><a class="mono" href="maps.html#electrical/rc">electrical / rc · ohm · mathematics / diffeq</a></div>
+      <div class="lab-body">
+        <div class="stage"><canvas id="rcCanvas" width="760" height="380" aria-label="Capacitor voltage over time"></canvas></div>
+        <div class="poe">
+          <div class="controls">
+            <div><label for="rcR">Resistance <span id="rcRv" class="mono"></span></label><input type="range" id="rcR" min="0" max="100" value="50"></div>
+            <div><label for="rcC">Capacitance <span id="rcCv" class="mono"></span></label><input type="range" id="rcC" min="0" max="100" value="50"></div>
+          </div>
+          <div class="poe-step active" data-step="predict"><h4>1 · Predict</h4>
+            <label for="rcGuess">A 5 V step charges the capacitor through the resistor. How long until it reaches 3.16 V (63.2%), in ms?</label><input type="number" id="rcGuess" step="any" inputmode="decimal">
+            <button class="btn small" data-commit type="button">Commit prediction</button></div>
+          <div class="poe-step" data-step="observe"><h4>2 · Observe</h4>
+            <button class="btn small" data-run type="button" disabled>Close the switch</button>
+            <div class="readout" data-out hidden></div></div>
+          <div class="poe-step" data-step="explain"><h4>3 · Explain</h4><p class="verdict" data-explain hidden></p></div>
+        </div>
+      </div>
+    </article>
+
     <article class="card lab" id="retrieval" style="--accent:var(--learning)">
       <div class="lab-head"><h3>Retrieval &amp; calibration</h3><a class="mono" href="maps.html#learning/retrieval">learning / retrieval · spacing · metacog</a></div>
       <div class="lab-body">
@@ -170,5 +218,6 @@
 
 <script src="assets/maps-data.js"></script>
 <script src="assets/labs.js"></script>
+<script src="assets/lab-mcu.js"></script>
 </body>
 </html>

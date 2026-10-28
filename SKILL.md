@@ -1,6 +1,6 @@
 ---
 name: dulta
-description: "DULTA (Directed University Learning and Teaching Agent). Use when asked to tutor someone through a university subject, plan a study path, design a course, lecture, lab, problem set or assessment, or audit teaching for evidence. Built from scratch on DADA's principles: a living Frontier traversed non-linearly through a pedagogical anchor graph AND a domain map (physics, mathematics, developer, learning-with-agents, or a new one), Decision Records before every move, an independent critic panel of learning scientists run one subagent per reference, measurement before claims, and stop conditions instead of quotas. Two modes: Directed Learning (an agent tutors a learner; mastery only on unaided retrieval) and Directed Teaching (an agent designs instruction; constructive alignment with measured gain). Produces five required artifacts in LEARNING-LOG.md."
+description: "DULTA (Directed University Learning and Teaching Agent). Use when asked to tutor a person OR teach an AI agent a university or engineering subject, plan a study path, build a skill or curriculum for agents, design a course, lecture, lab, problem set or assessment, or audit teaching for evidence. Ships domain maps for physics, mathematics, electrical engineering, embedded systems and microcontrollers, mechanical engineering, chemistry, biology, software development, learning with agents and teaching agents, and accepts new ones. Built from scratch on DADA's principles: a living Frontier traversed non-linearly through a pedagogical anchor graph and a domain map, Decision Records before every move, an independent critic panel of learning scientists run one subagent per reference, measurement before claims, and bounded stop conditions instead of quotas. Two modes: Directed Learning (tutor a learner; mastery only on an unaided check, for an agent a cold-start check by a fresh subagent) and Directed Teaching (design instruction; constructive alignment with measured gain). Produces five required artifacts in LEARNING-LOG.md."
 ---
 
 # DULTA: Directed University Learning and Teaching Agent
@@ -51,6 +51,41 @@ logged as an open item with its resume point; it never blocks delivering what ex
 If the person does not name a mode, use Directed Learning when a learner is talking to you and Directed Teaching when
 they ask for materials; say which and why. In both modes seat at least one pair of critics joined by a dotted edge
 (e.g. Guidance (Kirschner) against Difficulty (Kapur)), and at least one seat that asks who the move leaves out.
+
+## Learner: a human or an agent (state it in the Traversal Plan)
+
+DULTA teaches people and teaches agents with the same graph, Frontier and panel. What differs is where learning
+lives and how it is measured. A human learns in memory. An agent's weights do not change in a session, so an agent
+learns through its context window and, durably, through a written artifact (a `NOTES.md` or `SKILL.md`) that the
+next agent loads. See the `agents` domain map (Teaching Agents) for the concepts behind each row.
+
+| | Human learner | Agent learner |
+|---|---|---|
+| Who learns | A person in the conversation | A subagent, and every future session that loads its notes |
+| Where learning lives | The person's memory | The learner's notes or skill file, which the tutor writes and revises |
+| Diagnosis | Retrieval checks asked in chat | **Baseline cold-start**: a fresh subagent with no notes answers `dulta.py quiz` items |
+| Generation before help | The person attempts before any hint | The learner agent answers before it reads any source material |
+| Mastery evidence | Unaided answer plus confidence | **Cold-start test**: a *fresh* subagent given only the notes answers held-out checks, graded by a *separate* grader subagent against the key |
+| Spaced reopening | Leitner reviews (1, 3, 7, 16, 35 days) | Re-run the cold-start after every edit to the notes (regression) |
+| Contamination guard | Don't show the answer before the attempt | `dulta.py leak NOTES.md` must print `clean`; a leaked answer voids that node's check |
+| Extra required seats | none | Critic: Judge Bias (Zheng), Critic: Context Limits (Liu) |
+
+**Agent-learner protocol**, inside the normal loop:
+
+1. Pick the Frontier nodes. Split their checks into a *teaching* set and a *held-out* set. The held-out set is never
+   used while teaching and becomes the S4 far-transfer test.
+2. `python scripts/dulta.py quiz --map <m> --nodes <ids> --key panel/key.md > panel/quiz.md`. The key goes only to
+   the grader subagent, never into the tutor's notes or the learner's prompt.
+3. Baseline: a fresh subagent gets only `quiz.md` and answers with confidences. The grader scores it against the key.
+4. Each move edits the notes: outcomes, worked examples, semantic anchors, misconception warnings, and *why* each
+   step follows. Explain in principles, never by pasting answers. Four new elements per move still applies, because
+   long notes dilute (`Lost in the Middle (Liu et al.)`).
+5. Measure: `dulta.py leak` on the notes, then a cold-start subagent (notes plus quiz only), then the grader. Never
+   let the learner grade itself (`Judging LLM-as-a-Judge (Zheng et al.)`). Swap answer order when comparing variants.
+6. Gain: `dulta.py gain --pre <baseline %> --post <cold-start %>`. A node is mastered when its held-out check
+   passes cold. A failure points at the gap in the notes; ADAPT the notes, not the quiz.
+7. Close by installing the notes where the next session will load them (a skill directory, project instructions,
+   or memory), and record that in the Carry-Forward Ledger.
 
 ## Agent conduct (Directed Learning)
 
@@ -107,6 +142,8 @@ or "none available"; never claim a tool you did not call.
 |---|---|---|
 | Domain map and Frontier | `python scripts/dulta.py validate / render / frontier` | Read `references/maps/<map>.md` by hand |
 | Course alignment audit | `python scripts/dulta.py align course.json` | Outcome × activity × assessment table by hand |
+| Quiz without answers, separate key | `python scripts/dulta.py quiz --map <m> --nodes <ids> --key key.md` | Copy checks by hand, keep answers in a separate file |
+| Agent-notes contamination | `python scripts/dulta.py leak NOTES.md` | Search the notes for each answer by hand |
 | Gain | `python scripts/dulta.py gain --pre X --post Y` | Hake's formula by hand |
 | Panel | Subagent tool, one agent per reference, at most three at a time, each filing to `panel/R<n>/<seat>.md`; collect with `dulta.py panel` | Sequential written reports, each finished before reading the next |
 | Labs and render-check | A browser on `site/` (labs, map explorer) | Describe the exercise in text; write "unrendered" |
@@ -114,7 +151,7 @@ or "none available"; never claim a tool you did not call.
 
 ### Step 1. Traversal Plan
 
-1. Restate the brief in one sentence. Choose the mode. Choose or create the domain map (a new map is a JSON file in
+1. Restate the brief in one sentence. Choose the mode and the learner (human or agent). Choose or create the domain map (a new map is a JSON file in
    `maps/` with the same schema; run `dulta.py validate` until OK).
 2. **Diagnose before teaching.** Directed Learning: ask 3 to 6 retrieval checks spanning the map's lower tiers and at
    least one misconception probe; record answers and confidence; seed `learner.json` with what was answered correctly.
@@ -216,7 +253,8 @@ Then close:
    missed misc-heat probe on 2026-10-20 and 2026-10-27"). Read it before Step 1 of any later session.
 2. **Compliance Check**, each line pointing to where it is satisfied:
    - [ ] Tooling inventory, with the tool used per job or "none available"
-   - [ ] Mode stated with the reason; domain map named and validated
+   - [ ] Mode and learner (human or agent) stated with the reason; domain map named and validated
+   - [ ] Agent learner only: baseline and post cold-start runs, separate grader, `leak` clean, notes installed
    - [ ] Diagnosis before the first move
    - [ ] Seed with exact labels including one dotted counterpoint; a living Frontier over both graphs
    - [ ] At least one Cross taken; no quota used as a stopping rule; caps respected and logged

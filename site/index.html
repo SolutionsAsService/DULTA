@@ -35,7 +35,7 @@
     <div class="wrap">
       <div class="acronym"><span><b>D</b>irected</span><span><b>U</b>niversity</span><span><b>L</b>earning</span><span><b>T</b>eaching</span><span><b>A</b>gent</span></div>
       <h1>Learn at the <em>edge</em> of what you know.</h1>
-      <p class="lede">DultA is an agent skill for tutoring and course design. It keeps a map of the subject, finds the frontier just beyond what you have proven you know, and refuses to call anything learned until you answer it unaided. Every move it makes is argued in writing and judged by a panel of learning scientists.</p>
+      <p class="lede">DultA is an agent skill for teaching people and teaching AI agents. It keeps a map of the subject, finds the frontier just beyond what the learner has proven, and won't call anything learned until it is answered unaided. For an agent, that means a fresh agent with only the notes. Every move is argued in writing and judged by a panel of learning scientists.</p>
       <div class="cta">
         <a class="btn" href="maps.html">Open the maps <span aria-hidden="true">→</span></a>
         <a class="btn ghost" href="labs.html">Try a lab</a>
@@ -48,7 +48,7 @@
     <div class="wrap">
       <div class="sec-head">
         <span class="eyebrow">Domain maps</span>
-        <h2 id="mapsTitle">Four subjects, drawn as graphs you can walk.</h2>
+        <h2 id="mapsTitle"><span id="mapCount">Ten</span> subjects, drawn as graphs you can walk.</h2>
         <p class="lede">Each node has an outcome, a retrieval check and an answer. Solid edges are prerequisites. Dotted red edges are the misconceptions that block a concept. Amber nodes are threshold concepts: once crossed, the subject looks different.</p>
       </div>
       <div class="grid four" id="mapCards"></div>
@@ -126,6 +126,38 @@
     </div>
   </section>
 
+  <section class="reveal" aria-labelledby="whoTitle" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Two kinds of learner</span>
+        <h2 id="whoTitle">Teach a person. Teach an agent. Same maps, same proof.</h2>
+        <p class="lede">An agent's weights don't change during a session. It learns through what goes into its context, and through notes written down for the next agent. So for an agent, "learned" means a fresh agent with only those notes passes questions it has never seen, graded by a separate judge.</p>
+      </div>
+      <div class="grid two">
+        <article class="card mode" style="--accent: var(--learning)">
+          <span class="eyebrow">Human learner</span>
+          <h3>Learning lives in memory.</h3>
+          <ul>
+            <li>Diagnosis: retrieval checks and misconception probes in conversation</li>
+            <li>Help only after an attempt and a confidence rating</li>
+            <li>Mastery: an unaided answer; spaced reviews reopen it later</li>
+            <li>Progress kept in <span class="mono">learner.json</span></li>
+          </ul>
+        </article>
+        <article class="card mode" style="--accent: var(--agents)">
+          <span class="eyebrow">Agent learner</span>
+          <h3>Learning lives in the notes.</h3>
+          <ul>
+            <li>Baseline: a fresh subagent answers <span class="mono">dulta.py quiz</span> cold</li>
+            <li>The tutor revises the notes or skill file, never pasting answers</li>
+            <li>Mastery: a fresh agent with only the notes passes held-out checks, graded by a separate agent</li>
+            <li><span class="mono">dulta.py leak</span> catches answer keys hiding in the notes</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <section class="reveal" aria-labelledby="labsTitle" style="padding-top:0">
     <div class="wrap">
       <div class="sec-head">
@@ -161,6 +193,8 @@
     [D.nodes.filter((n) => n.kind === "misconception").length, "misconceptions probed"],
     [seats, "critic seats"],
   ];
+  const words = ["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve"];
+  document.getElementById("mapCount").textContent = words[D.maps.length] || D.maps.length;
   document.getElementById("heroMeta").innerHTML = figures.map(([v, l]) => `<div><b>${v}</b><span>${l}</span></div>`).join("");
 
   // Map cards with a sparkline of the map's depth profile.
@@ -189,6 +223,8 @@
     ["fourier", "Fourier synthesis", "mathematics", "Build a square wave from sines and meet the overshoot that never goes away."],
     ["code", "Test-first code", "developer", "The tests are red. Make them green, and learn what tests cannot prove."],
     ["complexity", "Complexity", "developer", "Count real operations as n grows, then predict n = 1000."],
+    ["mcu", "Microcontroller", "embedded", "Write firmware against real registers. Blink without blocking, debounce a chattering button, dim with PWM, and watch it all on a scope."],
+    ["rc", "RC circuit", "electrical", "Predict the time constant, close the switch, and watch the exponential close 63% of the gap every τ."],
     ["retrieval", "Retrieval & calibration", "learning", "Flashcards from every map, scored on how well your confidence matches your results."],
   ];
   document.getElementById("labCards").innerHTML = labs.map(([id, t, m, d]) =>
@@ -204,12 +240,15 @@
     const dpr = Math.min(devicePixelRatio || 1, 2);
     W = cv.clientWidth; H = cv.clientHeight;
     cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    const centres = { physics: [0.78, 0.30], mathematics: [0.92, 0.66], developer: [0.62, 0.78], learning: [0.86, 0.06] };
-    const narrow = W < 720;
-    if (narrow) { Object.keys(centres).forEach((k, i) => centres[k] = [0.15 + 0.24 * i, 0.97]); }
+    // One cluster per map on an arc down the right of the hero (a strip along the bottom on phones).
+    const narrow = W < 720, centres = {};
+    D.maps.forEach((m, i) => {
+      const a = -1.1 + (2.2 * i) / Math.max(1, D.maps.length - 1);
+      centres[m.id] = narrow ? [0.06 + (0.88 * i) / Math.max(1, D.maps.length - 1), 0.97] : [0.84 + 0.12 * Math.cos(a * 1.3), 0.5 + 0.44 * Math.sin(a)];
+    });
     stars = D.nodes.map((n, i) => {
       const c = centres[n.map] || [0.5, 0.5];
-      const ang = i * 2.399, rad = (narrow ? 12 : 30) + (i % 9) * (narrow ? 6 : 14) + n.depth * (narrow ? 4 : 9);
+      const ang = i * 2.399, rad = (narrow ? 10 : 18) + (i % 7) * (narrow ? 4 : 8) + n.depth * (narrow ? 3 : 5);
       const s = { n, bx: c[0] * W + Math.cos(ang) * rad, by: c[1] * H + Math.sin(ang) * rad * 0.8, ph: i };
       index[n.key] = s; return s;
     });

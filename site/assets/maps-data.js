@@ -3,6 +3,94 @@
 window.DULTA_MAPS = {
  "maps": [
   {
+   "id": "physics",
+   "title": "Physics",
+   "accent": "#e8590c",
+   "summary": "From measurement to quantum fields. The spine is mechanics; five threshold concepts (Newton's laws, conservation of energy, entropy, relativity of simultaneity, quantum states) change how everything after them is seen.",
+   "sources": [
+    "Halliday, Resnick, Walker: Fundamentals of Physics",
+    "Feynman, Leighton, Sands: The Feynman Lectures on Physics",
+    "Hestenes, Wells, Swackhamer: Force Concept Inventory (1992)",
+    "Knight: Five Easy Lessons"
+   ]
+  },
+  {
+   "id": "mathematics",
+   "title": "Mathematics",
+   "accent": "#5c7cfa",
+   "summary": "The language the other maps are written in. Proof and the limit are the two thresholds: after proof, mathematics is argument rather than procedure; after the limit, the infinite becomes something you can compute with.",
+   "sources": [
+    "Velleman: How to Prove It",
+    "Spivak: Calculus",
+    "Strang: Introduction to Linear Algebra",
+    "Pólya: How to Solve It",
+    "Tall & Vinner: Concept image and concept definition (1981)"
+   ]
+  },
+  {
+   "id": "chemistry",
+   "title": "Chemistry",
+   "accent": "#7950f2",
+   "summary": "Matter by the electron. The bond as an energy well, dynamic equilibrium, and free energy are the thresholds; each overturns a common-sense idea (that breaking bonds releases energy, that equilibrium means nothing happens, that reactions go 'downhill' only in energy).",
+   "sources": [
+    "Atkins & Jones: Chemical Principles",
+    "Clayden, Greeves, Warren: Organic Chemistry",
+    "Taber: Chemical Misconceptions (RSC, 2002)",
+    "Boo: Students' understandings of chemical bonds and the energetics of reactions (1998)"
+   ]
+  },
+  {
+   "id": "biology",
+   "title": "Biology",
+   "accent": "#40c057",
+   "summary": "Life as chemistry that copies itself. Evolution by natural selection is the threshold that organises everything else; the central dogma and homeostasis are the two mechanisms every later topic leans on.",
+   "sources": [
+    "Alberts et al.: Molecular Biology of the Cell",
+    "Campbell & Reece: Biology",
+    "Dobzhansky: Nothing in Biology Makes Sense Except in the Light of Evolution (1973)",
+    "Bishop & Anderson: Student conceptions of natural selection (1990)"
+   ]
+  },
+  {
+   "id": "electrical",
+   "title": "Electrical Engineering",
+   "accent": "#e64980",
+   "summary": "From Ohm's law to feedback control. Three thresholds reorganise the subject: impedance (AC circuits as complex algebra), feedback (a system that measures its own output), and state (logic that remembers).",
+   "sources": [
+    "Horowitz & Hill: The Art of Electronics",
+    "Agarwal & Lang: Foundations of Analog and Digital Electronic Circuits",
+    "Oppenheim & Willsky: Signals and Systems",
+    "Åström & Murray: Feedback Systems",
+    "Harris & Harris: Digital Design and Computer Architecture"
+   ]
+  },
+  {
+   "id": "embedded",
+   "title": "Embedded Systems",
+   "accent": "#15aabf",
+   "summary": "Microcontrollers from the bit up. The first threshold is the memory-mapped register: hardware is controlled by writing bits to addresses. The second is the interrupt: the program is no longer the only thing deciding what runs next.",
+   "sources": [
+    "White: Making Embedded Systems",
+    "Valvano: Embedded Systems: Introduction to ARM Cortex-M Microcontrollers",
+    "Ganssle: A Guide to Debouncing (2008)",
+    "Microchip: ATmega328P datasheet",
+    "Barr: Embedded C Coding Standard"
+   ]
+  },
+  {
+   "id": "mechanical",
+   "title": "Mechanical Engineering",
+   "accent": "#868e96",
+   "summary": "Forces into structures, structures into machines. Bending (stress varies across a section) and resonance (a small push at the right frequency breaks big things) are the thresholds; the rest is learning to trust a model only as far as its assumptions.",
+   "sources": [
+    "Hibbeler: Engineering Mechanics: Statics and Dynamics",
+    "Gere & Goodno: Mechanics of Materials",
+    "Shigley: Mechanical Engineering Design",
+    "Ashby: Materials Selection in Mechanical Design",
+    "Gordon: Structures, or Why Things Don't Fall Down"
+   ]
+  },
+  {
    "id": "developer",
    "title": "Developer",
    "accent": "#12b886",
@@ -30,32 +118,1824 @@ window.DULTA_MAPS = {
    ]
   },
   {
-   "id": "mathematics",
-   "title": "Mathematics",
-   "accent": "#5c7cfa",
-   "summary": "The language the other maps are written in. Proof and the limit are the two thresholds: after proof, mathematics is argument rather than procedure; after the limit, the infinite becomes something you can compute with.",
+   "id": "agents",
+   "title": "Teaching Agents",
+   "accent": "#f76707",
+   "summary": "How to teach an AI agent a domain, and prove it learned. An agent's weights do not change in a session; it learns only through what enters its context and what is written down for the next one. The threshold is the cold-start test: knowledge counts only if a fresh agent, given the notes and not the answers, passes held-out checks.",
    "sources": [
-    "Velleman: How to Prove It",
-    "Spivak: Calculus",
-    "Strang: Introduction to Linear Algebra",
-    "Pólya: How to Solve It",
-    "Tall & Vinner: Concept image and concept definition (1981)"
-   ]
-  },
-  {
-   "id": "physics",
-   "title": "Physics",
-   "accent": "#e8590c",
-   "summary": "From measurement to quantum fields. The spine is mechanics; five threshold concepts (Newton's laws, conservation of energy, entropy, relativity of simultaneity, quantum states) change how everything after them is seen.",
-   "sources": [
-    "Halliday, Resnick, Walker: Fundamentals of Physics",
-    "Feynman, Leighton, Sands: The Feynman Lectures on Physics",
-    "Hestenes, Wells, Swackhamer: Force Concept Inventory (1992)",
-    "Knight: Five Easy Lessons"
+    "Brown et al.: Language Models are Few-Shot Learners (2020)",
+    "Liu et al.: Lost in the Middle: How Language Models Use Long Contexts (2023)",
+    "Zheng et al.: Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena (2023)",
+    "Semantic Anchors catalog (llm-coding.github.io/Semantic-Anchors)",
+    "Anthropic: Agent Skills documentation"
    ]
   }
  ],
  "nodes": [
+  {
+   "id": "measurement",
+   "label": "Measurement & Uncertainty",
+   "kind": "concept",
+   "summary": "Every number in physics carries a unit and an uncertainty; a result without either is not yet a result.",
+   "outcome": "Report a measured quantity with unit and propagated uncertainty.",
+   "check": "You time 10 swings of a pendulum as 14.2 s ± 0.2 s. What is the period and its uncertainty?",
+   "answer": "1.42 s ± 0.02 s: dividing by an exact count divides the uncertainty too.",
+   "map": "physics",
+   "key": "physics/measurement",
+   "depth": 0
+  },
+  {
+   "id": "dimensions",
+   "label": "Units & Dimensional Analysis",
+   "kind": "concept",
+   "summary": "Equations must balance in dimensions as well as numbers, which lets you guess laws and catch errors before computing.",
+   "outcome": "Derive the form of a law (up to a constant) from dimensions alone.",
+   "check": "Using dimensions only, how must a pendulum's period depend on its length L and g?",
+   "answer": "T ∝ √(L/g): it is the only combination of L [m] and g [m/s²] with units of seconds.",
+   "map": "physics",
+   "key": "physics/dimensions",
+   "depth": 1
+  },
+  {
+   "id": "vectors",
+   "label": "Vectors",
+   "kind": "concept",
+   "summary": "Quantities with direction add head to tail and split into independent components.",
+   "outcome": "Resolve a vector into components and add vectors by components.",
+   "check": "A 10 N force points 30° above horizontal. What is its horizontal component?",
+   "answer": "10 cos 30° ≈ 8.7 N.",
+   "map": "physics",
+   "key": "physics/vectors",
+   "depth": 0
+  },
+  {
+   "id": "kinematics",
+   "label": "Kinematics",
+   "kind": "concept",
+   "summary": "Position, velocity and acceleration as rates of change of one another; constant-acceleration motion in each axis independently.",
+   "outcome": "Predict the trajectory of a projectile from its launch conditions.",
+   "check": "A ball is thrown horizontally off a table while another is dropped from the same height. Which lands first?",
+   "answer": "They land together: vertical motion is independent of horizontal velocity.",
+   "lab": "projectile",
+   "map": "physics",
+   "key": "physics/kinematics",
+   "depth": 2
+  },
+  {
+   "id": "misc-impetus",
+   "label": "\"Motion needs a force\"",
+   "kind": "misconception",
+   "summary": "The impetus intuition: a moving object must be pushed to keep moving, and stops when the push 'runs out'. The FCI shows it survives a traditional first course.",
+   "outcome": "State and refute the impetus model with a frictionless counterexample.",
+   "check": "A puck slides across frictionless ice at constant velocity. What net force acts on it?",
+   "answer": "Zero. Constant velocity means zero net force; force changes motion, it does not sustain it.",
+   "map": "physics",
+   "key": "physics/misc-impetus",
+   "depth": 3
+  },
+  {
+   "id": "newton",
+   "label": "Newton's Laws",
+   "kind": "threshold",
+   "summary": "Force causes acceleration, not velocity. Crossing this threshold reorganises every later topic; it is troublesome precisely because everyday experience is full of friction.",
+   "outcome": "Draw a free-body diagram and apply ΣF = ma to predict motion.",
+   "check": "A book rests on a table. Name the Newton's-third-law partner of the gravitational force of Earth on the book.",
+   "answer": "The gravitational force of the book on Earth, not the normal force from the table.",
+   "lab": "projectile",
+   "map": "physics",
+   "key": "physics/newton",
+   "depth": 3
+  },
+  {
+   "id": "misc-heavier",
+   "label": "\"Heavier falls faster\"",
+   "kind": "misconception",
+   "summary": "Aristotle's intuition, contradicted by Galileo: without air resistance, all bodies fall with the same acceleration.",
+   "outcome": "Explain why mass cancels in free fall.",
+   "check": "In a vacuum, a hammer and a feather are dropped together. Which lands first?",
+   "answer": "Together: F = mg and a = F/m = g, so mass cancels (shown on the Moon by Apollo 15).",
+   "map": "physics",
+   "key": "physics/misc-heavier",
+   "depth": 3
+  },
+  {
+   "id": "forces",
+   "label": "Forces & Free-Body Diagrams",
+   "kind": "concept",
+   "summary": "Gravity, normal, tension, friction and springs as interactions between pairs of objects, isolated one body at a time.",
+   "outcome": "Model a multi-force system and solve for an unknown force.",
+   "check": "A 2 kg block hangs from a rope at rest. What is the tension?",
+   "answer": "About 19.6 N (T = mg).",
+   "map": "physics",
+   "key": "physics/forces",
+   "depth": 4
+  },
+  {
+   "id": "misc-centrifugal",
+   "label": "\"Centrifugal force pushes outward\"",
+   "kind": "misconception",
+   "summary": "In an inertial frame there is no outward force on a turning object; the net force points inward and the 'outward push' is inertia felt from a rotating frame.",
+   "outcome": "Identify the centripetal force in a circular-motion scenario.",
+   "check": "A car rounds a flat curve at constant speed. Which force keeps it on the curve?",
+   "answer": "Static friction between tyres and road, pointing toward the centre.",
+   "map": "physics",
+   "key": "physics/misc-centrifugal",
+   "depth": 5
+  },
+  {
+   "id": "circular",
+   "label": "Circular Motion",
+   "kind": "concept",
+   "summary": "Changing direction is acceleration: a = v²/r toward the centre, supplied by real forces.",
+   "outcome": "Compute the centripetal force needed for a given speed and radius.",
+   "check": "If you double the speed on the same curve, by what factor does the needed force change?",
+   "answer": "Four times (F ∝ v²).",
+   "map": "physics",
+   "key": "physics/circular",
+   "depth": 5
+  },
+  {
+   "id": "energy",
+   "label": "Conservation of Energy",
+   "kind": "threshold",
+   "summary": "A single number that stays fixed through every transformation. It replaces step-by-step force accounting with before-and-after bookkeeping.",
+   "outcome": "Solve a motion problem with energy conservation where forces would be awkward.",
+   "check": "A ball is released from rest 5 m up a frictionless ramp. What is its speed at the bottom?",
+   "answer": "√(2gh) ≈ 9.9 m/s, regardless of the ramp's shape.",
+   "lab": "pendulum",
+   "map": "physics",
+   "key": "physics/energy",
+   "depth": 6
+  },
+  {
+   "id": "work",
+   "label": "Work & Power",
+   "kind": "concept",
+   "summary": "Work is force along displacement; power is the rate of doing work.",
+   "outcome": "Compute work done by a variable force as an area under F(x).",
+   "check": "You carry a box horizontally at constant velocity. How much work does gravity do on it?",
+   "answer": "Zero: gravity is perpendicular to the displacement.",
+   "map": "physics",
+   "key": "physics/work",
+   "depth": 5
+  },
+  {
+   "id": "momentum",
+   "label": "Momentum & Collisions",
+   "kind": "concept",
+   "summary": "Total momentum is conserved whenever external forces vanish, in every collision, elastic or not.",
+   "outcome": "Predict final velocities in a 1D collision.",
+   "check": "A 1 kg cart at 2 m/s sticks to an identical cart at rest. Final speed?",
+   "answer": "1 m/s (momentum 2 kg·m/s shared by 2 kg).",
+   "map": "physics",
+   "key": "physics/momentum",
+   "depth": 4
+  },
+  {
+   "id": "rotation",
+   "label": "Rotational Dynamics",
+   "kind": "concept",
+   "summary": "Torque, moment of inertia and angular momentum: Newton's laws for spinning bodies.",
+   "outcome": "Use τ = Iα and conservation of angular momentum.",
+   "check": "A skater pulls in their arms. What happens to the spin rate, and why?",
+   "answer": "It increases: I decreases and L = Iω is conserved.",
+   "map": "physics",
+   "key": "physics/rotation",
+   "depth": 6
+  },
+  {
+   "id": "gravitation",
+   "label": "Universal Gravitation",
+   "kind": "concept",
+   "summary": "The same inverse-square force drops apples and holds orbits.",
+   "outcome": "Derive orbital speed from F = GMm/r².",
+   "check": "Why do astronauts on the ISS float, if gravity there is ~90% of surface gravity?",
+   "answer": "They are in free fall together with the station; floating is falling around the Earth.",
+   "map": "physics",
+   "key": "physics/gravitation",
+   "depth": 7
+  },
+  {
+   "id": "shm",
+   "label": "Simple Harmonic Motion",
+   "kind": "concept",
+   "summary": "Any restoring force proportional to displacement gives sinusoidal motion with a period independent of amplitude.",
+   "outcome": "Predict the period of a spring or small-angle pendulum.",
+   "check": "Does a pendulum's period change if you double its mass?",
+   "answer": "No: T = 2π√(L/g), independent of mass (for small angles).",
+   "lab": "pendulum",
+   "map": "physics",
+   "key": "physics/shm",
+   "depth": 5
+  },
+  {
+   "id": "waves",
+   "label": "Waves & Superposition",
+   "kind": "concept",
+   "summary": "Disturbances that carry energy, not matter; overlapping waves add, producing interference and standing waves.",
+   "outcome": "Predict interference maxima from path difference.",
+   "check": "Two speakers emit the same tone. You stand where the path difference is half a wavelength. What do you hear?",
+   "answer": "Near-silence: destructive interference.",
+   "lab": "fourier",
+   "map": "physics",
+   "key": "physics/waves",
+   "depth": 6
+  },
+  {
+   "id": "thermo",
+   "label": "Temperature & Heat",
+   "kind": "concept",
+   "summary": "Temperature measures average microscopic kinetic energy; heat is energy in transit because of a temperature difference.",
+   "outcome": "Apply the first law of thermodynamics to a gas process.",
+   "check": "Metal and wood in the same room feel different temperatures. Are they?",
+   "answer": "No, same temperature; metal conducts heat away from your hand faster.",
+   "map": "physics",
+   "key": "physics/thermo",
+   "depth": 7
+  },
+  {
+   "id": "misc-heat",
+   "label": "\"Heat and temperature are the same\"",
+   "kind": "misconception",
+   "summary": "Conflating a state variable (temperature) with an energy transfer (heat).",
+   "outcome": "Distinguish heat from temperature with a phase-change example.",
+   "check": "Ice melts in a glass at 0 °C while absorbing heat. What happens to its temperature?",
+   "answer": "It stays at 0 °C: the heat breaks bonds rather than raising temperature.",
+   "map": "physics",
+   "key": "physics/misc-heat",
+   "depth": 7
+  },
+  {
+   "id": "entropy",
+   "label": "Entropy & the Second Law",
+   "kind": "threshold",
+   "summary": "Isolated systems drift toward more probable macrostates. This is where the arrow of time enters physics.",
+   "outcome": "Explain irreversibility in terms of counting microstates.",
+   "check": "Why does a dropped egg never unscramble, though no law of mechanics forbids it?",
+   "answer": "The unscrambled macrostate has overwhelmingly fewer microstates; it is possible but absurdly improbable.",
+   "map": "physics",
+   "key": "physics/entropy",
+   "depth": 8
+  },
+  {
+   "id": "statmech",
+   "label": "Statistical Mechanics",
+   "kind": "concept",
+   "summary": "Thermodynamics derived from the statistics of very many particles: the Boltzmann factor e^(−E/kT).",
+   "outcome": "Use the Boltzmann factor to compare occupation of two energy levels.",
+   "check": "As temperature rises, what happens to the ratio of high- to low-energy particles?",
+   "answer": "It increases toward 1: e^(−ΔE/kT) grows as T grows.",
+   "map": "physics",
+   "key": "physics/statmech",
+   "depth": 9
+  },
+  {
+   "id": "electrostatics",
+   "label": "Electric Charge & Fields",
+   "kind": "concept",
+   "summary": "Charges create fields; fields push charges. Coulomb's law and Gauss's law.",
+   "outcome": "Compute the field of a point charge and a charged plane.",
+   "check": "What is the electric field inside a charged, conducting hollow sphere?",
+   "answer": "Zero (Gauss's law; charge sits on the surface).",
+   "map": "physics",
+   "key": "physics/electrostatics",
+   "depth": 5
+  },
+  {
+   "id": "misc-current",
+   "label": "\"Current gets used up\"",
+   "kind": "misconception",
+   "summary": "The belief that bulbs consume current, so less flows back to the battery. Current is conserved; energy is what gets transferred.",
+   "outcome": "Explain series circuits with charge conservation.",
+   "check": "Two bulbs in series: is the current after the second bulb less than before the first?",
+   "answer": "No, it is the same everywhere in a series loop; energy, not charge, is used.",
+   "map": "physics",
+   "key": "physics/misc-current",
+   "depth": 6
+  },
+  {
+   "id": "circuits",
+   "label": "Circuits",
+   "kind": "concept",
+   "summary": "Potential difference drives current through resistance; Kirchhoff's rules are charge and energy conservation.",
+   "outcome": "Analyse a two-loop circuit with Kirchhoff's rules.",
+   "check": "Adding a second identical bulb in parallel: does the battery's current rise or fall?",
+   "answer": "It doubles: total resistance halves.",
+   "map": "physics",
+   "key": "physics/circuits",
+   "depth": 6
+  },
+  {
+   "id": "magnetism",
+   "label": "Magnetism & Induction",
+   "kind": "concept",
+   "summary": "Moving charges make magnetic fields; changing magnetic flux makes electric fields (Faraday).",
+   "outcome": "Predict induced current direction with Lenz's law.",
+   "check": "A magnet falls through a copper tube. Why does it fall slowly?",
+   "answer": "Induced eddy currents create a field opposing its motion (Lenz's law).",
+   "map": "physics",
+   "key": "physics/magnetism",
+   "depth": 7
+  },
+  {
+   "id": "maxwell",
+   "label": "Maxwell's Equations",
+   "kind": "concept",
+   "summary": "Four equations unify electricity, magnetism and light.",
+   "outcome": "Show that Maxwell's equations predict waves travelling at c = 1/√(μ₀ε₀).",
+   "check": "What does Maxwell's displacement current fix in Ampère's law?",
+   "answer": "It makes the law consistent for changing fields (e.g. a charging capacitor) and permits EM waves.",
+   "map": "physics",
+   "key": "physics/maxwell",
+   "depth": 8
+  },
+  {
+   "id": "optics",
+   "label": "Light & Optics",
+   "kind": "concept",
+   "summary": "Light as an EM wave: reflection, refraction, diffraction, and the thin-lens equation.",
+   "outcome": "Locate an image with the thin-lens equation.",
+   "check": "Why does a straw look bent in a glass of water?",
+   "answer": "Refraction: light changes direction crossing the water–air boundary.",
+   "map": "physics",
+   "key": "physics/optics",
+   "depth": 9
+  },
+  {
+   "id": "relativity",
+   "label": "Special Relativity",
+   "kind": "threshold",
+   "summary": "The speed of light is the same for all observers, so simultaneity, time and length are frame-dependent.",
+   "outcome": "Compute time dilation for a moving clock.",
+   "check": "A muon lives 2.2 µs at rest but reaches the ground from 15 km up. How?",
+   "answer": "In Earth's frame its clock runs slow (time dilation); in its frame the atmosphere is length-contracted.",
+   "map": "physics",
+   "key": "physics/relativity",
+   "depth": 9
+  },
+  {
+   "id": "lagrangian",
+   "label": "Lagrangian Mechanics",
+   "kind": "concept",
+   "summary": "Mechanics from one scalar, L = T − V, and the principle of stationary action.",
+   "outcome": "Derive equations of motion from a Lagrangian.",
+   "check": "What is the advantage of generalized coordinates for a bead on a rotating hoop?",
+   "answer": "Constraint forces drop out; one coordinate (the angle) describes the motion.",
+   "map": "physics",
+   "key": "physics/lagrangian",
+   "depth": 7
+  },
+  {
+   "id": "misc-orbits",
+   "label": "\"Electrons orbit like planets\"",
+   "kind": "misconception",
+   "summary": "The Bohr picture taken literally. Electrons are described by probability amplitudes, not trajectories.",
+   "outcome": "Contrast an orbital with an orbit.",
+   "check": "Where is the electron in a hydrogen 1s state?",
+   "answer": "It has no definite position; the 1s orbital gives the probability density of finding it.",
+   "map": "physics",
+   "key": "physics/misc-orbits",
+   "depth": 10
+  },
+  {
+   "id": "quantum",
+   "label": "Quantum Mechanics",
+   "kind": "threshold",
+   "summary": "States are vectors, measurements are probabilistic, and observables need not commute.",
+   "outcome": "Compute measurement probabilities from a state vector.",
+   "check": "A qubit is (|0⟩ + |1⟩)/√2. What is the probability of measuring 1?",
+   "answer": "1/2 (the squared magnitude of the amplitude).",
+   "map": "physics",
+   "key": "physics/quantum",
+   "depth": 10
+  },
+  {
+   "id": "logic",
+   "label": "Logic & Sets",
+   "kind": "concept",
+   "summary": "Statements, quantifiers, implication and the algebra of sets.",
+   "outcome": "Negate a statement with nested quantifiers.",
+   "check": "Negate: 'every student passed some exam'.",
+   "answer": "Some student passed no exam.",
+   "map": "mathematics",
+   "key": "mathematics/logic",
+   "depth": 0
+  },
+  {
+   "id": "proof",
+   "label": "Proof",
+   "kind": "threshold",
+   "summary": "Mathematics as argument: direct proof, contradiction, contrapositive, induction. Troublesome because examples, however many, never prove a universal claim.",
+   "outcome": "Write a proof by induction.",
+   "check": "Why do 1,000 checked cases not prove that n² + n + 41 is always prime?",
+   "answer": "Only a general argument covers all n; and indeed n = 40 gives 1681 = 41².",
+   "map": "mathematics",
+   "key": "mathematics/proof",
+   "depth": 1
+  },
+  {
+   "id": "functions",
+   "label": "Functions",
+   "kind": "concept",
+   "summary": "Rules assigning each input exactly one output; composition, inverses and graphs.",
+   "outcome": "Find the inverse of a function and state its domain.",
+   "check": "Is x ↦ x² from ℝ to ℝ invertible?",
+   "answer": "No: it is not one-to-one (2 and −2 map to 4). Restrict to x ≥ 0.",
+   "map": "mathematics",
+   "key": "mathematics/functions",
+   "depth": 1
+  },
+  {
+   "id": "misc-point9",
+   "label": "\"0.999… is less than 1\"",
+   "kind": "misconception",
+   "summary": "Treating an infinite decimal as a process that never arrives rather than as the limit it names.",
+   "outcome": "Prove 0.999… = 1 two different ways.",
+   "check": "What number lies strictly between 0.999… and 1?",
+   "answer": "None, so they are equal; 0.999… is the limit of 0.9, 0.99, … which is 1.",
+   "map": "mathematics",
+   "key": "mathematics/misc-point9",
+   "depth": 2
+  },
+  {
+   "id": "limits",
+   "label": "Limits",
+   "kind": "threshold",
+   "summary": "Arbitrarily close, made precise with ε and δ. The concept every result of calculus rests on.",
+   "outcome": "Evaluate a limit and justify it with ε–δ for a linear function.",
+   "check": "What is lim(x→0) sin(x)/x?",
+   "answer": "1, although the function is undefined at 0.",
+   "map": "mathematics",
+   "key": "mathematics/limits",
+   "depth": 2
+  },
+  {
+   "id": "derivatives",
+   "label": "Derivatives",
+   "kind": "concept",
+   "summary": "Instantaneous rate of change: the limit of difference quotients, the slope of the tangent.",
+   "outcome": "Differentiate with the chain rule and interpret the result as a rate.",
+   "check": "Position is x(t) = 3t². What is the velocity at t = 2?",
+   "answer": "x′(t) = 6t, so 12 (units per time).",
+   "map": "mathematics",
+   "key": "mathematics/derivatives",
+   "depth": 3
+  },
+  {
+   "id": "integrals",
+   "label": "Integrals",
+   "kind": "concept",
+   "summary": "Accumulation: the limit of Riemann sums, the signed area under a curve.",
+   "outcome": "Compute a definite integral and interpret it as accumulated change.",
+   "check": "Velocity is constant at 5 m/s for 4 s. What does ∫v dt give?",
+   "answer": "20 m of displacement.",
+   "map": "mathematics",
+   "key": "mathematics/integrals",
+   "depth": 3
+  },
+  {
+   "id": "ftc",
+   "label": "Fundamental Theorem of Calculus",
+   "kind": "concept",
+   "summary": "Differentiation and integration undo each other.",
+   "outcome": "Use the FTC to differentiate an integral with a variable upper limit.",
+   "check": "What is d/dx ∫₀ˣ cos(t) dt?",
+   "answer": "cos(x).",
+   "map": "mathematics",
+   "key": "mathematics/ftc",
+   "depth": 4
+  },
+  {
+   "id": "series",
+   "label": "Sequences & Series",
+   "kind": "concept",
+   "summary": "Infinite sums that converge to finite values, and Taylor series that rebuild functions from derivatives.",
+   "outcome": "Test a series for convergence; write a Taylor polynomial.",
+   "check": "Does 1 + 1/2 + 1/3 + 1/4 + … converge?",
+   "answer": "No, the harmonic series diverges, though its terms go to 0.",
+   "map": "mathematics",
+   "key": "mathematics/series",
+   "depth": 5
+  },
+  {
+   "id": "linalg",
+   "label": "Linear Algebra",
+   "kind": "concept",
+   "summary": "Vector spaces, linear maps and matrices: the mathematics of superposition.",
+   "outcome": "Solve a linear system and interpret it as a matrix equation.",
+   "check": "Is the set of solutions to Ax = 0 always a vector space?",
+   "answer": "Yes: it is the null space, closed under addition and scaling.",
+   "map": "mathematics",
+   "key": "mathematics/linalg",
+   "depth": 2
+  },
+  {
+   "id": "misc-commute",
+   "label": "\"Matrix products commute\"",
+   "kind": "misconception",
+   "summary": "Carrying the habits of number arithmetic into matrix arithmetic, where AB ≠ BA in general.",
+   "outcome": "Give a 2×2 counterexample to AB = BA.",
+   "check": "Rotate then reflect versus reflect then rotate: same result?",
+   "answer": "Generally not; composition of linear maps is order-dependent.",
+   "map": "mathematics",
+   "key": "mathematics/misc-commute",
+   "depth": 2
+  },
+  {
+   "id": "eigen",
+   "label": "Eigenvalues & Eigenvectors",
+   "kind": "concept",
+   "summary": "Directions a linear map only stretches; the natural coordinates of a system.",
+   "outcome": "Diagonalize a 2×2 matrix.",
+   "check": "What are the eigenvalues of [[2,0],[0,3]]?",
+   "answer": "2 and 3.",
+   "map": "mathematics",
+   "key": "mathematics/eigen",
+   "depth": 3
+  },
+  {
+   "id": "complex",
+   "label": "Complex Numbers",
+   "kind": "concept",
+   "summary": "Numbers with rotation built in: e^(iθ) = cos θ + i sin θ.",
+   "outcome": "Multiply complex numbers in polar form.",
+   "check": "What does multiplying by i do geometrically?",
+   "answer": "It rotates by 90° counter-clockwise.",
+   "map": "mathematics",
+   "key": "mathematics/complex",
+   "depth": 2
+  },
+  {
+   "id": "diffeq",
+   "label": "Differential Equations",
+   "kind": "concept",
+   "summary": "Laws stated as relations between a quantity and its rates of change.",
+   "outcome": "Solve x″ = −ω²x and interpret the solution.",
+   "check": "What functions satisfy y′ = y?",
+   "answer": "y = Ce^x.",
+   "map": "mathematics",
+   "key": "mathematics/diffeq",
+   "depth": 5
+  },
+  {
+   "id": "multivar",
+   "label": "Multivariable Calculus",
+   "kind": "concept",
+   "summary": "Partial derivatives, gradients and multiple integrals.",
+   "outcome": "Find the direction of steepest ascent with the gradient.",
+   "check": "What does ∇f point toward?",
+   "answer": "The direction of fastest increase of f.",
+   "map": "mathematics",
+   "key": "mathematics/multivar",
+   "depth": 4
+  },
+  {
+   "id": "vectorcalc",
+   "label": "Vector Calculus",
+   "kind": "concept",
+   "summary": "Divergence, curl and the integral theorems of Gauss and Stokes.",
+   "outcome": "Apply the divergence theorem to a flux integral.",
+   "check": "What does a nonzero divergence at a point mean physically?",
+   "answer": "A source or sink of the field there.",
+   "map": "mathematics",
+   "key": "mathematics/vectorcalc",
+   "depth": 5
+  },
+  {
+   "id": "fourier",
+   "label": "Fourier Analysis",
+   "kind": "concept",
+   "summary": "Any reasonable periodic signal is a sum of sines and cosines.",
+   "outcome": "Synthesize a square wave from odd harmonics.",
+   "check": "Which harmonics make up a square wave?",
+   "answer": "Odd harmonics only, with amplitudes falling as 1/n.",
+   "lab": "fourier",
+   "map": "mathematics",
+   "key": "mathematics/fourier",
+   "depth": 6
+  },
+  {
+   "id": "probability",
+   "label": "Probability",
+   "kind": "concept",
+   "summary": "Measure on outcomes: conditional probability, Bayes' theorem, random variables, expectation.",
+   "outcome": "Apply Bayes' theorem to a diagnostic-test problem.",
+   "check": "A test is 99% accurate for a disease with 1% prevalence. You test positive. Roughly how likely is it you have it?",
+   "answer": "About 50%: false positives from the 99% healthy equal the true positives.",
+   "map": "mathematics",
+   "key": "mathematics/probability",
+   "depth": 1
+  },
+  {
+   "id": "misc-gambler",
+   "label": "Gambler's fallacy",
+   "kind": "misconception",
+   "summary": "Believing independent events 'balance out' in the short run.",
+   "outcome": "Explain independence with a coin-flip sequence.",
+   "check": "A fair coin lands heads 6 times running. Probability of heads next?",
+   "answer": "Still 1/2; the coin has no memory.",
+   "map": "mathematics",
+   "key": "mathematics/misc-gambler",
+   "depth": 1
+  },
+  {
+   "id": "statistics",
+   "label": "Statistics & Inference",
+   "kind": "concept",
+   "summary": "Reasoning from samples to populations: estimation, confidence, hypothesis tests and their limits.",
+   "outcome": "Interpret a confidence interval correctly.",
+   "check": "Does a p-value of 0.03 mean a 3% chance the null hypothesis is true?",
+   "answer": "No: it is the probability of data at least this extreme assuming the null is true.",
+   "map": "mathematics",
+   "key": "mathematics/statistics",
+   "depth": 4
+  },
+  {
+   "id": "misc-corr",
+   "label": "\"Correlation implies causation\"",
+   "kind": "misconception",
+   "summary": "Reading a causal arrow into an association that a confounder or chance could explain.",
+   "outcome": "Name a confounder for a given correlation.",
+   "check": "Ice-cream sales correlate with drownings. Why?",
+   "answer": "A confounder: hot weather raises both.",
+   "map": "mathematics",
+   "key": "mathematics/misc-corr",
+   "depth": 4
+  },
+  {
+   "id": "atoms",
+   "label": "Atomic Structure & Periodicity",
+   "kind": "concept",
+   "summary": "Protons, neutrons, electrons, and the periodic trends in radius, ionisation energy and electronegativity.",
+   "outcome": "Predict a periodic trend and explain it with effective nuclear charge.",
+   "check": "Why does atomic radius decrease across a period?",
+   "answer": "Nuclear charge rises while electrons enter the same shell, so they are pulled in more strongly.",
+   "map": "chemistry",
+   "key": "chemistry/atoms",
+   "depth": 0
+  },
+  {
+   "id": "orbitals",
+   "label": "Orbitals & Electron Configuration",
+   "kind": "concept",
+   "summary": "Electrons occupy quantised orbitals (s, p, d) filled by energy, Pauli and Hund.",
+   "outcome": "Write the electron configuration of a transition element.",
+   "check": "What is the electron configuration of oxygen?",
+   "answer": "1s² 2s² 2p⁴.",
+   "map": "chemistry",
+   "key": "chemistry/orbitals",
+   "depth": 1
+  },
+  {
+   "id": "moles",
+   "label": "The Mole & Stoichiometry",
+   "kind": "concept",
+   "summary": "Counting atoms by weighing: molar mass, balanced equations, limiting reagents and yield.",
+   "outcome": "Find the limiting reagent and theoretical yield.",
+   "check": "How many moles are in 36 g of water (M = 18 g/mol)?",
+   "answer": "2 mol.",
+   "map": "chemistry",
+   "key": "chemistry/moles",
+   "depth": 1
+  },
+  {
+   "id": "bonding",
+   "label": "Chemical Bonding",
+   "kind": "threshold",
+   "summary": "A bond is a lowering of energy as electrons are shared or transferred. Forming bonds releases energy; breaking them costs it. Once this lands, all energetics follows.",
+   "outcome": "Explain bond energy and predict ionic, covalent or metallic bonding.",
+   "check": "Does breaking a chemical bond release or absorb energy?",
+   "answer": "It absorbs energy; energy is released when bonds form.",
+   "map": "chemistry",
+   "key": "chemistry/bonding",
+   "depth": 2
+  },
+  {
+   "id": "misc-atp",
+   "label": "\"Breaking bonds releases energy\"",
+   "kind": "misconception",
+   "summary": "Common even after biology classes on ATP ('high-energy bonds'). The energy released by ATP hydrolysis comes from stronger bonds forming in the products.",
+   "outcome": "Explain where the energy of ATP hydrolysis comes from.",
+   "check": "ATP hydrolysis releases energy. Is that because the broken phosphate bond releases energy?",
+   "answer": "No: breaking it costs energy; the products form stronger bonds and are better solvated, so the net change releases energy.",
+   "map": "chemistry",
+   "key": "chemistry/misc-atp",
+   "depth": 2
+  },
+  {
+   "id": "shape",
+   "label": "Molecular Shape & Polarity",
+   "kind": "concept",
+   "summary": "VSEPR predicts geometry from electron domains; geometry and electronegativity decide polarity.",
+   "outcome": "Predict shape and polarity with VSEPR.",
+   "check": "CO₂ has polar bonds. Is the molecule polar?",
+   "answer": "No: it is linear, so the bond dipoles cancel.",
+   "map": "chemistry",
+   "key": "chemistry/shape",
+   "depth": 3
+  },
+  {
+   "id": "imf",
+   "label": "Intermolecular Forces",
+   "kind": "concept",
+   "summary": "Dispersion, dipole–dipole and hydrogen bonding between molecules set boiling points and solubility.",
+   "outcome": "Rank boiling points by intermolecular forces.",
+   "check": "Why does water boil at 100 °C while H₂S, a heavier molecule, boils at −60 °C?",
+   "answer": "Water forms strong hydrogen bonds between molecules; H₂S does not.",
+   "map": "chemistry",
+   "key": "chemistry/imf",
+   "depth": 4
+  },
+  {
+   "id": "misc-boil",
+   "label": "\"Boiling water breaks it into H and O\"",
+   "kind": "misconception",
+   "summary": "Boiling separates molecules from each other (intermolecular forces); the covalent bonds inside each molecule stay intact.",
+   "outcome": "Distinguish a physical from a chemical change at the particle level.",
+   "check": "What is inside the bubbles in boiling water?",
+   "answer": "Water vapour (H₂O molecules), not hydrogen and oxygen.",
+   "map": "chemistry",
+   "key": "chemistry/misc-boil",
+   "depth": 4
+  },
+  {
+   "id": "gases",
+   "label": "Gas Laws & Kinetic Theory",
+   "kind": "concept",
+   "summary": "PV = nRT, from particles in random motion.",
+   "outcome": "Use the ideal gas law to find an unknown.",
+   "check": "A sealed gas is heated from 300 K to 600 K at constant volume. Pressure?",
+   "answer": "It doubles.",
+   "map": "chemistry",
+   "key": "chemistry/gases",
+   "depth": 2
+  },
+  {
+   "id": "thermochem",
+   "label": "Thermochemistry & Enthalpy",
+   "kind": "concept",
+   "summary": "Heat of reaction, Hess's law and bond enthalpies.",
+   "outcome": "Compute ΔH with Hess's law.",
+   "check": "What does a negative ΔH mean?",
+   "answer": "The reaction is exothermic: it releases heat to the surroundings.",
+   "map": "chemistry",
+   "key": "chemistry/thermochem",
+   "depth": 3
+  },
+  {
+   "id": "gibbs",
+   "label": "Entropy & Gibbs Free Energy",
+   "kind": "threshold",
+   "summary": "Spontaneity is decided by ΔG = ΔH − TΔS, not by energy alone. Endothermic reactions can still go if they increase entropy enough.",
+   "outcome": "Predict spontaneity from ΔH, ΔS and T.",
+   "check": "Ice melts spontaneously at 25 °C although melting is endothermic. Why?",
+   "answer": "ΔS is positive and TΔS outweighs ΔH at that temperature, so ΔG < 0.",
+   "map": "chemistry",
+   "key": "chemistry/gibbs",
+   "depth": 4
+  },
+  {
+   "id": "equilibrium",
+   "label": "Chemical Equilibrium",
+   "kind": "threshold",
+   "summary": "Forward and reverse reactions continue at equal rates; K summarises the balance and Le Chatelier predicts how it shifts.",
+   "outcome": "Compute concentrations at equilibrium from K and predict shifts.",
+   "check": "Adding more reactant to a system at equilibrium does what?",
+   "answer": "Shifts it toward products until Q = K again (Le Chatelier).",
+   "map": "chemistry",
+   "key": "chemistry/equilibrium",
+   "depth": 5
+  },
+  {
+   "id": "misc-stop",
+   "label": "\"At equilibrium the reaction stops\"",
+   "kind": "misconception",
+   "summary": "Equilibrium is dynamic: both reactions run at equal rates, so concentrations stay constant.",
+   "outcome": "Describe equilibrium at the particle level.",
+   "check": "Radioactive iodine is added to a saturated solution in equilibrium with solid iodine. Where does it end up?",
+   "answer": "In both the solid and the solution: dissolving and crystallising never stop.",
+   "map": "chemistry",
+   "key": "chemistry/misc-stop",
+   "depth": 5
+  },
+  {
+   "id": "kinetics",
+   "label": "Reaction Kinetics",
+   "kind": "concept",
+   "summary": "Rate laws, activation energy and the Arrhenius equation; catalysts lower the barrier.",
+   "outcome": "Determine a rate law from initial-rate data.",
+   "check": "Why does a 10 °C rise often roughly double a reaction rate?",
+   "answer": "Far more molecules then exceed the activation energy (Arrhenius).",
+   "map": "chemistry",
+   "key": "chemistry/kinetics",
+   "depth": 2
+  },
+  {
+   "id": "misc-catalyst",
+   "label": "\"Catalysts shift the equilibrium\"",
+   "kind": "misconception",
+   "summary": "A catalyst speeds both directions equally; it reaches equilibrium faster without changing K.",
+   "outcome": "Separate kinetic from thermodynamic effects.",
+   "check": "Does adding a catalyst increase the equilibrium yield?",
+   "answer": "No, only how fast equilibrium is reached.",
+   "map": "chemistry",
+   "key": "chemistry/misc-catalyst",
+   "depth": 2
+  },
+  {
+   "id": "acidbase",
+   "label": "Acids, Bases & pH",
+   "kind": "concept",
+   "summary": "Proton transfer, Ka, buffers and titration curves.",
+   "outcome": "Calculate the pH of a buffer with Henderson–Hasselbalch.",
+   "check": "What is the pH of 0.01 M HCl?",
+   "answer": "2.",
+   "map": "chemistry",
+   "key": "chemistry/acidbase",
+   "depth": 6
+  },
+  {
+   "id": "electrochem",
+   "label": "Electrochemistry & Batteries",
+   "kind": "concept",
+   "summary": "Redox, electrode potentials, galvanic cells and electrolysis.",
+   "outcome": "Compute a cell potential from standard reduction potentials.",
+   "check": "In a galvanic cell, where does oxidation happen?",
+   "answer": "At the anode.",
+   "map": "chemistry",
+   "key": "chemistry/electrochem",
+   "depth": 6
+  },
+  {
+   "id": "organic",
+   "label": "Organic Structure & Functional Groups",
+   "kind": "concept",
+   "summary": "Carbon skeletons, isomers and the functional groups that set reactivity.",
+   "outcome": "Name a molecule and identify its functional groups.",
+   "check": "Which functional group defines an alcohol?",
+   "answer": "A hydroxyl group (–OH) on an sp³ carbon.",
+   "map": "chemistry",
+   "key": "chemistry/organic",
+   "depth": 4
+  },
+  {
+   "id": "mechanisms",
+   "label": "Reaction Mechanisms",
+   "kind": "concept",
+   "summary": "Curly arrows track electron pairs from nucleophile to electrophile, step by step.",
+   "outcome": "Draw an SN2 mechanism with correct arrows.",
+   "check": "In a curly-arrow mechanism, what does the arrow represent?",
+   "answer": "The movement of an electron pair, from source (nucleophile or bond) to sink.",
+   "map": "chemistry",
+   "key": "chemistry/mechanisms",
+   "depth": 5
+  },
+  {
+   "id": "spectroscopy",
+   "label": "Spectroscopy",
+   "kind": "concept",
+   "summary": "IR, NMR and mass spectrometry read molecular structure from how molecules absorb, resonate and fragment.",
+   "outcome": "Identify a compound from IR and ¹H NMR data.",
+   "check": "A strong IR band near 1700 cm⁻¹ suggests what group?",
+   "answer": "A carbonyl (C=O).",
+   "map": "chemistry",
+   "key": "chemistry/spectroscopy",
+   "depth": 5
+  },
+  {
+   "id": "cell",
+   "label": "The Cell",
+   "kind": "concept",
+   "summary": "Membranes, organelles, and the prokaryote–eukaryote divide.",
+   "outcome": "Relate an organelle's structure to its function.",
+   "check": "What do mitochondria and chloroplasts have that hints at their bacterial origin?",
+   "answer": "Their own circular DNA and ribosomes, and double membranes (endosymbiosis).",
+   "map": "biology",
+   "key": "biology/cell",
+   "depth": 1
+  },
+  {
+   "id": "macromolecules",
+   "label": "Biological Macromolecules",
+   "kind": "concept",
+   "summary": "Carbohydrates, lipids, proteins and nucleic acids, built from monomers by condensation.",
+   "outcome": "Identify monomers and bonds for each class.",
+   "check": "What bond joins amino acids in a protein?",
+   "answer": "The peptide bond.",
+   "map": "biology",
+   "key": "biology/macromolecules",
+   "depth": 0
+  },
+  {
+   "id": "dna",
+   "label": "DNA & the Central Dogma",
+   "kind": "concept",
+   "summary": "DNA is copied (replication), transcribed into RNA, and translated into protein.",
+   "outcome": "Transcribe and translate a short sequence.",
+   "check": "The DNA template strand reads 3′-TAC-5′. What is the mRNA codon, and which amino acid does it code for?",
+   "answer": "5′-AUG-3′, methionine (the start codon).",
+   "map": "biology",
+   "key": "biology/dna",
+   "depth": 1
+  },
+  {
+   "id": "proteins",
+   "label": "Protein Structure & Function",
+   "kind": "concept",
+   "summary": "Sequence folds into shape, and shape does the work: primary to quaternary structure.",
+   "outcome": "Explain how one amino-acid change can disable a protein.",
+   "check": "How does a single amino-acid substitution cause sickle-cell disease?",
+   "answer": "Glutamate → valine in haemoglobin makes the proteins stick together and deform red cells.",
+   "map": "biology",
+   "key": "biology/proteins",
+   "depth": 2
+  },
+  {
+   "id": "enzymes",
+   "label": "Enzymes",
+   "kind": "concept",
+   "summary": "Biological catalysts lowering activation energy; saturation kinetics (Michaelis–Menten) and inhibition.",
+   "outcome": "Interpret a Michaelis–Menten plot with and without an inhibitor.",
+   "check": "Why does an enzyme's rate level off at high substrate concentration?",
+   "answer": "All active sites are occupied (saturation), so rate reaches Vmax.",
+   "map": "biology",
+   "key": "biology/enzymes",
+   "depth": 3
+  },
+  {
+   "id": "metabolism",
+   "label": "Respiration & Photosynthesis",
+   "kind": "concept",
+   "summary": "Energy flow through redox: glucose to ATP via glycolysis, the Krebs cycle and the electron transport chain; light to sugar in chloroplasts.",
+   "outcome": "Trace where the ATP from one glucose comes from.",
+   "check": "Which stage of aerobic respiration makes most of the ATP?",
+   "answer": "Oxidative phosphorylation (electron transport chain and ATP synthase).",
+   "map": "biology",
+   "key": "biology/metabolism",
+   "depth": 4
+  },
+  {
+   "id": "genetics",
+   "label": "Mendelian Genetics",
+   "kind": "concept",
+   "summary": "Alleles segregate and assort; Punnett squares predict offspring ratios.",
+   "outcome": "Predict a dihybrid cross ratio.",
+   "check": "Two heterozygotes (Aa × Aa) mate. What fraction of offspring show the recessive trait?",
+   "answer": "1/4.",
+   "map": "biology",
+   "key": "biology/genetics",
+   "depth": 2
+  },
+  {
+   "id": "misc-dominant",
+   "label": "\"Dominant alleles are more common\"",
+   "kind": "misconception",
+   "summary": "Dominance describes expression in heterozygotes, not frequency. Huntington's allele is dominant and rare.",
+   "outcome": "Separate dominance from allele frequency.",
+   "check": "Will a dominant allele spread through a population because it is dominant?",
+   "answer": "No: frequency changes through selection, drift and migration, not dominance.",
+   "map": "biology",
+   "key": "biology/misc-dominant",
+   "depth": 2
+  },
+  {
+   "id": "evolution",
+   "label": "Evolution by Natural Selection",
+   "kind": "threshold",
+   "summary": "Variation, inheritance and differential reproduction, repeated over generations. Once grasped, it explains why every other biological fact is the way it is.",
+   "outcome": "Explain antibiotic resistance with variation and selection.",
+   "check": "How do bacterial populations become antibiotic-resistant?",
+   "answer": "Resistant variants already present survive and reproduce more, so their frequency rises; individuals do not 'adapt'.",
+   "map": "biology",
+   "key": "biology/evolution",
+   "depth": 3
+  },
+  {
+   "id": "misc-need",
+   "label": "\"Organisms evolve because they need to\"",
+   "kind": "misconception",
+   "summary": "Need does not create variation (the Lamarckian intuition). Selection acts on variation that already exists.",
+   "outcome": "Rewrite a teleological explanation in selection terms.",
+   "check": "'Giraffes grew long necks to reach high leaves.' What is wrong, and how should it be rephrased?",
+   "answer": "Need does not cause change; giraffes with longer necks left more offspring, so the trait became common.",
+   "map": "biology",
+   "key": "biology/misc-need",
+   "depth": 3
+  },
+  {
+   "id": "popgen",
+   "label": "Population Genetics",
+   "kind": "concept",
+   "summary": "Hardy–Weinberg as the null model; drift, selection, mutation and migration as forces that move allele frequencies.",
+   "outcome": "Use Hardy–Weinberg to estimate carrier frequency.",
+   "check": "A recessive disease affects 1 in 10,000. Roughly what fraction are carriers?",
+   "answer": "q = 0.01, so 2pq ≈ 0.02 (about 1 in 50).",
+   "map": "biology",
+   "key": "biology/popgen",
+   "depth": 4
+  },
+  {
+   "id": "regulation",
+   "label": "Gene Regulation",
+   "kind": "concept",
+   "summary": "Which genes are on, when and where: promoters, transcription factors, operons and epigenetics.",
+   "outcome": "Explain the lac operon's response to lactose and glucose.",
+   "check": "Every cell in your body has the same DNA. Why are neurons different from liver cells?",
+   "answer": "Different genes are expressed, controlled by transcription factors and epigenetic marks.",
+   "map": "biology",
+   "key": "biology/regulation",
+   "depth": 2
+  },
+  {
+   "id": "signalling",
+   "label": "Cell Signalling",
+   "kind": "concept",
+   "summary": "Receptors, second messengers and amplification cascades.",
+   "outcome": "Trace a signal from receptor to response.",
+   "check": "How can a few hormone molecules cause a large cellular response?",
+   "answer": "Signal cascades amplify the signal at each enzymatic step.",
+   "map": "biology",
+   "key": "biology/signalling",
+   "depth": 3
+  },
+  {
+   "id": "neurons",
+   "label": "Neurons & Action Potentials",
+   "kind": "concept",
+   "summary": "Ion gradients, voltage-gated channels and all-or-nothing spikes; synapses as chemical signals.",
+   "outcome": "Explain the phases of an action potential with ion movements.",
+   "check": "What causes the rising phase of an action potential?",
+   "answer": "Voltage-gated Na⁺ channels open and Na⁺ rushes in.",
+   "map": "biology",
+   "key": "biology/neurons",
+   "depth": 4
+  },
+  {
+   "id": "homeostasis",
+   "label": "Homeostasis & Feedback",
+   "kind": "concept",
+   "summary": "Negative feedback keeps internal conditions near set points: temperature, glucose, pH.",
+   "outcome": "Diagram a negative-feedback loop for blood glucose.",
+   "check": "Blood glucose rises after a meal. What hormone responds and what does it do?",
+   "answer": "Insulin, which drives cells to take up glucose and the liver to store it, lowering blood glucose.",
+   "map": "biology",
+   "key": "biology/homeostasis",
+   "depth": 4
+  },
+  {
+   "id": "immune",
+   "label": "The Immune System",
+   "kind": "concept",
+   "summary": "Innate and adaptive defences; antibodies, T cells and immunological memory.",
+   "outcome": "Explain how a vaccine creates memory.",
+   "check": "Why is the second exposure to a pathogen usually milder?",
+   "answer": "Memory B and T cells respond faster and more strongly.",
+   "map": "biology",
+   "key": "biology/immune",
+   "depth": 4
+  },
+  {
+   "id": "ecology",
+   "label": "Ecology & Energy Flow",
+   "kind": "concept",
+   "summary": "Populations, communities and ecosystems; energy flows one way through trophic levels while matter cycles.",
+   "outcome": "Compute energy available at a higher trophic level.",
+   "check": "Roughly what fraction of energy passes from one trophic level to the next?",
+   "answer": "About 10%.",
+   "map": "biology",
+   "key": "biology/ecology",
+   "depth": 5
+  },
+  {
+   "id": "misc-energycycle",
+   "label": "\"Energy is recycled in ecosystems\"",
+   "kind": "misconception",
+   "summary": "Matter cycles; energy flows through and leaves as heat. Ecosystems need a constant energy input (usually sunlight).",
+   "outcome": "Distinguish matter cycling from energy flow.",
+   "check": "When a decomposer breaks down a dead tree, is the tree's energy returned to plants?",
+   "answer": "No: the nutrients cycle, but the energy is lost as heat.",
+   "map": "biology",
+   "key": "biology/misc-energycycle",
+   "depth": 5
+  },
+  {
+   "id": "biotech",
+   "label": "Biotechnology: PCR & CRISPR",
+   "kind": "concept",
+   "summary": "Copying DNA exponentially (PCR) and editing it at chosen sites (CRISPR–Cas9).",
+   "outcome": "Explain the steps of PCR and how Cas9 finds its target.",
+   "check": "After 30 PCR cycles, roughly how many copies come from one template?",
+   "answer": "About 2³⁰, around a billion.",
+   "map": "biology",
+   "key": "biology/biotech",
+   "depth": 3
+  },
+  {
+   "id": "ohm",
+   "label": "Ohm's Law & Power",
+   "kind": "concept",
+   "summary": "V = IR relates voltage across a resistor to current through it; P = VI is the rate energy is dissipated.",
+   "outcome": "Size a resistor for a given current and check its power rating.",
+   "check": "An LED needs 20 mA with 2 V across it from a 5 V supply. What series resistor, and what power does it dissipate?",
+   "answer": "R = (5 − 2) / 0.02 = 150 Ω; P = 3 V × 0.02 A = 60 mW.",
+   "lab": "rc",
+   "map": "electrical",
+   "key": "electrical/ohm",
+   "depth": 0
+  },
+  {
+   "id": "misc-voltflow",
+   "label": "\"Voltage flows through the circuit\"",
+   "kind": "misconception",
+   "summary": "Voltage is a difference between two points (across); current is what flows (through). Mixing them up wrecks nodal analysis.",
+   "outcome": "State what is 'across' and what is 'through' for each element.",
+   "check": "Is it correct to say '5 volts flows through the resistor'?",
+   "answer": "No: 5 V is across the resistor; a current flows through it.",
+   "map": "electrical",
+   "key": "electrical/misc-voltflow",
+   "depth": 1
+  },
+  {
+   "id": "kirchhoff",
+   "label": "Kirchhoff's Laws & Nodal Analysis",
+   "kind": "concept",
+   "summary": "Current into a node equals current out (charge conservation); voltages around a loop sum to zero (energy conservation).",
+   "outcome": "Solve a two-node circuit with nodal analysis.",
+   "check": "Three wires meet at a node: 2 A in, 0.5 A in, and one unknown. What is the unknown current, and which way?",
+   "answer": "2.5 A out of the node (KCL).",
+   "map": "electrical",
+   "key": "electrical/kirchhoff",
+   "depth": 1
+  },
+  {
+   "id": "divider",
+   "label": "Voltage Dividers & Loading",
+   "kind": "concept",
+   "summary": "Two series resistors scale a voltage, until a load draws current and changes the ratio.",
+   "outcome": "Compute a divider output with and without a load.",
+   "check": "Two 10 kΩ resistors divide 10 V. A 10 kΩ load is connected across the bottom one. What is the output?",
+   "answer": "3.33 V: the bottom becomes 5 kΩ, so 10 × 5 / 15.",
+   "map": "electrical",
+   "key": "electrical/divider",
+   "depth": 2
+  },
+  {
+   "id": "thevenin",
+   "label": "Thévenin & Norton Equivalents",
+   "kind": "concept",
+   "summary": "Any linear two-terminal network looks, from outside, like one source and one resistance.",
+   "outcome": "Reduce a network to its Thévenin equivalent and predict the current into a load.",
+   "check": "How do you measure a black box's Thévenin resistance with a meter?",
+   "answer": "Measure open-circuit voltage and short-circuit current; R_th = V_oc / I_sc.",
+   "map": "electrical",
+   "key": "electrical/thevenin",
+   "depth": 3
+  },
+  {
+   "id": "rc",
+   "label": "RC & RL Transients",
+   "kind": "concept",
+   "summary": "Capacitors and inductors store energy, so circuits respond with exponentials of time constant τ = RC or L/R.",
+   "outcome": "Predict a capacitor's voltage at any time after a step.",
+   "check": "A capacitor charges through a resistor with τ = 1 ms. What fraction of the final voltage has it reached at 1 ms, and when is it 'done'?",
+   "answer": "About 63%; after about 5τ = 5 ms it is above 99%.",
+   "lab": "rc",
+   "map": "electrical",
+   "key": "electrical/rc",
+   "depth": 2
+  },
+  {
+   "id": "phasors",
+   "label": "AC, Phasors & Impedance",
+   "kind": "threshold",
+   "summary": "Sinusoids become complex numbers, capacitors and inductors become impedances 1/jωC and jωL, and AC circuits become Ohm's law again. Troublesome because 'imaginary' current is real.",
+   "outcome": "Compute the impedance of a series RC at a given frequency.",
+   "check": "What happens to a capacitor's impedance as frequency rises?",
+   "answer": "It falls (|Z| = 1/ωC): capacitors pass high frequencies and block DC.",
+   "map": "electrical",
+   "key": "electrical/phasors",
+   "depth": 3
+  },
+  {
+   "id": "filters",
+   "label": "Filters & Frequency Response",
+   "kind": "concept",
+   "summary": "Circuits treat frequencies differently; the Bode plot shows gain and phase against frequency.",
+   "outcome": "Design a first-order low-pass filter for a cutoff frequency.",
+   "check": "What is the cutoff frequency of an RC low-pass with R = 1 kΩ, C = 1 µF?",
+   "answer": "f = 1 / (2πRC) ≈ 159 Hz.",
+   "lab": "fourier",
+   "map": "electrical",
+   "key": "electrical/filters",
+   "depth": 4
+  },
+  {
+   "id": "diodes",
+   "label": "Diodes & Rectification",
+   "kind": "concept",
+   "summary": "A one-way valve for current with a forward drop of ~0.6–0.7 V (silicon).",
+   "outcome": "Analyse a half-wave rectifier with a smoothing capacitor.",
+   "check": "Why is a diode placed across a relay coil driven by a transistor?",
+   "answer": "To give the coil's stored energy a path when switched off, clamping the voltage spike that would destroy the transistor.",
+   "map": "electrical",
+   "key": "electrical/diodes",
+   "depth": 2
+  },
+  {
+   "id": "transistors",
+   "label": "Transistors as Switches & Amplifiers",
+   "kind": "concept",
+   "summary": "A small control signal (base current or gate voltage) governs a large current: the basis of every switch and amplifier.",
+   "outcome": "Use a MOSFET to switch a load from a microcontroller pin.",
+   "check": "Why use a transistor rather than driving a 1 A motor straight from a microcontroller pin?",
+   "answer": "A pin can source only ~20–40 mA; the transistor lets the pin's tiny signal switch the large current.",
+   "map": "electrical",
+   "key": "electrical/transistors",
+   "depth": 3
+  },
+  {
+   "id": "opamps",
+   "label": "Op-Amps & Negative Feedback",
+   "kind": "threshold",
+   "summary": "Huge open-loop gain tamed by feedback: the output does whatever makes the inputs equal. Feedback trades gain for precision.",
+   "outcome": "Design an inverting amplifier with a given gain.",
+   "check": "An inverting amplifier has R_in = 1 kΩ and R_f = 10 kΩ. What is its gain?",
+   "answer": "−10 (gain = −R_f / R_in).",
+   "map": "electrical",
+   "key": "electrical/opamps",
+   "depth": 4
+  },
+  {
+   "id": "boolean",
+   "label": "Boolean Logic & Gates",
+   "kind": "concept",
+   "summary": "AND, OR, NOT and their combinations, simplified with Boolean algebra and Karnaugh maps.",
+   "outcome": "Build a half-adder from gates.",
+   "check": "Which two gates make a half-adder, and for which outputs?",
+   "answer": "XOR gives the sum bit; AND gives the carry.",
+   "map": "electrical",
+   "key": "electrical/boolean",
+   "depth": 4
+  },
+  {
+   "id": "sequential",
+   "label": "Flip-Flops & Sequential Logic",
+   "kind": "threshold",
+   "summary": "Feedback in logic creates memory; a clock decides when state changes. Troublesome because output now depends on history.",
+   "outcome": "Design a 2-bit counter from D flip-flops.",
+   "check": "What does a D flip-flop do on a rising clock edge?",
+   "answer": "It copies D to Q and holds that value until the next rising edge.",
+   "map": "electrical",
+   "key": "electrical/sequential",
+   "depth": 5
+  },
+  {
+   "id": "misc-faster",
+   "label": "\"Sampling a bit faster than the signal is enough\"",
+   "kind": "misconception",
+   "summary": "Sampling below twice the highest frequency folds it into a false, lower frequency (aliasing).",
+   "outcome": "Predict the alias frequency of an undersampled sine.",
+   "check": "A 900 Hz tone is sampled at 1000 Hz. What frequency appears?",
+   "answer": "100 Hz: it aliases to |1000 − 900|.",
+   "map": "electrical",
+   "key": "electrical/misc-faster",
+   "depth": 5
+  },
+  {
+   "id": "sampling",
+   "label": "Sampling, ADC & DAC",
+   "kind": "concept",
+   "summary": "Turning continuous voltages into numbers and back: resolution, reference voltage, and the Nyquist rate.",
+   "outcome": "Choose sample rate and resolution for a sensor.",
+   "check": "A 10-bit ADC with a 3.3 V reference reads 512. What voltage is that?",
+   "answer": "About 1.65 V (512 / 1024 × 3.3).",
+   "map": "electrical",
+   "key": "electrical/sampling",
+   "depth": 5
+  },
+  {
+   "id": "signals",
+   "label": "Signals, Systems & Laplace",
+   "kind": "concept",
+   "summary": "Linear time-invariant systems are fully described by their impulse response, or by a transfer function in s.",
+   "outcome": "Derive the transfer function of an RC circuit.",
+   "check": "What property lets you predict an LTI system's response to any input from its impulse response?",
+   "answer": "Superposition plus time invariance: the output is the convolution of input and impulse response.",
+   "map": "electrical",
+   "key": "electrical/signals",
+   "depth": 5
+  },
+  {
+   "id": "control",
+   "label": "Feedback Control & PID",
+   "kind": "concept",
+   "summary": "Measure, compare with the setpoint, correct: proportional, integral and derivative action, and the stability trade-off.",
+   "outcome": "Tune a PID loop and explain the effect of each term.",
+   "check": "A P-only controller leaves a steady error. Which term removes it?",
+   "answer": "The integral term, which keeps growing while any error remains.",
+   "map": "electrical",
+   "key": "electrical/control",
+   "depth": 6
+  },
+  {
+   "id": "misc-ground",
+   "label": "\"Ground is where current disappears\"",
+   "kind": "misconception",
+   "summary": "Ground is just the reference node; every current that leaves a source returns to it in a loop.",
+   "outcome": "Trace the complete return path of a current.",
+   "check": "Current flows from a battery through a lamp to 'ground'. Where does it go next?",
+   "answer": "Back to the battery's negative terminal: ground is part of the loop, not a sink.",
+   "map": "electrical",
+   "key": "electrical/misc-ground",
+   "depth": 1
+  },
+  {
+   "id": "binary",
+   "label": "Binary, Hex & Bitwise Operations",
+   "kind": "concept",
+   "summary": "Setting, clearing, toggling and testing single bits with |, &, ~, ^ and shifts.",
+   "outcome": "Set, clear, toggle and test bit n of a register without disturbing the others.",
+   "check": "Write the expression that clears bit 3 of x and leaves every other bit alone.",
+   "answer": "x &= ~(1 << 3).",
+   "lab": "mcu",
+   "map": "embedded",
+   "key": "embedded/binary",
+   "depth": 0
+  },
+  {
+   "id": "misc-bittest",
+   "label": "\"x & (1 << n) gives 1 or 0\"",
+   "kind": "misconception",
+   "summary": "A masked test yields 0 or 2ⁿ, not 1. Comparing it with == 1 fails for every bit except bit 0.",
+   "outcome": "Write a correct bit test.",
+   "check": "x = 0b00100000. What is x & (1 << 5), and is (x & (1 << 5)) == 1 true?",
+   "answer": "32 (0b00100000); the comparison is false. Test with != 0 instead.",
+   "lab": "mcu",
+   "map": "embedded",
+   "key": "embedded/misc-bittest",
+   "depth": 0
+  },
+  {
+   "id": "arch",
+   "label": "Microcontroller Architecture",
+   "kind": "concept",
+   "summary": "CPU, flash for code, RAM for data, and peripherals (GPIO, timers, ADC, serial) on one chip, all sharing one address space.",
+   "outcome": "Read a block diagram and say where code, variables and peripherals live.",
+   "check": "Where does a global variable live, and where does the program's code live?",
+   "answer": "The variable is in RAM (SRAM); the code is in flash.",
+   "map": "embedded",
+   "key": "embedded/arch",
+   "depth": 0
+  },
+  {
+   "id": "registers",
+   "label": "Memory-Mapped Registers",
+   "kind": "threshold",
+   "summary": "Peripherals appear as addresses: writing a bit turns on a pin, reading one reports a button. Once this lands, the datasheet becomes the manual for the whole chip.",
+   "outcome": "Configure a peripheral from its datasheet register table.",
+   "check": "On an AVR, which register makes PB5 an output, and which drives it high?",
+   "answer": "Set bit 5 of DDRB to make it an output; set bit 5 of PORTB to drive it high.",
+   "lab": "mcu",
+   "map": "embedded",
+   "key": "embedded/registers",
+   "depth": 1
+  },
+  {
+   "id": "gpio",
+   "label": "GPIO: Inputs, Outputs & Pull-ups",
+   "kind": "concept",
+   "summary": "Pins configured as push-pull outputs or as inputs, with pull-up resistors so a released button reads a defined level.",
+   "outcome": "Wire and read an active-low button with a pull-up.",
+   "check": "A button connects the pin to ground, with a pull-up enabled. What does the pin read when pressed, and when released?",
+   "answer": "0 when pressed, 1 when released (active-low).",
+   "lab": "mcu",
+   "map": "embedded",
+   "key": "embedded/gpio",
+   "depth": 2
+  },
+  {
+   "id": "misc-float",
+   "label": "\"An unconnected input reads 0\"",
+   "kind": "misconception",
+   "summary": "A floating CMOS input picks up noise and reads randomly; it needs a pull-up or pull-down.",
+   "outcome": "Explain and fix a floating input.",
+   "check": "A button pin with no pull resistor reads random values when released. Why?",
+   "answer": "It floats: nothing drives it, so stray charge and noise decide the level. Add a pull-up or pull-down.",
+   "map": "embedded",
+   "key": "embedded/misc-float",
+   "depth": 2
+  },
+  {
+   "id": "timing",
+   "label": "Non-Blocking Timing",
+   "kind": "concept",
+   "summary": "Compare elapsed time against a stored timestamp instead of waiting, so the loop stays responsive to everything else.",
+   "outcome": "Blink an LED and read a button in the same loop without delay().",
+   "check": "Why is `if (millis() - last >= 500)` preferred to `delay(500)`?",
+   "answer": "It never stops the loop, so other tasks (buttons, sensors) keep running; delay() blocks everything.",
+   "lab": "mcu",
+   "map": "embedded",
+   "key": "embedded/timing",
+   "depth": 3
+  },
+  {
+   "id": "misc-delay",
+   "label": "\"delay() is harmless\"",
+   "kind": "misconception",
+   "summary": "A blocking wait freezes every other job in the loop: inputs are missed and timing stacks up.",
+   "outcome": "Find the missed-input bug caused by delay().",
+   "check": "A loop calls delay(1000) and then reads a button. A 200 ms press happens during the delay. Is it seen?",
+   "answer": "No: the button is only read between delays, so short presses are missed.",
+   "map": "embedded",
+   "key": "embedded/misc-delay",
+   "depth": 3
+  },
+  {
+   "id": "debounce",
+   "label": "Switch Bounce & Debouncing",
+   "kind": "concept",
+   "summary": "Mechanical contacts chatter for milliseconds; firmware accepts a change only after the input has been stable for a while.",
+   "outcome": "Write a debounced press counter.",
+   "check": "A button bounces for 5 ms. A naive edge counter registers 7 presses for one push. What is the simplest fix?",
+   "answer": "Accept a new state only after it has been stable for longer than the bounce (e.g. 20 ms).",
+   "lab": "mcu",
+   "map": "embedded",
+   "key": "embedded/debounce",
+   "depth": 4
+  },
+  {
+   "id": "timers",
+   "label": "Hardware Timers",
+   "kind": "concept",
+   "summary": "Counters clocked from the system clock through a prescaler, firing on overflow or compare match.",
+   "outcome": "Compute a prescaler and compare value for a target period.",
+   "check": "A 16 MHz clock with prescaler 64 drives a timer. How many ticks make 1 ms?",
+   "answer": "250 (16,000,000 / 64 = 250,000 ticks per second).",
+   "map": "embedded",
+   "key": "embedded/timers",
+   "depth": 2
+  },
+  {
+   "id": "pwm",
+   "label": "PWM",
+   "kind": "concept",
+   "summary": "Switch fast and vary the fraction of time on: the average sets LED brightness or motor speed.",
+   "outcome": "Generate PWM at a given frequency and duty cycle.",
+   "check": "A 5 V PWM signal at 25% duty drives an LED. What average voltage does it see, and why must the frequency be high?",
+   "answer": "1.25 V on average; above roughly 100 Hz the eye averages it instead of seeing flicker.",
+   "lab": "mcu",
+   "map": "embedded",
+   "key": "embedded/pwm",
+   "depth": 4
+  },
+  {
+   "id": "interrupts",
+   "label": "Interrupts & ISRs",
+   "kind": "threshold",
+   "summary": "Hardware events pause the main program and run a handler. Troublesome because the main code can be interrupted between any two instructions.",
+   "outcome": "Write a short ISR that sets a flag for the main loop.",
+   "check": "Why should an interrupt service routine be short?",
+   "answer": "While it runs, other interrupts and the main loop wait; long ISRs cause missed events and jitter.",
+   "map": "embedded",
+   "key": "embedded/interrupts",
+   "depth": 3
+  },
+  {
+   "id": "misc-volatile",
+   "label": "\"Variables shared with an ISR need nothing special\"",
+   "kind": "misconception",
+   "summary": "Without volatile the compiler may cache the variable in a register; multi-byte values can also be torn mid-read.",
+   "outcome": "Share a counter between an ISR and main safely.",
+   "check": "A main loop waits on a flag set by an ISR, but never sees it change. Likely cause?",
+   "answer": "The flag is not volatile, so the compiler hoisted the read out of the loop.",
+   "map": "embedded",
+   "key": "embedded/misc-volatile",
+   "depth": 3
+  },
+  {
+   "id": "adc",
+   "label": "Reading Sensors with the ADC",
+   "kind": "concept",
+   "summary": "Convert counts to physical units with the reference voltage and the sensor's transfer function, then filter the noise.",
+   "outcome": "Convert a raw ADC reading to temperature for a linear sensor.",
+   "check": "A sensor outputs 10 mV/°C, read by a 10-bit ADC with a 5 V reference. The reading is 61. Temperature?",
+   "answer": "61 × 5 / 1024 ≈ 0.298 V, so about 30 °C.",
+   "map": "embedded",
+   "key": "embedded/adc",
+   "depth": 2
+  },
+  {
+   "id": "uart",
+   "label": "UART Serial",
+   "kind": "concept",
+   "summary": "Asynchronous bytes framed by start and stop bits at an agreed baud rate.",
+   "outcome": "Configure a UART and print debugging output.",
+   "check": "At 9600 baud with 8N1 framing, roughly how many bytes per second can be sent?",
+   "answer": "960 (10 bits per byte including start and stop).",
+   "map": "embedded",
+   "key": "embedded/uart",
+   "depth": 2
+  },
+  {
+   "id": "buses",
+   "label": "I²C & SPI Buses",
+   "kind": "concept",
+   "summary": "I²C: two wires, addressed devices, open-drain with pull-ups. SPI: a clock, two data lines and a chip select per device, faster.",
+   "outcome": "Read a register from an I²C sensor.",
+   "check": "Why do I²C lines need pull-up resistors?",
+   "answer": "Devices only pull the lines low (open-drain); the resistors return them high.",
+   "map": "embedded",
+   "key": "embedded/buses",
+   "depth": 3
+  },
+  {
+   "id": "fsm",
+   "label": "Finite State Machines in Firmware",
+   "kind": "concept",
+   "summary": "Explicit states and transitions keep event-driven firmware understandable and testable.",
+   "outcome": "Model a traffic light or debouncer as a state machine.",
+   "check": "What two things fully define a finite state machine's behaviour?",
+   "answer": "Its set of states and its transition rules (current state + input → next state and output).",
+   "map": "embedded",
+   "key": "embedded/fsm",
+   "depth": 5
+  },
+  {
+   "id": "rtos",
+   "label": "RTOS & Scheduling",
+   "kind": "concept",
+   "summary": "Tasks with priorities, a scheduler, and the hazards of shared resources: deadlock and priority inversion.",
+   "outcome": "Split firmware into prioritised tasks and protect shared data with a mutex.",
+   "check": "What is priority inversion?",
+   "answer": "A high-priority task waits on a resource held by a low-priority task, which is itself preempted by a medium-priority one.",
+   "map": "embedded",
+   "key": "embedded/rtos",
+   "depth": 6
+  },
+  {
+   "id": "lowpower",
+   "label": "Low-Power Design",
+   "kind": "concept",
+   "summary": "Sleep modes, waking on interrupts, and duty cycling to stretch a battery from days to years.",
+   "outcome": "Estimate battery life from active and sleep currents.",
+   "check": "A device draws 10 mA for 1 s every minute and 10 µA otherwise. Average current?",
+   "answer": "About 0.177 mA (10 × 1/60 + 0.01 × 59/60).",
+   "map": "embedded",
+   "key": "embedded/lowpower",
+   "depth": 4
+  },
+  {
+   "id": "hwdebug",
+   "label": "Hardware Debugging",
+   "kind": "concept",
+   "summary": "Multimeter, oscilloscope, logic analyser and a debugger: measure the signal before blaming the code.",
+   "outcome": "Use a logic analyser to decode a failing bus transaction.",
+   "check": "Your I²C sensor never answers. What is the first thing to measure?",
+   "answer": "That SDA and SCL idle high (pull-ups present) and that the device address is acknowledged, using a scope or logic analyser.",
+   "map": "embedded",
+   "key": "embedded/hwdebug",
+   "depth": 4
+  },
+  {
+   "id": "statics",
+   "label": "Statics & Equilibrium",
+   "kind": "concept",
+   "summary": "A body at rest has zero net force and zero net moment about every point.",
+   "outcome": "Find support reactions of a loaded beam.",
+   "check": "A 4 m beam on supports at each end carries 1000 N at its middle. What is each reaction?",
+   "answer": "500 N each, by symmetry (ΣF = 0, ΣM = 0).",
+   "map": "mechanical",
+   "key": "mechanical/statics",
+   "depth": 0
+  },
+  {
+   "id": "trusses",
+   "label": "Trusses & Frames",
+   "kind": "concept",
+   "summary": "Pin-jointed members carry only axial tension or compression; joints and sections solve them.",
+   "outcome": "Find member forces by the method of joints.",
+   "check": "Why do truss members carry only axial force?",
+   "answer": "They are two-force members: pinned at both ends and loaded only at joints, so the force must lie along the member.",
+   "map": "mechanical",
+   "key": "mechanical/trusses",
+   "depth": 1
+  },
+  {
+   "id": "stress",
+   "label": "Stress & Strain",
+   "kind": "concept",
+   "summary": "Force per area (stress) and stretch per length (strain), linked by Young's modulus in the elastic range.",
+   "outcome": "Compute the elongation of a loaded rod.",
+   "check": "A steel rod (E = 200 GPa) carries 100 MPa of stress. What is its strain?",
+   "answer": "0.0005 (100 MPa / 200 GPa).",
+   "map": "mechanical",
+   "key": "mechanical/stress",
+   "depth": 1
+  },
+  {
+   "id": "misc-stiff",
+   "label": "\"Stiffer means stronger\"",
+   "kind": "misconception",
+   "summary": "Stiffness (modulus) measures resistance to deflection; strength measures the stress at failure. Glass is stiff and brittle; nylon is flexible and tough.",
+   "outcome": "Distinguish stiffness, strength and toughness with examples.",
+   "check": "Which is stiffer, aluminium or a typical steel, and is the stiffer one always stronger?",
+   "answer": "Steel (~200 vs ~70 GPa); but a high-strength aluminium alloy can out-strengthen a mild steel. Stiffness is not strength.",
+   "map": "mechanical",
+   "key": "mechanical/misc-stiff",
+   "depth": 2
+  },
+  {
+   "id": "materials",
+   "label": "Materials Selection",
+   "kind": "concept",
+   "summary": "Stiffness, strength, toughness, density and cost compared on Ashby charts to choose by performance index.",
+   "outcome": "Choose a material for a light, stiff beam using a performance index.",
+   "check": "For a light, stiff beam in bending, which index is maximised?",
+   "answer": "E^(1/2) / ρ (Ashby's index for a beam of given stiffness and minimum mass).",
+   "map": "mechanical",
+   "key": "mechanical/materials",
+   "depth": 2
+  },
+  {
+   "id": "beams",
+   "label": "Beam Bending",
+   "kind": "threshold",
+   "summary": "Stress varies linearly across a bent section: tension on one face, compression on the other, zero at the neutral axis. Seeing this changes how every shape is judged.",
+   "outcome": "Compute maximum bending stress with σ = My/I.",
+   "check": "Why is a plank much stiffer on edge than flat?",
+   "answer": "I = bh³/12 grows with the cube of the depth, so turning the plank on edge multiplies I.",
+   "map": "mechanical",
+   "key": "mechanical/beams",
+   "depth": 2
+  },
+  {
+   "id": "misc-middle",
+   "label": "\"The middle of a beam carries the most\"",
+   "kind": "misconception",
+   "summary": "Bending stress is greatest at the outer fibres and zero at the neutral axis, which is why I-beams put material at the flanges.",
+   "outcome": "Explain the shape of an I-beam from the stress distribution.",
+   "check": "Where in a beam's cross-section is bending stress largest?",
+   "answer": "At the top and bottom surfaces, farthest from the neutral axis.",
+   "map": "mechanical",
+   "key": "mechanical/misc-middle",
+   "depth": 2
+  },
+  {
+   "id": "torsion",
+   "label": "Torsion & Shafts",
+   "kind": "concept",
+   "summary": "Twisting produces shear stress that grows with radius: τ = Tr/J.",
+   "outcome": "Size a shaft to transmit a given power.",
+   "check": "Why are drive shafts often hollow?",
+   "answer": "Shear stress is greatest at the outside and the core carries little, so removing it saves much mass and little strength.",
+   "map": "mechanical",
+   "key": "mechanical/torsion",
+   "depth": 2
+  },
+  {
+   "id": "buckling",
+   "label": "Buckling & Stability",
+   "kind": "concept",
+   "summary": "Slender columns fail by sideways instability at a load set by stiffness and length, not by strength (Euler).",
+   "outcome": "Compute the Euler buckling load of a column.",
+   "check": "If you double a column's length, what happens to its Euler buckling load?",
+   "answer": "It drops to a quarter (P ∝ 1/L²).",
+   "map": "mechanical",
+   "key": "mechanical/buckling",
+   "depth": 3
+  },
+  {
+   "id": "fatigue",
+   "label": "Fatigue & Failure",
+   "kind": "concept",
+   "summary": "Repeated loads well below yield grow cracks; stress concentrations and endurance limits govern life.",
+   "outcome": "Estimate fatigue life from an S–N curve and a stress concentration factor.",
+   "check": "Why do aircraft windows have rounded corners?",
+   "answer": "Sharp corners concentrate stress, starting fatigue cracks (the de Havilland Comet failures).",
+   "map": "mechanical",
+   "key": "mechanical/fatigue",
+   "depth": 3
+  },
+  {
+   "id": "misc-once",
+   "label": "\"It held the load once, so it's safe\"",
+   "kind": "misconception",
+   "summary": "A part can survive a load once and fail after a million cycles of a smaller one.",
+   "outcome": "Explain why a static test does not prove fatigue life.",
+   "check": "A paperclip doesn't break when bent once. Why does it break after bending back and forth?",
+   "answer": "Each cycle grows tiny cracks (fatigue) until the remaining section fails.",
+   "map": "mechanical",
+   "key": "mechanical/misc-once",
+   "depth": 3
+  },
+  {
+   "id": "vibration",
+   "label": "Vibration & Resonance",
+   "kind": "threshold",
+   "summary": "Every structure has natural frequencies; driving at one makes small forces produce large motion. Damping and detuning are the cures.",
+   "outcome": "Compute a natural frequency and choose a design that avoids resonance.",
+   "check": "A mass on a spring has a natural frequency of 10 Hz. A motor vibrates it at 10 Hz. What happens, and what are two fixes?",
+   "answer": "Resonance (large amplitude). Change stiffness or mass to move the natural frequency, or add damping or isolation.",
+   "map": "mechanical",
+   "key": "mechanical/vibration",
+   "depth": 3
+  },
+  {
+   "id": "mechanisms",
+   "label": "Mechanisms & Linkages",
+   "kind": "concept",
+   "summary": "Gears, cams and four-bar linkages turn one motion into another; degrees of freedom count what moves independently.",
+   "outcome": "Compute a gear train ratio and a linkage's degrees of freedom.",
+   "check": "A 20-tooth gear drives a 60-tooth gear. Output speed and torque compared with input?",
+   "answer": "One third the speed and three times the torque (ignoring losses).",
+   "map": "mechanical",
+   "key": "mechanical/mechanisms",
+   "depth": 1
+  },
+  {
+   "id": "thermocycles",
+   "label": "Thermodynamic Cycles",
+   "kind": "concept",
+   "summary": "Engines, refrigerators and power plants as cycles; Carnot sets the ceiling on efficiency.",
+   "outcome": "Compute the Carnot efficiency between two temperatures.",
+   "check": "What is the maximum efficiency of an engine running between 600 K and 300 K?",
+   "answer": "50% (1 − 300/600).",
+   "map": "mechanical",
+   "key": "mechanical/thermocycles",
+   "depth": 0
+  },
+  {
+   "id": "fluids",
+   "label": "Fluid Mechanics",
+   "kind": "concept",
+   "summary": "Pressure, Bernoulli along a streamline, and the Reynolds number deciding laminar versus turbulent flow.",
+   "outcome": "Predict laminar or turbulent flow from the Reynolds number.",
+   "check": "What does a high Reynolds number indicate?",
+   "answer": "Inertia dominates viscosity, so the flow tends to be turbulent.",
+   "map": "mechanical",
+   "key": "mechanical/fluids",
+   "depth": 0
+  },
+  {
+   "id": "heat",
+   "label": "Heat Transfer",
+   "kind": "concept",
+   "summary": "Conduction, convection and radiation, often modelled as thermal resistances in series.",
+   "outcome": "Compute heat loss through a composite wall.",
+   "check": "Why does a double-glazed window lose less heat than a single pane?",
+   "answer": "The trapped gas layer adds a large thermal resistance in series.",
+   "map": "mechanical",
+   "key": "mechanical/heat",
+   "depth": 1
+  },
+  {
+   "id": "tolerances",
+   "label": "Tolerances & Fits",
+   "kind": "concept",
+   "summary": "No part is exact; tolerances, fits and GD&T specify how much variation still works and assembles.",
+   "outcome": "Choose a fit for a bearing on a shaft and stack up tolerances.",
+   "check": "Why specify a tolerance at all instead of the exact size?",
+   "answer": "Manufacturing always varies; the tolerance states what variation still works, and tighter costs more.",
+   "map": "mechanical",
+   "key": "mechanical/tolerances",
+   "depth": 3
+  },
+  {
+   "id": "dfm",
+   "label": "Design for Manufacturing",
+   "kind": "concept",
+   "summary": "Design so the part can actually be made, cheaply: draft angles, wall thickness, tool access, fewer parts.",
+   "outcome": "Revise a part for injection moulding or 3D printing.",
+   "check": "Why do injection-moulded parts have draft angles?",
+   "answer": "So the part can be ejected from the mould without dragging and damage.",
+   "map": "mechanical",
+   "key": "mechanical/dfm",
+   "depth": 4
+  },
+  {
+   "id": "fea",
+   "label": "Finite Element Analysis",
+   "kind": "concept",
+   "summary": "Split a part into small elements, solve the stiffness equations, and check the answer against hand calculations.",
+   "outcome": "Run an FEA, check mesh convergence and compare with a hand calculation.",
+   "check": "Your FEA shows a stress 'hot spot' at a sharp re-entrant corner that grows with every mesh refinement. What is happening?",
+   "answer": "A stress singularity: the ideal sharp corner has theoretically infinite stress. Add a real fillet radius or judge with a different criterion.",
+   "map": "mechanical",
+   "key": "mechanical/fea",
+   "depth": 3
+  },
+  {
+   "id": "misc-fea",
+   "label": "\"The FEA colour plot is the truth\"",
+   "kind": "misconception",
+   "summary": "FEA is only as right as its loads, constraints, material data and mesh. Garbage in, colourful garbage out.",
+   "outcome": "Validate an FEA with an independent hand estimate.",
+   "check": "Name two independent checks before trusting an FEA result.",
+   "answer": "A hand calculation (e.g. beam theory) of the same case, and a mesh-convergence study; also check reactions balance the applied loads.",
+   "map": "mechanical",
+   "key": "mechanical/misc-fea",
+   "depth": 3
+  },
   {
    "id": "shell",
    "label": "The Command Line",
@@ -592,637 +2472,1417 @@ window.DULTA_MAPS = {
    "depth": 6
   },
   {
-   "id": "logic",
-   "label": "Logic & Sets",
+   "id": "context",
+   "label": "Context Is the Classroom",
    "kind": "concept",
-   "summary": "Statements, quantifiers, implication and the algebra of sets.",
-   "outcome": "Negate a statement with nested quantifiers.",
-   "check": "Negate: 'every student passed some exam'.",
-   "answer": "Some student passed no exam.",
-   "map": "mathematics",
-   "key": "mathematics/logic",
+   "summary": "Within a session an agent learns only through its context window: instructions, examples, tool results. Nothing else changes.",
+   "outcome": "List exactly what an agent can know at a given step.",
+   "check": "You correct an agent's mistake mid-session. What has changed in the model?",
+   "answer": "Nothing in its weights; the correction exists only in this session's context.",
+   "map": "agents",
+   "key": "agents/context",
    "depth": 0
   },
   {
-   "id": "proof",
-   "label": "Proof",
-   "kind": "threshold",
-   "summary": "Mathematics as argument: direct proof, contradiction, contrapositive, induction. Troublesome because examples, however many, never prove a universal claim.",
-   "outcome": "Write a proof by induction.",
-   "check": "Why do 1,000 checked cases not prove that n² + n + 41 is always prime?",
-   "answer": "Only a general argument covers all n; and indeed n = 40 gives 1681 = 41².",
-   "map": "mathematics",
-   "key": "mathematics/proof",
-   "depth": 1
-  },
-  {
-   "id": "functions",
-   "label": "Functions",
-   "kind": "concept",
-   "summary": "Rules assigning each input exactly one output; composition, inverses and graphs.",
-   "outcome": "Find the inverse of a function and state its domain.",
-   "check": "Is x ↦ x² from ℝ to ℝ invertible?",
-   "answer": "No: it is not one-to-one (2 and −2 map to 4). Restrict to x ≥ 0.",
-   "map": "mathematics",
-   "key": "mathematics/functions",
-   "depth": 1
-  },
-  {
-   "id": "misc-point9",
-   "label": "\"0.999… is less than 1\"",
+   "id": "misc-remember",
+   "label": "\"The agent will remember next time\"",
    "kind": "misconception",
-   "summary": "Treating an infinite decimal as a process that never arrives rather than as the limit it names.",
-   "outcome": "Prove 0.999… = 1 two different ways.",
-   "check": "What number lies strictly between 0.999… and 1?",
-   "answer": "None, so they are equal; 0.999… is the limit of 0.9, 0.99, … which is 1.",
-   "map": "mathematics",
-   "key": "mathematics/misc-point9",
-   "depth": 2
-  },
-  {
-   "id": "limits",
-   "label": "Limits",
-   "kind": "threshold",
-   "summary": "Arbitrarily close, made precise with ε and δ. The concept every result of calculus rests on.",
-   "outcome": "Evaluate a limit and justify it with ε–δ for a linear function.",
-   "check": "What is lim(x→0) sin(x)/x?",
-   "answer": "1, although the function is undefined at 0.",
-   "map": "mathematics",
-   "key": "mathematics/limits",
-   "depth": 2
-  },
-  {
-   "id": "derivatives",
-   "label": "Derivatives",
-   "kind": "concept",
-   "summary": "Instantaneous rate of change: the limit of difference quotients, the slope of the tangent.",
-   "outcome": "Differentiate with the chain rule and interpret the result as a rate.",
-   "check": "Position is x(t) = 3t². What is the velocity at t = 2?",
-   "answer": "x′(t) = 6t, so 12 (units per time).",
-   "map": "mathematics",
-   "key": "mathematics/derivatives",
-   "depth": 3
-  },
-  {
-   "id": "integrals",
-   "label": "Integrals",
-   "kind": "concept",
-   "summary": "Accumulation: the limit of Riemann sums, the signed area under a curve.",
-   "outcome": "Compute a definite integral and interpret it as accumulated change.",
-   "check": "Velocity is constant at 5 m/s for 4 s. What does ∫v dt give?",
-   "answer": "20 m of displacement.",
-   "map": "mathematics",
-   "key": "mathematics/integrals",
-   "depth": 3
-  },
-  {
-   "id": "ftc",
-   "label": "Fundamental Theorem of Calculus",
-   "kind": "concept",
-   "summary": "Differentiation and integration undo each other.",
-   "outcome": "Use the FTC to differentiate an integral with a variable upper limit.",
-   "check": "What is d/dx ∫₀ˣ cos(t) dt?",
-   "answer": "cos(x).",
-   "map": "mathematics",
-   "key": "mathematics/ftc",
-   "depth": 4
-  },
-  {
-   "id": "series",
-   "label": "Sequences & Series",
-   "kind": "concept",
-   "summary": "Infinite sums that converge to finite values, and Taylor series that rebuild functions from derivatives.",
-   "outcome": "Test a series for convergence; write a Taylor polynomial.",
-   "check": "Does 1 + 1/2 + 1/3 + 1/4 + … converge?",
-   "answer": "No, the harmonic series diverges, though its terms go to 0.",
-   "map": "mathematics",
-   "key": "mathematics/series",
-   "depth": 5
-  },
-  {
-   "id": "linalg",
-   "label": "Linear Algebra",
-   "kind": "concept",
-   "summary": "Vector spaces, linear maps and matrices: the mathematics of superposition.",
-   "outcome": "Solve a linear system and interpret it as a matrix equation.",
-   "check": "Is the set of solutions to Ax = 0 always a vector space?",
-   "answer": "Yes: it is the null space, closed under addition and scaling.",
-   "map": "mathematics",
-   "key": "mathematics/linalg",
-   "depth": 2
-  },
-  {
-   "id": "misc-commute",
-   "label": "\"Matrix products commute\"",
-   "kind": "misconception",
-   "summary": "Carrying the habits of number arithmetic into matrix arithmetic, where AB ≠ BA in general.",
-   "outcome": "Give a 2×2 counterexample to AB = BA.",
-   "check": "Rotate then reflect versus reflect then rotate: same result?",
-   "answer": "Generally not; composition of linear maps is order-dependent.",
-   "map": "mathematics",
-   "key": "mathematics/misc-commute",
-   "depth": 2
-  },
-  {
-   "id": "eigen",
-   "label": "Eigenvalues & Eigenvectors",
-   "kind": "concept",
-   "summary": "Directions a linear map only stretches; the natural coordinates of a system.",
-   "outcome": "Diagonalize a 2×2 matrix.",
-   "check": "What are the eigenvalues of [[2,0],[0,3]]?",
-   "answer": "2 and 3.",
-   "map": "mathematics",
-   "key": "mathematics/eigen",
-   "depth": 3
-  },
-  {
-   "id": "complex",
-   "label": "Complex Numbers",
-   "kind": "concept",
-   "summary": "Numbers with rotation built in: e^(iθ) = cos θ + i sin θ.",
-   "outcome": "Multiply complex numbers in polar form.",
-   "check": "What does multiplying by i do geometrically?",
-   "answer": "It rotates by 90° counter-clockwise.",
-   "map": "mathematics",
-   "key": "mathematics/complex",
-   "depth": 2
-  },
-  {
-   "id": "diffeq",
-   "label": "Differential Equations",
-   "kind": "concept",
-   "summary": "Laws stated as relations between a quantity and its rates of change.",
-   "outcome": "Solve x″ = −ω²x and interpret the solution.",
-   "check": "What functions satisfy y′ = y?",
-   "answer": "y = Ce^x.",
-   "map": "mathematics",
-   "key": "mathematics/diffeq",
-   "depth": 5
-  },
-  {
-   "id": "multivar",
-   "label": "Multivariable Calculus",
-   "kind": "concept",
-   "summary": "Partial derivatives, gradients and multiple integrals.",
-   "outcome": "Find the direction of steepest ascent with the gradient.",
-   "check": "What does ∇f point toward?",
-   "answer": "The direction of fastest increase of f.",
-   "map": "mathematics",
-   "key": "mathematics/multivar",
-   "depth": 4
-  },
-  {
-   "id": "vectorcalc",
-   "label": "Vector Calculus",
-   "kind": "concept",
-   "summary": "Divergence, curl and the integral theorems of Gauss and Stokes.",
-   "outcome": "Apply the divergence theorem to a flux integral.",
-   "check": "What does a nonzero divergence at a point mean physically?",
-   "answer": "A source or sink of the field there.",
-   "map": "mathematics",
-   "key": "mathematics/vectorcalc",
-   "depth": 5
-  },
-  {
-   "id": "fourier",
-   "label": "Fourier Analysis",
-   "kind": "concept",
-   "summary": "Any reasonable periodic signal is a sum of sines and cosines.",
-   "outcome": "Synthesize a square wave from odd harmonics.",
-   "check": "Which harmonics make up a square wave?",
-   "answer": "Odd harmonics only, with amplitudes falling as 1/n.",
-   "lab": "fourier",
-   "map": "mathematics",
-   "key": "mathematics/fourier",
-   "depth": 6
-  },
-  {
-   "id": "probability",
-   "label": "Probability",
-   "kind": "concept",
-   "summary": "Measure on outcomes: conditional probability, Bayes' theorem, random variables, expectation.",
-   "outcome": "Apply Bayes' theorem to a diagnostic-test problem.",
-   "check": "A test is 99% accurate for a disease with 1% prevalence. You test positive. Roughly how likely is it you have it?",
-   "answer": "About 50%: false positives from the 99% healthy equal the true positives.",
-   "map": "mathematics",
-   "key": "mathematics/probability",
-   "depth": 1
-  },
-  {
-   "id": "misc-gambler",
-   "label": "Gambler's fallacy",
-   "kind": "misconception",
-   "summary": "Believing independent events 'balance out' in the short run.",
-   "outcome": "Explain independence with a coin-flip sequence.",
-   "check": "A fair coin lands heads 6 times running. Probability of heads next?",
-   "answer": "Still 1/2; the coin has no memory.",
-   "map": "mathematics",
-   "key": "mathematics/misc-gambler",
-   "depth": 1
-  },
-  {
-   "id": "statistics",
-   "label": "Statistics & Inference",
-   "kind": "concept",
-   "summary": "Reasoning from samples to populations: estimation, confidence, hypothesis tests and their limits.",
-   "outcome": "Interpret a confidence interval correctly.",
-   "check": "Does a p-value of 0.03 mean a 3% chance the null hypothesis is true?",
-   "answer": "No: it is the probability of data at least this extreme assuming the null is true.",
-   "map": "mathematics",
-   "key": "mathematics/statistics",
-   "depth": 4
-  },
-  {
-   "id": "misc-corr",
-   "label": "\"Correlation implies causation\"",
-   "kind": "misconception",
-   "summary": "Reading a causal arrow into an association that a confounder or chance could explain.",
-   "outcome": "Name a confounder for a given correlation.",
-   "check": "Ice-cream sales correlate with drownings. Why?",
-   "answer": "A confounder: hot weather raises both.",
-   "map": "mathematics",
-   "key": "mathematics/misc-corr",
-   "depth": 4
-  },
-  {
-   "id": "measurement",
-   "label": "Measurement & Uncertainty",
-   "kind": "concept",
-   "summary": "Every number in physics carries a unit and an uncertainty; a result without either is not yet a result.",
-   "outcome": "Report a measured quantity with unit and propagated uncertainty.",
-   "check": "You time 10 swings of a pendulum as 14.2 s ± 0.2 s. What is the period and its uncertainty?",
-   "answer": "1.42 s ± 0.02 s: dividing by an exact count divides the uncertainty too.",
-   "map": "physics",
-   "key": "physics/measurement",
+   "summary": "Unless the lesson is written to durable memory, a skill or project instructions, the next session starts blank.",
+   "outcome": "Persist a correction so a new session obeys it.",
+   "check": "An agent apologises and promises not to repeat a mistake. What makes that promise true?",
+   "answer": "Only writing the rule to persistent memory, a skill or instructions that load next time.",
+   "map": "agents",
+   "key": "agents/misc-remember",
    "depth": 0
   },
   {
-   "id": "dimensions",
-   "label": "Units & Dimensional Analysis",
+   "id": "outcomes",
+   "label": "Outcomes as Specs",
    "kind": "concept",
-   "summary": "Equations must balance in dimensions as well as numbers, which lets you guess laws and catch errors before computing.",
-   "outcome": "Derive the form of a law (up to a constant) from dimensions alone.",
-   "check": "Using dimensions only, how must a pendulum's period depend on its length L and g?",
-   "answer": "T ∝ √(L/g): it is the only combination of L [m] and g [m/s²] with units of seconds.",
-   "map": "physics",
-   "key": "physics/dimensions",
+   "summary": "State what the agent must be able to do as testable outcomes before writing any teaching material (backward design for agents).",
+   "outcome": "Rewrite a vague instruction as outcomes with checks.",
+   "check": "Rewrite 'be good at our codebase' as a testable outcome.",
+   "answer": "E.g. 'given a bug report, locate the responsible module and write a failing test, unaided, on 4 of 5 held-out reports'.",
+   "map": "agents",
+   "key": "agents/outcomes",
    "depth": 1
   },
   {
-   "id": "vectors",
-   "label": "Vectors",
+   "id": "anchors",
+   "label": "Semantic Anchors",
    "kind": "concept",
-   "summary": "Quantities with direction add head to tail and split into independent components.",
-   "outcome": "Resolve a vector into components and add vectors by components.",
-   "check": "A 10 N force points 30° above horizontal. What is its horizontal component?",
-   "answer": "10 cos 30° ≈ 8.7 N.",
-   "map": "physics",
-   "key": "physics/vectors",
-   "depth": 0
+   "summary": "Naming a well-known method ('Red/Green TDD', 'Pyramid Principle') loads its whole procedure from pre-training in two words.",
+   "outcome": "Compress a procedure by replacing explanations with anchors, then verify behaviour is unchanged.",
+   "check": "Why can 'use the Socratic Method' replace a paragraph of instructions?",
+   "answer": "The model already knows the method from pre-training; the anchor activates it, so long as the term is precise and widely documented.",
+   "map": "agents",
+   "key": "agents/anchors",
+   "depth": 1
   },
   {
-   "id": "kinematics",
-   "label": "Kinematics",
+   "id": "examples",
+   "label": "Worked Examples & Few-Shot",
    "kind": "concept",
-   "summary": "Position, velocity and acceleration as rates of change of one another; constant-acceleration motion in each axis independently.",
-   "outcome": "Predict the trajectory of a projectile from its launch conditions.",
-   "check": "A ball is thrown horizontally off a table while another is dropped from the same height. Which lands first?",
-   "answer": "They land together: vertical motion is independent of horizontal velocity.",
-   "lab": "projectile",
-   "map": "physics",
-   "key": "physics/kinematics",
+   "summary": "A few input–output examples teach format and judgement better than abstract rules; vary them so the agent learns the pattern, not the instance.",
+   "outcome": "Design a few-shot set that covers edge cases without being copied verbatim.",
+   "check": "All three of your examples are short. What is the risk?",
+   "answer": "The agent may infer that answers should be short; examples teach every regularity they share, intended or not.",
+   "map": "agents",
+   "key": "agents/examples",
+   "depth": 1
+  },
+  {
+   "id": "skills",
+   "label": "Skill Files: Distilled Procedures",
+   "kind": "concept",
+   "summary": "Durable, loadable instructions (a SKILL.md) that turn a session's lessons into reusable procedure.",
+   "outcome": "Distil a successful session into a skill with a contract, workflow and checks.",
+   "check": "What separates a good skill from a long prompt?",
+   "answer": "A contract (what must exist when done), a stepwise workflow, and verifiable checks, loaded only when relevant.",
+   "map": "agents",
+   "key": "agents/skills",
    "depth": 2
   },
   {
-   "id": "misc-impetus",
-   "label": "\"Motion needs a force\"",
+   "id": "misc-more",
+   "label": "\"More context always helps\"",
    "kind": "misconception",
-   "summary": "The impetus intuition: a moving object must be pushed to keep moving, and stops when the push 'runs out'. The FCI shows it survives a traditional first course.",
-   "outcome": "State and refute the impetus model with a frictionless counterexample.",
-   "check": "A puck slides across frictionless ice at constant velocity. What net force acts on it?",
-   "answer": "Zero. Constant velocity means zero net force; force changes motion, it does not sustain it.",
-   "map": "physics",
-   "key": "physics/misc-impetus",
-   "depth": 3
+   "summary": "Relevant facts buried in the middle of long contexts are used less reliably (Liu et al.); irrelevant material dilutes attention.",
+   "outcome": "Trim a context and measure whether accuracy improves.",
+   "check": "Where in a long context is a key fact least reliably used?",
+   "answer": "In the middle (Lost in the Middle); start and end positions fare better.",
+   "map": "agents",
+   "key": "agents/misc-more",
+   "depth": 1
   },
   {
-   "id": "newton",
-   "label": "Newton's Laws",
+   "id": "evals",
+   "label": "Evals: Held-Out Checks",
    "kind": "threshold",
-   "summary": "Force causes acceleration, not velocity. Crossing this threshold reorganises every later topic; it is troublesome precisely because everyday experience is full of friction.",
-   "outcome": "Draw a free-body diagram and apply ΣF = ma to predict motion.",
-   "check": "A book rests on a table. Name the Newton's-third-law partner of the gravitational force of Earth on the book.",
-   "answer": "The gravitational force of the book on Earth, not the normal force from the table.",
-   "lab": "projectile",
-   "map": "physics",
-   "key": "physics/newton",
+   "summary": "Agent learning is measured only on checks it has not seen. This is the threshold: before it, 'the agent knows X' is a feeling; after it, it is a number.",
+   "outcome": "Build a held-out eval set and report accuracy before and after teaching.",
+   "check": "Why must eval questions never appear in the teaching material?",
+   "answer": "Then the eval measures recall of the answer key, not learning (contamination).",
+   "map": "agents",
+   "key": "agents/evals",
+   "depth": 2
+  },
+  {
+   "id": "coldstart",
+   "label": "The Cold-Start Test",
+   "kind": "threshold",
+   "summary": "Spawn a fresh agent with only the distilled notes or skill, never the answers, and ask held-out checks. Pass means the knowledge transferred; fail locates the gap in the notes.",
+   "outcome": "Run a cold-start test and revise the notes from its failures.",
+   "check": "A tutor agent answers every check perfectly. Why is that not evidence the skill file works?",
+   "answer": "The tutor has the whole session in context; only a fresh agent with just the skill shows whether the file carries the knowledge.",
+   "map": "agents",
+   "key": "agents/coldstart",
    "depth": 3
   },
   {
-   "id": "misc-heavier",
-   "label": "\"Heavier falls faster\"",
-   "kind": "misconception",
-   "summary": "Aristotle's intuition, contradicted by Galileo: without air resistance, all bodies fall with the same acceleration.",
-   "outcome": "Explain why mass cancels in free fall.",
-   "check": "In a vacuum, a hammer and a feather are dropped together. Which lands first?",
-   "answer": "Together: F = mg and a = F/m = g, so mass cancels (shown on the Moon by Apollo 15).",
-   "map": "physics",
-   "key": "physics/misc-heavier",
-   "depth": 3
-  },
-  {
-   "id": "forces",
-   "label": "Forces & Free-Body Diagrams",
+   "id": "contamination",
+   "label": "Answer-Key Hygiene",
    "kind": "concept",
-   "summary": "Gravity, normal, tension, friction and springs as interactions between pairs of objects, isolated one body at a time.",
-   "outcome": "Model a multi-force system and solve for an unknown force.",
-   "check": "A 2 kg block hangs from a rope at rest. What is the tension?",
-   "answer": "About 19.6 N (T = mg).",
-   "map": "physics",
-   "key": "physics/forces",
+   "summary": "Keep answers out of the learner agent's context: separate quiz prompts from answer keys, and grade with a different agent.",
+   "outcome": "Generate quiz prompts without answers and grade in a separate context.",
+   "check": "How does `dulta.py quiz` support answer-key hygiene?",
+   "answer": "It prints checks without answers for the learner, and writes the key separately for the grader.",
+   "map": "agents",
+   "key": "agents/contamination",
+   "depth": 3
+  },
+  {
+   "id": "misc-selfgrade",
+   "label": "\"An agent can grade its own answers\"",
+   "kind": "misconception",
+   "summary": "LLM judges favour their own outputs and the first option shown (self-preference and position bias, Zheng et al.). Grade with an independent judge and swap orders.",
+   "outcome": "Set up an independent grader and control for position bias.",
+   "check": "Name two biases of LLM-as-judge.",
+   "answer": "Self-enhancement (favouring its own outputs) and position bias (favouring the first option); also verbosity bias.",
+   "map": "agents",
+   "key": "agents/misc-selfgrade",
+   "depth": 3
+  },
+  {
+   "id": "panels",
+   "label": "Independent Critic Panels",
+   "kind": "concept",
+   "summary": "Several judges, each grounded in one authority and blind to the others, catch what a single reviewer misses.",
+   "outcome": "Convene a panel with seats that disagree, each citing evidence.",
+   "check": "Why should panel seats not see each other's verdicts in the same round?",
+   "answer": "Independence: otherwise they anchor on the first verdict and errors correlate (wisdom of crowds needs independent judgements).",
+   "map": "agents",
+   "key": "agents/panels",
    "depth": 4
   },
   {
-   "id": "misc-centrifugal",
-   "label": "\"Centrifugal force pushes outward\"",
-   "kind": "misconception",
-   "summary": "In an inertial frame there is no outward force on a turning object; the net force points inward and the 'outward push' is inertia felt from a rotating frame.",
-   "outcome": "Identify the centripetal force in a circular-motion scenario.",
-   "check": "A car rounds a flat curve at constant speed. Which force keeps it on the curve?",
-   "answer": "Static friction between tyres and road, pointing toward the centre.",
-   "map": "physics",
-   "key": "physics/misc-centrifugal",
-   "depth": 5
-  },
-  {
-   "id": "circular",
-   "label": "Circular Motion",
+   "id": "tools",
+   "label": "Tools as Procedural Knowledge",
    "kind": "concept",
-   "summary": "Changing direction is acceleration: a = v²/r toward the centre, supplied by real forces.",
-   "outcome": "Compute the centripetal force needed for a given speed and radius.",
-   "check": "If you double the speed on the same curve, by what factor does the needed force change?",
-   "answer": "Four times (F ∝ v²).",
-   "map": "physics",
-   "key": "physics/circular",
-   "depth": 5
+   "summary": "Teaching an agent a tool means teaching when to call it, how to read its output, and how to verify it, not just its signature.",
+   "outcome": "Write tool guidance with a when-to-use rule and a verification step.",
+   "check": "An agent has a calculator tool but still does arithmetic in its head. What is missing from its teaching?",
+   "answer": "A rule for when the tool must be used (e.g. any arithmetic beyond one step), with an example.",
+   "map": "agents",
+   "key": "agents/tools",
+   "depth": 3
   },
   {
-   "id": "energy",
-   "label": "Conservation of Energy",
-   "kind": "threshold",
-   "summary": "A single number that stays fixed through every transformation. It replaces step-by-step force accounting with before-and-after bookkeeping.",
-   "outcome": "Solve a motion problem with energy conservation where forces would be awkward.",
-   "check": "A ball is released from rest 5 m up a frictionless ramp. What is its speed at the bottom?",
-   "answer": "√(2gh) ≈ 9.9 m/s, regardless of the ramp's shape.",
-   "lab": "pendulum",
-   "map": "physics",
-   "key": "physics/energy",
-   "depth": 6
-  },
-  {
-   "id": "work",
-   "label": "Work & Power",
+   "id": "memory",
+   "label": "Durable Memory & Carry-Forward",
    "kind": "concept",
-   "summary": "Work is force along displacement; power is the rate of doing work.",
-   "outcome": "Compute work done by a variable force as an area under F(x).",
-   "check": "You carry a box horizontally at constant velocity. How much work does gravity do on it?",
-   "answer": "Zero: gravity is perpendicular to the displacement.",
-   "map": "physics",
-   "key": "physics/work",
-   "depth": 5
-  },
-  {
-   "id": "momentum",
-   "label": "Momentum & Collisions",
-   "kind": "concept",
-   "summary": "Total momentum is conserved whenever external forces vanish, in every collision, elastic or not.",
-   "outcome": "Predict final velocities in a 1D collision.",
-   "check": "A 1 kg cart at 2 m/s sticks to an identical cart at rest. Final speed?",
-   "answer": "1 m/s (momentum 2 kg·m/s shared by 2 kg).",
-   "map": "physics",
-   "key": "physics/momentum",
+   "summary": "Facts established by evidence are written down once, indexed, and read at the start of the next session; stale entries are pruned.",
+   "outcome": "Write a carry-forward entry with its evidence and verify it is loaded next session.",
+   "check": "What should a carry-forward entry contain besides the fact?",
+   "answer": "The evidence that established it and how it changes future behaviour.",
+   "map": "agents",
+   "key": "agents/memory",
    "depth": 4
   },
   {
-   "id": "rotation",
-   "label": "Rotational Dynamics",
+   "id": "drift",
+   "label": "Bounded Loops & Drift",
    "kind": "concept",
-   "summary": "Torque, moment of inertia and angular momentum: Newton's laws for spinning bodies.",
-   "outcome": "Use τ = Iα and conservation of angular momentum.",
-   "check": "A skater pulls in their arms. What happens to the spin rate, and why?",
-   "answer": "It increases: I decreases and L = Iω is conserved.",
-   "map": "physics",
-   "key": "physics/rotation",
-   "depth": 6
-  },
-  {
-   "id": "gravitation",
-   "label": "Universal Gravitation",
-   "kind": "concept",
-   "summary": "The same inverse-square force drops apples and holds orbits.",
-   "outcome": "Derive orbital speed from F = GMm/r².",
-   "check": "Why do astronauts on the ISS float, if gravity there is ~90% of surface gravity?",
-   "answer": "They are in free fall together with the station; floating is falling around the Earth.",
-   "map": "physics",
-   "key": "physics/gravitation",
-   "depth": 7
-  },
-  {
-   "id": "shm",
-   "label": "Simple Harmonic Motion",
-   "kind": "concept",
-   "summary": "Any restoring force proportional to displacement gives sinusoidal motion with a period independent of amplitude.",
-   "outcome": "Predict the period of a spring or small-angle pendulum.",
-   "check": "Does a pendulum's period change if you double its mass?",
-   "answer": "No: T = 2π√(L/g), independent of mass (for small angles).",
-   "lab": "pendulum",
-   "map": "physics",
-   "key": "physics/shm",
+   "summary": "Long agent runs lose the goal or loop; caps, checkpoints and re-reading the contract keep them on track.",
+   "outcome": "Add caps and a goal re-check to an iterative agent workflow.",
+   "check": "A critic loop keeps raising the same objection. What should a bounded workflow do?",
+   "answer": "Stop at the cap, log the objection as an open item, and ship the strongest version.",
+   "map": "agents",
+   "key": "agents/drift",
    "depth": 5
   },
   {
-   "id": "waves",
-   "label": "Waves & Superposition",
+   "id": "agenttransfer",
+   "label": "Agent Transfer",
    "kind": "concept",
-   "summary": "Disturbances that carry energy, not matter; overlapping waves add, producing interference and standing waves.",
-   "outcome": "Predict interference maxima from path difference.",
-   "check": "Two speakers emit the same tone. You stand where the path difference is half a wavelength. What do you hear?",
-   "answer": "Near-silence: destructive interference.",
-   "lab": "fourier",
-   "map": "physics",
-   "key": "physics/waves",
-   "depth": 6
-  },
-  {
-   "id": "thermo",
-   "label": "Temperature & Heat",
-   "kind": "concept",
-   "summary": "Temperature measures average microscopic kinetic energy; heat is energy in transit because of a temperature difference.",
-   "outcome": "Apply the first law of thermodynamics to a gas process.",
-   "check": "Metal and wood in the same room feel different temperatures. Are they?",
-   "answer": "No, same temperature; metal conducts heat away from your hand faster.",
-   "map": "physics",
-   "key": "physics/thermo",
-   "depth": 7
-  },
-  {
-   "id": "misc-heat",
-   "label": "\"Heat and temperature are the same\"",
-   "kind": "misconception",
-   "summary": "Conflating a state variable (temperature) with an energy transfer (heat).",
-   "outcome": "Distinguish heat from temperature with a phase-change example.",
-   "check": "Ice melts in a glass at 0 °C while absorbing heat. What happens to its temperature?",
-   "answer": "It stays at 0 °C: the heat breaks bonds rather than raising temperature.",
-   "map": "physics",
-   "key": "physics/misc-heat",
-   "depth": 7
-  },
-  {
-   "id": "entropy",
-   "label": "Entropy & the Second Law",
-   "kind": "threshold",
-   "summary": "Isolated systems drift toward more probable macrostates. This is where the arrow of time enters physics.",
-   "outcome": "Explain irreversibility in terms of counting microstates.",
-   "check": "Why does a dropped egg never unscramble, though no law of mechanics forbids it?",
-   "answer": "The unscrambled macrostate has overwhelmingly fewer microstates; it is possible but absurdly improbable.",
-   "map": "physics",
-   "key": "physics/entropy",
-   "depth": 8
-  },
-  {
-   "id": "statmech",
-   "label": "Statistical Mechanics",
-   "kind": "concept",
-   "summary": "Thermodynamics derived from the statistics of very many particles: the Boltzmann factor e^(−E/kT).",
-   "outcome": "Use the Boltzmann factor to compare occupation of two energy levels.",
-   "check": "As temperature rises, what happens to the ratio of high- to low-energy particles?",
-   "answer": "It increases toward 1: e^(−ΔE/kT) grows as T grows.",
-   "map": "physics",
-   "key": "physics/statmech",
-   "depth": 9
-  },
-  {
-   "id": "electrostatics",
-   "label": "Electric Charge & Fields",
-   "kind": "concept",
-   "summary": "Charges create fields; fields push charges. Coulomb's law and Gauss's law.",
-   "outcome": "Compute the field of a point charge and a charged plane.",
-   "check": "What is the electric field inside a charged, conducting hollow sphere?",
-   "answer": "Zero (Gauss's law; charge sits on the surface).",
-   "map": "physics",
-   "key": "physics/electrostatics",
-   "depth": 5
-  },
-  {
-   "id": "misc-current",
-   "label": "\"Current gets used up\"",
-   "kind": "misconception",
-   "summary": "The belief that bulbs consume current, so less flows back to the battery. Current is conserved; energy is what gets transferred.",
-   "outcome": "Explain series circuits with charge conservation.",
-   "check": "Two bulbs in series: is the current after the second bulb less than before the first?",
-   "answer": "No, it is the same everywhere in a series loop; energy, not charge, is used.",
-   "map": "physics",
-   "key": "physics/misc-current",
-   "depth": 6
-  },
-  {
-   "id": "circuits",
-   "label": "Circuits",
-   "kind": "concept",
-   "summary": "Potential difference drives current through resistance; Kirchhoff's rules are charge and energy conservation.",
-   "outcome": "Analyse a two-loop circuit with Kirchhoff's rules.",
-   "check": "Adding a second identical bulb in parallel: does the battery's current rise or fall?",
-   "answer": "It doubles: total resistance halves.",
-   "map": "physics",
-   "key": "physics/circuits",
-   "depth": 6
-  },
-  {
-   "id": "magnetism",
-   "label": "Magnetism & Induction",
-   "kind": "concept",
-   "summary": "Moving charges make magnetic fields; changing magnetic flux makes electric fields (Faraday).",
-   "outcome": "Predict induced current direction with Lenz's law.",
-   "check": "A magnet falls through a copper tube. Why does it fall slowly?",
-   "answer": "Induced eddy currents create a field opposing its motion (Lenz's law).",
-   "map": "physics",
-   "key": "physics/magnetism",
-   "depth": 7
-  },
-  {
-   "id": "maxwell",
-   "label": "Maxwell's Equations",
-   "kind": "concept",
-   "summary": "Four equations unify electricity, magnetism and light.",
-   "outcome": "Show that Maxwell's equations predict waves travelling at c = 1/√(μ₀ε₀).",
-   "check": "What does Maxwell's displacement current fix in Ampère's law?",
-   "answer": "It makes the law consistent for changing fields (e.g. a charging capacitor) and permits EM waves.",
-   "map": "physics",
-   "key": "physics/maxwell",
-   "depth": 8
-  },
-  {
-   "id": "optics",
-   "label": "Light & Optics",
-   "kind": "concept",
-   "summary": "Light as an EM wave: reflection, refraction, diffraction, and the thin-lens equation.",
-   "outcome": "Locate an image with the thin-lens equation.",
-   "check": "Why does a straw look bent in a glass of water?",
-   "answer": "Refraction: light changes direction crossing the water–air boundary.",
-   "map": "physics",
-   "key": "physics/optics",
-   "depth": 9
-  },
-  {
-   "id": "relativity",
-   "label": "Special Relativity",
-   "kind": "threshold",
-   "summary": "The speed of light is the same for all observers, so simultaneity, time and length are frame-dependent.",
-   "outcome": "Compute time dilation for a moving clock.",
-   "check": "A muon lives 2.2 µs at rest but reaches the ground from 15 km up. How?",
-   "answer": "In Earth's frame its clock runs slow (time dilation); in its frame the atmosphere is length-contracted.",
-   "map": "physics",
-   "key": "physics/relativity",
-   "depth": 9
-  },
-  {
-   "id": "lagrangian",
-   "label": "Lagrangian Mechanics",
-   "kind": "concept",
-   "summary": "Mechanics from one scalar, L = T − V, and the principle of stationary action.",
-   "outcome": "Derive equations of motion from a Lagrangian.",
-   "check": "What is the advantage of generalized coordinates for a bead on a rotating hoop?",
-   "answer": "Constraint forces drop out; one coordinate (the angle) describes the motion.",
-   "map": "physics",
-   "key": "physics/lagrangian",
-   "depth": 7
-  },
-  {
-   "id": "misc-orbits",
-   "label": "\"Electrons orbit like planets\"",
-   "kind": "misconception",
-   "summary": "The Bohr picture taken literally. Electrons are described by probability amplitudes, not trajectories.",
-   "outcome": "Contrast an orbital with an orbit.",
-   "check": "Where is the electron in a hydrogen 1s state?",
-   "answer": "It has no definite position; the 1s orbital gives the probability density of finding it.",
-   "map": "physics",
-   "key": "physics/misc-orbits",
-   "depth": 10
-  },
-  {
-   "id": "quantum",
-   "label": "Quantum Mechanics",
-   "kind": "threshold",
-   "summary": "States are vectors, measurements are probabilistic, and observables need not commute.",
-   "outcome": "Compute measurement probabilities from a state vector.",
-   "check": "A qubit is (|0⟩ + |1⟩)/√2. What is the probability of measuring 1?",
-   "answer": "1/2 (the squared magnitude of the amplitude).",
-   "map": "physics",
-   "key": "physics/quantum",
-   "depth": 10
+   "summary": "The real test of an agent's learning: a task unlike the teaching examples, solved with the taught principles.",
+   "outcome": "Design a transfer task and score an agent's attempt.",
+   "check": "Why is an agent passing tasks that resemble its few-shot examples weak evidence?",
+   "answer": "It may be pattern-matching the examples; only dissimilar tasks show the principle was learned.",
+   "map": "agents",
+   "key": "agents/agenttransfer",
+   "depth": 4
   }
  ],
  "edges": [
+  {
+   "from": "physics/measurement",
+   "to": "physics/dimensions",
+   "type": "prereq",
+   "map": "physics"
+  },
+  {
+   "from": "physics/dimensions",
+   "to": "physics/kinematics",
+   "type": "prereq",
+   "map": "physics"
+  },
+  {
+   "from": "physics/vectors",
+   "to": "physics/kinematics",
+   "type": "prereq",
+   "map": "physics"
+  },
+  {
+   "from": "mathematics/derivatives",
+   "to": "physics/kinematics",
+   "type": "prereq",
+   "map": "physics"
+  },
+  {
+   "from": "physics/kinematics",
+   "to": "physics/newton",
+   "type": "prereq",
+   "map": "physics"
+  },
+  {
+   "from": "physics/misc-impetus",
+   "to": "physics/newton",
+   "type": "counter",
+   "map": "physics"
+  },
+  {
+   "from": "physics/misc-heavier",
+   "to": "physics/newton",
+   "type": "counter",
+   "map": "physics"
+  },
+  {
+   "from": "physics/newton",
+   "to": "physics/forces",
+   "type": "prereq",
+   "map": "physics"
+  },
+  {
+   "from": "physics/forces",
+   "to": "physics/circular",
+   "type": "prereq",
+   "map": "physics"
+  },
+  {
+   "from": "physics/misc-centrifugal",
+   "to": "physics/circular",
+   "type": "counter",
+   "map": "physics"
+  },
+  {
+   "from": "physics/forces",
+   "to": "physics/work",
+   "type": "prereq",
+   "map": "physics"
+  },
+  {
+   "from": "physics/work",
+   "to": "physics/energy",
+   "type": "prereq",
+   "map": "physics"
+  },
+  {
+   "from": "physics/newton",
+   "to": "physics/momentum",
+   "type": "prereq",
+   "map": "physics"
+  },
+  {
+   "from": "physics/momentum",
+   "to": "physics/rotation",
+   "type": "prereq",
+   "map": "physics"
+  },
+  {
+   "from": "physics/circular",
+   "to": "physics/rotation",
+   "type": "prereq",
+   "map": "physics"
+  },
+  {
+   "from": "physics/circular",
+   "to": "physics/gravitation",
+   "type": "prereq",
+   "map": "physics"
+  },
+  {
+   "from": "physics/energy",
+   "to": "physics/gravitation",
+   "type": "prereq",
+   "map": "physics"
+  },
+  {
+   "from": "physics/forces",
+   "to": "physics/shm",
+   "type": "prereq",
+   "map": "physics"
+  },
+  {
+   "from": "mathematics/diffeq",
+   "to": "physics/shm",
+   "type": "prereq",
+   "map": "physics"
+  },
+  {
+   "from": "physics/shm",
+   "to": "physics/waves",
+   "type": "prereq",
+   "map": "physics"
+  },
+  {
+   "from": "physics/energy",
+   "to": "physics/thermo",
+   "type": "prereq",
+   "map": "physics"
+  },
+  {
+   "from": "physics/misc-heat",
+   "to": "physics/thermo",
+   "type": "counter",
+   "map": "physics"
+  },
+  {
+   "from": "physics/thermo",
+   "to": "physics/entropy",
+   "type": "prereq",
+   "map": "physics"
+  },
+  {
+   "from": "physics/entropy",
+   "to": "physics/statmech",
+   "type": "prereq",
+   "map": "physics"
+  },
+  {
+   "from": "mathematics/probability",
+   "to": "physics/statmech",
+   "type": "prereq",
+   "map": "physics"
+  },
+  {
+   "from": "physics/forces",
+   "to": "physics/electrostatics",
+   "type": "prereq",
+   "map": "physics"
+  },
+  {
+   "from": "physics/electrostatics",
+   "to": "physics/circuits",
+   "type": "prereq",
+   "map": "physics"
+  },
+  {
+   "from": "physics/misc-current",
+   "to": "physics/circuits",
+   "type": "counter",
+   "map": "physics"
+  },
+  {
+   "from": "physics/circuits",
+   "to": "physics/magnetism",
+   "type": "prereq",
+   "map": "physics"
+  },
+  {
+   "from": "physics/magnetism",
+   "to": "physics/maxwell",
+   "type": "prereq",
+   "map": "physics"
+  },
+  {
+   "from": "mathematics/vectorcalc",
+   "to": "physics/maxwell",
+   "type": "prereq",
+   "map": "physics"
+  },
+  {
+   "from": "physics/maxwell",
+   "to": "physics/optics",
+   "type": "prereq",
+   "map": "physics"
+  },
+  {
+   "from": "physics/waves",
+   "to": "physics/optics",
+   "type": "prereq",
+   "map": "physics"
+  },
+  {
+   "from": "physics/maxwell",
+   "to": "physics/relativity",
+   "type": "prereq",
+   "map": "physics"
+  },
+  {
+   "from": "physics/energy",
+   "to": "physics/lagrangian",
+   "type": "prereq",
+   "map": "physics"
+  },
+  {
+   "from": "physics/rotation",
+   "to": "physics/lagrangian",
+   "type": "prereq",
+   "map": "physics"
+  },
+  {
+   "from": "physics/waves",
+   "to": "physics/quantum",
+   "type": "prereq",
+   "map": "physics"
+  },
+  {
+   "from": "physics/statmech",
+   "to": "physics/quantum",
+   "type": "prereq",
+   "map": "physics"
+  },
+  {
+   "from": "mathematics/linalg",
+   "to": "physics/quantum",
+   "type": "prereq",
+   "map": "physics"
+  },
+  {
+   "from": "physics/misc-orbits",
+   "to": "physics/quantum",
+   "type": "counter",
+   "map": "physics"
+  },
+  {
+   "from": "mathematics/logic",
+   "to": "mathematics/proof",
+   "type": "prereq",
+   "map": "mathematics"
+  },
+  {
+   "from": "mathematics/logic",
+   "to": "mathematics/functions",
+   "type": "prereq",
+   "map": "mathematics"
+  },
+  {
+   "from": "mathematics/functions",
+   "to": "mathematics/limits",
+   "type": "prereq",
+   "map": "mathematics"
+  },
+  {
+   "from": "mathematics/proof",
+   "to": "mathematics/limits",
+   "type": "prereq",
+   "map": "mathematics"
+  },
+  {
+   "from": "mathematics/misc-point9",
+   "to": "mathematics/limits",
+   "type": "counter",
+   "map": "mathematics"
+  },
+  {
+   "from": "mathematics/limits",
+   "to": "mathematics/derivatives",
+   "type": "prereq",
+   "map": "mathematics"
+  },
+  {
+   "from": "mathematics/limits",
+   "to": "mathematics/integrals",
+   "type": "prereq",
+   "map": "mathematics"
+  },
+  {
+   "from": "mathematics/derivatives",
+   "to": "mathematics/ftc",
+   "type": "prereq",
+   "map": "mathematics"
+  },
+  {
+   "from": "mathematics/integrals",
+   "to": "mathematics/ftc",
+   "type": "prereq",
+   "map": "mathematics"
+  },
+  {
+   "from": "mathematics/limits",
+   "to": "mathematics/series",
+   "type": "prereq",
+   "map": "mathematics"
+  },
+  {
+   "from": "mathematics/ftc",
+   "to": "mathematics/series",
+   "type": "prereq",
+   "map": "mathematics"
+  },
+  {
+   "from": "mathematics/functions",
+   "to": "mathematics/linalg",
+   "type": "prereq",
+   "map": "mathematics"
+  },
+  {
+   "from": "mathematics/misc-commute",
+   "to": "mathematics/linalg",
+   "type": "counter",
+   "map": "mathematics"
+  },
+  {
+   "from": "mathematics/linalg",
+   "to": "mathematics/eigen",
+   "type": "prereq",
+   "map": "mathematics"
+  },
+  {
+   "from": "mathematics/functions",
+   "to": "mathematics/complex",
+   "type": "prereq",
+   "map": "mathematics"
+  },
+  {
+   "from": "mathematics/ftc",
+   "to": "mathematics/diffeq",
+   "type": "prereq",
+   "map": "mathematics"
+  },
+  {
+   "from": "mathematics/complex",
+   "to": "mathematics/diffeq",
+   "type": "prereq",
+   "map": "mathematics"
+  },
+  {
+   "from": "mathematics/eigen",
+   "to": "mathematics/diffeq",
+   "type": "prereq",
+   "map": "mathematics"
+  },
+  {
+   "from": "mathematics/derivatives",
+   "to": "mathematics/multivar",
+   "type": "prereq",
+   "map": "mathematics"
+  },
+  {
+   "from": "mathematics/linalg",
+   "to": "mathematics/multivar",
+   "type": "prereq",
+   "map": "mathematics"
+  },
+  {
+   "from": "mathematics/multivar",
+   "to": "mathematics/vectorcalc",
+   "type": "prereq",
+   "map": "mathematics"
+  },
+  {
+   "from": "mathematics/ftc",
+   "to": "mathematics/vectorcalc",
+   "type": "prereq",
+   "map": "mathematics"
+  },
+  {
+   "from": "mathematics/series",
+   "to": "mathematics/fourier",
+   "type": "prereq",
+   "map": "mathematics"
+  },
+  {
+   "from": "mathematics/complex",
+   "to": "mathematics/fourier",
+   "type": "prereq",
+   "map": "mathematics"
+  },
+  {
+   "from": "mathematics/logic",
+   "to": "mathematics/probability",
+   "type": "prereq",
+   "map": "mathematics"
+  },
+  {
+   "from": "mathematics/misc-gambler",
+   "to": "mathematics/probability",
+   "type": "counter",
+   "map": "mathematics"
+  },
+  {
+   "from": "mathematics/probability",
+   "to": "mathematics/statistics",
+   "type": "prereq",
+   "map": "mathematics"
+  },
+  {
+   "from": "mathematics/integrals",
+   "to": "mathematics/statistics",
+   "type": "prereq",
+   "map": "mathematics"
+  },
+  {
+   "from": "mathematics/misc-corr",
+   "to": "mathematics/statistics",
+   "type": "counter",
+   "map": "mathematics"
+  },
+  {
+   "from": "chemistry/atoms",
+   "to": "chemistry/orbitals",
+   "type": "prereq",
+   "map": "chemistry"
+  },
+  {
+   "from": "physics/quantum",
+   "to": "chemistry/orbitals",
+   "type": "prereq",
+   "map": "chemistry"
+  },
+  {
+   "from": "chemistry/atoms",
+   "to": "chemistry/moles",
+   "type": "prereq",
+   "map": "chemistry"
+  },
+  {
+   "from": "chemistry/orbitals",
+   "to": "chemistry/bonding",
+   "type": "prereq",
+   "map": "chemistry"
+  },
+  {
+   "from": "physics/electrostatics",
+   "to": "chemistry/bonding",
+   "type": "prereq",
+   "map": "chemistry"
+  },
+  {
+   "from": "chemistry/misc-atp",
+   "to": "chemistry/bonding",
+   "type": "counter",
+   "map": "chemistry"
+  },
+  {
+   "from": "chemistry/bonding",
+   "to": "chemistry/shape",
+   "type": "prereq",
+   "map": "chemistry"
+  },
+  {
+   "from": "chemistry/shape",
+   "to": "chemistry/imf",
+   "type": "prereq",
+   "map": "chemistry"
+  },
+  {
+   "from": "chemistry/misc-boil",
+   "to": "chemistry/imf",
+   "type": "counter",
+   "map": "chemistry"
+  },
+  {
+   "from": "chemistry/moles",
+   "to": "chemistry/gases",
+   "type": "prereq",
+   "map": "chemistry"
+  },
+  {
+   "from": "physics/thermo",
+   "to": "chemistry/gases",
+   "type": "prereq",
+   "map": "chemistry"
+  },
+  {
+   "from": "chemistry/bonding",
+   "to": "chemistry/thermochem",
+   "type": "prereq",
+   "map": "chemistry"
+  },
+  {
+   "from": "physics/energy",
+   "to": "chemistry/thermochem",
+   "type": "prereq",
+   "map": "chemistry"
+  },
+  {
+   "from": "chemistry/thermochem",
+   "to": "chemistry/gibbs",
+   "type": "prereq",
+   "map": "chemistry"
+  },
+  {
+   "from": "physics/entropy",
+   "to": "chemistry/gibbs",
+   "type": "prereq",
+   "map": "chemistry"
+  },
+  {
+   "from": "chemistry/gibbs",
+   "to": "chemistry/equilibrium",
+   "type": "prereq",
+   "map": "chemistry"
+  },
+  {
+   "from": "chemistry/misc-stop",
+   "to": "chemistry/equilibrium",
+   "type": "counter",
+   "map": "chemistry"
+  },
+  {
+   "from": "chemistry/moles",
+   "to": "chemistry/kinetics",
+   "type": "prereq",
+   "map": "chemistry"
+  },
+  {
+   "from": "chemistry/misc-catalyst",
+   "to": "chemistry/kinetics",
+   "type": "counter",
+   "map": "chemistry"
+  },
+  {
+   "from": "chemistry/equilibrium",
+   "to": "chemistry/acidbase",
+   "type": "prereq",
+   "map": "chemistry"
+  },
+  {
+   "from": "chemistry/equilibrium",
+   "to": "chemistry/electrochem",
+   "type": "prereq",
+   "map": "chemistry"
+  },
+  {
+   "from": "physics/circuits",
+   "to": "chemistry/electrochem",
+   "type": "prereq",
+   "map": "chemistry"
+  },
+  {
+   "from": "chemistry/shape",
+   "to": "chemistry/organic",
+   "type": "prereq",
+   "map": "chemistry"
+  },
+  {
+   "from": "chemistry/organic",
+   "to": "chemistry/mechanisms",
+   "type": "prereq",
+   "map": "chemistry"
+  },
+  {
+   "from": "chemistry/kinetics",
+   "to": "chemistry/mechanisms",
+   "type": "prereq",
+   "map": "chemistry"
+  },
+  {
+   "from": "chemistry/organic",
+   "to": "chemistry/spectroscopy",
+   "type": "prereq",
+   "map": "chemistry"
+  },
+  {
+   "from": "physics/optics",
+   "to": "chemistry/spectroscopy",
+   "type": "prereq",
+   "map": "chemistry"
+  },
+  {
+   "from": "chemistry/bonding",
+   "to": "biology/macromolecules",
+   "type": "prereq",
+   "map": "biology"
+  },
+  {
+   "from": "biology/macromolecules",
+   "to": "biology/cell",
+   "type": "prereq",
+   "map": "biology"
+  },
+  {
+   "from": "biology/macromolecules",
+   "to": "biology/dna",
+   "type": "prereq",
+   "map": "biology"
+  },
+  {
+   "from": "biology/dna",
+   "to": "biology/proteins",
+   "type": "prereq",
+   "map": "biology"
+  },
+  {
+   "from": "biology/proteins",
+   "to": "biology/enzymes",
+   "type": "prereq",
+   "map": "biology"
+  },
+  {
+   "from": "chemistry/kinetics",
+   "to": "biology/enzymes",
+   "type": "prereq",
+   "map": "biology"
+  },
+  {
+   "from": "biology/enzymes",
+   "to": "biology/metabolism",
+   "type": "prereq",
+   "map": "biology"
+  },
+  {
+   "from": "chemistry/thermochem",
+   "to": "biology/metabolism",
+   "type": "prereq",
+   "map": "biology"
+  },
+  {
+   "from": "biology/cell",
+   "to": "biology/metabolism",
+   "type": "prereq",
+   "map": "biology"
+  },
+  {
+   "from": "biology/dna",
+   "to": "biology/genetics",
+   "type": "prereq",
+   "map": "biology"
+  },
+  {
+   "from": "mathematics/probability",
+   "to": "biology/genetics",
+   "type": "prereq",
+   "map": "biology"
+  },
+  {
+   "from": "biology/misc-dominant",
+   "to": "biology/genetics",
+   "type": "counter",
+   "map": "biology"
+  },
+  {
+   "from": "biology/genetics",
+   "to": "biology/evolution",
+   "type": "prereq",
+   "map": "biology"
+  },
+  {
+   "from": "biology/misc-need",
+   "to": "biology/evolution",
+   "type": "counter",
+   "map": "biology"
+  },
+  {
+   "from": "biology/evolution",
+   "to": "biology/popgen",
+   "type": "prereq",
+   "map": "biology"
+  },
+  {
+   "from": "biology/dna",
+   "to": "biology/regulation",
+   "type": "prereq",
+   "map": "biology"
+  },
+  {
+   "from": "biology/proteins",
+   "to": "biology/signalling",
+   "type": "prereq",
+   "map": "biology"
+  },
+  {
+   "from": "biology/cell",
+   "to": "biology/signalling",
+   "type": "prereq",
+   "map": "biology"
+  },
+  {
+   "from": "biology/signalling",
+   "to": "biology/neurons",
+   "type": "prereq",
+   "map": "biology"
+  },
+  {
+   "from": "physics/electrostatics",
+   "to": "biology/neurons",
+   "type": "prereq",
+   "map": "biology"
+  },
+  {
+   "from": "biology/signalling",
+   "to": "biology/homeostasis",
+   "type": "prereq",
+   "map": "biology"
+  },
+  {
+   "from": "electrical/control",
+   "to": "biology/homeostasis",
+   "type": "prereq",
+   "map": "biology"
+  },
+  {
+   "from": "biology/signalling",
+   "to": "biology/immune",
+   "type": "prereq",
+   "map": "biology"
+  },
+  {
+   "from": "biology/evolution",
+   "to": "biology/ecology",
+   "type": "prereq",
+   "map": "biology"
+  },
+  {
+   "from": "biology/metabolism",
+   "to": "biology/ecology",
+   "type": "prereq",
+   "map": "biology"
+  },
+  {
+   "from": "biology/misc-energycycle",
+   "to": "biology/ecology",
+   "type": "counter",
+   "map": "biology"
+  },
+  {
+   "from": "biology/regulation",
+   "to": "biology/biotech",
+   "type": "prereq",
+   "map": "biology"
+  },
+  {
+   "from": "physics/circuits",
+   "to": "electrical/ohm",
+   "type": "prereq",
+   "map": "electrical"
+  },
+  {
+   "from": "electrical/ohm",
+   "to": "electrical/kirchhoff",
+   "type": "prereq",
+   "map": "electrical"
+  },
+  {
+   "from": "electrical/misc-voltflow",
+   "to": "electrical/kirchhoff",
+   "type": "counter",
+   "map": "electrical"
+  },
+  {
+   "from": "electrical/misc-ground",
+   "to": "electrical/kirchhoff",
+   "type": "counter",
+   "map": "electrical"
+  },
+  {
+   "from": "electrical/kirchhoff",
+   "to": "electrical/divider",
+   "type": "prereq",
+   "map": "electrical"
+  },
+  {
+   "from": "electrical/divider",
+   "to": "electrical/thevenin",
+   "type": "prereq",
+   "map": "electrical"
+  },
+  {
+   "from": "electrical/kirchhoff",
+   "to": "electrical/rc",
+   "type": "prereq",
+   "map": "electrical"
+  },
+  {
+   "from": "mathematics/diffeq",
+   "to": "electrical/rc",
+   "type": "prereq",
+   "map": "electrical"
+  },
+  {
+   "from": "electrical/rc",
+   "to": "electrical/phasors",
+   "type": "prereq",
+   "map": "electrical"
+  },
+  {
+   "from": "mathematics/complex",
+   "to": "electrical/phasors",
+   "type": "prereq",
+   "map": "electrical"
+  },
+  {
+   "from": "electrical/phasors",
+   "to": "electrical/filters",
+   "type": "prereq",
+   "map": "electrical"
+  },
+  {
+   "from": "mathematics/fourier",
+   "to": "electrical/filters",
+   "type": "prereq",
+   "map": "electrical"
+  },
+  {
+   "from": "electrical/kirchhoff",
+   "to": "electrical/diodes",
+   "type": "prereq",
+   "map": "electrical"
+  },
+  {
+   "from": "electrical/diodes",
+   "to": "electrical/transistors",
+   "type": "prereq",
+   "map": "electrical"
+  },
+  {
+   "from": "electrical/thevenin",
+   "to": "electrical/opamps",
+   "type": "prereq",
+   "map": "electrical"
+  },
+  {
+   "from": "electrical/transistors",
+   "to": "electrical/opamps",
+   "type": "prereq",
+   "map": "electrical"
+  },
+  {
+   "from": "mathematics/logic",
+   "to": "electrical/boolean",
+   "type": "prereq",
+   "map": "electrical"
+  },
+  {
+   "from": "electrical/transistors",
+   "to": "electrical/boolean",
+   "type": "prereq",
+   "map": "electrical"
+  },
+  {
+   "from": "electrical/boolean",
+   "to": "electrical/sequential",
+   "type": "prereq",
+   "map": "electrical"
+  },
+  {
+   "from": "electrical/filters",
+   "to": "electrical/sampling",
+   "type": "prereq",
+   "map": "electrical"
+  },
+  {
+   "from": "electrical/misc-faster",
+   "to": "electrical/sampling",
+   "type": "counter",
+   "map": "electrical"
+  },
+  {
+   "from": "electrical/filters",
+   "to": "electrical/signals",
+   "type": "prereq",
+   "map": "electrical"
+  },
+  {
+   "from": "electrical/signals",
+   "to": "electrical/control",
+   "type": "prereq",
+   "map": "electrical"
+  },
+  {
+   "from": "electrical/opamps",
+   "to": "electrical/control",
+   "type": "prereq",
+   "map": "electrical"
+  },
+  {
+   "from": "electrical/boolean",
+   "to": "embedded/binary",
+   "type": "prereq",
+   "map": "embedded"
+  },
+  {
+   "from": "developer/basics",
+   "to": "embedded/binary",
+   "type": "prereq",
+   "map": "embedded"
+  },
+  {
+   "from": "embedded/misc-bittest",
+   "to": "embedded/binary",
+   "type": "counter",
+   "map": "embedded"
+  },
+  {
+   "from": "developer/notional",
+   "to": "embedded/arch",
+   "type": "prereq",
+   "map": "embedded"
+  },
+  {
+   "from": "embedded/binary",
+   "to": "embedded/registers",
+   "type": "prereq",
+   "map": "embedded"
+  },
+  {
+   "from": "embedded/arch",
+   "to": "embedded/registers",
+   "type": "prereq",
+   "map": "embedded"
+  },
+  {
+   "from": "embedded/registers",
+   "to": "embedded/gpio",
+   "type": "prereq",
+   "map": "embedded"
+  },
+  {
+   "from": "electrical/divider",
+   "to": "embedded/gpio",
+   "type": "prereq",
+   "map": "embedded"
+  },
+  {
+   "from": "embedded/misc-float",
+   "to": "embedded/gpio",
+   "type": "counter",
+   "map": "embedded"
+  },
+  {
+   "from": "embedded/gpio",
+   "to": "embedded/timing",
+   "type": "prereq",
+   "map": "embedded"
+  },
+  {
+   "from": "embedded/misc-delay",
+   "to": "embedded/timing",
+   "type": "counter",
+   "map": "embedded"
+  },
+  {
+   "from": "embedded/timing",
+   "to": "embedded/debounce",
+   "type": "prereq",
+   "map": "embedded"
+  },
+  {
+   "from": "embedded/gpio",
+   "to": "embedded/debounce",
+   "type": "prereq",
+   "map": "embedded"
+  },
+  {
+   "from": "embedded/registers",
+   "to": "embedded/timers",
+   "type": "prereq",
+   "map": "embedded"
+  },
+  {
+   "from": "embedded/timers",
+   "to": "embedded/pwm",
+   "type": "prereq",
+   "map": "embedded"
+  },
+  {
+   "from": "embedded/timing",
+   "to": "embedded/pwm",
+   "type": "prereq",
+   "map": "embedded"
+  },
+  {
+   "from": "embedded/timers",
+   "to": "embedded/interrupts",
+   "type": "prereq",
+   "map": "embedded"
+  },
+  {
+   "from": "developer/concurrency",
+   "to": "embedded/interrupts",
+   "type": "prereq",
+   "map": "embedded"
+  },
+  {
+   "from": "embedded/misc-volatile",
+   "to": "embedded/interrupts",
+   "type": "counter",
+   "map": "embedded"
+  },
+  {
+   "from": "embedded/registers",
+   "to": "embedded/adc",
+   "type": "prereq",
+   "map": "embedded"
+  },
+  {
+   "from": "electrical/sampling",
+   "to": "embedded/adc",
+   "type": "prereq",
+   "map": "embedded"
+  },
+  {
+   "from": "embedded/registers",
+   "to": "embedded/uart",
+   "type": "prereq",
+   "map": "embedded"
+  },
+  {
+   "from": "embedded/uart",
+   "to": "embedded/buses",
+   "type": "prereq",
+   "map": "embedded"
+  },
+  {
+   "from": "embedded/debounce",
+   "to": "embedded/fsm",
+   "type": "prereq",
+   "map": "embedded"
+  },
+  {
+   "from": "embedded/interrupts",
+   "to": "embedded/rtos",
+   "type": "prereq",
+   "map": "embedded"
+  },
+  {
+   "from": "embedded/fsm",
+   "to": "embedded/rtos",
+   "type": "prereq",
+   "map": "embedded"
+  },
+  {
+   "from": "embedded/interrupts",
+   "to": "embedded/lowpower",
+   "type": "prereq",
+   "map": "embedded"
+  },
+  {
+   "from": "embedded/buses",
+   "to": "embedded/hwdebug",
+   "type": "prereq",
+   "map": "embedded"
+  },
+  {
+   "from": "embedded/adc",
+   "to": "embedded/hwdebug",
+   "type": "prereq",
+   "map": "embedded"
+  },
+  {
+   "from": "physics/forces",
+   "to": "mechanical/statics",
+   "type": "prereq",
+   "map": "mechanical"
+  },
+  {
+   "from": "physics/vectors",
+   "to": "mechanical/statics",
+   "type": "prereq",
+   "map": "mechanical"
+  },
+  {
+   "from": "mechanical/statics",
+   "to": "mechanical/trusses",
+   "type": "prereq",
+   "map": "mechanical"
+  },
+  {
+   "from": "mechanical/statics",
+   "to": "mechanical/stress",
+   "type": "prereq",
+   "map": "mechanical"
+  },
+  {
+   "from": "mechanical/stress",
+   "to": "mechanical/materials",
+   "type": "prereq",
+   "map": "mechanical"
+  },
+  {
+   "from": "mechanical/misc-stiff",
+   "to": "mechanical/materials",
+   "type": "counter",
+   "map": "mechanical"
+  },
+  {
+   "from": "mechanical/stress",
+   "to": "mechanical/beams",
+   "type": "prereq",
+   "map": "mechanical"
+  },
+  {
+   "from": "mathematics/integrals",
+   "to": "mechanical/beams",
+   "type": "prereq",
+   "map": "mechanical"
+  },
+  {
+   "from": "mechanical/misc-middle",
+   "to": "mechanical/beams",
+   "type": "counter",
+   "map": "mechanical"
+  },
+  {
+   "from": "mechanical/stress",
+   "to": "mechanical/torsion",
+   "type": "prereq",
+   "map": "mechanical"
+  },
+  {
+   "from": "physics/rotation",
+   "to": "mechanical/torsion",
+   "type": "prereq",
+   "map": "mechanical"
+  },
+  {
+   "from": "mechanical/beams",
+   "to": "mechanical/buckling",
+   "type": "prereq",
+   "map": "mechanical"
+  },
+  {
+   "from": "mechanical/materials",
+   "to": "mechanical/fatigue",
+   "type": "prereq",
+   "map": "mechanical"
+  },
+  {
+   "from": "mechanical/beams",
+   "to": "mechanical/fatigue",
+   "type": "prereq",
+   "map": "mechanical"
+  },
+  {
+   "from": "mechanical/misc-once",
+   "to": "mechanical/fatigue",
+   "type": "counter",
+   "map": "mechanical"
+  },
+  {
+   "from": "physics/shm",
+   "to": "mechanical/vibration",
+   "type": "prereq",
+   "map": "mechanical"
+  },
+  {
+   "from": "mechanical/beams",
+   "to": "mechanical/vibration",
+   "type": "prereq",
+   "map": "mechanical"
+  },
+  {
+   "from": "mechanical/statics",
+   "to": "mechanical/mechanisms",
+   "type": "prereq",
+   "map": "mechanical"
+  },
+  {
+   "from": "physics/entropy",
+   "to": "mechanical/thermocycles",
+   "type": "prereq",
+   "map": "mechanical"
+  },
+  {
+   "from": "physics/energy",
+   "to": "mechanical/fluids",
+   "type": "prereq",
+   "map": "mechanical"
+  },
+  {
+   "from": "mechanical/thermocycles",
+   "to": "mechanical/heat",
+   "type": "prereq",
+   "map": "mechanical"
+  },
+  {
+   "from": "mechanical/fluids",
+   "to": "mechanical/heat",
+   "type": "prereq",
+   "map": "mechanical"
+  },
+  {
+   "from": "mechanical/materials",
+   "to": "mechanical/tolerances",
+   "type": "prereq",
+   "map": "mechanical"
+  },
+  {
+   "from": "mechanical/tolerances",
+   "to": "mechanical/dfm",
+   "type": "prereq",
+   "map": "mechanical"
+  },
+  {
+   "from": "mechanical/beams",
+   "to": "mechanical/fea",
+   "type": "prereq",
+   "map": "mechanical"
+  },
+  {
+   "from": "mathematics/linalg",
+   "to": "mechanical/fea",
+   "type": "prereq",
+   "map": "mechanical"
+  },
+  {
+   "from": "mechanical/misc-fea",
+   "to": "mechanical/fea",
+   "type": "counter",
+   "map": "mechanical"
+  },
   {
    "from": "developer/shell",
    "to": "developer/git",
@@ -1572,419 +4232,149 @@ window.DULTA_MAPS = {
    "map": "learning"
   },
   {
-   "from": "mathematics/logic",
-   "to": "mathematics/proof",
+   "from": "agents/context",
+   "to": "agents/outcomes",
    "type": "prereq",
-   "map": "mathematics"
+   "map": "agents"
   },
   {
-   "from": "mathematics/logic",
-   "to": "mathematics/functions",
-   "type": "prereq",
-   "map": "mathematics"
-  },
-  {
-   "from": "mathematics/functions",
-   "to": "mathematics/limits",
-   "type": "prereq",
-   "map": "mathematics"
-  },
-  {
-   "from": "mathematics/proof",
-   "to": "mathematics/limits",
-   "type": "prereq",
-   "map": "mathematics"
-  },
-  {
-   "from": "mathematics/misc-point9",
-   "to": "mathematics/limits",
+   "from": "agents/misc-remember",
+   "to": "agents/context",
    "type": "counter",
-   "map": "mathematics"
+   "map": "agents"
   },
   {
-   "from": "mathematics/limits",
-   "to": "mathematics/derivatives",
+   "from": "learning/goals",
+   "to": "agents/outcomes",
    "type": "prereq",
-   "map": "mathematics"
+   "map": "agents"
   },
   {
-   "from": "mathematics/limits",
-   "to": "mathematics/integrals",
+   "from": "agents/context",
+   "to": "agents/anchors",
    "type": "prereq",
-   "map": "mathematics"
+   "map": "agents"
   },
   {
-   "from": "mathematics/derivatives",
-   "to": "mathematics/ftc",
+   "from": "agents/context",
+   "to": "agents/examples",
    "type": "prereq",
-   "map": "mathematics"
+   "map": "agents"
   },
   {
-   "from": "mathematics/integrals",
-   "to": "mathematics/ftc",
+   "from": "learning/worked",
+   "to": "agents/examples",
    "type": "prereq",
-   "map": "mathematics"
+   "map": "agents"
   },
   {
-   "from": "mathematics/limits",
-   "to": "mathematics/series",
-   "type": "prereq",
-   "map": "mathematics"
-  },
-  {
-   "from": "mathematics/ftc",
-   "to": "mathematics/series",
-   "type": "prereq",
-   "map": "mathematics"
-  },
-  {
-   "from": "mathematics/functions",
-   "to": "mathematics/linalg",
-   "type": "prereq",
-   "map": "mathematics"
-  },
-  {
-   "from": "mathematics/misc-commute",
-   "to": "mathematics/linalg",
+   "from": "agents/misc-more",
+   "to": "agents/examples",
    "type": "counter",
-   "map": "mathematics"
+   "map": "agents"
   },
   {
-   "from": "mathematics/linalg",
-   "to": "mathematics/eigen",
+   "from": "agents/outcomes",
+   "to": "agents/evals",
    "type": "prereq",
-   "map": "mathematics"
+   "map": "agents"
   },
   {
-   "from": "mathematics/functions",
-   "to": "mathematics/complex",
+   "from": "agents/examples",
+   "to": "agents/evals",
    "type": "prereq",
-   "map": "mathematics"
+   "map": "agents"
   },
   {
-   "from": "mathematics/ftc",
-   "to": "mathematics/diffeq",
+   "from": "agents/evals",
+   "to": "agents/contamination",
    "type": "prereq",
-   "map": "mathematics"
+   "map": "agents"
   },
   {
-   "from": "mathematics/complex",
-   "to": "mathematics/diffeq",
-   "type": "prereq",
-   "map": "mathematics"
-  },
-  {
-   "from": "mathematics/eigen",
-   "to": "mathematics/diffeq",
-   "type": "prereq",
-   "map": "mathematics"
-  },
-  {
-   "from": "mathematics/derivatives",
-   "to": "mathematics/multivar",
-   "type": "prereq",
-   "map": "mathematics"
-  },
-  {
-   "from": "mathematics/linalg",
-   "to": "mathematics/multivar",
-   "type": "prereq",
-   "map": "mathematics"
-  },
-  {
-   "from": "mathematics/multivar",
-   "to": "mathematics/vectorcalc",
-   "type": "prereq",
-   "map": "mathematics"
-  },
-  {
-   "from": "mathematics/ftc",
-   "to": "mathematics/vectorcalc",
-   "type": "prereq",
-   "map": "mathematics"
-  },
-  {
-   "from": "mathematics/series",
-   "to": "mathematics/fourier",
-   "type": "prereq",
-   "map": "mathematics"
-  },
-  {
-   "from": "mathematics/complex",
-   "to": "mathematics/fourier",
-   "type": "prereq",
-   "map": "mathematics"
-  },
-  {
-   "from": "mathematics/logic",
-   "to": "mathematics/probability",
-   "type": "prereq",
-   "map": "mathematics"
-  },
-  {
-   "from": "mathematics/misc-gambler",
-   "to": "mathematics/probability",
+   "from": "agents/misc-selfgrade",
+   "to": "agents/contamination",
    "type": "counter",
-   "map": "mathematics"
+   "map": "agents"
   },
   {
-   "from": "mathematics/probability",
-   "to": "mathematics/statistics",
+   "from": "agents/anchors",
+   "to": "agents/skills",
    "type": "prereq",
-   "map": "mathematics"
+   "map": "agents"
   },
   {
-   "from": "mathematics/integrals",
-   "to": "mathematics/statistics",
+   "from": "agents/examples",
+   "to": "agents/skills",
    "type": "prereq",
-   "map": "mathematics"
+   "map": "agents"
   },
   {
-   "from": "mathematics/misc-corr",
-   "to": "mathematics/statistics",
-   "type": "counter",
-   "map": "mathematics"
-  },
-  {
-   "from": "physics/measurement",
-   "to": "physics/dimensions",
+   "from": "agents/skills",
+   "to": "agents/coldstart",
    "type": "prereq",
-   "map": "physics"
+   "map": "agents"
   },
   {
-   "from": "physics/dimensions",
-   "to": "physics/kinematics",
+   "from": "agents/evals",
+   "to": "agents/coldstart",
    "type": "prereq",
-   "map": "physics"
+   "map": "agents"
   },
   {
-   "from": "physics/vectors",
-   "to": "physics/kinematics",
+   "from": "learning/retrieval",
+   "to": "agents/coldstart",
    "type": "prereq",
-   "map": "physics"
+   "map": "agents"
   },
   {
-   "from": "mathematics/derivatives",
-   "to": "physics/kinematics",
+   "from": "agents/contamination",
+   "to": "agents/panels",
    "type": "prereq",
-   "map": "physics"
+   "map": "agents"
   },
   {
-   "from": "physics/kinematics",
-   "to": "physics/newton",
+   "from": "developer/agents",
+   "to": "agents/tools",
    "type": "prereq",
-   "map": "physics"
+   "map": "agents"
   },
   {
-   "from": "physics/misc-impetus",
-   "to": "physics/newton",
-   "type": "counter",
-   "map": "physics"
-  },
-  {
-   "from": "physics/misc-heavier",
-   "to": "physics/newton",
-   "type": "counter",
-   "map": "physics"
-  },
-  {
-   "from": "physics/newton",
-   "to": "physics/forces",
+   "from": "agents/skills",
+   "to": "agents/tools",
    "type": "prereq",
-   "map": "physics"
+   "map": "agents"
   },
   {
-   "from": "physics/forces",
-   "to": "physics/circular",
+   "from": "agents/coldstart",
+   "to": "agents/memory",
    "type": "prereq",
-   "map": "physics"
+   "map": "agents"
   },
   {
-   "from": "physics/misc-centrifugal",
-   "to": "physics/circular",
-   "type": "counter",
-   "map": "physics"
-  },
-  {
-   "from": "physics/forces",
-   "to": "physics/work",
+   "from": "agents/panels",
+   "to": "agents/drift",
    "type": "prereq",
-   "map": "physics"
+   "map": "agents"
   },
   {
-   "from": "physics/work",
-   "to": "physics/energy",
+   "from": "agents/memory",
+   "to": "agents/drift",
    "type": "prereq",
-   "map": "physics"
+   "map": "agents"
   },
   {
-   "from": "physics/newton",
-   "to": "physics/momentum",
+   "from": "agents/coldstart",
+   "to": "agents/agenttransfer",
    "type": "prereq",
-   "map": "physics"
+   "map": "agents"
   },
   {
-   "from": "physics/momentum",
-   "to": "physics/rotation",
+   "from": "learning/transfer",
+   "to": "agents/agenttransfer",
    "type": "prereq",
-   "map": "physics"
-  },
-  {
-   "from": "physics/circular",
-   "to": "physics/rotation",
-   "type": "prereq",
-   "map": "physics"
-  },
-  {
-   "from": "physics/circular",
-   "to": "physics/gravitation",
-   "type": "prereq",
-   "map": "physics"
-  },
-  {
-   "from": "physics/energy",
-   "to": "physics/gravitation",
-   "type": "prereq",
-   "map": "physics"
-  },
-  {
-   "from": "physics/forces",
-   "to": "physics/shm",
-   "type": "prereq",
-   "map": "physics"
-  },
-  {
-   "from": "mathematics/diffeq",
-   "to": "physics/shm",
-   "type": "prereq",
-   "map": "physics"
-  },
-  {
-   "from": "physics/shm",
-   "to": "physics/waves",
-   "type": "prereq",
-   "map": "physics"
-  },
-  {
-   "from": "physics/energy",
-   "to": "physics/thermo",
-   "type": "prereq",
-   "map": "physics"
-  },
-  {
-   "from": "physics/misc-heat",
-   "to": "physics/thermo",
-   "type": "counter",
-   "map": "physics"
-  },
-  {
-   "from": "physics/thermo",
-   "to": "physics/entropy",
-   "type": "prereq",
-   "map": "physics"
-  },
-  {
-   "from": "physics/entropy",
-   "to": "physics/statmech",
-   "type": "prereq",
-   "map": "physics"
-  },
-  {
-   "from": "mathematics/probability",
-   "to": "physics/statmech",
-   "type": "prereq",
-   "map": "physics"
-  },
-  {
-   "from": "physics/forces",
-   "to": "physics/electrostatics",
-   "type": "prereq",
-   "map": "physics"
-  },
-  {
-   "from": "physics/electrostatics",
-   "to": "physics/circuits",
-   "type": "prereq",
-   "map": "physics"
-  },
-  {
-   "from": "physics/misc-current",
-   "to": "physics/circuits",
-   "type": "counter",
-   "map": "physics"
-  },
-  {
-   "from": "physics/circuits",
-   "to": "physics/magnetism",
-   "type": "prereq",
-   "map": "physics"
-  },
-  {
-   "from": "physics/magnetism",
-   "to": "physics/maxwell",
-   "type": "prereq",
-   "map": "physics"
-  },
-  {
-   "from": "mathematics/vectorcalc",
-   "to": "physics/maxwell",
-   "type": "prereq",
-   "map": "physics"
-  },
-  {
-   "from": "physics/maxwell",
-   "to": "physics/optics",
-   "type": "prereq",
-   "map": "physics"
-  },
-  {
-   "from": "physics/waves",
-   "to": "physics/optics",
-   "type": "prereq",
-   "map": "physics"
-  },
-  {
-   "from": "physics/maxwell",
-   "to": "physics/relativity",
-   "type": "prereq",
-   "map": "physics"
-  },
-  {
-   "from": "physics/energy",
-   "to": "physics/lagrangian",
-   "type": "prereq",
-   "map": "physics"
-  },
-  {
-   "from": "physics/rotation",
-   "to": "physics/lagrangian",
-   "type": "prereq",
-   "map": "physics"
-  },
-  {
-   "from": "physics/waves",
-   "to": "physics/quantum",
-   "type": "prereq",
-   "map": "physics"
-  },
-  {
-   "from": "physics/statmech",
-   "to": "physics/quantum",
-   "type": "prereq",
-   "map": "physics"
-  },
-  {
-   "from": "mathematics/linalg",
-   "to": "physics/quantum",
-   "type": "prereq",
-   "map": "physics"
-  },
-  {
-   "from": "physics/misc-orbits",
-   "to": "physics/quantum",
-   "type": "counter",
-   "map": "physics"
+   "map": "agents"
   }
  ]
 };
-window.DULTA_ANCHOR_GRAPH = "flowchart LR\n  subgraph STANCE[\"Stance: Why Learn, Why Teach\"]\n    dewey[\"Experience and Education (John Dewey)\"]:::stance\n    freire[\"Pedagogy of the Oppressed (Paulo Freire)\"]:::stance\n    hooks[\"Teaching to Transgress (bell hooks)\"]:::stance\n    papertM[\"Mindstorms (Seymour Papert)\"]:::stance\n    whitehead[\"The Aims of Education (Alfred North Whitehead)\"]:::stance\n    ranciere[\"The Ignorant Schoolmaster (Jacques Rancière)\"]:::stance\n    brunerP[\"The Process of Education (Jerome Bruner)\"]:::stance\n    feynmanL[\"The Feynman Lectures on Physics (Richard Feynman)\"]:::stance\n    illich[\"Deschooling Society (Ivan Illich)\"]:::stance\n  end\n  subgraph RULES[\"Rules: The Learning Sciences to Master First\"]\n    zpd[\"Zone of Proximal Development (Lev Vygotsky)\"]:::rules\n    scaffold[\"Scaffolding (Wood, Bruner, Ross)\"]:::rules\n    clt[\"Cognitive Load Theory (John Sweller)\"]:::rules\n    worked[\"Worked-Example Effect (Sweller, Cooper)\"]:::rules\n    mayer[\"Multimedia Learning (Richard Mayer)\"]:::rules\n    cowan[\"The Magical Number 4 in Working Memory (Nelson Cowan)\"]:::rules\n    bloom[\"Bloom's Taxonomy, revised (Anderson, Krathwohl)\"]:::rules\n    solo[\"SOLO Taxonomy (John Biggs, Kevin Collis)\"]:::rules\n    align[\"Constructive Alignment (John Biggs)\"]:::rules\n    ubd[\"Understanding by Design (Grant Wiggins, Jay McTighe)\"]:::rules\n    testing[\"The Testing Effect (Henry Roediger, Jeffrey Karpicke)\"]:::rules\n    spacing[\"The Spacing Effect (Hermann Ebbinghaus)\"]:::rules\n    interleave[\"Interleaved Practice (Doug Rohrer)\"]:::rules\n    desirable[\"Desirable Difficulties (Robert Bjork, Elizabeth Bjork)\"]:::rules\n    stick[\"Make It Stick (Brown, Roediger, McDaniel)\"]:::rules\n    hpl[\"How People Learn (Bransford, Brown, Cocking)\"]:::rules\n    hlw[\"How Learning Works (Ambrose et al.)\"]:::rules\n    mastery[\"Mastery Learning and the 2 Sigma Problem (Benjamin Bloom)\"]:::rules\n    deliberate[\"Deliberate Practice (K. Anders Ericsson)\"]:::rules\n    blackbox[\"Inside the Black Box: Formative Assessment (Paul Black, Dylan Wiliam)\"]:::rules\n    selfexp[\"Self-Explanation Effect (Michelene Chi)\"]:::rules\n    icap[\"ICAP Framework (Michelene Chi, Ruth Wylie)\"]:::rules\n    udl[\"Universal Design for Learning (David Rose, CAST)\"]:::rules\n  end\n  subgraph BREAK[\"Breakers: Practices That Break the Lecture\"]\n    threshold[\"Threshold Concepts (Jan Meyer, Ray Land)\"]:::break\n    productive[\"Productive Failure (Manu Kapur)\"]:::break\n    conflict[\"Conceptual Change (Posner, Strike, Hewson, Gertzog)\"]:::break\n    poe[\"Predict-Observe-Explain (Richard White, Richard Gunstone)\"]:::break\n    peer[\"Peer Instruction (Eric Mazur)\"]:::break\n    modeling[\"Modeling Instruction (David Hestenes)\"]:::break\n    isle[\"Investigative Science Learning Environment (Eugenia Etkina)\"]:::break\n    pbl[\"Problem-Based Learning (Howard Barrows)\"]:::break\n    construct[\"Constructionism (Seymour Papert, Idit Harel)\"]:::break\n    socratic[\"Socratic Elenchus (Plato, Meno)\"]:::break\n    confusion[\"Confusion Can Be Beneficial (Sidney D'Mello)\"]:::break\n    flipped[\"Flipped Classroom (Bergmann, Sams)\"]:::break\n  end\n  subgraph EVIDENCE[\"Evidence: Discipline-Based Education Research\"]\n    fci[\"Force Concept Inventory (Hestenes, Wells, Swackhamer)\"]:::evidence\n    hake[\"Interactive-Engagement versus Traditional Methods (Richard Hake)\"]:::evidence\n    freeman[\"Active Learning Increases Student Performance (Freeman et al.)\"]:::evidence\n    wieman[\"Improving How Universities Teach Science (Carl Wieman)\"]:::evidence\n    duboulay[\"Some Difficulties of Learning to Program (Benedict du Boulay)\"]:::evidence\n    sorva[\"Notional Machines in Introductory Programming (Juha Sorva)\"]:::evidence\n    tallvinner[\"Concept Image and Concept Definition (David Tall, Shlomo Vinner)\"]:::evidence\n    kirschner[\"Why Minimal Guidance During Instruction Does Not Work (Kirschner, Sweller, Clark)\"]:::evidence\n    pashler[\"Learning Styles: Concepts and Evidence (Pashler et al.)\"]:::evidence\n    dunlosky[\"Improving Students' Learning with Effective Techniques (Dunlosky et al.)\"]:::evidence\n    steele[\"Whistling Vivaldi: Stereotype Threat (Claude Steele)\"]:::evidence\n  end\n  subgraph MAPS[\"Domain Maps: Knowledge as a Graph\"]\n    kst[\"Knowledge Space Theory (Jean-Paul Doignon, Jean-Claude Falmagne)\"]:::maps\n    novak[\"Concept Maps (Joseph Novak)\"]:::maps\n    ausubel[\"Meaningful Learning: Assimilation Theory (David Ausubel)\"]:::maps\n    gagne[\"Learning Hierarchies (Robert Gagné)\"]:::maps\n    polya[\"How to Solve It (George Pólya)\"]:::maps\n    sicp[\"Structure and Interpretation of Computer Programs (Abelson, Sussman)\"]:::maps\n    spiral[\"The Spiral Curriculum (Jerome Bruner)\"]:::maps\n  end\n  subgraph AGENTS[\"Learning with Agents\"]\n    tutoring[\"The Relative Effectiveness of Human Tutoring (Kurt VanLehn)\"]:::agents\n    cogtutor[\"Cognitive Tutors (John Anderson, Albert Corbett, Kenneth Koedinger)\"]:::agents\n    bkt[\"Bayesian Knowledge Tracing (Albert Corbett, John Anderson)\"]:::agents\n    generation[\"The Generation Effect (Norman Slamecka, Peter Graf)\"]:::agents\n    bastani[\"Generative AI Without Guardrails Can Harm Learning (Bastani et al.)\"]:::agents\n    hintladder[\"Hint Ladder (Pólya, Cognitive Tutors)\"]:::agents\n    mollick[\"Co-Intelligence (Ethan Mollick)\"]:::agents\n    calibration[\"Calibration of Confidence (Koriat, Dunlosky)\"]:::agents\n  end\n  subgraph REASON[\"Reason: Rationale for Every Move\"]\n    schon[\"The Reflective Practitioner (Donald Schön)\"]:::reason\n    brookfield[\"Becoming a Critically Reflective Teacher (Stephen Brookfield)\"]:::reason\n    kolb[\"Experiential Learning Cycle (David Kolb)\"]:::reason\n    toulmin[\"The Uses of Argument (Stephen Toulmin)\"]:::reason\n    shulman[\"Pedagogical Content Knowledge (Lee Shulman)\"]:::reason\n    lave[\"Situated Learning: Legitimate Peripheral Participation (Jean Lave, Etienne Wenger)\"]:::reason\n    collins[\"Cognitive Apprenticeship (Collins, Brown, Newman)\"]:::reason\n  end\n  subgraph CAT[\"Semantic Anchors Catalog (existing, reused)\"]\n    c_feynman[\"Feynman Technique\"]:::catalog\n    c_socr[\"Socratic Method\"]:::catalog\n    c_bloom[\"Bloom's Taxonomy\"]:::catalog\n    c_zpd[\"Zone of Proximal Development\"]:::catalog\n    c_dreyfus[\"Dreyfus Model of Skill Acquisition\"]:::catalog\n    c_curse[\"Curse of Knowledge\"]:::catalog\n    c_prog[\"Progressive Disclosure\"]:::catalog\n    c_diat[\"Diátaxis Framework\"]:::catalog\n    c_chest[\"Chesterton's Fence\"]:::catalog\n    c_premortem[\"Premortem\"]:::catalog\n    c_pugh[\"Pugh-Matrix\"]:::catalog\n    c_spike[\"Spike Solution\"]:::catalog\n    c_andon[\"Andon\"]:::catalog\n    c_jidoka[\"Jidoka\"]:::catalog\n    c_pdca[\"PDCA\"]:::catalog\n    c_goodhart[\"Goodhart's Law\"]:::catalog\n    c_dod[\"Definition of Done\"]:::catalog\n    c_adr[\"ADR according to Nygard\"]:::catalog\n    c_ssot[\"SSOT (Single Source of Truth)\"]:::catalog\n    c_first[\"First Principles Thinking\"]:::catalog\n    c_mutation[\"Mutation Testing\"]:::catalog\n  end\n  subgraph CRITICS[\"Critics: A Panel Divided by Theory of Learning\"]\n    crit_prox_vygotsky[\"Critic: Proximal (Vygotsky)\"]:::critic\n    crit_prox_bruner[\"Critic: Proximal (Bruner)\"]:::critic\n    crit_load_sweller[\"Critic: Load (Sweller)\"]:::critic\n    crit_load_mayer[\"Critic: Load (Mayer)\"]:::critic\n    crit_diff_bjork[\"Critic: Difficulty (Bjork)\"]:::critic\n    crit_diff_kapur[\"Critic: Difficulty (Kapur)\"]:::critic\n    crit_ret_roediger[\"Critic: Retrieval (Roediger)\"]:::critic\n    crit_ret_karpicke[\"Critic: Retrieval (Karpicke)\"]:::critic\n    crit_align_biggs[\"Critic: Alignment (Biggs)\"]:::critic\n    crit_align_wiggins[\"Critic: Alignment (Wiggins)\"]:::critic\n    crit_evid_hake[\"Critic: Evidence (Hake)\"]:::critic\n    crit_evid_wieman[\"Critic: Evidence (Wieman)\"]:::critic\n    crit_change_hestenes[\"Critic: Conceptual Change (Hestenes)\"]:::critic\n    crit_change_posner[\"Critic: Conceptual Change (Posner)\"]:::critic\n    crit_lib_freire[\"Critic: Liberation (Freire)\"]:::critic\n    crit_lib_hooks[\"Critic: Liberation (hooks)\"]:::critic\n    crit_inc_rose[\"Critic: Inclusion (Rose)\"]:::critic\n    crit_inc_steele[\"Critic: Inclusion (Steele)\"]:::critic\n    crit_exp_ericsson[\"Critic: Expertise (Ericsson)\"]:::critic\n    crit_exp_dreyfus[\"Critic: Expertise (Dreyfus)\"]:::critic\n    crit_guide_kirschner[\"Critic: Guidance (Kirschner)\"]:::critic\n    crit_guide_clark[\"Critic: Guidance (Clark)\"]:::critic\n    crit_make_papert[\"Critic: Making (Papert)\"]:::critic\n    crit_make_resnick[\"Critic: Making (Resnick)\"]:::critic\n    crit_clar_feynman[\"Critic: Clarity (Feynman)\"]:::critic\n    crit_clar_polya[\"Critic: Clarity (Pólya)\"]:::critic\n    crit_eng_chi[\"Critic: Engagement (Chi)\"]:::critic\n    crit_eng_mazur[\"Critic: Engagement (Mazur)\"]:::critic\n    crit_agent_bastani[\"Critic: Agent Risk (Bastani)\"]:::critic\n    crit_agent_vanlehn[\"Critic: Agent Risk (VanLehn)\"]:::critic\n    crit_meta_whitehead[\"Critic: Inert Ideas (Whitehead)\"]:::critic\n    crit_meta_ranciere[\"Critic: Emancipation (Rancière)\"]:::critic\n  end\n  subgraph LENSES[\"Lenses: Each Critic's Own Literature\"]\n    vygotskyMS[\"Mind in Society (Lev Vygotsky)\"]:::lens\n    brunerC[\"Toward a Theory of Instruction (Jerome Bruner)\"]:::lens\n    ericssonP[\"Peak (K. Anders Ericsson, Robert Pool)\"]:::lens\n    resnickL[\"Lifelong Kindergarten (Mitchel Resnick)\"]:::lens\n    mazurPI[\"Peer Instruction: A User's Manual (Eric Mazur)\"]:::lens\n    clarkE[\"Evidence-Based Training Methods (Ruth Colvin Clark)\"]:::lens\n    dreyfusM[\"Mind over Machine (Hubert Dreyfus, Stuart Dreyfus)\"]:::lens\n  end\n  subgraph PANEL[\"Panel Method: Convening Diverse Judges\"]\n    lerman[\"Critical Response Process (Liz Lerman, John Borstel)\"]:::panel\n    surowiecki[\"The Wisdom of Crowds (James Surowiecki)\"]:::panel\n    page[\"The Difference (Scott E. Page)\"]:::panel\n    brookfieldL[\"Four Lenses of Critical Reflection (Stephen Brookfield)\"]:::panel\n  end\n  subgraph ADAPT[\"Adaptation: How the Graph Rewrites Itself\"]\n    popper[\"Conjectures and Refutations (Karl Popper)\"]:::adapt\n    kuhn[\"The Structure of Scientific Revolutions (Thomas Kuhn)\"]:::adapt\n    argyris[\"Theory in Practice: Double-Loop Learning (Chris Argyris, Donald Schön)\"]:::adapt\n    meadows[\"Thinking in Systems (Donella Meadows)\"]:::adapt\n  end\n\n  dewey -->|experience as the ground of| kolb\n  dewey -->|inquiry precedes| pbl\n  freire -.->|banking model refused by| hooks\n  hooks -->|engaged pedagogy extends| freire\n  freire -.->|problem-posing counters pre-set outcomes of| align\n  papertM -->|objects to think with for| construct\n  whitehead -->|inert ideas are the failure of| transfer_note\n  transfer_note -->|tested only in a context unlike| c_dod\n  whitehead -->|use it or lose it for| testing\n  ranciere -.->|equality of intelligence counters explication in| worked\n  brunerP -->|any subject in honest form for| spiral\n  brunerP -->|coined with Wood and Ross| scaffold\n  feynmanL -->|plain-words test for| c_feynman\n  illich -.->|deschooling questions| mastery\n  zpd -->|operationalized as| scaffold\n  zpd -->|names| c_zpd\n  scaffold -->|faded as| worked\n  clt -->|grounds| worked\n  clt -->|capacity limit from| cowan\n  mayer -->|applies| clt\n  cowan -->|new elements per move capped by| clt\n  bloom -.->|structural alternative| solo\n  bloom -->|names| c_bloom\n  solo -->|levels for| align\n  align -->|outcomes first, like| ubd\n  ubd -->|backward design for| blackbox\n  testing -->|popularized in| stick\n  spacing -->|popularized in| stick\n  interleave -->|popularized in| stick\n  desirable -->|explains| interleave\n  desirable -->|explains| spacing\n  desirable -->|grounds| testing\n  hpl -->|synthesis for| hlw\n  mastery -->|motivates| tutoring\n  deliberate -->|edge of ability, like| zpd\n  blackbox -->|feedback loop for| c_pdca\n  selfexp -->|constructive mode in| icap\n  udl -->|multiple means for| mayer\n  threshold -->|transformative and troublesome, beyond| bloom\n  threshold -->|located in the domain map by| kst\n  productive -.->|counterpoint to| worked\n  productive -->|delayed instruction, like| desirable\n  conflict -->|anomaly first, like| kuhn\n  conflict -->|staged as| poe\n  poe -->|commit before observing, like| generation\n  peer -->|vote, discuss, revote for| icap\n  peer -->|measured by| fci\n  modeling -->|built against| fci\n  isle -->|observe, explain, test for| poe\n  pbl -.->|questioned by| kirschner\n  construct -.->|questioned by| kirschner\n  socratic -->|question before telling for| c_socr\n  socratic -->|productive confusion for| confusion\n  flipped -->|frees class time for| peer\n  fci -->|scored as gain in| hake\n  hake -->|meta-analysed in| freeman\n  freeman -->|policy case in| wieman\n  duboulay -->|formalized as| sorva\n  tallvinner -->|concept image vs definition for| conflict\n  kirschner -->|guidance argument from| clt\n  kirschner -.->|challenges| productive\n  pashler -.->|refutes matching styles; supports| udl\n  dunlosky -->|rates retrieval and spacing high, as in| stick\n  steele -->|threat raises load, per| clt\n  kst -->|outer fringe is the learner frontier for| zpd\n  kst -->|engine behind| cogtutor\n  novak -->|grounded in| ausubel\n  ausubel -->|prior knowledge first for| gagne\n  gagne -->|prerequisite hierarchy for| kst\n  polya -->|heuristics for| hintladder\n  sicp -->|abstraction ladder for| spiral\n  spiral -->|revisits nodes like| spacing\n  tutoring -->|realized by| cogtutor\n  cogtutor -->|learner model from| bkt\n  bkt -->|mastery estimate for| mastery\n  generation -->|attempt first for| hintladder\n  bastani -->|guardrail evidence for| hintladder\n  bastani -.->|warns| mollick\n  mollick -->|agent as partner for| tutoring\n  calibration -->|confidence vs correctness for| blackbox\n  schon -->|reflection-in-action for| c_spike\n  schon -->|reflection-on-action for| c_adr\n  brookfield -->|four lenses for| brookfieldL\n  kolb -->|cycle for| c_pdca\n  toulmin -->|claim, grounds, warrant for| c_adr\n  shulman -->|content-specific pedagogy for| threshold\n  lave -->|peripheral to full participation for| collins\n  collins -->|modeling, coaching, fading for| scaffold\n  c_dreyfus -->|novice follows rules in| worked\n  c_dreyfus -->|expert breaks rules in| productive\n  c_chest -->|know why the rule exists before| productive\n  c_curse -.->|hazard for| feynmanL\n  c_feynman -.->|antidote to| c_curse\n  c_prog -->|layered entry for| scaffold\n  c_diat -->|tutorial, how-to, reference, explanation for| c_adr\n  c_ssot -->|maps/*.json as the one record for| kst\n  c_goodhart -.->|do not teach to the| fci\n  c_mutation -->|remove a scaffold and see whether learning drops, to test| scaffold\n  c_first -->|rebuild from| c_feynman\n  crit_prox_vygotsky -->|judges reach with| vygotskyMS\n  crit_prox_bruner -->|judges scaffolding with| brunerC\n  crit_load_sweller -->|counts elements with| clt\n  crit_load_mayer -->|checks modality with| mayer\n  crit_diff_bjork -->|checks difficulty with| desirable\n  crit_diff_kapur -->|checks struggle with| productive\n  crit_ret_roediger -->|checks recall with| testing\n  crit_ret_karpicke -->|checks recall with| testing\n  crit_align_biggs -->|checks alignment with| align\n  crit_align_wiggins -->|checks backward design with| ubd\n  crit_evid_hake -->|measures gain with| hake\n  crit_evid_wieman -->|measures practice with| wieman\n  crit_change_hestenes -->|probes misconceptions with| fci\n  crit_change_posner -->|probes dissatisfaction with| conflict\n  crit_lib_freire -->|asks whose knowledge with| freire\n  crit_lib_hooks -->|asks who is present with| hooks\n  crit_inc_rose -->|checks multiple means with| udl\n  crit_inc_steele -->|checks threat with| steele\n  crit_exp_ericsson -->|checks practice with| ericssonP\n  crit_exp_dreyfus -->|checks stage with| dreyfusM\n  crit_guide_kirschner -->|demands guidance with| kirschner\n  crit_guide_clark -->|demands evidence with| clarkE\n  crit_make_papert -->|asks what was built with| papertM\n  crit_make_resnick -->|asks what was played with| resnickL\n  crit_clar_feynman -->|tests plain words with| c_feynman\n  crit_clar_polya -->|tests problem-solving with| polya\n  crit_eng_chi -->|classifies engagement with| icap\n  crit_eng_mazur -->|tests discussion with| mazurPI\n  crit_agent_bastani -->|tests over-reliance with| bastani\n  crit_agent_vanlehn -->|tests tutoring granularity with| tutoring\n  crit_meta_whitehead -->|hunts inert ideas with| whitehead\n  crit_meta_ranciere -->|refuses stultification with| ranciere\n  crit_guide_kirschner -.->|full guidance against| crit_diff_kapur\n  crit_guide_clark -.->|full guidance against| crit_make_papert\n  crit_diff_kapur -.->|struggle first against| crit_load_sweller\n  crit_load_sweller -.->|load limit against| crit_diff_bjork\n  crit_lib_freire -.->|problem-posing against| crit_align_biggs\n  crit_lib_hooks -.->|engaged presence against| crit_evid_hake\n  crit_make_resnick -.->|play against| crit_ret_roediger\n  crit_meta_ranciere -.->|emancipation against| crit_prox_bruner\n  crit_agent_bastani -.->|over-reliance against| crit_agent_vanlehn\n  crit_exp_dreyfus -.->|intuition against| crit_clar_polya\n  crit_eng_mazur -.->|discussion against| crit_clar_feynman\n  page -->|choose critics for maximum cognitive difference| CRITICS\n  surowiecki -->|keep judgments independent| CRITICS\n  lerman -->|four-step feedback for| CRITICS\n  brookfieldL -->|learner, colleague, theory, self lenses for| CRITICS\n  CRITICS -->|may pull| c_andon\n  c_andon -->|signals| c_jidoka\n  c_jidoka -->|stop and fix at the source in| c_adr\n  CRITICS -->|object to each move recorded in| c_adr\n  popper -->|treat every move as a conjecture to refute, for| CRITICS\n  CRITICS -.->|anomalies accumulate into| kuhn\n  argyris -->|double loop revises the governing criterion and the panel in| CRITICS\n  schon -->|co-author of double loop| argyris\n  meadows -->|leverage points for| argyris\n  c_pdca -->|check step is the critic round of| CRITICS\n  c_goodhart -.->|do not optimize the critic score of| CRITICS\n  zpd -->|Directed Learning: governing criterion of| c_adr\n  align -->|Directed Teaching: governing criterion of| c_adr\n  transfer_note[\"Far Transfer (Perkins, Salomon)\"]:::evidence\n  classDef stance fill:#fef3c7,stroke:#b45309,color:#111827\n  classDef rules fill:#e5e7eb,stroke:#374151,color:#111827\n  classDef break fill:#fce7f3,stroke:#be185d,color:#111827\n  classDef evidence fill:#ede9fe,stroke:#6d28d9,color:#111827\n  classDef maps fill:#dcfce7,stroke:#15803d,color:#111827\n  classDef agents fill:#ffedd5,stroke:#c2410c,color:#111827\n  classDef reason fill:#ccfbf1,stroke:#0f766e,color:#111827\n  classDef catalog fill:#dbeafe,stroke:#1d4ed8,color:#111827\n  classDef critic fill:#fee2e2,stroke:#b91c1c,color:#111827\n  classDef lens fill:#fae8ff,stroke:#a21caf,color:#111827\n  classDef panel fill:#cffafe,stroke:#0e7490,color:#111827\n  classDef adapt fill:#ecfccb,stroke:#4d7c0f,color:#111827\n  classDef kept fill:#bbf7d0,stroke:#15803d,color:#111827\n  classDef adapted fill:#fde68a,stroke:#b45309,color:#111827\n  classDef scrapped fill:#fecaca,stroke:#b91c1c,stroke-dasharray:4,color:#111827\n  classDef visited fill:#ffffff,stroke:#111827,stroke-width:3px,color:#111827";
+window.DULTA_ANCHOR_GRAPH = "flowchart LR\n  subgraph STANCE[\"Stance: Why Learn, Why Teach\"]\n    dewey[\"Experience and Education (John Dewey)\"]:::stance\n    freire[\"Pedagogy of the Oppressed (Paulo Freire)\"]:::stance\n    hooks[\"Teaching to Transgress (bell hooks)\"]:::stance\n    papertM[\"Mindstorms (Seymour Papert)\"]:::stance\n    whitehead[\"The Aims of Education (Alfred North Whitehead)\"]:::stance\n    ranciere[\"The Ignorant Schoolmaster (Jacques Rancière)\"]:::stance\n    brunerP[\"The Process of Education (Jerome Bruner)\"]:::stance\n    feynmanL[\"The Feynman Lectures on Physics (Richard Feynman)\"]:::stance\n    illich[\"Deschooling Society (Ivan Illich)\"]:::stance\n  end\n  subgraph RULES[\"Rules: The Learning Sciences to Master First\"]\n    zpd[\"Zone of Proximal Development (Lev Vygotsky)\"]:::rules\n    scaffold[\"Scaffolding (Wood, Bruner, Ross)\"]:::rules\n    clt[\"Cognitive Load Theory (John Sweller)\"]:::rules\n    worked[\"Worked-Example Effect (Sweller, Cooper)\"]:::rules\n    mayer[\"Multimedia Learning (Richard Mayer)\"]:::rules\n    cowan[\"The Magical Number 4 in Working Memory (Nelson Cowan)\"]:::rules\n    bloom[\"Bloom's Taxonomy, revised (Anderson, Krathwohl)\"]:::rules\n    solo[\"SOLO Taxonomy (John Biggs, Kevin Collis)\"]:::rules\n    align[\"Constructive Alignment (John Biggs)\"]:::rules\n    ubd[\"Understanding by Design (Grant Wiggins, Jay McTighe)\"]:::rules\n    testing[\"The Testing Effect (Henry Roediger, Jeffrey Karpicke)\"]:::rules\n    spacing[\"The Spacing Effect (Hermann Ebbinghaus)\"]:::rules\n    interleave[\"Interleaved Practice (Doug Rohrer)\"]:::rules\n    desirable[\"Desirable Difficulties (Robert Bjork, Elizabeth Bjork)\"]:::rules\n    stick[\"Make It Stick (Brown, Roediger, McDaniel)\"]:::rules\n    hpl[\"How People Learn (Bransford, Brown, Cocking)\"]:::rules\n    hlw[\"How Learning Works (Ambrose et al.)\"]:::rules\n    mastery[\"Mastery Learning and the 2 Sigma Problem (Benjamin Bloom)\"]:::rules\n    deliberate[\"Deliberate Practice (K. Anders Ericsson)\"]:::rules\n    blackbox[\"Inside the Black Box: Formative Assessment (Paul Black, Dylan Wiliam)\"]:::rules\n    selfexp[\"Self-Explanation Effect (Michelene Chi)\"]:::rules\n    icap[\"ICAP Framework (Michelene Chi, Ruth Wylie)\"]:::rules\n    udl[\"Universal Design for Learning (David Rose, CAST)\"]:::rules\n  end\n  subgraph BREAK[\"Breakers: Practices That Break the Lecture\"]\n    threshold[\"Threshold Concepts (Jan Meyer, Ray Land)\"]:::break\n    productive[\"Productive Failure (Manu Kapur)\"]:::break\n    conflict[\"Conceptual Change (Posner, Strike, Hewson, Gertzog)\"]:::break\n    poe[\"Predict-Observe-Explain (Richard White, Richard Gunstone)\"]:::break\n    peer[\"Peer Instruction (Eric Mazur)\"]:::break\n    modeling[\"Modeling Instruction (David Hestenes)\"]:::break\n    isle[\"Investigative Science Learning Environment (Eugenia Etkina)\"]:::break\n    pbl[\"Problem-Based Learning (Howard Barrows)\"]:::break\n    construct[\"Constructionism (Seymour Papert, Idit Harel)\"]:::break\n    socratic[\"Socratic Elenchus (Plato, Meno)\"]:::break\n    confusion[\"Confusion Can Be Beneficial (Sidney D'Mello)\"]:::break\n    flipped[\"Flipped Classroom (Bergmann, Sams)\"]:::break\n  end\n  subgraph EVIDENCE[\"Evidence: Discipline-Based Education Research\"]\n    fci[\"Force Concept Inventory (Hestenes, Wells, Swackhamer)\"]:::evidence\n    hake[\"Interactive-Engagement versus Traditional Methods (Richard Hake)\"]:::evidence\n    freeman[\"Active Learning Increases Student Performance (Freeman et al.)\"]:::evidence\n    wieman[\"Improving How Universities Teach Science (Carl Wieman)\"]:::evidence\n    duboulay[\"Some Difficulties of Learning to Program (Benedict du Boulay)\"]:::evidence\n    sorva[\"Notional Machines in Introductory Programming (Juha Sorva)\"]:::evidence\n    tallvinner[\"Concept Image and Concept Definition (David Tall, Shlomo Vinner)\"]:::evidence\n    kirschner[\"Why Minimal Guidance During Instruction Does Not Work (Kirschner, Sweller, Clark)\"]:::evidence\n    pashler[\"Learning Styles: Concepts and Evidence (Pashler et al.)\"]:::evidence\n    dunlosky[\"Improving Students' Learning with Effective Techniques (Dunlosky et al.)\"]:::evidence\n    steele[\"Whistling Vivaldi: Stereotype Threat (Claude Steele)\"]:::evidence\n  end\n  subgraph MAPS[\"Domain Maps: Knowledge as a Graph\"]\n    kst[\"Knowledge Space Theory (Jean-Paul Doignon, Jean-Claude Falmagne)\"]:::maps\n    novak[\"Concept Maps (Joseph Novak)\"]:::maps\n    ausubel[\"Meaningful Learning: Assimilation Theory (David Ausubel)\"]:::maps\n    gagne[\"Learning Hierarchies (Robert Gagné)\"]:::maps\n    polya[\"How to Solve It (George Pólya)\"]:::maps\n    sicp[\"Structure and Interpretation of Computer Programs (Abelson, Sussman)\"]:::maps\n    spiral[\"The Spiral Curriculum (Jerome Bruner)\"]:::maps\n  end\n  subgraph AGENTS[\"Learning with Agents\"]\n    tutoring[\"The Relative Effectiveness of Human Tutoring (Kurt VanLehn)\"]:::agents\n    cogtutor[\"Cognitive Tutors (John Anderson, Albert Corbett, Kenneth Koedinger)\"]:::agents\n    bkt[\"Bayesian Knowledge Tracing (Albert Corbett, John Anderson)\"]:::agents\n    generation[\"The Generation Effect (Norman Slamecka, Peter Graf)\"]:::agents\n    bastani[\"Generative AI Without Guardrails Can Harm Learning (Bastani et al.)\"]:::agents\n    hintladder[\"Hint Ladder (Pólya, Cognitive Tutors)\"]:::agents\n    mollick[\"Co-Intelligence (Ethan Mollick)\"]:::agents\n    calibration[\"Calibration of Confidence (Koriat, Dunlosky)\"]:::agents\n    fewshot[\"Language Models are Few-Shot Learners (Brown et al.)\"]:::agents\n    lostmiddle[\"Lost in the Middle (Liu et al.)\"]:::agents\n    llmjudge[\"Judging LLM-as-a-Judge (Zheng et al.)\"]:::agents\n    semanchors[\"Semantic Anchors (LLM Coding catalog)\"]:::agents\n    coldstart[\"Cold-Start Test (DULTA)\"]:::agents\n  end\n  subgraph REASON[\"Reason: Rationale for Every Move\"]\n    schon[\"The Reflective Practitioner (Donald Schön)\"]:::reason\n    brookfield[\"Becoming a Critically Reflective Teacher (Stephen Brookfield)\"]:::reason\n    kolb[\"Experiential Learning Cycle (David Kolb)\"]:::reason\n    toulmin[\"The Uses of Argument (Stephen Toulmin)\"]:::reason\n    shulman[\"Pedagogical Content Knowledge (Lee Shulman)\"]:::reason\n    lave[\"Situated Learning: Legitimate Peripheral Participation (Jean Lave, Etienne Wenger)\"]:::reason\n    collins[\"Cognitive Apprenticeship (Collins, Brown, Newman)\"]:::reason\n  end\n  subgraph CAT[\"Semantic Anchors Catalog (existing, reused)\"]\n    c_feynman[\"Feynman Technique\"]:::catalog\n    c_socr[\"Socratic Method\"]:::catalog\n    c_bloom[\"Bloom's Taxonomy\"]:::catalog\n    c_zpd[\"Zone of Proximal Development\"]:::catalog\n    c_dreyfus[\"Dreyfus Model of Skill Acquisition\"]:::catalog\n    c_curse[\"Curse of Knowledge\"]:::catalog\n    c_prog[\"Progressive Disclosure\"]:::catalog\n    c_diat[\"Diátaxis Framework\"]:::catalog\n    c_chest[\"Chesterton's Fence\"]:::catalog\n    c_premortem[\"Premortem\"]:::catalog\n    c_pugh[\"Pugh-Matrix\"]:::catalog\n    c_spike[\"Spike Solution\"]:::catalog\n    c_andon[\"Andon\"]:::catalog\n    c_jidoka[\"Jidoka\"]:::catalog\n    c_pdca[\"PDCA\"]:::catalog\n    c_goodhart[\"Goodhart's Law\"]:::catalog\n    c_dod[\"Definition of Done\"]:::catalog\n    c_adr[\"ADR according to Nygard\"]:::catalog\n    c_ssot[\"SSOT (Single Source of Truth)\"]:::catalog\n    c_first[\"First Principles Thinking\"]:::catalog\n    c_mutation[\"Mutation Testing\"]:::catalog\n  end\n  subgraph CRITICS[\"Critics: A Panel Divided by Theory of Learning\"]\n    crit_prox_vygotsky[\"Critic: Proximal (Vygotsky)\"]:::critic\n    crit_prox_bruner[\"Critic: Proximal (Bruner)\"]:::critic\n    crit_load_sweller[\"Critic: Load (Sweller)\"]:::critic\n    crit_load_mayer[\"Critic: Load (Mayer)\"]:::critic\n    crit_diff_bjork[\"Critic: Difficulty (Bjork)\"]:::critic\n    crit_diff_kapur[\"Critic: Difficulty (Kapur)\"]:::critic\n    crit_ret_roediger[\"Critic: Retrieval (Roediger)\"]:::critic\n    crit_ret_karpicke[\"Critic: Retrieval (Karpicke)\"]:::critic\n    crit_align_biggs[\"Critic: Alignment (Biggs)\"]:::critic\n    crit_align_wiggins[\"Critic: Alignment (Wiggins)\"]:::critic\n    crit_evid_hake[\"Critic: Evidence (Hake)\"]:::critic\n    crit_evid_wieman[\"Critic: Evidence (Wieman)\"]:::critic\n    crit_change_hestenes[\"Critic: Conceptual Change (Hestenes)\"]:::critic\n    crit_change_posner[\"Critic: Conceptual Change (Posner)\"]:::critic\n    crit_lib_freire[\"Critic: Liberation (Freire)\"]:::critic\n    crit_lib_hooks[\"Critic: Liberation (hooks)\"]:::critic\n    crit_inc_rose[\"Critic: Inclusion (Rose)\"]:::critic\n    crit_inc_steele[\"Critic: Inclusion (Steele)\"]:::critic\n    crit_exp_ericsson[\"Critic: Expertise (Ericsson)\"]:::critic\n    crit_exp_dreyfus[\"Critic: Expertise (Dreyfus)\"]:::critic\n    crit_guide_kirschner[\"Critic: Guidance (Kirschner)\"]:::critic\n    crit_guide_clark[\"Critic: Guidance (Clark)\"]:::critic\n    crit_make_papert[\"Critic: Making (Papert)\"]:::critic\n    crit_make_resnick[\"Critic: Making (Resnick)\"]:::critic\n    crit_clar_feynman[\"Critic: Clarity (Feynman)\"]:::critic\n    crit_clar_polya[\"Critic: Clarity (Pólya)\"]:::critic\n    crit_eng_chi[\"Critic: Engagement (Chi)\"]:::critic\n    crit_eng_mazur[\"Critic: Engagement (Mazur)\"]:::critic\n    crit_agent_bastani[\"Critic: Agent Risk (Bastani)\"]:::critic\n    crit_agent_vanlehn[\"Critic: Agent Risk (VanLehn)\"]:::critic\n    crit_meta_whitehead[\"Critic: Inert Ideas (Whitehead)\"]:::critic\n    crit_meta_ranciere[\"Critic: Emancipation (Rancière)\"]:::critic\n    crit_judge_zheng[\"Critic: Judge Bias (Zheng)\"]:::critic\n    crit_ctx_liu[\"Critic: Context Limits (Liu)\"]:::critic\n  end\n  subgraph LENSES[\"Lenses: Each Critic's Own Literature\"]\n    vygotskyMS[\"Mind in Society (Lev Vygotsky)\"]:::lens\n    brunerC[\"Toward a Theory of Instruction (Jerome Bruner)\"]:::lens\n    ericssonP[\"Peak (K. Anders Ericsson, Robert Pool)\"]:::lens\n    resnickL[\"Lifelong Kindergarten (Mitchel Resnick)\"]:::lens\n    mazurPI[\"Peer Instruction: A User's Manual (Eric Mazur)\"]:::lens\n    clarkE[\"Evidence-Based Training Methods (Ruth Colvin Clark)\"]:::lens\n    dreyfusM[\"Mind over Machine (Hubert Dreyfus, Stuart Dreyfus)\"]:::lens\n  end\n  subgraph PANEL[\"Panel Method: Convening Diverse Judges\"]\n    lerman[\"Critical Response Process (Liz Lerman, John Borstel)\"]:::panel\n    surowiecki[\"The Wisdom of Crowds (James Surowiecki)\"]:::panel\n    page[\"The Difference (Scott E. Page)\"]:::panel\n    brookfieldL[\"Four Lenses of Critical Reflection (Stephen Brookfield)\"]:::panel\n  end\n  subgraph ADAPT[\"Adaptation: How the Graph Rewrites Itself\"]\n    popper[\"Conjectures and Refutations (Karl Popper)\"]:::adapt\n    kuhn[\"The Structure of Scientific Revolutions (Thomas Kuhn)\"]:::adapt\n    argyris[\"Theory in Practice: Double-Loop Learning (Chris Argyris, Donald Schön)\"]:::adapt\n    meadows[\"Thinking in Systems (Donella Meadows)\"]:::adapt\n  end\n\n  dewey -->|experience as the ground of| kolb\n  dewey -->|inquiry precedes| pbl\n  freire -.->|banking model refused by| hooks\n  hooks -->|engaged pedagogy extends| freire\n  freire -.->|problem-posing counters pre-set outcomes of| align\n  papertM -->|objects to think with for| construct\n  whitehead -->|inert ideas are the failure of| transfer_note\n  transfer_note -->|tested only in a context unlike| c_dod\n  whitehead -->|use it or lose it for| testing\n  ranciere -.->|equality of intelligence counters explication in| worked\n  brunerP -->|any subject in honest form for| spiral\n  brunerP -->|coined with Wood and Ross| scaffold\n  feynmanL -->|plain-words test for| c_feynman\n  illich -.->|deschooling questions| mastery\n  zpd -->|operationalized as| scaffold\n  zpd -->|names| c_zpd\n  scaffold -->|faded as| worked\n  clt -->|grounds| worked\n  clt -->|capacity limit from| cowan\n  mayer -->|applies| clt\n  cowan -->|new elements per move capped by| clt\n  bloom -.->|structural alternative| solo\n  bloom -->|names| c_bloom\n  solo -->|levels for| align\n  align -->|outcomes first, like| ubd\n  ubd -->|backward design for| blackbox\n  testing -->|popularized in| stick\n  spacing -->|popularized in| stick\n  interleave -->|popularized in| stick\n  desirable -->|explains| interleave\n  desirable -->|explains| spacing\n  desirable -->|grounds| testing\n  hpl -->|synthesis for| hlw\n  mastery -->|motivates| tutoring\n  deliberate -->|edge of ability, like| zpd\n  blackbox -->|feedback loop for| c_pdca\n  selfexp -->|constructive mode in| icap\n  udl -->|multiple means for| mayer\n  threshold -->|transformative and troublesome, beyond| bloom\n  threshold -->|located in the domain map by| kst\n  productive -.->|counterpoint to| worked\n  productive -->|delayed instruction, like| desirable\n  conflict -->|anomaly first, like| kuhn\n  conflict -->|staged as| poe\n  poe -->|commit before observing, like| generation\n  peer -->|vote, discuss, revote for| icap\n  peer -->|measured by| fci\n  modeling -->|built against| fci\n  isle -->|observe, explain, test for| poe\n  pbl -.->|questioned by| kirschner\n  construct -.->|questioned by| kirschner\n  socratic -->|question before telling for| c_socr\n  socratic -->|productive confusion for| confusion\n  flipped -->|frees class time for| peer\n  fci -->|scored as gain in| hake\n  hake -->|meta-analysed in| freeman\n  freeman -->|policy case in| wieman\n  duboulay -->|formalized as| sorva\n  tallvinner -->|concept image vs definition for| conflict\n  kirschner -->|guidance argument from| clt\n  kirschner -.->|challenges| productive\n  pashler -.->|refutes matching styles; supports| udl\n  dunlosky -->|rates retrieval and spacing high, as in| stick\n  steele -->|threat raises load, per| clt\n  kst -->|outer fringe is the learner frontier for| zpd\n  kst -->|engine behind| cogtutor\n  novak -->|grounded in| ausubel\n  ausubel -->|prior knowledge first for| gagne\n  gagne -->|prerequisite hierarchy for| kst\n  polya -->|heuristics for| hintladder\n  sicp -->|abstraction ladder for| spiral\n  spiral -->|revisits nodes like| spacing\n  tutoring -->|realized by| cogtutor\n  cogtutor -->|learner model from| bkt\n  bkt -->|mastery estimate for| mastery\n  generation -->|attempt first for| hintladder\n  bastani -->|guardrail evidence for| hintladder\n  bastani -.->|warns| mollick\n  mollick -->|agent as partner for| tutoring\n  calibration -->|confidence vs correctness for| blackbox\n  fewshot -->|in-context examples, like| worked\n  semanchors -->|named methods compress instruction, per| clt\n  lostmiddle -.->|long notes dilute; caps context like| cowan\n  llmjudge -.->|the learner must not grade itself; grader independent, like| surowiecki\n  coldstart -->|retrieval by a fresh agent from notes alone, per| testing\n  coldstart -->|outer fringe measured cold, for| kst\n  generation -->|agent answers before reading sources, in| coldstart\n  crit_judge_zheng -->|checks grader independence with| llmjudge\n  crit_ctx_liu -->|checks note length and placement with| lostmiddle\n  crit_ctx_liu -.->|shorter notes against| crit_clar_feynman\n  crit_judge_zheng -.->|independent grading against| crit_agent_vanlehn\n  c_goodhart -.->|do not teach the agent to the| coldstart\n  schon -->|reflection-in-action for| c_spike\n  schon -->|reflection-on-action for| c_adr\n  brookfield -->|four lenses for| brookfieldL\n  kolb -->|cycle for| c_pdca\n  toulmin -->|claim, grounds, warrant for| c_adr\n  shulman -->|content-specific pedagogy for| threshold\n  lave -->|peripheral to full participation for| collins\n  collins -->|modeling, coaching, fading for| scaffold\n  c_dreyfus -->|novice follows rules in| worked\n  c_dreyfus -->|expert breaks rules in| productive\n  c_chest -->|know why the rule exists before| productive\n  c_curse -.->|hazard for| feynmanL\n  c_feynman -.->|antidote to| c_curse\n  c_prog -->|layered entry for| scaffold\n  c_diat -->|tutorial, how-to, reference, explanation for| c_adr\n  c_ssot -->|maps/*.json as the one record for| kst\n  c_goodhart -.->|do not teach to the| fci\n  c_mutation -->|remove a scaffold and see whether learning drops, to test| scaffold\n  c_first -->|rebuild from| c_feynman\n  crit_prox_vygotsky -->|judges reach with| vygotskyMS\n  crit_prox_bruner -->|judges scaffolding with| brunerC\n  crit_load_sweller -->|counts elements with| clt\n  crit_load_mayer -->|checks modality with| mayer\n  crit_diff_bjork -->|checks difficulty with| desirable\n  crit_diff_kapur -->|checks struggle with| productive\n  crit_ret_roediger -->|checks recall with| testing\n  crit_ret_karpicke -->|checks recall with| testing\n  crit_align_biggs -->|checks alignment with| align\n  crit_align_wiggins -->|checks backward design with| ubd\n  crit_evid_hake -->|measures gain with| hake\n  crit_evid_wieman -->|measures practice with| wieman\n  crit_change_hestenes -->|probes misconceptions with| fci\n  crit_change_posner -->|probes dissatisfaction with| conflict\n  crit_lib_freire -->|asks whose knowledge with| freire\n  crit_lib_hooks -->|asks who is present with| hooks\n  crit_inc_rose -->|checks multiple means with| udl\n  crit_inc_steele -->|checks threat with| steele\n  crit_exp_ericsson -->|checks practice with| ericssonP\n  crit_exp_dreyfus -->|checks stage with| dreyfusM\n  crit_guide_kirschner -->|demands guidance with| kirschner\n  crit_guide_clark -->|demands evidence with| clarkE\n  crit_make_papert -->|asks what was built with| papertM\n  crit_make_resnick -->|asks what was played with| resnickL\n  crit_clar_feynman -->|tests plain words with| c_feynman\n  crit_clar_polya -->|tests problem-solving with| polya\n  crit_eng_chi -->|classifies engagement with| icap\n  crit_eng_mazur -->|tests discussion with| mazurPI\n  crit_agent_bastani -->|tests over-reliance with| bastani\n  crit_agent_vanlehn -->|tests tutoring granularity with| tutoring\n  crit_meta_whitehead -->|hunts inert ideas with| whitehead\n  crit_meta_ranciere -->|refuses stultification with| ranciere\n  crit_guide_kirschner -.->|full guidance against| crit_diff_kapur\n  crit_guide_clark -.->|full guidance against| crit_make_papert\n  crit_diff_kapur -.->|struggle first against| crit_load_sweller\n  crit_load_sweller -.->|load limit against| crit_diff_bjork\n  crit_lib_freire -.->|problem-posing against| crit_align_biggs\n  crit_lib_hooks -.->|engaged presence against| crit_evid_hake\n  crit_make_resnick -.->|play against| crit_ret_roediger\n  crit_meta_ranciere -.->|emancipation against| crit_prox_bruner\n  crit_agent_bastani -.->|over-reliance against| crit_agent_vanlehn\n  crit_exp_dreyfus -.->|intuition against| crit_clar_polya\n  crit_eng_mazur -.->|discussion against| crit_clar_feynman\n  page -->|choose critics for maximum cognitive difference| CRITICS\n  surowiecki -->|keep judgments independent| CRITICS\n  lerman -->|four-step feedback for| CRITICS\n  brookfieldL -->|learner, colleague, theory, self lenses for| CRITICS\n  CRITICS -->|may pull| c_andon\n  c_andon -->|signals| c_jidoka\n  c_jidoka -->|stop and fix at the source in| c_adr\n  CRITICS -->|object to each move recorded in| c_adr\n  popper -->|treat every move as a conjecture to refute, for| CRITICS\n  CRITICS -.->|anomalies accumulate into| kuhn\n  argyris -->|double loop revises the governing criterion and the panel in| CRITICS\n  schon -->|co-author of double loop| argyris\n  meadows -->|leverage points for| argyris\n  c_pdca -->|check step is the critic round of| CRITICS\n  c_goodhart -.->|do not optimize the critic score of| CRITICS\n  zpd -->|Directed Learning: governing criterion of| c_adr\n  align -->|Directed Teaching: governing criterion of| c_adr\n  transfer_note[\"Far Transfer (Perkins, Salomon)\"]:::evidence\n  classDef stance fill:#fef3c7,stroke:#b45309,color:#111827\n  classDef rules fill:#e5e7eb,stroke:#374151,color:#111827\n  classDef break fill:#fce7f3,stroke:#be185d,color:#111827\n  classDef evidence fill:#ede9fe,stroke:#6d28d9,color:#111827\n  classDef maps fill:#dcfce7,stroke:#15803d,color:#111827\n  classDef agents fill:#ffedd5,stroke:#c2410c,color:#111827\n  classDef reason fill:#ccfbf1,stroke:#0f766e,color:#111827\n  classDef catalog fill:#dbeafe,stroke:#1d4ed8,color:#111827\n  classDef critic fill:#fee2e2,stroke:#b91c1c,color:#111827\n  classDef lens fill:#fae8ff,stroke:#a21caf,color:#111827\n  classDef panel fill:#cffafe,stroke:#0e7490,color:#111827\n  classDef adapt fill:#ecfccb,stroke:#4d7c0f,color:#111827\n  classDef kept fill:#bbf7d0,stroke:#15803d,color:#111827\n  classDef adapted fill:#fde68a,stroke:#b45309,color:#111827\n  classDef scrapped fill:#fecaca,stroke:#b91c1c,stroke-dasharray:4,color:#111827\n  classDef visited fill:#ffffff,stroke:#111827,stroke-width:3px,color:#111827";

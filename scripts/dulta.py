@@ -5,6 +5,8 @@ verdicts.
     python scripts/dulta.py validate
     python scripts/dulta.py render
     python scripts/dulta.py frontier --state learner.json [--map physics] [--today 2026-10-28]
+    python scripts/dulta.py quiz --map embedded --nodes gpio,timing [--key key.md]
+    python scripts/dulta.py leak NOTES.md [--map embedded]
     python scripts/dulta.py gain --pre 42 --post 71 [--max 100]
     python scripts/dulta.py align course.json
     python scripts/dulta.py panel <panel_dir> <seat> [<seat> ...]
@@ -26,12 +28,19 @@ LEITNER_DAYS = (1, 3, 7, 16, 35)  # review interval for box 0..4
 MIN_WORDS = 20  # a verdict names an anchor and points at the work
 
 
+# Display order: sciences, then engineering, then software and the two maps about learning itself.
+# Maps not listed here follow alphabetically.
+ORDER = ("physics", "mathematics", "chemistry", "biology", "electrical", "embedded", "mechanical",
+         "developer", "learning", "agents")
+
+
 def load_maps():
     maps = {}
     for path in sorted(MAPS.glob("*.json")):
         data = json.loads(path.read_text(encoding="utf-8"))
         maps[data["id"]] = data
-    return maps
+    rank = lambda mid: (ORDER.index(mid) if mid in ORDER else len(ORDER), mid)
+    return {mid: maps[mid] for mid in sorted(maps, key=rank)}
 
 
 def qualify(map_id, ref):
@@ -252,6 +261,56 @@ def cmd_frontier(args):
     return 0
 
 
+def cmd_quiz(args):
+    """Answer-key hygiene: print checks WITHOUT answers (for a human learner or a
+    learner agent's context) and write the key to a separate file for the grader."""
+    maps = load_maps()
+    nodes, edges = global_graph(maps)
+    if args.nodes:
+        keys = [qualify(args.map, k) if args.map else k for k in args.nodes.split(",")]
+    else:
+        keys = [k for k in nodes if not args.map or k.startswith(args.map + "/")]
+    missing = [k for k in keys if k not in nodes]
+    if missing:
+        print("unknown node(s): " + ", ".join(missing), file=sys.stderr)
+        return 1
+    lines = ["# Quiz", "", "Answer each item from memory, unaided. After each answer give a confidence: 20, 40, 60, 80 or 100%.", ""]
+    key = ["# Answer key (grader only; never place in the learner's context)", ""]
+    for i, k in enumerate(keys, 1):
+        lines.append(f"{i}. [{k}] {nodes[k]['check']}")
+        key.append(f"{i}. [{k}] {nodes[k]['answer']}")
+    print("\n".join(lines))
+    if args.key:
+        pathlib.Path(args.key).write_text("\n".join(key) + "\n", encoding="utf-8")
+        print(f"\n(answer key written to {args.key})", file=sys.stderr)
+    return 0
+
+
+def shingles(text, n=5):
+    words = "".join(c.lower() if c.isalnum() else " " for c in text).split()
+    return {" ".join(words[i:i + n]) for i in range(max(0, len(words) - n + 1))}
+
+
+def cmd_leak(args):
+    """Contamination check for agent learners: does the teaching material (notes,
+    skill file, prompt) contain the answer key? Flags any node whose answer shares
+    at least half of its 5-word shingles with the notes."""
+    maps = load_maps()
+    nodes, _ = global_graph(maps)
+    notes = shingles(pathlib.Path(args.notes).read_text(encoding="utf-8"))
+    leaks = []
+    for k, n in nodes.items():
+        if args.map and not k.startswith(args.map + "/"):
+            continue
+        ans = shingles(n["answer"])
+        if ans and len(ans & notes) / len(ans) >= 0.5:
+            leaks.append((k, len(ans & notes), len(ans)))
+    for k, hit, tot in leaks:
+        print(f"LEAK {k}: {hit}/{tot} answer shingles appear in {args.notes}")
+    print("clean" if not leaks else f"{len(leaks)} answer(s) leaked; held-out checks on these nodes are void")
+    return 1 if leaks else 0
+
+
 def cmd_gain(args):
     """Hake's normalized gain <g> = (post - pre) / (max - pre)."""
     if args.pre >= args.max:
@@ -314,6 +373,13 @@ def main(argv=None):
     f.add_argument("--state", required=True)
     f.add_argument("--map")
     f.add_argument("--today")
+    q = sub.add_parser("quiz")
+    q.add_argument("--map")
+    q.add_argument("--nodes", help="comma-separated node ids (qualified, or local to --map)")
+    q.add_argument("--key", help="file to write the answer key to")
+    lk = sub.add_parser("leak")
+    lk.add_argument("notes")
+    lk.add_argument("--map")
     g = sub.add_parser("gain")
     g.add_argument("--pre", type=float, required=True)
     g.add_argument("--post", type=float, required=True)
@@ -325,7 +391,7 @@ def main(argv=None):
     pn.add_argument("seats", nargs="+")
     args = p.parse_args(argv)
     return {"validate": cmd_validate, "render": cmd_render, "frontier": cmd_frontier,
-            "gain": cmd_gain, "align": cmd_align, "panel": cmd_panel}[args.cmd](args)
+            "quiz": cmd_quiz, "leak": cmd_leak, "gain": cmd_gain, "align": cmd_align, "panel": cmd_panel}[args.cmd](args)
 
 
 if __name__ == "__main__":

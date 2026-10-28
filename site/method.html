@@ -46,7 +46,8 @@
             <tr><td>KEEP-THE-RULE versus BREAK</td><td><b>Consolidate</b> (worked example, retrieval, spacing) versus <b>Cross</b> (a threshold concept, a productive failure, a cognitive conflict).</td></tr>
             <tr><td>Dotted counterpoints</td><td>Misconceptions in the domain map, and rival theories in the anchor graph. Every misconception attached to a node in use is probed or declined.</td></tr>
             <tr><td>Measure the move, never assume it</td><td>Mastery means an unaided answer with a confidence rating, never "I get it". Courses are measured by normalized gain and an alignment audit.</td></tr>
-            <tr><td>One subagent per literary reference</td><td>32 seats, each argued from a single learning scientist's own work: Vygotsky, Sweller, Bjork, Kapur, Biggs, Hake, hooks, Bastani and more.</td></tr>
+            <tr><td>One subagent per literary reference</td><td><span id="seatCount">34</span> seats, each argued from a single learning scientist's own work: Vygotsky, Sweller, Bjork, Kapur, Biggs, Hake, hooks, Bastani and more. Zheng (judge bias) and Liu (context limits) are required whenever the learner is an agent.</td></tr>
+            <tr><td>Measure, don't trust fluency</td><td>The learner can be a person or an AI agent. An agent counts as having learned only when a <b>fresh</b> agent, given just the notes, passes held-out checks graded by a separate agent. <span class="mono">dulta.py quiz</span> keeps answer keys apart, and <span class="mono">dulta.py leak</span> catches answers that slip into the notes.</td></tr>
             <tr><td>A verdict is a file</td><td>Each seat writes to <span class="mono">panel/R&lt;n&gt;/&lt;seat&gt;.md</span>, and <span class="mono">dulta.py panel</span> lists who reported.</td></tr>
             <tr><td>Re-measure what the artifact prints</td><td>Every score, gain or count shown to a learner is recomputed at the final state. The numbers on this site are computed from the same map data the command line reads.</td></tr>
             <tr><td>SSOT</td><td><span class="mono">maps/*.json</span> is the only record of the content. Every diagram, and this website, is generated from it.</td></tr>
@@ -124,11 +125,13 @@
       <div class="sec-head" style="margin:0">
         <span class="eyebrow">Command line</span>
         <h2>The tooling the skill calls.</h2>
-        <p class="lede">Standard-library Python with no dependencies. Validate the maps, render diagrams and site data from them, compute a learner's frontier, compute normalized gain, audit course alignment, and collect panel verdicts.</p>
+        <p class="lede">Standard-library Python with no dependencies. Validate the maps, render diagrams and site data from them, compute a learner's frontier, print quizzes with the answer key kept separate, check agent notes for leaked answers, compute normalized gain, audit course alignment, and collect panel verdicts.</p>
       </div>
       <pre>python scripts/dulta.py validate
 python scripts/dulta.py render
 python scripts/dulta.py frontier --state learner.json --map physics
+python scripts/dulta.py quiz --map embedded --nodes gpio,timing --key key.md
+python scripts/dulta.py leak NOTES.md
 python scripts/dulta.py gain --pre 42 --post 71
 python scripts/dulta.py align examples/course.json
 python scripts/dulta.py panel panel/R1 vygotsky bjork kapur</pre>
@@ -145,6 +148,7 @@ python scripts/dulta.py panel panel/R1 vygotsky bjork kapur</pre>
 <script>
 (function () {
   const box = document.getElementById("anchor");
+  document.getElementById("seatCount").textContent = (window.DULTA_ANCHOR_GRAPH.match(/:::critic/g) || []).length;
   async function render() {
     if (!window.mermaid) { box.textContent = "The graph renderer could not load. The source is in references/anchor-graph.md."; return; }
     const dark = (document.documentElement.getAttribute("data-theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")) === "dark";
