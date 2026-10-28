@@ -14,7 +14,9 @@ that will build it.
   threshold-crossing practices, discipline-based education research, learning and teaching with agents, 34 critic seats.
 - **[maps/](maps/)**: domain maps as JSON, the single source of truth. Physics, Mathematics,
   Electrical Engineering, Embedded Systems (microcontrollers), Mechanical Engineering, Chemistry, Biology,
-  Developer, Learning with Agents and Teaching Agents: 10 maps, 209 nodes. Each node carries an outcome, a retrieval check and an answer.
+  Developer, DevOps & SRE, Learning with Agents and Teaching Agents: 11 maps, 226 nodes.
+- **[tracks/careers.json](tracks/careers.json)**: 10 STEM career tracks (DevOps/SRE, software, embedded, electrical,
+  mechanical, physicist, chemist, life scientist, AI agent engineer, educator), each an ordered path across maps with a capstone. Each node carries an outcome, a retrieval check and an answer.
   Misconceptions hang off the concepts they block as dotted edges, and threshold concepts are flagged.
 - **[scripts/dulta.py](scripts/dulta.py)**: standard-library CLI used by the skill.
 - **[site/](site/)**: the website. Interactive map explorer with your learner frontier, six
@@ -41,7 +43,8 @@ checks graded by a separate agent. `quiz` keeps keys apart and `leak` checks the
 ## Command line
 
 ```bash
-python scripts/dulta.py validate                       # check every map: ids, edges, cycles, fields
+python scripts/dulta.py validate                       # check every map and track: ids, edges, cycles, fields
+python scripts/dulta.py audit                          # catalogue coverage: labs, probes, Bloom levels, tracks
 python scripts/dulta.py render                         # maps -> references/maps/*.md + site/assets/maps-data.js
 python scripts/dulta.py frontier --state examples/learner.json --map physics --today 2026-10-28
 python scripts/dulta.py quiz --map embedded --nodes gpio,timing --key key.md  # checks only; key apart

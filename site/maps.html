@@ -22,6 +22,7 @@
     <nav class="nav" aria-label="Main">
       <a href="index.html">Home</a>
       <a href="maps.html" aria-current="page">Maps</a>
+      <a href="careers.html">Careers</a>
       <a href="labs.html">Labs</a>
       <a href="method.html">Method</a>
     </nav>
@@ -34,6 +35,11 @@
     <span class="eyebrow">Domain maps</span>
     <h2 id="mapTitle">Maps</h2>
     <p class="lede" id="mapSummary"></p>
+    <div class="search">
+      <label for="q" class="sr-only">Search every map</label>
+      <input type="search" id="q" placeholder="Search every map: try “PWM”, “entropy” or “canary”" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="qResults">
+      <ul id="qResults" role="listbox" hidden></ul>
+    </div>
     <div class="tabs" role="tablist" aria-label="Choose a map" id="tabs"></div>
     <div class="statbar" id="stats" aria-live="polite"></div>
     <div class="legend" aria-label="Legend">

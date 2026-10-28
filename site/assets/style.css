@@ -18,6 +18,7 @@
   --chemistry: #6741d9;
   --biology: #2f9e44;
   --agents: #e8590c;
+  --devops: #1971c2;
   --threshold: #e8a10c;
   --misconception: #c92a2a;
   --mastered: #2b8a3e;
@@ -33,7 +34,7 @@
   :root:not([data-theme="light"]) {
     --paper: #0f1218; --paper-2: #151a22; --card: #171c25; --ink: #ede6d8; --ink-2: #cfc7b7; --muted: #9b9484;
     --line: #2a313d; --line-2: #3a4352; --physics: #ff8a4c; --mathematics: #8ea2ff; --developer: #3ddc97;
-    --learning: #ffc04d; --electrical: #f783ac; --embedded: #3bc9db; --mechanical: #adb5bd; --chemistry: #b197fc; --biology: #69db7c; --agents: #ffa94d; --threshold: #ffc94d; --misconception: #ff7b7b; --mastered: #69db7c; --focus: #74c0fc;
+    --learning: #ffc04d; --electrical: #f783ac; --embedded: #3bc9db; --mechanical: #adb5bd; --chemistry: #b197fc; --biology: #69db7c; --agents: #ffa94d; --devops: #74c0fc; --threshold: #ffc94d; --misconception: #ff7b7b; --mastered: #69db7c; --focus: #74c0fc;
     --shadow: 0 1px 0 rgba(0, 0, 0, .3), 0 10px 30px -12px rgba(0, 0, 0, .6);
     color-scheme: dark;
   }
@@ -41,7 +42,7 @@
 :root[data-theme="dark"] {
   --paper: #0f1218; --paper-2: #151a22; --card: #171c25; --ink: #ede6d8; --ink-2: #cfc7b7; --muted: #9b9484;
   --line: #2a313d; --line-2: #3a4352; --physics: #ff8a4c; --mathematics: #8ea2ff; --developer: #3ddc97;
-  --learning: #ffc04d; --electrical: #f783ac; --embedded: #3bc9db; --mechanical: #adb5bd; --chemistry: #b197fc; --biology: #69db7c; --agents: #ffa94d; --threshold: #ffc94d; --misconception: #ff7b7b; --mastered: #69db7c; --focus: #74c0fc;
+  --learning: #ffc04d; --electrical: #f783ac; --embedded: #3bc9db; --mechanical: #adb5bd; --chemistry: #b197fc; --biology: #69db7c; --agents: #ffa94d; --devops: #74c0fc; --threshold: #ffc94d; --misconception: #ff7b7b; --mastered: #69db7c; --focus: #74c0fc;
   --shadow: 0 1px 0 rgba(0, 0, 0, .3), 0 10px 30px -12px rgba(0, 0, 0, .6);
   color-scheme: dark;
 }
@@ -215,6 +216,16 @@ section { padding: clamp(56px, 8vw, 104px) 0; }
 .conf { display: flex; gap: 6px; flex-wrap: wrap; }
 .conf button { border: 1px solid var(--line-2); background: var(--card); color: var(--ink); border-radius: 8px; padding: 6px 10px; font: 500 13px/1 var(--mono); cursor: pointer; }
 .conf button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.search { position: relative; max-width: 560px; }
+.search input { padding: 12px 16px; border-radius: 999px; font-size: 16px; }
+.search ul { position: absolute; z-index: 30; left: 0; right: 0; top: calc(100% + 6px); margin: 0; padding: 6px; list-style: none; background: var(--card); border: 1px solid var(--line-2); border-radius: 14px; box-shadow: var(--shadow); max-height: 360px; overflow: auto; }
+.search li { padding: 10px 12px; border-radius: 10px; cursor: pointer; display: grid; gap: 2px; }
+.search li[aria-selected="true"], .search li:hover { background: var(--paper-2); }
+.search li b { font-weight: 500; }
+.search li span { font-size: 13px; color: var(--muted); }
+.search li i { font-style: normal; font: 500 11px/1 var(--mono); color: var(--accent-m, var(--muted)); text-transform: uppercase; letter-spacing: .06em; }
 
 /* Labs */
 .lab { padding: clamp(20px, 3vw, 34px); display: grid; gap: 22px; scroll-margin-top: 90px; }

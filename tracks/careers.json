@@ -1,0 +1,74 @@
+{
+  "tracks": [
+    {
+      "id": "devops-sre", "title": "DevOps / Site Reliability Engineer", "accent": "devops",
+      "summary": "Build, ship and run software reliably: from the shell to SLOs and blameless postmortems.",
+      "nodes": ["developer/shell", "developer/basics", "developer/notional", "developer/functions", "developer/git", "developer/testing", "developer/http", "developer/security", "devops/linux", "devops/networking", "devops/containers", "devops/ci", "devops/cd", "devops/iac", "devops/config", "devops/orchestration", "mathematics/probability", "mathematics/statistics", "devops/observability", "devops/slo", "devops/incidents", "devops/supplychain", "devops/dora"],
+      "labs": ["code", "complexity"],
+      "capstone": "Take a small service from a laptop to production: CI that fails fast, infrastructure as code, a canary deploy, RED dashboards, a 99.9% SLO with its error budget, and a blameless postmortem from a game day."
+    },
+    {
+      "id": "software-engineer", "title": "Software Engineer", "accent": "developer",
+      "summary": "From the notional machine to architecture decisions, testing and working with coding agents.",
+      "nodes": ["developer/basics", "developer/notional", "developer/functions", "developer/git", "developer/datastructs", "developer/recursion", "mathematics/logic", "mathematics/proof", "developer/complexity", "developer/testing", "developer/debugging", "developer/types", "developer/modules", "developer/functional", "developer/concurrency", "developer/http", "developer/databases", "developer/security", "developer/architecture", "developer/review", "developer/agents"],
+      "labs": ["code", "complexity"],
+      "capstone": "Design, test and ship a small web service with an ADR for each major decision, a test suite that catches a seeded bug, and one feature delegated to a coding agent and independently verified."
+    },
+    {
+      "id": "embedded-engineer", "title": "Embedded Systems Engineer", "accent": "embedded",
+      "summary": "Firmware that meets hardware: registers, timing, interrupts, buses and power.",
+      "nodes": ["electrical/ohm", "electrical/kirchhoff", "electrical/divider", "electrical/rc", "electrical/diodes", "electrical/transistors", "electrical/boolean", "electrical/sequential", "electrical/sampling", "developer/basics", "developer/notional", "embedded/binary", "embedded/arch", "embedded/registers", "embedded/gpio", "embedded/timing", "embedded/debounce", "embedded/timers", "embedded/pwm", "embedded/interrupts", "embedded/adc", "embedded/uart", "embedded/buses", "embedded/fsm", "embedded/rtos", "embedded/lowpower", "embedded/hwdebug"],
+      "labs": ["mcu", "rc"],
+      "capstone": "Build a battery-powered sensor node: a debounced button, ADC sampling with filtering, PWM output, an I²C sensor, sleep between readings, and a measured battery-life estimate."
+    },
+    {
+      "id": "electrical-engineer", "title": "Electrical Engineer", "accent": "electrical",
+      "summary": "Circuits, signals and control, on the physics and mathematics they rest on.",
+      "nodes": ["physics/electrostatics", "physics/circuits", "physics/magnetism", "physics/maxwell", "mathematics/complex", "mathematics/diffeq", "mathematics/fourier", "electrical/ohm", "electrical/kirchhoff", "electrical/thevenin", "electrical/rc", "electrical/phasors", "electrical/filters", "electrical/transistors", "electrical/opamps", "electrical/sampling", "electrical/signals", "electrical/control"],
+      "labs": ["rc", "fourier"],
+      "capstone": "Design an analogue front end for a sensor: an op-amp gain stage, an anti-aliasing filter chosen from the sample rate, and a PID loop that holds a setpoint, each verified against a hand calculation."
+    },
+    {
+      "id": "mechanical-engineer", "title": "Mechanical Engineer", "accent": "mechanical",
+      "summary": "Forces into structures, structures into machines that can be made.",
+      "nodes": ["physics/vectors", "physics/newton", "physics/forces", "physics/energy", "physics/rotation", "physics/shm", "mathematics/derivatives", "mathematics/integrals", "mathematics/linalg", "mechanical/statics", "mechanical/trusses", "mechanical/stress", "mechanical/materials", "mechanical/beams", "mechanical/torsion", "mechanical/buckling", "mechanical/fatigue", "mechanical/vibration", "mechanical/mechanisms", "mechanical/thermocycles", "mechanical/fluids", "mechanical/heat", "mechanical/tolerances", "mechanical/dfm", "mechanical/fea"],
+      "labs": ["projectile", "pendulum"],
+      "capstone": "Design a load-bearing bracket: choose the material by performance index, size it by hand, validate with FEA and a mesh-convergence study, check fatigue and resonance, and tolerance it for manufacture."
+    },
+    {
+      "id": "physicist", "title": "Physicist / Research Scientist", "accent": "physics",
+      "summary": "The physics spine with the mathematics to read and derive it.",
+      "nodes": ["physics/measurement", "physics/dimensions", "physics/kinematics", "physics/newton", "physics/energy", "physics/momentum", "physics/shm", "physics/waves", "physics/entropy", "physics/statmech", "physics/maxwell", "physics/relativity", "physics/lagrangian", "physics/quantum", "mathematics/proof", "mathematics/ftc", "mathematics/linalg", "mathematics/eigen", "mathematics/diffeq", "mathematics/fourier", "mathematics/statistics"],
+      "labs": ["projectile", "pendulum", "fourier"],
+      "capstone": "Design and run a measurement (e.g. g from a pendulum at large amplitude), model it from first principles, propagate the uncertainty, and explain the residuals."
+    },
+    {
+      "id": "chemist", "title": "Chemist / Chemical Engineer", "accent": "chemistry",
+      "summary": "Bonding, energetics and equilibrium, through to mechanisms and analysis.",
+      "nodes": ["chemistry/atoms", "chemistry/orbitals", "chemistry/moles", "chemistry/bonding", "chemistry/shape", "chemistry/imf", "chemistry/gases", "chemistry/thermochem", "physics/entropy", "chemistry/gibbs", "chemistry/equilibrium", "chemistry/kinetics", "chemistry/acidbase", "chemistry/electrochem", "chemistry/organic", "chemistry/mechanisms", "chemistry/spectroscopy", "mechanical/thermocycles", "mechanical/heat"],
+      "labs": [],
+      "capstone": "Plan a synthesis or process step: balance it, predict yield from equilibrium and kinetics, size the heat removal, and confirm the product with spectroscopy data."
+    },
+    {
+      "id": "life-scientist", "title": "Life Scientist / Biomedical", "accent": "biology",
+      "summary": "Molecules to ecosystems, with the chemistry and statistics a lab biologist needs.",
+      "nodes": ["chemistry/bonding", "chemistry/kinetics", "chemistry/thermochem", "biology/macromolecules", "biology/cell", "biology/dna", "biology/proteins", "biology/enzymes", "biology/metabolism", "biology/genetics", "mathematics/probability", "mathematics/statistics", "biology/evolution", "biology/popgen", "biology/regulation", "biology/signalling", "biology/neurons", "biology/homeostasis", "biology/immune", "biology/biotech"],
+      "labs": ["retrieval"],
+      "capstone": "Design an experiment (e.g. an enzyme-inhibitor assay or a CRISPR knockout), state the hypothesis, the controls and the statistical test before collecting data, and interpret the result without confusing correlation and cause."
+    },
+    {
+      "id": "ai-agent-engineer", "title": "AI Agent Engineer", "accent": "agents",
+      "summary": "Teach agents and prove they learned: specs, evals, skills, independent grading.",
+      "nodes": ["developer/functions", "developer/testing", "developer/review", "developer/agents", "learning/goals", "learning/retrieval", "learning/worked", "learning/generation", "learning/hints", "learning/verify", "agents/context", "agents/outcomes", "agents/anchors", "agents/examples", "agents/evals", "agents/contamination", "agents/skills", "agents/coldstart", "agents/panels", "agents/tools", "agents/memory", "agents/drift", "agents/agenttransfer"],
+      "labs": ["code", "retrieval"],
+      "capstone": "Teach a subagent a new domain with the DULTA agent-learner protocol: baseline cold-start, notes revised over moves, `leak` clean, an independent grader, normalized gain reported, and the notes installed as a skill."
+    },
+    {
+      "id": "educator", "title": "Educator / Learning Designer", "accent": "learning",
+      "summary": "Design instruction that measurably works, for people and for agents.",
+      "nodes": ["learning/goals", "learning/retrieval", "learning/spacing", "learning/interleaving", "learning/worked", "learning/selfexplain", "learning/icap", "learning/generation", "learning/productive", "learning/hints", "learning/feynman", "learning/metacog", "learning/deliberate", "learning/transfer", "agents/evals", "agents/panels"],
+      "labs": ["retrieval"],
+      "capstone": "Design one week of a course with DULTA's Directed Teaching mode: aligned outcomes, activities and assessments (`dulta.py align` clean), a pre/post test with normalized gain, and a panel round on the materials."
+    }
+  ]
+}

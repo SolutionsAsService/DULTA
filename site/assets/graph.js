@@ -238,6 +238,35 @@
   $("detail").tabIndex = -1;
   document.addEventListener("dulta:state", () => { draw(); if (selected) detail(selected); });
 
+  // Search across every map: label first, then summary and check text.
+  const q = $("q"), list = $("qResults");
+  let hits = [], cursor = -1;
+  function search() {
+    const term = q.value.trim().toLowerCase();
+    if (term.length < 2) { list.hidden = true; q.setAttribute("aria-expanded", "false"); return; }
+    const score = (n) => n.label.toLowerCase().includes(term) ? 0 : (n.summary + " " + n.check).toLowerCase().includes(term) ? 1 : 2;
+    hits = D.nodes.filter((n) => score(n) < 2).sort((a, b) => score(a) - score(b)).slice(0, 10);
+    cursor = -1;
+    list.innerHTML = hits.length ? hits.map((n, i) => `<li role="option" id="qr${i}" data-key="${n.key}" aria-selected="false" style="--accent-m:var(--${n.map})">
+      <i>${esc(D.maps.find((m) => m.id === n.map).title)} · ${n.kind}</i><b>${esc(n.label)}</b><span>${esc(n.summary.slice(0, 90))}${n.summary.length > 90 ? "…" : ""}</span></li>`).join("")
+      : `<li aria-disabled="true"><span>No node matches “${esc(q.value.trim())}”.</span></li>`;
+    list.hidden = false; q.setAttribute("aria-expanded", "true");
+  }
+  function pick(key) { list.hidden = true; q.setAttribute("aria-expanded", "false"); q.value = ""; go(key); $("detail").focus(); }
+  q.addEventListener("input", search);
+  q.addEventListener("keydown", (e) => {
+    if (list.hidden || !hits.length) return;
+    if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+      e.preventDefault();
+      cursor = (cursor + (e.key === "ArrowDown" ? 1 : -1) + hits.length) % hits.length;
+      list.querySelectorAll("li").forEach((li, i) => li.setAttribute("aria-selected", i === cursor));
+      q.setAttribute("aria-activedescendant", `qr${cursor}`);
+    } else if (e.key === "Enter") { e.preventDefault(); pick(hits[Math.max(cursor, 0)].key); }
+    else if (e.key === "Escape") { list.hidden = true; q.setAttribute("aria-expanded", "false"); }
+  });
+  list.addEventListener("click", (e) => { const li = e.target.closest("li[data-key]"); if (li) pick(li.dataset.key); });
+  document.addEventListener("click", (e) => { if (!e.target.closest(".search")) list.hidden = true; });
+
   const hash = decodeURIComponent(location.hash.slice(1));
   if (byKey[hash]) { mapId = byKey[hash].map; detail(hash); }
   else if (D.maps.some((m) => m.id === hash)) mapId = hash;
