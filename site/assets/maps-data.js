@@ -12,7 +12,8 @@ window.DULTA_MAPS = {
     "Feynman, Leighton, Sands: The Feynman Lectures on Physics",
     "Hestenes, Wells, Swackhamer: Force Concept Inventory (1992)",
     "Knight: Five Easy Lessons"
-   ]
+   ],
+   "field": "Science"
   },
   {
    "id": "mathematics",
@@ -25,7 +26,8 @@ window.DULTA_MAPS = {
     "Strang: Introduction to Linear Algebra",
     "Pólya: How to Solve It",
     "Tall & Vinner: Concept image and concept definition (1981)"
-   ]
+   ],
+   "field": "Science"
   },
   {
    "id": "chemistry",
@@ -37,7 +39,8 @@ window.DULTA_MAPS = {
     "Clayden, Greeves, Warren: Organic Chemistry",
     "Taber: Chemical Misconceptions (RSC, 2002)",
     "Boo: Students' understandings of chemical bonds and the energetics of reactions (1998)"
-   ]
+   ],
+   "field": "Science"
   },
   {
    "id": "biology",
@@ -49,7 +52,36 @@ window.DULTA_MAPS = {
     "Campbell & Reece: Biology",
     "Dobzhansky: Nothing in Biology Makes Sense Except in the Light of Evolution (1973)",
     "Bishop & Anderson: Student conceptions of natural selection (1990)"
-   ]
+   ],
+   "field": "Science"
+  },
+  {
+   "id": "plant",
+   "title": "Plant Science & Genetics",
+   "accent": "#8f5a2b",
+   "summary": "Breeding better crops with genetics and statistics. Heritability and the breeder's equation are the threshold: they turn 'pick the best plants' into a prediction of how much the next generation will improve, and why the environment can undo it.",
+   "sources": [
+    "Falconer & Mackay: Introduction to Quantitative Genetics",
+    "Acquaah: Principles of Plant Genetics and Breeding",
+    "Taiz, Zeiger et al.: Plant Physiology and Development",
+    "Meuwissen, Hayes, Goddard: Genomic selection (2001)",
+    "Visscher, Hill, Wray: Heritability in the genomics era (2008)"
+   ],
+   "field": "Science"
+  },
+  {
+   "id": "quantum",
+   "title": "Quantum Computing",
+   "accent": "#3b5bdb",
+   "summary": "Computing with amplitudes. Entanglement is the threshold: multi-qubit states that cannot be described one qubit at a time. Speed-ups come from interference steering amplitude toward right answers, not from trying every answer at once.",
+   "sources": [
+    "Nielsen & Chuang: Quantum Computation and Quantum Information",
+    "Aaronson: Quantum Computing Since Democritus",
+    "Preskill: Quantum Computing in the NISQ era and beyond (2018)",
+    "Mermin: Quantum Computer Science",
+    "Grover: A fast quantum mechanical algorithm for database search (1996)"
+   ],
+   "field": "Science"
   },
   {
    "id": "electrical",
@@ -62,7 +94,8 @@ window.DULTA_MAPS = {
     "Oppenheim & Willsky: Signals and Systems",
     "Åström & Murray: Feedback Systems",
     "Harris & Harris: Digital Design and Computer Architecture"
-   ]
+   ],
+   "field": "Engineering"
   },
   {
    "id": "embedded",
@@ -75,7 +108,8 @@ window.DULTA_MAPS = {
     "Ganssle: A Guide to Debouncing (2008)",
     "Microchip: ATmega328P datasheet",
     "Barr: Embedded C Coding Standard"
-   ]
+   ],
+   "field": "Engineering"
   },
   {
    "id": "mechanical",
@@ -88,7 +122,36 @@ window.DULTA_MAPS = {
     "Shigley: Mechanical Engineering Design",
     "Ashby: Materials Selection in Mechanical Design",
     "Gordon: Structures, or Why Things Don't Fall Down"
-   ]
+   ],
+   "field": "Engineering"
+  },
+  {
+   "id": "robotics",
+   "title": "Robotics & Agricultural Robotics",
+   "accent": "#f08c00",
+   "summary": "Machines that sense, decide and act in the real world, with field agriculture as the hardest proving ground: uneven ground, changing light, living plants. The threshold is uncertainty: every sensor lies a little, so robots estimate their state rather than know it.",
+   "sources": [
+    "Siegwart, Nourbakhsh, Scaramuzza: Introduction to Autonomous Mobile Robots",
+    "Thrun, Burgard, Fox: Probabilistic Robotics",
+    "Lynch & Park: Modern Robotics",
+    "Corke: Robotics, Vision and Control",
+    "Bechar & Vigneault: Agricultural robots for field operations (2016)"
+   ],
+   "field": "Engineering"
+  },
+  {
+   "id": "telecom",
+   "title": "Telecommunications",
+   "accent": "#1864ab",
+   "summary": "Moving bits through noisy channels. Shannon capacity is the threshold: bandwidth and signal-to-noise ratio set a hard ceiling on data rate, and every modulation and code is a way of approaching it.",
+   "sources": [
+    "Proakis & Salehi: Digital Communications",
+    "Haykin: Communication Systems",
+    "Shannon: A Mathematical Theory of Communication (1948)",
+    "Goldsmith: Wireless Communications",
+    "Kurose & Ross: Computer Networking"
+   ],
+   "field": "Engineering"
   },
   {
    "id": "developer",
@@ -101,7 +164,8 @@ window.DULTA_MAPS = {
     "Sorva: Notional machines and introductory programming education (2013)",
     "Hunt & Thomas: The Pragmatic Programmer",
     "Beck: Test-Driven Development by Example"
-   ]
+   ],
+   "field": "Computing & AI"
   },
   {
    "id": "devops",
@@ -114,7 +178,36 @@ window.DULTA_MAPS = {
     "Forsgren, Humble, Kim: Accelerate",
     "Humble & Farley: Continuous Delivery",
     "Wiggins: The Twelve-Factor App"
-   ]
+   ],
+   "field": "Computing & AI"
+  },
+  {
+   "id": "ml",
+   "title": "Machine Learning & AI",
+   "accent": "#9c36b5",
+   "summary": "Learning functions from data. Two thresholds: optimisation (a model is a loss surface you walk downhill) and generalisation (only performance on unseen data counts). Everything from linear regression to transformers sits on those two ideas.",
+   "sources": [
+    "Goodfellow, Bengio, Courville: Deep Learning",
+    "Bishop: Pattern Recognition and Machine Learning",
+    "Hastie, Tibshirani, Friedman: The Elements of Statistical Learning",
+    "Vaswani et al.: Attention Is All You Need (2017)",
+    "Sutton & Barto: Reinforcement Learning"
+   ],
+   "field": "Computing & AI"
+  },
+  {
+   "id": "gamedev",
+   "title": "Game Development",
+   "accent": "#66a80f",
+   "summary": "Real-time interactive simulation. The threshold is the frame budget: everything (input, physics, AI, rendering) must fit in about 16 ms, sixty times a second, and the game must behave the same at any frame rate.",
+   "sources": [
+    "Nystrom: Game Programming Patterns",
+    "Gregory: Game Engine Architecture",
+    "Millington: AI for Games",
+    "Ericson: Real-Time Collision Detection",
+    "Fiedler: Fix Your Timestep! (2004)"
+   ],
+   "field": "Computing & AI"
   },
   {
    "id": "learning",
@@ -128,7 +221,8 @@ window.DULTA_MAPS = {
     "Kapur: Productive failure (2008)",
     "Bastani et al.: Generative AI without guardrails can harm learning (PNAS, 2025)",
     "Pashler et al.: Learning styles: concepts and evidence (2008)"
-   ]
+   ],
+   "field": "Learning & Agents"
   },
   {
    "id": "agents",
@@ -141,8 +235,15 @@ window.DULTA_MAPS = {
     "Zheng et al.: Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena (2023)",
     "Semantic Anchors catalog (llm-coding.github.io/Semantic-Anchors)",
     "Anthropic: Agent Skills documentation"
-   ]
+   ],
+   "field": "Learning & Agents"
   }
+ ],
+ "fields": [
+  "Science",
+  "Engineering",
+  "Computing & AI",
+  "Learning & Agents"
  ],
  "nodes": [
   {
@@ -2345,6 +2446,713 @@ window.DULTA_MAPS = {
    "depth": 3
   },
   {
+   "id": "plantcell",
+   "label": "Plant Cells & Growth",
+   "kind": "concept",
+   "summary": "Cell walls, vacuoles, meristems and hormones (auxin, gibberellin) that shape growth.",
+   "outcome": "Explain how auxin causes a shoot to bend toward light.",
+   "check": "A shoot bends toward a window. What does auxin do to cause it?",
+   "answer": "Auxin moves to the shaded side and makes those cells elongate more, bending the shoot toward the light.",
+   "grade": {
+    "all": [
+     [
+      "shade*",
+      "dark side",
+      "away from the light",
+      "other side"
+     ],
+     [
+      "elongat*",
+      "grow* more",
+      "longer",
+      "stretch*",
+      "expand*"
+     ]
+    ]
+   },
+   "map": "plant",
+   "key": "plant/plantcell",
+   "depth": 0
+  },
+  {
+   "id": "photosynthesis",
+   "label": "Photosynthesis & Yield",
+   "kind": "concept",
+   "summary": "Light capture, carbon fixation (C3 vs C4) and how canopy architecture limits crop yield.",
+   "outcome": "Compare C3 and C4 crops in hot, dry conditions.",
+   "check": "Why do C4 crops like maize do better than C3 crops in hot, sunny conditions?",
+   "answer": "They concentrate CO₂ around RuBisCO, which suppresses photorespiration.",
+   "grade": {
+    "all": [
+     [
+      "photorespiration",
+      "concentrat* co2",
+      "co2 concentrat*",
+      "rubisco",
+      "concentrate carbon"
+     ]
+    ]
+   },
+   "map": "plant",
+   "key": "plant/photosynthesis",
+   "depth": 1
+  },
+  {
+   "id": "mendelcrops",
+   "label": "Inheritance in Crops",
+   "kind": "concept",
+   "summary": "Mendelian traits, linkage and recombination in crop pedigrees and crosses.",
+   "outcome": "Use recombination frequency to estimate map distance.",
+   "check": "Two genes recombine in 10% of offspring. How far apart are they on the genetic map?",
+   "answer": "About 10 centimorgans (cM).",
+   "grade": {
+    "numbers": [
+     [
+      10
+     ]
+    ],
+    "all": [
+     [
+      "cm",
+      "centimorgan*",
+      "map unit*"
+     ]
+    ]
+   },
+   "map": "plant",
+   "key": "plant/mendelcrops",
+   "depth": 0
+  },
+  {
+   "id": "polyploidy",
+   "label": "Polyploidy",
+   "kind": "concept",
+   "summary": "Many crops (wheat, potato, strawberry) carry more than two genome copies, which changes inheritance ratios and vigour.",
+   "outcome": "Explain why bread wheat is hexaploid and what that means for breeding.",
+   "check": "How many sets of chromosomes does a hexaploid plant have?",
+   "answer": "Six.",
+   "grade": {
+    "all": [
+     [
+      "6",
+      "six"
+     ]
+    ]
+   },
+   "map": "plant",
+   "key": "plant/polyploidy",
+   "depth": 1
+  },
+  {
+   "id": "quantgen",
+   "label": "Quantitative Genetics",
+   "kind": "concept",
+   "summary": "Yield, height and drought tolerance are controlled by many genes of small effect plus environment: P = G + E.",
+   "outcome": "Partition phenotypic variance into genetic and environmental parts.",
+   "check": "Why do most yield traits show a bell-shaped distribution rather than discrete classes?",
+   "answer": "Many genes of small effect plus environmental variation add up to a continuous distribution.",
+   "grade": {
+    "all": [
+     [
+      "many genes",
+      "polygen*",
+      "small effect*",
+      "many loci",
+      "additive"
+     ]
+    ]
+   },
+   "map": "plant",
+   "key": "plant/quantgen",
+   "depth": 1
+  },
+  {
+   "id": "heritability",
+   "label": "Heritability & the Breeder's Equation",
+   "kind": "threshold",
+   "summary": "Narrow-sense heritability h² is the share of variance due to additive genes. Response to selection R = h²S predicts the gain per generation.",
+   "outcome": "Predict the response to selection with R = h²S.",
+   "check": "Selected plants average 20 kg/ha above the population mean and h² = 0.3. Expected gain in the next generation?",
+   "answer": "R = 0.3 × 20 = 6 kg/ha.",
+   "grade": {
+    "numbers": [
+     [
+      6
+     ]
+    ]
+   },
+   "lab": "breeding",
+   "map": "plant",
+   "key": "plant/heritability",
+   "depth": 2
+  },
+  {
+   "id": "misc-h2",
+   "label": "\"High heritability means genes fix the trait\"",
+   "kind": "misconception",
+   "summary": "Heritability describes a population in an environment, not an individual, and a highly heritable trait can still change a lot with the environment.",
+   "outcome": "Explain why heritability is population- and environment-specific.",
+   "check": "Height has high heritability. Does that mean better nutrition cannot make a population taller?",
+   "answer": "No: heritability is about variation within a population in one environment; changing the environment can shift the whole population.",
+   "grade": {
+    "all": [
+     [
+      "no",
+      "not",
+      "can"
+     ],
+     [
+      "environment*",
+      "population",
+      "variation",
+      "nutrition"
+     ]
+    ]
+   },
+   "lab": "breeding",
+   "map": "plant",
+   "key": "plant/misc-h2",
+   "depth": 2
+  },
+  {
+   "id": "gxe",
+   "label": "Genotype × Environment Interaction",
+   "kind": "concept",
+   "summary": "Varieties rank differently across locations and years, so trials must span environments.",
+   "outcome": "Read a GxE plot and recommend varieties for target environments.",
+   "check": "Variety A beats B at the wet site but B beats A at the dry site. What is this called?",
+   "answer": "A genotype-by-environment (crossover) interaction.",
+   "grade": {
+    "all": [
+     [
+      "interaction",
+      "gxe",
+      "g x e",
+      "genotype by environment",
+      "genotype environment",
+      "crossover"
+     ]
+    ]
+   },
+   "map": "plant",
+   "key": "plant/gxe",
+   "depth": 3
+  },
+  {
+   "id": "trials",
+   "label": "Field Trial Design",
+   "kind": "concept",
+   "summary": "Replication, randomisation and blocking separate genetic differences from soil and weather noise.",
+   "outcome": "Lay out a randomised complete block design for six varieties.",
+   "check": "Why randomise variety positions within each block of a field trial?",
+   "answer": "So soil gradients and other hidden field effects don't systematically favour one variety.",
+   "grade": {
+    "all": [
+     [
+      "bias*",
+      "soil",
+      "gradient*",
+      "systematic*",
+      "confound*",
+      "favour*",
+      "favor*",
+      "field effect*",
+      "hidden"
+     ]
+    ]
+   },
+   "map": "plant",
+   "key": "plant/trials",
+   "depth": 4
+  },
+  {
+   "id": "markers",
+   "label": "Molecular Markers & QTL Mapping",
+   "kind": "concept",
+   "summary": "DNA markers linked to genes let breeders locate quantitative trait loci and track them through crosses.",
+   "outcome": "Interpret a QTL scan and choose markers for selection.",
+   "check": "What does a QTL peak on a mapping plot indicate?",
+   "answer": "A chromosome region associated with variation in the trait.",
+   "grade": {
+    "all": [
+     [
+      "region",
+      "locus",
+      "loci",
+      "location",
+      "associat*",
+      "linked",
+      "gene*"
+     ]
+    ]
+   },
+   "map": "plant",
+   "key": "plant/markers",
+   "depth": 1
+  },
+  {
+   "id": "mas",
+   "label": "Marker-Assisted & Genomic Selection",
+   "kind": "concept",
+   "summary": "Select seedlings by DNA before the trait can be measured; genomic selection predicts breeding values from genome-wide markers.",
+   "outcome": "Explain how genomic selection shortens the breeding cycle.",
+   "check": "Why can genomic selection speed up breeding for a trait like yield?",
+   "answer": "Plants can be selected from their DNA as seedlings, before costly field trials, shortening each cycle.",
+   "grade": {
+    "all": [
+     [
+      "seedling*",
+      "early",
+      "before",
+      "without field",
+      "skip*",
+      "shorter",
+      "faster",
+      "sooner"
+     ]
+    ]
+   },
+   "map": "plant",
+   "key": "plant/mas",
+   "depth": 3
+  },
+  {
+   "id": "geneediting",
+   "label": "Gene Editing in Crops",
+   "kind": "concept",
+   "summary": "CRISPR knockouts and edits create traits like disease resistance without adding foreign DNA.",
+   "outcome": "Describe how a CRISPR knockout creates a disease-resistant variety.",
+   "check": "How can knocking a gene out make a plant more disease-resistant?",
+   "answer": "Some pathogens need a host 'susceptibility' gene; removing it denies the pathogen what it needs (e.g. mlo resistance to powdery mildew).",
+   "grade": {
+    "all": [
+     [
+      "susceptib*",
+      "pathogen need*",
+      "need*",
+      "mlo",
+      "depend*",
+      "requires"
+     ]
+    ]
+   },
+   "map": "plant",
+   "key": "plant/geneediting",
+   "depth": 2
+  },
+  {
+   "id": "misc-gmo",
+   "label": "\"Eating GM food transfers its genes to you\"",
+   "kind": "misconception",
+   "summary": "All food contains DNA, which is digested; genes from food do not become part of the eater's genome.",
+   "outcome": "Explain what happens to DNA in food.",
+   "check": "Does eating a GM tomato put its genes into your cells?",
+   "answer": "No: DNA in any food is broken down by digestion; it isn't incorporated into your genome.",
+   "grade": {
+    "all": [
+     [
+      "no",
+      "not"
+     ],
+     [
+      "digest*",
+      "broken down",
+      "break* down"
+     ]
+    ]
+   },
+   "map": "plant",
+   "key": "plant/misc-gmo",
+   "depth": 2
+  },
+  {
+   "id": "phenotyping",
+   "label": "High-Throughput Phenotyping",
+   "kind": "concept",
+   "summary": "Drones, imaging and sensors measure thousands of plots quickly; the bottleneck moves from genotyping to measuring traits.",
+   "outcome": "Choose a sensor and index (e.g. NDVI) to measure crop vigour.",
+   "check": "NDVI compares reflectance in which two bands?",
+   "answer": "Near-infrared and red.",
+   "grade": {
+    "all": [
+     [
+      "infrared",
+      "nir",
+      "near ir"
+     ],
+     [
+      "red"
+     ]
+    ]
+   },
+   "map": "plant",
+   "key": "plant/phenotyping",
+   "depth": 5
+  },
+  {
+   "id": "seedsystems",
+   "label": "Variety Release & Seed Systems",
+   "kind": "concept",
+   "summary": "Testing, registration, multiplication and farmer adoption: a variety only matters if farmers can get and grow it.",
+   "outcome": "Plan the steps from an elite line to seed in farmers' hands.",
+   "check": "Why might a high-yielding new variety fail to be adopted by farmers?",
+   "answer": "If it lacks traits they value (taste, cooking quality, local adaptation), seed is unavailable or too costly, or it was never tested in their conditions.",
+   "grade": {
+    "all": [
+     [
+      "taste",
+      "preference*",
+      "quality",
+      "cost*",
+      "price",
+      "availab*",
+      "local*",
+      "adapt*",
+      "condition*",
+      "value"
+     ]
+    ]
+   },
+   "map": "plant",
+   "key": "plant/seedsystems",
+   "depth": 5
+  },
+  {
+   "id": "qubit",
+   "label": "Qubits & Superposition",
+   "kind": "concept",
+   "summary": "A qubit's state is α|0⟩ + β|1⟩ with |α|² + |β|² = 1; amplitudes, not probabilities, are what evolve.",
+   "outcome": "Write a normalised qubit state and compute measurement probabilities.",
+   "check": "A qubit is √0.8|0⟩ + √0.2|1⟩. What is the probability of measuring 0?",
+   "answer": "0.8 (80%).",
+   "grade": {
+    "numbers": [
+     [
+      0.8,
+      80
+     ]
+    ]
+   },
+   "lab": "qubit",
+   "map": "quantum",
+   "key": "quantum/qubit",
+   "depth": 0
+  },
+  {
+   "id": "measurement",
+   "label": "Measurement & the Born Rule",
+   "kind": "concept",
+   "summary": "Measuring gives one outcome with probability |amplitude|² and collapses the state; repeated runs (shots) estimate probabilities.",
+   "outcome": "Estimate a probability from shot counts and its uncertainty.",
+   "check": "After measuring a qubit and getting 1, what do you get if you measure it again immediately?",
+   "answer": "1 again: measurement collapsed the state to |1⟩.",
+   "grade": {
+    "all": [
+     [
+      "1",
+      "one",
+      "same"
+     ]
+    ],
+    "none": [
+     "0 again",
+     "random"
+    ]
+   },
+   "lab": "qubit",
+   "map": "quantum",
+   "key": "quantum/measurement",
+   "depth": 1
+  },
+  {
+   "id": "bloch",
+   "label": "The Bloch Sphere",
+   "kind": "concept",
+   "summary": "Single-qubit pure states as points on a sphere; gates are rotations.",
+   "outcome": "Place |0⟩, |1⟩, |+⟩ and |−⟩ on the Bloch sphere.",
+   "check": "Where on the Bloch sphere is the state |+⟩ = (|0⟩ + |1⟩)/√2?",
+   "answer": "On the equator, on the +x axis.",
+   "grade": {
+    "all": [
+     [
+      "equator",
+      "x axis",
+      "x",
+      "plus x"
+     ]
+    ]
+   },
+   "map": "quantum",
+   "key": "quantum/bloch",
+   "depth": 1
+  },
+  {
+   "id": "gates",
+   "label": "Single-Qubit Gates",
+   "kind": "concept",
+   "summary": "X (bit flip), Z (phase flip), H (Hadamard) and rotations: unitary, reversible operations.",
+   "outcome": "Predict the output of a short gate sequence on |0⟩.",
+   "check": "What do you get applying H twice to |0⟩?",
+   "answer": "|0⟩ again: H is its own inverse.",
+   "grade": {
+    "all": [
+     [
+      "0",
+      "zero",
+      "original",
+      "back",
+      "itself",
+      "inverse"
+     ]
+    ]
+   },
+   "lab": "qubit",
+   "map": "quantum",
+   "key": "quantum/gates",
+   "depth": 2
+  },
+  {
+   "id": "interference",
+   "label": "Interference",
+   "kind": "threshold",
+   "summary": "Amplitudes can be negative, so paths can cancel. H·H = I is interference: the |1⟩ paths cancel. Every quantum speed-up is engineered interference.",
+   "outcome": "Explain H·H|0⟩ = |0⟩ as two paths to |1⟩ cancelling.",
+   "check": "Why can two quantum paths to the same outcome make that outcome less likely, unlike classical probabilities?",
+   "answer": "Amplitudes can be negative, so they can cancel (destructive interference); probabilities can only add.",
+   "grade": {
+    "all": [
+     [
+      "negative",
+      "cancel*",
+      "destructive",
+      "phase",
+      "subtract*",
+      "opposite sign*"
+     ]
+    ]
+   },
+   "lab": "qubit",
+   "map": "quantum",
+   "key": "quantum/interference",
+   "depth": 3
+  },
+  {
+   "id": "misc-parallel",
+   "label": "\"Quantum computers try every answer at once\"",
+   "kind": "misconception",
+   "summary": "Measurement returns one outcome; without interference that boosts right answers, a superposition is no better than random guessing.",
+   "outcome": "Explain why superposition alone gives no speed-up.",
+   "check": "You put n qubits in superposition over all inputs and measure. What do you get?",
+   "answer": "One random input; the speed-up needs interference to amplify the right answer before measuring.",
+   "grade": {
+    "all": [
+     [
+      "random",
+      "one",
+      "single",
+      "interfer*"
+     ]
+    ]
+   },
+   "map": "quantum",
+   "key": "quantum/misc-parallel",
+   "depth": 3
+  },
+  {
+   "id": "entanglement",
+   "label": "Entanglement",
+   "kind": "threshold",
+   "summary": "Joint states like (|00⟩ + |11⟩)/√2 that cannot be written as a product of single-qubit states; outcomes are correlated however far apart.",
+   "outcome": "Show the Bell state is not a product state and predict joint measurements.",
+   "check": "In the Bell state (|00⟩ + |11⟩)/√2, the first qubit is measured as 1. What will the second qubit give?",
+   "answer": "1, always.",
+   "grade": {
+    "all": [
+     [
+      "1",
+      "one",
+      "same"
+     ]
+    ],
+    "none": [
+     "0",
+     "zero"
+    ]
+   },
+   "map": "quantum",
+   "key": "quantum/entanglement",
+   "depth": 4
+  },
+  {
+   "id": "misc-ftl",
+   "label": "\"Entanglement sends messages faster than light\"",
+   "kind": "misconception",
+   "summary": "Each side alone sees random outcomes; the correlation is only visible when results are compared over a classical channel (no-signalling).",
+   "outcome": "Explain the no-signalling theorem with a Bell pair.",
+   "check": "Can Alice send Bob a message instantly by measuring her half of an entangled pair?",
+   "answer": "No: Bob's results look random on their own; correlations appear only after classical communication.",
+   "grade": {
+    "all": [
+     [
+      "no",
+      "not",
+      "cannot",
+      "can t"
+     ],
+     [
+      "random",
+      "classical",
+      "compare*",
+      "no signal*",
+      "no information"
+     ]
+    ]
+   },
+   "map": "quantum",
+   "key": "quantum/misc-ftl",
+   "depth": 4
+  },
+  {
+   "id": "cnot",
+   "label": "Multi-Qubit Gates & Circuits",
+   "kind": "concept",
+   "summary": "CNOT and controlled gates; H then CNOT makes a Bell pair. Circuits are read left to right.",
+   "outcome": "Build a Bell-state circuit and trace its state.",
+   "check": "Which two gates, applied to |00⟩, create a Bell state?",
+   "answer": "A Hadamard on the first qubit, then a CNOT with the first qubit as control.",
+   "grade": {
+    "all": [
+     [
+      "hadamard",
+      "h"
+     ],
+     [
+      "cnot",
+      "controlled not",
+      "cx",
+      "controlled x"
+     ]
+    ]
+   },
+   "map": "quantum",
+   "key": "quantum/cnot",
+   "depth": 3
+  },
+  {
+   "id": "noclone",
+   "label": "No-Cloning & Quantum Cryptography",
+   "kind": "concept",
+   "summary": "Unknown quantum states cannot be copied, which makes eavesdropping detectable (BB84).",
+   "outcome": "Explain how BB84 detects an eavesdropper.",
+   "check": "Why does an eavesdropper on a BB84 key exchange get caught?",
+   "answer": "Measuring the qubits disturbs them (no-cloning), so errors appear when Alice and Bob compare a sample of bits.",
+   "grade": {
+    "all": [
+     [
+      "disturb*",
+      "error*",
+      "chang*",
+      "no clon*",
+      "cannot copy",
+      "can t copy",
+      "collapse*"
+     ]
+    ]
+   },
+   "map": "quantum",
+   "key": "quantum/noclone",
+   "depth": 5
+  },
+  {
+   "id": "algorithms",
+   "label": "Quantum Algorithms",
+   "kind": "concept",
+   "summary": "Deutsch–Jozsa, Grover (√N search), Shor (factoring): each wins by interference, not brute parallelism.",
+   "outcome": "State the speed-up of Grover's algorithm and why it is quadratic.",
+   "check": "Grover's algorithm searches N unsorted items in about how many steps?",
+   "answer": "About √N.",
+   "grade": {
+    "all": [
+     [
+      "sqrt",
+      "root",
+      "square root",
+      "n 1 2",
+      "n 0 5"
+     ]
+    ]
+   },
+   "map": "quantum",
+   "key": "quantum/algorithms",
+   "depth": 5
+  },
+  {
+   "id": "decoherence",
+   "label": "Decoherence & Noise",
+   "kind": "concept",
+   "summary": "Interaction with the environment destroys superposition; T1 and T2 times bound how long a computation can run.",
+   "outcome": "Estimate how many gates fit inside a coherence time.",
+   "check": "A qubit's coherence time is 100 µs and each gate takes 50 ns. Roughly how many gates fit?",
+   "answer": "About 2,000.",
+   "grade": {
+    "numbers": [
+     [
+      2000
+     ]
+    ],
+    "tol": 0.05
+   },
+   "map": "quantum",
+   "key": "quantum/decoherence",
+   "depth": 2
+  },
+  {
+   "id": "qec",
+   "label": "Quantum Error Correction",
+   "kind": "concept",
+   "summary": "Encode one logical qubit in many physical qubits and measure syndromes without measuring the data (surface codes).",
+   "outcome": "Explain how syndrome measurement finds an error without collapsing the data.",
+   "check": "Why can't quantum error correction just copy a qubit three times like a classical repetition code?",
+   "answer": "No-cloning forbids copying an unknown state; instead information is spread across entangled qubits and errors found via syndromes.",
+   "grade": {
+    "all": [
+     [
+      "no clon*",
+      "cannot copy",
+      "can t copy",
+      "cannot be copied",
+      "clon*"
+     ]
+    ]
+   },
+   "map": "quantum",
+   "key": "quantum/qec",
+   "depth": 6
+  },
+  {
+   "id": "hardware",
+   "label": "Quantum Hardware",
+   "kind": "concept",
+   "summary": "Superconducting circuits, trapped ions, photons and neutral atoms trade speed, fidelity, connectivity and scale.",
+   "outcome": "Compare two hardware platforms on gate speed, fidelity and connectivity.",
+   "check": "Why are superconducting qubits kept near absolute zero?",
+   "answer": "To make the circuit superconducting and suppress thermal noise that would destroy the quantum state.",
+   "grade": {
+    "all": [
+     [
+      "superconduct*",
+      "thermal",
+      "noise",
+      "decoher*",
+      "heat"
+     ]
+    ]
+   },
+   "map": "quantum",
+   "key": "quantum/hardware",
+   "depth": 3
+  },
+  {
    "id": "ohm",
    "label": "Ohm's Law & Power",
    "kind": "concept",
@@ -3740,6 +4548,718 @@ window.DULTA_MAPS = {
    "depth": 3
   },
   {
+   "id": "kinematics",
+   "label": "Robot Kinematics",
+   "kind": "concept",
+   "summary": "Forward kinematics maps joint angles to where the tool is; inverse kinematics finds the joint angles for a target.",
+   "outcome": "Compute forward kinematics for a two-link arm.",
+   "check": "Why is inverse kinematics harder than forward kinematics?",
+   "answer": "It may have several solutions, or none, and usually needs solving nonlinear equations.",
+   "grade": {
+    "all": [
+     [
+      "multiple",
+      "several",
+      "many",
+      "more than one",
+      "no solution",
+      "none",
+      "nonlinear",
+      "non linear",
+      "ambigu*"
+     ]
+    ]
+   },
+   "map": "robotics",
+   "key": "robotics/kinematics",
+   "depth": 0
+  },
+  {
+   "id": "actuators",
+   "label": "Motors & Actuators",
+   "kind": "concept",
+   "summary": "DC, stepper and servo motors, gearing, and torque–speed curves.",
+   "outcome": "Choose a motor and gear ratio for a wheel load.",
+   "check": "Why might a robot use a stepper motor for a seed-spacing mechanism?",
+   "answer": "It moves in precise, repeatable steps without needing position feedback.",
+   "grade": {
+    "all": [
+     [
+      "precise",
+      "precision",
+      "step*",
+      "repeatab*",
+      "open loop",
+      "without feedback",
+      "exact",
+      "position"
+     ]
+    ]
+   },
+   "map": "robotics",
+   "key": "robotics/actuators",
+   "depth": 0
+  },
+  {
+   "id": "sensors",
+   "label": "Sensors: Encoders, IMU, Lidar, Cameras",
+   "kind": "concept",
+   "summary": "Each sensor measures something indirect, with noise, bias and failure modes.",
+   "outcome": "Match sensors to measurement needs and list each one's failure modes.",
+   "check": "Why does integrating a gyroscope's angular rate give a heading that drifts?",
+   "answer": "Small bias and noise in the rate are integrated, so the error grows over time.",
+   "grade": {
+    "all": [
+     [
+      "bias",
+      "noise",
+      "error*",
+      "accumulat*",
+      "integrat*",
+      "grows"
+     ]
+    ]
+   },
+   "map": "robotics",
+   "key": "robotics/sensors",
+   "depth": 0
+  },
+  {
+   "id": "misc-gps",
+   "label": "\"GPS gives centimetre accuracy out of the box\"",
+   "kind": "misconception",
+   "summary": "Standard GNSS is accurate to metres; centimetre accuracy for row crops needs RTK corrections from a base station.",
+   "outcome": "Explain what RTK adds to GNSS.",
+   "check": "Roughly how accurate is standard consumer GPS, and what upgrades it to centimetres?",
+   "answer": "A few metres; RTK (real-time kinematic) corrections from a base station bring it to about 2 cm.",
+   "grade": {
+    "all": [
+     [
+      "metre*",
+      "meter*",
+      "m"
+     ],
+     [
+      "rtk",
+      "real time kinematic",
+      "correction*",
+      "base station"
+     ]
+    ]
+   },
+   "map": "robotics",
+   "key": "robotics/misc-gps",
+   "depth": 2
+  },
+  {
+   "id": "odometry",
+   "label": "Odometry & Dead Reckoning",
+   "kind": "concept",
+   "summary": "Estimating motion from wheel rotation; slip on soil makes the error grow without bound.",
+   "outcome": "Compute odometry for a differential-drive robot and predict its drift.",
+   "check": "A field robot's wheels slip in mud. What happens to its odometry estimate?",
+   "answer": "It overestimates distance travelled, and the position error grows.",
+   "grade": {
+    "all": [
+     [
+      "overestimat*",
+      "too far",
+      "more than",
+      "wrong",
+      "error",
+      "drift*",
+      "inaccura*"
+     ]
+    ]
+   },
+   "map": "robotics",
+   "key": "robotics/odometry",
+   "depth": 1
+  },
+  {
+   "id": "misc-exact",
+   "label": "\"A robot goes exactly where it is told\"",
+   "kind": "misconception",
+   "summary": "Commanded motion and actual motion differ (slip, backlash, load); robots must sense and correct.",
+   "outcome": "Design a feedback correction for commanded motion.",
+   "check": "Why does a robot told to drive 10 m straight end up off course?",
+   "answer": "Wheel slip, uneven ground and motor differences make actual motion differ from commands; without feedback the errors accumulate.",
+   "grade": {
+    "all": [
+     [
+      "slip*",
+      "uneven",
+      "terrain",
+      "error*",
+      "differ*",
+      "friction",
+      "backlash",
+      "feedback",
+      "drift*"
+     ]
+    ]
+   },
+   "map": "robotics",
+   "key": "robotics/misc-exact",
+   "depth": 1
+  },
+  {
+   "id": "fusion",
+   "label": "Sensor Fusion & the Kalman Filter",
+   "kind": "threshold",
+   "summary": "Combine a motion prediction with noisy measurements, each weighted by its uncertainty. Troublesome because the robot's position becomes a probability distribution.",
+   "outcome": "Run one predict–update cycle of a 1D Kalman filter.",
+   "check": "In a Kalman filter, when should the estimate trust the new measurement more than the prediction?",
+   "answer": "When the measurement's uncertainty is smaller than the prediction's.",
+   "grade": {
+    "all": [
+     [
+      "uncertain*",
+      "variance",
+      "noise",
+      "less noisy",
+      "more accurate",
+      "smaller error",
+      "reliable"
+     ]
+    ]
+   },
+   "map": "robotics",
+   "key": "robotics/fusion",
+   "depth": 2
+  },
+  {
+   "id": "control",
+   "label": "Feedback Control for Robots",
+   "kind": "concept",
+   "summary": "PID and trajectory tracking turn plans into motor commands while rejecting disturbances.",
+   "outcome": "Tune a PID controller to follow a crop row.",
+   "check": "A row-following robot weaves from side to side. Which PID gain is most likely too high?",
+   "answer": "The proportional gain (or too little derivative damping).",
+   "grade": {
+    "all": [
+     [
+      "proportional",
+      "p gain",
+      "kp",
+      "p term",
+      "derivative"
+     ]
+    ]
+   },
+   "map": "robotics",
+   "key": "robotics/control",
+   "depth": 1
+  },
+  {
+   "id": "vision",
+   "label": "Computer Vision",
+   "kind": "concept",
+   "summary": "Cameras plus ML for detection and segmentation: crops vs weeds, fruit ripeness, row lines.",
+   "outcome": "Train and evaluate a crop–weed segmentation model.",
+   "check": "Why do vision models for farms often fail when moved to a new field or season?",
+   "answer": "Distribution shift: lighting, growth stage, soil and varieties differ from the training images.",
+   "grade": {
+    "all": [
+     [
+      "distribution shift",
+      "domain shift",
+      "lighting",
+      "light",
+      "season*",
+      "different",
+      "growth stage",
+      "training data",
+      "generali*"
+     ]
+    ]
+   },
+   "map": "robotics",
+   "key": "robotics/vision",
+   "depth": 1
+  },
+  {
+   "id": "localization",
+   "label": "Localisation & SLAM",
+   "kind": "concept",
+   "summary": "Estimate the robot's pose against a map, or build the map while localising (SLAM).",
+   "outcome": "Explain why loop closure matters in SLAM.",
+   "check": "What does loop closure do in SLAM?",
+   "answer": "Recognising a previously visited place lets the robot correct the drift accumulated around the loop.",
+   "grade": {
+    "all": [
+     [
+      "revisit*",
+      "previously",
+      "recogni*",
+      "same place",
+      "seen before"
+     ],
+     [
+      "drift",
+      "correct*",
+      "error*",
+      "fix*"
+     ]
+    ]
+   },
+   "map": "robotics",
+   "key": "robotics/localization",
+   "depth": 3
+  },
+  {
+   "id": "planning",
+   "label": "Path & Coverage Planning",
+   "kind": "concept",
+   "summary": "Shortest paths (A*) between points, and coverage paths that visit every row with minimal turning.",
+   "outcome": "Plan a coverage path for a field and a detour around an obstacle.",
+   "check": "Why do field robots plan boustrophedon (back-and-forth) paths?",
+   "answer": "They cover every row with minimal overlap and few turns, matching how crops are planted.",
+   "grade": {
+    "all": [
+     [
+      "cover*",
+      "every row",
+      "all rows",
+      "overlap",
+      "turn*",
+      "row*"
+     ]
+    ]
+   },
+   "lab": "astar",
+   "map": "robotics",
+   "key": "robotics/planning",
+   "depth": 4
+  },
+  {
+   "id": "ros",
+   "label": "Robot Software (ROS)",
+   "kind": "concept",
+   "summary": "Nodes, topics and messages; simulation before field testing.",
+   "outcome": "Wire sensor, planner and controller nodes over ROS topics.",
+   "check": "Why test robot software in simulation before the field?",
+   "answer": "It is cheaper, faster and safer to find bugs, and conditions can be repeated exactly.",
+   "grade": {
+    "all": [
+     [
+      "safe*",
+      "cheap*",
+      "cost*",
+      "faster",
+      "repeat*",
+      "damage",
+      "risk"
+     ]
+    ]
+   },
+   "map": "robotics",
+   "key": "robotics/ros",
+   "depth": 2
+  },
+  {
+   "id": "agrifield",
+   "label": "Field Robotics in Agriculture",
+   "kind": "concept",
+   "summary": "Weeding, harvesting, spraying and phenotyping robots: soft handling of plants, all-weather operation, and economics against labour cost.",
+   "outcome": "Specify a weeding robot: sensing, actuation, speed and payback.",
+   "check": "Why is robotic fruit picking much harder than robotic weeding?",
+   "answer": "Fruit is hidden by leaves, varies in shape and ripeness, and must be grasped gently without bruising.",
+   "grade": {
+    "all": [
+     [
+      "occlu*",
+      "hidden",
+      "leaves",
+      "gentl*",
+      "delicate",
+      "bruis*",
+      "grasp*",
+      "ripeness",
+      "varies",
+      "fragile",
+      "damage"
+     ]
+    ]
+   },
+   "map": "robotics",
+   "key": "robotics/agrifield",
+   "depth": 5
+  },
+  {
+   "id": "precisionag",
+   "label": "Precision Agriculture",
+   "kind": "concept",
+   "summary": "Variable-rate application from yield maps, soil sensors and imagery: inputs placed only where they pay.",
+   "outcome": "Build a variable-rate fertiliser map from yield and soil data.",
+   "check": "What is the benefit of variable-rate fertiliser application over a uniform rate?",
+   "answer": "Less fertiliser wasted and less runoff, because each zone gets what it needs.",
+   "grade": {
+    "all": [
+     [
+      "less*",
+      "waste*",
+      "save*",
+      "runoff",
+      "cost",
+      "where needed",
+      "what it needs",
+      "efficien*",
+      "environment*"
+     ]
+    ]
+   },
+   "map": "robotics",
+   "key": "robotics/precisionag",
+   "depth": 6
+  },
+  {
+   "id": "safety",
+   "label": "Safety & Autonomy Levels",
+   "kind": "concept",
+   "summary": "Risk assessment, emergency stops, geofences and human detection for robots working near people and animals.",
+   "outcome": "Write a risk assessment for an autonomous tractor.",
+   "check": "Name two safety layers an autonomous tractor should have.",
+   "answer": "E.g. an emergency stop (remote and on-board), obstacle/person detection, a geofence and a watchdog that stops on lost communication.",
+   "grade": {
+    "all": [
+     [
+      "emergency stop",
+      "e stop",
+      "estop",
+      "kill switch",
+      "obstacle",
+      "person detection",
+      "human detection",
+      "geofenc*",
+      "watchdog",
+      "bumper*",
+      "lidar"
+     ]
+    ]
+   },
+   "map": "robotics",
+   "key": "robotics/safety",
+   "depth": 6
+  },
+  {
+   "id": "db",
+   "label": "Decibels & Signal Power",
+   "kind": "concept",
+   "summary": "Power ratios on a log scale: +3 dB doubles, +10 dB is ten times; dBm references 1 mW.",
+   "outcome": "Convert between power ratios, dB and dBm.",
+   "check": "A signal goes from 1 mW to 100 mW. How many dB is that gain?",
+   "answer": "20 dB.",
+   "grade": {
+    "numbers": [
+     [
+      20
+     ]
+    ]
+   },
+   "map": "telecom",
+   "key": "telecom/db",
+   "depth": 0
+  },
+  {
+   "id": "misc-db",
+   "label": "\"Decibels add like watts\"",
+   "kind": "misconception",
+   "summary": "Two equal 10 dBm signals combine to 13 dBm, not 20 dBm: dB values multiply ratios, so adding powers needs linear units.",
+   "outcome": "Add two powers given in dBm correctly.",
+   "check": "Two equal, uncorrelated 10 dBm signals are combined. Total power?",
+   "answer": "About 13 dBm (double the power is +3 dB).",
+   "grade": {
+    "numbers": [
+     [
+      13
+     ]
+    ],
+    "tol": 0.04
+   },
+   "map": "telecom",
+   "key": "telecom/misc-db",
+   "depth": 0
+  },
+  {
+   "id": "spectrum",
+   "label": "Spectrum & Bandwidth",
+   "kind": "concept",
+   "summary": "Signals occupy frequency ranges; regulators allocate spectrum, and bandwidth is a scarce resource.",
+   "outcome": "Read a spectrum plot and measure occupied bandwidth.",
+   "check": "Why is radio spectrum licensed and auctioned?",
+   "answer": "It is a finite shared resource; transmitters on the same frequencies in the same area interfere.",
+   "grade": {
+    "all": [
+     [
+      "finite",
+      "scarce",
+      "limited",
+      "interfer*",
+      "shared"
+     ]
+    ]
+   },
+   "map": "telecom",
+   "key": "telecom/spectrum",
+   "depth": 0
+  },
+  {
+   "id": "noise",
+   "label": "Noise & SNR",
+   "kind": "concept",
+   "summary": "Thermal noise sets a floor (kTB); signal-to-noise ratio decides how reliably symbols can be told apart.",
+   "outcome": "Compute thermal noise power for a given bandwidth.",
+   "check": "If you double the receiver bandwidth, what happens to thermal noise power?",
+   "answer": "It doubles (+3 dB), because noise power is proportional to bandwidth.",
+   "grade": {
+    "all": [
+     [
+      "double*",
+      "2x",
+      "twice",
+      "3 db",
+      "increase*"
+     ]
+    ]
+   },
+   "map": "telecom",
+   "key": "telecom/noise",
+   "depth": 1
+  },
+  {
+   "id": "modulation",
+   "label": "Modulation: AM, FM, PSK, QAM",
+   "kind": "concept",
+   "summary": "Bits encoded in amplitude, frequency or phase; QAM packs more bits per symbol at the cost of noise margin.",
+   "outcome": "Compute bits per symbol for an M-QAM scheme.",
+   "check": "How many bits does each symbol carry in 64-QAM?",
+   "answer": "6 bits (2⁶ = 64).",
+   "grade": {
+    "all": [
+     [
+      "6",
+      "six"
+     ]
+    ]
+   },
+   "lab": "qam",
+   "map": "telecom",
+   "key": "telecom/modulation",
+   "depth": 1
+  },
+  {
+   "id": "shannon",
+   "label": "Shannon Capacity",
+   "kind": "threshold",
+   "summary": "C = B log₂(1 + SNR): the maximum error-free rate of a noisy channel. No scheme beats it; good ones approach it.",
+   "outcome": "Compute channel capacity and say which lever (bandwidth or SNR) helps more.",
+   "check": "A 1 MHz channel has an SNR of 15 (linear). What is its Shannon capacity?",
+   "answer": "4 Mbit/s (1 MHz × log₂16).",
+   "grade": {
+    "numbers": [
+     [
+      4,
+      4000000,
+      4000
+     ]
+    ]
+   },
+   "lab": "qam",
+   "map": "telecom",
+   "key": "telecom/shannon",
+   "depth": 2
+  },
+  {
+   "id": "misc-snr",
+   "label": "\"Double the SNR, double the data rate\"",
+   "kind": "misconception",
+   "summary": "Capacity grows with the logarithm of SNR but linearly with bandwidth; doubling SNR adds only about one bit per second per hertz.",
+   "outcome": "Compare the effect of doubling SNR with doubling bandwidth.",
+   "check": "At high SNR, doubling the SNR increases capacity by roughly how much?",
+   "answer": "About 1 bit/s per Hz of bandwidth; doubling bandwidth would double capacity.",
+   "grade": {
+    "all": [
+     [
+      "1 bit",
+      "one bit",
+      "1 b s hz",
+      "log",
+      "little",
+      "small",
+      "not double"
+     ]
+    ]
+   },
+   "lab": "qam",
+   "map": "telecom",
+   "key": "telecom/misc-snr",
+   "depth": 2
+  },
+  {
+   "id": "coding",
+   "label": "Error-Correcting Codes",
+   "kind": "concept",
+   "summary": "Redundancy (Hamming, convolutional, LDPC, polar codes) lets receivers fix errors, trading rate for reliability.",
+   "outcome": "Encode and correct a single-bit error with a Hamming(7,4) code.",
+   "check": "A Hamming(7,4) code sends 7 bits for every 4 data bits. What can it correct?",
+   "answer": "Any single-bit error in each 7-bit block.",
+   "grade": {
+    "all": [
+     [
+      "single",
+      "one bit",
+      "1 bit",
+      "1 error",
+      "one error"
+     ]
+    ]
+   },
+   "map": "telecom",
+   "key": "telecom/coding",
+   "depth": 3
+  },
+  {
+   "id": "multiplexing",
+   "label": "Multiplexing & OFDM",
+   "kind": "concept",
+   "summary": "Sharing a medium by time, frequency or code; OFDM splits a wideband channel into many narrow orthogonal subcarriers.",
+   "outcome": "Explain why OFDM handles multipath well.",
+   "check": "Why does OFDM cope well with multipath echoes?",
+   "answer": "Each narrow subcarrier has long symbols, so echoes smear only a small fraction of each symbol (plus a cyclic prefix absorbs them).",
+   "grade": {
+    "all": [
+     [
+      "long symbol*",
+      "longer symbol*",
+      "narrow",
+      "cyclic prefix",
+      "guard",
+      "subcarrier*",
+      "slow symbol*"
+     ]
+    ]
+   },
+   "map": "telecom",
+   "key": "telecom/multiplexing",
+   "depth": 2
+  },
+  {
+   "id": "propagation",
+   "label": "Antennas & Propagation",
+   "kind": "concept",
+   "summary": "Gain, path loss, fading and the link budget: will enough signal arrive above the noise?",
+   "outcome": "Compute a link budget and its fade margin.",
+   "check": "In free space, how does received power change if distance doubles?",
+   "answer": "It drops to a quarter (−6 dB), the inverse-square law.",
+   "grade": {
+    "all": [
+     [
+      "quarter",
+      "4",
+      "four",
+      "6 db",
+      "inverse square"
+     ]
+    ]
+   },
+   "map": "telecom",
+   "key": "telecom/propagation",
+   "depth": 1
+  },
+  {
+   "id": "fibre",
+   "label": "Optical Fibre",
+   "kind": "concept",
+   "summary": "Light guided by total internal reflection; attenuation and dispersion limit reach and rate.",
+   "outcome": "Explain total internal reflection and modal dispersion.",
+   "check": "What keeps light inside an optical fibre?",
+   "answer": "Total internal reflection: the core has a higher refractive index than the cladding.",
+   "grade": {
+    "all": [
+     [
+      "total internal reflection",
+      "internal reflection",
+      "refractive index",
+      "cladding"
+     ]
+    ]
+   },
+   "map": "telecom",
+   "key": "telecom/fibre",
+   "depth": 1
+  },
+  {
+   "id": "packets",
+   "label": "Packet Switching & Latency",
+   "kind": "concept",
+   "summary": "Store-and-forward networks: propagation, transmission, queuing and processing delays.",
+   "outcome": "Compute end-to-end delay from its four components.",
+   "check": "Light in fibre travels about 200,000 km/s. What is the one-way propagation delay over 2,000 km?",
+   "answer": "About 10 ms.",
+   "grade": {
+    "numbers": [
+     [
+      10,
+      0.01
+     ]
+    ]
+   },
+   "map": "telecom",
+   "key": "telecom/packets",
+   "depth": 2
+  },
+  {
+   "id": "cellular",
+   "label": "Cellular Networks (4G/5G)",
+   "kind": "concept",
+   "summary": "Frequency reuse across cells, handover, scheduling and the trade-off between coverage and capacity (low vs high bands).",
+   "outcome": "Explain why 5G millimetre-wave cells are small.",
+   "check": "Why do 5G millimetre-wave cells cover much less area than low-band cells?",
+   "answer": "High frequencies suffer greater path loss and are blocked by walls, foliage and even rain.",
+   "grade": {
+    "all": [
+     [
+      "path loss",
+      "attenuat*",
+      "block*",
+      "absorb*",
+      "walls",
+      "shorter range",
+      "don t travel",
+      "penetrat*"
+     ]
+    ]
+   },
+   "map": "telecom",
+   "key": "telecom/cellular",
+   "depth": 3
+  },
+  {
+   "id": "sdr",
+   "label": "Software-Defined Radio",
+   "kind": "concept",
+   "summary": "Radio functions (filtering, demodulation) done in software on digitised samples.",
+   "outcome": "Demodulate an FM broadcast with an SDR toolchain.",
+   "check": "What hardware does an SDR still need before software takes over?",
+   "answer": "An antenna, RF front end (amplifier, mixer) and an ADC to digitise the signal.",
+   "grade": {
+    "all": [
+     [
+      "adc",
+      "analog to digital",
+      "analogue to digital",
+      "digitis*",
+      "digitiz*",
+      "sampler"
+     ]
+    ]
+   },
+   "map": "telecom",
+   "key": "telecom/sdr",
+   "depth": 2
+  },
+  {
    "id": "shell",
    "label": "The Command Line",
    "kind": "concept",
@@ -4805,6 +6325,799 @@ window.DULTA_MAPS = {
    "map": "devops",
    "key": "devops/dora",
    "depth": 8
+  },
+  {
+   "id": "data",
+   "label": "Data, Features & Splits",
+   "kind": "concept",
+   "summary": "Examples, features and labels, split into training, validation and test sets that never leak into each other.",
+   "outcome": "Split a dataset correctly and explain what each split is for.",
+   "check": "What is the test set for, and when may you look at it?",
+   "answer": "Estimating performance on unseen data; only once, at the very end, after all choices are made.",
+   "grade": {
+    "all": [
+     [
+      "unseen",
+      "new data",
+      "final",
+      "generali*",
+      "estimat*",
+      "evaluat*"
+     ],
+     [
+      "end",
+      "once",
+      "last",
+      "after",
+      "never during",
+      "only at"
+     ]
+    ]
+   },
+   "map": "ml",
+   "key": "ml/data",
+   "depth": 0
+  },
+  {
+   "id": "regression",
+   "label": "Linear Regression & Loss",
+   "kind": "concept",
+   "summary": "Fit a line by minimising mean squared error; the loss function defines what 'good' means.",
+   "outcome": "Fit a linear model and interpret its loss.",
+   "check": "Why is mean squared error sensitive to outliers?",
+   "answer": "Errors are squared, so one large error dominates the sum.",
+   "grade": {
+    "all": [
+     [
+      "square*"
+     ]
+    ]
+   },
+   "map": "ml",
+   "key": "ml/regression",
+   "depth": 1
+  },
+  {
+   "id": "gradient",
+   "label": "Gradient Descent",
+   "kind": "threshold",
+   "summary": "Step against the gradient of the loss, scaled by a learning rate. Troublesome because learning becomes an optimisation trajectory rather than a formula.",
+   "outcome": "Run gradient descent by hand for two steps and choose a learning rate.",
+   "check": "What happens if the learning rate is far too large?",
+   "answer": "The steps overshoot the minimum and the loss oscillates or diverges.",
+   "grade": {
+    "all": [
+     [
+      "overshoot*",
+      "diverge*",
+      "oscillat*",
+      "explod*",
+      "bounce*",
+      "unstable",
+      "increase*"
+     ]
+    ]
+   },
+   "lab": "polyfit",
+   "map": "ml",
+   "key": "ml/gradient",
+   "depth": 2
+  },
+  {
+   "id": "overfitting",
+   "label": "Overfitting & Generalisation",
+   "kind": "threshold",
+   "summary": "A model can memorise its training data and fail on new data; the bias–variance trade-off governs model complexity.",
+   "outcome": "Diagnose overfitting from training and validation curves.",
+   "check": "Training error keeps falling while validation error rises. What is happening?",
+   "answer": "Overfitting: the model is fitting noise in the training data and generalising worse.",
+   "grade": {
+    "all": [
+     [
+      "overfit*",
+      "memoris*",
+      "memoriz*",
+      "noise",
+      "variance"
+     ]
+    ]
+   },
+   "lab": "polyfit",
+   "map": "ml",
+   "key": "ml/overfitting",
+   "depth": 3
+  },
+  {
+   "id": "misc-train",
+   "label": "\"Higher training accuracy means a better model\"",
+   "kind": "misconception",
+   "summary": "Training accuracy rewards memorisation; only held-out performance measures what the model will do in use.",
+   "outcome": "Choose between two models using validation, not training, scores.",
+   "check": "Model A: 99% train, 70% validation. Model B: 88% train, 86% validation. Which do you deploy?",
+   "answer": "Model B: it generalises better; A is overfitting.",
+   "grade": {
+    "all": [
+     [
+      "b"
+     ]
+    ]
+   },
+   "lab": "polyfit",
+   "map": "ml",
+   "key": "ml/misc-train",
+   "depth": 3
+  },
+  {
+   "id": "regularization",
+   "label": "Regularisation",
+   "kind": "concept",
+   "summary": "Penalise complexity (L2, L1, dropout, early stopping) to trade a little bias for much less variance.",
+   "outcome": "Add L2 regularisation and explain its effect on the weights.",
+   "check": "What does an L2 penalty do to a model's weights?",
+   "answer": "It shrinks them toward zero, smoothing the model and reducing variance.",
+   "grade": {
+    "all": [
+     [
+      "shrink*",
+      "smaller",
+      "toward zero",
+      "towards zero",
+      "reduc*",
+      "penalis*",
+      "penaliz*"
+     ]
+    ]
+   },
+   "lab": "polyfit",
+   "map": "ml",
+   "key": "ml/regularization",
+   "depth": 4
+  },
+  {
+   "id": "classification",
+   "label": "Classification & Logistic Regression",
+   "kind": "concept",
+   "summary": "Predict a class probability with a sigmoid or softmax, trained with cross-entropy.",
+   "outcome": "Train a logistic classifier and read its decision boundary.",
+   "check": "Why use cross-entropy rather than squared error for classification?",
+   "answer": "It heavily penalises confident wrong probabilities and gives better gradients for sigmoid/softmax outputs.",
+   "grade": {
+    "all": [
+     [
+      "confident*",
+      "gradient*",
+      "probabilit*",
+      "log*",
+      "penalis*",
+      "penaliz*"
+     ]
+    ]
+   },
+   "map": "ml",
+   "key": "ml/classification",
+   "depth": 2
+  },
+  {
+   "id": "metrics",
+   "label": "Evaluation Metrics",
+   "kind": "concept",
+   "summary": "Accuracy, precision, recall, F1, ROC–AUC: choose the metric that matches the cost of each kind of error.",
+   "outcome": "Choose a metric for an imbalanced problem and justify it.",
+   "check": "99% of transactions are legitimate. A model predicts 'legitimate' every time. What is its accuracy, and why is that useless?",
+   "answer": "99% accuracy, but recall for fraud is zero: it never catches a single fraud.",
+   "grade": {
+    "numbers": [
+     [
+      99
+     ]
+    ],
+    "all": [
+     [
+      "recall",
+      "never catch*",
+      "no fraud",
+      "misses",
+      "zero",
+      "imbalance*",
+      "useless",
+      "catches none"
+     ]
+    ]
+   },
+   "map": "ml",
+   "key": "ml/metrics",
+   "depth": 3
+  },
+  {
+   "id": "misc-accuracy",
+   "label": "\"Accuracy is always the right metric\"",
+   "kind": "misconception",
+   "summary": "On imbalanced data accuracy rewards ignoring the rare class that usually matters most.",
+   "outcome": "Show where accuracy misleads.",
+   "check": "When does accuracy mislead most?",
+   "answer": "When classes are imbalanced: predicting the majority class scores high while missing every rare case.",
+   "grade": {
+    "all": [
+     [
+      "imbalanc*",
+      "rare",
+      "majority",
+      "skew*",
+      "minority"
+     ]
+    ]
+   },
+   "map": "ml",
+   "key": "ml/misc-accuracy",
+   "depth": 3
+  },
+  {
+   "id": "neural",
+   "label": "Neural Networks",
+   "kind": "concept",
+   "summary": "Layers of weighted sums and nonlinearities; without the nonlinearity, any depth collapses to one linear map.",
+   "outcome": "Compute a forward pass through a two-layer network.",
+   "check": "Why does a deep network need nonlinear activation functions?",
+   "answer": "Without them the layers compose into a single linear function, so depth adds nothing.",
+   "grade": {
+    "all": [
+     [
+      "linear"
+     ]
+    ]
+   },
+   "map": "ml",
+   "key": "ml/neural",
+   "depth": 3
+  },
+  {
+   "id": "backprop",
+   "label": "Backpropagation",
+   "kind": "concept",
+   "summary": "The chain rule applied backward through the computation graph gives every weight's gradient in one pass.",
+   "outcome": "Backpropagate gradients through a small graph by hand.",
+   "check": "Which rule of calculus is backpropagation built on?",
+   "answer": "The chain rule.",
+   "grade": {
+    "all": [
+     [
+      "chain"
+     ]
+    ]
+   },
+   "map": "ml",
+   "key": "ml/backprop",
+   "depth": 4
+  },
+  {
+   "id": "cnn",
+   "label": "Convolutional Networks",
+   "kind": "concept",
+   "summary": "Shared local filters exploit spatial structure: translation equivariance with far fewer parameters.",
+   "outcome": "Compute a convolution's output size and parameter count.",
+   "check": "Why does a CNN need far fewer parameters than a fully connected layer on an image?",
+   "answer": "Each filter is small and shared across all positions (weight sharing).",
+   "grade": {
+    "all": [
+     [
+      "shar*",
+      "reuse*",
+      "same filter",
+      "local",
+      "small filter*",
+      "kernel*"
+     ]
+    ]
+   },
+   "map": "ml",
+   "key": "ml/cnn",
+   "depth": 5
+  },
+  {
+   "id": "embeddings",
+   "label": "Embeddings",
+   "kind": "concept",
+   "summary": "Discrete items (words, users, products) mapped to vectors where distance reflects similarity.",
+   "outcome": "Use cosine similarity on embeddings to find related items.",
+   "check": "Why use cosine similarity rather than raw distance to compare embeddings?",
+   "answer": "It compares direction and ignores vector length, which often reflects frequency rather than meaning.",
+   "grade": {
+    "all": [
+     [
+      "direction",
+      "angle",
+      "length",
+      "magnitude",
+      "norm*",
+      "scale"
+     ]
+    ]
+   },
+   "map": "ml",
+   "key": "ml/embeddings",
+   "depth": 4
+  },
+  {
+   "id": "attention",
+   "label": "Attention & Transformers",
+   "kind": "threshold",
+   "summary": "Every token weighs every other token by learned relevance (queries, keys, values). It replaced recurrence and scales with data and compute.",
+   "outcome": "Compute scaled dot-product attention for three tokens.",
+   "check": "What do the softmax weights in attention decide?",
+   "answer": "How much each token's value contributes to another token's output, based on query–key similarity.",
+   "grade": {
+    "all": [
+     [
+      "how much",
+      "weight*",
+      "contribut*",
+      "relevan*",
+      "importance",
+      "focus*",
+      "mix"
+     ]
+    ]
+   },
+   "map": "ml",
+   "key": "ml/attention",
+   "depth": 5
+  },
+  {
+   "id": "llms",
+   "label": "Large Language Models",
+   "kind": "concept",
+   "summary": "Transformers pre-trained to predict the next token, then tuned with instructions and human feedback.",
+   "outcome": "Explain pre-training, fine-tuning and RLHF and what each changes.",
+   "check": "What objective is a base language model pre-trained on?",
+   "answer": "Predicting the next token in text.",
+   "grade": {
+    "all": [
+     [
+      "next token",
+      "next word",
+      "predict*"
+     ]
+    ]
+   },
+   "map": "ml",
+   "key": "ml/llms",
+   "depth": 6
+  },
+  {
+   "id": "misc-understand",
+   "label": "\"The model understands like a person\"",
+   "kind": "misconception",
+   "summary": "Fluent output comes from statistical next-token prediction; it can be confidently wrong, so outputs need verification.",
+   "outcome": "Design a check that exposes a fluent but wrong answer.",
+   "check": "Why can an LLM state a false fact confidently?",
+   "answer": "It generates plausible continuations from patterns in training data, not from verified knowledge, so fluency is not evidence of truth.",
+   "grade": {
+    "all": [
+     [
+      "plausib*",
+      "pattern*",
+      "predict*",
+      "statistic*",
+      "not verified",
+      "hallucinat*",
+      "fluen*",
+      "probab*"
+     ]
+    ]
+   },
+   "map": "ml",
+   "key": "ml/misc-understand",
+   "depth": 6
+  },
+  {
+   "id": "rl",
+   "label": "Reinforcement Learning",
+   "kind": "concept",
+   "summary": "An agent learns a policy from rewards by trial and error, balancing exploration and exploitation.",
+   "outcome": "Explain the exploration–exploitation trade-off with a bandit example.",
+   "check": "Why must an RL agent sometimes take an action it currently believes is worse?",
+   "answer": "To explore: its estimates may be wrong, and only trying actions reveals better ones.",
+   "grade": {
+    "all": [
+     [
+      "explor*",
+      "estimat*",
+      "uncertain*",
+      "discover*",
+      "might be better",
+      "learn*"
+     ]
+    ]
+   },
+   "map": "ml",
+   "key": "ml/rl",
+   "depth": 3
+  },
+  {
+   "id": "fairness",
+   "label": "Bias, Fairness & Responsible AI",
+   "kind": "concept",
+   "summary": "Models inherit bias from data and objectives; measure group error rates and document data and limits.",
+   "outcome": "Audit a classifier's error rates across groups.",
+   "check": "A hiring model is trained on past hiring decisions. What risk does that carry?",
+   "answer": "It learns and reproduces historical bias in those decisions.",
+   "grade": {
+    "all": [
+     [
+      "bias*",
+      "discriminat*",
+      "historic*",
+      "past",
+      "reproduc*",
+      "inherit*",
+      "unfair"
+     ]
+    ]
+   },
+   "map": "ml",
+   "key": "ml/fairness",
+   "depth": 4
+  },
+  {
+   "id": "loop",
+   "label": "The Game Loop",
+   "kind": "concept",
+   "summary": "Process input, update the world, render; repeat as fast as the frame budget allows.",
+   "outcome": "Write a game loop and name its three phases.",
+   "check": "What are the three phases of a classic game loop?",
+   "answer": "Process input, update the game state, render.",
+   "grade": {
+    "all": [
+     [
+      "input"
+     ],
+     [
+      "update*",
+      "simulat*",
+      "logic",
+      "state"
+     ],
+     [
+      "render*",
+      "draw*"
+     ]
+    ]
+   },
+   "map": "gamedev",
+   "key": "gamedev/loop",
+   "depth": 0
+  },
+  {
+   "id": "framebudget",
+   "label": "Frame Budget & Delta Time",
+   "kind": "threshold",
+   "summary": "At 60 fps each frame has about 16.7 ms. Movement scaled by elapsed time (delta time) keeps the game speed independent of frame rate.",
+   "outcome": "Make movement frame-rate independent with delta time.",
+   "check": "How many milliseconds does one frame have at 60 fps?",
+   "answer": "About 16.7 ms (1000 / 60).",
+   "grade": {
+    "numbers": [
+     [
+      16.7,
+      16.67,
+      16
+     ]
+    ],
+    "tol": 0.05
+   },
+   "map": "gamedev",
+   "key": "gamedev/framebudget",
+   "depth": 1
+  },
+  {
+   "id": "misc-perframe",
+   "label": "\"Move a fixed amount every frame\"",
+   "kind": "misconception",
+   "summary": "Per-frame movement makes the game run faster on fast machines and slower on slow ones.",
+   "outcome": "Explain and fix frame-rate-dependent movement.",
+   "check": "A character moves 5 pixels per frame. What happens on a 144 Hz monitor compared with 60 Hz?",
+   "answer": "It moves 2.4 times faster; movement must be scaled by delta time.",
+   "grade": {
+    "all": [
+     [
+      "faster",
+      "2 4",
+      "quicker",
+      "more than double",
+      "double"
+     ]
+    ]
+   },
+   "map": "gamedev",
+   "key": "gamedev/misc-perframe",
+   "depth": 1
+  },
+  {
+   "id": "fixedstep",
+   "label": "Fixed Timestep Physics",
+   "kind": "concept",
+   "summary": "Run physics in fixed steps with an accumulator and interpolate rendering, for stable and deterministic simulation.",
+   "outcome": "Implement an accumulator loop with a fixed physics step.",
+   "check": "Why run physics at a fixed timestep instead of the variable frame time?",
+   "answer": "Variable steps make integration unstable and results differ between machines; fixed steps are stable and deterministic.",
+   "grade": {
+    "all": [
+     [
+      "stab*",
+      "determinis*",
+      "consisten*",
+      "reproduc*",
+      "same result*",
+      "tunnel*"
+     ]
+    ]
+   },
+   "map": "gamedev",
+   "key": "gamedev/fixedstep",
+   "depth": 2
+  },
+  {
+   "id": "transforms",
+   "label": "Vectors & Transforms",
+   "kind": "concept",
+   "summary": "Positions, directions, dot and cross products, and matrices for translate, rotate and scale.",
+   "outcome": "Use a dot product to decide whether an enemy is in front of the player.",
+   "check": "The dot product of the player's facing direction and the direction to an enemy is negative. Where is the enemy?",
+   "answer": "Behind the player (more than 90° away from the facing direction).",
+   "grade": {
+    "all": [
+     [
+      "behind",
+      "back",
+      "rear"
+     ]
+    ]
+   },
+   "map": "gamedev",
+   "key": "gamedev/transforms",
+   "depth": 0
+  },
+  {
+   "id": "collision",
+   "label": "Collision Detection",
+   "kind": "concept",
+   "summary": "Bounding volumes, broad phase and narrow phase; fast objects can tunnel through thin walls.",
+   "outcome": "Write an AABB overlap test and explain tunnelling.",
+   "check": "Why can a fast bullet pass through a thin wall without colliding?",
+   "answer": "Tunnelling: between two frames it jumps from one side to the other, so no frame sees an overlap.",
+   "grade": {
+    "all": [
+     [
+      "tunnel*",
+      "jump*",
+      "skip*",
+      "between frames",
+      "never overlap*",
+      "no frame",
+      "discrete"
+     ]
+    ]
+   },
+   "map": "gamedev",
+   "key": "gamedev/collision",
+   "depth": 3
+  },
+  {
+   "id": "rendering",
+   "label": "The Rendering Pipeline",
+   "kind": "concept",
+   "summary": "Vertices transformed to the screen, rasterised to fragments, shaded and depth-tested on the GPU.",
+   "outcome": "Trace a triangle through vertex shading, rasterisation and fragment shading.",
+   "check": "What does the depth buffer (z-buffer) decide?",
+   "answer": "Which surface is nearest the camera at each pixel, so hidden surfaces are not drawn over visible ones.",
+   "grade": {
+    "all": [
+     [
+      "nearest",
+      "closest",
+      "front",
+      "in front",
+      "hidden",
+      "visib*",
+      "depth",
+      "occlu*"
+     ]
+    ]
+   },
+   "map": "gamedev",
+   "key": "gamedev/rendering",
+   "depth": 1
+  },
+  {
+   "id": "shaders",
+   "label": "Shaders",
+   "kind": "concept",
+   "summary": "Small programs run in parallel on the GPU for every vertex or pixel.",
+   "outcome": "Write a fragment shader that tints by distance.",
+   "check": "Why are shaders fast at per-pixel work?",
+   "answer": "The GPU runs the same small program on thousands of pixels in parallel.",
+   "grade": {
+    "all": [
+     [
+      "parallel",
+      "thousands",
+      "many at once",
+      "simultaneous*",
+      "gpu cores"
+     ]
+    ]
+   },
+   "map": "gamedev",
+   "key": "gamedev/shaders",
+   "depth": 2
+  },
+  {
+   "id": "ecs",
+   "label": "Entity-Component-System",
+   "kind": "concept",
+   "summary": "Entities are IDs, components are plain data, systems process all entities with a set of components: composition over inheritance and cache-friendly memory.",
+   "outcome": "Model a game object with components instead of an inheritance tree.",
+   "check": "What problem with deep inheritance does ECS avoid?",
+   "answer": "Rigid hierarchies where a new combination of behaviours (e.g. a flying, swimming enemy) does not fit any branch.",
+   "grade": {
+    "all": [
+     [
+      "combin*",
+      "rigid",
+      "hierarch*",
+      "diamond",
+      "inflexib*",
+      "composition",
+      "mix"
+     ]
+    ]
+   },
+   "map": "gamedev",
+   "key": "gamedev/ecs",
+   "depth": 1
+  },
+  {
+   "id": "pathfinding",
+   "label": "Pathfinding (A*)",
+   "kind": "concept",
+   "summary": "Search a graph using cost so far plus an admissible heuristic to find shortest paths efficiently.",
+   "outcome": "Run A* on a grid and explain the role of the heuristic.",
+   "check": "What must be true of A*'s heuristic for it to guarantee the shortest path?",
+   "answer": "It must be admissible: it never overestimates the true remaining cost.",
+   "grade": {
+    "all": [
+     [
+      "admissib*",
+      "never overestimat*",
+      "underestimat*",
+      "not overestimat*",
+      "doesn t overestimat*"
+     ]
+    ]
+   },
+   "lab": "astar",
+   "map": "gamedev",
+   "key": "gamedev/pathfinding",
+   "depth": 1
+  },
+  {
+   "id": "misc-greedy",
+   "label": "\"Always step toward the goal\"",
+   "kind": "misconception",
+   "summary": "Greedy movement gets stuck behind obstacles; search must sometimes move away from the goal to reach it.",
+   "outcome": "Show a map where greedy movement fails and A* succeeds.",
+   "check": "An enemy always moves to the tile closest to the player. What happens at a U-shaped wall between them?",
+   "answer": "It gets stuck inside the U, because escaping requires moving away from the player first.",
+   "grade": {
+    "all": [
+     [
+      "stuck",
+      "trap*",
+      "can t",
+      "cannot",
+      "local minim*",
+      "forever"
+     ]
+    ]
+   },
+   "lab": "astar",
+   "map": "gamedev",
+   "key": "gamedev/misc-greedy",
+   "depth": 1
+  },
+  {
+   "id": "gameai",
+   "label": "Game AI: State Machines & Behaviour Trees",
+   "kind": "concept",
+   "summary": "Readable, designer-tunable decision logic for characters.",
+   "outcome": "Build a guard's patrol–chase–search behaviour as a state machine.",
+   "check": "Why do game studios often prefer behaviour trees to large state machines?",
+   "answer": "They scale better: behaviours are modular and reusable without an explosion of transitions.",
+   "grade": {
+    "all": [
+     [
+      "modular",
+      "reus*",
+      "scale*",
+      "explosion",
+      "too many transitions",
+      "composab*",
+      "hierarch*"
+     ]
+    ]
+   },
+   "map": "gamedev",
+   "key": "gamedev/gameai",
+   "depth": 2
+  },
+  {
+   "id": "netcode",
+   "label": "Multiplayer Netcode",
+   "kind": "concept",
+   "summary": "Latency hidden with client-side prediction, server reconciliation and lag compensation; the server stays authoritative.",
+   "outcome": "Explain client prediction and reconciliation for a moving player.",
+   "check": "Why does the server, not the client, decide what really happened in a competitive game?",
+   "answer": "Clients can be modified to cheat; an authoritative server validates every action.",
+   "grade": {
+    "all": [
+     [
+      "cheat*",
+      "trust*",
+      "authorit*",
+      "hack*",
+      "tamper*"
+     ]
+    ]
+   },
+   "map": "gamedev",
+   "key": "gamedev/netcode",
+   "depth": 3
+  },
+  {
+   "id": "profiling",
+   "label": "Profiling & Optimisation",
+   "kind": "concept",
+   "summary": "Measure where the frame time goes before optimising; CPU-bound and GPU-bound frames need different fixes.",
+   "outcome": "Use a profiler to find whether a frame is CPU- or GPU-bound.",
+   "check": "Lowering the resolution doesn't raise your frame rate. What does that suggest?",
+   "answer": "The game is CPU-bound, not GPU-bound.",
+   "grade": {
+    "all": [
+     [
+      "cpu"
+     ]
+    ]
+   },
+   "map": "gamedev",
+   "key": "gamedev/profiling",
+   "depth": 3
+  },
+  {
+   "id": "design",
+   "label": "Game Design & Game Feel",
+   "kind": "concept",
+   "summary": "Core loops, feedback, juice and difficulty curves; playtesting with real players.",
+   "outcome": "Define a core loop and run a playtest that changes it.",
+   "check": "Why watch playtesters silently instead of explaining the game to them?",
+   "answer": "Players won't have you there at release; silent observation reveals where the game itself fails to teach.",
+   "grade": {
+    "all": [
+     [
+      "real player*",
+      "release",
+      "won t have",
+      "on their own",
+      "without help",
+      "reveal*",
+      "confus*",
+      "observ*",
+      "bias*"
+     ]
+    ]
+   },
+   "map": "gamedev",
+   "key": "gamedev/design",
+   "depth": 1
   },
   {
    "id": "goals",
@@ -6389,6 +8702,270 @@ window.DULTA_MAPS = {
    "map": "biology"
   },
   {
+   "from": "biology/cell",
+   "to": "plant/plantcell",
+   "type": "prereq",
+   "map": "plant"
+  },
+  {
+   "from": "biology/metabolism",
+   "to": "plant/photosynthesis",
+   "type": "prereq",
+   "map": "plant"
+  },
+  {
+   "from": "plant/plantcell",
+   "to": "plant/photosynthesis",
+   "type": "prereq",
+   "map": "plant"
+  },
+  {
+   "from": "biology/genetics",
+   "to": "plant/mendelcrops",
+   "type": "prereq",
+   "map": "plant"
+  },
+  {
+   "from": "plant/mendelcrops",
+   "to": "plant/polyploidy",
+   "type": "prereq",
+   "map": "plant"
+  },
+  {
+   "from": "plant/mendelcrops",
+   "to": "plant/quantgen",
+   "type": "prereq",
+   "map": "plant"
+  },
+  {
+   "from": "mathematics/statistics",
+   "to": "plant/quantgen",
+   "type": "prereq",
+   "map": "plant"
+  },
+  {
+   "from": "plant/quantgen",
+   "to": "plant/heritability",
+   "type": "prereq",
+   "map": "plant"
+  },
+  {
+   "from": "plant/misc-h2",
+   "to": "plant/heritability",
+   "type": "counter",
+   "map": "plant"
+  },
+  {
+   "from": "plant/heritability",
+   "to": "plant/gxe",
+   "type": "prereq",
+   "map": "plant"
+  },
+  {
+   "from": "mathematics/statistics",
+   "to": "plant/trials",
+   "type": "prereq",
+   "map": "plant"
+  },
+  {
+   "from": "plant/gxe",
+   "to": "plant/trials",
+   "type": "prereq",
+   "map": "plant"
+  },
+  {
+   "from": "plant/mendelcrops",
+   "to": "plant/markers",
+   "type": "prereq",
+   "map": "plant"
+  },
+  {
+   "from": "biology/biotech",
+   "to": "plant/markers",
+   "type": "prereq",
+   "map": "plant"
+  },
+  {
+   "from": "plant/markers",
+   "to": "plant/mas",
+   "type": "prereq",
+   "map": "plant"
+  },
+  {
+   "from": "plant/heritability",
+   "to": "plant/mas",
+   "type": "prereq",
+   "map": "plant"
+  },
+  {
+   "from": "biology/biotech",
+   "to": "plant/geneediting",
+   "type": "prereq",
+   "map": "plant"
+  },
+  {
+   "from": "plant/markers",
+   "to": "plant/geneediting",
+   "type": "prereq",
+   "map": "plant"
+  },
+  {
+   "from": "plant/misc-gmo",
+   "to": "plant/geneediting",
+   "type": "counter",
+   "map": "plant"
+  },
+  {
+   "from": "plant/photosynthesis",
+   "to": "plant/phenotyping",
+   "type": "prereq",
+   "map": "plant"
+  },
+  {
+   "from": "plant/trials",
+   "to": "plant/phenotyping",
+   "type": "prereq",
+   "map": "plant"
+  },
+  {
+   "from": "plant/trials",
+   "to": "plant/seedsystems",
+   "type": "prereq",
+   "map": "plant"
+  },
+  {
+   "from": "plant/mas",
+   "to": "plant/seedsystems",
+   "type": "prereq",
+   "map": "plant"
+  },
+  {
+   "from": "physics/quantum",
+   "to": "quantum/qubit",
+   "type": "prereq",
+   "map": "quantum"
+  },
+  {
+   "from": "mathematics/linalg",
+   "to": "quantum/qubit",
+   "type": "prereq",
+   "map": "quantum"
+  },
+  {
+   "from": "quantum/qubit",
+   "to": "quantum/measurement",
+   "type": "prereq",
+   "map": "quantum"
+  },
+  {
+   "from": "mathematics/probability",
+   "to": "quantum/measurement",
+   "type": "prereq",
+   "map": "quantum"
+  },
+  {
+   "from": "quantum/qubit",
+   "to": "quantum/bloch",
+   "type": "prereq",
+   "map": "quantum"
+  },
+  {
+   "from": "mathematics/complex",
+   "to": "quantum/bloch",
+   "type": "prereq",
+   "map": "quantum"
+  },
+  {
+   "from": "quantum/bloch",
+   "to": "quantum/gates",
+   "type": "prereq",
+   "map": "quantum"
+  },
+  {
+   "from": "quantum/gates",
+   "to": "quantum/interference",
+   "type": "prereq",
+   "map": "quantum"
+  },
+  {
+   "from": "quantum/measurement",
+   "to": "quantum/interference",
+   "type": "prereq",
+   "map": "quantum"
+  },
+  {
+   "from": "quantum/misc-parallel",
+   "to": "quantum/interference",
+   "type": "counter",
+   "map": "quantum"
+  },
+  {
+   "from": "quantum/gates",
+   "to": "quantum/cnot",
+   "type": "prereq",
+   "map": "quantum"
+  },
+  {
+   "from": "quantum/cnot",
+   "to": "quantum/entanglement",
+   "type": "prereq",
+   "map": "quantum"
+  },
+  {
+   "from": "quantum/misc-ftl",
+   "to": "quantum/entanglement",
+   "type": "counter",
+   "map": "quantum"
+  },
+  {
+   "from": "quantum/entanglement",
+   "to": "quantum/noclone",
+   "type": "prereq",
+   "map": "quantum"
+  },
+  {
+   "from": "quantum/interference",
+   "to": "quantum/algorithms",
+   "type": "prereq",
+   "map": "quantum"
+  },
+  {
+   "from": "quantum/entanglement",
+   "to": "quantum/algorithms",
+   "type": "prereq",
+   "map": "quantum"
+  },
+  {
+   "from": "quantum/measurement",
+   "to": "quantum/decoherence",
+   "type": "prereq",
+   "map": "quantum"
+  },
+  {
+   "from": "physics/statmech",
+   "to": "quantum/decoherence",
+   "type": "prereq",
+   "map": "quantum"
+  },
+  {
+   "from": "quantum/decoherence",
+   "to": "quantum/qec",
+   "type": "prereq",
+   "map": "quantum"
+  },
+  {
+   "from": "quantum/noclone",
+   "to": "quantum/qec",
+   "type": "prereq",
+   "map": "quantum"
+  },
+  {
+   "from": "quantum/decoherence",
+   "to": "quantum/hardware",
+   "type": "prereq",
+   "map": "quantum"
+  },
+  {
    "from": "physics/circuits",
    "to": "electrical/ohm",
    "type": "prereq",
@@ -6869,6 +9446,318 @@ window.DULTA_MAPS = {
    "map": "mechanical"
   },
   {
+   "from": "mechanical/mechanisms",
+   "to": "robotics/kinematics",
+   "type": "prereq",
+   "map": "robotics"
+  },
+  {
+   "from": "mathematics/linalg",
+   "to": "robotics/kinematics",
+   "type": "prereq",
+   "map": "robotics"
+  },
+  {
+   "from": "electrical/transistors",
+   "to": "robotics/actuators",
+   "type": "prereq",
+   "map": "robotics"
+  },
+  {
+   "from": "embedded/pwm",
+   "to": "robotics/actuators",
+   "type": "prereq",
+   "map": "robotics"
+  },
+  {
+   "from": "embedded/adc",
+   "to": "robotics/sensors",
+   "type": "prereq",
+   "map": "robotics"
+  },
+  {
+   "from": "robotics/actuators",
+   "to": "robotics/odometry",
+   "type": "prereq",
+   "map": "robotics"
+  },
+  {
+   "from": "robotics/sensors",
+   "to": "robotics/odometry",
+   "type": "prereq",
+   "map": "robotics"
+  },
+  {
+   "from": "robotics/misc-exact",
+   "to": "robotics/odometry",
+   "type": "counter",
+   "map": "robotics"
+  },
+  {
+   "from": "robotics/odometry",
+   "to": "robotics/fusion",
+   "type": "prereq",
+   "map": "robotics"
+  },
+  {
+   "from": "mathematics/probability",
+   "to": "robotics/fusion",
+   "type": "prereq",
+   "map": "robotics"
+  },
+  {
+   "from": "robotics/misc-gps",
+   "to": "robotics/fusion",
+   "type": "counter",
+   "map": "robotics"
+  },
+  {
+   "from": "electrical/control",
+   "to": "robotics/control",
+   "type": "prereq",
+   "map": "robotics"
+  },
+  {
+   "from": "robotics/kinematics",
+   "to": "robotics/control",
+   "type": "prereq",
+   "map": "robotics"
+  },
+  {
+   "from": "ml/cnn",
+   "to": "robotics/vision",
+   "type": "prereq",
+   "map": "robotics"
+  },
+  {
+   "from": "robotics/sensors",
+   "to": "robotics/vision",
+   "type": "prereq",
+   "map": "robotics"
+  },
+  {
+   "from": "robotics/fusion",
+   "to": "robotics/localization",
+   "type": "prereq",
+   "map": "robotics"
+  },
+  {
+   "from": "robotics/localization",
+   "to": "robotics/planning",
+   "type": "prereq",
+   "map": "robotics"
+  },
+  {
+   "from": "gamedev/pathfinding",
+   "to": "robotics/planning",
+   "type": "prereq",
+   "map": "robotics"
+  },
+  {
+   "from": "developer/modules",
+   "to": "robotics/ros",
+   "type": "prereq",
+   "map": "robotics"
+  },
+  {
+   "from": "robotics/control",
+   "to": "robotics/ros",
+   "type": "prereq",
+   "map": "robotics"
+  },
+  {
+   "from": "robotics/planning",
+   "to": "robotics/agrifield",
+   "type": "prereq",
+   "map": "robotics"
+  },
+  {
+   "from": "robotics/vision",
+   "to": "robotics/agrifield",
+   "type": "prereq",
+   "map": "robotics"
+  },
+  {
+   "from": "plant/phenotyping",
+   "to": "robotics/agrifield",
+   "type": "prereq",
+   "map": "robotics"
+  },
+  {
+   "from": "robotics/agrifield",
+   "to": "robotics/precisionag",
+   "type": "prereq",
+   "map": "robotics"
+  },
+  {
+   "from": "plant/trials",
+   "to": "robotics/precisionag",
+   "type": "prereq",
+   "map": "robotics"
+  },
+  {
+   "from": "robotics/agrifield",
+   "to": "robotics/safety",
+   "type": "prereq",
+   "map": "robotics"
+  },
+  {
+   "from": "robotics/ros",
+   "to": "robotics/safety",
+   "type": "prereq",
+   "map": "robotics"
+  },
+  {
+   "from": "electrical/ohm",
+   "to": "telecom/db",
+   "type": "prereq",
+   "map": "telecom"
+  },
+  {
+   "from": "mathematics/functions",
+   "to": "telecom/db",
+   "type": "prereq",
+   "map": "telecom"
+  },
+  {
+   "from": "telecom/misc-db",
+   "to": "telecom/db",
+   "type": "counter",
+   "map": "telecom"
+  },
+  {
+   "from": "electrical/filters",
+   "to": "telecom/spectrum",
+   "type": "prereq",
+   "map": "telecom"
+  },
+  {
+   "from": "telecom/db",
+   "to": "telecom/noise",
+   "type": "prereq",
+   "map": "telecom"
+  },
+  {
+   "from": "physics/statmech",
+   "to": "telecom/noise",
+   "type": "prereq",
+   "map": "telecom"
+  },
+  {
+   "from": "telecom/spectrum",
+   "to": "telecom/modulation",
+   "type": "prereq",
+   "map": "telecom"
+  },
+  {
+   "from": "mathematics/complex",
+   "to": "telecom/modulation",
+   "type": "prereq",
+   "map": "telecom"
+  },
+  {
+   "from": "telecom/noise",
+   "to": "telecom/shannon",
+   "type": "prereq",
+   "map": "telecom"
+  },
+  {
+   "from": "telecom/modulation",
+   "to": "telecom/shannon",
+   "type": "prereq",
+   "map": "telecom"
+  },
+  {
+   "from": "telecom/misc-snr",
+   "to": "telecom/shannon",
+   "type": "counter",
+   "map": "telecom"
+  },
+  {
+   "from": "telecom/shannon",
+   "to": "telecom/coding",
+   "type": "prereq",
+   "map": "telecom"
+  },
+  {
+   "from": "mathematics/probability",
+   "to": "telecom/coding",
+   "type": "prereq",
+   "map": "telecom"
+  },
+  {
+   "from": "telecom/modulation",
+   "to": "telecom/multiplexing",
+   "type": "prereq",
+   "map": "telecom"
+  },
+  {
+   "from": "mathematics/fourier",
+   "to": "telecom/multiplexing",
+   "type": "prereq",
+   "map": "telecom"
+  },
+  {
+   "from": "telecom/db",
+   "to": "telecom/propagation",
+   "type": "prereq",
+   "map": "telecom"
+  },
+  {
+   "from": "physics/maxwell",
+   "to": "telecom/propagation",
+   "type": "prereq",
+   "map": "telecom"
+  },
+  {
+   "from": "physics/optics",
+   "to": "telecom/fibre",
+   "type": "prereq",
+   "map": "telecom"
+  },
+  {
+   "from": "telecom/db",
+   "to": "telecom/fibre",
+   "type": "prereq",
+   "map": "telecom"
+  },
+  {
+   "from": "developer/http",
+   "to": "telecom/packets",
+   "type": "prereq",
+   "map": "telecom"
+  },
+  {
+   "from": "telecom/fibre",
+   "to": "telecom/packets",
+   "type": "prereq",
+   "map": "telecom"
+  },
+  {
+   "from": "telecom/propagation",
+   "to": "telecom/cellular",
+   "type": "prereq",
+   "map": "telecom"
+  },
+  {
+   "from": "telecom/multiplexing",
+   "to": "telecom/cellular",
+   "type": "prereq",
+   "map": "telecom"
+  },
+  {
+   "from": "electrical/sampling",
+   "to": "telecom/sdr",
+   "type": "prereq",
+   "map": "telecom"
+  },
+  {
+   "from": "telecom/modulation",
+   "to": "telecom/sdr",
+   "type": "prereq",
+   "map": "telecom"
+  },
+  {
    "from": "developer/shell",
    "to": "developer/git",
    "type": "prereq",
@@ -7235,6 +10124,300 @@ window.DULTA_MAPS = {
    "map": "devops"
   },
   {
+   "from": "mathematics/statistics",
+   "to": "ml/data",
+   "type": "prereq",
+   "map": "ml"
+  },
+  {
+   "from": "ml/data",
+   "to": "ml/regression",
+   "type": "prereq",
+   "map": "ml"
+  },
+  {
+   "from": "mathematics/linalg",
+   "to": "ml/regression",
+   "type": "prereq",
+   "map": "ml"
+  },
+  {
+   "from": "ml/regression",
+   "to": "ml/gradient",
+   "type": "prereq",
+   "map": "ml"
+  },
+  {
+   "from": "mathematics/multivar",
+   "to": "ml/gradient",
+   "type": "prereq",
+   "map": "ml"
+  },
+  {
+   "from": "ml/gradient",
+   "to": "ml/overfitting",
+   "type": "prereq",
+   "map": "ml"
+  },
+  {
+   "from": "ml/data",
+   "to": "ml/overfitting",
+   "type": "prereq",
+   "map": "ml"
+  },
+  {
+   "from": "ml/misc-train",
+   "to": "ml/overfitting",
+   "type": "counter",
+   "map": "ml"
+  },
+  {
+   "from": "ml/overfitting",
+   "to": "ml/regularization",
+   "type": "prereq",
+   "map": "ml"
+  },
+  {
+   "from": "ml/regression",
+   "to": "ml/classification",
+   "type": "prereq",
+   "map": "ml"
+  },
+  {
+   "from": "mathematics/probability",
+   "to": "ml/classification",
+   "type": "prereq",
+   "map": "ml"
+  },
+  {
+   "from": "ml/classification",
+   "to": "ml/metrics",
+   "type": "prereq",
+   "map": "ml"
+  },
+  {
+   "from": "ml/misc-accuracy",
+   "to": "ml/metrics",
+   "type": "counter",
+   "map": "ml"
+  },
+  {
+   "from": "ml/classification",
+   "to": "ml/neural",
+   "type": "prereq",
+   "map": "ml"
+  },
+  {
+   "from": "ml/gradient",
+   "to": "ml/neural",
+   "type": "prereq",
+   "map": "ml"
+  },
+  {
+   "from": "ml/neural",
+   "to": "ml/backprop",
+   "type": "prereq",
+   "map": "ml"
+  },
+  {
+   "from": "mathematics/derivatives",
+   "to": "ml/backprop",
+   "type": "prereq",
+   "map": "ml"
+  },
+  {
+   "from": "ml/backprop",
+   "to": "ml/cnn",
+   "type": "prereq",
+   "map": "ml"
+  },
+  {
+   "from": "ml/neural",
+   "to": "ml/embeddings",
+   "type": "prereq",
+   "map": "ml"
+  },
+  {
+   "from": "ml/embeddings",
+   "to": "ml/attention",
+   "type": "prereq",
+   "map": "ml"
+  },
+  {
+   "from": "ml/backprop",
+   "to": "ml/attention",
+   "type": "prereq",
+   "map": "ml"
+  },
+  {
+   "from": "ml/attention",
+   "to": "ml/llms",
+   "type": "prereq",
+   "map": "ml"
+  },
+  {
+   "from": "ml/misc-understand",
+   "to": "ml/llms",
+   "type": "counter",
+   "map": "ml"
+  },
+  {
+   "from": "ml/gradient",
+   "to": "ml/rl",
+   "type": "prereq",
+   "map": "ml"
+  },
+  {
+   "from": "mathematics/probability",
+   "to": "ml/rl",
+   "type": "prereq",
+   "map": "ml"
+  },
+  {
+   "from": "ml/metrics",
+   "to": "ml/fairness",
+   "type": "prereq",
+   "map": "ml"
+  },
+  {
+   "from": "ml/data",
+   "to": "ml/fairness",
+   "type": "prereq",
+   "map": "ml"
+  },
+  {
+   "from": "developer/basics",
+   "to": "gamedev/loop",
+   "type": "prereq",
+   "map": "gamedev"
+  },
+  {
+   "from": "gamedev/loop",
+   "to": "gamedev/framebudget",
+   "type": "prereq",
+   "map": "gamedev"
+  },
+  {
+   "from": "gamedev/misc-perframe",
+   "to": "gamedev/framebudget",
+   "type": "counter",
+   "map": "gamedev"
+  },
+  {
+   "from": "gamedev/framebudget",
+   "to": "gamedev/fixedstep",
+   "type": "prereq",
+   "map": "gamedev"
+  },
+  {
+   "from": "physics/kinematics",
+   "to": "gamedev/fixedstep",
+   "type": "prereq",
+   "map": "gamedev"
+  },
+  {
+   "from": "mathematics/linalg",
+   "to": "gamedev/transforms",
+   "type": "prereq",
+   "map": "gamedev"
+  },
+  {
+   "from": "gamedev/transforms",
+   "to": "gamedev/collision",
+   "type": "prereq",
+   "map": "gamedev"
+  },
+  {
+   "from": "gamedev/fixedstep",
+   "to": "gamedev/collision",
+   "type": "prereq",
+   "map": "gamedev"
+  },
+  {
+   "from": "gamedev/transforms",
+   "to": "gamedev/rendering",
+   "type": "prereq",
+   "map": "gamedev"
+  },
+  {
+   "from": "gamedev/rendering",
+   "to": "gamedev/shaders",
+   "type": "prereq",
+   "map": "gamedev"
+  },
+  {
+   "from": "developer/modules",
+   "to": "gamedev/ecs",
+   "type": "prereq",
+   "map": "gamedev"
+  },
+  {
+   "from": "gamedev/loop",
+   "to": "gamedev/ecs",
+   "type": "prereq",
+   "map": "gamedev"
+  },
+  {
+   "from": "developer/datastructs",
+   "to": "gamedev/pathfinding",
+   "type": "prereq",
+   "map": "gamedev"
+  },
+  {
+   "from": "gamedev/transforms",
+   "to": "gamedev/pathfinding",
+   "type": "prereq",
+   "map": "gamedev"
+  },
+  {
+   "from": "gamedev/misc-greedy",
+   "to": "gamedev/pathfinding",
+   "type": "counter",
+   "map": "gamedev"
+  },
+  {
+   "from": "embedded/fsm",
+   "to": "gamedev/gameai",
+   "type": "prereq",
+   "map": "gamedev"
+  },
+  {
+   "from": "gamedev/pathfinding",
+   "to": "gamedev/gameai",
+   "type": "prereq",
+   "map": "gamedev"
+  },
+  {
+   "from": "developer/http",
+   "to": "gamedev/netcode",
+   "type": "prereq",
+   "map": "gamedev"
+  },
+  {
+   "from": "gamedev/fixedstep",
+   "to": "gamedev/netcode",
+   "type": "prereq",
+   "map": "gamedev"
+  },
+  {
+   "from": "gamedev/framebudget",
+   "to": "gamedev/profiling",
+   "type": "prereq",
+   "map": "gamedev"
+  },
+  {
+   "from": "gamedev/shaders",
+   "to": "gamedev/profiling",
+   "type": "prereq",
+   "map": "gamedev"
+  },
+  {
+   "from": "gamedev/loop",
+   "to": "gamedev/design",
+   "type": "prereq",
+   "map": "gamedev"
+  },
+  {
    "from": "learning/goals",
    "to": "learning/retrieval",
    "type": "prereq",
@@ -7560,7 +10743,8 @@ window.DULTA_TRACKS = [
    "code",
    "complexity"
   ],
-  "capstone": "Take a small service from a laptop to production: CI that fails fast, infrastructure as code, a canary deploy, RED dashboards, a 99.9% SLO with its error budget, and a blameless postmortem from a game day."
+  "capstone": "Take a small service from a laptop to production: CI that fails fast, infrastructure as code, a canary deploy, RED dashboards, a 99.9% SLO with its error budget, and a blameless postmortem from a game day.",
+  "field": "Computing & AI"
  },
  {
   "id": "software-engineer",
@@ -7594,7 +10778,8 @@ window.DULTA_TRACKS = [
    "code",
    "complexity"
   ],
-  "capstone": "Design, test and ship a small web service with an ADR for each major decision, a test suite that catches a seeded bug, and one feature delegated to a coding agent and independently verified."
+  "capstone": "Design, test and ship a small web service with an ADR for each major decision, a test suite that catches a seeded bug, and one feature delegated to a coding agent and independently verified.",
+  "field": "Computing & AI"
  },
  {
   "id": "embedded-engineer",
@@ -7634,7 +10819,8 @@ window.DULTA_TRACKS = [
    "mcu",
    "rc"
   ],
-  "capstone": "Build a battery-powered sensor node: a debounced button, ADC sampling with filtering, PWM output, an I²C sensor, sleep between readings, and a measured battery-life estimate."
+  "capstone": "Build a battery-powered sensor node: a debounced button, ADC sampling with filtering, PWM output, an I²C sensor, sleep between readings, and a measured battery-life estimate.",
+  "field": "Engineering"
  },
  {
   "id": "electrical-engineer",
@@ -7665,7 +10851,8 @@ window.DULTA_TRACKS = [
    "rc",
    "fourier"
   ],
-  "capstone": "Design an analogue front end for a sensor: an op-amp gain stage, an anti-aliasing filter chosen from the sample rate, and a PID loop that holds a setpoint, each verified against a hand calculation."
+  "capstone": "Design an analogue front end for a sensor: an op-amp gain stage, an anti-aliasing filter chosen from the sample rate, and a PID loop that holds a setpoint, each verified against a hand calculation.",
+  "field": "Engineering"
  },
  {
   "id": "mechanical-engineer",
@@ -7703,7 +10890,8 @@ window.DULTA_TRACKS = [
    "projectile",
    "pendulum"
   ],
-  "capstone": "Design a load-bearing bracket: choose the material by performance index, size it by hand, validate with FEA and a mesh-convergence study, check fatigue and resonance, and tolerance it for manufacture."
+  "capstone": "Design a load-bearing bracket: choose the material by performance index, size it by hand, validate with FEA and a mesh-convergence study, check fatigue and resonance, and tolerance it for manufacture.",
+  "field": "Engineering"
  },
  {
   "id": "physicist",
@@ -7738,7 +10926,8 @@ window.DULTA_TRACKS = [
    "pendulum",
    "fourier"
   ],
-  "capstone": "Design and run a measurement (e.g. g from a pendulum at large amplitude), model it from first principles, propagate the uncertainty, and explain the residuals."
+  "capstone": "Design and run a measurement (e.g. g from a pendulum at large amplitude), model it from first principles, propagate the uncertainty, and explain the residuals.",
+  "field": "Science"
  },
  {
   "id": "chemist",
@@ -7767,7 +10956,8 @@ window.DULTA_TRACKS = [
    "mechanical/heat"
   ],
   "labs": [],
-  "capstone": "Plan a synthesis or process step: balance it, predict yield from equilibrium and kinetics, size the heat removal, and confirm the product with spectroscopy data."
+  "capstone": "Plan a synthesis or process step: balance it, predict yield from equilibrium and kinetics, size the heat removal, and confirm the product with spectroscopy data.",
+  "field": "Science"
  },
  {
   "id": "life-scientist",
@@ -7799,7 +10989,8 @@ window.DULTA_TRACKS = [
   "labs": [
    "retrieval"
   ],
-  "capstone": "Design an experiment (e.g. an enzyme-inhibitor assay or a CRISPR knockout), state the hypothesis, the controls and the statistical test before collecting data, and interpret the result without confusing correlation and cause."
+  "capstone": "Design an experiment (e.g. an enzyme-inhibitor assay or a CRISPR knockout), state the hypothesis, the controls and the statistical test before collecting data, and interpret the result without confusing correlation and cause.",
+  "field": "Science"
  },
  {
   "id": "ai-agent-engineer",
@@ -7835,7 +11026,8 @@ window.DULTA_TRACKS = [
    "code",
    "retrieval"
   ],
-  "capstone": "Teach a subagent a new domain with the DULTA agent-learner protocol: baseline cold-start, notes revised over moves, `leak` clean, an independent grader, normalized gain reported, and the notes installed as a skill."
+  "capstone": "Teach a subagent a new domain with the DULTA agent-learner protocol: baseline cold-start, notes revised over moves, `leak` clean, an independent grader, normalized gain reported, and the notes installed as a skill.",
+  "field": "Computing & AI"
  },
  {
   "id": "educator",
@@ -7863,6 +11055,294 @@ window.DULTA_TRACKS = [
   "labs": [
    "retrieval"
   ],
-  "capstone": "Design one week of a course with DULTA's Directed Teaching mode: aligned outcomes, activities and assessments (`dulta.py align` clean), a pre/post test with normalized gain, and a panel round on the materials."
+  "capstone": "Design one week of a course with DULTA's Directed Teaching mode: aligned outcomes, activities and assessments (`dulta.py align` clean), a pre/post test with normalized gain, and a panel round on the materials.",
+  "field": "Learning & Teaching"
+ },
+ {
+  "id": "ai-engineer",
+  "title": "AI / Machine Learning Engineer",
+  "accent": "ml",
+  "field": "Computing & AI",
+  "summary": "Train, evaluate and ship models that generalise, from linear regression to transformers.",
+  "nodes": [
+   "mathematics/linalg",
+   "mathematics/derivatives",
+   "mathematics/multivar",
+   "mathematics/probability",
+   "mathematics/statistics",
+   "developer/functions",
+   "developer/testing",
+   "ml/data",
+   "ml/regression",
+   "ml/gradient",
+   "ml/overfitting",
+   "ml/regularization",
+   "ml/classification",
+   "ml/metrics",
+   "ml/neural",
+   "ml/backprop",
+   "ml/cnn",
+   "ml/embeddings",
+   "ml/attention",
+   "ml/llms",
+   "ml/rl",
+   "ml/fairness",
+   "devops/containers",
+   "devops/observability"
+  ],
+  "labs": [
+   "polyfit",
+   "complexity",
+   "code"
+  ],
+  "capstone": "Train a model on a real dataset with a clean train/validation/test split, show the overfitting curve and how regularisation fixes it, pick the metric that matches the cost of errors, audit error rates across groups, and serve it behind a monitored endpoint."
+ },
+ {
+  "id": "data-scientist",
+  "title": "Data Scientist",
+  "accent": "mathematics",
+  "field": "Computing & AI",
+  "summary": "Turn data into decisions you can defend: statistics, experiments and models.",
+  "nodes": [
+   "mathematics/functions",
+   "mathematics/probability",
+   "mathematics/misc-gambler",
+   "mathematics/statistics",
+   "mathematics/misc-corr",
+   "developer/basics",
+   "developer/functions",
+   "developer/databases",
+   "ml/data",
+   "ml/regression",
+   "ml/overfitting",
+   "ml/classification",
+   "ml/metrics",
+   "ml/misc-accuracy",
+   "ml/fairness",
+   "plant/trials"
+  ],
+  "labs": [
+   "polyfit",
+   "retrieval"
+  ],
+  "capstone": "Answer a real business or science question end to end: pre-register the hypothesis and metric, query and clean the data, run the analysis or experiment, and present the result with its uncertainty and the confounders you ruled out."
+ },
+ {
+  "id": "game-developer",
+  "title": "Game Developer",
+  "accent": "gamedev",
+  "field": "Computing & AI",
+  "summary": "Real-time simulation that feels good: loops, physics, rendering, AI and netcode inside a 16 ms budget.",
+  "nodes": [
+   "developer/basics",
+   "developer/functions",
+   "developer/datastructs",
+   "developer/modules",
+   "mathematics/linalg",
+   "physics/vectors",
+   "physics/kinematics",
+   "physics/newton",
+   "gamedev/loop",
+   "gamedev/framebudget",
+   "gamedev/fixedstep",
+   "gamedev/transforms",
+   "gamedev/collision",
+   "gamedev/rendering",
+   "gamedev/shaders",
+   "gamedev/ecs",
+   "gamedev/pathfinding",
+   "gamedev/gameai",
+   "gamedev/netcode",
+   "gamedev/profiling",
+   "gamedev/design"
+  ],
+  "labs": [
+   "astar",
+   "projectile",
+   "complexity"
+  ],
+  "capstone": "Ship a small playable game: a fixed-timestep loop, collisions without tunnelling, an enemy that pathfinds with A*, a stable 60 fps measured with a profiler, and two rounds of silent playtesting that change the design."
+ },
+ {
+  "id": "plant-geneticist",
+  "title": "Plant Geneticist / Breeder",
+  "accent": "plant",
+  "field": "Agriculture & Food",
+  "summary": "Breed better crops: inheritance, quantitative genetics, markers, gene editing and field trials.",
+  "nodes": [
+   "chemistry/bonding",
+   "biology/dna",
+   "biology/genetics",
+   "biology/evolution",
+   "biology/popgen",
+   "biology/regulation",
+   "biology/biotech",
+   "mathematics/probability",
+   "mathematics/statistics",
+   "plant/plantcell",
+   "plant/photosynthesis",
+   "plant/mendelcrops",
+   "plant/polyploidy",
+   "plant/quantgen",
+   "plant/heritability",
+   "plant/gxe",
+   "plant/trials",
+   "plant/markers",
+   "plant/mas",
+   "plant/geneediting",
+   "plant/phenotyping",
+   "plant/seedsystems"
+  ],
+  "labs": [
+   "breeding",
+   "retrieval"
+  ],
+  "capstone": "Design a breeding programme for one trait (e.g. drought tolerance): estimate heritability, predict gain per cycle with the breeder's equation, choose markers or genomic selection, lay out a multi-site randomised trial, and plan release to farmers."
+ },
+ {
+  "id": "agri-robotics-engineer",
+  "title": "Agricultural Robotics Engineer",
+  "accent": "robotics",
+  "field": "Agriculture & Food",
+  "summary": "Robots that work in fields: sensing through dust and changing light, navigating rows, handling plants gently.",
+  "nodes": [
+   "physics/kinematics",
+   "physics/forces",
+   "mathematics/linalg",
+   "mathematics/probability",
+   "electrical/transistors",
+   "electrical/control",
+   "embedded/pwm",
+   "embedded/adc",
+   "embedded/interrupts",
+   "mechanical/mechanisms",
+   "ml/cnn",
+   "robotics/kinematics",
+   "robotics/actuators",
+   "robotics/sensors",
+   "robotics/odometry",
+   "robotics/fusion",
+   "robotics/control",
+   "robotics/vision",
+   "robotics/localization",
+   "robotics/planning",
+   "robotics/ros",
+   "plant/phenotyping",
+   "plant/trials",
+   "robotics/agrifield",
+   "robotics/precisionag",
+   "robotics/safety"
+  ],
+  "labs": [
+   "astar",
+   "mcu",
+   "rc"
+  ],
+  "capstone": "Specify and simulate a weeding or scouting robot for one crop: sensors and RTK positioning, a Kalman-filtered pose, a coverage path with obstacle detours, crop–weed detection evaluated on a different field, a safety case, and a payback estimate against labour cost."
+ },
+ {
+  "id": "robotics-engineer",
+  "title": "Robotics Engineer",
+  "accent": "robotics",
+  "field": "Engineering",
+  "summary": "Sense, estimate, plan and act: kinematics, control, sensor fusion and robot software.",
+  "nodes": [
+   "physics/newton",
+   "physics/rotation",
+   "mathematics/linalg",
+   "mathematics/diffeq",
+   "mathematics/probability",
+   "electrical/control",
+   "embedded/registers",
+   "embedded/pwm",
+   "embedded/interrupts",
+   "mechanical/mechanisms",
+   "robotics/kinematics",
+   "robotics/actuators",
+   "robotics/sensors",
+   "robotics/odometry",
+   "robotics/fusion",
+   "robotics/control",
+   "robotics/vision",
+   "robotics/localization",
+   "robotics/planning",
+   "robotics/ros",
+   "robotics/safety"
+  ],
+  "labs": [
+   "astar",
+   "mcu",
+   "pendulum"
+  ],
+  "capstone": "Build a mobile robot that maps a room and returns to its dock: wheel odometry fused with an IMU or lidar, SLAM with loop closure, A* planning, PID control, and an emergency stop tested on purpose."
+ },
+ {
+  "id": "telecoms-engineer",
+  "title": "Telecoms Engineer",
+  "accent": "telecom",
+  "field": "Engineering",
+  "summary": "Bits through noisy channels: decibels, modulation, Shannon, coding, fibre and cellular networks.",
+  "nodes": [
+   "physics/waves",
+   "physics/maxwell",
+   "physics/optics",
+   "mathematics/complex",
+   "mathematics/fourier",
+   "mathematics/probability",
+   "electrical/phasors",
+   "electrical/filters",
+   "electrical/sampling",
+   "telecom/db",
+   "telecom/spectrum",
+   "telecom/noise",
+   "telecom/modulation",
+   "telecom/shannon",
+   "telecom/coding",
+   "telecom/multiplexing",
+   "telecom/propagation",
+   "telecom/fibre",
+   "telecom/packets",
+   "telecom/cellular",
+   "telecom/sdr"
+  ],
+  "labs": [
+   "qam",
+   "fourier",
+   "rc"
+  ],
+  "capstone": "Design a wireless link end to end: a link budget with fade margin, a modulation and code rate chosen against measured SNR, the capacity against Shannon's limit, and a demonstration on a software-defined radio."
+ },
+ {
+  "id": "quantum-researcher",
+  "title": "Quantum Researcher",
+  "accent": "quantum",
+  "field": "Science",
+  "summary": "Quantum mechanics as a computing resource: amplitudes, interference, entanglement and error correction.",
+  "nodes": [
+   "mathematics/complex",
+   "mathematics/linalg",
+   "mathematics/eigen",
+   "mathematics/probability",
+   "physics/waves",
+   "physics/statmech",
+   "physics/quantum",
+   "quantum/qubit",
+   "quantum/measurement",
+   "quantum/bloch",
+   "quantum/gates",
+   "quantum/interference",
+   "quantum/cnot",
+   "quantum/entanglement",
+   "quantum/noclone",
+   "quantum/algorithms",
+   "quantum/decoherence",
+   "quantum/qec",
+   "quantum/hardware"
+  ],
+  "labs": [
+   "qubit",
+   "fourier"
+  ],
+  "capstone": "Implement and analyse a small algorithm (Deutsch–Jozsa or 2-qubit Grover) on a simulator and on noisy hardware, explain the interference that makes it work, and quantify how decoherence degrades the result."
  }
 ];

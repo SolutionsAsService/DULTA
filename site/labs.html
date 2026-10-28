@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DULTA Labs</title>
-<meta name="description" content="Predict-Observe-Explain labs: projectile, pendulum, Fourier synthesis, test-first code, complexity, a microcontroller simulator, an RC circuit, and retrieval with calibration.">
+<meta name="description" content="Predict-Observe-Explain labs: projectile, pendulum, Fourier synthesis, test-first code, complexity, a microcontroller simulator, an RC circuit, overfitting, A* pathfinding, QAM, qubit gates, selective breeding, and retrieval with calibration.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -35,16 +35,13 @@
     <span class="eyebrow">Labs · Predict, Observe, Explain</span>
     <h2>Commit a prediction. Then the lab unlocks.</h2>
     <p class="lede">Each lab is locked until you write down what you expect. Then you run it, see the measured result next to your guess, and only after that get the explanation. Being surprised is the point: it shows you exactly which idea needs work.</p>
-    <nav class="lab-index" aria-label="Labs">
-      <a href="#projectile">Projectile</a><a href="#pendulum">Pendulum</a><a href="#fourier">Fourier</a>
-      <a href="#code">Test-first code</a><a href="#complexity">Complexity</a><a href="#mcu">Microcontroller</a>
-      <a href="#rc">RC circuit</a><a href="#retrieval">Retrieval</a>
-    </nav>
+    <div class="tabs" role="group" aria-label="Filter labs by field" id="labFilters"></div>
+    <nav class="lab-index" aria-label="Labs" id="labIndex"></nav>
   </div>
 
   <div class="wrap grid" style="gap:28px;padding-bottom:80px">
 
-    <article class="card lab" id="projectile" style="--accent:var(--physics)">
+    <article class="card lab" id="projectile" data-field="Science" style="--accent:var(--physics)">
       <div class="lab-head"><h3>Projectile</h3><a class="mono" href="maps.html#physics/kinematics">physics / kinematics · newton</a></div>
       <div class="lab-body">
         <div class="stage"><canvas id="projCanvas" width="760" height="380" aria-label="Projectile trajectory"></canvas></div>
@@ -67,7 +64,7 @@
       </div>
     </article>
 
-    <article class="card lab" id="pendulum" style="--accent:var(--physics)">
+    <article class="card lab" id="pendulum" data-field="Science" style="--accent:var(--physics)">
       <div class="lab-head"><h3>Pendulum</h3><a class="mono" href="maps.html#physics/shm">physics / shm · energy</a></div>
       <div class="lab-body">
         <div class="stage"><canvas id="pendCanvas" width="760" height="380" aria-label="Pendulum"></canvas></div>
@@ -88,7 +85,7 @@
       </div>
     </article>
 
-    <article class="card lab" id="fourier" style="--accent:var(--mathematics)">
+    <article class="card lab" id="fourier" data-field="Science" style="--accent:var(--mathematics)">
       <div class="lab-head"><h3>Fourier synthesis</h3><a class="mono" href="maps.html#mathematics/fourier">mathematics / fourier · physics / waves</a></div>
       <div class="lab-body">
         <div class="stage"><canvas id="fourCanvas" width="760" height="380" aria-label="Fourier partial sum"></canvas></div>
@@ -108,7 +105,7 @@
       </div>
     </article>
 
-    <article class="card lab" id="code" style="--accent:var(--developer)">
+    <article class="card lab" id="code" data-field="Computing & AI" style="--accent:var(--developer)">
       <div class="lab-head"><h3>Test-first code</h3><a class="mono" href="maps.html#developer/testing">developer / testing · recursion · complexity</a></div>
       <div class="lab-body">
         <div class="poe" style="gap:12px">
@@ -129,7 +126,7 @@
       </div>
     </article>
 
-    <article class="card lab" id="complexity" style="--accent:var(--developer)">
+    <article class="card lab" id="complexity" data-field="Computing & AI" style="--accent:var(--developer)">
       <div class="lab-head"><h3>Complexity</h3><a class="mono" href="maps.html#developer/complexity">developer / complexity</a></div>
       <div class="lab-body">
         <div class="stage"><canvas id="cxCanvas" width="760" height="380" aria-label="Operation counts against n"></canvas></div>
@@ -149,7 +146,7 @@
       </div>
     </article>
 
-    <article class="card lab" id="mcu" style="--accent:var(--embedded)">
+    <article class="card lab" id="mcu" data-field="Engineering" style="--accent:var(--embedded)">
       <div class="lab-head"><h3>Microcontroller</h3><a class="mono" href="maps.html#embedded/registers">embedded / registers · gpio · timing · debounce · pwm</a></div>
       <p style="margin:0;color:var(--ink-2)">A simulated 8-bit microcontroller. The LED is on <b>PB5</b>; a button on <b>PB0</b> connects to ground. Write firmware against the registers <span class="mono">io.DDRB</span> (1 = output), <span class="mono">io.PORTB</span> (output level, or pull-up for an input) and <span class="mono">io.PINB</span> (read pins), plus <span class="mono">millis()</span>, <span class="mono">micros()</span> and <span class="mono">delay(ms)</span>. Each pass of <span class="mono">loop()</span> takes 10 µs, and the chip runs for 5 simulated seconds.</p>
       <div class="lab-body">
@@ -176,7 +173,7 @@
       </div>
     </article>
 
-    <article class="card lab" id="rc" style="--accent:var(--electrical)">
+    <article class="card lab" id="rc" data-field="Engineering" style="--accent:var(--electrical)">
       <div class="lab-head"><h3>RC circuit</h3><a class="mono" href="maps.html#electrical/rc">electrical / rc · ohm · mathematics / diffeq</a></div>
       <div class="lab-body">
         <div class="stage"><canvas id="rcCanvas" width="760" height="380" aria-label="Capacitor voltage over time"></canvas></div>
@@ -196,7 +193,117 @@
       </div>
     </article>
 
-    <article class="card lab" id="retrieval" style="--accent:var(--learning)">
+    <article class="card lab" id="polyfit" data-field="Computing & AI" style="--accent:var(--ml)">
+      <div class="lab-head"><h3>Overfitting</h3><a class="mono" href="maps.html#ml/overfitting">ml / gradient · overfitting · regularization</a></div>
+      <div class="lab-body">
+        <div class="stage"><canvas id="pfCanvas" width="760" height="380" aria-label="Polynomial fit to noisy data"></canvas></div>
+        <div class="poe">
+          <div class="controls">
+            <div><label for="pfDeg">Polynomial degree <span id="pfDegv" class="mono"></span></label><input type="range" id="pfDeg" min="1" max="11" value="3"></div>
+            <div><label for="pfLam">Regularisation λ <span id="pfLamv" class="mono"></span></label><input type="range" id="pfLam" min="0" max="100" value="0"></div>
+          </div>
+          <div class="poe-step active" data-step="predict"><h4>1 · Predict</h4>
+            <label for="pfGuess">Twelve noisy points sampled from a sine wave. Which polynomial degree, from 1 to 11, will do best on new data it has never seen?</label><input type="number" id="pfGuess" min="1" max="11" step="1" inputmode="numeric">
+            <button class="btn small" data-commit type="button">Commit prediction</button></div>
+          <div class="poe-step" data-step="observe"><h4>2 · Observe</h4>
+            <button class="btn small" data-run type="button" disabled>Score every degree on held-out data</button>
+            <div class="readout" data-out hidden></div></div>
+          <div class="poe-step" data-step="explain"><h4>3 · Explain</h4><p class="verdict" data-explain hidden></p></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="card lab" id="astar" data-field="Computing & AI" style="--accent:var(--gamedev)">
+      <div class="lab-head"><h3>A* pathfinding</h3><a class="mono" href="maps.html#gamedev/pathfinding">gamedev / pathfinding · robotics / planning</a></div>
+      <div class="lab-body">
+        <div style="display:grid;gap:10px;align-content:start">
+          <div class="stage"><canvas id="asCanvas" width="756" height="432" aria-label="Grid map: click or drag to paint walls" style="touch-action:none;cursor:crosshair"></canvas></div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn small ghost" id="asReset" type="button">Restore the U-shaped wall</button><button class="btn small ghost" id="asClear" type="button">Clear walls</button><span class="empty" style="align-self:center">Click or drag on the grid to paint walls.</span></div>
+        </div>
+        <div class="poe">
+          <div class="poe-step active" data-step="predict"><h4>1 · Predict</h4>
+            <label for="asGuess" id="asQ">…</label><input type="number" id="asGuess" min="0" step="1" inputmode="numeric">
+            <button class="btn small" data-commit type="button">Commit prediction</button></div>
+          <div class="poe-step" data-step="observe"><h4>2 · Observe</h4>
+            <button class="btn small" data-run type="button" disabled>Run A*, Dijkstra and a greedy chaser</button>
+            <div class="readout" data-out hidden></div></div>
+          <div class="poe-step" data-step="explain"><h4>3 · Explain</h4><p class="verdict" data-explain hidden></p></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="card lab" id="qam" data-field="Engineering" style="--accent:var(--telecom)">
+      <div class="lab-head"><h3>QAM &amp; noise</h3><a class="mono" href="maps.html#telecom/shannon">telecom / modulation · shannon · noise</a></div>
+      <div class="lab-body">
+        <div class="stage"><canvas id="qamCanvas" width="760" height="380" aria-label="QAM constellation with received symbols"></canvas></div>
+        <div class="poe">
+          <div class="controls">
+            <div><label for="qamM">Modulation</label><select id="qamM"><option value="4">QPSK (4-QAM)</option><option value="16">16-QAM</option><option value="64" selected>64-QAM</option></select></div>
+            <div><label for="qamSnr">Signal-to-noise ratio <span id="qamSnrv" class="mono"></span></label><input type="range" id="qamSnr" min="0" max="30" value="15"></div>
+          </div>
+          <div class="poe-step active" data-step="predict"><h4>1 · Predict</h4>
+            <label for="qamGuess">3,000 random symbols are sent through noise at this SNR. What percentage will be decoded as the wrong symbol?</label><input type="number" id="qamGuess" min="0" max="100" step="any" inputmode="decimal">
+            <button class="btn small" data-commit type="button">Commit prediction</button></div>
+          <div class="poe-step" data-step="observe"><h4>2 · Observe</h4>
+            <button class="btn small" data-run type="button" disabled>Transmit</button>
+            <div class="readout" data-out hidden></div></div>
+          <div class="poe-step" data-step="explain"><h4>3 · Explain</h4><p class="verdict" data-explain hidden></p></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="card lab" id="qubit" data-field="Science" style="--accent:var(--quantum)">
+      <div class="lab-head"><h3>Qubit gates</h3><a class="mono" href="maps.html#quantum/interference">quantum / gates · interference · measurement</a></div>
+      <div class="lab-body">
+        <div style="display:grid;gap:10px;align-content:start">
+          <div class="stage"><canvas id="qbCanvas" width="760" height="300" aria-label="Bloch sphere, amplitudes and measurement counts"></canvas></div>
+          <div id="qbCircuit" style="display:flex;gap:6px;flex-wrap:wrap;align-items:center"></div>
+          <div id="qbGates" style="display:flex;gap:6px;flex-wrap:wrap">
+            <button class="btn small" type="button" data-g="H">+ H</button><button class="btn small" type="button" data-g="X">+ X</button>
+            <button class="btn small" type="button" data-g="Y">+ Y</button><button class="btn small" type="button" data-g="Z">+ Z</button>
+            <button class="btn small" type="button" data-g="S">+ S</button>
+            <button class="btn small ghost" type="button" data-g="preset" data-preset="H Z H">H Z H</button>
+            <button class="btn small ghost" type="button" data-g="preset" data-preset="H H">H H</button>
+            <button class="btn small ghost" type="button" data-g="preset" data-preset="H S H">H S H</button>
+            <button class="btn small ghost" type="button" data-g="clear">Clear</button>
+          </div>
+        </div>
+        <div class="poe">
+          <div class="poe-step active" data-step="predict"><h4>1 · Predict</h4>
+            <label for="qbGuess">Start in |0⟩, apply the circuit, measure 1,000 times. What percentage of shots will give 1?</label><input type="number" id="qbGuess" min="0" max="100" step="any" inputmode="decimal">
+            <button class="btn small" data-commit type="button">Commit prediction</button></div>
+          <div class="poe-step" data-step="observe"><h4>2 · Observe</h4>
+            <button class="btn small" data-run type="button" disabled>Measure 1,000 shots</button>
+            <div class="readout" data-out hidden></div></div>
+          <div class="poe-step" data-step="explain"><h4>3 · Explain</h4><p class="verdict" data-explain hidden></p></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="card lab" id="breeding" data-field="Science" style="--accent:var(--plant)">
+      <div class="lab-head"><h3>Selective breeding</h3><a class="mono" href="maps.html#plant/heritability">plant / heritability · quantgen · misc-h2</a></div>
+      <div class="lab-body">
+        <div style="display:grid;gap:10px;align-content:start">
+          <div class="stage"><canvas id="brCanvas" width="760" height="380" aria-label="Trait distributions of population, parents and offspring"></canvas></div>
+          <button class="btn small ghost" id="brGens" type="button" hidden>Run 10 generations of selection</button>
+        </div>
+        <div class="poe">
+          <div class="controls">
+            <div><label for="brH">Heritability h² <span id="brHv" class="mono"></span></label><input type="range" id="brH" min="5" max="95" value="30"></div>
+            <div><label for="brP">Keep the top <span id="brPv" class="mono"></span></label><input type="range" id="brP" min="5" max="50" value="20"></div>
+          </div>
+          <div class="poe-step active" data-step="predict"><h4>1 · Predict</h4>
+            <label for="brGuess" id="brQ">…</label><input type="number" id="brGuess" step="any" inputmode="decimal">
+            <button class="btn small" data-commit type="button">Commit prediction</button></div>
+          <div class="poe-step" data-step="observe"><h4>2 · Observe</h4>
+            <button class="btn small" data-run type="button" disabled>Breed the next generation</button>
+            <div class="readout" data-out hidden></div></div>
+          <div class="poe-step" data-step="explain"><h4>3 · Explain</h4><p class="verdict" data-explain hidden></p></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="card lab" id="retrieval" data-field="Learning & Agents" style="--accent:var(--learning)">
       <div class="lab-head"><h3>Retrieval &amp; calibration</h3><a class="mono" href="maps.html#learning/retrieval">learning / retrieval · spacing · metacog</a></div>
       <div class="lab-body">
         <div class="flash card" id="flash" style="box-shadow:none"></div>
@@ -220,5 +327,22 @@
 <script src="assets/maps-data.js"></script>
 <script src="assets/labs.js"></script>
 <script src="assets/lab-mcu.js"></script>
+<script src="assets/lab-fields.js"></script>
+<script>
+// Group and filter labs by field, and build the index from the articles themselves.
+(function () {
+  const labs = [...document.querySelectorAll("article.lab")];
+  const fields = ["All", ...new Set(labs.map((l) => l.dataset.field))];
+  let current = "All";
+  const f = document.getElementById("labFilters"), idx = document.getElementById("labIndex");
+  function render() {
+    f.innerHTML = fields.map((x) => `<button type="button" data-f="${x}" aria-pressed="${x === current}"${x === current ? ' aria-selected="true"' : ""} style="--accent:var(--ink)">${x} <span class="mono" style="opacity:.6">${x === "All" ? labs.length : labs.filter((l) => l.dataset.field === x).length}</span></button>`).join("");
+    labs.forEach((l) => { l.hidden = current !== "All" && l.dataset.field !== current; });
+    idx.innerHTML = labs.filter((l) => !l.hidden).map((l) => `<a href="#${l.id}">${l.querySelector("h3").textContent}</a>`).join("");
+  }
+  f.addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) { current = b.dataset.f; render(); } });
+  render();
+})();
+</script>
 </body>
 </html>

@@ -251,7 +251,11 @@
 
   function go(key) { if (!lastResult || lastResult.key !== key) lastResult = null; detail(key); draw(); }
 
-  $("tabs").innerHTML = D.maps.map((m) => `<button role="tab" type="button" data-id="${m.id}" style="--accent:var(--${m.id})">${esc(m.title)}</button>`).join("");
+  // Tabs grouped by field, so 17 maps stay scannable.
+  $("tabs").innerHTML = (D.fields || [null]).map((f) => {
+    const ms = D.maps.filter((m) => !f || m.field === f);
+    return ms.length ? `<div class="tabgroup"><span class="eyebrow">${esc(f || "Maps")}</span><div>${ms.map((m) => `<button role="tab" type="button" data-id="${m.id}" style="--accent:var(--${m.id})">${esc(m.title)}</button>`).join("")}</div></div>` : "";
+  }).join("");
   $("tabs").addEventListener("click", (e) => {
     const b = e.target.closest("button"); if (!b) return;
     mapId = b.dataset.id; selected = null; history.replaceState(null, "", `#${mapId}`); draw();

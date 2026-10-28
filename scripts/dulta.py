@@ -30,10 +30,15 @@ LEITNER_DAYS = (1, 3, 7, 16, 35)  # review interval for box 0..4
 MIN_WORDS = 20  # a verdict names an anchor and points at the work
 
 
-# Display order: sciences, then engineering, then software and the two maps about learning itself.
-# Maps not listed here follow alphabetically.
-ORDER = ("physics", "mathematics", "chemistry", "biology", "electrical", "embedded", "mechanical",
-         "developer", "devops", "learning", "agents")
+# Fields group the maps on the site, in this order; maps not listed fall into "Other", alphabetically.
+FIELDS = {
+    "Science": ("physics", "mathematics", "chemistry", "biology", "plant", "quantum"),
+    "Engineering": ("electrical", "embedded", "mechanical", "robotics", "telecom"),
+    "Computing & AI": ("developer", "devops", "ml", "gamedev"),
+    "Learning & Agents": ("learning", "agents"),
+}
+ORDER = tuple(m for ms in FIELDS.values() for m in ms)
+FIELD_OF = {m: f for f, ms in FIELDS.items() for m in ms}
 
 
 def load_maps():
@@ -150,6 +155,8 @@ def cmd_validate(_args):
                 errors.append(f"track {t['id']}: unknown node {k}")
         if t.get("accent") not in maps:
             errors.append(f"track {t['id']}: accent must name a map")
+        if not t.get("field"):
+            errors.append(f"track {t['id']}: missing field")
     counts = {mid: len(m["nodes"]) for mid, m in maps.items()}
     print(f"maps: {len(maps)}  nodes: {len(nodes)}  edges: {len(edges)}  tracks: {len(tracks)}  {counts}")
     for err in errors:
@@ -217,7 +224,9 @@ def cmd_render(_args):
         body += ["", "Sources: " + "; ".join(m.get("sources", []))]
         (out_dir / f"{mid}.md").write_text("\n".join(body) + "\n", encoding="utf-8")
     payload = {
-        "maps": [{k: m[k] for k in ("id", "title", "accent", "summary", "sources")} for m in maps.values()],
+        "maps": [dict({k: m[k] for k in ("id", "title", "accent", "summary", "sources")}, field=FIELD_OF.get(mid, "Other"))
+                 for mid, m in maps.items()],
+        "fields": list(FIELDS) + (["Other"] if any(mid not in FIELD_OF for mid in maps) else []),
         "nodes": [dict(n, key=k, depth=d.get(k, 0)) for k, n in nodes.items()],
         "edges": edges,
     }

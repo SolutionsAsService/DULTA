@@ -19,6 +19,12 @@
   --biology: #2f9e44;
   --agents: #e8590c;
   --devops: #1971c2;
+  --ml: #9c36b5;
+  --gamedev: #66a80f;
+  --plant: #8f5a2b;
+  --telecom: #1864ab;
+  --quantum: #3b5bdb;
+  --robotics: #e67700;
   --threshold: #e8a10c;
   --misconception: #c92a2a;
   --mastered: #2b8a3e;
@@ -34,7 +40,7 @@
   :root:not([data-theme="light"]) {
     --paper: #0f1218; --paper-2: #151a22; --card: #171c25; --ink: #ede6d8; --ink-2: #cfc7b7; --muted: #9b9484;
     --line: #2a313d; --line-2: #3a4352; --physics: #ff8a4c; --mathematics: #8ea2ff; --developer: #3ddc97;
-    --learning: #ffc04d; --electrical: #f783ac; --embedded: #3bc9db; --mechanical: #adb5bd; --chemistry: #b197fc; --biology: #69db7c; --agents: #ffa94d; --devops: #74c0fc; --threshold: #ffc94d; --misconception: #ff7b7b; --mastered: #69db7c; --focus: #74c0fc;
+    --learning: #ffc04d; --electrical: #f783ac; --embedded: #3bc9db; --mechanical: #adb5bd; --chemistry: #b197fc; --biology: #69db7c; --agents: #ffa94d; --devops: #74c0fc; --ml: #e599f7; --gamedev: #a9e34b; --plant: #e0a96d; --telecom: #a5d8ff; --quantum: #bac8ff; --robotics: #ffc078; --threshold: #ffc94d; --misconception: #ff7b7b; --mastered: #69db7c; --focus: #74c0fc;
     --shadow: 0 1px 0 rgba(0, 0, 0, .3), 0 10px 30px -12px rgba(0, 0, 0, .6);
     color-scheme: dark;
   }
@@ -42,7 +48,7 @@
 :root[data-theme="dark"] {
   --paper: #0f1218; --paper-2: #151a22; --card: #171c25; --ink: #ede6d8; --ink-2: #cfc7b7; --muted: #9b9484;
   --line: #2a313d; --line-2: #3a4352; --physics: #ff8a4c; --mathematics: #8ea2ff; --developer: #3ddc97;
-  --learning: #ffc04d; --electrical: #f783ac; --embedded: #3bc9db; --mechanical: #adb5bd; --chemistry: #b197fc; --biology: #69db7c; --agents: #ffa94d; --devops: #74c0fc; --threshold: #ffc94d; --misconception: #ff7b7b; --mastered: #69db7c; --focus: #74c0fc;
+  --learning: #ffc04d; --electrical: #f783ac; --embedded: #3bc9db; --mechanical: #adb5bd; --chemistry: #b197fc; --biology: #69db7c; --agents: #ffa94d; --devops: #74c0fc; --ml: #e599f7; --gamedev: #a9e34b; --plant: #e0a96d; --telecom: #a5d8ff; --quantum: #bac8ff; --robotics: #ffc078; --threshold: #ffc94d; --misconception: #ff7b7b; --mastered: #69db7c; --focus: #74c0fc;
   --shadow: 0 1px 0 rgba(0, 0, 0, .3), 0 10px 30px -12px rgba(0, 0, 0, .6);
   color-scheme: dark;
 }
@@ -218,6 +224,13 @@ section { padding: clamp(56px, 8vw, 104px) 0; }
 .conf button { border: 1px solid var(--line-2); background: var(--card); color: var(--ink); border-radius: 8px; padding: 6px 10px; font: 500 13px/1 var(--mono); cursor: pointer; }
 .conf button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
 
+.tabs:has(.tabgroup) { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 14px 22px; }
+.tabgroup { display: grid; gap: 8px; align-content: start; }
+.tabgroup > div { display: flex; flex-wrap: wrap; gap: 6px; }
+.tabgroup button { padding: 8px 12px; font-size: 14px; min-height: 36px; }
+.field-head { display: flex; align-items: baseline; gap: 12px; margin: 34px 0 14px; }
+.field-head h3 { font-size: 26px; }
+.field-head span { color: var(--muted); font: 500 12px/1 var(--mono); }
 .verdict-box { border-radius: 10px; padding: 10px 12px; margin-bottom: 10px; border: 1.5px solid; display: grid; gap: 2px; font-size: 14px; }
 .verdict-box b { font: 600 16px/1.2 var(--sans); }
 .verdict-box.ok { border-color: var(--mastered); background: color-mix(in srgb, var(--mastered) 12%, var(--card)); }

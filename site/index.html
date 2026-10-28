@@ -52,7 +52,7 @@
         <h2 id="mapsTitle"><span id="mapCount">Ten</span> subjects, drawn as graphs you can walk.</h2>
         <p class="lede">Each node has an outcome, a retrieval check and an answer. Solid edges are prerequisites. Dotted red edges are the misconceptions that block a concept. Amber nodes are threshold concepts: once crossed, the subject looks different.</p>
       </div>
-      <div class="grid four" id="mapCards"></div>
+      <div id="mapCards"></div>
     </div>
   </section>
 
@@ -194,12 +194,12 @@
     [D.nodes.filter((n) => n.kind === "misconception").length, "misconceptions probed"],
     [seats, "critic seats"],
   ];
-  const words = ["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve"];
+  const words = ["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen", "Twenty"];
   document.getElementById("mapCount").textContent = words[D.maps.length] || D.maps.length;
   document.getElementById("heroMeta").innerHTML = figures.map(([v, l]) => `<div><b>${v}</b><span>${l}</span></div>`).join("");
 
   // Map cards with a sparkline of the map's depth profile.
-  document.getElementById("mapCards").innerHTML = D.maps.map((m) => {
+  const mapCard = (m) => {
     const ns = D.nodes.filter((n) => n.map === m.id && n.kind !== "misconception");
     const maxD = Math.max(...ns.map((n) => n.depth));
     const cols = Array.from({ length: maxD + 1 }, (_, d) => ns.filter((n) => n.depth === d));
@@ -216,6 +216,10 @@
       <h3>${m.title}</h3>
       <svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" aria-hidden="true">${dots}</svg>
       <p>${m.summary.split(". ")[0]}.</p></a>`;
+  };
+  document.getElementById("mapCards").innerHTML = (D.fields || [null]).map((f) => {
+    const ms = D.maps.filter((m) => !f || m.field === f);
+    return ms.length ? `<div class="field-head"><h3>${f || "Maps"}</h3><span>${ms.length} maps</span></div><div class="grid four">${ms.map(mapCard).join("")}</div>` : "";
   }).join("");
 
   const labs = [
@@ -226,6 +230,11 @@
     ["complexity", "Complexity", "developer", "Count real operations as n grows, then predict n = 1000."],
     ["mcu", "Microcontroller", "embedded", "Write firmware against real registers. Blink without blocking, debounce a chattering button, dim with PWM, and watch it all on a scope."],
     ["rc", "RC circuit", "electrical", "Predict the time constant, close the switch, and watch the exponential close 63% of the gap every τ."],
+    ["polyfit", "Overfitting", "ml", "Fit polynomials to noisy data and guess which degree generalises before the held-out set is revealed."],
+    ["astar", "A* pathfinding", "gamedev", "Paint walls, predict how much of the map A* explores, and watch a greedy chaser get stuck in a U."],
+    ["qam", "QAM & noise", "telecom", "Push 64-QAM through noise and see why Wi-Fi drops to slower modulations as the signal weakens."],
+    ["qubit", "Qubit gates", "quantum", "Build a circuit, predict the measurement, and meet interference: H Z H gives 1 every time."],
+    ["breeding", "Selective breeding", "plant", "Select the best plants and predict the gain, then see the breeder's equation R = h²S come true."],
     ["retrieval", "Retrieval & calibration", "learning", "Flashcards from every map, scored on how well your confidence matches your results."],
   ];
   document.getElementById("labCards").innerHTML = labs.map(([id, t, m, d]) =>

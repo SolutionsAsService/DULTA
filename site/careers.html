@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DULTA Careers</title>
-<meta name="description" content="STEM career tracks across DULTA's domain maps: DevOps, software, embedded, electrical, mechanical, physics, chemistry, life sciences, AI agents and teaching.">
+<meta name="description" content="STEM career tracks across DULTA's domain maps: AI and ML, data science, games, DevOps, software, embedded, electrical, robotics, telecoms, mechanical, quantum, physics, chemistry, life sciences, plant genetics, agricultural robotics and teaching.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -37,7 +37,7 @@
     <p class="lede">Each track is an ordered path through nodes from several maps, ending in a capstone project. Progress comes from the same checks you answer on the maps, so a node mastered on one track counts on every track that uses it. Tracks are suggestions: the maps stay fully open.</p>
     <div class="tabs" role="group" aria-label="Filter tracks" id="filters"></div>
   </div>
-  <div class="grid two" id="tracks" style="padding-bottom:80px"></div>
+  <div id="tracks" style="padding-bottom:80px"></div>
 </main>
 
 <footer class="site-foot">
@@ -49,16 +49,25 @@
 (function () {
   const D = window.DULTA_MAPS, T = window.DULTA_TRACKS;
   const byKey = Object.fromEntries(D.nodes.map((n) => [n.key, n]));
-  const labNames = { projectile: "Projectile", pendulum: "Pendulum", fourier: "Fourier", code: "Test-first code", complexity: "Complexity", mcu: "Microcontroller", rc: "RC circuit", retrieval: "Retrieval" };
+  const labNames = { projectile: "Projectile", pendulum: "Pendulum", fourier: "Fourier", code: "Test-first code", complexity: "Complexity", mcu: "Microcontroller", rc: "RC circuit", retrieval: "Retrieval", polyfit: "Overfitting", astar: "A* pathfinding", qam: "QAM & noise", qubit: "Qubit gates", breeding: "Selective breeding" };
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-  const groups = { all: "All", engineering: "Engineering", science: "Science", software: "Software & AI" };
-  const groupOf = { "devops-sre": "software", "software-engineer": "software", "ai-agent-engineer": "software", "embedded-engineer": "engineering", "electrical-engineer": "engineering", "mechanical-engineer": "engineering", physicist: "science", chemist: "science", "life-scientist": "science", educator: "software" };
+  // Fields come from the tracks themselves, in first-seen order of a preferred list.
+  const PREF = ["Computing & AI", "Engineering", "Science", "Agriculture & Food", "Learning & Teaching"];
+  const fieldsOf = [...new Set(T.map((t) => t.field))].sort((a, b) => (PREF.indexOf(a) + 99) % 99 - (PREF.indexOf(b) + 99) % 99);
+  const groups = Object.fromEntries([["all", "All"], ...fieldsOf.map((f) => [f, f])]);
+  const groupOf = Object.fromEntries(T.map((t) => [t.id, t.field]));
   let filter = "all";
 
   function render() {
     const s = DULTA.load();
-    document.getElementById("filters").innerHTML = Object.entries(groups).map(([k, v]) => `<button type="button" data-g="${k}" aria-pressed="${k === filter}" ${k === filter ? 'aria-selected="true"' : ""} style="--accent:var(--ink)">${v}</button>`).join("");
-    document.getElementById("tracks").innerHTML = T.filter((t) => filter === "all" || groupOf[t.id] === filter).map((t) => {
+    document.getElementById("filters").innerHTML = Object.entries(groups).map(([k, v]) => `<button type="button" data-g="${k}" aria-pressed="${k === filter}" ${k === filter ? 'aria-selected="true"' : ""} style="--accent:var(--ink)">${v} <span class="mono" style="opacity:.6">${k === "all" ? T.length : T.filter((t) => t.field === k).length}</span></button>`).join("");
+    const shown = filter === "all" ? fieldsOf : [filter];
+    document.getElementById("tracks").innerHTML = shown.map((f) => `<div class="field-head"><h3>${esc(f)}</h3><span>${T.filter((t) => t.field === f).length} tracks</span></div>
+      <div class="grid two">${T.filter((t) => t.field === f).map(card).join("")}</div>`).join("");
+  }
+  function card(t) {
+    const s = DULTA.load();
+    {
       const done = t.nodes.filter((k) => s.mastered[k]).length;
       const next = t.nodes.find((k) => !s.mastered[k]);
       const pct = Math.round(done / t.nodes.length * 100);
@@ -82,7 +91,7 @@
         </div>
         <div><div class="eyebrow" style="margin-bottom:6px">Capstone</div><p style="margin:0;font-size:15px">${esc(t.capstone)}</p></div>
       </article>`;
-    }).join("");
+    }
   }
   document.getElementById("filters").addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) { filter = b.dataset.g; render(); } });
   document.addEventListener("dulta:state", render);

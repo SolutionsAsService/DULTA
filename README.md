@@ -14,9 +14,12 @@ that will build it.
   threshold-crossing practices, discipline-based education research, learning and teaching with agents, 34 critic seats.
 - **[maps/](maps/)**: domain maps as JSON, the single source of truth. Physics, Mathematics,
   Electrical Engineering, Embedded Systems (microcontrollers), Mechanical Engineering, Chemistry, Biology,
-  Developer, DevOps & SRE, Learning with Agents and Teaching Agents: 11 maps, 226 nodes.
-- **[tracks/careers.json](tracks/careers.json)**: 10 STEM career tracks (DevOps/SRE, software, embedded, electrical,
-  mechanical, physicist, chemist, life scientist, AI agent engineer, educator), each an ordered path across maps with a capstone. Each node carries an outcome, a retrieval check and an answer.
+  Developer, DevOps & SRE, Machine Learning & AI, Game Development, Plant Science & Genetics, Robotics & Agricultural
+  Robotics, Telecommunications, Quantum Computing, Learning with Agents and Teaching Agents: 17 maps in four fields,
+  317 nodes, every check auto-graded.
+- **[tracks/careers.json](tracks/careers.json)**: 18 STEM career tracks in five fields, among them AI/ML engineer, data
+  scientist, game developer, DevOps/SRE, robotics, telecoms, embedded, quantum researcher, plant geneticist and
+  agricultural robotics engineer; each an ordered path across maps with labs and a capstone. Each node carries an outcome, a retrieval check and an answer.
   Misconceptions hang off the concepts they block as dotted edges, and threshold concepts are flagged.
 - **[scripts/dulta.py](scripts/dulta.py)**: standard-library CLI used by the skill.
 - **[site/](site/)**: the website. Interactive map explorer with your learner frontier, six
@@ -70,7 +73,8 @@ python -m http.server 8765 --directory site
   confidence, and the site **grades it automatically** (numbers with tolerance, key ideas, code patterns); a
   disputed grade can be overridden and is logged as such. A correct answer marks the node mastered and lights up the next
   frontier. Progress stays in your browser and exports as a `learner.json` the CLI reads.
-- **Labs**: a simulated microcontroller (blink without blocking, debounce a bouncing button, software PWM,
+- **Labs** (13, filterable by field): overfitting (ML), A* pathfinding (games and robotics), QAM and noise (telecoms),
+  qubit gates (quantum), selective breeding with the breeder's equation (plant genetics), a simulated microcontroller (blink without blocking, debounce a bouncing button, software PWM,
   on an oscilloscope, against real DDRB/PORTB/PINB registers), an RC circuit, projectile (with and without drag), pendulum (where the small-angle formula breaks down), Fourier
   synthesis (the Gibbs overshoot), test-first code (each kata has a hidden test that the visible tests miss),
   complexity (measured operation counts on log-log axes), and retrieval with a calibration chart.
