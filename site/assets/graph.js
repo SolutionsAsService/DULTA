@@ -4,6 +4,7 @@
   const byKey = Object.fromEntries(D.nodes.map((n) => [n.key, n]));
   const NW = 178, NH = 56, GAP = 64, RG = 16, PAD = 20;
   const $ = (id) => document.getElementById(id);
+  const tr = (k, f) => (window.DULTA && DULTA.t ? DULTA.t(k, f) : f);
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   let mapId = D.maps[0].id, selected = null, pendingConfidence = null, lastResult = null;
 
@@ -195,10 +196,10 @@
       <div class="check">
         <div class="k">Retrieval check: attempt first, then reveal</div>
         <div style="font-family:var(--serif);font-size:19px;line-height:1.35">${esc(n.check)}</div>
-        <label for="attempt" style="margin:0">Your attempt</label>
+        <label for="attempt" style="margin:0">${tr("attempt", "Your attempt")}</label>
         <textarea id="attempt" rows="3" placeholder="Write your answer before revealing."></textarea>
-        <div><div class="k">Confidence</div><div class="conf" id="conf">${[20, 40, 60, 80, 100].map((c) => `<button type="button" aria-pressed="false" data-c="${c}">${c}%</button>`).join("")}</div></div>
-        <div class="row"><button class="btn small" id="reveal" type="button" disabled>${n.grade ? "Check my answer" : "Reveal answer"}</button></div>
+        <div><div class="k">${tr("confidence", "Confidence")}</div><div class="conf" id="conf">${[20, 40, 60, 80, 100].map((c) => `<button type="button" aria-pressed="false" data-c="${c}">${c}%</button>`).join("")}</div></div>
+        <div class="row"><button class="btn small" id="reveal" type="button" disabled>${n.grade ? tr("check", "Check my answer") : "Reveal answer"}</button></div>
         <div id="ans" hidden>
           <div id="verdict"></div>
           <div class="answer">${esc(n.answer)}</div>
@@ -239,7 +240,7 @@
     $("reveal").hidden = true;
     $("ans").hidden = false;
     $("verdict").innerHTML = `<div class="verdict-box ${r.correct ? "ok" : "no"}" role="status">
-      <b>${r.correct ? "✓ Correct" : "✗ Not yet"}</b> <span>${r.correct ? "Recorded as mastered" : esc(r.reason) + ". Recorded for review"}${r.overridden ? " (your override)" : ""} · you said ${r.confidence}% sure</span></div>`;
+      <b>${r.correct ? "✓ " + tr("correct", "Correct") : "✗ " + tr("notyet", "Not yet")}</b> <span>${r.correct ? "Recorded as mastered" : esc(r.reason) + ". Recorded for review"}${r.overridden ? " (your override)" : ""} · you said ${r.confidence}% sure</span></div>`;
     $("ansActions").innerHTML = `<button class="btn small" id="again" type="button">Try another node</button>
       <button class="btn small ghost" id="dispute" type="button">${r.overridden ? "Undo my override" : r.correct ? "I was actually wrong" : "The grader got this wrong"}</button>`;
     $("again").onclick = () => { lastResult = null; const fr = DULTA.frontier(D, mapId).find((k) => k !== n.key); go(fr || n.key); };
@@ -267,6 +268,7 @@
   });
   $("detail").tabIndex = -1;
   document.addEventListener("dulta:state", () => { draw(); if (selected) detail(selected); });
+  document.addEventListener("dulta:lang", () => { if (selected) detail(selected); });
 
   // Search across every map: label first, then summary and check text.
   const q = $("q"), list = $("qResults");

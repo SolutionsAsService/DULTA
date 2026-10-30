@@ -98,16 +98,18 @@ p { margin: 0 0 1em; }
 .brand svg { width: 28px; height: 28px; }
 .brand b { font-weight: 600; }
 .brand i { font-style: italic; font-weight: 400; color: var(--physics); }
-.nav { display: flex; gap: 4px; margin-left: auto; }
+.nav { display: flex; gap: 4px; margin-inline-start: auto; }
 .nav a { text-decoration: none; padding: 8px 12px; border-radius: 999px; font-size: 15px; color: var(--ink-2); }
 .nav a:hover { background: var(--paper-2); }
 .nav a[aria-current="page"] { background: var(--ink); color: var(--paper); }
+.lang-picker { width: auto; max-width: 9.5rem; padding: 7px 10px; border-radius: 999px; font-size: 14px; min-height: 38px; }
+.lang-note { font-size: 13px; }
 .theme-btn { border: 1px solid var(--line); background: var(--card); color: var(--ink); width: 38px; height: 38px; border-radius: 999px; cursor: pointer; display: grid; place-items: center; }
 .theme-btn svg { width: 18px; height: 18px; }
 @media (max-width: 720px) {
   .site-head .wrap { height: auto; flex-wrap: wrap; padding: 10px 0; gap: 8px; }
   .nav { order: 3; width: 100%; margin: 0; overflow-x: auto; }
-  .theme-btn { margin-left: auto; }
+  .lang-picker { margin-inline-start: auto; }
 }
 
 /* Buttons and fields */
@@ -146,7 +148,7 @@ section { padding: clamp(56px, 8vw, 104px) 0; }
 .hero .lede { margin: 28px 0 32px; }
 .hero .cta { display: flex; flex-wrap: wrap; gap: 12px; }
 .hero-meta { margin-top: 48px; display: flex; flex-wrap: wrap; gap: 28px; }
-.hero-meta div { border-left: 2px solid var(--ink); padding-left: 12px; }
+.hero-meta div { border-inline-start: 2px solid var(--ink); padding-inline-start: 12px; }
 .hero-meta b { display: block; font: 500 34px/1 var(--serif); }
 .hero-meta span { font-size: 13px; color: var(--muted); }
 .acronym { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-bottom: 26px; font-family: var(--mono); font-size: 13px; color: var(--muted); }
@@ -172,7 +174,7 @@ section { padding: clamp(56px, 8vw, 104px) 0; }
 /* Mode cards */
 .mode { padding: 30px; display: grid; gap: 14px; }
 .mode h3 { font-size: 30px; }
-.mode .crit { font-family: var(--serif); font-style: italic; font-size: 22px; line-height: 1.25; color: var(--ink); border-left: 3px solid var(--accent, var(--ink)); padding-left: 14px; }
+.mode .crit { font-family: var(--serif); font-style: italic; font-size: 22px; line-height: 1.25; color: var(--ink); border-inline-start: 3px solid var(--accent, var(--ink)); padding-inline-start: 14px; }
 .mode ul { margin: 0; padding-left: 18px; color: var(--ink-2); font-size: 15px; }
 
 /* Conduct list */
@@ -230,7 +232,7 @@ section { padding: clamp(56px, 8vw, 104px) 0; }
 .detail h3 { font-size: 28px; }
 .detail .k { font: 500 11px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
 .detail .check { background: var(--paper-2); border-radius: 12px; padding: 16px; display: grid; gap: 10px; }
-.detail .answer { border-left: 3px solid var(--mastered); padding-left: 12px; }
+.detail .answer { border-inline-start: 3px solid var(--mastered); padding-inline-start: 12px; }
 .detail .row { display: flex; gap: 8px; flex-wrap: wrap; }
 .chips { display: flex; flex-wrap: wrap; gap: 6px; }
 .chips button { font: 500 12.5px/1 var(--sans); border: 1px solid var(--line-2); border-radius: 999px; padding: 6px 10px; background: transparent; color: var(--ink-2); cursor: pointer; }
@@ -271,7 +273,7 @@ section { padding: clamp(56px, 8vw, 104px) 0; }
 .stage { background: var(--paper-2); border-radius: 12px; border: 1px solid var(--line); overflow: hidden; position: relative; }
 .stage canvas { display: block; width: 100%; height: auto; }
 .poe { display: grid; gap: 16px; align-content: start; }
-.poe-step { border-left: 2px solid var(--line-2); padding-left: 14px; display: grid; gap: 8px; }
+.poe-step { border-inline-start: 2px solid var(--line-2); padding-inline-start: 14px; display: grid; gap: 8px; }
 .poe-step.active { border-color: var(--accent, var(--ink)); }
 .poe-step.done { border-color: var(--mastered); }
 .poe-step h4 { margin: 0; font: 500 12px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
@@ -308,3 +310,7 @@ pre { font-family: var(--mono); font-size: 13.5px; background: var(--ink); color
 .reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
 .reveal.in { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; } }
+
+/* Non-Latin scripts: no negative tracking (it breaks Arabic joining) and no faux italics. */
+:is(:lang(ar), :lang(fa), :lang(he), :lang(hi), :lang(bn), :lang(th), :lang(zh), :lang(ja), :lang(ko)) :is(h1, h2, h3) { letter-spacing: 0; line-height: 1.25; }
+:is(:lang(ar), :lang(fa), :lang(he), :lang(hi), :lang(bn), :lang(th), :lang(zh), :lang(ja), :lang(ko)) .hero h1 em { font-style: normal; }

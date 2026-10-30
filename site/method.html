@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="assets/style.css">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <script src="assets/site.js"></script>
+<script src="assets/i18n.js"></script>
 </head>
 <body>
 <header class="site-head">
@@ -20,11 +21,11 @@
       <span><b>Dult</b><i>A</i></span>
     </a>
     <nav class="nav" aria-label="Main">
-      <a href="index.html">Home</a>
-      <a href="maps.html">Maps</a>
-      <a href="careers.html">Careers</a>
-      <a href="labs.html">Labs</a>
-      <a href="method.html" aria-current="page">Method</a>
+      <a href="index.html" data-i18n="nav_home">Home</a>
+      <a href="maps.html" data-i18n="nav_maps">Maps</a>
+      <a href="careers.html" data-i18n="nav_careers">Careers</a>
+      <a href="labs.html" data-i18n="nav_labs">Labs</a>
+      <a href="method.html" aria-current="page" data-i18n="nav_method">Method</a>
     </nav>
     <button class="theme-btn" type="button" aria-label="Toggle dark mode"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
   </div>
@@ -33,7 +34,7 @@
 <main>
   <div class="wrap explorer-head">
     <span class="eyebrow">Method</span>
-    <h2>DADA's principles, rebuilt for the classroom.</h2>
+    <h2 data-i18n="method_title">DADA's principles, rebuilt for the classroom.</h2>
     <p class="lede">DultA was written from scratch, not forked. It keeps every principle of DADA and its variants (P-DADA, 3DADA, PMDAA) and changes what is being worked on: a learner's understanding, or the teaching that will build it.</p>
   </div>
 

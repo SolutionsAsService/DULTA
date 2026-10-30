@@ -3,6 +3,7 @@
 (function () {
   const $ = (id) => document.getElementById(id);
   const css = (n) => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+  const tr = (k, f) => (window.DULTA && DULTA.t ? DULTA.t(k, f) : f);
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   const fmt = (x, d = 2) => Number(x).toLocaleString(undefined, { maximumFractionDigits: d, minimumFractionDigits: d });
   const errPct = (guess, actual) => Math.abs(guess - actual) / Math.abs(actual) * 100;
@@ -34,7 +35,7 @@
     }
     function reset() {
       state.committed = false;
-      guessInput.readOnly = false; commit.disabled = false; commit.textContent = "Commit prediction";
+      guessInput.readOnly = false; commit.disabled = false; commit.textContent = tr("commit", "Commit prediction");
       if (runBtn) runBtn.disabled = true;
       if (out) out.hidden = true;
       explain.hidden = true;
@@ -46,7 +47,7 @@
       if (!isFinite(v)) { guessInput.focus(); guessInput.setAttribute("aria-invalid", "true"); return; }
       guessInput.removeAttribute("aria-invalid");
       state.committed = true; state.guess = v;
-      guessInput.readOnly = true; commit.disabled = true; commit.textContent = "Prediction committed";
+      guessInput.readOnly = true; commit.disabled = true; commit.textContent = tr("committed", "Prediction committed");
       setStep("observe");
       if (runBtn) { runBtn.disabled = false; runBtn.focus(); } else doRun();
     });
@@ -504,10 +505,10 @@
       flash.innerHTML = `
         <div style="display:flex;gap:8px;flex-wrap:wrap"><span class="tag ${card.kind}">${card.kind}</span><span class="tag concept">${card.map} · ${esc(card.label)}</span><span class="tag concept">${p.why}</span></div>
         <div class="q">${esc(card.check)}</div>
-        <label for="rAttempt" style="margin:0">Your attempt</label>
+        <label for="rAttempt" style="margin:0">${tr("attempt", "Your attempt")}</label>
         <textarea id="rAttempt" rows="3" placeholder="Answer from memory before revealing."></textarea>
         <div class="conf" id="rConf">${[20, 40, 60, 80, 100].map((c) => `<button type="button" aria-pressed="false" data-c="${c}">${c}%</button>`).join("")}</div>
-        <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn small" id="rReveal" type="button" disabled>${card.grade ? "Check my answer" : "Reveal"}</button><button class="btn small ghost" id="rSkip" type="button">Skip</button></div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn small" id="rReveal" type="button" disabled>${card.grade ? tr("check", "Check my answer") : "Reveal"}</button><button class="btn small ghost" id="rSkip" type="button">Skip</button></div>
         <div id="rAns" hidden><div id="rVerdict"></div><div class="detail" style="position:static;padding:0;box-shadow:none"><div class="answer">${esc(card.answer)}</div></div>
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px" id="rActions">${card.grade ? "" : `<button class="btn small" id="rRight" type="button">I was right</button><button class="btn small ghost" id="rWrong" type="button">I was wrong</button>`}</div></div>`;
       const gate = () => { $("rReveal").disabled = !($("rAttempt").value.trim() && conf); };
@@ -523,7 +524,7 @@
         const g = DULTA.grade(card.grade, $("rAttempt").value, card.check);
         let snap = DULTA.record(card.key, card.kind, g.correct, conf, { auto: true }), correct = g.correct, overridden = false;
         const show = () => {
-          $("rVerdict").innerHTML = `<div class="verdict-box ${correct ? "ok" : "no"}" role="status"><b>${correct ? "✓ Correct" : "✗ Not yet"}</b>
+          $("rVerdict").innerHTML = `<div class="verdict-box ${correct ? "ok" : "no"}" role="status"><b>${correct ? "✓ " + tr("correct", "Correct") : "✗ " + tr("notyet", "Not yet")}</b>
             <span>${correct ? "Recorded as mastered" : esc(g.reason) + ". Recorded for review"}${overridden ? " (your override)" : ""}</span></div>`;
           $("rActions").innerHTML = `<button class="btn small" id="rNext" type="button">Next card</button>
             <button class="btn small ghost" id="rDispute" type="button">${overridden ? "Undo my override" : correct ? "I was actually wrong" : "The grader got this wrong"}</button>`;

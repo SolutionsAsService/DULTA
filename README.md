@@ -67,6 +67,10 @@ the misconception probes to run, and the mastered nodes due for spaced review (L
 
 ## The website
 
+The interface is available in 24 interface languages, picked from a language menu grouped by region (Europe,
+Asia–Pacific, Middle East & Africa), with right-to-left layout for Arabic, Hebrew and Persian. Lesson content is in
+English; translations live in `site/assets/i18n.js`.
+
 The site is static and needs no build step. Serve it locally:
 
 ```bash
