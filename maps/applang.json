@@ -1,0 +1,36 @@
+{
+  "id": "applang",
+  "title": "Application & Mobile Languages",
+  "accent": "#1098ad",
+  "summary": "Java, Kotlin, C#, Swift, Dart and Scala: the languages of enterprise back ends and phone apps. Null safety is the thread running through the modern ones; the UI thread is the threshold of mobile work.",
+  "sources": ["Bloch: Effective Java", "Jemerov & Isakova: Kotlin in Action", "Skeet: C# in Depth", "Apple: The Swift Programming Language", "Odersky, Spoon, Venners: Programming in Scala"],
+  "nodes": [
+    {"id": "java", "label": "Java & the JVM", "kind": "concept", "summary": "Bytecode on a virtual machine, garbage collection and a vast ecosystem.", "outcome": "Build and run a Java program and explain the JVM's role.", "check": "What does 'write once, run anywhere' rely on in Java?", "answer": "Compiling to JVM bytecode, which any platform's Java Virtual Machine can run.", "grade": {"all": [["bytecode", "jvm", "virtual machine"]]}, "lab": "polyglot"},
+    {"id": "java-oop", "label": "Java: Classes & Interfaces", "kind": "concept", "summary": "Single inheritance of classes, multiple interfaces.", "outcome": "Design a class hierarchy using interfaces.", "check": "What is the difference between an interface and an abstract class in Java?", "answer": "A class can implement many interfaces but extend only one class; interfaces define a contract, abstract classes can also hold state and shared code.", "grade": {"all": [["many", "multiple", "one class", "single", "only one"], ["state", "field*", "contract", "implement*", "code"]]}},
+    {"id": "misc-javaref", "label": "\"Java passes objects by reference\"", "kind": "misconception", "summary": "Java is always pass-by-value; for objects, the value passed is a copy of the reference.", "outcome": "Predict whether a method can replace a caller's object.", "check": "Does Java pass object arguments by reference?", "answer": "No: Java is always pass-by-value; for objects, the value passed is a copy of the reference.", "grade": {"all": [["value", "copy"]]}},
+    {"id": "kotlin", "label": "Kotlin: Null Safety", "kind": "concept", "summary": "Nullable types are explicit, and the compiler forces checks.", "outcome": "Use safe calls and the Elvis operator.", "check": "In Kotlin, can a variable of type String (without a question mark) hold null?", "answer": "No: only the nullable type String? can, and the compiler forces null checks.", "grade": {"all": [["no", "not", "nullable", "cannot", "can t"]]}},
+    {"id": "csharp", "label": "C# & .NET", "kind": "concept", "summary": "A statically typed language for Windows, web, games (Unity) and cloud.", "outcome": "Query a collection with LINQ.", "check": "What does LINQ let you do in C#?", "answer": "Query collections, databases and XML with a uniform, SQL-like syntax inside the language.", "grade": {"all": [["query*", "queries", "filter*"]]}, "lab": "polyglot"},
+    {"id": "swift", "label": "Swift: Optionals & iOS", "kind": "concept", "summary": "Value types, optionals and SwiftUI for Apple platforms.", "outcome": "Unwrap optionals safely in Swift.", "check": "What does Swift's 'if let' do with an optional?", "answer": "Unwraps it safely: the block runs only if the optional holds a value.", "grade": {"all": [["unwrap*", "safe*", "has a value", "holds a value", "not nil", "non nil"]]}},
+    {"id": "dart", "label": "Dart & Flutter", "kind": "concept", "summary": "One codebase for Android, iOS, web and desktop.", "outcome": "Build a Flutter screen and use hot reload.", "check": "What does Flutter's hot reload do?", "answer": "It injects changed code into the running app so the UI updates in about a second without losing state.", "grade": {"all": [["running", "without restart*", "state", "instant*", "second", "inject*"]]}},
+    {"id": "scala", "label": "Scala: Functional on the JVM", "kind": "concept", "summary": "Object-oriented and functional, with a powerful type system.", "outcome": "Write a data pipeline with Scala collections.", "check": "Which big-data engine is written in Scala?", "answer": "Apache Spark.", "grade": {"all": [["spark"]]}},
+    {"id": "mobile", "label": "Mobile App Architecture", "kind": "threshold", "summary": "The UI thread must never block; lifecycles, background work and offline state shape every design.", "outcome": "Move slow work off the UI thread and survive app lifecycle changes.", "check": "Why must long network calls stay off a mobile app's main (UI) thread?", "answer": "The UI would freeze, and the operating system may kill an unresponsive app.", "grade": {"all": [["freez*", "block*", "unresponsive", "jank", "lag", "kill*", "anr"]]}},
+    {"id": "misc-crossplatform", "label": "\"Cross-platform means no native code, ever\"", "kind": "misconception", "summary": "Platform features without a plugin still need Swift or Kotlin through platform channels or native modules.", "outcome": "Plan where native code is needed in a cross-platform app.", "check": "Does a Flutter or React Native app ever need native Swift or Kotlin code?", "answer": "Sometimes: platform features without a plugin need native code through platform channels or native modules.", "grade": {"all": [["sometimes", "yes", "can", "native", "plugin*", "platform channel*"]]}}
+  ],
+  "edges": [
+    {"from": "plcore/compiled", "to": "java"},
+    {"from": "java", "to": "java-oop"},
+    {"from": "developer/modules", "to": "java-oop"},
+    {"from": "misc-javaref", "to": "java-oop", "type": "counter"},
+    {"from": "java", "to": "kotlin"},
+    {"from": "plcore/typing", "to": "kotlin"},
+    {"from": "java-oop", "to": "csharp"},
+    {"from": "plcore/typing", "to": "swift"},
+    {"from": "plcore/compiled", "to": "dart"},
+    {"from": "java", "to": "scala"},
+    {"from": "plcore/paradigms", "to": "scala"},
+    {"from": "developer/concurrency", "to": "mobile"},
+    {"from": "swift", "to": "mobile"},
+    {"from": "kotlin", "to": "mobile"},
+    {"from": "misc-crossplatform", "to": "mobile", "type": "counter"}
+  ]
+}

@@ -266,6 +266,160 @@ window.DULTA_MAPS = {
    "field": "Computing & AI"
   },
   {
+   "id": "plcore",
+   "title": "Programming Language Concepts",
+   "accent": "#1971c2",
+   "summary": "The ideas every language makes choices about: compilation, typing, memory, numbers, strings and concurrency. Memory management is the threshold: once you see who frees memory and when, the differences between C, Java, Python and Rust stop being folklore.",
+   "sources": [
+    "Abelson & Sussman: Structure and Interpretation of Computer Programs",
+    "Pierce: Types and Programming Languages",
+    "Scott: Programming Language Pragmatics",
+    "Goldberg: What Every Computer Scientist Should Know About Floating-Point Arithmetic (1991)",
+    "Klabnik & Nichols: The Rust Programming Language"
+   ],
+   "field": "Programming Languages"
+  },
+  {
+   "id": "systemslang",
+   "title": "Systems & Hardware Languages",
+   "accent": "#364fc7",
+   "summary": "C, C++, Rust, Go, Zig, assembly and hardware description languages: close to the machine, where you choose the memory layout and pay for every abstraction. Rust's ownership model is the threshold of this family.",
+   "sources": [
+    "Kernighan & Ritchie: The C Programming Language",
+    "Stroustrup: A Tour of C++",
+    "Klabnik & Nichols: The Rust Programming Language",
+    "Donovan & Kernighan: The Go Programming Language",
+    "Harris & Harris: Digital Design and Computer Architecture"
+   ],
+   "field": "Programming Languages"
+  },
+  {
+   "id": "weblang",
+   "title": "Web Languages",
+   "accent": "#0ca678",
+   "summary": "HTML, CSS, JavaScript, TypeScript, PHP, Ruby and WebAssembly: the languages of the browser and the server behind it. The event loop is the threshold: until it clicks, asynchronous JavaScript looks like it runs in random order.",
+   "sources": [
+    "MDN Web Docs (Mozilla)",
+    "Haverbeke: Eloquent JavaScript",
+    "Simpson: You Don't Know JS Yet",
+    "WHATWG HTML Living Standard",
+    "W3C Web Content Accessibility Guidelines 2.2"
+   ],
+   "field": "Programming Languages"
+  },
+  {
+   "id": "datalang",
+   "title": "Data & Scientific Languages",
+   "accent": "#9c36b5",
+   "summary": "Python, R, Julia, SQL, MATLAB and Fortran: the languages of analysis, modelling and simulation. SQL's declarative style is the threshold: you describe the result, and the database decides how to get it.",
+   "sources": [
+    "Lutz: Learning Python",
+    "McKinney: Python for Data Analysis",
+    "Wickham & Grolemund: R for Data Science",
+    "Bezanson et al.: Julia: A Fresh Approach to Numerical Computing (2017)",
+    "Date: SQL and Relational Theory"
+   ],
+   "field": "Programming Languages"
+  },
+  {
+   "id": "applang",
+   "title": "Application & Mobile Languages",
+   "accent": "#1098ad",
+   "summary": "Java, Kotlin, C#, Swift, Dart and Scala: the languages of enterprise back ends and phone apps. Null safety is the thread running through the modern ones; the UI thread is the threshold of mobile work.",
+   "sources": [
+    "Bloch: Effective Java",
+    "Jemerov & Isakova: Kotlin in Action",
+    "Skeet: C# in Depth",
+    "Apple: The Swift Programming Language",
+    "Odersky, Spoon, Venners: Programming in Scala"
+   ],
+   "field": "Programming Languages"
+  },
+  {
+   "id": "funclang",
+   "title": "Functional & Logic Languages",
+   "accent": "#5f3dc4",
+   "summary": "Haskell, OCaml, F#, Elixir, Erlang, Clojure and Prolog: languages that treat programs as expressions, messages or logic. Monads are the threshold: a way to sequence effects in a pure language, and a pattern you already use as promises and optionals.",
+   "sources": [
+    "Lipovača: Learn You a Haskell for Great Good!",
+    "Minsky, Madhavapeddy, Hickey: Real World OCaml",
+    "Armstrong: Programming Erlang",
+    "Hickey: Simple Made Easy (2011)",
+    "Sterling & Shapiro: The Art of Prolog"
+   ],
+   "field": "Programming Languages"
+  },
+  {
+   "id": "linguistics",
+   "title": "How Languages Work",
+   "accent": "#c2255c",
+   "summary": "The toolkit behind every language map: sounds, words, word order, writing systems and how adults actually acquire a language. Its threshold is the idea that every human language is fully rule-governed and expressive; the differences are in where the complexity sits.",
+   "sources": [
+    "Yule: The Study of Language",
+    "Ladefoged & Johnson: A Course in Phonetics",
+    "Krashen: Principles and Practice in Second Language Acquisition (1982)",
+    "Nation: Learning Vocabulary in Another Language",
+    "WALS: The World Atlas of Language Structures (Dryer & Haspelmath)"
+   ],
+   "field": "World Languages"
+  },
+  {
+   "id": "romance",
+   "title": "Romance Languages",
+   "accent": "#e8590c",
+   "summary": "Spanish, French, Portuguese, Italian and Romanian: one Latin inheritance, five sound systems. Learn the shared core once (gender, conjugation, cognates) and each further language costs far less than the first.",
+   "sources": [
+    "Penny: A History of the Spanish Language",
+    "Posner: The Romance Languages",
+    "Butt & Benjamin: A New Reference Grammar of Modern Spanish",
+    "Hawkins & Towell: French Grammar and Usage",
+    "Real Academia Española: Diccionario de la lengua española"
+   ],
+   "field": "World Languages"
+  },
+  {
+   "id": "germanicslavic",
+   "title": "Germanic & Slavic Languages",
+   "accent": "#d6336c",
+   "summary": "German, Dutch, Swedish, Russian, Polish and Ukrainian. Case is the shared threshold: when nouns change form for their role in the sentence, word order loosens and endings carry the meaning.",
+   "sources": [
+    "Durrell: Hammer's German Grammar and Usage",
+    "Wade: A Comprehensive Russian Grammar",
+    "Swan & Smith: Learner English (contrastive notes)",
+    "Comrie & Corbett: The Slavonic Languages",
+    "König & van der Auwera: The Germanic Languages"
+   ],
+   "field": "World Languages"
+  },
+  {
+   "id": "eastasian",
+   "title": "East & Southeast Asian Languages",
+   "accent": "#f03e3e",
+   "summary": "Mandarin, Japanese, Korean, Vietnamese, Indonesian and Thai: three unrelated families that shared a writing culture, plus tonal and non-tonal neighbours. Tone and script are the two thresholds for most English speakers.",
+   "sources": [
+    "Li & Thompson: Mandarin Chinese: A Functional Reference Grammar",
+    "Shibatani: The Languages of Japan",
+    "Sohn: The Korean Language",
+    "DeFrancis: The Chinese Language: Fact and Fantasy",
+    "Sneddon et al.: Indonesian: A Comprehensive Grammar"
+   ],
+   "field": "World Languages"
+  },
+  {
+   "id": "afroasian",
+   "title": "Middle Eastern, South Asian & African Languages",
+   "accent": "#e67700",
+   "summary": "Arabic, Hebrew, Persian, Turkish, Hindi, Bengali, Swahili, Yoruba and Amharic. Root-and-pattern morphology (Arabic, Hebrew) and agglutination (Turkish, Swahili) are the thresholds: words become formulas you can build, not lists you memorise.",
+   "sources": [
+    "Ryding: A Reference Grammar of Modern Standard Arabic",
+    "Göksel & Kerslake: Turkish: A Comprehensive Grammar",
+    "Kachru: Hindi",
+    "Mohammed: Modern Swahili Grammar",
+    "Daniels & Bright: The World's Writing Systems"
+   ],
+   "field": "World Languages"
+  },
+  {
    "id": "learning",
    "title": "Learning with Agents",
    "accent": "#f59f00",
@@ -300,6 +454,8 @@ window.DULTA_MAPS = {
   "Engineering",
   "Earth & Environment",
   "Computing & AI",
+  "Programming Languages",
+  "World Languages",
   "Learning & Agents"
  ],
  "nodes": [
@@ -8658,6 +8814,2957 @@ window.DULTA_MAPS = {
    "depth": 1
   },
   {
+   "id": "compiled",
+   "label": "Compiled vs Interpreted",
+   "kind": "concept",
+   "summary": "Ahead-of-time compilation, interpretation, bytecode and just-in-time compilers.",
+   "outcome": "Explain how a given language turns source into running code.",
+   "check": "What is the main difference between an ahead-of-time compiled language and an interpreted one?",
+   "answer": "A compiler translates the whole program to machine code before it runs; an interpreter executes it statement by statement at run time (many languages mix both with bytecode and a JIT).",
+   "grade": {
+    "all": [
+     [
+      "machine code",
+      "before",
+      "ahead",
+      "translat*"
+     ],
+     [
+      "run time",
+      "runtime",
+      "line by line",
+      "statement*",
+      "as it runs",
+      "at run"
+     ]
+    ]
+   },
+   "map": "plcore",
+   "key": "plcore/compiled",
+   "depth": 0
+  },
+  {
+   "id": "typing",
+   "label": "Static vs Dynamic Typing",
+   "kind": "concept",
+   "summary": "Types checked before running (static) or while running (dynamic), and how strictly values are converted.",
+   "outcome": "Classify languages by static/dynamic and strong/weak typing.",
+   "check": "When are type errors caught in a statically typed language?",
+   "answer": "At compile time, before the program runs.",
+   "grade": {
+    "all": [
+     [
+      "compile*",
+      "before"
+     ]
+    ]
+   },
+   "lab": "polyglot",
+   "map": "plcore",
+   "key": "plcore/typing",
+   "depth": 1
+  },
+  {
+   "id": "misc-strong",
+   "label": "\"Dynamic typing means weak typing\"",
+   "kind": "misconception",
+   "summary": "Python is dynamic yet strongly typed; JavaScript is dynamic and coerces freely. Two separate axes.",
+   "outcome": "Separate static/dynamic from strong/weak typing.",
+   "check": "Python is dynamically typed. Is '1' + 1 allowed in Python?",
+   "answer": "No: it raises a TypeError. Python is dynamic but strongly typed; it's JavaScript that coerces.",
+   "grade": {
+    "all": [
+     [
+      "no",
+      "error",
+      "typeerror",
+      "not"
+     ]
+    ]
+   },
+   "lab": "polyglot",
+   "map": "plcore",
+   "key": "plcore/misc-strong",
+   "depth": 1
+  },
+  {
+   "id": "memory",
+   "label": "Memory Management: Manual, GC, Ownership",
+   "kind": "threshold",
+   "summary": "Who frees memory, and when: the programmer (C), a garbage collector (Java, Python, Go) or the compiler's ownership rules (Rust).",
+   "outcome": "Compare the costs and failure modes of each memory strategy.",
+   "check": "Name the three main approaches to freeing memory, with a language for each.",
+   "answer": "Manual management (C), garbage collection (Java, Python, Go) and ownership with borrowing (Rust).",
+   "grade": {
+    "all": [
+     [
+      "manual",
+      "malloc",
+      "free"
+     ],
+     [
+      "garbage",
+      "gc"
+     ],
+     [
+      "ownership",
+      "borrow*",
+      "rust",
+      "raii"
+     ]
+    ]
+   },
+   "map": "plcore",
+   "key": "plcore/memory",
+   "depth": 0
+  },
+  {
+   "id": "paradigms",
+   "label": "Paradigms",
+   "kind": "concept",
+   "summary": "Imperative, object-oriented, functional and logic programming, and languages that mix them.",
+   "outcome": "Solve one problem in two paradigms and compare.",
+   "check": "Which paradigm treats computation as evaluating functions without changing state?",
+   "answer": "Functional programming.",
+   "grade": {
+    "all": [
+     [
+      "functional"
+     ]
+    ]
+   },
+   "map": "plcore",
+   "key": "plcore/paradigms",
+   "depth": 2
+  },
+  {
+   "id": "intdiv",
+   "label": "Numbers: Integer Division & Overflow",
+   "kind": "concept",
+   "summary": "Integer division, remainders of negative numbers and overflow all differ between languages.",
+   "outcome": "Predict integer arithmetic results across languages.",
+   "check": "In C and Java, what is 7 / 2 when both operands are integers?",
+   "answer": "3: integer division truncates.",
+   "grade": {
+    "numbers": [
+     [
+      3
+     ]
+    ]
+   },
+   "lab": "polyglot",
+   "map": "plcore",
+   "key": "plcore/intdiv",
+   "depth": 0
+  },
+  {
+   "id": "floats",
+   "label": "Floating Point",
+   "kind": "concept",
+   "summary": "IEEE 754 binary floats: fast, approximate, and full of surprises.",
+   "outcome": "Explain and avoid floating-point comparison bugs.",
+   "check": "Why is 0.1 + 0.2 == 0.3 false in most languages?",
+   "answer": "0.1 and 0.2 have no exact binary representation, so the sum is 0.30000000000000004.",
+   "grade": {
+    "all": [
+     [
+      "binary",
+      "exact*",
+      "represent*",
+      "rounding",
+      "precision",
+      "30000000000000004"
+     ]
+    ]
+   },
+   "lab": "polyglot",
+   "map": "plcore",
+   "key": "plcore/floats",
+   "depth": 1
+  },
+  {
+   "id": "misc-float",
+   "label": "\"Computers do decimal arithmetic exactly\"",
+   "kind": "misconception",
+   "summary": "Binary floats can't represent most decimal fractions; money needs integers or decimal types.",
+   "outcome": "Choose a correct representation for money.",
+   "check": "Should you store money as a binary floating-point number?",
+   "answer": "No: use integers (cents) or a decimal type, because binary floats can't represent many decimal fractions exactly.",
+   "grade": {
+    "all": [
+     [
+      "no",
+      "not"
+     ],
+     [
+      "integer*",
+      "cents",
+      "decimal",
+      "bigdecimal"
+     ]
+    ]
+   },
+   "map": "plcore",
+   "key": "plcore/misc-float",
+   "depth": 1
+  },
+  {
+   "id": "strings",
+   "label": "Strings & Unicode",
+   "kind": "concept",
+   "summary": "Bytes, code units, code points and grapheme clusters: four different 'lengths'.",
+   "outcome": "Handle text correctly in at least two languages.",
+   "check": "Why can the 'length' of '👍🏽' differ between languages?",
+   "answer": "Some count bytes, some UTF-16 code units, some code points and some grapheme clusters.",
+   "grade": {
+    "all": [
+     [
+      "byte*",
+      "code unit*",
+      "code point*",
+      "grapheme*",
+      "utf"
+     ]
+    ]
+   },
+   "map": "plcore",
+   "key": "plcore/strings",
+   "depth": 0
+  },
+  {
+   "id": "concurrencymodels",
+   "label": "Concurrency Models",
+   "kind": "concept",
+   "summary": "Threads and locks, async/await, channels (Go) and actors (Erlang).",
+   "outcome": "Choose a concurrency model for a workload.",
+   "check": "How does Go's approach to concurrency differ from shared-memory threads with locks?",
+   "answer": "Goroutines communicate over channels ('share memory by communicating') instead of sharing state guarded by locks.",
+   "grade": {
+    "all": [
+     [
+      "channel*",
+      "message*",
+      "communicat*",
+      "goroutine*"
+     ]
+    ]
+   },
+   "map": "plcore",
+   "key": "plcore/concurrencymodels",
+   "depth": 0
+  },
+  {
+   "id": "tooling",
+   "label": "Package Managers & Toolchains",
+   "kind": "concept",
+   "summary": "npm, pip, Cargo, Maven: dependency resolution, lockfiles and reproducible builds.",
+   "outcome": "Set up a reproducible project in a new language.",
+   "check": "What does a lockfile (package-lock.json, Cargo.lock, poetry.lock) guarantee?",
+   "answer": "Reproducible installs: every install resolves the exact same dependency versions.",
+   "grade": {
+    "all": [
+     [
+      "exact",
+      "same version*",
+      "reproduc*",
+      "pinned",
+      "pin*"
+     ]
+    ]
+   },
+   "map": "plcore",
+   "key": "plcore/tooling",
+   "depth": 0
+  },
+  {
+   "id": "choosing",
+   "label": "Choosing a Language",
+   "kind": "concept",
+   "summary": "Runtime, ecosystem, team and problem domain matter more than syntax.",
+   "outcome": "Justify a language choice for a project with an ADR.",
+   "check": "Why is C still the default for microcontroller firmware?",
+   "answer": "Tiny runtime, direct hardware access, predictable performance and compilers for every chip.",
+   "grade": {
+    "all": [
+     [
+      "hardware",
+      "runtime",
+      "small",
+      "memory",
+      "performance",
+      "predictab*",
+      "control",
+      "register*",
+      "compiler*"
+     ]
+    ]
+   },
+   "map": "plcore",
+   "key": "plcore/choosing",
+   "depth": 3
+  },
+  {
+   "id": "c-pointers",
+   "label": "C: Pointers & Memory",
+   "kind": "concept",
+   "summary": "Addresses, arrays and manual allocation with malloc and free.",
+   "outcome": "Trace pointer arithmetic and manage heap memory in C.",
+   "check": "In C, what does *p mean when p is a pointer?",
+   "answer": "Dereference: the value stored at the address p holds.",
+   "grade": {
+    "all": [
+     [
+      "value",
+      "dereferenc*",
+      "contents"
+     ],
+     [
+      "address",
+      "points",
+      "stored at",
+      "location"
+     ]
+    ]
+   },
+   "map": "systemslang",
+   "key": "systemslang/c-pointers",
+   "depth": 0
+  },
+  {
+   "id": "c-ub",
+   "label": "C: Undefined Behaviour",
+   "kind": "concept",
+   "summary": "Out-of-bounds access, signed overflow and use-after-free let the compiler do anything.",
+   "outcome": "Spot undefined behaviour and enable sanitizers to catch it.",
+   "check": "What may a C compiler do with code that reads past the end of an array?",
+   "answer": "Anything: it is undefined behaviour, so the compiler may assume it never happens, and results are unpredictable.",
+   "grade": {
+    "all": [
+     [
+      "undefined",
+      "anything",
+      "unpredictab*",
+      "ub"
+     ]
+    ]
+   },
+   "lab": "polyglot",
+   "map": "systemslang",
+   "key": "systemslang/c-ub",
+   "depth": 1
+  },
+  {
+   "id": "cpp-raii",
+   "label": "C++: RAII & Destructors",
+   "kind": "concept",
+   "summary": "Resources tied to object lifetimes: acquired in constructors, released in destructors.",
+   "outcome": "Write a RAII wrapper and use smart pointers.",
+   "check": "In C++ RAII, when is a resource such as a file or lock released?",
+   "answer": "Automatically in the destructor, when the owning object goes out of scope.",
+   "grade": {
+    "all": [
+     [
+      "destructor*",
+      "scope",
+      "automatic*"
+     ]
+    ]
+   },
+   "map": "systemslang",
+   "key": "systemslang/cpp-raii",
+   "depth": 1
+  },
+  {
+   "id": "cpp-stl",
+   "label": "C++: Templates & the STL",
+   "kind": "concept",
+   "summary": "Generic containers and algorithms with zero-cost abstraction.",
+   "outcome": "Choose STL containers and algorithms for a task.",
+   "check": "What does std::vector<int> give you that a raw C array doesn't?",
+   "answer": "It manages its own memory, grows automatically and knows its size.",
+   "grade": {
+    "all": [
+     [
+      "grow*",
+      "resiz*",
+      "size",
+      "manag*",
+      "dynamic",
+      "automatic*"
+     ]
+    ]
+   },
+   "map": "systemslang",
+   "key": "systemslang/cpp-stl",
+   "depth": 2
+  },
+  {
+   "id": "rust-ownership",
+   "label": "Rust: Ownership & Borrowing",
+   "kind": "threshold",
+   "summary": "Each value has one owner; references are borrowed under rules the compiler checks, ruling out data races and use-after-free. Troublesome because the compiler rejects code that 'looks fine'.",
+   "outcome": "Fix borrow-checker errors by restructuring ownership.",
+   "check": "In Rust, how many mutable references to a value may exist at the same time?",
+   "answer": "One, and no immutable references alongside it: this rule prevents data races at compile time.",
+   "grade": {
+    "all": [
+     [
+      "one",
+      "1",
+      "single"
+     ]
+    ]
+   },
+   "lab": "polyglot",
+   "map": "systemslang",
+   "key": "systemslang/rust-ownership",
+   "depth": 2
+  },
+  {
+   "id": "misc-rust",
+   "label": "\"Rust programs can never crash\"",
+   "kind": "misconception",
+   "summary": "Rust prevents memory-safety bugs, not all failures: out-of-bounds indexing and unwrap on None still panic.",
+   "outcome": "Handle errors with Result instead of panicking.",
+   "check": "Can a safe Rust program still panic?",
+   "answer": "Yes: indexing out of bounds or calling unwrap on None panics; Rust prevents memory-safety bugs, not every failure.",
+   "grade": {
+    "all": [
+     [
+      "yes",
+      "can"
+     ]
+    ]
+   },
+   "map": "systemslang",
+   "key": "systemslang/misc-rust",
+   "depth": 2
+  },
+  {
+   "id": "go",
+   "label": "Go: Goroutines & Simplicity",
+   "kind": "concept",
+   "summary": "A small language with built-in concurrency, fast compiles and a garbage collector.",
+   "outcome": "Write a concurrent Go program with goroutines and channels.",
+   "check": "How do you run a function concurrently in Go?",
+   "answer": "Prefix the call with the go keyword: go f().",
+   "grade": {
+    "all": [
+     [
+      "go"
+     ]
+    ]
+   },
+   "lab": "polyglot",
+   "map": "systemslang",
+   "key": "systemslang/go",
+   "depth": 0
+  },
+  {
+   "id": "zig",
+   "label": "Zig: Explicit Allocation",
+   "kind": "concept",
+   "summary": "No hidden control flow or allocations; comptime replaces macros.",
+   "outcome": "Pass allocators explicitly in Zig.",
+   "check": "How does Zig make memory allocation explicit?",
+   "answer": "Functions that allocate take an allocator parameter, so every allocation is visible at the call site.",
+   "grade": {
+    "all": [
+     [
+      "allocator*",
+      "parameter",
+      "pass*",
+      "argument"
+     ]
+    ]
+   },
+   "map": "systemslang",
+   "key": "systemslang/zig",
+   "depth": 1
+  },
+  {
+   "id": "asm",
+   "label": "Assembly",
+   "kind": "concept",
+   "summary": "Mnemonics for machine instructions: registers, jumps and the stack.",
+   "outcome": "Read the assembly a compiler produces for a small function.",
+   "check": "What does an assembler translate, and into what?",
+   "answer": "Human-readable mnemonics (like MOV and ADD) into machine-code bytes, almost one to one.",
+   "grade": {
+    "all": [
+     [
+      "mnemonic*",
+      "instruction*",
+      "assembly"
+     ],
+     [
+      "machine code",
+      "binary",
+      "bytes",
+      "opcode*"
+     ]
+    ]
+   },
+   "map": "systemslang",
+   "key": "systemslang/asm",
+   "depth": 0
+  },
+  {
+   "id": "hdl",
+   "label": "Verilog & VHDL: Describing Hardware",
+   "kind": "concept",
+   "summary": "Hardware description languages describe circuits that synthesise to gates on FPGAs and chips.",
+   "outcome": "Describe a counter in Verilog and simulate it.",
+   "check": "How does a hardware description language differ from a programming language like C?",
+   "answer": "It describes circuits whose parts all operate in parallel, not a sequence of instructions executed one after another.",
+   "grade": {
+    "all": [
+     [
+      "parallel",
+      "concurrent*",
+      "circuit*",
+      "simultaneous*",
+      "hardware"
+     ]
+    ]
+   },
+   "map": "systemslang",
+   "key": "systemslang/hdl",
+   "depth": 0
+  },
+  {
+   "id": "misc-hdl",
+   "label": "\"An HDL program runs line by line\"",
+   "kind": "misconception",
+   "summary": "Always blocks triggered by the same clock edge describe hardware that updates simultaneously.",
+   "outcome": "Reason about simultaneous updates on a clock edge.",
+   "check": "In Verilog, two always blocks both trigger on the same clock edge. Which runs first?",
+   "answer": "Neither: they describe hardware that updates in parallel on that edge.",
+   "grade": {
+    "all": [
+     [
+      "neither",
+      "parallel",
+      "same time",
+      "simultaneous*",
+      "both",
+      "concurrent*"
+     ]
+    ]
+   },
+   "map": "systemslang",
+   "key": "systemslang/misc-hdl",
+   "depth": 0
+  },
+  {
+   "id": "html",
+   "label": "HTML: Structure & Semantics",
+   "kind": "concept",
+   "summary": "Semantic elements give structure, accessibility and search visibility for free.",
+   "outcome": "Mark up a page with semantic, accessible HTML.",
+   "check": "Why use <button> instead of a clickable <div>?",
+   "answer": "A button is focusable, works with the keyboard and is announced to screen readers by default.",
+   "grade": {
+    "all": [
+     [
+      "keyboard",
+      "focus*",
+      "screen reader*",
+      "accessib*",
+      "semantic*"
+     ]
+    ]
+   },
+   "map": "weblang",
+   "key": "weblang/html",
+   "depth": 0
+  },
+  {
+   "id": "css",
+   "label": "CSS: The Cascade & Layout",
+   "kind": "concept",
+   "summary": "Specificity, source order, flexbox and grid.",
+   "outcome": "Lay out a responsive page with grid and flexbox.",
+   "check": "Two CSS rules with equal specificity set the same property. Which one wins?",
+   "answer": "The one that comes later in the source.",
+   "grade": {
+    "all": [
+     [
+      "later",
+      "last",
+      "second",
+      "after"
+     ]
+    ]
+   },
+   "map": "weblang",
+   "key": "weblang/css",
+   "depth": 1
+  },
+  {
+   "id": "dom",
+   "label": "The DOM & Browser APIs",
+   "kind": "concept",
+   "summary": "The page as a live tree of objects that scripts read and change.",
+   "outcome": "Update the page from JavaScript through the DOM.",
+   "check": "What is the DOM?",
+   "answer": "The browser's tree of objects representing the page, which scripts can read and change.",
+   "grade": {
+    "all": [
+     [
+      "tree",
+      "object*",
+      "document",
+      "page"
+     ]
+    ]
+   },
+   "map": "weblang",
+   "key": "weblang/dom",
+   "depth": 1
+  },
+  {
+   "id": "js",
+   "label": "JavaScript: The Language of the Browser",
+   "kind": "concept",
+   "summary": "Dynamic, prototype-based and everywhere, with historical quirks.",
+   "outcome": "Write modern JavaScript with modules and const/let.",
+   "check": "What does typeof null return in JavaScript?",
+   "answer": "'object' (a historical bug kept for compatibility).",
+   "grade": {
+    "all": [
+     [
+      "object"
+     ]
+    ]
+   },
+   "map": "weblang",
+   "key": "weblang/js",
+   "depth": 0
+  },
+  {
+   "id": "misc-eq",
+   "label": "\"== and === are the same\"",
+   "kind": "misconception",
+   "summary": "== coerces types before comparing; === does not.",
+   "outcome": "Use strict equality and predict coercion.",
+   "check": "In JavaScript, what are '0' == 0 and '0' === 0?",
+   "answer": "true for == (type coercion) and false for === (strict equality).",
+   "grade": {
+    "all": [
+     [
+      "true"
+     ],
+     [
+      "false"
+     ]
+    ]
+   },
+   "lab": "polyglot",
+   "map": "weblang",
+   "key": "weblang/misc-eq",
+   "depth": 0
+  },
+  {
+   "id": "async",
+   "label": "JavaScript: The Event Loop & Async",
+   "kind": "threshold",
+   "summary": "One thread, a call stack and queues of tasks and microtasks; promises and async/await sit on top.",
+   "outcome": "Predict the output order of mixed sync, timer and promise code.",
+   "check": "setTimeout(f, 0) is called, then console.log('a'). Which runs first, f or the log?",
+   "answer": "The log: f waits in the task queue until the current code finishes.",
+   "grade": {
+    "all": [
+     [
+      "log",
+      "console",
+      "a first",
+      "the a"
+     ]
+    ],
+    "none": [
+     "f first",
+     "f runs first"
+    ]
+   },
+   "map": "weblang",
+   "key": "weblang/async",
+   "depth": 2
+  },
+  {
+   "id": "ts",
+   "label": "TypeScript: Types for JavaScript",
+   "kind": "concept",
+   "summary": "Static types checked at compile time, erased in the JavaScript output.",
+   "outcome": "Type a JavaScript module with TypeScript.",
+   "check": "Do TypeScript's types exist at run time in the browser?",
+   "answer": "No: types are erased when compiling to JavaScript; checking happens at compile time.",
+   "grade": {
+    "all": [
+     [
+      "no",
+      "not",
+      "erased",
+      "compile*"
+     ]
+    ]
+   },
+   "map": "weblang",
+   "key": "weblang/ts",
+   "depth": 1
+  },
+  {
+   "id": "php",
+   "label": "PHP: Server-Side Web",
+   "kind": "concept",
+   "summary": "Runs on the server per request; powers a large share of the web.",
+   "outcome": "Render a page from a PHP template with escaped output.",
+   "check": "Where does PHP code run: in the browser or on the server?",
+   "answer": "On the server; the browser receives the HTML it produces.",
+   "grade": {
+    "all": [
+     [
+      "server"
+     ]
+    ]
+   },
+   "map": "weblang",
+   "key": "weblang/php",
+   "depth": 0
+  },
+  {
+   "id": "ruby",
+   "label": "Ruby & Rails",
+   "kind": "concept",
+   "summary": "An expressive language and a framework built on convention over configuration.",
+   "outcome": "Scaffold a CRUD app in Rails.",
+   "check": "What does 'convention over configuration' mean in Rails?",
+   "answer": "Following naming and folder conventions means you write little configuration; Rails infers the wiring.",
+   "grade": {
+    "all": [
+     [
+      "convention*",
+      "default*",
+      "infer*",
+      "naming",
+      "less config*",
+      "little config*"
+     ]
+    ]
+   },
+   "map": "weblang",
+   "key": "weblang/ruby",
+   "depth": 0
+  },
+  {
+   "id": "wasm",
+   "label": "WebAssembly",
+   "kind": "concept",
+   "summary": "A portable bytecode that runs compiled C++, Rust and Go in the browser.",
+   "outcome": "Compile a function to WebAssembly and call it from JavaScript.",
+   "check": "Why compile C++ or Rust to WebAssembly?",
+   "answer": "To run near-native-speed code in the browser, sandboxed alongside JavaScript.",
+   "grade": {
+    "all": [
+     [
+      "fast*",
+      "speed",
+      "performance",
+      "native"
+     ]
+    ]
+   },
+   "map": "weblang",
+   "key": "weblang/wasm",
+   "depth": 1
+  },
+  {
+   "id": "py",
+   "label": "Python: Readable by Design",
+   "kind": "concept",
+   "summary": "Indentation as syntax, batteries included, and the default language of data work.",
+   "outcome": "Write idiomatic Python with functions, comprehensions and modules.",
+   "check": "What does indentation do in Python?",
+   "answer": "It defines code blocks; it is part of the syntax, not just style.",
+   "grade": {
+    "all": [
+     [
+      "block*",
+      "syntax",
+      "scope",
+      "structure",
+      "defin*"
+     ]
+    ]
+   },
+   "lab": "polyglot",
+   "map": "datalang",
+   "key": "datalang/py",
+   "depth": 0
+  },
+  {
+   "id": "misc-pydefault",
+   "label": "\"Default arguments are fresh on each call\"",
+   "kind": "misconception",
+   "summary": "Python evaluates a default argument once, so a mutable default is shared between calls.",
+   "outcome": "Use None as the default for mutable arguments.",
+   "check": "def f(x=[]): x.append(1); return x. What does the second call to f() return?",
+   "answer": "[1, 1]: the default list is created once and shared between calls.",
+   "grade": {
+    "all": [
+     [
+      "1 1",
+      "shared",
+      "same list",
+      "once"
+     ]
+    ]
+   },
+   "map": "datalang",
+   "key": "datalang/misc-pydefault",
+   "depth": 0
+  },
+  {
+   "id": "py-data",
+   "label": "Python: NumPy & pandas",
+   "kind": "concept",
+   "summary": "Vectorised arrays and data frames; loops moved into compiled code.",
+   "outcome": "Replace a Python loop with a vectorised NumPy expression.",
+   "check": "Why is a vectorised NumPy operation much faster than a Python for-loop over the same numbers?",
+   "answer": "The loop runs in compiled C over a contiguous array instead of interpreting each element in Python.",
+   "grade": {
+    "all": [
+     [
+      "compiled",
+      "c",
+      "native",
+      "interpret*",
+      "contiguous",
+      "vector*",
+      "overhead"
+     ]
+    ]
+   },
+   "map": "datalang",
+   "key": "datalang/py-data",
+   "depth": 1
+  },
+  {
+   "id": "notebooks",
+   "label": "Notebooks & Reproducibility",
+   "kind": "concept",
+   "summary": "Jupyter-style notebooks are great for exploration and risky for reproducibility.",
+   "outcome": "Turn a notebook into a reproducible script with pinned dependencies.",
+   "check": "What is a common reproducibility trap in Jupyter notebooks?",
+   "answer": "Cells run out of order leave hidden state, so the notebook can't be rerun top to bottom with the same result.",
+   "grade": {
+    "all": [
+     [
+      "order",
+      "hidden state",
+      "state",
+      "rerun",
+      "re run",
+      "top to bottom"
+     ]
+    ]
+   },
+   "map": "datalang",
+   "key": "datalang/notebooks",
+   "depth": 2
+  },
+  {
+   "id": "r",
+   "label": "R: Statistics First",
+   "kind": "concept",
+   "summary": "Data frames, vectors and a huge library of statistical methods.",
+   "outcome": "Load, summarise and plot a data set in R.",
+   "check": "What is R's basic data structure for a table of observations?",
+   "answer": "The data frame.",
+   "grade": {
+    "all": [
+     [
+      "data frame",
+      "dataframe",
+      "tibble"
+     ]
+    ]
+   },
+   "lab": "polyglot",
+   "map": "datalang",
+   "key": "datalang/r",
+   "depth": 0
+  },
+  {
+   "id": "r-index",
+   "label": "R: Vectors & 1-Based Indexing",
+   "kind": "concept",
+   "summary": "Everything is a vector, and indexing starts at 1.",
+   "outcome": "Index and filter vectors in R.",
+   "check": "In R, what is x[1] for x <- c(10, 20, 30)?",
+   "answer": "10: R indexes from 1.",
+   "grade": {
+    "numbers": [
+     [
+      10
+     ]
+    ]
+   },
+   "map": "datalang",
+   "key": "datalang/r-index",
+   "depth": 1
+  },
+  {
+   "id": "julia",
+   "label": "Julia: Fast Scientific Computing",
+   "kind": "concept",
+   "summary": "Dynamic syntax with compiled speed through JIT compilation and multiple dispatch.",
+   "outcome": "Write a type-stable Julia function and benchmark it.",
+   "check": "How does Julia reach C-like speed while being dynamic?",
+   "answer": "Just-in-time compilation specialised on the argument types (multiple dispatch).",
+   "grade": {
+    "all": [
+     [
+      "jit",
+      "just in time",
+      "compil*"
+     ]
+    ]
+   },
+   "lab": "polyglot",
+   "map": "datalang",
+   "key": "datalang/julia",
+   "depth": 0
+  },
+  {
+   "id": "sql",
+   "label": "SQL: Declarative Queries",
+   "kind": "threshold",
+   "summary": "Say what rows you want; the query planner decides how to fetch them. Troublesome for programmers used to writing loops.",
+   "outcome": "Express a multi-table question as one SQL query.",
+   "check": "In SQL, do you tell the database how to find the rows, or what rows you want?",
+   "answer": "What you want: SQL is declarative, and the query planner decides how.",
+   "grade": {
+    "all": [
+     [
+      "what",
+      "declarative"
+     ]
+    ]
+   },
+   "lab": "polyglot",
+   "map": "datalang",
+   "key": "datalang/sql",
+   "depth": 0
+  },
+  {
+   "id": "sql-null",
+   "label": "SQL: Joins & NULL",
+   "kind": "concept",
+   "summary": "Inner and outer joins, and three-valued logic with NULL.",
+   "outcome": "Write joins that keep or drop unmatched rows deliberately.",
+   "check": "Does WHERE x = NULL find rows where x is NULL?",
+   "answer": "No: any comparison with NULL is unknown; use WHERE x IS NULL.",
+   "grade": {
+    "all": [
+     [
+      "no",
+      "not",
+      "is null"
+     ]
+    ]
+   },
+   "map": "datalang",
+   "key": "datalang/sql-null",
+   "depth": 1
+  },
+  {
+   "id": "matlab",
+   "label": "MATLAB & Octave: Matrices First",
+   "kind": "concept",
+   "summary": "Everything is a matrix; operators distinguish matrix from element-wise maths.",
+   "outcome": "Vectorise a calculation in MATLAB.",
+   "check": "In MATLAB, what is the difference between A*B and A.*B?",
+   "answer": "A*B is matrix multiplication; A.*B multiplies element by element.",
+   "grade": {
+    "all": [
+     [
+      "matrix"
+     ],
+     [
+      "element*"
+     ]
+    ]
+   },
+   "map": "datalang",
+   "key": "datalang/matlab",
+   "depth": 0
+  },
+  {
+   "id": "fortran",
+   "label": "Fortran: Still Running the Science",
+   "kind": "concept",
+   "summary": "The first high-level language, still central to climate, physics and engineering codes.",
+   "outcome": "Read a Fortran array loop and call it from Python.",
+   "check": "Why is Fortran still used in climate and physics codes?",
+   "answer": "Decades of tested numerical libraries, and compilers that optimise array maths extremely well.",
+   "grade": {
+    "all": [
+     [
+      "legacy",
+      "librar*",
+      "fast",
+      "performance",
+      "optimi*",
+      "numerical",
+      "array*",
+      "tested",
+      "decades"
+     ]
+    ]
+   },
+   "map": "datalang",
+   "key": "datalang/fortran",
+   "depth": 0
+  },
+  {
+   "id": "java",
+   "label": "Java & the JVM",
+   "kind": "concept",
+   "summary": "Bytecode on a virtual machine, garbage collection and a vast ecosystem.",
+   "outcome": "Build and run a Java program and explain the JVM's role.",
+   "check": "What does 'write once, run anywhere' rely on in Java?",
+   "answer": "Compiling to JVM bytecode, which any platform's Java Virtual Machine can run.",
+   "grade": {
+    "all": [
+     [
+      "bytecode",
+      "jvm",
+      "virtual machine"
+     ]
+    ]
+   },
+   "lab": "polyglot",
+   "map": "applang",
+   "key": "applang/java",
+   "depth": 0
+  },
+  {
+   "id": "java-oop",
+   "label": "Java: Classes & Interfaces",
+   "kind": "concept",
+   "summary": "Single inheritance of classes, multiple interfaces.",
+   "outcome": "Design a class hierarchy using interfaces.",
+   "check": "What is the difference between an interface and an abstract class in Java?",
+   "answer": "A class can implement many interfaces but extend only one class; interfaces define a contract, abstract classes can also hold state and shared code.",
+   "grade": {
+    "all": [
+     [
+      "many",
+      "multiple",
+      "one class",
+      "single",
+      "only one"
+     ],
+     [
+      "state",
+      "field*",
+      "contract",
+      "implement*",
+      "code"
+     ]
+    ]
+   },
+   "map": "applang",
+   "key": "applang/java-oop",
+   "depth": 1
+  },
+  {
+   "id": "misc-javaref",
+   "label": "\"Java passes objects by reference\"",
+   "kind": "misconception",
+   "summary": "Java is always pass-by-value; for objects, the value passed is a copy of the reference.",
+   "outcome": "Predict whether a method can replace a caller's object.",
+   "check": "Does Java pass object arguments by reference?",
+   "answer": "No: Java is always pass-by-value; for objects, the value passed is a copy of the reference.",
+   "grade": {
+    "all": [
+     [
+      "value",
+      "copy"
+     ]
+    ]
+   },
+   "map": "applang",
+   "key": "applang/misc-javaref",
+   "depth": 1
+  },
+  {
+   "id": "kotlin",
+   "label": "Kotlin: Null Safety",
+   "kind": "concept",
+   "summary": "Nullable types are explicit, and the compiler forces checks.",
+   "outcome": "Use safe calls and the Elvis operator.",
+   "check": "In Kotlin, can a variable of type String (without a question mark) hold null?",
+   "answer": "No: only the nullable type String? can, and the compiler forces null checks.",
+   "grade": {
+    "all": [
+     [
+      "no",
+      "not",
+      "nullable",
+      "cannot",
+      "can t"
+     ]
+    ]
+   },
+   "map": "applang",
+   "key": "applang/kotlin",
+   "depth": 1
+  },
+  {
+   "id": "csharp",
+   "label": "C# & .NET",
+   "kind": "concept",
+   "summary": "A statically typed language for Windows, web, games (Unity) and cloud.",
+   "outcome": "Query a collection with LINQ.",
+   "check": "What does LINQ let you do in C#?",
+   "answer": "Query collections, databases and XML with a uniform, SQL-like syntax inside the language.",
+   "grade": {
+    "all": [
+     [
+      "query*",
+      "queries",
+      "filter*"
+     ]
+    ]
+   },
+   "lab": "polyglot",
+   "map": "applang",
+   "key": "applang/csharp",
+   "depth": 2
+  },
+  {
+   "id": "swift",
+   "label": "Swift: Optionals & iOS",
+   "kind": "concept",
+   "summary": "Value types, optionals and SwiftUI for Apple platforms.",
+   "outcome": "Unwrap optionals safely in Swift.",
+   "check": "What does Swift's 'if let' do with an optional?",
+   "answer": "Unwraps it safely: the block runs only if the optional holds a value.",
+   "grade": {
+    "all": [
+     [
+      "unwrap*",
+      "safe*",
+      "has a value",
+      "holds a value",
+      "not nil",
+      "non nil"
+     ]
+    ]
+   },
+   "map": "applang",
+   "key": "applang/swift",
+   "depth": 0
+  },
+  {
+   "id": "dart",
+   "label": "Dart & Flutter",
+   "kind": "concept",
+   "summary": "One codebase for Android, iOS, web and desktop.",
+   "outcome": "Build a Flutter screen and use hot reload.",
+   "check": "What does Flutter's hot reload do?",
+   "answer": "It injects changed code into the running app so the UI updates in about a second without losing state.",
+   "grade": {
+    "all": [
+     [
+      "running",
+      "without restart*",
+      "state",
+      "instant*",
+      "second",
+      "inject*"
+     ]
+    ]
+   },
+   "map": "applang",
+   "key": "applang/dart",
+   "depth": 0
+  },
+  {
+   "id": "scala",
+   "label": "Scala: Functional on the JVM",
+   "kind": "concept",
+   "summary": "Object-oriented and functional, with a powerful type system.",
+   "outcome": "Write a data pipeline with Scala collections.",
+   "check": "Which big-data engine is written in Scala?",
+   "answer": "Apache Spark.",
+   "grade": {
+    "all": [
+     [
+      "spark"
+     ]
+    ]
+   },
+   "map": "applang",
+   "key": "applang/scala",
+   "depth": 1
+  },
+  {
+   "id": "mobile",
+   "label": "Mobile App Architecture",
+   "kind": "threshold",
+   "summary": "The UI thread must never block; lifecycles, background work and offline state shape every design.",
+   "outcome": "Move slow work off the UI thread and survive app lifecycle changes.",
+   "check": "Why must long network calls stay off a mobile app's main (UI) thread?",
+   "answer": "The UI would freeze, and the operating system may kill an unresponsive app.",
+   "grade": {
+    "all": [
+     [
+      "freez*",
+      "block*",
+      "unresponsive",
+      "jank",
+      "lag",
+      "kill*",
+      "anr"
+     ]
+    ]
+   },
+   "map": "applang",
+   "key": "applang/mobile",
+   "depth": 2
+  },
+  {
+   "id": "misc-crossplatform",
+   "label": "\"Cross-platform means no native code, ever\"",
+   "kind": "misconception",
+   "summary": "Platform features without a plugin still need Swift or Kotlin through platform channels or native modules.",
+   "outcome": "Plan where native code is needed in a cross-platform app.",
+   "check": "Does a Flutter or React Native app ever need native Swift or Kotlin code?",
+   "answer": "Sometimes: platform features without a plugin need native code through platform channels or native modules.",
+   "grade": {
+    "all": [
+     [
+      "sometimes",
+      "yes",
+      "can",
+      "native",
+      "plugin*",
+      "platform channel*"
+     ]
+    ]
+   },
+   "map": "applang",
+   "key": "applang/misc-crossplatform",
+   "depth": 2
+  },
+  {
+   "id": "lazy",
+   "label": "Haskell: Purity & Laziness",
+   "kind": "concept",
+   "summary": "Pure functions and lazy evaluation: nothing runs until its value is needed.",
+   "outcome": "Use an infinite list safely because of laziness.",
+   "check": "In Haskell, when is an expression evaluated?",
+   "answer": "Only when its value is needed (lazy evaluation).",
+   "grade": {
+    "all": [
+     [
+      "need*",
+      "lazy",
+      "demand*",
+      "required",
+      "used"
+     ]
+    ]
+   },
+   "lab": "polyglot",
+   "map": "funclang",
+   "key": "funclang/lazy",
+   "depth": 0
+  },
+  {
+   "id": "infer",
+   "label": "Type Inference",
+   "kind": "concept",
+   "summary": "Hindley–Milner inference: strong static types with few annotations.",
+   "outcome": "Read an inferred type signature and explain it.",
+   "check": "In OCaml or Haskell, must you annotate the type of every function?",
+   "answer": "No: the compiler infers most types automatically.",
+   "grade": {
+    "all": [
+     [
+      "no",
+      "not",
+      "infer*"
+     ]
+    ]
+   },
+   "lab": "polyglot",
+   "map": "funclang",
+   "key": "funclang/infer",
+   "depth": 0
+  },
+  {
+   "id": "adts",
+   "label": "Algebraic Data Types & Pattern Matching",
+   "kind": "concept",
+   "summary": "Sum and product types, with the compiler checking that every case is handled.",
+   "outcome": "Model a domain with sum types and exhaustive matches.",
+   "check": "What does the compiler check when you pattern-match on a sum type such as Maybe or Option?",
+   "answer": "That every case is handled (exhaustiveness).",
+   "grade": {
+    "all": [
+     [
+      "every case",
+      "exhaustiv*",
+      "all cases",
+      "all the cases",
+      "missing case*",
+      "each case"
+     ]
+    ]
+   },
+   "map": "funclang",
+   "key": "funclang/adts",
+   "depth": 1
+  },
+  {
+   "id": "monads",
+   "label": "Monads: Sequencing Effects",
+   "kind": "threshold",
+   "summary": "A uniform way to chain computations that carry context: failure, state, I/O, async. Troublesome because the abstraction is taught before the examples.",
+   "outcome": "Chain Maybe and IO computations with do-notation.",
+   "check": "Why does Haskell need something like the IO monad at all?",
+   "answer": "Functions are pure, so effects like I/O are represented as values that are sequenced explicitly.",
+   "grade": {
+    "all": [
+     [
+      "pure",
+      "purity",
+      "side effect*",
+      "effects"
+     ]
+    ]
+   },
+   "map": "funclang",
+   "key": "funclang/monads",
+   "depth": 2
+  },
+  {
+   "id": "misc-monad",
+   "label": "\"Monads are a Haskell curiosity\"",
+   "kind": "misconception",
+   "summary": "Promises, async/await, optional chaining and list comprehensions follow the same pattern.",
+   "outcome": "Recognise monadic patterns in mainstream code.",
+   "check": "Name a monad-like pattern you can use in mainstream languages.",
+   "answer": "Promises and async/await, Optional or Maybe chaining, or list comprehensions.",
+   "grade": {
+    "all": [
+     [
+      "promise*",
+      "async",
+      "optional",
+      "maybe",
+      "option",
+      "list comprehension*",
+      "future*",
+      "stream*",
+      "linq"
+     ]
+    ]
+   },
+   "map": "funclang",
+   "key": "funclang/misc-monad",
+   "depth": 2
+  },
+  {
+   "id": "actors",
+   "label": "The Actor Model",
+   "kind": "concept",
+   "summary": "Isolated processes that share nothing and communicate by messages.",
+   "outcome": "Design a system of communicating processes.",
+   "check": "How do Erlang and Elixir processes share data?",
+   "answer": "They don't share memory; they send each other messages.",
+   "grade": {
+    "all": [
+     [
+      "message*"
+     ]
+    ]
+   },
+   "map": "funclang",
+   "key": "funclang/actors",
+   "depth": 0
+  },
+  {
+   "id": "elixir",
+   "label": "Elixir & Erlang: Let It Crash",
+   "kind": "concept",
+   "summary": "Lightweight processes and supervisors on the BEAM, built for telecom-grade uptime.",
+   "outcome": "Build a supervision tree that restarts failed workers.",
+   "check": "What does 'let it crash' mean on the BEAM?",
+   "answer": "Processes don't defensively handle every error; supervisors restart failed processes in a known good state.",
+   "grade": {
+    "all": [
+     [
+      "supervis*",
+      "restart*"
+     ]
+    ]
+   },
+   "map": "funclang",
+   "key": "funclang/elixir",
+   "depth": 1
+  },
+  {
+   "id": "lisp",
+   "label": "Lisp & Clojure: Code as Data",
+   "kind": "concept",
+   "summary": "Programs written as lists, so code can be generated and transformed with macros.",
+   "outcome": "Write a small macro in Clojure or Scheme.",
+   "check": "What does 'homoiconic' mean for Lisp?",
+   "answer": "Code is written in the language's own data structures (lists), so programs can manipulate code with macros.",
+   "grade": {
+    "all": [
+     [
+      "data",
+      "list*",
+      "macro*"
+     ]
+    ]
+   },
+   "map": "funclang",
+   "key": "funclang/lisp",
+   "depth": 0
+  },
+  {
+   "id": "misc-tailcall",
+   "label": "\"Recursion is always slower than loops\"",
+   "kind": "misconception",
+   "summary": "Tail calls can reuse the current stack frame, so tail recursion runs like a loop.",
+   "outcome": "Rewrite a recursive function in tail-recursive form.",
+   "check": "Why doesn't a tail-recursive function grow the stack in Haskell, OCaml or Scheme?",
+   "answer": "Tail-call optimisation reuses the current frame, so it runs like a loop.",
+   "grade": {
+    "all": [
+     [
+      "tail call*",
+      "tail recursi*",
+      "reuse*",
+      "optimi*",
+      "loop"
+     ]
+    ]
+   },
+   "map": "funclang",
+   "key": "funclang/misc-tailcall",
+   "depth": 0
+  },
+  {
+   "id": "ocaml",
+   "label": "OCaml & F#: Functional in Industry",
+   "kind": "concept",
+   "summary": "Pragmatic ML-family languages used in finance, compilers and .NET shops.",
+   "outcome": "Write a small parser in OCaml or F#.",
+   "check": "Which platform does F# run on?",
+   "answer": ".NET.",
+   "grade": {
+    "all": [
+     [
+      "net",
+      "dotnet"
+     ]
+    ]
+   },
+   "map": "funclang",
+   "key": "funclang/ocaml",
+   "depth": 1
+  },
+  {
+   "id": "prolog",
+   "label": "Prolog: Logic Programming",
+   "kind": "concept",
+   "summary": "Facts, rules and queries; the engine searches for answers by unification and backtracking.",
+   "outcome": "Write a family-tree program and query it.",
+   "check": "In Prolog, what do you write instead of step-by-step instructions?",
+   "answer": "Facts and rules; the system searches for answers to queries.",
+   "grade": {
+    "all": [
+     [
+      "fact*"
+     ],
+     [
+      "rule*"
+     ]
+    ]
+   },
+   "map": "funclang",
+   "key": "funclang/prolog",
+   "depth": 0
+  },
+  {
+   "id": "ipa",
+   "label": "Phonetics & the IPA",
+   "kind": "concept",
+   "summary": "One symbol per sound, for every language: the International Phonetic Alphabet.",
+   "outcome": "Transcribe a short word in the IPA.",
+   "check": "Why do linguists use the IPA instead of ordinary spelling?",
+   "answer": "Spelling is inconsistent within and across languages; the IPA gives one symbol per sound.",
+   "grade": {
+    "all": [
+     [
+      "one symbol",
+      "each sound",
+      "consisten*",
+      "inconsisten*",
+      "sound*"
+     ]
+    ]
+   },
+   "map": "linguistics",
+   "key": "linguistics/ipa",
+   "depth": 0
+  },
+  {
+   "id": "phonemes",
+   "label": "Phonemes & Minimal Pairs",
+   "kind": "concept",
+   "summary": "Sounds that change meaning in a language; what counts as 'different' varies by language.",
+   "outcome": "Find minimal pairs that prove two sounds are separate phonemes.",
+   "check": "'Ship' and 'sheep' differ by one sound. What is such a pair called?",
+   "answer": "A minimal pair.",
+   "grade": {
+    "all": [
+     [
+      "minimal"
+     ]
+    ]
+   },
+   "map": "linguistics",
+   "key": "linguistics/phonemes",
+   "depth": 1
+  },
+  {
+   "id": "tones",
+   "label": "Tone",
+   "kind": "concept",
+   "summary": "In tonal languages, pitch contour distinguishes words.",
+   "outcome": "Explain how tone distinguishes words in Mandarin, Vietnamese, Thai or Yoruba.",
+   "check": "In Mandarin, what changes when you change the pitch contour of 'ma'?",
+   "answer": "The meaning: mā (mother), má (hemp), mǎ (horse) and mà (scold) are different words.",
+   "grade": {
+    "all": [
+     [
+      "meaning",
+      "different word*",
+      "word changes",
+      "mother",
+      "horse"
+     ]
+    ]
+   },
+   "map": "linguistics",
+   "key": "linguistics/tones",
+   "depth": 2
+  },
+  {
+   "id": "morphology",
+   "label": "Morphology: How Words Are Built",
+   "kind": "concept",
+   "summary": "Roots, prefixes and suffixes; isolating, agglutinative and fusional languages.",
+   "outcome": "Segment words into morphemes and classify a language's morphology.",
+   "check": "How many morphemes are in 'unhappiness'?",
+   "answer": "Three: un-, happy and -ness.",
+   "grade": {
+    "all": [
+     [
+      "3",
+      "three"
+     ]
+    ]
+   },
+   "map": "linguistics",
+   "key": "linguistics/morphology",
+   "depth": 2
+  },
+  {
+   "id": "syntax",
+   "label": "Word Order & Syntax",
+   "kind": "concept",
+   "summary": "SVO, SOV, VSO and the patterns that travel with them (prepositions vs postpositions).",
+   "outcome": "Predict other word-order features from a language's basic order.",
+   "check": "English is SVO. What is the basic word order of Japanese, Korean, Hindi and Turkish?",
+   "answer": "SOV: subject, object, verb.",
+   "grade": {
+    "all": [
+     [
+      "sov",
+      "subject object verb",
+      "verb last",
+      "verb at the end",
+      "verb final"
+     ]
+    ]
+   },
+   "map": "linguistics",
+   "key": "linguistics/syntax",
+   "depth": 3
+  },
+  {
+   "id": "misc-primitive",
+   "label": "\"Some languages are primitive\"",
+   "kind": "misconception",
+   "summary": "Every natural language is fully expressive and rule-governed; complexity moves between sounds, words and syntax.",
+   "outcome": "Refute the idea of primitive languages with examples.",
+   "check": "Are there 'primitive' human languages with simpler, less complete grammar?",
+   "answer": "No: every natural human language is fully expressive and rule-governed; complexity just sits in different places.",
+   "grade": {
+    "all": [
+     [
+      "no",
+      "not",
+      "none"
+     ]
+    ]
+   },
+   "map": "linguistics",
+   "key": "linguistics/misc-primitive",
+   "depth": 3
+  },
+  {
+   "id": "families",
+   "label": "Language Families",
+   "kind": "threshold",
+   "summary": "Languages descend from common ancestors; sound correspondences, not look-alike words, prove relationship. Once this lands, vocabulary across a family becomes predictable.",
+   "outcome": "Place a language in its family and branch.",
+   "check": "Hindi, Persian, Russian, Spanish and English all belong to which language family?",
+   "answer": "Indo-European.",
+   "grade": {
+    "all": [
+     [
+      "indo european",
+      "indoeuropean"
+     ]
+    ]
+   },
+   "map": "linguistics",
+   "key": "linguistics/families",
+   "depth": 3
+  },
+  {
+   "id": "writing",
+   "label": "Writing Systems",
+   "kind": "concept",
+   "summary": "Alphabets, abjads, abugidas, syllabaries and logographies.",
+   "outcome": "Classify a script and say what it writes.",
+   "check": "What is the difference between an alphabet and an abjad?",
+   "answer": "An alphabet writes consonants and vowels; an abjad (like Arabic or Hebrew) mainly writes consonants, leaving vowels implied.",
+   "grade": {
+    "all": [
+     [
+      "consonant*"
+     ],
+     [
+      "vowel*"
+     ]
+    ]
+   },
+   "map": "linguistics",
+   "key": "linguistics/writing",
+   "depth": 1
+  },
+  {
+   "id": "pragmatics",
+   "label": "Pragmatics & Politeness",
+   "kind": "concept",
+   "summary": "Meaning in context: indirect requests, honorifics and register.",
+   "outcome": "Choose the right register for a situation in another language.",
+   "check": "Why is answering 'Can you pass the salt?' with 'Yes' (and not passing it) a joke?",
+   "answer": "It is an indirect request, not a question about ability: meaning depends on context (pragmatics).",
+   "grade": {
+    "all": [
+     [
+      "request",
+      "indirect",
+      "context",
+      "pragmatic*",
+      "not literal",
+      "implied"
+     ]
+    ]
+   },
+   "map": "linguistics",
+   "key": "linguistics/pragmatics",
+   "depth": 4
+  },
+  {
+   "id": "sla",
+   "label": "Second-Language Acquisition",
+   "kind": "concept",
+   "summary": "Comprehensible input, output and interaction; explicit grammar helps but doesn't replace use.",
+   "outcome": "Design a week of study that balances input, output and review.",
+   "check": "What does Krashen's comprehensible-input hypothesis claim?",
+   "answer": "We acquire language by understanding messages slightly beyond our current level (i + 1).",
+   "grade": {
+    "all": [
+     [
+      "understand*",
+      "comprehen*",
+      "input",
+      "i 1",
+      "slightly beyond",
+      "just beyond"
+     ]
+    ]
+   },
+   "lab": "retrieval",
+   "map": "linguistics",
+   "key": "linguistics/sla",
+   "depth": 0
+  },
+  {
+   "id": "misc-adults",
+   "label": "\"Adults can't really learn a new language\"",
+   "kind": "misconception",
+   "summary": "Adults often learn faster at first; a native-like accent is harder after childhood, but high proficiency is very achievable.",
+   "outcome": "Set realistic goals for adult learners.",
+   "check": "Can adults learn a second language to a high level?",
+   "answer": "Yes: adults often progress faster at first; a native accent is harder, but high proficiency is very achievable.",
+   "grade": {
+    "all": [
+     [
+      "yes",
+      "can"
+     ]
+    ]
+   },
+   "map": "linguistics",
+   "key": "linguistics/misc-adults",
+   "depth": 0
+  },
+  {
+   "id": "vocab",
+   "label": "Vocabulary & Spaced Repetition",
+   "kind": "concept",
+   "summary": "A few thousand frequent words carry most text; spaced retrieval makes them stick.",
+   "outcome": "Build a frequency-ordered, spaced vocabulary plan.",
+   "check": "Roughly how many of the most frequent word families cover the large majority of everyday text?",
+   "answer": "A few thousand (around 2,000–3,000 word families).",
+   "grade": {
+    "all": [
+     [
+      "thousand",
+      "2000",
+      "3000",
+      "2 000",
+      "3 000"
+     ]
+    ]
+   },
+   "lab": "retrieval",
+   "map": "linguistics",
+   "key": "linguistics/vocab",
+   "depth": 1
+  },
+  {
+   "id": "misc-falsefriends",
+   "label": "\"Similar-looking words mean the same thing\"",
+   "kind": "misconception",
+   "summary": "False friends look alike across languages but mean different things.",
+   "outcome": "Spot common false friends between English and a target language.",
+   "check": "What does Spanish 'embarazada' mean?",
+   "answer": "Pregnant, not embarrassed: a false friend.",
+   "grade": {
+    "all": [
+     [
+      "pregnant"
+     ]
+    ]
+   },
+   "lab": "retrieval",
+   "map": "linguistics",
+   "key": "linguistics/misc-falsefriends",
+   "depth": 1
+  },
+  {
+   "id": "latin",
+   "label": "From Latin to Romance",
+   "kind": "concept",
+   "summary": "Spoken (Vulgar) Latin split into the Romance languages as the Roman world fragmented.",
+   "outcome": "Trace a word from Latin into three Romance languages.",
+   "check": "Spanish, French, Italian, Portuguese and Romanian descend from which language?",
+   "answer": "Latin (spoken, 'Vulgar' Latin).",
+   "grade": {
+    "all": [
+     [
+      "latin"
+     ]
+    ]
+   },
+   "map": "romance",
+   "key": "romance/latin",
+   "depth": 0
+  },
+  {
+   "id": "gender",
+   "label": "Grammatical Gender",
+   "kind": "concept",
+   "summary": "Every noun is masculine or feminine, and articles and adjectives agree with it.",
+   "outcome": "Choose articles and adjective endings that agree.",
+   "check": "In Spanish, which article goes with 'mesa' (table): el or la?",
+   "answer": "La: 'la mesa' (mesa is feminine).",
+   "grade": {
+    "all": [
+     [
+      "la"
+     ]
+    ]
+   },
+   "map": "romance",
+   "key": "romance/gender",
+   "depth": 1
+  },
+  {
+   "id": "misc-gender",
+   "label": "\"Grammatical gender means male or female\"",
+   "kind": "misconception",
+   "summary": "Gender is a noun class for agreement; 'la persona' is feminine but can be anyone.",
+   "outcome": "Separate grammatical gender from sex.",
+   "check": "Is Spanish 'la persona' used only for women?",
+   "answer": "No: 'persona' is grammatically feminine but refers to anyone; grammatical gender is a noun class, not sex.",
+   "grade": {
+    "all": [
+     [
+      "no",
+      "not"
+     ]
+    ]
+   },
+   "map": "romance",
+   "key": "romance/misc-gender",
+   "depth": 1
+  },
+  {
+   "id": "cognates",
+   "label": "Cognates Across Romance",
+   "kind": "concept",
+   "summary": "Shared Latin roots make thousands of words guessable across the family.",
+   "outcome": "Guess a word's meaning across Romance languages from its root.",
+   "check": "Spanish 'noche', French 'nuit', Italian 'notte' and Portuguese 'noite' all mean what?",
+   "answer": "Night (from Latin nox, noctis).",
+   "grade": {
+    "all": [
+     [
+      "night"
+     ]
+    ]
+   },
+   "lab": "retrieval",
+   "map": "romance",
+   "key": "romance/cognates",
+   "depth": 1
+  },
+  {
+   "id": "es-basics",
+   "label": "Spanish: Greetings & Basics",
+   "kind": "concept",
+   "summary": "Pronunciation is close to spelling; greetings, numbers and courtesy.",
+   "outcome": "Greet, thank and introduce yourself in Spanish.",
+   "check": "How do you say 'thank you very much' in Spanish?",
+   "answer": "Muchas gracias.",
+   "grade": {
+    "all": [
+     [
+      "muchas gracias"
+     ]
+    ]
+   },
+   "lab": "retrieval",
+   "map": "romance",
+   "key": "romance/es-basics",
+   "depth": 1
+  },
+  {
+   "id": "es-serestar",
+   "label": "Spanish: Ser vs Estar",
+   "kind": "threshold",
+   "summary": "Two verbs for 'to be': ser for identity and characteristics, estar for states and location. Troublesome because English uses one verb for both.",
+   "outcome": "Choose ser or estar correctly in context.",
+   "check": "Which verb completes 'Ella ___ cansada' (she is tired): es or está?",
+   "answer": "Está: estar is used for temporary states.",
+   "grade": {
+    "all": [
+     [
+      "esta"
+     ]
+    ]
+   },
+   "map": "romance",
+   "key": "romance/es-serestar",
+   "depth": 2
+  },
+  {
+   "id": "es-past",
+   "label": "Spanish: Preterite vs Imperfect",
+   "kind": "concept",
+   "summary": "Completed events (preterite) against background, habitual or ongoing past (imperfect).",
+   "outcome": "Tell a short story mixing preterite and imperfect.",
+   "check": "Which past tense describes an ongoing background state, as in 'when I was a child'?",
+   "answer": "The imperfect (cuando era niño).",
+   "grade": {
+    "all": [
+     [
+      "imperfect*"
+     ]
+    ]
+   },
+   "map": "romance",
+   "key": "romance/es-past",
+   "depth": 3
+  },
+  {
+   "id": "fr-basics",
+   "label": "French: Greetings & Pronunciation",
+   "kind": "concept",
+   "summary": "Silent final consonants, nasal vowels and liaison.",
+   "outcome": "Read French aloud with silent letters and liaison.",
+   "check": "Is the final 's' in French 'Paris' pronounced?",
+   "answer": "No: most final consonants in French are silent.",
+   "grade": {
+    "all": [
+     [
+      "no",
+      "not",
+      "silent"
+     ]
+    ]
+   },
+   "lab": "retrieval",
+   "map": "romance",
+   "key": "romance/fr-basics",
+   "depth": 1
+  },
+  {
+   "id": "fr-neg",
+   "label": "French: Negation",
+   "kind": "concept",
+   "summary": "ne … pas wraps the verb (and ne often drops in speech).",
+   "outcome": "Negate French sentences, including with ne … jamais and ne … plus.",
+   "check": "Make 'Je parle' (I speak) negative.",
+   "answer": "Je ne parle pas.",
+   "grade": {
+    "all": [
+     [
+      "ne parle pas"
+     ]
+    ]
+   },
+   "map": "romance",
+   "key": "romance/fr-neg",
+   "depth": 2
+  },
+  {
+   "id": "fr-tuvous",
+   "label": "French: Tu & Vous",
+   "kind": "concept",
+   "summary": "Informal tu and formal or plural vous.",
+   "outcome": "Choose tu or vous by relationship and setting.",
+   "check": "Which pronoun do you use with a stranger or your boss in French: tu or vous?",
+   "answer": "Vous (formal).",
+   "grade": {
+    "all": [
+     [
+      "vous"
+     ]
+    ]
+   },
+   "map": "romance",
+   "key": "romance/fr-tuvous",
+   "depth": 2
+  },
+  {
+   "id": "pt",
+   "label": "Portuguese: Basics & Nasal Vowels",
+   "kind": "concept",
+   "summary": "Nasal vowels (ão), agreement even in 'thank you', and Brazilian vs European variants.",
+   "outcome": "Greet and thank in Portuguese with correct agreement.",
+   "check": "How do you say 'thank you' in Portuguese, as a man and as a woman?",
+   "answer": "Obrigado (said by a man) and obrigada (said by a woman).",
+   "grade": {
+    "all": [
+     [
+      "obrigado"
+     ],
+     [
+      "obrigada"
+     ]
+    ]
+   },
+   "lab": "retrieval",
+   "map": "romance",
+   "key": "romance/pt",
+   "depth": 2
+  },
+  {
+   "id": "it",
+   "label": "Italian: Double Consonants",
+   "kind": "concept",
+   "summary": "Consonant length changes meaning; open syllables give Italian its rhythm.",
+   "outcome": "Pronounce and spell double consonants correctly.",
+   "check": "In Italian 'pala' means shovel. What does 'palla', with a doubled consonant, mean?",
+   "answer": "Ball: doubled consonants change the meaning.",
+   "grade": {
+    "all": [
+     [
+      "ball"
+     ]
+    ]
+   },
+   "lab": "retrieval",
+   "map": "romance",
+   "key": "romance/it",
+   "depth": 1
+  },
+  {
+   "id": "ro",
+   "label": "Romanian: Eastern Romance",
+   "kind": "concept",
+   "summary": "A Romance language with a suffixed definite article, a neuter gender and Slavic loanwords.",
+   "outcome": "Form definite nouns with Romanian's suffixed article.",
+   "check": "Romanian attaches 'the' to the end of the noun. 'Om' means man; how do you say 'the man'?",
+   "answer": "Omul.",
+   "grade": {
+    "all": [
+     [
+      "omul"
+     ]
+    ]
+   },
+   "map": "romance",
+   "key": "romance/ro",
+   "depth": 2
+  },
+  {
+   "id": "germanic",
+   "label": "The Germanic Family",
+   "kind": "concept",
+   "summary": "English, German, Dutch and the Scandinavian languages share a Proto-Germanic ancestor.",
+   "outcome": "Recognise Germanic cognates with English.",
+   "check": "English, German, Dutch and Swedish share an ancestor called what?",
+   "answer": "Proto-Germanic.",
+   "grade": {
+    "all": [
+     [
+      "germanic"
+     ]
+    ]
+   },
+   "map": "germanicslavic",
+   "key": "germanicslavic/germanic",
+   "depth": 0
+  },
+  {
+   "id": "de-basics",
+   "label": "German: Basics & Pronunciation",
+   "kind": "concept",
+   "summary": "Regular spelling, umlauts and capitalised nouns.",
+   "outcome": "Greet and introduce yourself in German.",
+   "check": "How do you say 'good morning' in German?",
+   "answer": "Guten Morgen.",
+   "grade": {
+    "all": [
+     [
+      "guten morgen"
+     ]
+    ]
+   },
+   "lab": "retrieval",
+   "map": "germanicslavic",
+   "key": "germanicslavic/de-basics",
+   "depth": 1
+  },
+  {
+   "id": "de-cases",
+   "label": "German: The Four Cases",
+   "kind": "threshold",
+   "summary": "Nominative, accusative, dative and genitive change articles and endings by a noun's role. Troublesome because English has almost lost its cases.",
+   "outcome": "Choose the right article for each case.",
+   "check": "Name German's four grammatical cases.",
+   "answer": "Nominative, accusative, dative and genitive.",
+   "grade": {
+    "all": [
+     [
+      "nominativ*"
+     ],
+     [
+      "accusativ*",
+      "akkusativ*"
+     ],
+     [
+      "dativ*"
+     ],
+     [
+      "genitiv*"
+     ]
+    ]
+   },
+   "map": "germanicslavic",
+   "key": "germanicslavic/de-cases",
+   "depth": 2
+  },
+  {
+   "id": "misc-de-gender",
+   "label": "\"Gender follows the thing's sex\"",
+   "kind": "misconception",
+   "summary": "Das Mädchen (the girl) is neuter because of the diminutive -chen ending.",
+   "outcome": "Predict gender from noun endings.",
+   "check": "What is the grammatical gender of German 'das Mädchen' (the girl)?",
+   "answer": "Neuter: the diminutive ending -chen makes nouns neuter.",
+   "grade": {
+    "all": [
+     [
+      "neuter",
+      "neutral",
+      "das"
+     ]
+    ]
+   },
+   "map": "germanicslavic",
+   "key": "germanicslavic/misc-de-gender",
+   "depth": 2
+  },
+  {
+   "id": "de-v2",
+   "label": "German: Verb-Second Word Order",
+   "kind": "concept",
+   "summary": "The conjugated verb sits in second place in main clauses and goes to the end in subordinate clauses.",
+   "outcome": "Build main and subordinate clauses with correct verb position.",
+   "check": "In a German main clause, where does the conjugated verb go?",
+   "answer": "In second position (V2), e.g. 'Heute gehe ich nach Hause'.",
+   "grade": {
+    "all": [
+     [
+      "second",
+      "2nd",
+      "v2",
+      "position 2",
+      "two"
+     ]
+    ]
+   },
+   "map": "germanicslavic",
+   "key": "germanicslavic/de-v2",
+   "depth": 3
+  },
+  {
+   "id": "nl",
+   "label": "Dutch",
+   "kind": "concept",
+   "summary": "Between English and German: familiar vocabulary with German-like word order.",
+   "outcome": "Read simple Dutch using English and German cognates.",
+   "check": "How do you say 'thank you' in Dutch?",
+   "answer": "Dank je (informal) or dank u (formal); also bedankt.",
+   "grade": {
+    "all": [
+     [
+      "dank je",
+      "dank u",
+      "bedankt",
+      "dankjewel",
+      "dank je wel",
+      "dank u wel"
+     ]
+    ]
+   },
+   "lab": "retrieval",
+   "map": "germanicslavic",
+   "key": "germanicslavic/nl",
+   "depth": 1
+  },
+  {
+   "id": "sv",
+   "label": "Swedish",
+   "kind": "concept",
+   "summary": "Pitch accent, suffixed definite articles and simple verb forms.",
+   "outcome": "Use Swedish's suffixed definite article.",
+   "check": "How do you say 'thank you' in Swedish?",
+   "answer": "Tack.",
+   "grade": {
+    "all": [
+     [
+      "tack"
+     ]
+    ]
+   },
+   "lab": "retrieval",
+   "map": "germanicslavic",
+   "key": "germanicslavic/sv",
+   "depth": 1
+  },
+  {
+   "id": "slavic",
+   "label": "The Slavic Family",
+   "kind": "concept",
+   "summary": "East, West and South Slavic languages; rich case systems and verbal aspect.",
+   "outcome": "Place a Slavic language in its branch.",
+   "check": "Russian, Polish, Czech and Ukrainian belong to which branch of Indo-European?",
+   "answer": "Slavic (Balto-Slavic).",
+   "grade": {
+    "all": [
+     [
+      "slavic",
+      "slavonic"
+     ]
+    ]
+   },
+   "map": "germanicslavic",
+   "key": "germanicslavic/slavic",
+   "depth": 0
+  },
+  {
+   "id": "cyrillic",
+   "label": "Reading Cyrillic",
+   "kind": "concept",
+   "summary": "33 letters, many familiar from Greek and Latin, some false friends (Р = r, Н = n).",
+   "outcome": "Read Cyrillic words aloud.",
+   "check": "Read the Cyrillic word 'Москва'. Which city is it?",
+   "answer": "Moscow (Moskva).",
+   "grade": {
+    "all": [
+     [
+      "moscow",
+      "moskva"
+     ]
+    ]
+   },
+   "lab": "retrieval",
+   "map": "germanicslavic",
+   "key": "germanicslavic/cyrillic",
+   "depth": 1
+  },
+  {
+   "id": "ru-basics",
+   "label": "Russian: Basics",
+   "kind": "concept",
+   "summary": "Stress, vowel reduction and everyday phrases.",
+   "outcome": "Greet and thank in Russian.",
+   "check": "How do you say 'thank you' in Russian?",
+   "answer": "Спасибо (spasibo).",
+   "grade": {
+    "all": [
+     [
+      "spasibo",
+      "спасибо"
+     ]
+    ]
+   },
+   "lab": "retrieval",
+   "map": "germanicslavic",
+   "key": "germanicslavic/ru-basics",
+   "depth": 2
+  },
+  {
+   "id": "ru-aspect",
+   "label": "Russian: Verbal Aspect",
+   "kind": "concept",
+   "summary": "Most verbs come in pairs: imperfective for process or repetition, perfective for a completed whole.",
+   "outcome": "Choose the right aspect in past and future.",
+   "check": "Russian verbs come in pairs like читать / прочитать. What distinction do the two aspects express?",
+   "answer": "Imperfective (ongoing or repeated action) versus perfective (a single completed action).",
+   "grade": {
+    "all": [
+     [
+      "perfective",
+      "imperfective",
+      "complet*",
+      "finished",
+      "ongoing",
+      "aspect"
+     ]
+    ]
+   },
+   "map": "germanicslavic",
+   "key": "germanicslavic/ru-aspect",
+   "depth": 3
+  },
+  {
+   "id": "pl",
+   "label": "Polish",
+   "kind": "concept",
+   "summary": "Seven cases, consonant clusters and fixed penultimate stress.",
+   "outcome": "Decline a Polish noun through its cases.",
+   "check": "How many grammatical cases does Polish have?",
+   "answer": "Seven.",
+   "grade": {
+    "all": [
+     [
+      "7",
+      "seven"
+     ]
+    ]
+   },
+   "map": "germanicslavic",
+   "key": "germanicslavic/pl",
+   "depth": 1
+  },
+  {
+   "id": "uk",
+   "label": "Ukrainian",
+   "kind": "concept",
+   "summary": "An East Slavic language with its own Cyrillic letters (і, ї, є, ґ), grammar and literature.",
+   "outcome": "Greet and thank in Ukrainian and read its distinctive letters.",
+   "check": "How do you say 'thank you' in Ukrainian?",
+   "answer": "Дякую (dyakuyu).",
+   "grade": {
+    "all": [
+     [
+      "dyakuyu",
+      "diakuiu",
+      "dyakuju",
+      "дякую"
+     ]
+    ]
+   },
+   "lab": "retrieval",
+   "map": "germanicslavic",
+   "key": "germanicslavic/uk",
+   "depth": 2
+  },
+  {
+   "id": "misc-ru-uk",
+   "label": "\"Ukrainian is a dialect of Russian\"",
+   "kind": "misconception",
+   "summary": "Ukrainian is a separate East Slavic language, as distinct from Russian as Spanish is from Portuguese.",
+   "outcome": "Explain why Ukrainian is a language, not a dialect.",
+   "check": "Is Ukrainian a dialect of Russian?",
+   "answer": "No: it is a separate East Slavic language with its own grammar, vocabulary and literature.",
+   "grade": {
+    "all": [
+     [
+      "no",
+      "not"
+     ]
+    ]
+   },
+   "map": "germanicslavic",
+   "key": "germanicslavic/misc-ru-uk",
+   "depth": 2
+  },
+  {
+   "id": "zh-tones",
+   "label": "Mandarin: The Four Tones",
+   "kind": "threshold",
+   "summary": "High, rising, dipping and falling tones distinguish words. Troublesome because English uses pitch for emotion, not meaning.",
+   "outcome": "Hear and produce the four tones on minimal sets.",
+   "check": "How many lexical tones does Standard Mandarin have, not counting the neutral tone?",
+   "answer": "Four.",
+   "grade": {
+    "all": [
+     [
+      "4",
+      "four"
+     ]
+    ]
+   },
+   "map": "eastasian",
+   "key": "eastasian/zh-tones",
+   "depth": 0
+  },
+  {
+   "id": "zh-basics",
+   "label": "Mandarin: Pinyin & Basics",
+   "kind": "concept",
+   "summary": "Pinyin romanisation, greetings and simple sentences.",
+   "outcome": "Greet and introduce yourself in Mandarin.",
+   "check": "How do you say 'hello' in Mandarin?",
+   "answer": "你好 (nǐ hǎo).",
+   "grade": {
+    "all": [
+     [
+      "ni hao",
+      "nihao",
+      "你好*"
+     ]
+    ]
+   },
+   "lab": "retrieval",
+   "map": "eastasian",
+   "key": "eastasian/zh-basics",
+   "depth": 1
+  },
+  {
+   "id": "zh-chars",
+   "label": "Chinese Characters & Radicals",
+   "kind": "concept",
+   "summary": "Characters built from components: a meaning radical plus, usually, a sound component.",
+   "outcome": "Use radicals to guess meaning and look characters up.",
+   "check": "What does the radical in a Chinese character usually tell you?",
+   "answer": "Its meaning category (e.g. 氵 water), and it is used to look the character up.",
+   "grade": {
+    "all": [
+     [
+      "meaning",
+      "component",
+      "categor*",
+      "look* up",
+      "dictionary",
+      "water"
+     ]
+    ]
+   },
+   "map": "eastasian",
+   "key": "eastasian/zh-chars",
+   "depth": 0
+  },
+  {
+   "id": "misc-pictograms",
+   "label": "\"Chinese characters are pictures of things\"",
+   "kind": "misconception",
+   "summary": "Most characters are phono-semantic compounds that combine a meaning part with a sound part.",
+   "outcome": "Split a phono-semantic character into its parts.",
+   "check": "Are most Chinese characters pictograms?",
+   "answer": "No: most are phono-semantic compounds, combining a meaning component with a sound component.",
+   "grade": {
+    "all": [
+     [
+      "no",
+      "not"
+     ],
+     [
+      "sound",
+      "phonetic",
+      "phono*"
+     ]
+    ]
+   },
+   "map": "eastasian",
+   "key": "eastasian/misc-pictograms",
+   "depth": 0
+  },
+  {
+   "id": "zh-measure",
+   "label": "Mandarin: Measure Words",
+   "kind": "concept",
+   "summary": "Numbers need a classifier before the noun: 一个人, 三本书.",
+   "outcome": "Use common measure words.",
+   "check": "Which measure word is most general in Mandarin, as in 一__人 (one person)?",
+   "answer": "个 (gè).",
+   "grade": {
+    "all": [
+     [
+      "ge",
+      "个"
+     ]
+    ]
+   },
+   "map": "eastasian",
+   "key": "eastasian/zh-measure",
+   "depth": 2
+  },
+  {
+   "id": "ja-kana",
+   "label": "Japanese: Hiragana, Katakana & Kanji",
+   "kind": "concept",
+   "summary": "Three scripts in one sentence: kanji for roots, hiragana for grammar, katakana for loanwords.",
+   "outcome": "Read both kana syllabaries and identify each script in a sentence.",
+   "check": "Which Japanese script is mainly used for foreign loanwords?",
+   "answer": "Katakana.",
+   "grade": {
+    "all": [
+     [
+      "katakana",
+      "カタカナ"
+     ]
+    ]
+   },
+   "lab": "retrieval",
+   "map": "eastasian",
+   "key": "eastasian/ja-kana",
+   "depth": 0
+  },
+  {
+   "id": "ja-particles",
+   "label": "Japanese: Particles & SOV",
+   "kind": "concept",
+   "summary": "Particles after each phrase mark its role; the verb comes last.",
+   "outcome": "Build sentences with は, が, を, に and で.",
+   "check": "Which particle marks the direct object in Japanese?",
+   "answer": "を (o, also written wo).",
+   "grade": {
+    "all": [
+     [
+      "wo",
+      "o",
+      "を"
+     ]
+    ]
+   },
+   "map": "eastasian",
+   "key": "eastasian/ja-particles",
+   "depth": 1
+  },
+  {
+   "id": "ja-basics",
+   "label": "Japanese: Basics & Politeness",
+   "kind": "concept",
+   "summary": "Polite (desu/masu) and plain speech; everyday phrases.",
+   "outcome": "Greet and thank politely in Japanese.",
+   "check": "How do you say 'thank you' politely in Japanese?",
+   "answer": "ありがとうございます (arigatō gozaimasu).",
+   "grade": {
+    "all": [
+     [
+      "arigato",
+      "arigatou",
+      "ありがとう*"
+     ]
+    ]
+   },
+   "lab": "retrieval",
+   "map": "eastasian",
+   "key": "eastasian/ja-basics",
+   "depth": 1
+  },
+  {
+   "id": "misc-cjk",
+   "label": "\"Chinese, Japanese and Korean are closely related\"",
+   "kind": "misconception",
+   "summary": "They belong to different families; Japanese and Korean borrowed Chinese words and characters but have very different grammar.",
+   "outcome": "Explain borrowing versus genetic relationship.",
+   "check": "Are Japanese and Korean related to Chinese the way Spanish is related to Italian?",
+   "answer": "No: they are unrelated families; Japanese and Korean borrowed many Chinese words and characters but have very different (SOV, particle-based) grammar.",
+   "grade": {
+    "all": [
+     [
+      "no",
+      "not"
+     ],
+     [
+      "unrelated",
+      "borrow*",
+      "different famil*",
+      "not related",
+      "loan*"
+     ]
+    ]
+   },
+   "map": "eastasian",
+   "key": "eastasian/misc-cjk",
+   "depth": 1
+  },
+  {
+   "id": "ko-hangul",
+   "label": "Korean: Hangul",
+   "kind": "concept",
+   "summary": "A featural alphabet whose letters are grouped into syllable blocks.",
+   "outcome": "Read Hangul syllable blocks aloud.",
+   "check": "Who created Hangul, and roughly when?",
+   "answer": "King Sejong the Great, in the 15th century (1443–1446).",
+   "grade": {
+    "all": [
+     [
+      "sejong"
+     ]
+    ]
+   },
+   "map": "eastasian",
+   "key": "eastasian/ko-hangul",
+   "depth": 0
+  },
+  {
+   "id": "ko-basics",
+   "label": "Korean: Honorifics & Basics",
+   "kind": "concept",
+   "summary": "Speech levels and honorifics are built into the verb.",
+   "outcome": "Choose a speech level and thank someone politely.",
+   "check": "How do you say 'thank you' politely in Korean?",
+   "answer": "감사합니다 (gamsahamnida).",
+   "grade": {
+    "all": [
+     [
+      "gamsahamnida",
+      "kamsahamnida",
+      "감사합니다",
+      "gomapseumnida",
+      "고맙습니다"
+     ]
+    ]
+   },
+   "lab": "retrieval",
+   "map": "eastasian",
+   "key": "eastasian/ko-basics",
+   "depth": 1
+  },
+  {
+   "id": "vi",
+   "label": "Vietnamese: Tones in a Latin Script",
+   "kind": "concept",
+   "summary": "Tone marks on the Latin alphabet; an isolating grammar with no inflection.",
+   "outcome": "Read tone marks and greet in Vietnamese.",
+   "check": "How many tones does Northern (Hanoi) Vietnamese have?",
+   "answer": "Six.",
+   "grade": {
+    "all": [
+     [
+      "6",
+      "six"
+     ]
+    ]
+   },
+   "map": "eastasian",
+   "key": "eastasian/vi",
+   "depth": 0
+  },
+  {
+   "id": "idn",
+   "label": "Indonesian",
+   "kind": "concept",
+   "summary": "No tones or verb conjugation; meaning built with affixes and reduplication.",
+   "outcome": "Form plurals and derived verbs in Indonesian.",
+   "check": "How do you make 'anak' (child) plural in Indonesian?",
+   "answer": "Reduplication: anak-anak (children).",
+   "grade": {
+    "all": [
+     [
+      "anak anak",
+      "reduplicat*",
+      "repeat*",
+      "doubl*"
+     ]
+    ]
+   },
+   "map": "eastasian",
+   "key": "eastasian/idn",
+   "depth": 0
+  },
+  {
+   "id": "th",
+   "label": "Thai: Script & Tones",
+   "kind": "concept",
+   "summary": "An abugida with five tones and no spaces between words.",
+   "outcome": "Read Thai tone markers and segment a sentence.",
+   "check": "Does written Thai put spaces between words?",
+   "answer": "No: spaces mark the ends of phrases or sentences, not individual words.",
+   "grade": {
+    "all": [
+     [
+      "no",
+      "not"
+     ]
+    ]
+   },
+   "map": "eastasian",
+   "key": "eastasian/th",
+   "depth": 0
+  },
+  {
+   "id": "ar-script",
+   "label": "Arabic: Script & Sounds",
+   "kind": "concept",
+   "summary": "A cursive abjad written right to left; letters change shape by position.",
+   "outcome": "Read Arabic letters in their joined forms.",
+   "check": "In which direction is Arabic written?",
+   "answer": "Right to left.",
+   "grade": {
+    "all": [
+     [
+      "right to left",
+      "rtl",
+      "from the right"
+     ]
+    ]
+   },
+   "lab": "retrieval",
+   "map": "afroasian",
+   "key": "afroasian/ar-script",
+   "depth": 0
+  },
+  {
+   "id": "ar-roots",
+   "label": "Arabic: The Root System",
+   "kind": "threshold",
+   "summary": "Most words are a three-consonant root poured into a vowel pattern. Once seen, vocabulary becomes a system you can generate.",
+   "outcome": "Derive related words from one root.",
+   "check": "Arabic words built on the root k-t-b (كتب) share what meaning?",
+   "answer": "Writing (kitāb book, kātib writer, maktab office or desk).",
+   "grade": {
+    "all": [
+     [
+      "writ*",
+      "book"
+     ]
+    ]
+   },
+   "map": "afroasian",
+   "key": "afroasian/ar-roots",
+   "depth": 1
+  },
+  {
+   "id": "ar-basics",
+   "label": "Arabic: Basics",
+   "kind": "concept",
+   "summary": "Greetings and courtesy in Modern Standard Arabic.",
+   "outcome": "Greet and thank in Arabic.",
+   "check": "How do you say 'thank you' in Arabic?",
+   "answer": "شكرا (shukran).",
+   "grade": {
+    "all": [
+     [
+      "shukran",
+      "shukraan",
+      "شكرا"
+     ]
+    ]
+   },
+   "lab": "retrieval",
+   "map": "afroasian",
+   "key": "afroasian/ar-basics",
+   "depth": 1
+  },
+  {
+   "id": "misc-ar-dialects",
+   "label": "\"All Arabic speakers speak the same Arabic\"",
+   "kind": "misconception",
+   "summary": "Spoken dialects differ widely; Modern Standard Arabic is shared for writing and formal speech.",
+   "outcome": "Explain diglossia in Arabic.",
+   "check": "Why might a Moroccan and an Iraqi struggle with each other's everyday Arabic?",
+   "answer": "Spoken dialects differ greatly; Modern Standard Arabic is shared mainly for writing and formal speech (diglossia).",
+   "grade": {
+    "all": [
+     [
+      "dialect*",
+      "standard",
+      "msa",
+      "varieties",
+      "differ*",
+      "diglossia"
+     ]
+    ]
+   },
+   "map": "afroasian",
+   "key": "afroasian/misc-ar-dialects",
+   "depth": 1
+  },
+  {
+   "id": "he",
+   "label": "Hebrew: A Revived Language",
+   "kind": "concept",
+   "summary": "A Semitic root system and abjad, revived for everyday speech in modern times.",
+   "outcome": "Read Hebrew letters and recognise shared Semitic roots.",
+   "check": "In roughly which period was Hebrew revived as an everyday spoken language?",
+   "answer": "The late 19th and early 20th centuries.",
+   "grade": {
+    "all": [
+     [
+      "19*",
+      "20*",
+      "nineteenth",
+      "twentieth",
+      "18*"
+     ]
+    ]
+   },
+   "map": "afroasian",
+   "key": "afroasian/he",
+   "depth": 2
+  },
+  {
+   "id": "fa",
+   "label": "Persian (Farsi)",
+   "kind": "concept",
+   "summary": "Written in an Arabic-based script but Indo-European, with simple verbs and no grammatical gender.",
+   "outcome": "Explain why Persian looks like Arabic but is related to English.",
+   "check": "Which language family does Persian belong to?",
+   "answer": "Indo-European (Iranian branch), not Semitic like Arabic.",
+   "grade": {
+    "all": [
+     [
+      "indo european",
+      "indoeuropean",
+      "iranian"
+     ]
+    ]
+   },
+   "map": "afroasian",
+   "key": "afroasian/fa",
+   "depth": 1
+  },
+  {
+   "id": "tr",
+   "label": "Turkish: Agglutination & Vowel Harmony",
+   "kind": "concept",
+   "summary": "Suffixes stack in a fixed order, with vowels that harmonise with the stem.",
+   "outcome": "Build and parse Turkish words suffix by suffix.",
+   "check": "Turkish stacks suffixes: 'ev' (house) becomes 'evlerim'. What does 'evlerim' mean?",
+   "answer": "My houses (ev + -ler plural + -im 'my').",
+   "grade": {
+    "all": [
+     [
+      "my houses"
+     ]
+    ]
+   },
+   "map": "afroasian",
+   "key": "afroasian/tr",
+   "depth": 0
+  },
+  {
+   "id": "hi-script",
+   "label": "Hindi: Devanagari",
+   "kind": "concept",
+   "summary": "An abugida: consonants carry an inherent vowel, changed with vowel signs, under a headline.",
+   "outcome": "Read Devanagari syllables.",
+   "check": "What is the horizontal line along the top of Devanagari letters called?",
+   "answer": "The shirorekha (headline).",
+   "grade": {
+    "all": [
+     [
+      "shirorekha",
+      "headline",
+      "head line",
+      "shiro rekha"
+     ]
+    ]
+   },
+   "map": "afroasian",
+   "key": "afroasian/hi-script",
+   "depth": 0
+  },
+  {
+   "id": "hi-basics",
+   "label": "Hindi: Basics",
+   "kind": "concept",
+   "summary": "SOV order, postpositions and respectful forms of address.",
+   "outcome": "Greet respectfully and form simple Hindi sentences.",
+   "check": "How do you greet someone respectfully in Hindi?",
+   "answer": "नमस्ते (namaste).",
+   "grade": {
+    "all": [
+     [
+      "namaste",
+      "namaskar",
+      "नमस्ते"
+     ]
+    ]
+   },
+   "lab": "retrieval",
+   "map": "afroasian",
+   "key": "afroasian/hi-basics",
+   "depth": 1
+  },
+  {
+   "id": "misc-hindi-urdu",
+   "label": "\"Hindi and Urdu are completely different languages\"",
+   "kind": "misconception",
+   "summary": "In everyday speech they are largely one language (Hindustani), differing mainly in script and formal vocabulary.",
+   "outcome": "Explain how Hindi and Urdu differ and overlap.",
+   "check": "Why can Hindi and Urdu speakers usually understand each other in conversation?",
+   "answer": "Colloquially they are largely the same language (Hindustani); they differ mainly in script and formal vocabulary.",
+   "grade": {
+    "all": [
+     [
+      "same",
+      "hindustani",
+      "script*",
+      "mostly",
+      "shared",
+      "similar"
+     ]
+    ]
+   },
+   "map": "afroasian",
+   "key": "afroasian/misc-hindi-urdu",
+   "depth": 1
+  },
+  {
+   "id": "bn",
+   "label": "Bengali",
+   "kind": "concept",
+   "summary": "One of the world's most spoken languages, with its own abugida.",
+   "outcome": "Locate Bengali-speaking regions and read its script basics.",
+   "check": "In which two countries is Bengali official, nationally or in a state?",
+   "answer": "Bangladesh (national) and India (in West Bengal and Tripura).",
+   "grade": {
+    "all": [
+     [
+      "bangladesh"
+     ],
+     [
+      "india",
+      "west bengal",
+      "tripura"
+     ]
+    ]
+   },
+   "map": "afroasian",
+   "key": "afroasian/bn",
+   "depth": 1
+  },
+  {
+   "id": "sw",
+   "label": "Swahili: Noun Classes",
+   "kind": "concept",
+   "summary": "Nouns fall into classes marked by prefixes that agreement copies across the sentence.",
+   "outcome": "Use Swahili noun-class prefixes and greet.",
+   "check": "How do you say 'thank you' in Swahili?",
+   "answer": "Asante.",
+   "grade": {
+    "all": [
+     [
+      "asante"
+     ]
+    ]
+   },
+   "lab": "retrieval",
+   "map": "afroasian",
+   "key": "afroasian/sw",
+   "depth": 0
+  },
+  {
+   "id": "yo",
+   "label": "Yoruba: A Tonal African Language",
+   "kind": "concept",
+   "summary": "Three level tones marked with accents in writing.",
+   "outcome": "Read Yoruba tone marks.",
+   "check": "How many basic tones does Yoruba have?",
+   "answer": "Three: high, mid and low.",
+   "grade": {
+    "all": [
+     [
+      "3",
+      "three"
+     ]
+    ]
+   },
+   "map": "afroasian",
+   "key": "afroasian/yo",
+   "depth": 0
+  },
+  {
+   "id": "am",
+   "label": "Amharic: The Ge'ez Script",
+   "kind": "concept",
+   "summary": "A Semitic language written in an abugida of consonant–vowel characters.",
+   "outcome": "Explain how the Ge'ez script encodes vowels.",
+   "check": "What kind of writing system is the Ge'ez script used for Amharic?",
+   "answer": "An abugida: each character is a consonant with a built-in vowel marking.",
+   "grade": {
+    "all": [
+     [
+      "abugida",
+      "syllab*",
+      "consonant vowel",
+      "consonant with"
+     ]
+    ]
+   },
+   "map": "afroasian",
+   "key": "afroasian/am",
+   "depth": 0
+  },
+  {
    "id": "goals",
    "label": "Outcomes Before Content",
    "kind": "concept",
@@ -12524,6 +15631,984 @@ window.DULTA_MAPS = {
    "map": "gamedev"
   },
   {
+   "from": "developer/basics",
+   "to": "plcore/compiled",
+   "type": "prereq",
+   "map": "plcore"
+  },
+  {
+   "from": "plcore/compiled",
+   "to": "plcore/typing",
+   "type": "prereq",
+   "map": "plcore"
+  },
+  {
+   "from": "developer/types",
+   "to": "plcore/typing",
+   "type": "prereq",
+   "map": "plcore"
+  },
+  {
+   "from": "plcore/misc-strong",
+   "to": "plcore/typing",
+   "type": "counter",
+   "map": "plcore"
+  },
+  {
+   "from": "developer/notional",
+   "to": "plcore/memory",
+   "type": "prereq",
+   "map": "plcore"
+  },
+  {
+   "from": "plcore/typing",
+   "to": "plcore/paradigms",
+   "type": "prereq",
+   "map": "plcore"
+  },
+  {
+   "from": "developer/functional",
+   "to": "plcore/paradigms",
+   "type": "prereq",
+   "map": "plcore"
+  },
+  {
+   "from": "developer/basics",
+   "to": "plcore/intdiv",
+   "type": "prereq",
+   "map": "plcore"
+  },
+  {
+   "from": "plcore/intdiv",
+   "to": "plcore/floats",
+   "type": "prereq",
+   "map": "plcore"
+  },
+  {
+   "from": "plcore/misc-float",
+   "to": "plcore/floats",
+   "type": "counter",
+   "map": "plcore"
+  },
+  {
+   "from": "developer/datastructs",
+   "to": "plcore/strings",
+   "type": "prereq",
+   "map": "plcore"
+  },
+  {
+   "from": "developer/concurrency",
+   "to": "plcore/concurrencymodels",
+   "type": "prereq",
+   "map": "plcore"
+  },
+  {
+   "from": "developer/git",
+   "to": "plcore/tooling",
+   "type": "prereq",
+   "map": "plcore"
+  },
+  {
+   "from": "plcore/paradigms",
+   "to": "plcore/choosing",
+   "type": "prereq",
+   "map": "plcore"
+  },
+  {
+   "from": "plcore/memory",
+   "to": "plcore/choosing",
+   "type": "prereq",
+   "map": "plcore"
+  },
+  {
+   "from": "plcore/memory",
+   "to": "systemslang/c-pointers",
+   "type": "prereq",
+   "map": "systemslang"
+  },
+  {
+   "from": "systemslang/c-pointers",
+   "to": "systemslang/c-ub",
+   "type": "prereq",
+   "map": "systemslang"
+  },
+  {
+   "from": "systemslang/c-pointers",
+   "to": "systemslang/cpp-raii",
+   "type": "prereq",
+   "map": "systemslang"
+  },
+  {
+   "from": "systemslang/cpp-raii",
+   "to": "systemslang/cpp-stl",
+   "type": "prereq",
+   "map": "systemslang"
+  },
+  {
+   "from": "plcore/memory",
+   "to": "systemslang/rust-ownership",
+   "type": "prereq",
+   "map": "systemslang"
+  },
+  {
+   "from": "systemslang/cpp-raii",
+   "to": "systemslang/rust-ownership",
+   "type": "prereq",
+   "map": "systemslang"
+  },
+  {
+   "from": "systemslang/misc-rust",
+   "to": "systemslang/rust-ownership",
+   "type": "counter",
+   "map": "systemslang"
+  },
+  {
+   "from": "plcore/concurrencymodels",
+   "to": "systemslang/go",
+   "type": "prereq",
+   "map": "systemslang"
+  },
+  {
+   "from": "systemslang/c-pointers",
+   "to": "systemslang/zig",
+   "type": "prereq",
+   "map": "systemslang"
+  },
+  {
+   "from": "embedded/arch",
+   "to": "systemslang/asm",
+   "type": "prereq",
+   "map": "systemslang"
+  },
+  {
+   "from": "electrical/sequential",
+   "to": "systemslang/hdl",
+   "type": "prereq",
+   "map": "systemslang"
+  },
+  {
+   "from": "systemslang/misc-hdl",
+   "to": "systemslang/hdl",
+   "type": "counter",
+   "map": "systemslang"
+  },
+  {
+   "from": "developer/http",
+   "to": "weblang/html",
+   "type": "prereq",
+   "map": "weblang"
+  },
+  {
+   "from": "weblang/html",
+   "to": "weblang/css",
+   "type": "prereq",
+   "map": "weblang"
+  },
+  {
+   "from": "weblang/html",
+   "to": "weblang/dom",
+   "type": "prereq",
+   "map": "weblang"
+  },
+  {
+   "from": "developer/basics",
+   "to": "weblang/js",
+   "type": "prereq",
+   "map": "weblang"
+  },
+  {
+   "from": "weblang/misc-eq",
+   "to": "weblang/js",
+   "type": "counter",
+   "map": "weblang"
+  },
+  {
+   "from": "weblang/js",
+   "to": "weblang/dom",
+   "type": "prereq",
+   "map": "weblang"
+  },
+  {
+   "from": "weblang/dom",
+   "to": "weblang/async",
+   "type": "prereq",
+   "map": "weblang"
+  },
+  {
+   "from": "developer/concurrency",
+   "to": "weblang/async",
+   "type": "prereq",
+   "map": "weblang"
+  },
+  {
+   "from": "weblang/js",
+   "to": "weblang/ts",
+   "type": "prereq",
+   "map": "weblang"
+  },
+  {
+   "from": "plcore/typing",
+   "to": "weblang/ts",
+   "type": "prereq",
+   "map": "weblang"
+  },
+  {
+   "from": "developer/http",
+   "to": "weblang/php",
+   "type": "prereq",
+   "map": "weblang"
+  },
+  {
+   "from": "developer/http",
+   "to": "weblang/ruby",
+   "type": "prereq",
+   "map": "weblang"
+  },
+  {
+   "from": "plcore/compiled",
+   "to": "weblang/wasm",
+   "type": "prereq",
+   "map": "weblang"
+  },
+  {
+   "from": "weblang/js",
+   "to": "weblang/wasm",
+   "type": "prereq",
+   "map": "weblang"
+  },
+  {
+   "from": "developer/basics",
+   "to": "datalang/py",
+   "type": "prereq",
+   "map": "datalang"
+  },
+  {
+   "from": "plcore/typing",
+   "to": "datalang/py",
+   "type": "prereq",
+   "map": "datalang"
+  },
+  {
+   "from": "datalang/misc-pydefault",
+   "to": "datalang/py",
+   "type": "counter",
+   "map": "datalang"
+  },
+  {
+   "from": "datalang/py",
+   "to": "datalang/py-data",
+   "type": "prereq",
+   "map": "datalang"
+  },
+  {
+   "from": "mathematics/linalg",
+   "to": "datalang/py-data",
+   "type": "prereq",
+   "map": "datalang"
+  },
+  {
+   "from": "datalang/py-data",
+   "to": "datalang/notebooks",
+   "type": "prereq",
+   "map": "datalang"
+  },
+  {
+   "from": "mathematics/statistics",
+   "to": "datalang/r",
+   "type": "prereq",
+   "map": "datalang"
+  },
+  {
+   "from": "datalang/r",
+   "to": "datalang/r-index",
+   "type": "prereq",
+   "map": "datalang"
+  },
+  {
+   "from": "plcore/compiled",
+   "to": "datalang/julia",
+   "type": "prereq",
+   "map": "datalang"
+  },
+  {
+   "from": "developer/databases",
+   "to": "datalang/sql",
+   "type": "prereq",
+   "map": "datalang"
+  },
+  {
+   "from": "datalang/sql",
+   "to": "datalang/sql-null",
+   "type": "prereq",
+   "map": "datalang"
+  },
+  {
+   "from": "mathematics/linalg",
+   "to": "datalang/matlab",
+   "type": "prereq",
+   "map": "datalang"
+  },
+  {
+   "from": "plcore/compiled",
+   "to": "datalang/fortran",
+   "type": "prereq",
+   "map": "datalang"
+  },
+  {
+   "from": "plcore/compiled",
+   "to": "applang/java",
+   "type": "prereq",
+   "map": "applang"
+  },
+  {
+   "from": "applang/java",
+   "to": "applang/java-oop",
+   "type": "prereq",
+   "map": "applang"
+  },
+  {
+   "from": "developer/modules",
+   "to": "applang/java-oop",
+   "type": "prereq",
+   "map": "applang"
+  },
+  {
+   "from": "applang/misc-javaref",
+   "to": "applang/java-oop",
+   "type": "counter",
+   "map": "applang"
+  },
+  {
+   "from": "applang/java",
+   "to": "applang/kotlin",
+   "type": "prereq",
+   "map": "applang"
+  },
+  {
+   "from": "plcore/typing",
+   "to": "applang/kotlin",
+   "type": "prereq",
+   "map": "applang"
+  },
+  {
+   "from": "applang/java-oop",
+   "to": "applang/csharp",
+   "type": "prereq",
+   "map": "applang"
+  },
+  {
+   "from": "plcore/typing",
+   "to": "applang/swift",
+   "type": "prereq",
+   "map": "applang"
+  },
+  {
+   "from": "plcore/compiled",
+   "to": "applang/dart",
+   "type": "prereq",
+   "map": "applang"
+  },
+  {
+   "from": "applang/java",
+   "to": "applang/scala",
+   "type": "prereq",
+   "map": "applang"
+  },
+  {
+   "from": "plcore/paradigms",
+   "to": "applang/scala",
+   "type": "prereq",
+   "map": "applang"
+  },
+  {
+   "from": "developer/concurrency",
+   "to": "applang/mobile",
+   "type": "prereq",
+   "map": "applang"
+  },
+  {
+   "from": "applang/swift",
+   "to": "applang/mobile",
+   "type": "prereq",
+   "map": "applang"
+  },
+  {
+   "from": "applang/kotlin",
+   "to": "applang/mobile",
+   "type": "prereq",
+   "map": "applang"
+  },
+  {
+   "from": "applang/misc-crossplatform",
+   "to": "applang/mobile",
+   "type": "counter",
+   "map": "applang"
+  },
+  {
+   "from": "developer/functional",
+   "to": "funclang/lazy",
+   "type": "prereq",
+   "map": "funclang"
+  },
+  {
+   "from": "plcore/typing",
+   "to": "funclang/infer",
+   "type": "prereq",
+   "map": "funclang"
+  },
+  {
+   "from": "funclang/infer",
+   "to": "funclang/adts",
+   "type": "prereq",
+   "map": "funclang"
+  },
+  {
+   "from": "funclang/lazy",
+   "to": "funclang/monads",
+   "type": "prereq",
+   "map": "funclang"
+  },
+  {
+   "from": "funclang/adts",
+   "to": "funclang/monads",
+   "type": "prereq",
+   "map": "funclang"
+  },
+  {
+   "from": "funclang/misc-monad",
+   "to": "funclang/monads",
+   "type": "counter",
+   "map": "funclang"
+  },
+  {
+   "from": "plcore/concurrencymodels",
+   "to": "funclang/actors",
+   "type": "prereq",
+   "map": "funclang"
+  },
+  {
+   "from": "funclang/actors",
+   "to": "funclang/elixir",
+   "type": "prereq",
+   "map": "funclang"
+  },
+  {
+   "from": "developer/recursion",
+   "to": "funclang/lisp",
+   "type": "prereq",
+   "map": "funclang"
+  },
+  {
+   "from": "funclang/misc-tailcall",
+   "to": "funclang/lisp",
+   "type": "counter",
+   "map": "funclang"
+  },
+  {
+   "from": "funclang/infer",
+   "to": "funclang/ocaml",
+   "type": "prereq",
+   "map": "funclang"
+  },
+  {
+   "from": "mathematics/logic",
+   "to": "funclang/prolog",
+   "type": "prereq",
+   "map": "funclang"
+  },
+  {
+   "from": "linguistics/ipa",
+   "to": "linguistics/phonemes",
+   "type": "prereq",
+   "map": "linguistics"
+  },
+  {
+   "from": "linguistics/phonemes",
+   "to": "linguistics/tones",
+   "type": "prereq",
+   "map": "linguistics"
+  },
+  {
+   "from": "linguistics/phonemes",
+   "to": "linguistics/morphology",
+   "type": "prereq",
+   "map": "linguistics"
+  },
+  {
+   "from": "linguistics/morphology",
+   "to": "linguistics/syntax",
+   "type": "prereq",
+   "map": "linguistics"
+  },
+  {
+   "from": "linguistics/misc-primitive",
+   "to": "linguistics/syntax",
+   "type": "counter",
+   "map": "linguistics"
+  },
+  {
+   "from": "linguistics/morphology",
+   "to": "linguistics/families",
+   "type": "prereq",
+   "map": "linguistics"
+  },
+  {
+   "from": "linguistics/phonemes",
+   "to": "linguistics/families",
+   "type": "prereq",
+   "map": "linguistics"
+  },
+  {
+   "from": "linguistics/ipa",
+   "to": "linguistics/writing",
+   "type": "prereq",
+   "map": "linguistics"
+  },
+  {
+   "from": "linguistics/syntax",
+   "to": "linguistics/pragmatics",
+   "type": "prereq",
+   "map": "linguistics"
+  },
+  {
+   "from": "learning/goals",
+   "to": "linguistics/sla",
+   "type": "prereq",
+   "map": "linguistics"
+  },
+  {
+   "from": "linguistics/misc-adults",
+   "to": "linguistics/sla",
+   "type": "counter",
+   "map": "linguistics"
+  },
+  {
+   "from": "linguistics/sla",
+   "to": "linguistics/vocab",
+   "type": "prereq",
+   "map": "linguistics"
+  },
+  {
+   "from": "learning/spacing",
+   "to": "linguistics/vocab",
+   "type": "prereq",
+   "map": "linguistics"
+  },
+  {
+   "from": "linguistics/misc-falsefriends",
+   "to": "linguistics/vocab",
+   "type": "counter",
+   "map": "linguistics"
+  },
+  {
+   "from": "linguistics/families",
+   "to": "romance/latin",
+   "type": "prereq",
+   "map": "romance"
+  },
+  {
+   "from": "romance/latin",
+   "to": "romance/gender",
+   "type": "prereq",
+   "map": "romance"
+  },
+  {
+   "from": "romance/misc-gender",
+   "to": "romance/gender",
+   "type": "counter",
+   "map": "romance"
+  },
+  {
+   "from": "romance/latin",
+   "to": "romance/cognates",
+   "type": "prereq",
+   "map": "romance"
+  },
+  {
+   "from": "linguistics/vocab",
+   "to": "romance/cognates",
+   "type": "prereq",
+   "map": "romance"
+  },
+  {
+   "from": "romance/latin",
+   "to": "romance/es-basics",
+   "type": "prereq",
+   "map": "romance"
+  },
+  {
+   "from": "romance/es-basics",
+   "to": "romance/es-serestar",
+   "type": "prereq",
+   "map": "romance"
+  },
+  {
+   "from": "romance/gender",
+   "to": "romance/es-serestar",
+   "type": "prereq",
+   "map": "romance"
+  },
+  {
+   "from": "romance/es-serestar",
+   "to": "romance/es-past",
+   "type": "prereq",
+   "map": "romance"
+  },
+  {
+   "from": "romance/latin",
+   "to": "romance/fr-basics",
+   "type": "prereq",
+   "map": "romance"
+  },
+  {
+   "from": "linguistics/phonemes",
+   "to": "romance/fr-basics",
+   "type": "prereq",
+   "map": "romance"
+  },
+  {
+   "from": "romance/fr-basics",
+   "to": "romance/fr-neg",
+   "type": "prereq",
+   "map": "romance"
+  },
+  {
+   "from": "romance/fr-basics",
+   "to": "romance/fr-tuvous",
+   "type": "prereq",
+   "map": "romance"
+  },
+  {
+   "from": "linguistics/pragmatics",
+   "to": "romance/fr-tuvous",
+   "type": "prereq",
+   "map": "romance"
+  },
+  {
+   "from": "romance/latin",
+   "to": "romance/pt",
+   "type": "prereq",
+   "map": "romance"
+  },
+  {
+   "from": "romance/gender",
+   "to": "romance/pt",
+   "type": "prereq",
+   "map": "romance"
+  },
+  {
+   "from": "romance/latin",
+   "to": "romance/it",
+   "type": "prereq",
+   "map": "romance"
+  },
+  {
+   "from": "romance/gender",
+   "to": "romance/ro",
+   "type": "prereq",
+   "map": "romance"
+  },
+  {
+   "from": "linguistics/families",
+   "to": "germanicslavic/germanic",
+   "type": "prereq",
+   "map": "germanicslavic"
+  },
+  {
+   "from": "germanicslavic/germanic",
+   "to": "germanicslavic/de-basics",
+   "type": "prereq",
+   "map": "germanicslavic"
+  },
+  {
+   "from": "germanicslavic/de-basics",
+   "to": "germanicslavic/de-cases",
+   "type": "prereq",
+   "map": "germanicslavic"
+  },
+  {
+   "from": "linguistics/morphology",
+   "to": "germanicslavic/de-cases",
+   "type": "prereq",
+   "map": "germanicslavic"
+  },
+  {
+   "from": "germanicslavic/misc-de-gender",
+   "to": "germanicslavic/de-cases",
+   "type": "counter",
+   "map": "germanicslavic"
+  },
+  {
+   "from": "germanicslavic/de-cases",
+   "to": "germanicslavic/de-v2",
+   "type": "prereq",
+   "map": "germanicslavic"
+  },
+  {
+   "from": "linguistics/syntax",
+   "to": "germanicslavic/de-v2",
+   "type": "prereq",
+   "map": "germanicslavic"
+  },
+  {
+   "from": "germanicslavic/germanic",
+   "to": "germanicslavic/nl",
+   "type": "prereq",
+   "map": "germanicslavic"
+  },
+  {
+   "from": "germanicslavic/germanic",
+   "to": "germanicslavic/sv",
+   "type": "prereq",
+   "map": "germanicslavic"
+  },
+  {
+   "from": "linguistics/families",
+   "to": "germanicslavic/slavic",
+   "type": "prereq",
+   "map": "germanicslavic"
+  },
+  {
+   "from": "germanicslavic/slavic",
+   "to": "germanicslavic/cyrillic",
+   "type": "prereq",
+   "map": "germanicslavic"
+  },
+  {
+   "from": "linguistics/writing",
+   "to": "germanicslavic/cyrillic",
+   "type": "prereq",
+   "map": "germanicslavic"
+  },
+  {
+   "from": "germanicslavic/cyrillic",
+   "to": "germanicslavic/ru-basics",
+   "type": "prereq",
+   "map": "germanicslavic"
+  },
+  {
+   "from": "germanicslavic/ru-basics",
+   "to": "germanicslavic/ru-aspect",
+   "type": "prereq",
+   "map": "germanicslavic"
+  },
+  {
+   "from": "germanicslavic/slavic",
+   "to": "germanicslavic/pl",
+   "type": "prereq",
+   "map": "germanicslavic"
+  },
+  {
+   "from": "germanicslavic/cyrillic",
+   "to": "germanicslavic/uk",
+   "type": "prereq",
+   "map": "germanicslavic"
+  },
+  {
+   "from": "germanicslavic/misc-ru-uk",
+   "to": "germanicslavic/uk",
+   "type": "counter",
+   "map": "germanicslavic"
+  },
+  {
+   "from": "linguistics/tones",
+   "to": "eastasian/zh-tones",
+   "type": "prereq",
+   "map": "eastasian"
+  },
+  {
+   "from": "eastasian/zh-tones",
+   "to": "eastasian/zh-basics",
+   "type": "prereq",
+   "map": "eastasian"
+  },
+  {
+   "from": "linguistics/writing",
+   "to": "eastasian/zh-chars",
+   "type": "prereq",
+   "map": "eastasian"
+  },
+  {
+   "from": "eastasian/misc-pictograms",
+   "to": "eastasian/zh-chars",
+   "type": "counter",
+   "map": "eastasian"
+  },
+  {
+   "from": "eastasian/zh-basics",
+   "to": "eastasian/zh-measure",
+   "type": "prereq",
+   "map": "eastasian"
+  },
+  {
+   "from": "linguistics/writing",
+   "to": "eastasian/ja-kana",
+   "type": "prereq",
+   "map": "eastasian"
+  },
+  {
+   "from": "eastasian/ja-kana",
+   "to": "eastasian/ja-particles",
+   "type": "prereq",
+   "map": "eastasian"
+  },
+  {
+   "from": "linguistics/syntax",
+   "to": "eastasian/ja-particles",
+   "type": "prereq",
+   "map": "eastasian"
+  },
+  {
+   "from": "eastasian/misc-cjk",
+   "to": "eastasian/ja-particles",
+   "type": "counter",
+   "map": "eastasian"
+  },
+  {
+   "from": "eastasian/ja-kana",
+   "to": "eastasian/ja-basics",
+   "type": "prereq",
+   "map": "eastasian"
+  },
+  {
+   "from": "linguistics/pragmatics",
+   "to": "eastasian/ja-basics",
+   "type": "prereq",
+   "map": "eastasian"
+  },
+  {
+   "from": "linguistics/writing",
+   "to": "eastasian/ko-hangul",
+   "type": "prereq",
+   "map": "eastasian"
+  },
+  {
+   "from": "eastasian/ko-hangul",
+   "to": "eastasian/ko-basics",
+   "type": "prereq",
+   "map": "eastasian"
+  },
+  {
+   "from": "linguistics/tones",
+   "to": "eastasian/vi",
+   "type": "prereq",
+   "map": "eastasian"
+  },
+  {
+   "from": "linguistics/morphology",
+   "to": "eastasian/idn",
+   "type": "prereq",
+   "map": "eastasian"
+  },
+  {
+   "from": "linguistics/tones",
+   "to": "eastasian/th",
+   "type": "prereq",
+   "map": "eastasian"
+  },
+  {
+   "from": "linguistics/writing",
+   "to": "afroasian/ar-script",
+   "type": "prereq",
+   "map": "afroasian"
+  },
+  {
+   "from": "afroasian/ar-script",
+   "to": "afroasian/ar-roots",
+   "type": "prereq",
+   "map": "afroasian"
+  },
+  {
+   "from": "linguistics/morphology",
+   "to": "afroasian/ar-roots",
+   "type": "prereq",
+   "map": "afroasian"
+  },
+  {
+   "from": "afroasian/ar-script",
+   "to": "afroasian/ar-basics",
+   "type": "prereq",
+   "map": "afroasian"
+  },
+  {
+   "from": "afroasian/misc-ar-dialects",
+   "to": "afroasian/ar-basics",
+   "type": "counter",
+   "map": "afroasian"
+  },
+  {
+   "from": "afroasian/ar-roots",
+   "to": "afroasian/he",
+   "type": "prereq",
+   "map": "afroasian"
+  },
+  {
+   "from": "afroasian/ar-script",
+   "to": "afroasian/fa",
+   "type": "prereq",
+   "map": "afroasian"
+  },
+  {
+   "from": "linguistics/families",
+   "to": "afroasian/fa",
+   "type": "prereq",
+   "map": "afroasian"
+  },
+  {
+   "from": "linguistics/morphology",
+   "to": "afroasian/tr",
+   "type": "prereq",
+   "map": "afroasian"
+  },
+  {
+   "from": "linguistics/writing",
+   "to": "afroasian/hi-script",
+   "type": "prereq",
+   "map": "afroasian"
+  },
+  {
+   "from": "afroasian/hi-script",
+   "to": "afroasian/hi-basics",
+   "type": "prereq",
+   "map": "afroasian"
+  },
+  {
+   "from": "linguistics/syntax",
+   "to": "afroasian/hi-basics",
+   "type": "prereq",
+   "map": "afroasian"
+  },
+  {
+   "from": "afroasian/misc-hindi-urdu",
+   "to": "afroasian/hi-basics",
+   "type": "counter",
+   "map": "afroasian"
+  },
+  {
+   "from": "afroasian/hi-script",
+   "to": "afroasian/bn",
+   "type": "prereq",
+   "map": "afroasian"
+  },
+  {
+   "from": "linguistics/morphology",
+   "to": "afroasian/sw",
+   "type": "prereq",
+   "map": "afroasian"
+  },
+  {
+   "from": "linguistics/tones",
+   "to": "afroasian/yo",
+   "type": "prereq",
+   "map": "afroasian"
+  },
+  {
+   "from": "linguistics/writing",
+   "to": "afroasian/am",
+   "type": "prereq",
+   "map": "afroasian"
+  },
+  {
    "from": "learning/goals",
    "to": "learning/retrieval",
    "type": "prereq",
@@ -13641,5 +17726,255 @@ window.DULTA_TRACKS = [
    "climate"
   ],
   "capstone": "Produce a hazard and resource assessment for a region: a geological map and history with radiometric ages, earthquakes located from station records, a gravity survey interpreted for a buried body, and a risk map combining hazard, exposure and vulnerability."
+ },
+ {
+  "id": "fullstack-developer",
+  "title": "Full-Stack Web Developer",
+  "accent": "weblang",
+  "field": "Computing & AI",
+  "summary": "Browser to database: HTML, CSS, JavaScript and TypeScript, an API, SQL, and shipping it.",
+  "nodes": [
+   "developer/basics",
+   "developer/functions",
+   "developer/git",
+   "developer/testing",
+   "developer/http",
+   "developer/databases",
+   "developer/security",
+   "plcore/typing",
+   "plcore/strings",
+   "plcore/tooling",
+   "weblang/html",
+   "weblang/css",
+   "weblang/js",
+   "weblang/misc-eq",
+   "weblang/dom",
+   "weblang/async",
+   "weblang/ts",
+   "datalang/sql",
+   "datalang/sql-null",
+   "devops/containers",
+   "devops/ci",
+   "devops/cd"
+  ],
+  "labs": [
+   "code",
+   "polyglot",
+   "pipeline"
+  ],
+  "capstone": "Build and ship a small web app: accessible semantic HTML, a typed front end, an API with parameterised SQL, tests in CI, and a containerised deploy with a rollback plan."
+ },
+ {
+  "id": "systems-programmer",
+  "title": "Systems Programmer",
+  "accent": "systemslang",
+  "field": "Computing & AI",
+  "summary": "Close to the metal: memory, undefined behaviour, ownership, concurrency and performance.",
+  "nodes": [
+   "developer/notional",
+   "developer/datastructs",
+   "developer/complexity",
+   "developer/concurrency",
+   "plcore/compiled",
+   "plcore/memory",
+   "plcore/intdiv",
+   "plcore/floats",
+   "plcore/concurrencymodels",
+   "systemslang/c-pointers",
+   "systemslang/c-ub",
+   "systemslang/cpp-raii",
+   "systemslang/cpp-stl",
+   "systemslang/rust-ownership",
+   "systemslang/misc-rust",
+   "systemslang/go",
+   "systemslang/zig",
+   "systemslang/asm",
+   "embedded/arch",
+   "embedded/registers"
+  ],
+  "labs": [
+   "mcu",
+   "polyglot",
+   "complexity"
+  ],
+  "capstone": "Write a small key-value store twice, in C and in Rust: compare the memory bugs a sanitizer finds in one with the borrow-checker errors in the other, add concurrency, and profile both."
+ },
+ {
+  "id": "mobile-developer",
+  "title": "Mobile App Developer",
+  "accent": "applang",
+  "field": "Computing & AI",
+  "summary": "Phone apps that stay smooth: Swift, Kotlin or Flutter, the UI thread and offline state.",
+  "nodes": [
+   "developer/basics",
+   "developer/functions",
+   "developer/http",
+   "developer/testing",
+   "developer/concurrency",
+   "plcore/typing",
+   "plcore/concurrencymodels",
+   "applang/java",
+   "applang/kotlin",
+   "applang/swift",
+   "applang/dart",
+   "applang/mobile",
+   "applang/misc-crossplatform",
+   "weblang/js"
+  ],
+  "labs": [
+   "code",
+   "polyglot"
+  ],
+  "capstone": "Ship a small app on one platform (or both with Flutter): network calls off the UI thread, offline caching, null-safe models, tests, and a release build."
+ },
+ {
+  "id": "compiler-engineer",
+  "title": "Compiler & Programming-Language Engineer",
+  "accent": "funclang",
+  "field": "Computing & AI",
+  "summary": "How languages work inside: types, semantics, functional ideas and the machine underneath.",
+  "nodes": [
+   "mathematics/logic",
+   "mathematics/proof",
+   "developer/recursion",
+   "developer/types",
+   "developer/datastructs",
+   "plcore/compiled",
+   "plcore/typing",
+   "plcore/memory",
+   "plcore/paradigms",
+   "plcore/intdiv",
+   "plcore/floats",
+   "funclang/lazy",
+   "funclang/infer",
+   "funclang/adts",
+   "funclang/monads",
+   "funclang/lisp",
+   "funclang/prolog",
+   "systemslang/asm"
+  ],
+  "labs": [
+   "polyglot",
+   "complexity"
+  ],
+  "capstone": "Build an interpreter for a small language with an algebraic-data-type syntax tree, type inference and a test suite, then compile one function to assembly and compare."
+ },
+ {
+  "id": "hardware-design-engineer",
+  "title": "Hardware Design Engineer (FPGA / Chip)",
+  "accent": "systemslang",
+  "field": "Engineering",
+  "summary": "Describe digital circuits in Verilog or VHDL, simulate them and fit them on an FPGA.",
+  "nodes": [
+   "electrical/boolean",
+   "electrical/transistors",
+   "electrical/sequential",
+   "electrical/sampling",
+   "embedded/binary",
+   "embedded/arch",
+   "embedded/registers",
+   "embedded/timers",
+   "systemslang/hdl",
+   "systemslang/misc-hdl",
+   "systemslang/asm",
+   "plcore/compiled"
+  ],
+  "labs": [
+   "mcu",
+   "rc"
+  ],
+  "capstone": "Design a UART or PWM peripheral in Verilog, verify it with a testbench, synthesise it for an FPGA, and drive it from a soft-core CPU in assembly."
+ },
+ {
+  "id": "translator",
+  "title": "Translator & Interpreter",
+  "accent": "romance",
+  "field": "World Languages",
+  "summary": "Meaning across languages: structure, register, false friends and deliberate vocabulary work.",
+  "nodes": [
+   "linguistics/ipa",
+   "linguistics/phonemes",
+   "linguistics/morphology",
+   "linguistics/syntax",
+   "linguistics/families",
+   "linguistics/pragmatics",
+   "linguistics/vocab",
+   "linguistics/misc-falsefriends",
+   "linguistics/sla",
+   "romance/latin",
+   "romance/gender",
+   "romance/cognates",
+   "romance/es-basics",
+   "romance/es-serestar",
+   "romance/fr-basics",
+   "romance/fr-tuvous",
+   "germanicslavic/germanic",
+   "germanicslavic/de-cases",
+   "learning/retrieval",
+   "learning/spacing"
+  ],
+  "labs": [
+   "retrieval",
+   "coldstart"
+  ],
+  "capstone": "Translate a short technical text and a short informal one between two languages, keep a glossary of false friends and register choices, and have a fluent reviewer score accuracy and naturalness."
+ },
+ {
+  "id": "language-teacher",
+  "title": "Language Teacher",
+  "accent": "linguistics",
+  "field": "World Languages",
+  "summary": "Teach a language with what acquisition research and memory science actually show.",
+  "nodes": [
+   "linguistics/sla",
+   "linguistics/misc-adults",
+   "linguistics/vocab",
+   "linguistics/pragmatics",
+   "linguistics/phonemes",
+   "learning/goals",
+   "learning/retrieval",
+   "learning/spacing",
+   "learning/interleaving",
+   "learning/generation",
+   "learning/hints",
+   "learning/feynman",
+   "learning/metacog",
+   "learning/misc-styles",
+   "agents/evals"
+  ],
+  "labs": [
+   "retrieval",
+   "coldstart"
+  ],
+  "capstone": "Design a four-week beginner unit in one language: comprehensible-input lessons, a spaced vocabulary plan, speaking tasks with feedback, a pre/post test with normalised gain, and a DULTA alignment audit."
+ },
+ {
+  "id": "computational-linguist",
+  "title": "Computational Linguist / NLP Engineer",
+  "accent": "linguistics",
+  "field": "Computing & AI",
+  "summary": "Language meets machine learning: morphology, syntax and Unicode, then embeddings, transformers and evaluation.",
+  "nodes": [
+   "linguistics/phonemes",
+   "linguistics/morphology",
+   "linguistics/syntax",
+   "linguistics/writing",
+   "linguistics/pragmatics",
+   "plcore/strings",
+   "datalang/py",
+   "datalang/py-data",
+   "mathematics/probability",
+   "mathematics/statistics",
+   "ml/embeddings",
+   "ml/attention",
+   "ml/llms",
+   "ml/metrics",
+   "ml/fairness"
+  ],
+  "labs": [
+   "polyfit",
+   "retrieval"
+  ],
+  "capstone": "Build and evaluate a classifier for a low-resource language: handle its script and morphology correctly, compare a baseline with an embedding model, report per-class metrics and audit errors across dialects."
  }
 ];

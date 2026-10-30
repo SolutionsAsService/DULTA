@@ -49,10 +49,10 @@
 (function () {
   const D = window.DULTA_MAPS, T = window.DULTA_TRACKS;
   const byKey = Object.fromEntries(D.nodes.map((n) => [n.key, n]));
-  const labNames = { projectile: "Projectile", pendulum: "Pendulum", fourier: "Fourier", code: "Test-first code", complexity: "Complexity", mcu: "Microcontroller", rc: "RC circuit", retrieval: "Retrieval", polyfit: "Overfitting", astar: "A* pathfinding", qam: "QAM & noise", qubit: "Qubit gates", breeding: "Selective breeding", titration: "Titration", drift: "Genetic drift", beam: "Beam bending", pipeline: "CI pipeline & bisect", coldstart: "Agent cold-start", truss: "Truss bridge", runoff: "Water-flow model", glider: "Flight simulator", orbit: "Trajectory optimiser", dosag: "Water-quality monitor", climate: "Climate model", quake: "Earthquake location" };
+  const labNames = { projectile: "Projectile", pendulum: "Pendulum", fourier: "Fourier", code: "Test-first code", complexity: "Complexity", mcu: "Microcontroller", rc: "RC circuit", retrieval: "Retrieval", polyfit: "Overfitting", astar: "A* pathfinding", qam: "QAM & noise", qubit: "Qubit gates", breeding: "Selective breeding", titration: "Titration", drift: "Genetic drift", beam: "Beam bending", pipeline: "CI pipeline & bisect", coldstart: "Agent cold-start", truss: "Truss bridge", runoff: "Water-flow model", glider: "Flight simulator", orbit: "Trajectory optimiser", dosag: "Water-quality monitor", climate: "Climate model", quake: "Earthquake location", polyglot: "Polyglot" };
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   // Fields come from the tracks themselves, in first-seen order of a preferred list.
-  const PREF = ["Computing & AI", "Engineering", "Science", "Earth & Environment", "Agriculture & Food", "Learning & Teaching"];
+  const PREF = ["Computing & AI", "Engineering", "Science", "Earth & Environment", "Agriculture & Food", "World Languages", "Learning & Teaching"];
   const fieldsOf = [...new Set(T.map((t) => t.field))].sort((a, b) => (PREF.indexOf(a) + 99) % 99 - (PREF.indexOf(b) + 99) % 99);
   const groups = Object.fromEntries([["all", "All"], ...fieldsOf.map((f) => [f, f])]);
   const groupOf = Object.fromEntries(T.map((t) => [t.id, t.field]));

@@ -16,8 +16,12 @@ that will build it.
   Electrical Engineering, Embedded Systems (microcontrollers), Mechanical Engineering, Chemistry, Biology,
   Developer, DevOps & SRE, Machine Learning & AI, Game Development, Plant Science & Genetics, Robotics & Agricultural
   Robotics, Telecommunications, Quantum Computing, Civil & Structural, Aerospace, Environmental Science & Engineering,
-  Geoscience, Learning with Agents and Teaching Agents: 21 maps in five fields, 379 nodes, every check auto-graded.
-- **[tracks/careers.json](tracks/careers.json)**: 23 STEM career tracks in six fields, among them civil and structural,
+  Geoscience, Learning with Agents and Teaching Agents, plus two language fields: **Programming Languages** (concepts,
+  systems & hardware, web, data & scientific, application & mobile, functional & logic) and **World Languages** (how
+  languages work, Romance, Germanic & Slavic, East & Southeast Asian, Middle Eastern, South Asian & African; 25
+  languages). 32 maps in seven fields, 512 nodes, every check auto-graded in any script.
+- **[tracks/careers.json](tracks/careers.json)**: 31 career tracks in seven fields, including full-stack, systems,
+  mobile, compiler and hardware-design engineers, translator, language teacher and computational linguist, and among them civil and structural,
   aerospace, environmental, climate scientist, geoscientist, AI/ML engineer, data scientist, game developer, DevOps/SRE, robotics, telecoms, embedded, quantum researcher, plant geneticist and
   agricultural robotics engineer; each an ordered path across maps with labs and a capstone. Each node carries an outcome, a retrieval check and an answer.
   Misconceptions hang off the concepts they block as dotted edges, and threshold concepts are flagged.

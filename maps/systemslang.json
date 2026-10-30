@@ -1,0 +1,34 @@
+{
+  "id": "systemslang",
+  "title": "Systems & Hardware Languages",
+  "accent": "#364fc7",
+  "summary": "C, C++, Rust, Go, Zig, assembly and hardware description languages: close to the machine, where you choose the memory layout and pay for every abstraction. Rust's ownership model is the threshold of this family.",
+  "sources": ["Kernighan & Ritchie: The C Programming Language", "Stroustrup: A Tour of C++", "Klabnik & Nichols: The Rust Programming Language", "Donovan & Kernighan: The Go Programming Language", "Harris & Harris: Digital Design and Computer Architecture"],
+  "nodes": [
+    {"id": "c-pointers", "label": "C: Pointers & Memory", "kind": "concept", "summary": "Addresses, arrays and manual allocation with malloc and free.", "outcome": "Trace pointer arithmetic and manage heap memory in C.", "check": "In C, what does *p mean when p is a pointer?", "answer": "Dereference: the value stored at the address p holds.", "grade": {"all": [["value", "dereferenc*", "contents"], ["address", "points", "stored at", "location"]]}},
+    {"id": "c-ub", "label": "C: Undefined Behaviour", "kind": "concept", "summary": "Out-of-bounds access, signed overflow and use-after-free let the compiler do anything.", "outcome": "Spot undefined behaviour and enable sanitizers to catch it.", "check": "What may a C compiler do with code that reads past the end of an array?", "answer": "Anything: it is undefined behaviour, so the compiler may assume it never happens, and results are unpredictable.", "grade": {"all": [["undefined", "anything", "unpredictab*", "ub"]]}, "lab": "polyglot"},
+    {"id": "cpp-raii", "label": "C++: RAII & Destructors", "kind": "concept", "summary": "Resources tied to object lifetimes: acquired in constructors, released in destructors.", "outcome": "Write a RAII wrapper and use smart pointers.", "check": "In C++ RAII, when is a resource such as a file or lock released?", "answer": "Automatically in the destructor, when the owning object goes out of scope.", "grade": {"all": [["destructor*", "scope", "automatic*"]]}},
+    {"id": "cpp-stl", "label": "C++: Templates & the STL", "kind": "concept", "summary": "Generic containers and algorithms with zero-cost abstraction.", "outcome": "Choose STL containers and algorithms for a task.", "check": "What does std::vector<int> give you that a raw C array doesn't?", "answer": "It manages its own memory, grows automatically and knows its size.", "grade": {"all": [["grow*", "resiz*", "size", "manag*", "dynamic", "automatic*"]]}},
+    {"id": "rust-ownership", "label": "Rust: Ownership & Borrowing", "kind": "threshold", "summary": "Each value has one owner; references are borrowed under rules the compiler checks, ruling out data races and use-after-free. Troublesome because the compiler rejects code that 'looks fine'.", "outcome": "Fix borrow-checker errors by restructuring ownership.", "check": "In Rust, how many mutable references to a value may exist at the same time?", "answer": "One, and no immutable references alongside it: this rule prevents data races at compile time.", "grade": {"all": [["one", "1", "single"]]}, "lab": "polyglot"},
+    {"id": "misc-rust", "label": "\"Rust programs can never crash\"", "kind": "misconception", "summary": "Rust prevents memory-safety bugs, not all failures: out-of-bounds indexing and unwrap on None still panic.", "outcome": "Handle errors with Result instead of panicking.", "check": "Can a safe Rust program still panic?", "answer": "Yes: indexing out of bounds or calling unwrap on None panics; Rust prevents memory-safety bugs, not every failure.", "grade": {"all": [["yes", "can"]]}},
+    {"id": "go", "label": "Go: Goroutines & Simplicity", "kind": "concept", "summary": "A small language with built-in concurrency, fast compiles and a garbage collector.", "outcome": "Write a concurrent Go program with goroutines and channels.", "check": "How do you run a function concurrently in Go?", "answer": "Prefix the call with the go keyword: go f().", "grade": {"all": [["go"]]}, "lab": "polyglot"},
+    {"id": "zig", "label": "Zig: Explicit Allocation", "kind": "concept", "summary": "No hidden control flow or allocations; comptime replaces macros.", "outcome": "Pass allocators explicitly in Zig.", "check": "How does Zig make memory allocation explicit?", "answer": "Functions that allocate take an allocator parameter, so every allocation is visible at the call site.", "grade": {"all": [["allocator*", "parameter", "pass*", "argument"]]}},
+    {"id": "asm", "label": "Assembly", "kind": "concept", "summary": "Mnemonics for machine instructions: registers, jumps and the stack.", "outcome": "Read the assembly a compiler produces for a small function.", "check": "What does an assembler translate, and into what?", "answer": "Human-readable mnemonics (like MOV and ADD) into machine-code bytes, almost one to one.", "grade": {"all": [["mnemonic*", "instruction*", "assembly"], ["machine code", "binary", "bytes", "opcode*"]]}},
+    {"id": "hdl", "label": "Verilog & VHDL: Describing Hardware", "kind": "concept", "summary": "Hardware description languages describe circuits that synthesise to gates on FPGAs and chips.", "outcome": "Describe a counter in Verilog and simulate it.", "check": "How does a hardware description language differ from a programming language like C?", "answer": "It describes circuits whose parts all operate in parallel, not a sequence of instructions executed one after another.", "grade": {"all": [["parallel", "concurrent*", "circuit*", "simultaneous*", "hardware"]]}},
+    {"id": "misc-hdl", "label": "\"An HDL program runs line by line\"", "kind": "misconception", "summary": "Always blocks triggered by the same clock edge describe hardware that updates simultaneously.", "outcome": "Reason about simultaneous updates on a clock edge.", "check": "In Verilog, two always blocks both trigger on the same clock edge. Which runs first?", "answer": "Neither: they describe hardware that updates in parallel on that edge.", "grade": {"all": [["neither", "parallel", "same time", "simultaneous*", "both", "concurrent*"]]}}
+  ],
+  "edges": [
+    {"from": "plcore/memory", "to": "c-pointers"},
+    {"from": "c-pointers", "to": "c-ub"},
+    {"from": "c-pointers", "to": "cpp-raii"},
+    {"from": "cpp-raii", "to": "cpp-stl"},
+    {"from": "plcore/memory", "to": "rust-ownership"},
+    {"from": "cpp-raii", "to": "rust-ownership"},
+    {"from": "misc-rust", "to": "rust-ownership", "type": "counter"},
+    {"from": "plcore/concurrencymodels", "to": "go"},
+    {"from": "c-pointers", "to": "zig"},
+    {"from": "embedded/arch", "to": "asm"},
+    {"from": "electrical/sequential", "to": "hdl"},
+    {"from": "misc-hdl", "to": "hdl", "type": "counter"}
+  ]
+}

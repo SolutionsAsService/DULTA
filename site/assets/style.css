@@ -29,6 +29,17 @@
   --aerospace: #0c8599;
   --environmental: #2b8a3e;
   --geoscience: #b5651d;
+  --plcore: #1971c2;
+  --systemslang: #364fc7;
+  --weblang: #0ca678;
+  --datalang: #9c36b5;
+  --applang: #1098ad;
+  --funclang: #5f3dc4;
+  --linguistics: #c2255c;
+  --romance: #e8590c;
+  --germanicslavic: #d6336c;
+  --eastasian: #f03e3e;
+  --afroasian: #e67700;
   --threshold: #e8a10c;
   --misconception: #c92a2a;
   --mastered: #2b8a3e;
@@ -44,7 +55,7 @@
   :root:not([data-theme="light"]) {
     --paper: #0f1218; --paper-2: #151a22; --card: #171c25; --ink: #ede6d8; --ink-2: #cfc7b7; --muted: #9b9484;
     --line: #2a313d; --line-2: #3a4352; --physics: #ff8a4c; --mathematics: #8ea2ff; --developer: #3ddc97;
-    --learning: #ffc04d; --electrical: #f783ac; --embedded: #3bc9db; --mechanical: #adb5bd; --chemistry: #b197fc; --biology: #69db7c; --agents: #ffa94d; --devops: #74c0fc; --ml: #e599f7; --gamedev: #a9e34b; --plant: #e0a96d; --telecom: #a5d8ff; --quantum: #bac8ff; --robotics: #ffc078; --civil: #91a7ff; --aerospace: #66d9e8; --environmental: #8ce99a; --geoscience: #f0a868; --threshold: #ffc94d; --misconception: #ff7b7b; --mastered: #69db7c; --focus: #74c0fc;
+    --learning: #ffc04d; --electrical: #f783ac; --embedded: #3bc9db; --mechanical: #adb5bd; --chemistry: #b197fc; --biology: #69db7c; --agents: #ffa94d; --devops: #74c0fc; --ml: #e599f7; --gamedev: #a9e34b; --plant: #e0a96d; --telecom: #a5d8ff; --quantum: #bac8ff; --robotics: #ffc078; --civil: #91a7ff; --aerospace: #66d9e8; --environmental: #8ce99a; --geoscience: #f0a868; --plcore: #74c0fc; --systemslang: #91a7ff; --weblang: #63e6be; --datalang: #e599f7; --applang: #66d9e8; --funclang: #b197fc; --linguistics: #faa2c1; --romance: #ffa94d; --germanicslavic: #f783ac; --eastasian: #ff8787; --afroasian: #ffc078; --threshold: #ffc94d; --misconception: #ff7b7b; --mastered: #69db7c; --focus: #74c0fc;
     --shadow: 0 1px 0 rgba(0, 0, 0, .3), 0 10px 30px -12px rgba(0, 0, 0, .6);
     color-scheme: dark;
   }
@@ -52,7 +63,7 @@
 :root[data-theme="dark"] {
   --paper: #0f1218; --paper-2: #151a22; --card: #171c25; --ink: #ede6d8; --ink-2: #cfc7b7; --muted: #9b9484;
   --line: #2a313d; --line-2: #3a4352; --physics: #ff8a4c; --mathematics: #8ea2ff; --developer: #3ddc97;
-  --learning: #ffc04d; --electrical: #f783ac; --embedded: #3bc9db; --mechanical: #adb5bd; --chemistry: #b197fc; --biology: #69db7c; --agents: #ffa94d; --devops: #74c0fc; --ml: #e599f7; --gamedev: #a9e34b; --plant: #e0a96d; --telecom: #a5d8ff; --quantum: #bac8ff; --robotics: #ffc078; --civil: #91a7ff; --aerospace: #66d9e8; --environmental: #8ce99a; --geoscience: #f0a868; --threshold: #ffc94d; --misconception: #ff7b7b; --mastered: #69db7c; --focus: #74c0fc;
+  --learning: #ffc04d; --electrical: #f783ac; --embedded: #3bc9db; --mechanical: #adb5bd; --chemistry: #b197fc; --biology: #69db7c; --agents: #ffa94d; --devops: #74c0fc; --ml: #e599f7; --gamedev: #a9e34b; --plant: #e0a96d; --telecom: #a5d8ff; --quantum: #bac8ff; --robotics: #ffc078; --civil: #91a7ff; --aerospace: #66d9e8; --environmental: #8ce99a; --geoscience: #f0a868; --plcore: #74c0fc; --systemslang: #91a7ff; --weblang: #63e6be; --datalang: #e599f7; --applang: #66d9e8; --funclang: #b197fc; --linguistics: #faa2c1; --romance: #ffa94d; --germanicslavic: #f783ac; --eastasian: #ff8787; --afroasian: #ffc078; --threshold: #ffc94d; --misconception: #ff7b7b; --mastered: #69db7c; --focus: #74c0fc;
   --shadow: 0 1px 0 rgba(0, 0, 0, .3), 0 10px 30px -12px rgba(0, 0, 0, .6);
   color-scheme: dark;
 }

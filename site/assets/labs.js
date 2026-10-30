@@ -480,7 +480,7 @@
   (function retrieval() {
     const D = window.DULTA_MAPS;
     const deck = $("deck"), flash = $("flash");
-    deck.innerHTML += D.maps.map((m) => `<option value="${m.id}">${esc(m.title)}</option>`).join("");
+    deck.innerHTML += (D.fields || [null]).map((f) => `<optgroup label="${esc(f || "Maps")}">${D.maps.filter((m) => !f || m.field === f).map((m) => `<option value="${m.id}">${esc(m.title)}</option>`).join("")}</optgroup>`).join("");
     let card = null, conf = null, lastKey = null;
     function pick() {
       const s = DULTA.load();
@@ -554,6 +554,8 @@
       $("calibText").innerHTML = `<span>answers <b>${n}</b> · accuracy <b>${fmt(acc, 0)}%</b> · mean confidence <b>${fmt(meanC, 0)}%</b></span>
         <span>${Math.abs(gap) < 8 ? "well calibrated" : gap > 0 ? "overconfident" : "underconfident"} by <b>${fmt(Math.abs(gap), 0)}</b> points</span>`;
     }
+    const want = new URLSearchParams(location.search).get("deck");
+    if (want && D.maps.some((m) => m.id === want)) deck.value = want;
     deck.addEventListener("change", render);
     document.addEventListener("dulta:state", calib);
     render(); calib();

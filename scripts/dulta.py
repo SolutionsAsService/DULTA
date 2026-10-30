@@ -21,6 +21,7 @@ import json
 import pathlib
 import re
 import sys
+import unicodedata
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 MAPS = ROOT / "maps"
@@ -36,6 +37,8 @@ FIELDS = {
     "Engineering": ("electrical", "embedded", "mechanical", "civil", "aerospace", "robotics", "telecom"),
     "Earth & Environment": ("environmental", "geoscience"),
     "Computing & AI": ("developer", "devops", "ml", "gamedev"),
+    "Programming Languages": ("plcore", "systemslang", "weblang", "datalang", "applang", "funclang"),
+    "World Languages": ("linguistics", "romance", "germanicslavic", "eastasian", "afroasian"),
     "Learning & Agents": ("learning", "agents"),
 }
 ORDER = tuple(m for ms in FIELDS.values() for m in ms)
@@ -389,13 +392,18 @@ def _prep(text):
     return re.sub(r"[⁰¹²³⁴⁵⁶⁷⁸⁹]+", lambda m: " " + m.group(0).translate(SUPERSCRIPTS), s)
 
 
+def _fold(text):
+    """Strip Latin accents and Arabic vowel marks (café → cafe) but keep letters of every script."""
+    return re.sub(r"[\u0300-\u036f\u064b-\u065f]", "", unicodedata.normalize("NFKD", text))
+
+
 def _words(text):
-    return " " + re.sub(r"[^a-z0-9]+", " ", _prep(text)).strip() + " "
+    return " " + re.sub(r"[\W_]+", " ", _fold(_prep(text))).strip() + " "
 
 
 def _has(words, phrase):
     stem = phrase.endswith("*")
-    p = re.sub(r"[^a-z0-9]+", " ", _prep(phrase.rstrip("*"))).strip()
+    p = re.sub(r"[\W_]+", " ", _fold(_prep(phrase.rstrip("*")))).strip()
     return (" " + p) in words if stem else (" " + p + " ") in words
 
 

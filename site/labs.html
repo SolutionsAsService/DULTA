@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DULTA Labs</title>
-<meta name="description" content="Predict-Observe-Explain labs: projectile, pendulum, Fourier synthesis, test-first code, complexity, a microcontroller simulator, an RC circuit, overfitting, A* pathfinding, QAM, qubit gates, selective breeding, titration, genetic drift, beam bending, CI bisect, an agent cold-start simulator, a truss bridge, a catchment water-flow model, a glider flight simulator, an orbit-transfer optimiser, a river water-quality monitor, a climate model, earthquake location, and retrieval with calibration.">
+<meta name="description" content="Predict-Observe-Explain labs: projectile, pendulum, Fourier synthesis, test-first code, complexity, a microcontroller simulator, an RC circuit, overfitting, A* pathfinding, QAM, qubit gates, selective breeding, titration, genetic drift, beam bending, CI bisect, an agent cold-start simulator, a truss bridge, a catchment water-flow model, a glider flight simulator, an orbit-transfer optimiser, a river water-quality monitor, a climate model, earthquake location, a twelve-language polyglot lab, and retrieval with calibration in every language.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -529,6 +529,25 @@
       </div>
     </article>
 
+    <article class="card lab" id="polyglot" data-field="Programming Languages" style="--accent:var(--weblang)">
+      <div class="lab-head"><h3>Polyglot: one expression, twelve languages</h3><a class="mono" href="maps.html#plcore/intdiv">plcore / intdiv · floats · typing</a></div>
+      <div class="lab-body">
+        <div style="display:grid;gap:10px;align-content:start">
+          <div><label for="pgCase">Expression</label><select id="pgCase"></select></div>
+          <div class="table-wrap card" id="pgTable" style="box-shadow:none"></div>
+        </div>
+        <div class="poe">
+          <div class="poe-step active" data-step="predict"><h4>1 · Predict</h4>
+            <label for="pgGuess" id="pgQ">…</label><input type="number" id="pgGuess" min="0" max="12" step="1" inputmode="numeric">
+            <button class="btn small" data-commit type="button">Commit prediction</button></div>
+          <div class="poe-step" data-step="observe"><h4>2 · Observe</h4>
+            <button class="btn small" data-run type="button" disabled>Reveal all twelve</button>
+            <div class="readout" data-out hidden></div></div>
+          <div class="poe-step" data-step="explain"><h4>3 · Explain</h4><p class="verdict" data-explain hidden></p></div>
+        </div>
+      </div>
+    </article>
+
     <article class="card lab" id="retrieval" data-field="Learning & Agents" style="--accent:var(--learning)">
       <div class="lab-head"><h3>Retrieval &amp; calibration</h3><a class="mono" href="maps.html#learning/retrieval">learning / retrieval · spacing · metacog</a></div>
       <div class="lab-body">
@@ -556,11 +575,12 @@
 <script src="assets/lab-fields.js"></script>
 <script src="assets/lab-more.js"></script>
 <script src="assets/lab-earth.js"></script>
+<script src="assets/lab-lang.js"></script>
 <script>
 // Group and filter labs by field, and build the index from the articles themselves.
 (function () {
   const labs = [...document.querySelectorAll("article.lab")];
-  const ORDER = ["Science", "Engineering", "Earth & Environment", "Computing & AI", "Learning & Agents"];
+  const ORDER = ["Science", "Engineering", "Earth & Environment", "Computing & AI", "Programming Languages", "World Languages", "Learning & Agents"];
   const fields = ["All", ...[...new Set(labs.map((l) => l.dataset.field))].sort((a, b) => (ORDER.indexOf(a) + 99) % 99 - (ORDER.indexOf(b) + 99) % 99)];
   let current = "All";
   const f = document.getElementById("labFilters"), idx = document.getElementById("labIndex");

@@ -1,0 +1,34 @@
+{
+  "id": "funclang",
+  "title": "Functional & Logic Languages",
+  "accent": "#5f3dc4",
+  "summary": "Haskell, OCaml, F#, Elixir, Erlang, Clojure and Prolog: languages that treat programs as expressions, messages or logic. Monads are the threshold: a way to sequence effects in a pure language, and a pattern you already use as promises and optionals.",
+  "sources": ["Lipovača: Learn You a Haskell for Great Good!", "Minsky, Madhavapeddy, Hickey: Real World OCaml", "Armstrong: Programming Erlang", "Hickey: Simple Made Easy (2011)", "Sterling & Shapiro: The Art of Prolog"],
+  "nodes": [
+    {"id": "lazy", "label": "Haskell: Purity & Laziness", "kind": "concept", "summary": "Pure functions and lazy evaluation: nothing runs until its value is needed.", "outcome": "Use an infinite list safely because of laziness.", "check": "In Haskell, when is an expression evaluated?", "answer": "Only when its value is needed (lazy evaluation).", "grade": {"all": [["need*", "lazy", "demand*", "required", "used"]]}, "lab": "polyglot"},
+    {"id": "infer", "label": "Type Inference", "kind": "concept", "summary": "Hindley–Milner inference: strong static types with few annotations.", "outcome": "Read an inferred type signature and explain it.", "check": "In OCaml or Haskell, must you annotate the type of every function?", "answer": "No: the compiler infers most types automatically.", "grade": {"all": [["no", "not", "infer*"]]}, "lab": "polyglot"},
+    {"id": "adts", "label": "Algebraic Data Types & Pattern Matching", "kind": "concept", "summary": "Sum and product types, with the compiler checking that every case is handled.", "outcome": "Model a domain with sum types and exhaustive matches.", "check": "What does the compiler check when you pattern-match on a sum type such as Maybe or Option?", "answer": "That every case is handled (exhaustiveness).", "grade": {"all": [["every case", "exhaustiv*", "all cases", "all the cases", "missing case*", "each case"]]}},
+    {"id": "monads", "label": "Monads: Sequencing Effects", "kind": "threshold", "summary": "A uniform way to chain computations that carry context: failure, state, I/O, async. Troublesome because the abstraction is taught before the examples.", "outcome": "Chain Maybe and IO computations with do-notation.", "check": "Why does Haskell need something like the IO monad at all?", "answer": "Functions are pure, so effects like I/O are represented as values that are sequenced explicitly.", "grade": {"all": [["pure", "purity", "side effect*", "effects"]]}},
+    {"id": "misc-monad", "label": "\"Monads are a Haskell curiosity\"", "kind": "misconception", "summary": "Promises, async/await, optional chaining and list comprehensions follow the same pattern.", "outcome": "Recognise monadic patterns in mainstream code.", "check": "Name a monad-like pattern you can use in mainstream languages.", "answer": "Promises and async/await, Optional or Maybe chaining, or list comprehensions.", "grade": {"all": [["promise*", "async", "optional", "maybe", "option", "list comprehension*", "future*", "stream*", "linq"]]}},
+    {"id": "actors", "label": "The Actor Model", "kind": "concept", "summary": "Isolated processes that share nothing and communicate by messages.", "outcome": "Design a system of communicating processes.", "check": "How do Erlang and Elixir processes share data?", "answer": "They don't share memory; they send each other messages.", "grade": {"all": [["message*"]]}},
+    {"id": "elixir", "label": "Elixir & Erlang: Let It Crash", "kind": "concept", "summary": "Lightweight processes and supervisors on the BEAM, built for telecom-grade uptime.", "outcome": "Build a supervision tree that restarts failed workers.", "check": "What does 'let it crash' mean on the BEAM?", "answer": "Processes don't defensively handle every error; supervisors restart failed processes in a known good state.", "grade": {"all": [["supervis*", "restart*"]]}},
+    {"id": "lisp", "label": "Lisp & Clojure: Code as Data", "kind": "concept", "summary": "Programs written as lists, so code can be generated and transformed with macros.", "outcome": "Write a small macro in Clojure or Scheme.", "check": "What does 'homoiconic' mean for Lisp?", "answer": "Code is written in the language's own data structures (lists), so programs can manipulate code with macros.", "grade": {"all": [["data", "list*", "macro*"]]}},
+    {"id": "misc-tailcall", "label": "\"Recursion is always slower than loops\"", "kind": "misconception", "summary": "Tail calls can reuse the current stack frame, so tail recursion runs like a loop.", "outcome": "Rewrite a recursive function in tail-recursive form.", "check": "Why doesn't a tail-recursive function grow the stack in Haskell, OCaml or Scheme?", "answer": "Tail-call optimisation reuses the current frame, so it runs like a loop.", "grade": {"all": [["tail call*", "tail recursi*", "reuse*", "optimi*", "loop"]]}},
+    {"id": "ocaml", "label": "OCaml & F#: Functional in Industry", "kind": "concept", "summary": "Pragmatic ML-family languages used in finance, compilers and .NET shops.", "outcome": "Write a small parser in OCaml or F#.", "check": "Which platform does F# run on?", "answer": ".NET.", "grade": {"all": [["net", "dotnet"]]}},
+    {"id": "prolog", "label": "Prolog: Logic Programming", "kind": "concept", "summary": "Facts, rules and queries; the engine searches for answers by unification and backtracking.", "outcome": "Write a family-tree program and query it.", "check": "In Prolog, what do you write instead of step-by-step instructions?", "answer": "Facts and rules; the system searches for answers to queries.", "grade": {"all": [["fact*"], ["rule*"]]}}
+  ],
+  "edges": [
+    {"from": "developer/functional", "to": "lazy"},
+    {"from": "plcore/typing", "to": "infer"},
+    {"from": "infer", "to": "adts"},
+    {"from": "lazy", "to": "monads"},
+    {"from": "adts", "to": "monads"},
+    {"from": "misc-monad", "to": "monads", "type": "counter"},
+    {"from": "plcore/concurrencymodels", "to": "actors"},
+    {"from": "actors", "to": "elixir"},
+    {"from": "developer/recursion", "to": "lisp"},
+    {"from": "misc-tailcall", "to": "lisp", "type": "counter"},
+    {"from": "infer", "to": "ocaml"},
+    {"from": "mathematics/logic", "to": "prolog"}
+  ]
+}

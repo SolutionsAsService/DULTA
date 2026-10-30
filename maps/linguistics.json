@@ -1,0 +1,38 @@
+{
+  "id": "linguistics",
+  "title": "How Languages Work",
+  "accent": "#c2255c",
+  "summary": "The toolkit behind every language map: sounds, words, word order, writing systems and how adults actually acquire a language. Its threshold is the idea that every human language is fully rule-governed and expressive; the differences are in where the complexity sits.",
+  "sources": ["Yule: The Study of Language", "Ladefoged & Johnson: A Course in Phonetics", "Krashen: Principles and Practice in Second Language Acquisition (1982)", "Nation: Learning Vocabulary in Another Language", "WALS: The World Atlas of Language Structures (Dryer & Haspelmath)"],
+  "nodes": [
+    {"id": "ipa", "label": "Phonetics & the IPA", "kind": "concept", "summary": "One symbol per sound, for every language: the International Phonetic Alphabet.", "outcome": "Transcribe a short word in the IPA.", "check": "Why do linguists use the IPA instead of ordinary spelling?", "answer": "Spelling is inconsistent within and across languages; the IPA gives one symbol per sound.", "grade": {"all": [["one symbol", "each sound", "consisten*", "inconsisten*", "sound*"]]}},
+    {"id": "phonemes", "label": "Phonemes & Minimal Pairs", "kind": "concept", "summary": "Sounds that change meaning in a language; what counts as 'different' varies by language.", "outcome": "Find minimal pairs that prove two sounds are separate phonemes.", "check": "'Ship' and 'sheep' differ by one sound. What is such a pair called?", "answer": "A minimal pair.", "grade": {"all": [["minimal"]]}},
+    {"id": "tones", "label": "Tone", "kind": "concept", "summary": "In tonal languages, pitch contour distinguishes words.", "outcome": "Explain how tone distinguishes words in Mandarin, Vietnamese, Thai or Yoruba.", "check": "In Mandarin, what changes when you change the pitch contour of 'ma'?", "answer": "The meaning: mā (mother), má (hemp), mǎ (horse) and mà (scold) are different words.", "grade": {"all": [["meaning", "different word*", "word changes", "mother", "horse"]]}},
+    {"id": "morphology", "label": "Morphology: How Words Are Built", "kind": "concept", "summary": "Roots, prefixes and suffixes; isolating, agglutinative and fusional languages.", "outcome": "Segment words into morphemes and classify a language's morphology.", "check": "How many morphemes are in 'unhappiness'?", "answer": "Three: un-, happy and -ness.", "grade": {"all": [["3", "three"]]}},
+    {"id": "syntax", "label": "Word Order & Syntax", "kind": "concept", "summary": "SVO, SOV, VSO and the patterns that travel with them (prepositions vs postpositions).", "outcome": "Predict other word-order features from a language's basic order.", "check": "English is SVO. What is the basic word order of Japanese, Korean, Hindi and Turkish?", "answer": "SOV: subject, object, verb.", "grade": {"all": [["sov", "subject object verb", "verb last", "verb at the end", "verb final"]]}},
+    {"id": "misc-primitive", "label": "\"Some languages are primitive\"", "kind": "misconception", "summary": "Every natural language is fully expressive and rule-governed; complexity moves between sounds, words and syntax.", "outcome": "Refute the idea of primitive languages with examples.", "check": "Are there 'primitive' human languages with simpler, less complete grammar?", "answer": "No: every natural human language is fully expressive and rule-governed; complexity just sits in different places.", "grade": {"all": [["no", "not", "none"]]}},
+    {"id": "families", "label": "Language Families", "kind": "threshold", "summary": "Languages descend from common ancestors; sound correspondences, not look-alike words, prove relationship. Once this lands, vocabulary across a family becomes predictable.", "outcome": "Place a language in its family and branch.", "check": "Hindi, Persian, Russian, Spanish and English all belong to which language family?", "answer": "Indo-European.", "grade": {"all": [["indo european", "indoeuropean"]]}},
+    {"id": "writing", "label": "Writing Systems", "kind": "concept", "summary": "Alphabets, abjads, abugidas, syllabaries and logographies.", "outcome": "Classify a script and say what it writes.", "check": "What is the difference between an alphabet and an abjad?", "answer": "An alphabet writes consonants and vowels; an abjad (like Arabic or Hebrew) mainly writes consonants, leaving vowels implied.", "grade": {"all": [["consonant*"], ["vowel*"]]}},
+    {"id": "pragmatics", "label": "Pragmatics & Politeness", "kind": "concept", "summary": "Meaning in context: indirect requests, honorifics and register.", "outcome": "Choose the right register for a situation in another language.", "check": "Why is answering 'Can you pass the salt?' with 'Yes' (and not passing it) a joke?", "answer": "It is an indirect request, not a question about ability: meaning depends on context (pragmatics).", "grade": {"all": [["request", "indirect", "context", "pragmatic*", "not literal", "implied"]]}},
+    {"id": "sla", "label": "Second-Language Acquisition", "kind": "concept", "summary": "Comprehensible input, output and interaction; explicit grammar helps but doesn't replace use.", "outcome": "Design a week of study that balances input, output and review.", "check": "What does Krashen's comprehensible-input hypothesis claim?", "answer": "We acquire language by understanding messages slightly beyond our current level (i + 1).", "grade": {"all": [["understand*", "comprehen*", "input", "i 1", "slightly beyond", "just beyond"]]}, "lab": "retrieval"},
+    {"id": "misc-adults", "label": "\"Adults can't really learn a new language\"", "kind": "misconception", "summary": "Adults often learn faster at first; a native-like accent is harder after childhood, but high proficiency is very achievable.", "outcome": "Set realistic goals for adult learners.", "check": "Can adults learn a second language to a high level?", "answer": "Yes: adults often progress faster at first; a native accent is harder, but high proficiency is very achievable.", "grade": {"all": [["yes", "can"]]}},
+    {"id": "vocab", "label": "Vocabulary & Spaced Repetition", "kind": "concept", "summary": "A few thousand frequent words carry most text; spaced retrieval makes them stick.", "outcome": "Build a frequency-ordered, spaced vocabulary plan.", "check": "Roughly how many of the most frequent word families cover the large majority of everyday text?", "answer": "A few thousand (around 2,000–3,000 word families).", "grade": {"all": [["thousand", "2000", "3000", "2 000", "3 000"]]}, "lab": "retrieval"},
+    {"id": "misc-falsefriends", "label": "\"Similar-looking words mean the same thing\"", "kind": "misconception", "summary": "False friends look alike across languages but mean different things.", "outcome": "Spot common false friends between English and a target language.", "check": "What does Spanish 'embarazada' mean?", "answer": "Pregnant, not embarrassed: a false friend.", "grade": {"all": [["pregnant"]]}, "lab": "retrieval"}
+  ],
+  "edges": [
+    {"from": "ipa", "to": "phonemes"},
+    {"from": "phonemes", "to": "tones"},
+    {"from": "phonemes", "to": "morphology"},
+    {"from": "morphology", "to": "syntax"},
+    {"from": "misc-primitive", "to": "syntax", "type": "counter"},
+    {"from": "morphology", "to": "families"},
+    {"from": "phonemes", "to": "families"},
+    {"from": "ipa", "to": "writing"},
+    {"from": "syntax", "to": "pragmatics"},
+    {"from": "learning/goals", "to": "sla"},
+    {"from": "misc-adults", "to": "sla", "type": "counter"},
+    {"from": "sla", "to": "vocab"},
+    {"from": "learning/spacing", "to": "vocab"},
+    {"from": "misc-falsefriends", "to": "vocab", "type": "counter"}
+  ]
+}

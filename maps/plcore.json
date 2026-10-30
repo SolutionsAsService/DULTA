@@ -1,0 +1,38 @@
+{
+  "id": "plcore",
+  "title": "Programming Language Concepts",
+  "accent": "#1971c2",
+  "summary": "The ideas every language makes choices about: compilation, typing, memory, numbers, strings and concurrency. Memory management is the threshold: once you see who frees memory and when, the differences between C, Java, Python and Rust stop being folklore.",
+  "sources": ["Abelson & Sussman: Structure and Interpretation of Computer Programs", "Pierce: Types and Programming Languages", "Scott: Programming Language Pragmatics", "Goldberg: What Every Computer Scientist Should Know About Floating-Point Arithmetic (1991)", "Klabnik & Nichols: The Rust Programming Language"],
+  "nodes": [
+    {"id": "compiled", "label": "Compiled vs Interpreted", "kind": "concept", "summary": "Ahead-of-time compilation, interpretation, bytecode and just-in-time compilers.", "outcome": "Explain how a given language turns source into running code.", "check": "What is the main difference between an ahead-of-time compiled language and an interpreted one?", "answer": "A compiler translates the whole program to machine code before it runs; an interpreter executes it statement by statement at run time (many languages mix both with bytecode and a JIT).", "grade": {"all": [["machine code", "before", "ahead", "translat*"], ["run time", "runtime", "line by line", "statement*", "as it runs", "at run"]]}},
+    {"id": "typing", "label": "Static vs Dynamic Typing", "kind": "concept", "summary": "Types checked before running (static) or while running (dynamic), and how strictly values are converted.", "outcome": "Classify languages by static/dynamic and strong/weak typing.", "check": "When are type errors caught in a statically typed language?", "answer": "At compile time, before the program runs.", "grade": {"all": [["compile*", "before"]]}, "lab": "polyglot"},
+    {"id": "misc-strong", "label": "\"Dynamic typing means weak typing\"", "kind": "misconception", "summary": "Python is dynamic yet strongly typed; JavaScript is dynamic and coerces freely. Two separate axes.", "outcome": "Separate static/dynamic from strong/weak typing.", "check": "Python is dynamically typed. Is '1' + 1 allowed in Python?", "answer": "No: it raises a TypeError. Python is dynamic but strongly typed; it's JavaScript that coerces.", "grade": {"all": [["no", "error", "typeerror", "not"]]}, "lab": "polyglot"},
+    {"id": "memory", "label": "Memory Management: Manual, GC, Ownership", "kind": "threshold", "summary": "Who frees memory, and when: the programmer (C), a garbage collector (Java, Python, Go) or the compiler's ownership rules (Rust).", "outcome": "Compare the costs and failure modes of each memory strategy.", "check": "Name the three main approaches to freeing memory, with a language for each.", "answer": "Manual management (C), garbage collection (Java, Python, Go) and ownership with borrowing (Rust).", "grade": {"all": [["manual", "malloc", "free"], ["garbage", "gc"], ["ownership", "borrow*", "rust", "raii"]]}},
+    {"id": "paradigms", "label": "Paradigms", "kind": "concept", "summary": "Imperative, object-oriented, functional and logic programming, and languages that mix them.", "outcome": "Solve one problem in two paradigms and compare.", "check": "Which paradigm treats computation as evaluating functions without changing state?", "answer": "Functional programming.", "grade": {"all": [["functional"]]}},
+    {"id": "intdiv", "label": "Numbers: Integer Division & Overflow", "kind": "concept", "summary": "Integer division, remainders of negative numbers and overflow all differ between languages.", "outcome": "Predict integer arithmetic results across languages.", "check": "In C and Java, what is 7 / 2 when both operands are integers?", "answer": "3: integer division truncates.", "grade": {"numbers": [[3]]}, "lab": "polyglot"},
+    {"id": "floats", "label": "Floating Point", "kind": "concept", "summary": "IEEE 754 binary floats: fast, approximate, and full of surprises.", "outcome": "Explain and avoid floating-point comparison bugs.", "check": "Why is 0.1 + 0.2 == 0.3 false in most languages?", "answer": "0.1 and 0.2 have no exact binary representation, so the sum is 0.30000000000000004.", "grade": {"all": [["binary", "exact*", "represent*", "rounding", "precision", "30000000000000004"]]}, "lab": "polyglot"},
+    {"id": "misc-float", "label": "\"Computers do decimal arithmetic exactly\"", "kind": "misconception", "summary": "Binary floats can't represent most decimal fractions; money needs integers or decimal types.", "outcome": "Choose a correct representation for money.", "check": "Should you store money as a binary floating-point number?", "answer": "No: use integers (cents) or a decimal type, because binary floats can't represent many decimal fractions exactly.", "grade": {"all": [["no", "not"], ["integer*", "cents", "decimal", "bigdecimal"]]}},
+    {"id": "strings", "label": "Strings & Unicode", "kind": "concept", "summary": "Bytes, code units, code points and grapheme clusters: four different 'lengths'.", "outcome": "Handle text correctly in at least two languages.", "check": "Why can the 'length' of '👍🏽' differ between languages?", "answer": "Some count bytes, some UTF-16 code units, some code points and some grapheme clusters.", "grade": {"all": [["byte*", "code unit*", "code point*", "grapheme*", "utf"]]}},
+    {"id": "concurrencymodels", "label": "Concurrency Models", "kind": "concept", "summary": "Threads and locks, async/await, channels (Go) and actors (Erlang).", "outcome": "Choose a concurrency model for a workload.", "check": "How does Go's approach to concurrency differ from shared-memory threads with locks?", "answer": "Goroutines communicate over channels ('share memory by communicating') instead of sharing state guarded by locks.", "grade": {"all": [["channel*", "message*", "communicat*", "goroutine*"]]}},
+    {"id": "tooling", "label": "Package Managers & Toolchains", "kind": "concept", "summary": "npm, pip, Cargo, Maven: dependency resolution, lockfiles and reproducible builds.", "outcome": "Set up a reproducible project in a new language.", "check": "What does a lockfile (package-lock.json, Cargo.lock, poetry.lock) guarantee?", "answer": "Reproducible installs: every install resolves the exact same dependency versions.", "grade": {"all": [["exact", "same version*", "reproduc*", "pinned", "pin*"]]}},
+    {"id": "choosing", "label": "Choosing a Language", "kind": "concept", "summary": "Runtime, ecosystem, team and problem domain matter more than syntax.", "outcome": "Justify a language choice for a project with an ADR.", "check": "Why is C still the default for microcontroller firmware?", "answer": "Tiny runtime, direct hardware access, predictable performance and compilers for every chip.", "grade": {"all": [["hardware", "runtime", "small", "memory", "performance", "predictab*", "control", "register*", "compiler*"]]}}
+  ],
+  "edges": [
+    {"from": "developer/basics", "to": "compiled"},
+    {"from": "compiled", "to": "typing"},
+    {"from": "developer/types", "to": "typing"},
+    {"from": "misc-strong", "to": "typing", "type": "counter"},
+    {"from": "developer/notional", "to": "memory"},
+    {"from": "typing", "to": "paradigms"},
+    {"from": "developer/functional", "to": "paradigms"},
+    {"from": "developer/basics", "to": "intdiv"},
+    {"from": "intdiv", "to": "floats"},
+    {"from": "misc-float", "to": "floats", "type": "counter"},
+    {"from": "developer/datastructs", "to": "strings"},
+    {"from": "developer/concurrency", "to": "concurrencymodels"},
+    {"from": "developer/git", "to": "tooling"},
+    {"from": "paradigms", "to": "choosing"},
+    {"from": "memory", "to": "choosing"}
+  ]
+}

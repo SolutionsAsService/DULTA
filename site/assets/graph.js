@@ -185,7 +185,7 @@
       status = rec.reopened ? "Reopened: a later check failed. Answer it again." : `Mastered ${rec.date} · Leitner box ${rec.box}${due ? " · review due now" : ""}`;
     } else if (!missing.length) status = "On your frontier: you have proven everything it needs.";
     else status = `Locked for now. First: ${missing.map((k) => byKey[k].label).join(", ")}. You can still try it.`;
-    const lab = n.lab ? `<a class="btn small ghost" href="labs.html#${n.lab}">Open the ${n.lab} lab →</a>` : "";
+    const lab = n.lab ? `<a class="btn small ghost" href="labs.html${n.lab === "retrieval" ? `?deck=${n.map}` : ""}#${n.lab}">Open the ${n.lab} lab →</a>` : "";
     $("detail").innerHTML = `
       <div class="row"><span class="tag ${n.kind}">${n.kind === "threshold" ? "threshold concept" : n.kind}</span><span class="tag concept">${n.map}</span></div>
       <h3>${esc(n.label)}</h3>

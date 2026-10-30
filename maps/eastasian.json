@@ -1,0 +1,41 @@
+{
+  "id": "eastasian",
+  "title": "East & Southeast Asian Languages",
+  "accent": "#f03e3e",
+  "summary": "Mandarin, Japanese, Korean, Vietnamese, Indonesian and Thai: three unrelated families that shared a writing culture, plus tonal and non-tonal neighbours. Tone and script are the two thresholds for most English speakers.",
+  "sources": ["Li & Thompson: Mandarin Chinese: A Functional Reference Grammar", "Shibatani: The Languages of Japan", "Sohn: The Korean Language", "DeFrancis: The Chinese Language: Fact and Fantasy", "Sneddon et al.: Indonesian: A Comprehensive Grammar"],
+  "nodes": [
+    {"id": "zh-tones", "label": "Mandarin: The Four Tones", "kind": "threshold", "summary": "High, rising, dipping and falling tones distinguish words. Troublesome because English uses pitch for emotion, not meaning.", "outcome": "Hear and produce the four tones on minimal sets.", "check": "How many lexical tones does Standard Mandarin have, not counting the neutral tone?", "answer": "Four.", "grade": {"all": [["4", "four"]]}},
+    {"id": "zh-basics", "label": "Mandarin: Pinyin & Basics", "kind": "concept", "summary": "Pinyin romanisation, greetings and simple sentences.", "outcome": "Greet and introduce yourself in Mandarin.", "check": "How do you say 'hello' in Mandarin?", "answer": "你好 (nǐ hǎo).", "grade": {"all": [["ni hao", "nihao", "你好*"]]}, "lab": "retrieval"},
+    {"id": "zh-chars", "label": "Chinese Characters & Radicals", "kind": "concept", "summary": "Characters built from components: a meaning radical plus, usually, a sound component.", "outcome": "Use radicals to guess meaning and look characters up.", "check": "What does the radical in a Chinese character usually tell you?", "answer": "Its meaning category (e.g. 氵 water), and it is used to look the character up.", "grade": {"all": [["meaning", "component", "categor*", "look* up", "dictionary", "water"]]}},
+    {"id": "misc-pictograms", "label": "\"Chinese characters are pictures of things\"", "kind": "misconception", "summary": "Most characters are phono-semantic compounds that combine a meaning part with a sound part.", "outcome": "Split a phono-semantic character into its parts.", "check": "Are most Chinese characters pictograms?", "answer": "No: most are phono-semantic compounds, combining a meaning component with a sound component.", "grade": {"all": [["no", "not"], ["sound", "phonetic", "phono*"]]}},
+    {"id": "zh-measure", "label": "Mandarin: Measure Words", "kind": "concept", "summary": "Numbers need a classifier before the noun: 一个人, 三本书.", "outcome": "Use common measure words.", "check": "Which measure word is most general in Mandarin, as in 一__人 (one person)?", "answer": "个 (gè).", "grade": {"all": [["ge", "个"]]}},
+    {"id": "ja-kana", "label": "Japanese: Hiragana, Katakana & Kanji", "kind": "concept", "summary": "Three scripts in one sentence: kanji for roots, hiragana for grammar, katakana for loanwords.", "outcome": "Read both kana syllabaries and identify each script in a sentence.", "check": "Which Japanese script is mainly used for foreign loanwords?", "answer": "Katakana.", "grade": {"all": [["katakana", "カタカナ"]]}, "lab": "retrieval"},
+    {"id": "ja-particles", "label": "Japanese: Particles & SOV", "kind": "concept", "summary": "Particles after each phrase mark its role; the verb comes last.", "outcome": "Build sentences with は, が, を, に and で.", "check": "Which particle marks the direct object in Japanese?", "answer": "を (o, also written wo).", "grade": {"all": [["wo", "o", "を"]]}},
+    {"id": "ja-basics", "label": "Japanese: Basics & Politeness", "kind": "concept", "summary": "Polite (desu/masu) and plain speech; everyday phrases.", "outcome": "Greet and thank politely in Japanese.", "check": "How do you say 'thank you' politely in Japanese?", "answer": "ありがとうございます (arigatō gozaimasu).", "grade": {"all": [["arigato", "arigatou", "ありがとう*"]]}, "lab": "retrieval"},
+    {"id": "misc-cjk", "label": "\"Chinese, Japanese and Korean are closely related\"", "kind": "misconception", "summary": "They belong to different families; Japanese and Korean borrowed Chinese words and characters but have very different grammar.", "outcome": "Explain borrowing versus genetic relationship.", "check": "Are Japanese and Korean related to Chinese the way Spanish is related to Italian?", "answer": "No: they are unrelated families; Japanese and Korean borrowed many Chinese words and characters but have very different (SOV, particle-based) grammar.", "grade": {"all": [["no", "not"], ["unrelated", "borrow*", "different famil*", "not related", "loan*"]]}},
+    {"id": "ko-hangul", "label": "Korean: Hangul", "kind": "concept", "summary": "A featural alphabet whose letters are grouped into syllable blocks.", "outcome": "Read Hangul syllable blocks aloud.", "check": "Who created Hangul, and roughly when?", "answer": "King Sejong the Great, in the 15th century (1443–1446).", "grade": {"all": [["sejong"]]}},
+    {"id": "ko-basics", "label": "Korean: Honorifics & Basics", "kind": "concept", "summary": "Speech levels and honorifics are built into the verb.", "outcome": "Choose a speech level and thank someone politely.", "check": "How do you say 'thank you' politely in Korean?", "answer": "감사합니다 (gamsahamnida).", "grade": {"all": [["gamsahamnida", "kamsahamnida", "감사합니다", "gomapseumnida", "고맙습니다"]]}, "lab": "retrieval"},
+    {"id": "vi", "label": "Vietnamese: Tones in a Latin Script", "kind": "concept", "summary": "Tone marks on the Latin alphabet; an isolating grammar with no inflection.", "outcome": "Read tone marks and greet in Vietnamese.", "check": "How many tones does Northern (Hanoi) Vietnamese have?", "answer": "Six.", "grade": {"all": [["6", "six"]]}},
+    {"id": "idn", "label": "Indonesian", "kind": "concept", "summary": "No tones or verb conjugation; meaning built with affixes and reduplication.", "outcome": "Form plurals and derived verbs in Indonesian.", "check": "How do you make 'anak' (child) plural in Indonesian?", "answer": "Reduplication: anak-anak (children).", "grade": {"all": [["anak anak", "reduplicat*", "repeat*", "doubl*"]]}},
+    {"id": "th", "label": "Thai: Script & Tones", "kind": "concept", "summary": "An abugida with five tones and no spaces between words.", "outcome": "Read Thai tone markers and segment a sentence.", "check": "Does written Thai put spaces between words?", "answer": "No: spaces mark the ends of phrases or sentences, not individual words.", "grade": {"all": [["no", "not"]]}}
+  ],
+  "edges": [
+    {"from": "linguistics/tones", "to": "zh-tones"},
+    {"from": "zh-tones", "to": "zh-basics"},
+    {"from": "linguistics/writing", "to": "zh-chars"},
+    {"from": "misc-pictograms", "to": "zh-chars", "type": "counter"},
+    {"from": "zh-basics", "to": "zh-measure"},
+    {"from": "linguistics/writing", "to": "ja-kana"},
+    {"from": "ja-kana", "to": "ja-particles"},
+    {"from": "linguistics/syntax", "to": "ja-particles"},
+    {"from": "misc-cjk", "to": "ja-particles", "type": "counter"},
+    {"from": "ja-kana", "to": "ja-basics"},
+    {"from": "linguistics/pragmatics", "to": "ja-basics"},
+    {"from": "linguistics/writing", "to": "ko-hangul"},
+    {"from": "ko-hangul", "to": "ko-basics"},
+    {"from": "linguistics/tones", "to": "vi"},
+    {"from": "linguistics/morphology", "to": "idn"},
+    {"from": "linguistics/tones", "to": "th"}
+  ]
+}

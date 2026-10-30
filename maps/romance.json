@@ -1,0 +1,42 @@
+{
+  "id": "romance",
+  "title": "Romance Languages",
+  "accent": "#e8590c",
+  "summary": "Spanish, French, Portuguese, Italian and Romanian: one Latin inheritance, five sound systems. Learn the shared core once (gender, conjugation, cognates) and each further language costs far less than the first.",
+  "sources": ["Penny: A History of the Spanish Language", "Posner: The Romance Languages", "Butt & Benjamin: A New Reference Grammar of Modern Spanish", "Hawkins & Towell: French Grammar and Usage", "Real Academia Española: Diccionario de la lengua española"],
+  "nodes": [
+    {"id": "latin", "label": "From Latin to Romance", "kind": "concept", "summary": "Spoken (Vulgar) Latin split into the Romance languages as the Roman world fragmented.", "outcome": "Trace a word from Latin into three Romance languages.", "check": "Spanish, French, Italian, Portuguese and Romanian descend from which language?", "answer": "Latin (spoken, 'Vulgar' Latin).", "grade": {"all": [["latin"]]}},
+    {"id": "gender", "label": "Grammatical Gender", "kind": "concept", "summary": "Every noun is masculine or feminine, and articles and adjectives agree with it.", "outcome": "Choose articles and adjective endings that agree.", "check": "In Spanish, which article goes with 'mesa' (table): el or la?", "answer": "La: 'la mesa' (mesa is feminine).", "grade": {"all": [["la"]]}},
+    {"id": "misc-gender", "label": "\"Grammatical gender means male or female\"", "kind": "misconception", "summary": "Gender is a noun class for agreement; 'la persona' is feminine but can be anyone.", "outcome": "Separate grammatical gender from sex.", "check": "Is Spanish 'la persona' used only for women?", "answer": "No: 'persona' is grammatically feminine but refers to anyone; grammatical gender is a noun class, not sex.", "grade": {"all": [["no", "not"]]}},
+    {"id": "cognates", "label": "Cognates Across Romance", "kind": "concept", "summary": "Shared Latin roots make thousands of words guessable across the family.", "outcome": "Guess a word's meaning across Romance languages from its root.", "check": "Spanish 'noche', French 'nuit', Italian 'notte' and Portuguese 'noite' all mean what?", "answer": "Night (from Latin nox, noctis).", "grade": {"all": [["night"]]}, "lab": "retrieval"},
+    {"id": "es-basics", "label": "Spanish: Greetings & Basics", "kind": "concept", "summary": "Pronunciation is close to spelling; greetings, numbers and courtesy.", "outcome": "Greet, thank and introduce yourself in Spanish.", "check": "How do you say 'thank you very much' in Spanish?", "answer": "Muchas gracias.", "grade": {"all": [["muchas gracias"]]}, "lab": "retrieval"},
+    {"id": "es-serestar", "label": "Spanish: Ser vs Estar", "kind": "threshold", "summary": "Two verbs for 'to be': ser for identity and characteristics, estar for states and location. Troublesome because English uses one verb for both.", "outcome": "Choose ser or estar correctly in context.", "check": "Which verb completes 'Ella ___ cansada' (she is tired): es or está?", "answer": "Está: estar is used for temporary states.", "grade": {"all": [["esta"]]}},
+    {"id": "es-past", "label": "Spanish: Preterite vs Imperfect", "kind": "concept", "summary": "Completed events (preterite) against background, habitual or ongoing past (imperfect).", "outcome": "Tell a short story mixing preterite and imperfect.", "check": "Which past tense describes an ongoing background state, as in 'when I was a child'?", "answer": "The imperfect (cuando era niño).", "grade": {"all": [["imperfect*"]]}},
+    {"id": "fr-basics", "label": "French: Greetings & Pronunciation", "kind": "concept", "summary": "Silent final consonants, nasal vowels and liaison.", "outcome": "Read French aloud with silent letters and liaison.", "check": "Is the final 's' in French 'Paris' pronounced?", "answer": "No: most final consonants in French are silent.", "grade": {"all": [["no", "not", "silent"]]}, "lab": "retrieval"},
+    {"id": "fr-neg", "label": "French: Negation", "kind": "concept", "summary": "ne … pas wraps the verb (and ne often drops in speech).", "outcome": "Negate French sentences, including with ne … jamais and ne … plus.", "check": "Make 'Je parle' (I speak) negative.", "answer": "Je ne parle pas.", "grade": {"all": [["ne parle pas"]]}},
+    {"id": "fr-tuvous", "label": "French: Tu & Vous", "kind": "concept", "summary": "Informal tu and formal or plural vous.", "outcome": "Choose tu or vous by relationship and setting.", "check": "Which pronoun do you use with a stranger or your boss in French: tu or vous?", "answer": "Vous (formal).", "grade": {"all": [["vous"]]}},
+    {"id": "pt", "label": "Portuguese: Basics & Nasal Vowels", "kind": "concept", "summary": "Nasal vowels (ão), agreement even in 'thank you', and Brazilian vs European variants.", "outcome": "Greet and thank in Portuguese with correct agreement.", "check": "How do you say 'thank you' in Portuguese, as a man and as a woman?", "answer": "Obrigado (said by a man) and obrigada (said by a woman).", "grade": {"all": [["obrigado"], ["obrigada"]]}, "lab": "retrieval"},
+    {"id": "it", "label": "Italian: Double Consonants", "kind": "concept", "summary": "Consonant length changes meaning; open syllables give Italian its rhythm.", "outcome": "Pronounce and spell double consonants correctly.", "check": "In Italian 'pala' means shovel. What does 'palla', with a doubled consonant, mean?", "answer": "Ball: doubled consonants change the meaning.", "grade": {"all": [["ball"]]}, "lab": "retrieval"},
+    {"id": "ro", "label": "Romanian: Eastern Romance", "kind": "concept", "summary": "A Romance language with a suffixed definite article, a neuter gender and Slavic loanwords.", "outcome": "Form definite nouns with Romanian's suffixed article.", "check": "Romanian attaches 'the' to the end of the noun. 'Om' means man; how do you say 'the man'?", "answer": "Omul.", "grade": {"all": [["omul"]]}}
+  ],
+  "edges": [
+    {"from": "linguistics/families", "to": "latin"},
+    {"from": "latin", "to": "gender"},
+    {"from": "misc-gender", "to": "gender", "type": "counter"},
+    {"from": "latin", "to": "cognates"},
+    {"from": "linguistics/vocab", "to": "cognates"},
+    {"from": "latin", "to": "es-basics"},
+    {"from": "es-basics", "to": "es-serestar"},
+    {"from": "gender", "to": "es-serestar"},
+    {"from": "es-serestar", "to": "es-past"},
+    {"from": "latin", "to": "fr-basics"},
+    {"from": "linguistics/phonemes", "to": "fr-basics"},
+    {"from": "fr-basics", "to": "fr-neg"},
+    {"from": "fr-basics", "to": "fr-tuvous"},
+    {"from": "linguistics/pragmatics", "to": "fr-tuvous"},
+    {"from": "latin", "to": "pt"},
+    {"from": "gender", "to": "pt"},
+    {"from": "latin", "to": "it"},
+    {"from": "gender", "to": "ro"}
+  ]
+}

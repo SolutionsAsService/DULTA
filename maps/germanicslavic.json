@@ -1,0 +1,42 @@
+{
+  "id": "germanicslavic",
+  "title": "Germanic & Slavic Languages",
+  "accent": "#d6336c",
+  "summary": "German, Dutch, Swedish, Russian, Polish and Ukrainian. Case is the shared threshold: when nouns change form for their role in the sentence, word order loosens and endings carry the meaning.",
+  "sources": ["Durrell: Hammer's German Grammar and Usage", "Wade: A Comprehensive Russian Grammar", "Swan & Smith: Learner English (contrastive notes)", "Comrie & Corbett: The Slavonic Languages", "König & van der Auwera: The Germanic Languages"],
+  "nodes": [
+    {"id": "germanic", "label": "The Germanic Family", "kind": "concept", "summary": "English, German, Dutch and the Scandinavian languages share a Proto-Germanic ancestor.", "outcome": "Recognise Germanic cognates with English.", "check": "English, German, Dutch and Swedish share an ancestor called what?", "answer": "Proto-Germanic.", "grade": {"all": [["germanic"]]}},
+    {"id": "de-basics", "label": "German: Basics & Pronunciation", "kind": "concept", "summary": "Regular spelling, umlauts and capitalised nouns.", "outcome": "Greet and introduce yourself in German.", "check": "How do you say 'good morning' in German?", "answer": "Guten Morgen.", "grade": {"all": [["guten morgen"]]}, "lab": "retrieval"},
+    {"id": "de-cases", "label": "German: The Four Cases", "kind": "threshold", "summary": "Nominative, accusative, dative and genitive change articles and endings by a noun's role. Troublesome because English has almost lost its cases.", "outcome": "Choose the right article for each case.", "check": "Name German's four grammatical cases.", "answer": "Nominative, accusative, dative and genitive.", "grade": {"all": [["nominativ*"], ["accusativ*", "akkusativ*"], ["dativ*"], ["genitiv*"]]}},
+    {"id": "misc-de-gender", "label": "\"Gender follows the thing's sex\"", "kind": "misconception", "summary": "Das Mädchen (the girl) is neuter because of the diminutive -chen ending.", "outcome": "Predict gender from noun endings.", "check": "What is the grammatical gender of German 'das Mädchen' (the girl)?", "answer": "Neuter: the diminutive ending -chen makes nouns neuter.", "grade": {"all": [["neuter", "neutral", "das"]]}},
+    {"id": "de-v2", "label": "German: Verb-Second Word Order", "kind": "concept", "summary": "The conjugated verb sits in second place in main clauses and goes to the end in subordinate clauses.", "outcome": "Build main and subordinate clauses with correct verb position.", "check": "In a German main clause, where does the conjugated verb go?", "answer": "In second position (V2), e.g. 'Heute gehe ich nach Hause'.", "grade": {"all": [["second", "2nd", "v2", "position 2", "two"]]}},
+    {"id": "nl", "label": "Dutch", "kind": "concept", "summary": "Between English and German: familiar vocabulary with German-like word order.", "outcome": "Read simple Dutch using English and German cognates.", "check": "How do you say 'thank you' in Dutch?", "answer": "Dank je (informal) or dank u (formal); also bedankt.", "grade": {"all": [["dank je", "dank u", "bedankt", "dankjewel", "dank je wel", "dank u wel"]]}, "lab": "retrieval"},
+    {"id": "sv", "label": "Swedish", "kind": "concept", "summary": "Pitch accent, suffixed definite articles and simple verb forms.", "outcome": "Use Swedish's suffixed definite article.", "check": "How do you say 'thank you' in Swedish?", "answer": "Tack.", "grade": {"all": [["tack"]]}, "lab": "retrieval"},
+    {"id": "slavic", "label": "The Slavic Family", "kind": "concept", "summary": "East, West and South Slavic languages; rich case systems and verbal aspect.", "outcome": "Place a Slavic language in its branch.", "check": "Russian, Polish, Czech and Ukrainian belong to which branch of Indo-European?", "answer": "Slavic (Balto-Slavic).", "grade": {"all": [["slavic", "slavonic"]]}},
+    {"id": "cyrillic", "label": "Reading Cyrillic", "kind": "concept", "summary": "33 letters, many familiar from Greek and Latin, some false friends (Р = r, Н = n).", "outcome": "Read Cyrillic words aloud.", "check": "Read the Cyrillic word 'Москва'. Which city is it?", "answer": "Moscow (Moskva).", "grade": {"all": [["moscow", "moskva"]]}, "lab": "retrieval"},
+    {"id": "ru-basics", "label": "Russian: Basics", "kind": "concept", "summary": "Stress, vowel reduction and everyday phrases.", "outcome": "Greet and thank in Russian.", "check": "How do you say 'thank you' in Russian?", "answer": "Спасибо (spasibo).", "grade": {"all": [["spasibo", "спасибо"]]}, "lab": "retrieval"},
+    {"id": "ru-aspect", "label": "Russian: Verbal Aspect", "kind": "concept", "summary": "Most verbs come in pairs: imperfective for process or repetition, perfective for a completed whole.", "outcome": "Choose the right aspect in past and future.", "check": "Russian verbs come in pairs like читать / прочитать. What distinction do the two aspects express?", "answer": "Imperfective (ongoing or repeated action) versus perfective (a single completed action).", "grade": {"all": [["perfective", "imperfective", "complet*", "finished", "ongoing", "aspect"]]}},
+    {"id": "pl", "label": "Polish", "kind": "concept", "summary": "Seven cases, consonant clusters and fixed penultimate stress.", "outcome": "Decline a Polish noun through its cases.", "check": "How many grammatical cases does Polish have?", "answer": "Seven.", "grade": {"all": [["7", "seven"]]}},
+    {"id": "uk", "label": "Ukrainian", "kind": "concept", "summary": "An East Slavic language with its own Cyrillic letters (і, ї, є, ґ), grammar and literature.", "outcome": "Greet and thank in Ukrainian and read its distinctive letters.", "check": "How do you say 'thank you' in Ukrainian?", "answer": "Дякую (dyakuyu).", "grade": {"all": [["dyakuyu", "diakuiu", "dyakuju", "дякую"]]}, "lab": "retrieval"},
+    {"id": "misc-ru-uk", "label": "\"Ukrainian is a dialect of Russian\"", "kind": "misconception", "summary": "Ukrainian is a separate East Slavic language, as distinct from Russian as Spanish is from Portuguese.", "outcome": "Explain why Ukrainian is a language, not a dialect.", "check": "Is Ukrainian a dialect of Russian?", "answer": "No: it is a separate East Slavic language with its own grammar, vocabulary and literature.", "grade": {"all": [["no", "not"]]}}
+  ],
+  "edges": [
+    {"from": "linguistics/families", "to": "germanic"},
+    {"from": "germanic", "to": "de-basics"},
+    {"from": "de-basics", "to": "de-cases"},
+    {"from": "linguistics/morphology", "to": "de-cases"},
+    {"from": "misc-de-gender", "to": "de-cases", "type": "counter"},
+    {"from": "de-cases", "to": "de-v2"},
+    {"from": "linguistics/syntax", "to": "de-v2"},
+    {"from": "germanic", "to": "nl"},
+    {"from": "germanic", "to": "sv"},
+    {"from": "linguistics/families", "to": "slavic"},
+    {"from": "slavic", "to": "cyrillic"},
+    {"from": "linguistics/writing", "to": "cyrillic"},
+    {"from": "cyrillic", "to": "ru-basics"},
+    {"from": "ru-basics", "to": "ru-aspect"},
+    {"from": "slavic", "to": "pl"},
+    {"from": "cyrillic", "to": "uk"},
+    {"from": "misc-ru-uk", "to": "uk", "type": "counter"}
+  ]
+}

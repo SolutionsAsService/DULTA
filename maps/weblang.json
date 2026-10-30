@@ -1,0 +1,35 @@
+{
+  "id": "weblang",
+  "title": "Web Languages",
+  "accent": "#0ca678",
+  "summary": "HTML, CSS, JavaScript, TypeScript, PHP, Ruby and WebAssembly: the languages of the browser and the server behind it. The event loop is the threshold: until it clicks, asynchronous JavaScript looks like it runs in random order.",
+  "sources": ["MDN Web Docs (Mozilla)", "Haverbeke: Eloquent JavaScript", "Simpson: You Don't Know JS Yet", "WHATWG HTML Living Standard", "W3C Web Content Accessibility Guidelines 2.2"],
+  "nodes": [
+    {"id": "html", "label": "HTML: Structure & Semantics", "kind": "concept", "summary": "Semantic elements give structure, accessibility and search visibility for free.", "outcome": "Mark up a page with semantic, accessible HTML.", "check": "Why use <button> instead of a clickable <div>?", "answer": "A button is focusable, works with the keyboard and is announced to screen readers by default.", "grade": {"all": [["keyboard", "focus*", "screen reader*", "accessib*", "semantic*"]]}},
+    {"id": "css", "label": "CSS: The Cascade & Layout", "kind": "concept", "summary": "Specificity, source order, flexbox and grid.", "outcome": "Lay out a responsive page with grid and flexbox.", "check": "Two CSS rules with equal specificity set the same property. Which one wins?", "answer": "The one that comes later in the source.", "grade": {"all": [["later", "last", "second", "after"]]}},
+    {"id": "dom", "label": "The DOM & Browser APIs", "kind": "concept", "summary": "The page as a live tree of objects that scripts read and change.", "outcome": "Update the page from JavaScript through the DOM.", "check": "What is the DOM?", "answer": "The browser's tree of objects representing the page, which scripts can read and change.", "grade": {"all": [["tree", "object*", "document", "page"]]}},
+    {"id": "js", "label": "JavaScript: The Language of the Browser", "kind": "concept", "summary": "Dynamic, prototype-based and everywhere, with historical quirks.", "outcome": "Write modern JavaScript with modules and const/let.", "check": "What does typeof null return in JavaScript?", "answer": "'object' (a historical bug kept for compatibility).", "grade": {"all": [["object"]]}},
+    {"id": "misc-eq", "label": "\"== and === are the same\"", "kind": "misconception", "summary": "== coerces types before comparing; === does not.", "outcome": "Use strict equality and predict coercion.", "check": "In JavaScript, what are '0' == 0 and '0' === 0?", "answer": "true for == (type coercion) and false for === (strict equality).", "grade": {"all": [["true"], ["false"]]}, "lab": "polyglot"},
+    {"id": "async", "label": "JavaScript: The Event Loop & Async", "kind": "threshold", "summary": "One thread, a call stack and queues of tasks and microtasks; promises and async/await sit on top.", "outcome": "Predict the output order of mixed sync, timer and promise code.", "check": "setTimeout(f, 0) is called, then console.log('a'). Which runs first, f or the log?", "answer": "The log: f waits in the task queue until the current code finishes.", "grade": {"all": [["log", "console", "a first", "the a"]], "none": ["f first", "f runs first"]}},
+    {"id": "ts", "label": "TypeScript: Types for JavaScript", "kind": "concept", "summary": "Static types checked at compile time, erased in the JavaScript output.", "outcome": "Type a JavaScript module with TypeScript.", "check": "Do TypeScript's types exist at run time in the browser?", "answer": "No: types are erased when compiling to JavaScript; checking happens at compile time.", "grade": {"all": [["no", "not", "erased", "compile*"]]}},
+    {"id": "php", "label": "PHP: Server-Side Web", "kind": "concept", "summary": "Runs on the server per request; powers a large share of the web.", "outcome": "Render a page from a PHP template with escaped output.", "check": "Where does PHP code run: in the browser or on the server?", "answer": "On the server; the browser receives the HTML it produces.", "grade": {"all": [["server"]]}},
+    {"id": "ruby", "label": "Ruby & Rails", "kind": "concept", "summary": "An expressive language and a framework built on convention over configuration.", "outcome": "Scaffold a CRUD app in Rails.", "check": "What does 'convention over configuration' mean in Rails?", "answer": "Following naming and folder conventions means you write little configuration; Rails infers the wiring.", "grade": {"all": [["convention*", "default*", "infer*", "naming", "less config*", "little config*"]]}},
+    {"id": "wasm", "label": "WebAssembly", "kind": "concept", "summary": "A portable bytecode that runs compiled C++, Rust and Go in the browser.", "outcome": "Compile a function to WebAssembly and call it from JavaScript.", "check": "Why compile C++ or Rust to WebAssembly?", "answer": "To run near-native-speed code in the browser, sandboxed alongside JavaScript.", "grade": {"all": [["fast*", "speed", "performance", "native"]]}}
+  ],
+  "edges": [
+    {"from": "developer/http", "to": "html"},
+    {"from": "html", "to": "css"},
+    {"from": "html", "to": "dom"},
+    {"from": "developer/basics", "to": "js"},
+    {"from": "misc-eq", "to": "js", "type": "counter"},
+    {"from": "js", "to": "dom"},
+    {"from": "dom", "to": "async"},
+    {"from": "developer/concurrency", "to": "async"},
+    {"from": "js", "to": "ts"},
+    {"from": "plcore/typing", "to": "ts"},
+    {"from": "developer/http", "to": "php"},
+    {"from": "developer/http", "to": "ruby"},
+    {"from": "plcore/compiled", "to": "wasm"},
+    {"from": "js", "to": "wasm"}
+  ]
+}

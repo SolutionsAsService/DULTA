@@ -83,10 +83,12 @@
     SYMBOLS.forEach(([k, v]) => { s = s.split(k.toLowerCase()).join(v); });
     return s.replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹]+/g, (m) => " " + [...m].map((c) => SUP.indexOf(c)).join(""));
   }
-  const words = (t) => " " + prep(t).replace(/[^a-z0-9]+/g, " ").trim() + " ";
+  // Strip Latin accents and Arabic vowel marks (café → cafe) but keep letters of every script.
+  const fold = (s) => s.normalize("NFKD").replace(/[\u0300-\u036f\u064b-\u065f]/g, "");
+  const words = (t) => " " + fold(prep(t)).replace(/[^\p{L}\p{N}]+/gu, " ").trim() + " ";
   function has(w, phrase) {
     const stem = phrase.endsWith("*");
-    const p = prep(phrase.replace(/\*+$/, "")).replace(/[^a-z0-9]+/g, " ").trim();
+    const p = fold(prep(phrase.replace(/\*+$/, ""))).replace(/[^\p{L}\p{N}]+/gu, " ").trim();
     return stem ? w.includes(" " + p) : w.includes(" " + p + " ");
   }
   function numbers(t) {

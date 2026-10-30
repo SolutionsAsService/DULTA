@@ -1,0 +1,42 @@
+{
+  "id": "afroasian",
+  "title": "Middle Eastern, South Asian & African Languages",
+  "accent": "#e67700",
+  "summary": "Arabic, Hebrew, Persian, Turkish, Hindi, Bengali, Swahili, Yoruba and Amharic. Root-and-pattern morphology (Arabic, Hebrew) and agglutination (Turkish, Swahili) are the thresholds: words become formulas you can build, not lists you memorise.",
+  "sources": ["Ryding: A Reference Grammar of Modern Standard Arabic", "Göksel & Kerslake: Turkish: A Comprehensive Grammar", "Kachru: Hindi", "Mohammed: Modern Swahili Grammar", "Daniels & Bright: The World's Writing Systems"],
+  "nodes": [
+    {"id": "ar-script", "label": "Arabic: Script & Sounds", "kind": "concept", "summary": "A cursive abjad written right to left; letters change shape by position.", "outcome": "Read Arabic letters in their joined forms.", "check": "In which direction is Arabic written?", "answer": "Right to left.", "grade": {"all": [["right to left", "rtl", "from the right"]]}, "lab": "retrieval"},
+    {"id": "ar-roots", "label": "Arabic: The Root System", "kind": "threshold", "summary": "Most words are a three-consonant root poured into a vowel pattern. Once seen, vocabulary becomes a system you can generate.", "outcome": "Derive related words from one root.", "check": "Arabic words built on the root k-t-b (كتب) share what meaning?", "answer": "Writing (kitāb book, kātib writer, maktab office or desk).", "grade": {"all": [["writ*", "book"]]}},
+    {"id": "ar-basics", "label": "Arabic: Basics", "kind": "concept", "summary": "Greetings and courtesy in Modern Standard Arabic.", "outcome": "Greet and thank in Arabic.", "check": "How do you say 'thank you' in Arabic?", "answer": "شكرا (shukran).", "grade": {"all": [["shukran", "shukraan", "شكرا"]]}, "lab": "retrieval"},
+    {"id": "misc-ar-dialects", "label": "\"All Arabic speakers speak the same Arabic\"", "kind": "misconception", "summary": "Spoken dialects differ widely; Modern Standard Arabic is shared for writing and formal speech.", "outcome": "Explain diglossia in Arabic.", "check": "Why might a Moroccan and an Iraqi struggle with each other's everyday Arabic?", "answer": "Spoken dialects differ greatly; Modern Standard Arabic is shared mainly for writing and formal speech (diglossia).", "grade": {"all": [["dialect*", "standard", "msa", "varieties", "differ*", "diglossia"]]}},
+    {"id": "he", "label": "Hebrew: A Revived Language", "kind": "concept", "summary": "A Semitic root system and abjad, revived for everyday speech in modern times.", "outcome": "Read Hebrew letters and recognise shared Semitic roots.", "check": "In roughly which period was Hebrew revived as an everyday spoken language?", "answer": "The late 19th and early 20th centuries.", "grade": {"all": [["19*", "20*", "nineteenth", "twentieth", "18*"]]}},
+    {"id": "fa", "label": "Persian (Farsi)", "kind": "concept", "summary": "Written in an Arabic-based script but Indo-European, with simple verbs and no grammatical gender.", "outcome": "Explain why Persian looks like Arabic but is related to English.", "check": "Which language family does Persian belong to?", "answer": "Indo-European (Iranian branch), not Semitic like Arabic.", "grade": {"all": [["indo european", "indoeuropean", "iranian"]]}},
+    {"id": "tr", "label": "Turkish: Agglutination & Vowel Harmony", "kind": "concept", "summary": "Suffixes stack in a fixed order, with vowels that harmonise with the stem.", "outcome": "Build and parse Turkish words suffix by suffix.", "check": "Turkish stacks suffixes: 'ev' (house) becomes 'evlerim'. What does 'evlerim' mean?", "answer": "My houses (ev + -ler plural + -im 'my').", "grade": {"all": [["my houses"]]}},
+    {"id": "hi-script", "label": "Hindi: Devanagari", "kind": "concept", "summary": "An abugida: consonants carry an inherent vowel, changed with vowel signs, under a headline.", "outcome": "Read Devanagari syllables.", "check": "What is the horizontal line along the top of Devanagari letters called?", "answer": "The shirorekha (headline).", "grade": {"all": [["shirorekha", "headline", "head line", "shiro rekha"]]}},
+    {"id": "hi-basics", "label": "Hindi: Basics", "kind": "concept", "summary": "SOV order, postpositions and respectful forms of address.", "outcome": "Greet respectfully and form simple Hindi sentences.", "check": "How do you greet someone respectfully in Hindi?", "answer": "नमस्ते (namaste).", "grade": {"all": [["namaste", "namaskar", "नमस्ते"]]}, "lab": "retrieval"},
+    {"id": "misc-hindi-urdu", "label": "\"Hindi and Urdu are completely different languages\"", "kind": "misconception", "summary": "In everyday speech they are largely one language (Hindustani), differing mainly in script and formal vocabulary.", "outcome": "Explain how Hindi and Urdu differ and overlap.", "check": "Why can Hindi and Urdu speakers usually understand each other in conversation?", "answer": "Colloquially they are largely the same language (Hindustani); they differ mainly in script and formal vocabulary.", "grade": {"all": [["same", "hindustani", "script*", "mostly", "shared", "similar"]]}},
+    {"id": "bn", "label": "Bengali", "kind": "concept", "summary": "One of the world's most spoken languages, with its own abugida.", "outcome": "Locate Bengali-speaking regions and read its script basics.", "check": "In which two countries is Bengali official, nationally or in a state?", "answer": "Bangladesh (national) and India (in West Bengal and Tripura).", "grade": {"all": [["bangladesh"], ["india", "west bengal", "tripura"]]}},
+    {"id": "sw", "label": "Swahili: Noun Classes", "kind": "concept", "summary": "Nouns fall into classes marked by prefixes that agreement copies across the sentence.", "outcome": "Use Swahili noun-class prefixes and greet.", "check": "How do you say 'thank you' in Swahili?", "answer": "Asante.", "grade": {"all": [["asante"]]}, "lab": "retrieval"},
+    {"id": "yo", "label": "Yoruba: A Tonal African Language", "kind": "concept", "summary": "Three level tones marked with accents in writing.", "outcome": "Read Yoruba tone marks.", "check": "How many basic tones does Yoruba have?", "answer": "Three: high, mid and low.", "grade": {"all": [["3", "three"]]}},
+    {"id": "am", "label": "Amharic: The Ge'ez Script", "kind": "concept", "summary": "A Semitic language written in an abugida of consonant–vowel characters.", "outcome": "Explain how the Ge'ez script encodes vowels.", "check": "What kind of writing system is the Ge'ez script used for Amharic?", "answer": "An abugida: each character is a consonant with a built-in vowel marking.", "grade": {"all": [["abugida", "syllab*", "consonant vowel", "consonant with"]]}}
+  ],
+  "edges": [
+    {"from": "linguistics/writing", "to": "ar-script"},
+    {"from": "ar-script", "to": "ar-roots"},
+    {"from": "linguistics/morphology", "to": "ar-roots"},
+    {"from": "ar-script", "to": "ar-basics"},
+    {"from": "misc-ar-dialects", "to": "ar-basics", "type": "counter"},
+    {"from": "ar-roots", "to": "he"},
+    {"from": "ar-script", "to": "fa"},
+    {"from": "linguistics/families", "to": "fa"},
+    {"from": "linguistics/morphology", "to": "tr"},
+    {"from": "linguistics/writing", "to": "hi-script"},
+    {"from": "hi-script", "to": "hi-basics"},
+    {"from": "linguistics/syntax", "to": "hi-basics"},
+    {"from": "misc-hindi-urdu", "to": "hi-basics", "type": "counter"},
+    {"from": "hi-script", "to": "bn"},
+    {"from": "linguistics/morphology", "to": "sw"},
+    {"from": "linguistics/tones", "to": "yo"},
+    {"from": "linguistics/writing", "to": "am"}
+  ]
+}

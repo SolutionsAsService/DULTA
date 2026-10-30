@@ -1,0 +1,35 @@
+{
+  "id": "datalang",
+  "title": "Data & Scientific Languages",
+  "accent": "#9c36b5",
+  "summary": "Python, R, Julia, SQL, MATLAB and Fortran: the languages of analysis, modelling and simulation. SQL's declarative style is the threshold: you describe the result, and the database decides how to get it.",
+  "sources": ["Lutz: Learning Python", "McKinney: Python for Data Analysis", "Wickham & Grolemund: R for Data Science", "Bezanson et al.: Julia: A Fresh Approach to Numerical Computing (2017)", "Date: SQL and Relational Theory"],
+  "nodes": [
+    {"id": "py", "label": "Python: Readable by Design", "kind": "concept", "summary": "Indentation as syntax, batteries included, and the default language of data work.", "outcome": "Write idiomatic Python with functions, comprehensions and modules.", "check": "What does indentation do in Python?", "answer": "It defines code blocks; it is part of the syntax, not just style.", "grade": {"all": [["block*", "syntax", "scope", "structure", "defin*"]]}, "lab": "polyglot"},
+    {"id": "misc-pydefault", "label": "\"Default arguments are fresh on each call\"", "kind": "misconception", "summary": "Python evaluates a default argument once, so a mutable default is shared between calls.", "outcome": "Use None as the default for mutable arguments.", "check": "def f(x=[]): x.append(1); return x. What does the second call to f() return?", "answer": "[1, 1]: the default list is created once and shared between calls.", "grade": {"all": [["1 1", "shared", "same list", "once"]]}},
+    {"id": "py-data", "label": "Python: NumPy & pandas", "kind": "concept", "summary": "Vectorised arrays and data frames; loops moved into compiled code.", "outcome": "Replace a Python loop with a vectorised NumPy expression.", "check": "Why is a vectorised NumPy operation much faster than a Python for-loop over the same numbers?", "answer": "The loop runs in compiled C over a contiguous array instead of interpreting each element in Python.", "grade": {"all": [["compiled", "c", "native", "interpret*", "contiguous", "vector*", "overhead"]]}},
+    {"id": "notebooks", "label": "Notebooks & Reproducibility", "kind": "concept", "summary": "Jupyter-style notebooks are great for exploration and risky for reproducibility.", "outcome": "Turn a notebook into a reproducible script with pinned dependencies.", "check": "What is a common reproducibility trap in Jupyter notebooks?", "answer": "Cells run out of order leave hidden state, so the notebook can't be rerun top to bottom with the same result.", "grade": {"all": [["order", "hidden state", "state", "rerun", "re run", "top to bottom"]]}},
+    {"id": "r", "label": "R: Statistics First", "kind": "concept", "summary": "Data frames, vectors and a huge library of statistical methods.", "outcome": "Load, summarise and plot a data set in R.", "check": "What is R's basic data structure for a table of observations?", "answer": "The data frame.", "grade": {"all": [["data frame", "dataframe", "tibble"]]}, "lab": "polyglot"},
+    {"id": "r-index", "label": "R: Vectors & 1-Based Indexing", "kind": "concept", "summary": "Everything is a vector, and indexing starts at 1.", "outcome": "Index and filter vectors in R.", "check": "In R, what is x[1] for x <- c(10, 20, 30)?", "answer": "10: R indexes from 1.", "grade": {"numbers": [[10]]}},
+    {"id": "julia", "label": "Julia: Fast Scientific Computing", "kind": "concept", "summary": "Dynamic syntax with compiled speed through JIT compilation and multiple dispatch.", "outcome": "Write a type-stable Julia function and benchmark it.", "check": "How does Julia reach C-like speed while being dynamic?", "answer": "Just-in-time compilation specialised on the argument types (multiple dispatch).", "grade": {"all": [["jit", "just in time", "compil*"]]}, "lab": "polyglot"},
+    {"id": "sql", "label": "SQL: Declarative Queries", "kind": "threshold", "summary": "Say what rows you want; the query planner decides how to fetch them. Troublesome for programmers used to writing loops.", "outcome": "Express a multi-table question as one SQL query.", "check": "In SQL, do you tell the database how to find the rows, or what rows you want?", "answer": "What you want: SQL is declarative, and the query planner decides how.", "grade": {"all": [["what", "declarative"]]}, "lab": "polyglot"},
+    {"id": "sql-null", "label": "SQL: Joins & NULL", "kind": "concept", "summary": "Inner and outer joins, and three-valued logic with NULL.", "outcome": "Write joins that keep or drop unmatched rows deliberately.", "check": "Does WHERE x = NULL find rows where x is NULL?", "answer": "No: any comparison with NULL is unknown; use WHERE x IS NULL.", "grade": {"all": [["no", "not", "is null"]]}},
+    {"id": "matlab", "label": "MATLAB & Octave: Matrices First", "kind": "concept", "summary": "Everything is a matrix; operators distinguish matrix from element-wise maths.", "outcome": "Vectorise a calculation in MATLAB.", "check": "In MATLAB, what is the difference between A*B and A.*B?", "answer": "A*B is matrix multiplication; A.*B multiplies element by element.", "grade": {"all": [["matrix"], ["element*"]]}},
+    {"id": "fortran", "label": "Fortran: Still Running the Science", "kind": "concept", "summary": "The first high-level language, still central to climate, physics and engineering codes.", "outcome": "Read a Fortran array loop and call it from Python.", "check": "Why is Fortran still used in climate and physics codes?", "answer": "Decades of tested numerical libraries, and compilers that optimise array maths extremely well.", "grade": {"all": [["legacy", "librar*", "fast", "performance", "optimi*", "numerical", "array*", "tested", "decades"]]}}
+  ],
+  "edges": [
+    {"from": "developer/basics", "to": "py"},
+    {"from": "plcore/typing", "to": "py"},
+    {"from": "misc-pydefault", "to": "py", "type": "counter"},
+    {"from": "py", "to": "py-data"},
+    {"from": "mathematics/linalg", "to": "py-data"},
+    {"from": "py-data", "to": "notebooks"},
+    {"from": "mathematics/statistics", "to": "r"},
+    {"from": "r", "to": "r-index"},
+    {"from": "plcore/compiled", "to": "julia"},
+    {"from": "developer/databases", "to": "sql"},
+    {"from": "sql", "to": "sql-null"},
+    {"from": "mathematics/linalg", "to": "matlab"},
+    {"from": "plcore/compiled", "to": "fortran"}
+  ]
+}
